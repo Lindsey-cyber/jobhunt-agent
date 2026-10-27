@@ -175,6 +175,14 @@ def test_actual_audit_regressions_non_engineering_and_duration():
     assert evaluate("Post-Doctoral AI Researcher (2 year Fixed-Term)", "US", "")[0] == "review"
     assert evaluate("ML Engineer", "US", "This is a 2 year contract.")[0] == "review"
     assert row("https://example.com/jobs/1")["criteria_status"] == "review"
+    assert (
+        evaluate("Backend Inference Runtime Engineer New Grad - AML Inference", "San Jose, CA", "")[0]
+        == "queued"
+    )
+    assert (
+        evaluate("Software Engineer Graduate (Data Arch - E-commerce) - 2027 Start", "Seattle, WA", "")[0]
+        == "queued"
+    )
     from jobhunt.preview import structured_posting
 
     html = (

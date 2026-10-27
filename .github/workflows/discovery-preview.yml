@@ -9,6 +9,7 @@ on:
       - 'jobhunt/catalog.py'
       - 'jobhunt/feeds.py'
       - 'jobhunt/identity.py'
+      - 'jobhunt/criteria.py'
 permissions:
   contents: read
 jobs:

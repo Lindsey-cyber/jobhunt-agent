@@ -3,12 +3,12 @@ import re
 from bs4 import BeautifulSoup
 
 ROLE = re.compile(
-    r"deep learning|computer vision|machine learning|\bml\b|\bai\b|artificial intelligence|\bllm\b|research engineer|data engineer",
+    r"deep learning|computer vision|machine learning|\bml\b|\bmlops\b|\bai\b|artificial intelligence|\bllm\b|research engineer|research scientist|data engineer|\binference\b|\brecommendation\b|data (?:platform|infra(?:structure)?|arch(?:itecture)?)|model (?:training|serving)",
     re.I,
 )
 SENIOR = re.compile(r"\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished)\b", re.I)
 EARLY = re.compile(
-    r"new (?:college )?grad|entry.?level|junior|early.?career|university grad|engineer\s+(?:i|1)\b|\bjr\.?\b|\b0\s*(?:[-–]|to)\s*2\b|\b[012]\+? years?",
+    r"new (?:college )?grad|entry.?level|junior|early.?career|university grad|(?:engineer|scientist) graduate|engineer\s+(?:i|1)\b|\bjr\.?\b|\b0\s*(?:[-–]|to)\s*2\b|\b[012]\+? years?",
     re.I,
 )
 NO_SPONSOR = re.compile(

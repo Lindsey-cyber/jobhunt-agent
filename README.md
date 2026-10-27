@@ -1,5 +1,7 @@
 # JobHunt Agent
 
+**Multi-channel discovery:** the dashboard now runs enterprise ATS boards, three New Grad GitHub feeds and public hiring sources without a search API key. Posting IDs preserve all source attribution; official-publication 7/30-day filters and CSV exports are available. Third-party-only candidates stay in review. Optional read-only Gmail imports/OAuth and a manual outreach draft queue are included. See [current multi-channel instructions](docs/MULTICHANNEL.md). Submission remains disabled.
+
 **Current phase: Discovery Preview only.** Compose pins `AUTO_SUBMIT=false`, `DISCOVERY_ONLY=true`, and `SCHEDULED_DISCOVERY=false`. Manual previews do not call the browser or create application records. Open the dashboard and choose **Run real discovery once**, or run:
 
 ```bash

@@ -1,3 +1,11 @@
+# 最新多渠道实测 · 2026-10-28
+
+功能提交 `edd5326cbf0e03595759c2968b5721b6cc7affe3`：[CI](https://github.com/Lindsey-cyber/jobhunt-agent/actions/runs/40602703656) 73 tests passed；[真实多渠道与 ARM64](https://github.com/Lindsey-cyber/jobhunt-agent/actions/runs/40602703675)。
+
+[完整搜索质量报告](docs/SEARCH_REPORT_2026-10-28.md)：7980 条真实观察记录（公开 7960 + Gmail 20），7536 个独立岗位/线索，44 个规则匹配，39 个匹配页可访问；近7天 0，近30天 6。自动申请关闭；OCI 未部署。
+
+本次源代码包含岗位ID归因、自有域名/托管GH映射、只读邮件、官方发布日期核验及人工 Outreach 草稿。原始记录与私人邮件均未提交源码。后续内容为历史验证记录。
+
 # Validation record · Discovery Preview · 2026-10-27 UTC
 
 ## Current live discovery verification

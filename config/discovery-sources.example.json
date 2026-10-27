@@ -1,0 +1,573 @@
+{
+  "version": 1,
+  "classification_note": "Curated medium/large employer cohort for prioritization, not independently audited current headcount. Unlisted companies remain unknown; no funding-to-size inference.",
+  "companies": [
+    {
+      "name": "NVIDIA",
+      "aliases": [
+        "nvidia"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.nvidia.com/en-us/about-nvidia/"
+    },
+    {
+      "name": "Microsoft",
+      "aliases": [
+        "microsoft"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.microsoft.com/en-us/about"
+    },
+    {
+      "name": "Amazon",
+      "aliases": [
+        "amazon"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.aboutamazon.com/"
+    },
+    {
+      "name": "Google",
+      "aliases": [
+        "google"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://about.google/"
+    },
+    {
+      "name": "Meta",
+      "aliases": [
+        "meta",
+        "facebook"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://about.meta.com/"
+    },
+    {
+      "name": "Apple",
+      "aliases": [
+        "apple"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.apple.com/"
+    },
+    {
+      "name": "AMD",
+      "aliases": [
+        "amd"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.amd.com/en/corporate.html"
+    },
+    {
+      "name": "Adobe",
+      "aliases": [
+        "adobe"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.adobe.com/about-adobe.html"
+    },
+    {
+      "name": "Salesforce",
+      "aliases": [
+        "salesforce"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.salesforce.com/company/"
+    },
+    {
+      "name": "Databricks",
+      "aliases": [
+        "databricks"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.databricks.com/company/about-us"
+    },
+    {
+      "name": "Snowflake",
+      "aliases": [
+        "snowflake"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.snowflake.com/en/company/overview/"
+    },
+    {
+      "name": "Stripe",
+      "aliases": [
+        "stripe"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://stripe.com/about"
+    },
+    {
+      "name": "Pinterest",
+      "aliases": [
+        "pinterest"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.pinterestcareers.com/"
+    },
+    {
+      "name": "Reddit",
+      "aliases": [
+        "reddit"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://redditinc.com/"
+    },
+    {
+      "name": "Roblox",
+      "aliases": [
+        "roblox"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://corp.roblox.com/"
+    },
+    {
+      "name": "Duolingo",
+      "aliases": [
+        "duolingo"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.duolingo.com/info"
+    },
+    {
+      "name": "Palantir",
+      "aliases": [
+        "palantir"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.palantir.com/"
+    },
+    {
+      "name": "DoorDash",
+      "aliases": [
+        "doordash"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://careersatdoordash.com/"
+    },
+    {
+      "name": "Lyft",
+      "aliases": [
+        "lyft"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.lyft.com/"
+    },
+    {
+      "name": "Uber",
+      "aliases": [
+        "uber"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.uber.com/us/en/about/"
+    },
+    {
+      "name": "TikTok",
+      "aliases": [
+        "tiktok",
+        "bytedance"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.tiktok.com/about"
+    },
+    {
+      "name": "Bloomberg",
+      "aliases": [
+        "bloomberg"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.bloomberg.com/company/"
+    },
+    {
+      "name": "Capital One",
+      "aliases": [
+        "capitalone",
+        "capital one"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.capitalone.com/about/"
+    },
+    {
+      "name": "Walmart",
+      "aliases": [
+        "walmart"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://corporate.walmart.com/"
+    },
+    {
+      "name": "JPMorgan Chase",
+      "aliases": [
+        "jpmorgan",
+        "jpmorganchase",
+        "jpmorgan chase"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.jpmorganchase.com/"
+    },
+    {
+      "name": "Oracle",
+      "aliases": [
+        "oracle"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.oracle.com/corporate/"
+    },
+    {
+      "name": "Intuit",
+      "aliases": [
+        "intuit"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.intuit.com/company/"
+    },
+    {
+      "name": "Quora",
+      "aliases": [
+        "quora"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.quora.com/careers"
+    },
+    {
+      "name": "Applied Intuition",
+      "aliases": [
+        "applied",
+        "applied intuition"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.appliedintuition.com/about"
+    },
+    {
+      "name": "NewsBreak",
+      "aliases": [
+        "newsbreak"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.newsbreak.com/about"
+    },
+    {
+      "name": "Anthropic",
+      "aliases": [
+        "anthropic"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://www.anthropic.com/company"
+    },
+    {
+      "name": "OpenAI",
+      "aliases": [
+        "openai"
+      ],
+      "size_band": "medium_large",
+      "classification_basis": "curated established employer cohort; headcount not audited",
+      "evidence_url": "https://openai.com/about/"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/SimplifyJobs/New-Grad-Positions/blob/dev/README.md",
+      "kind": "github",
+      "channel": "github_newgrad",
+      "repo": "SimplifyJobs/New-Grad-Positions",
+      "ref": "dev",
+      "path": "README.md",
+      "priority": 120,
+      "official": false
+    },
+    {
+      "url": "https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md",
+      "kind": "github",
+      "channel": "github_newgrad",
+      "repo": "speedyapply/2027-AI-College-Jobs",
+      "ref": "main",
+      "path": "NEW_GRAD_USA.md",
+      "priority": 120,
+      "official": false
+    },
+    {
+      "url": "https://github.com/Tar-ive/ML_Newgrad_2027/blob/main/README.md",
+      "kind": "github",
+      "channel": "github_newgrad",
+      "repo": "Tar-ive/ML_Newgrad_2027",
+      "ref": "main",
+      "path": "README.md",
+      "priority": 120,
+      "official": false
+    },
+    {
+      "company": "NVIDIA",
+      "kind": "workday",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite",
+      "channel": "official_workday",
+      "priority": 110,
+      "official": true,
+      "queries": [
+        "New College Grad",
+        "Machine Learning"
+      ],
+      "result_limit": 40,
+      "timeout": 100
+    },
+    {
+      "company": "Adobe",
+      "kind": "workday",
+      "url": "https://adobe.wd5.myworkdayjobs.com/external_experienced",
+      "channel": "official_workday",
+      "priority": 110,
+      "official": true,
+      "queries": [
+        "New College Grad",
+        "Machine Learning"
+      ],
+      "result_limit": 40,
+      "timeout": 100
+    },
+    {
+      "company": "Salesforce",
+      "kind": "workday",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site",
+      "channel": "official_workday",
+      "priority": 110,
+      "official": true,
+      "queries": [
+        "New College Grad",
+        "Machine Learning"
+      ],
+      "result_limit": 40,
+      "timeout": 100
+    },
+    {
+      "company": "Databricks",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/databricks",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Stripe",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/stripe",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Pinterest",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/pinterest",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Reddit",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/reddit",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Roblox",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/roblox",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Duolingo",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/duolingo",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "DoorDash",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/doordashusa",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Lyft",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/lyft",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Anthropic",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/anthropic",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "NewsBreak",
+      "kind": "greenhouse",
+      "url": "https://job-boards.greenhouse.io/newsbreak",
+      "channel": "official_greenhouse",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "OpenAI",
+      "kind": "ashby",
+      "url": "https://jobs.ashbyhq.com/openai",
+      "channel": "official_ashby",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Applied Intuition",
+      "kind": "ashby",
+      "url": "https://jobs.ashbyhq.com/applied",
+      "channel": "official_ashby",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Quora",
+      "kind": "ashby",
+      "url": "https://jobs.ashbyhq.com/quora",
+      "channel": "official_ashby",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "company": "Palantir",
+      "kind": "lever",
+      "url": "https://jobs.lever.co/palantir",
+      "channel": "official_lever",
+      "priority": 100,
+      "official": true,
+      "timeout": 70
+    },
+    {
+      "url": "https://news.ycombinator.com/submitted?id=whoishiring",
+      "kind": "hn",
+      "channel": "hn_hiring",
+      "priority": 20,
+      "official": false,
+      "timeout": 100,
+      "comment_limit": 40
+    },
+    {
+      "url": "https://www.ycombinator.com/jobs",
+      "kind": "career",
+      "channel": "yc_jobs",
+      "priority": 15,
+      "official": false,
+      "timeout": 35
+    },
+    {
+      "url": "https://jobs.a16z.com/jobs",
+      "kind": "career",
+      "channel": "vc_portfolio",
+      "priority": 15,
+      "official": false,
+      "timeout": 35
+    },
+    {
+      "url": "https://aijobs.net/",
+      "kind": "career",
+      "channel": "ai_specialist",
+      "priority": 15,
+      "official": false,
+      "timeout": 35
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/",
+      "kind": "restricted",
+      "channel": "linkedin_direct",
+      "priority": 5,
+      "enabled": false,
+      "skip_reason": "No approved direct jobs API; use authorized Gmail alerts"
+    },
+    {
+      "url": "https://www.indeed.com/",
+      "kind": "restricted",
+      "channel": "indeed_direct",
+      "priority": 5,
+      "enabled": false,
+      "skip_reason": "No approved direct jobs API; use authorized Gmail alerts"
+    },
+    {
+      "url": "https://www.glassdoor.com/Job/",
+      "kind": "restricted",
+      "channel": "glassdoor_direct",
+      "priority": 5,
+      "enabled": false,
+      "skip_reason": "No approved direct jobs API; use authorized Gmail alerts"
+    },
+    {
+      "url": "https://app.joinhandshake.com/",
+      "kind": "restricted",
+      "channel": "handshake_direct",
+      "priority": 5,
+      "enabled": false,
+      "skip_reason": "Requires account-specific integration; email import supported"
+    },
+    {
+      "url": "https://wellfound.com/jobs",
+      "kind": "restricted",
+      "channel": "wellfound",
+      "priority": 5,
+      "enabled": false,
+      "skip_reason": "Account/site authorization not configured"
+    }
+  ]
+}

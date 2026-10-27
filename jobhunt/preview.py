@@ -44,6 +44,8 @@ COLUMNS = [
     "final_url",
     "raw_ref",
     "description",
+    "identity", "posting_key", "channel", "company_size", "company_size_basis", "company_size_source",
+    "experience_requirement", "first_seen", "last_verified", "earliest_source", "official_source", "attributions",
 ]
 CLOSED = re.compile(
     r"(?:this (?:job|position|opening) (?:is |has been )?(?:no longer available|closed|filled)|job (?:not found|has expired)|no longer accepting applications|job you are looking for is no longer)",
@@ -168,14 +170,16 @@ def deduplicate(rows):
         rows, key=lambda r: (r["link_status"] == "invalid", rank.get(r["criteria_status"], 3), r["ordinal"])
     ):
         row.update({"duplicate_of": None, "duplicate_reason": "", "location_variant": False})
-        key = row["fingerprint"]
+        from jobhunt.identity import identity
+
+        key = identity(row["url"])
         existing = urls.get(row["canonical_url"]) or groups.get(key)
         if existing:
             row["duplicate_of"] = existing["ordinal"]
             row["duplicate_reason"] = (
                 "same_url"
                 if row["canonical_url"] == existing["canonical_url"]
-                else "company_title_fingerprint"
+                else "same_posting_identity"
             )
             row["location_variant"] = (
                 row["location"].strip().casefold() != existing["location"].strip().casefold()

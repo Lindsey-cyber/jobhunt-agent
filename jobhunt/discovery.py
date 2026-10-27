@@ -11,7 +11,7 @@ from sqlalchemy import or_, select
 from sqlalchemy.exc import IntegrityError
 
 from jobhunt.criteria import evaluate, text
-from jobhunt.db import Job, Session, Source, State, canonical_url, event, fingerprint, now
+from jobhunt.db import Job, Session, Source, State, canonical_url, event, now
 from jobhunt.net import Web
 from jobhunt.settings import settings
 
@@ -121,7 +121,9 @@ def store_job(
     if parsed.scheme not in {"http", "https"} or not parsed.hostname or parsed.username or parsed.password:
         return False
     url = canonical_url(url)
-    fp = fingerprint(company, title)
+    from jobhunt.identity import identity
+
+    fp = identity(url)
     status, reason = evaluate(title, location, description)
     try:
         with Session.begin() as s:

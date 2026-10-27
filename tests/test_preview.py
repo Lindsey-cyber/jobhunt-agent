@@ -64,13 +64,13 @@ async def test_preview_retains_location_variants_and_never_queues(network, monke
         result = await execute_preview(run)
     assert result["status"] == "partial_missing_search_keys"
     assert result["stats"]["raw_ats_jobs"] == 3
-    assert result["stats"]["deduplicated_jobs"] == 2
-    assert result["stats"]["duplicates"] == 1
-    assert result["stats"]["location_variants_merged"] == 1
-    assert result["stats"]["verified_matched_jobs"] == 1
+    assert result["stats"]["deduplicated_jobs"] == 3
+    assert result["stats"]["duplicates"] == 0
+    assert result["stats"]["location_variants_merged"] == 0
+    assert result["stats"]["verified_matched_jobs"] == 2
     assert result["stats"]["application_flows_opened"] == 0
     rows = json.loads((run_dir(run) / "jobs_all.json").read_text())
-    assert len(rows) == 3 and any(r["duplicate_of"] for r in rows)
+    assert len(rows) == 3 and not any(r["duplicate_of"] for r in rows)
     assert rows[0]["application_url"].endswith("/application")
     assert rows[0]["posted_at"].startswith("2026-10-20")
     assert (run_dir(run) / rows[0]["raw_ref"]).is_file()

@@ -24,7 +24,7 @@ from jobhunt.worker import claim, count_today, record_failure, recover
     ],
 )
 def test_sponsorship(description, status):
-    assert evaluate("AI Engineer", "United States", description)[0] == status
+    assert evaluate("AI Engineer", "United States", description, requires_sponsorship=True)[0] == status
 
 
 @pytest.mark.parametrize(
@@ -50,7 +50,7 @@ def add_job(url="https://example.com/jobs/1"):
 
 def test_cross_platform_duplicate():
     assert store_job("Acme, Inc", "New Grad AI Engineer", "https://a.com/1?utm_source=x", "US")
-    assert not store_job("Acme Inc", "New Grad AI Engineer", "https://b.com/1", "US")
+    assert store_job("Acme Inc", "New Grad AI Engineer", "https://b.com/1", "US")
     assert not store_job("Acme", "Other Title", "https://a.com/1?utm_source=y", "US")
 
 

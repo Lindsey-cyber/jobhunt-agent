@@ -32,6 +32,9 @@ class Settings(BaseSettings):
     timezone: str = "America/New_York"
     worker_enabled: bool = True
     allow_local_test_urls: bool = False
+    discovery_registry: Path = Path("config/discovery-sources.example.json")
+    catalog_interval: int = 21600
+    catalog_scheduled: bool = False
 
 
 settings = Settings()

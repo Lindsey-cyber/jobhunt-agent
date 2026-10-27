@@ -193,7 +193,7 @@ def test_sponsorship_welcome_is_not_rejected():
         == "queued"
     )
     assert evaluate("Junior AI Engineer", "US", "We have no sponsorship restrictions.")[0] == "queued"
-    assert evaluate("Junior AI Engineer", "US", "Sponsorship is not provided.")[0] == "rejected"
+    assert evaluate("Junior AI Engineer", "US", "Sponsorship is not provided.", requires_sponsorship=True)[0] == "rejected"
     assert evaluate("Junior AI Engineer", "US", "Applicants must be US citizens.")[0] == "review"
     assert evaluate("AI Engineer", "US", "Entry level. 3 years of experience preferred.")[0] == "queued"
 

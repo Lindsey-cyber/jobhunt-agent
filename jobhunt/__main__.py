@@ -13,15 +13,41 @@ from jobhunt.settings import settings
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["check", "add-source", "init-db", "preview"])
+    parser.add_argument("command", choices=["check", "add-source", "init-db", "preview", "catalog", "import-mail"])
     parser.add_argument("url", nargs="?")
     parser.add_argument("--seed-url", action="append", default=[])
     parser.add_argument("--seed-file")
     parser.add_argument("--queries", type=int, default=9)
     parser.add_argument("--max-sources", type=int, default=12)
     parser.add_argument("--link-checks", type=int, default=100)
+    parser.add_argument("--registry")
+    parser.add_argument("--import-file", action="append", default=[])
+    parser.add_argument("--incremental", action="store_true")
     args = parser.parse_args()
-    if args.command == "preview":
+    if args.command == "catalog":
+        from jobhunt.catalog import run_catalog
+
+        init_db()
+        result = asyncio.run(run_catalog(args.registry, args.import_file, args.max_sources, args.link_checks, force=not args.incremental))
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+        print("Exports: " + str(settings.data_dir / "previews" / result["id"]))
+        if result["status"] == "failed":
+            raise SystemExit(1)
+    elif args.command == "import-mail":
+        from pathlib import Path
+
+        from jobhunt.feeds import email_jobs
+
+        records = []
+        for file in args.import_file:
+            payload = json.loads(Path(file).read_text())
+            for message in payload.get("messages", [payload]):
+                records.extend(email_jobs(message))
+        output = settings.data_dir / "mail-job-leads.json"
+        output.write_text(json.dumps(records, indent=2, ensure_ascii=False))
+        output.chmod(0o600)
+        print(f"Extracted {len(records)} job links to private {output}; no mail modified or sent")
+    elif args.command == "preview":
         from pathlib import Path
 
         from jobhunt.preview import execute_preview, new_run, run_dir

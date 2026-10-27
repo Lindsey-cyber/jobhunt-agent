@@ -5,12 +5,16 @@ on:
     paths:
       - '.github/workflows/discovery-preview.yml'
       - 'config/preview-sources.example.json'
+      - 'config/discovery-sources.example.json'
+      - 'jobhunt/catalog.py'
+      - 'jobhunt/feeds.py'
+      - 'jobhunt/identity.py'
 permissions:
   contents: read
 jobs:
   preview:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       AUTO_SUBMIT: 'false'
       DISCOVERY_ONLY: 'true'
@@ -25,7 +29,7 @@ jobs:
           python-version: '3.12'
       - run: uv sync --frozen
       - name: Real search providers and public ATS reads, never applications
-        run: uv run python -m jobhunt preview --seed-file config/preview-sources.example.json --queries 9 --max-sources 12 --link-checks 100
+        run: uv run python -m jobhunt catalog --max-sources 40 --link-checks 150
       - uses: actions/upload-artifact@v4
         if: always()
         with:

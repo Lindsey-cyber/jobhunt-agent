@@ -8,7 +8,7 @@ ROLE = re.compile(
 )
 SENIOR = re.compile(r"\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished)\b", re.I)
 EARLY = re.compile(
-    r"new grad|entry.?level|junior|early.?career|university grad|engineer\s+(?:i|1)\b|\bjr\.?\b|\b0\s*(?:[-–]|to)\s*2\b|\b[012]\+? years?",
+    r"new (?:college )?grad|entry.?level|junior|early.?career|university grad|engineer\s+(?:i|1)\b|\bjr\.?\b|\b0\s*(?:[-–]|to)\s*2\b|\b[012]\+? years?",
     re.I,
 )
 NO_SPONSOR = re.compile(
@@ -33,12 +33,14 @@ def text(html):
     return BeautifulSoup(html or "", "html.parser").get_text(" ", strip=True)
 
 
-def evaluate(title, location, description):
+def evaluate(title, location, description, *, requires_sponsorship=None):
     body = text(description)
     if not ROLE.search(title):
         return "rejected", "Role outside AI/ML/data/research engineering"
     if SENIOR.search(title):
         return "rejected", "Senior role"
+    if re.search(r"\bintern(?:ship)?\b", title, re.I):
+        return "rejected", "Internship, outside full-time early-career scope"
     restrictions = []
     for match in NO_SPONSOR.finditer(body):
         before, after = body[max(0, match.start() - 30) : match.start()], body[match.end() : match.end() + 40]
@@ -49,8 +51,12 @@ def evaluate(title, location, description):
         ):
             continue
         restrictions.append(match.group(0))
-    if restrictions:
-        return "rejected", "Explicit sponsorship/work authorization restriction"
+    if restrictions and requires_sponsorship is not False:
+        return (
+            ("rejected", "Explicit restriction conflicts with verified sponsorship requirement")
+            if requires_sponsorship is True
+            else ("review", "Explicit sponsorship/work authorization restriction; verified personal facts unavailable")
+        )
     if re.search(
         r"(?:must|require[sd]?).{0,70}(?:us|u\.s\.)\s+(?:citizenship|citizen)|us citizens only", body, re.I
     ):

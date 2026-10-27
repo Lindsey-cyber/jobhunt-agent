@@ -95,6 +95,36 @@ class DiscoveryObservation(Base):
     data: Mapped[dict] = mapped_column(JSON, default=dict)
 
 
+class Opportunity(Base):
+    """One posting/task identity, inactive until a future application handoff."""
+
+    __tablename__ = "opportunities"
+    id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    first_seen: Mapped[datetime] = mapped_column(DateTime, default=now)
+    last_seen: Mapped[datetime] = mapped_column(DateTime, default=now)
+    payload: Mapped[dict] = mapped_column(JSON, default=dict)
+
+
+class SourceAttribution(Base):
+    __tablename__ = "source_attributions"
+    __table_args__ = (UniqueConstraint("opportunity_id", "channel", "original_url"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    opportunity_id: Mapped[str] = mapped_column(String(64), index=True)
+    channel: Mapped[str] = mapped_column(String(100), index=True)
+    original_url: Mapped[str] = mapped_column(Text)
+    first_seen: Mapped[datetime] = mapped_column(DateTime, default=now)
+    last_seen: Mapped[datetime] = mapped_column(DateTime, default=now)
+    payload: Mapped[dict] = mapped_column(JSON, default=dict)
+
+
+class SourceMonitor(Base):
+    __tablename__ = "source_monitors"
+    url: Mapped[str] = mapped_column(Text, primary_key=True)
+    checked_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    failures: Mapped[int] = mapped_column(default=0)
+    state: Mapped[dict] = mapped_column(JSON, default=dict)
+
+
 engine = create_engine(
     settings.database_url,
     pool_pre_ping=True,

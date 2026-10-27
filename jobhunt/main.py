@@ -177,6 +177,25 @@ def stats():
         }
 
 
+@app.get("/outreach", response_class=HTMLResponse, dependencies=[Depends(auth)])
+def outreach_page(request: Request):
+    from jobhunt.catalog import outreach_queue
+    from jobhunt.db import Opportunity
+
+    with Session() as s:
+        rows = [o.payload for o in s.scalars(select(Opportunity).order_by(Opportunity.last_seen.desc()).limit(10000))]
+    return templates.TemplateResponse(request=request, name="outreach.html", context={"leads": outreach_queue(rows)})
+
+
+@app.get("/api/outreach", dependencies=[Depends(auth)])
+def outreach_data():
+    from jobhunt.catalog import outreach_queue
+    from jobhunt.db import Opportunity
+
+    with Session() as s:
+        return outreach_queue([o.payload for o in s.scalars(select(Opportunity).limit(10000))])
+
+
 @app.post("/sources", dependencies=[Depends(auth)])
 async def add_source(url: str = Form(), csrf: str = Form()):
     csrf_check(csrf)
@@ -325,8 +344,22 @@ async def start_preview(
     return RedirectResponse(f"/previews/{run_id}", 303)
 
 
+@app.post("/catalog", dependencies=[Depends(auth)])
+async def start_catalog(csrf: str = Form()):
+    from jobhunt.catalog import run_catalog
+
+    csrf_check(csrf)
+    with Session() as s:
+        if s.scalar(select(DiscoveryRun).where(DiscoveryRun.status.in_(["queued", "running"])).limit(1)):
+            raise HTTPException(409, "A discovery run is already active")
+    task = asyncio.create_task(run_catalog(max_sources=45))
+    app.state.preview_tasks.add(task)
+    task.add_done_callback(app.state.preview_tasks.discard)
+    return RedirectResponse("/", 303)
+
+
 @app.get("/previews/{run_id}", response_class=HTMLResponse, dependencies=[Depends(auth)])
-def preview_page(request: Request, run_id: str, view: str = "deduped", status: str = "all"):
+def preview_page(request: Request, run_id: str, view: str = "deduped", status: str = "all", days: int = 0):
     with Session() as s:
         run = s.get(DiscoveryRun, run_id)
         if not run:
@@ -343,6 +376,10 @@ def preview_page(request: Request, run_id: str, view: str = "deduped", status: s
         rows = [r for r in rows if r.get("duplicate_of") is None]
     if status != "all":
         rows = [r for r in rows if r["criteria_status"] == status]
+    if days in {7, 30}:
+        from jobhunt.catalog import freshness
+
+        rows = [r for r in rows if freshness(r, days)]
     rows.sort(key=lambda r: r.get("posted_at", ""), reverse=True)
     rows.sort(key=lambda r: {"matched": 0, "review": 1, "rejected": 2}.get(r["criteria_status"], 3))
     return templates.TemplateResponse(
@@ -355,6 +392,7 @@ def preview_page(request: Request, run_id: str, view: str = "deduped", status: s
             "view": view,
             "filter_status": status,
             "standalone": False,
+            "days": days,
         },
     )
 
@@ -378,7 +416,7 @@ def preview_summary(run_id: str):
 
 
 @app.get("/previews/{run_id}/jobs.csv", dependencies=[Depends(auth)])
-def preview_csv(run_id: str, view: str = "deduped"):
+def preview_csv(run_id: str, view: str = "deduped", status: str = "all", days: int = 0):
     from jobhunt.preview import run_dir
 
     with Session() as s:
@@ -388,6 +426,17 @@ def preview_csv(run_id: str, view: str = "deduped"):
     path = run_dir(run_id) / ("jobs_all.csv" if view == "all" else "jobs.csv")
     if not path.is_file():
         raise HTTPException(404)
+    if status != "all" or days in {7, 30}:
+        import json
+
+        from fastapi.responses import Response
+
+        from jobhunt.catalog import freshness
+        from jobhunt.preview import csv_content
+
+        rows = json.loads(path.with_name("jobs_all.json" if view == "all" else "jobs_deduplicated.json").read_text())
+        rows = [r for r in rows if (status == "all" or r["criteria_status"] == status) and (days not in {7, 30} or freshness(r, days))]
+        return Response(csv_content(rows), media_type="text/csv; charset=utf-8", headers={"Content-Disposition": 'attachment; filename="filtered-jobs.csv"'})
     return FileResponse(path, media_type="text/csv; charset=utf-8", filename=path.name)
 
 

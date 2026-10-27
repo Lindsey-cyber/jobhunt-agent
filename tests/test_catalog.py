@@ -33,6 +33,14 @@ def test_distinct_job_ids_not_company_title_merge():
     result = group_rows([a, b, c])
     assert len(result) == 2 and len(result[0]["attributions"]) == 2
     assert result[0]["official"] and a["duplicate_of"] == 3
+    custom = row(
+        "https://careers.acme.com/openings?gh_jid=123",
+        "official_ats",
+        official=True,
+        identity_url="https://job-boards.greenhouse.io/acme/jobs/123",
+    )
+    assert custom["identity"] == a["identity"]
+    assert len(group_rows([a, custom])) == 1
     assert identity("https://nvidia.wd5.myworkdayjobs.com/en-US/Board/job/USA/Test_JR123") == identity(
         "https://nvidia.wd5.myworkdayjobs.com/Board/job/USA/Other_JR123"
     )

@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import re
+from contextvars import ContextVar
 from datetime import datetime, timezone
 from urllib.parse import parse_qs, urljoin, urlsplit
 
@@ -15,6 +16,10 @@ from jobhunt.net import Web
 from jobhunt.settings import settings
 
 log = logging.getLogger(__name__)
+job_sink = ContextVar("discovery_job_sink", default=None)
+source_sink = ContextVar("discovery_source_sink", default=None)
+search_sink = ContextVar("discovery_search_sink", default=None)
+preview_queries = ContextVar("discovery_preview_queries", default=None)
 ROLES = [
     "machine learning engineer",
     "AI engineer",
@@ -65,6 +70,9 @@ def source_for(url):
 
 def remember_source(url):
     kind, canonical = source_for(url)
+    if source_sink.get() is not None:
+        source_sink.get()(kind, canonical)
+        return
     try:
         with Session.begin() as s:
             if not s.scalar(select(Source).where(Source.url == canonical)):
@@ -83,7 +91,30 @@ def parse_date(value):
         return None
 
 
-def store_job(company, title, url, location="", description="", posted=None, source=""):
+def store_job(
+    company,
+    title,
+    url,
+    location="",
+    description="",
+    posted=None,
+    source="",
+    *,
+    application_url="",
+    date_kind="unknown",
+):
+    if job_sink.get() is not None:
+        return job_sink.get()(
+            company,
+            title,
+            url,
+            location,
+            description,
+            posted,
+            source,
+            application_url=application_url,
+            date_kind=date_kind,
+        )
     if not company or not title or not url:
         return False
     parsed = urlsplit(url)
@@ -118,14 +149,18 @@ def store_job(company, title, url, location="", description="", posted=None, sou
 async def search(web):
     if not (settings.brave_api_key or settings.tavily_api_key):
         return
-    with Session.begin() as s:
-        state = s.get(State, "search_cursor")
-        cursor = state.value.get("cursor", 0) if state else 0
-        if not state:
-            state = State(key="search_cursor", value={})
-            s.add(state)
-        state.value = {"cursor": cursor + settings.search_queries_per_cycle}
-    for i in range(cursor, cursor + settings.search_queries_per_cycle):
+    count = preview_queries.get() or settings.search_queries_per_cycle
+    if search_sink.get() is not None:
+        cursor = 0
+    else:
+        with Session.begin() as s:
+            state = s.get(State, "search_cursor")
+            cursor = state.value.get("cursor", 0) if state else 0
+            if not state:
+                state = State(key="search_cursor", value={})
+                s.add(state)
+            state.value = {"cursor": cursor + count}
+    for i in range(cursor, cursor + count):
         query = f'{ROLES[i % len(ROLES)]} ("new grad" OR "entry level" OR junior) "United States" {SITES[(i // len(ROLES)) % len(SITES)]}'
         for provider in ["brave", "tavily"]:
             if not getattr(settings, provider + "_api_key"):
@@ -151,13 +186,23 @@ async def search(web):
                         json={"query": query, "max_results": 20, "search_depth": "advanced"},
                     )
                     urls = [x["url"] for x in r.json().get("results", [])]
+                if search_sink.get() is not None:
+                    items = (
+                        r.json().get("web", {}).get("results", [])
+                        if provider == "brave"
+                        else r.json().get("results", [])
+                    )
+                    search_sink.get()(provider, query, items, None)
                 for url in urls:
                     if urlsplit(url).scheme in {"https", "http"}:
                         remember_source(url)
             except Exception as exc:
                 log.warning("Search provider %s failed: %s", provider, type(exc).__name__)
-                with Session.begin() as s:
-                    event(s, "search_failed", provider=provider, error=type(exc).__name__)
+                if search_sink.get() is not None:
+                    search_sink.get()(provider, query, [], type(exc).__name__)
+                else:
+                    with Session.begin() as s:
+                        event(s, "search_failed", provider=provider, error=type(exc).__name__)
 
 
 async def board(web, source):
@@ -175,6 +220,8 @@ async def board(web, source):
                 j.get("content", ""),
                 j.get("updated_at"),
                 source.url,
+                application_url=j["absolute_url"],
+                date_kind="updated_at",
             )
     elif source.kind == "lever":
         host = "api.eu.lever.co" if ".eu." in p.netloc else "api.lever.co"
@@ -202,6 +249,8 @@ async def board(web, source):
                     desc,
                     j.get("createdAt"),
                     source.url,
+                    application_url=j.get("applyUrl", ""),
+                    date_kind="created_at",
                 )
             if len(data) < 100 or offset >= 5000:
                 break
@@ -222,6 +271,8 @@ async def board(web, source):
                     j.get("descriptionHtml", ""),
                     j.get("publishedAt"),
                     source.url,
+                    application_url=j.get("applyUrl", ""),
+                    date_kind="published_at",
                 )
     elif source.kind == "workday":
         await workday(web, source.url)
@@ -268,6 +319,8 @@ async def workday(web, url):
                 detail.get("jobDescription", ""),
                 detail.get("startDate"),
                 url,
+                application_url=detail.get("externalUrl", ""),
+                date_kind="start_date",
             )
         if not postings or offset + len(postings) >= data.get("total", 0):
             break
@@ -311,6 +364,8 @@ async def career(web, url):
                     obj.get("description", ""),
                     obj.get("datePosted"),
                     url,
+                    application_url=urljoin(url, obj.get("url", url)),
+                    date_kind="published_at",
                 )
             for child in obj.values():
                 if isinstance(child, (dict, list)):

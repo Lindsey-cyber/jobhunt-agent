@@ -92,6 +92,8 @@ def test_utc_conversion_and_new_ats_recognition():
 
 
 async def test_search_continues_during_application(monkeypatch):
+    monkeypatch.setattr(settings, "discovery_only", False)
+    monkeypatch.setattr(settings, "scheduled_discovery", True)
     store_job("Acme", "New Grad AI Engineer", "https://example.com/ai", "US", "new grad")
     stop, discovery_started = asyncio.Event(), asyncio.Event()
     applied = []

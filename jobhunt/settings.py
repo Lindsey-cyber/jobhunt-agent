@@ -17,6 +17,8 @@ class Settings(BaseSettings):
     resume_path: Path = Path("config/resume.pdf")
     daily_limit: int = 100
     auto_submit: bool = False
+    discovery_only: bool = True
+    scheduled_discovery: bool = False
     discovery_interval: int = 1800
     search_queries_per_cycle: int = 12
     sources_per_cycle: int = 200

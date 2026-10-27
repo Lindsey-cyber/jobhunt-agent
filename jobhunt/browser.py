@@ -149,6 +149,8 @@ async def form_surface(page, web, allowed_hosts):
 
 
 async def apply(job, before_submit=None):
+    if settings.discovery_only:
+        raise Review("Discovery-only mode: browser application flow is disabled")
     answers = profile_answers()
     if not answers or not settings.resume_path.is_file():
         raise Review("Provide verified profile answers and resume PDF")

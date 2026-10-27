@@ -1,0 +1,47 @@
+name: Live discovery preview
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/discovery-preview.yml'
+      - 'config/preview-sources.example.json'
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      AUTO_SUBMIT: 'false'
+      DISCOVERY_ONLY: 'true'
+      WORKER_ENABLED: 'false'
+      BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+      TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.9.6'
+          python-version: '3.12'
+      - run: uv sync --frozen
+      - name: Real search providers and public ATS reads, never applications
+        run: uv run python -m jobhunt preview --seed-file config/preview-sources.example.json --queries 9 --max-sources 12 --link-checks 100
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: discovery-preview-${{ github.run_id }}
+          path: data/previews/
+          retention-days: 30
+          if-no-files-found: error
+  arm64-chromium:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: cp .env.example .env
+      - name: Native ARM64 image build
+        run: docker compose build agent
+      - name: Native ARM64 Chromium launch, no application pages
+        run: docker compose run --rm --no-deps --volume "$PWD/scripts:/app/scripts:ro" agent .venv/bin/python /app/scripts/arm_smoke.py
+      - if: always()
+        run: docker compose down --volumes

@@ -173,6 +173,9 @@ async def wait_or_stop(stop, seconds):
 
 async def discovery_loop(stop):
     while not stop.is_set():
+        if not settings.scheduled_discovery:
+            await wait_or_stop(stop, settings.poll_interval)
+            continue
         with Session() as s:
             last = s.get(State, "discovery")
             due = (
@@ -214,7 +217,7 @@ async def application_loop(stop):
         with Session() as s:
             control = s.get(State, "control")
             paused = control and control.value.get("paused")
-        job = claim() if not paused and not readiness() else None
+        job = claim() if not settings.discovery_only and not paused and not readiness() else None
         if job:
             try:
                 await asyncio.wait_for(apply(job, before_submit), timeout=900)

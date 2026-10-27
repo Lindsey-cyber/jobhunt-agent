@@ -26,6 +26,8 @@ async def smartrecruiters(web, url, store):
                 description,
                 item.get("releasedDate"),
                 url,
+                application_url=detail.get("applyUrl", ""),
+                date_kind="published_at",
             )
         if offset + len(data.get("content", [])) >= data.get("totalFound", 0) or not data.get("content"):
             break
@@ -47,4 +49,6 @@ async def recruitee(web, url, store):
             detail.get("description", "") + " " + detail.get("requirements", ""),
             item.get("published_at") or item.get("created_at"),
             url,
+            application_url=item.get("careers_apply_url", ""),
+            date_kind="published_at" if item.get("published_at") else "created_at",
         )

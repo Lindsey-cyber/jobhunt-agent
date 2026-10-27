@@ -61,6 +61,7 @@ async def test_local_employer_submission(tmp_path, monkeypatch):
         "allow_local_test_urls": True,
         "openai_api_key": "fake",
         "auto_submit": True,
+        "discovery_only": False,
     }.items():
         monkeypatch.setattr(settings, key, value)
 

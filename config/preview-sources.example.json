@@ -1,0 +1,13 @@
+{
+  "discovery_method": "assistant web search used to find these public ATS boards; not Brave/Tavily results",
+  "seed_observed_date": "2026-10-28",
+  "seeds": [
+    "https://jobs.ashbyhq.com/quora",
+    "https://job-boards.greenhouse.io/newsbreak",
+    "https://job-boards.greenhouse.io/botauto",
+    "https://jobs.ashbyhq.com/sentilink",
+    "https://jobs.ashbyhq.com/applied",
+    "https://job-boards.greenhouse.io/idmeuniversityrecruiting"
+  ],
+  "note": "This is a repeatable live test seed set, not a fixed production employer list. With search keys, preview also discovers new sources through real provider requests. Every source can fail or close and is reported honestly."
+}

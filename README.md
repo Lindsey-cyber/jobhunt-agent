@@ -1,5 +1,14 @@
 # JobHunt Agent
 
+**Current phase: Discovery Preview only.** Compose pins `AUTO_SUBMIT=false`, `DISCOVERY_ONLY=true`, and `SCHEDULED_DISCOVERY=false`. Manual previews do not call the browser or create application records. Open the dashboard and choose **Run real discovery once**, or run:
+
+```bash
+uv run python -m jobhunt preview --seed-file config/preview-sources.example.json --queries 9 --max-sources 12 --link-checks 100
+```
+
+Brave/Tavily keys are optional for testing explicitly supplied public ATS sources, but a missing key means that provider was **not tested**. Every run retains raw responses, all location variants, filtering reasons, reported dates/URLs, CSV exports and an HTML report under `data/previews/<run-id>`. Local configuration, captures and results are excluded from Git. The sample seed file is a repeatable live test input discovered through web search, not a production company list.
+
+
 A runnable Python agent (v0.2): one FastAPI process contains a durable polling worker, PostgreSQL stores jobs and an application ledger, and Playwright navigates forms with OpenAI selecting bounded actions. No broker, Redis, or microservices.
 
 **Status:** Extended in place with deterministic verified-answer filling, radio/custom dropdown handling, journaled multi-step navigation, additional ATS readers, parallel source polling, independent scheduling loops, a database-backed verified answer bank and supervisor checks. Tested with mock ATS feeds, a deterministic browser double, and crash simulations. The real Chromium/local employer test has also passed on the GitHub Actions runner. No real job application has been submitted by this project during development. This is a runnable MVP, not evidence of production reliability across arbitrary employer sites. The limit of 100/day is a configurable ceiling, not a throughput promise.

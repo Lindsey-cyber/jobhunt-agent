@@ -3,7 +3,8 @@ import re
 from bs4 import BeautifulSoup
 
 ROLE = re.compile(
-    r"machine learning|\bml\b|\bai\b|artificial intelligence|\bllm\b|research engineer|data engineer", re.I
+    r"deep learning|computer vision|machine learning|\bml\b|\bai\b|artificial intelligence|\bllm\b|research engineer|data engineer",
+    re.I,
 )
 SENIOR = re.compile(r"\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished)\b", re.I)
 EARLY = re.compile(

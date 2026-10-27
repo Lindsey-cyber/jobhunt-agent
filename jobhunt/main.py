@@ -13,7 +13,19 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from fastapi.templating import Jinja2Templates
 from sqlalchemy import func, select, text
 
-from jobhunt.db import Application, Event, Job, Session, Source, State, event, init_db, now
+from jobhunt.db import (
+    Application,
+    DiscoveryObservation,
+    DiscoveryRun,
+    Event,
+    Job,
+    Session,
+    Source,
+    State,
+    event,
+    init_db,
+    now,
+)
 from jobhunt.discovery import remember_source
 from jobhunt.net import safe_url
 from jobhunt.settings import settings
@@ -33,6 +45,10 @@ def auth(credentials: HTTPBasicCredentials = Depends(security)):
 @asynccontextmanager
 async def lifespan(app):
     init_db()
+    from jobhunt.preview import recover_previews
+
+    recover_previews()
+    app.state.preview_tasks = set()
     stop = asyncio.Event()
     task = asyncio.create_task(run(stop)) if settings.worker_enabled else None
     app.state.worker_task = task
@@ -48,6 +64,10 @@ async def lifespan(app):
         task.add_done_callback(worker_done)
     yield
     stop.set()
+    for pending in tuple(app.state.preview_tasks):
+        pending.cancel()
+    if app.state.preview_tasks:
+        await asyncio.gather(*tuple(app.state.preview_tasks), return_exceptions=True)
     if task:
         try:
             await asyncio.wait_for(task, 20)
@@ -122,12 +142,16 @@ def dashboard(request: Request, status: str = ""):
         control = s.get(State, "control")
         worker = s.get(State, "worker")
         bank = s.get(State, "answers")
+        previews = s.scalars(select(DiscoveryRun).order_by(DiscoveryRun.started_at.desc()).limit(20)).all()
         events = s.scalars(select(Event).order_by(Event.id.desc()).limit(20)).all()
         return templates.TemplateResponse(
             request=request,
             name="dashboard.html",
             context={
                 "jobs": jobs,
+                "previews": previews,
+                "discovery_only": settings.discovery_only,
+                "search_configured": bool(settings.brave_api_key or settings.tavily_api_key),
                 "paused": bool(control and control.value.get("paused")),
                 "worker": worker.value if worker else {},
                 "answers": bank.value if bank else {},
@@ -269,3 +293,110 @@ def save_answer(
             s.add(State(key="answers", value=entries))
         event(s, "verified_answer_saved", answer_key=key, question=question)
     return RedirectResponse("/", 303)
+
+
+@app.post("/previews", dependencies=[Depends(auth)])
+async def start_preview(
+    seed_urls: str = Form(""),
+    query_count: int = Form(9),
+    max_sources: int = Form(12),
+    max_link_checks: int = Form(100),
+    csrf: str = Form(),
+):
+    from jobhunt.preview import execute_preview, new_run
+
+    csrf_check(csrf)
+    with Session() as s:
+        active = s.scalar(select(DiscoveryRun).where(DiscoveryRun.status.in_(["queued", "running"])).limit(1))
+        if active:
+            raise HTTPException(409, "A preview is active; inspect its page before starting another")
+    try:
+        run_id = new_run(
+            [x.strip() for x in seed_urls.splitlines() if x.strip()],
+            query_count,
+            max_sources,
+            max_link_checks,
+        )
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+    task = asyncio.create_task(execute_preview(run_id))
+    app.state.preview_tasks.add(task)
+    task.add_done_callback(app.state.preview_tasks.discard)
+    return RedirectResponse(f"/previews/{run_id}", 303)
+
+
+@app.get("/previews/{run_id}", response_class=HTMLResponse, dependencies=[Depends(auth)])
+def preview_page(request: Request, run_id: str, view: str = "deduped", status: str = "all"):
+    with Session() as s:
+        run = s.get(DiscoveryRun, run_id)
+        if not run:
+            raise HTTPException(404, "Preview not found")
+        rows = [
+            o.data
+            for o in s.scalars(
+                select(DiscoveryObservation)
+                .where(DiscoveryObservation.run_id == run_id, DiscoveryObservation.kind == "ats_job")
+                .order_by(DiscoveryObservation.ordinal)
+            )
+        ]
+    if view != "all":
+        rows = [r for r in rows if r.get("duplicate_of") is None]
+    if status != "all":
+        rows = [r for r in rows if r["criteria_status"] == status]
+    rows.sort(key=lambda r: r.get("posted_at", ""), reverse=True)
+    rows.sort(key=lambda r: {"matched": 0, "review": 1, "rejected": 2}.get(r["criteria_status"], 3))
+    return templates.TemplateResponse(
+        request=request,
+        name="preview.html",
+        context={
+            "run": run,
+            "rows": rows[:200],
+            "total_rows": len(rows),
+            "view": view,
+            "filter_status": status,
+            "standalone": False,
+        },
+    )
+
+
+@app.get("/api/previews/{run_id}", dependencies=[Depends(auth)])
+def preview_summary(run_id: str):
+    with Session() as s:
+        run = s.get(DiscoveryRun, run_id)
+        if not run:
+            raise HTTPException(404)
+        return {
+            "id": run.id,
+            "status": run.status,
+            "started_at": run.started_at,
+            "finished_at": run.finished_at,
+            "stats": run.stats,
+            "providers": run.providers,
+            "options": run.options,
+            "error": run.error,
+        }
+
+
+@app.get("/previews/{run_id}/jobs.csv", dependencies=[Depends(auth)])
+def preview_csv(run_id: str, view: str = "deduped"):
+    from jobhunt.preview import run_dir
+
+    with Session() as s:
+        run = s.get(DiscoveryRun, run_id)
+        if not run or run.status in {"running", "queued"}:
+            raise HTTPException(409, "Preview is missing or still running")
+    path = run_dir(run_id) / ("jobs_all.csv" if view == "all" else "jobs.csv")
+    if not path.is_file():
+        raise HTTPException(404)
+    return FileResponse(path, media_type="text/csv; charset=utf-8", filename=path.name)
+
+
+@app.get("/previews/{run_id}/raw.zip", dependencies=[Depends(auth)])
+def preview_raw(run_id: str):
+    from jobhunt.preview import raw_archive
+
+    with Session() as s:
+        run = s.get(DiscoveryRun, run_id)
+        if not run or run.status in {"running", "queued"}:
+            raise HTTPException(409, "Preview is missing or still running")
+    return FileResponse(raw_archive(run_id), media_type="application/zip", filename=f"discovery-{run_id}.zip")

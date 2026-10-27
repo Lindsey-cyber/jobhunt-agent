@@ -73,6 +73,28 @@ class State(Base):
     value: Mapped[dict] = mapped_column(JSON, default=dict)
 
 
+class DiscoveryRun(Base):
+    __tablename__ = "discovery_runs"
+    id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    status: Mapped[str] = mapped_column(String(40), default="queued", index=True)
+    stats: Mapped[dict] = mapped_column(JSON, default=dict)
+    options: Mapped[dict] = mapped_column(JSON, default=dict)
+    providers: Mapped[dict] = mapped_column(JSON, default=dict)
+    error: Mapped[str] = mapped_column(Text, default="")
+
+
+class DiscoveryObservation(Base):
+    __tablename__ = "discovery_observations"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    run_id: Mapped[str] = mapped_column(String(40), index=True)
+    ordinal: Mapped[int] = mapped_column(Integer)
+    kind: Mapped[str] = mapped_column(String(30), index=True)
+    url: Mapped[str] = mapped_column(Text, default="")
+    data: Mapped[dict] = mapped_column(JSON, default=dict)
+
+
 engine = create_engine(
     settings.database_url,
     pool_pre_ping=True,

@@ -131,6 +131,7 @@ async def test_submission_transaction(tmp_path, monkeypatch, outcome):
         "policies_path": policies,
         "openai_api_key": "fake",
         "auto_submit": True,
+        "discovery_only": False,
     }.items():
         monkeypatch.setattr(settings, key, value)
     success = outcome in {"confirmed", "multistep"}

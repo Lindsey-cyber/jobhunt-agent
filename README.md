@@ -2,7 +2,7 @@
 
 A runnable Python agent (v0.2): one FastAPI process contains a durable polling worker, PostgreSQL stores jobs and an application ledger, and Playwright navigates forms with OpenAI selecting bounded actions. No broker, Redis, or microservices.
 
-**Status:** Extended in place with deterministic verified-answer filling, radio/custom dropdown handling, journaled multi-step navigation, additional ATS readers, parallel source polling, independent scheduling loops, a database-backed verified answer bank and supervisor checks. Tested with mock ATS feeds, a deterministic browser double, and crash simulations. A separate real Chromium/local employer test is included. No real job application has been submitted by this project during development. This is a runnable MVP, not evidence of production reliability across arbitrary employer sites. The limit of 100/day is a configurable ceiling, not a throughput promise.
+**Status:** Extended in place with deterministic verified-answer filling, radio/custom dropdown handling, journaled multi-step navigation, additional ATS readers, parallel source polling, independent scheduling loops, a database-backed verified answer bank and supervisor checks. Tested with mock ATS feeds, a deterministic browser double, and crash simulations. The real Chromium/local employer test has also passed on the GitHub Actions runner. No real job application has been submitted by this project during development. This is a runnable MVP, not evidence of production reliability across arbitrary employer sites. The limit of 100/day is a configurable ceiling, not a throughput promise.
 
 ## Start on a VPS
 
@@ -108,7 +108,7 @@ Optional real Chromium end-to-end test against a local HTTP employer fixture, wi
 RUN_BROWSER_TESTS=1 uv run pytest -q tests/test_real_browser.py
 ```
 
-The fixture hosts a resume-upload form and checks the confirmation ledger. Normal CI uses a deterministic browser double to check the same state machine, including failure during final click and missing confirmation. In the development sandbox, Docker/PostgreSQL were unavailable. Chromium downloaded from a fallback mirror but exited with SIGTRAP when launched; the real browser fixture did not pass here. Compose, PostgreSQL locking, live browser integration and real ATS behavior still need verification on the deployment host.
+The fixture hosts a resume-upload form and checks the confirmation ledger. Normal CI uses a deterministic browser double to check the same state machine, including failure during final click and missing confirmation. In the restricted local sandbox, Docker/PostgreSQL were unavailable and Chromium exited with SIGTRAP. The GitHub Actions runner subsequently passed all 54 tests with PostgreSQL and real Chromium enabled, plus the Compose build/start smoke test. See VALIDATION.md for the exact run. Real employer behavior and production VPS deployment still need verification.
 
 ## Protocol references
 

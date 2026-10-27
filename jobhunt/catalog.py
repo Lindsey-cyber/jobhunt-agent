@@ -69,6 +69,8 @@ def normalize(raw, spec, ordinal, registry, raw_ref=""):
         status, reason = "review", "Unresolved alert/hiring-post lead; verify exact official posting"
     if raw.get("closed_hint"):
         status, reason = "rejected", "Source explicitly marks opening closed"
+    if not official and status == "queued":
+        status, reason = "review", "Third-party title matches; official requirements have not been confirmed"
     kind = raw.get("source_date_kind", "unknown")
     original = raw.get("reported_date", "")
     date = discovery.parse_date(original)

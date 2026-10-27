@@ -160,6 +160,8 @@ def new_run(seed_urls=None, query_count=9, max_sources=12, max_link_checks=100, 
 
 
 def safe_csv(value):
+    if isinstance(value, (dict, list)):
+        value = json.dumps(value, ensure_ascii=False)
     value = str(value if value is not None else "")
     return "'" + value if value.lstrip().startswith(("=", "+", "-", "@", "\t", "\r")) else value
 

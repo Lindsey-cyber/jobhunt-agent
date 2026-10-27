@@ -50,6 +50,8 @@ def source_for(url):
     parts = p.path.strip("/").split("/")
     host = p.hostname or ""
     if host in {"boards.greenhouse.io", "job-boards.greenhouse.io", "boards.eu.greenhouse.io"} and parts[0]:
+        if parts[0] == "embed" and not parse_qs(p.query).get("for"):
+            return "career", canonical_url(url)  # A token alone does not identify the employer board.
         slug = parse_qs(p.query).get("for", [parts[0]])[0] if parts[0] == "embed" else parts[0]
         return "greenhouse", f"https://{host}/{slug}"
     if host in {"jobs.lever.co", "jobs.eu.lever.co"} and parts[0]:

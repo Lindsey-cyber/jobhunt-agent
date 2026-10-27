@@ -1,0 +1,10 @@
+{
+  "sites": {
+    "example-employer.com": {
+      "automation_allowed": false,
+      "submission_allowed": false,
+      "allowed_hosts": [],
+      "permission_reference": "Record the employer/site permission or applicable published policy before enabling. Exact hostnames only."
+    }
+  }
+}

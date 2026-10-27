@@ -1,0 +1,13 @@
+{
+  "answers": {
+    "first_name": {"question": "First Name", "aliases": ["First name (required)"], "value": "REPLACE_ME", "verified": false},
+    "last_name": {"question": "Last Name", "aliases": [], "value": "REPLACE_ME", "verified": false},
+    "full_name": {"question": "Full Name", "aliases": ["Name"], "value": "REPLACE_ME", "verified": false},
+    "email": {"question": "Email", "aliases": ["Email address"], "value": "REPLACE_ME", "verified": false},
+    "phone": {"question": "Phone", "aliases": ["Phone number"], "value": "REPLACE_ME", "verified": false},
+    "location": {"question": "Current location", "aliases": [], "value": "REPLACE_ME", "verified": false},
+    "linkedin": {"question": "LinkedIn", "aliases": ["LinkedIn URL"], "value": "REPLACE_ME", "verified": false},
+    "work_authorization": {"question": "Are you legally authorized to work in the United States?", "aliases": [], "value": "REPLACE_WITH_TRUTHFUL_ANSWER", "verified": false},
+    "sponsorship": {"question": "Will you now or in the future require sponsorship for employment visa status?", "aliases": [], "value": "REPLACE_WITH_TRUTHFUL_ANSWER", "verified": false}
+  }
+}

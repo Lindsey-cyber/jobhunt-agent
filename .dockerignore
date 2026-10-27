@@ -1,0 +1,14 @@
+.venv
+.git
+.env
+data
+tests
+*.zip
+.pytest_cache
+__pycache__
+config/profile.json
+config/policies.json
+config/resume.pdf
+tmp
+pw-browsers
+.ruff_cache

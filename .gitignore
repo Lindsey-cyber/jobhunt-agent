@@ -1,0 +1,12 @@
+.venv/
+.env
+data/
+config/profile.json
+config/policies.json
+config/resume.pdf
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.zip
+tmp/
+pw-browsers/

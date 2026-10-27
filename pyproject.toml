@@ -1,0 +1,32 @@
+[project]
+name = "jobhunt-agent"
+version = "0.1.0"
+description = "Durable job discovery and guarded browser application agent"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+    "sqlalchemy>=2.0,<3",
+    "psycopg[binary]>=3.2,<4",
+    "httpx[socks]>=0.28,<1",
+    "beautifulsoup4>=4.13,<5",
+    "pydantic-settings>=2.8,<3",
+    "openai>=1.75,<3",
+    "playwright==1.56.0",
+    "jinja2>=3.1,<4",
+    "python-multipart>=0.0.20,<1",
+]
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.26,<2", "respx>=0.22,<1", "ruff>=0.11,<1"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/conftest.py" = ["E402"]

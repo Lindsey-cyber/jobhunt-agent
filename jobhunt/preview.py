@@ -13,6 +13,7 @@ from urllib.parse import urlsplit
 from zipfile import ZIP_DEFLATED, ZipFile
 
 import httpx
+from bs4 import BeautifulSoup
 from sqlalchemy import select
 
 from jobhunt import discovery
@@ -61,6 +62,37 @@ CLOSED = re.compile(
     r"(?:this (?:job|position|opening) (?:is |has been )?(?:no longer available|closed|filled)|job (?:not found|has expired)|no longer accepting applications|job you are looking for is no longer)",
     re.I,
 )
+
+
+def structured_posting(html, url, title):
+    """Recover official publication from an actual JobPosting document, never startDate."""
+    from jobhunt.identity import identity
+
+    jobs = []
+
+    def walk(obj):
+        if isinstance(obj, list):
+            for child in obj:
+                walk(child)
+        elif isinstance(obj, dict):
+            kind = obj.get("@type", [])
+            if kind == "JobPosting" or isinstance(kind, list) and "JobPosting" in kind:
+                jobs.append(obj)
+            for child in obj.values():
+                if isinstance(child, (dict, list)):
+                    walk(child)
+
+    for script in BeautifulSoup(html, "html.parser").select('script[type="application/ld+json"]'):
+        try:
+            walk(json.loads(script.string or script.get_text()))
+        except (ValueError, TypeError):
+            pass
+    for job in jobs:
+        if job.get("url") and identity(job["url"]) == identity(url):
+            return job
+        if len(jobs) == 1 and str(job.get("title", "")).strip().casefold() == title.strip().casefold():
+            return job
+    return None
 
 
 def run_dir(run_id):
@@ -207,10 +239,11 @@ async def check_links(web, rows, budget):
     targets = {}
     for row in candidates:
         if row["canonical_url"] not in targets and len(targets) < budget:
-            targets[row["canonical_url"]] = row["url"]
+            targets[row["canonical_url"]] = row
     sem = asyncio.Semaphore(4)
 
-    async def check(url):
+    async def check(row):
+        url = row["url"]
         try:
             async with sem:
                 r = await asyncio.wait_for(web.get(url), 40)
@@ -224,6 +257,10 @@ async def check_links(web, rows, budget):
                 if closed
                 else "Public listing returned HTTP 200; no submission attempted",
                 "checked_at": now().isoformat() + "Z",
+                "structured_job": structured_posting(r.text, url, row["title"])
+                if not closed and visible
+                else None,
+                "response_capture": getattr(web, "last_ref", ""),
             }
         except httpx.HTTPStatusError as exc:
             code = exc.response.status_code

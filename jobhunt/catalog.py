@@ -616,6 +616,60 @@ async def _run_catalog(registry_path=None, import_paths=(), max_sources=35, link
         for row in unique:
             if row.get("checked_at"):
                 row["last_verified"] = row["checked_at"]
+            structured = row.pop("structured_job", None)
+            host = urlsplit(row["url"]).hostname or ""
+            trusted = host in {
+                "job-boards.greenhouse.io",
+                "boards.greenhouse.io",
+                "jobs.lever.co",
+                "jobs.ashbyhq.com",
+                "jobs.smartrecruiters.com",
+            } or host.endswith(".myworkdayjobs.com")
+            if not structured or not trusted or row["link_status"] != "valid":
+                continue
+            address = structured.get("jobLocation", [])
+            address = address if isinstance(address, list) else [address]
+            location = (
+                "; ".join(
+                    ", ".join(str(a) for a in obj.get("address", {}).values() if a)
+                    for obj in address
+                    if isinstance(obj, dict) and isinstance(obj.get("address"), dict)
+                )
+                or row["location"]
+            )
+            org = structured.get("hiringOrganization", {})
+            company = org.get("name", row["company"]) if isinstance(org, dict) else row["company"]
+            spec = {
+                "url": row["url"],
+                "kind": "career",
+                "channel": "official_page",
+                "official": True,
+                "company": company,
+            }
+            record = emit(
+                {
+                    "company": company,
+                    "title": structured.get("title") or row["title"],
+                    "location": location,
+                    "url": row["url"],
+                    "application_url": row["application_url"] or row["url"],
+                    "description": structured.get("description", ""),
+                    "reported_date": structured.get("datePosted", ""),
+                    "source_date_kind": "published_at",
+                    "official": True,
+                }
+            )
+            record["raw_ref"] = row.get("response_capture", "")
+            for key in [
+                "link_status",
+                "http_status",
+                "final_url",
+                "checked_at",
+                "last_verified",
+                "link_reason",
+            ]:
+                if key in row:
+                    record[key] = row[key]
     except asyncio.CancelledError:
         fatal = "Interrupted; evidence retained, no application side effects"
     except Exception as exc:

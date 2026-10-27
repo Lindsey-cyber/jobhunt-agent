@@ -124,6 +124,25 @@ def normalize(raw, spec, ordinal, registry, raw_ref=""):
 
 
 def group_rows(rows):
+    # An official API may map an employer-owned URL to a hosted ATS identity.
+    # Reuse that explicit mapping for third-party observations of the same URL.
+    aliases = {}
+    for row in rows:
+        if row["official"]:
+            aliases.setdefault(posting_key(row["url"]), {})[row["identity"]] = row.get("identity_url") or row["url"]
+    for row in rows:
+        candidates = aliases.get(posting_key(row["url"]), {})
+        if len(candidates) == 1:
+            key, canonical = next(iter(candidates.items()))
+            row.update(
+                {
+                    "identity": key,
+                    "identity_url": canonical,
+                    "fingerprint": key,
+                    "posting_key": posting_key(canonical),
+                    "canonical_url": posting_key(canonical),
+                }
+            )
     groups = {}
     for row in rows:
         groups.setdefault(row["identity"], []).append(row)

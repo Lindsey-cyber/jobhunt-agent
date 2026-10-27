@@ -41,6 +41,9 @@ def test_distinct_job_ids_not_company_title_merge():
     )
     assert custom["identity"] == a["identity"]
     assert len(group_rows([a, custom])) == 1
+    third_party_custom = row("https://careers.acme.com/openings?gh_jid=123&utm_source=repo")
+    assert len(group_rows([a, custom, third_party_custom])) == 1
+    assert third_party_custom["identity"] == custom["identity"]
     assert identity("https://nvidia.wd5.myworkdayjobs.com/en-US/Board/job/USA/Test_JR123") == identity(
         "https://nvidia.wd5.myworkdayjobs.com/Board/job/USA/Other_JR123"
     )

@@ -243,10 +243,12 @@ async def heartbeat_loop(stop, lock):
 async def run(stop):
     global _lease
     lock = engine.connect()
+    acquired = False
     try:
         if engine.dialect.name == "postgresql":
             if not lock.scalar(text("SELECT pg_try_advisory_lock(742019384)")):
                 raise RuntimeError("Another worker owns the database lock")
+            acquired = True
             lock.commit()
         _lease = lock
         recover()
@@ -256,4 +258,14 @@ async def run(stop):
             group.create_task(application_loop(stop))
     finally:
         _lease = None
-        lock.close()
+        try:
+            if acquired and not lock.closed and not lock.invalidated:
+                # Returning a connection to the pool does not release session advisory locks.
+                lock.rollback()
+                lock.execute(text("SELECT pg_advisory_unlock(742019384)"))
+                lock.commit()
+        except Exception:
+            log.exception("Cannot release worker lock; discarding the physical connection")
+            lock.invalidate()
+        finally:
+            lock.close()

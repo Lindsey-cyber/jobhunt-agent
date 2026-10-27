@@ -340,3 +340,18 @@ def test_secret_scanner_never_prints_values(tmp_path, monkeypatch):
     path.write_text("OPENAI_KEY = 'sk-proj-" + "x" * 40 + "'")
     bad = violations([path])
     assert bad and "x" * 40 not in str(bad)
+
+
+@pytest.mark.skipif(engine.dialect.name != "postgresql", reason="Needs ephemeral PostgreSQL test database")
+async def test_worker_shutdown_releases_session_lock():
+    from sqlalchemy import text
+
+    stop = asyncio.Event()
+    stop.set()
+    # Keep a different backend checked out so pool reuse cannot hide a leaked lock.
+    with engine.connect() as probe:
+        await worker.run(stop)
+        try:
+            assert probe.scalar(text("SELECT pg_try_advisory_lock(742019384)"))
+        finally:
+            probe.execute(text("SELECT pg_advisory_unlock(742019384)"))

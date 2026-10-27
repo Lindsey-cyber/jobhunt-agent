@@ -1,4 +1,37 @@
-# Validation record · v0.2 · 2026-10-28
+# Validation record · Discovery Preview · 2026-10-27 UTC
+
+## Current live discovery verification
+
+Functional commit `6bd7b6add965bfa2b70969e4f01c02abe0163f21` passed [CI](https://github.com/Lindsey-cyber/jobhunt-agent/actions/runs/40594404135): **62 tests passed** with PostgreSQL 17 and a real Chromium fixture, Ruff and the source secret scan passed, and the isolated Docker Compose startup/health check passed. Local tests: **59 passed, 3 skipped** (PostgreSQL and opt-in real browser). A Starlette/httpx dependency deprecation warning remains.
+
+[Live discovery and native ARM64 run](https://github.com/Lindsey-cyber/jobhunt-agent/actions/runs/40594404305), preview `9b93c546112745d48afaf92015780606`, completed **2026-10-27 22:23:30 UTC**:
+
+| Measurement | Actual result |
+| --- | ---: |
+| Brave/Tavily requests / search results | 0 / 0 — neither key configured |
+| Public ATS boards read / failed | 6 / 0 |
+| Raw ATS job observations | 476 |
+| Company + title deduplicated jobs | 446 |
+| Duplicate observations retained | 30 |
+| Location-aware unique jobs | 471 |
+| Different-location rows merged by company + title | 25 |
+| Criteria matched / listing links verified | 16 / 16 |
+| Review / rejected | 21 / 409 |
+| Listing links checked / invalid / blocked | 100 / 0 / 0 |
+| Listing URLs not checked | 376 |
+| Application flows / applications submitted | 0 / 0 |
+
+Sources were Quora (9), NewsBreak (66), BotAuto (25), SentiLink (39), Applied Intuition (329), and ID.me University Recruiting (8). These are counts before filtering. The sample boards were found through external web research and read through actual public ATS APIs. This is **not** a real Brave/Tavily credential test. Run status is correctly `partial_missing_search_keys`. [All 16 matched positions with URLs and dates](docs/LIVE_DISCOVERY_RESULTS.md). The private workflow artifact contains original responses, all 476 rows, dedup reasons and source dates. It expires after 30 days; download it for longer retention.
+
+Matched examples include Quora Machine Learning Engineer New Grad (published 2026-10-15), Quora New Grad ML Platform (published 2026-09-25), Applied Intuition Research Engineer New Grad 2027 (published 2026-08-14), NewsBreak Junior & New Grad ML Infra (updated 2026-07-31; publication unknown) and BotAuto Deep Learning & Vision New Grad (updated 2026-09-25; publication unknown). Some other matched openings were published in 2024–2025: open/listing-accessible does not mean recent. Matches are heuristic candidates, not proven personal eligibility or working application forms.
+
+The same workflow built the Dockerfile natively on `aarch64` and launched Chromium `141.0.7390.37` inside the container. The separate script opened generated test HTML only. OCI itself was **not connected or deployed**; see [OCI_ARM64.md](docs/OCI_ARM64.md).
+
+The initial local live run captured six DNS failures and zero jobs; it was not presented as successful. The successful batch ran in GitHub Actions with normal outbound networking. Provider contract/unit tests use mocks and are separate from the live ATS evidence.
+
+The actual 476-row artifact was also imported into an isolated local preview-only database: dashboard, filtered preview, JSON summary, deduplicated CSV, all-observation CSV and raw ZIP routes all returned HTTP 200. The Job/Application ledgers remained empty and the worker was disabled.
+
+## Previous v0.2 validation
 
 ## Verified GitHub Actions run
 

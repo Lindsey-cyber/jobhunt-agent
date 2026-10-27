@@ -6,7 +6,7 @@
 uv run python -m jobhunt preview --seed-file config/preview-sources.example.json --queries 9 --max-sources 12 --link-checks 100
 ```
 
-Brave/Tavily keys are optional for testing explicitly supplied public ATS sources, but a missing key means that provider was **not tested**. Every run retains raw responses, all location variants, filtering reasons, reported dates/URLs, CSV exports and an HTML report under `data/previews/<run-id>`. Local configuration, captures and results are excluded from Git. The sample seed file is a repeatable live test input discovered through web search, not a production company list.
+Brave/Tavily keys are optional for testing explicitly supplied public ATS sources, but a missing key means that provider was **not tested**. Every run retains raw responses, all location variants, filtering reasons, reported dates/URLs, CSV exports and an HTML report under `data/previews/<run-id>`. Local configuration, captures and results are excluded from Git. The sample seed file is a repeatable live test input discovered through web search, not a production company list. See [preview instructions](docs/DISCOVERY_PREVIEW.md), [actual live results](VALIDATION.md), and [Oracle A1 ARM64 setup](docs/OCI_ARM64.md).
 
 
 A runnable Python agent (v0.2): one FastAPI process contains a durable polling worker, PostgreSQL stores jobs and an application ledger, and Playwright navigates forms with OpenAI selecting bounded actions. No broker, Redis, or microservices.

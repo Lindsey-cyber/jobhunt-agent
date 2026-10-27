@@ -44,8 +44,18 @@ COLUMNS = [
     "final_url",
     "raw_ref",
     "description",
-    "identity", "posting_key", "channel", "company_size", "company_size_basis", "company_size_source",
-    "experience_requirement", "first_seen", "last_verified", "earliest_source", "official_source", "attributions",
+    "identity",
+    "posting_key",
+    "channel",
+    "company_size",
+    "company_size_basis",
+    "company_size_source",
+    "experience_requirement",
+    "first_seen",
+    "last_verified",
+    "earliest_source",
+    "official_source",
+    "attributions",
 ]
 CLOSED = re.compile(
     r"(?:this (?:job|position|opening) (?:is |has been )?(?:no longer available|closed|filled)|job (?:not found|has expired)|no longer accepting applications|job you are looking for is no longer)",
@@ -177,9 +187,7 @@ def deduplicate(rows):
         if existing:
             row["duplicate_of"] = existing["ordinal"]
             row["duplicate_reason"] = (
-                "same_url"
-                if row["canonical_url"] == existing["canonical_url"]
-                else "same_posting_identity"
+                "same_url" if row["canonical_url"] == existing["canonical_url"] else "same_posting_identity"
             )
             row["location_variant"] = (
                 row["location"].strip().casefold() != existing["location"].strip().casefold()

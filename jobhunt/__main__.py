@@ -13,7 +13,9 @@ from jobhunt.settings import settings
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["check", "add-source", "init-db", "preview", "catalog", "import-mail"])
+    parser.add_argument(
+        "command", choices=["check", "add-source", "init-db", "preview", "catalog", "import-mail"]
+    )
     parser.add_argument("url", nargs="?")
     parser.add_argument("--seed-url", action="append", default=[])
     parser.add_argument("--seed-file")
@@ -28,7 +30,15 @@ def main():
         from jobhunt.catalog import run_catalog
 
         init_db()
-        result = asyncio.run(run_catalog(args.registry, args.import_file, args.max_sources, args.link_checks, force=not args.incremental))
+        result = asyncio.run(
+            run_catalog(
+                args.registry,
+                args.import_file,
+                args.max_sources,
+                args.link_checks,
+                force=not args.incremental,
+            )
+        )
         print(json.dumps(result, indent=2, ensure_ascii=False))
         print("Exports: " + str(settings.data_dir / "previews" / result["id"]))
         if result["status"] == "failed":

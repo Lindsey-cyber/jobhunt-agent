@@ -258,7 +258,9 @@ async def board(web, source):
                 break
             offset += 100
     elif source.kind == "ashby":
-        data = (await web.get(f"https://api.ashbyhq.com/posting-api/job-board/{slug}")).json()
+        data = (
+            await web.get(f"https://api.ashbyhq.com/posting-api/job-board/{slug}", max_bytes=32_000_000)
+        ).json()
         for j in data.get("jobs", []):
             if j.get("isListed", True):
                 store_job(

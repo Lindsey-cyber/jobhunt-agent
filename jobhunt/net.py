@@ -37,6 +37,10 @@ class Web:
     async def request(self, method, url, **kwargs):
         from urllib.parse import urljoin
 
+        max_bytes = kwargs.pop("max_bytes", 8_000_000)
+        if not 1 <= max_bytes <= 32_000_000:
+            raise ValueError("Response limit outside supported bounds")
+
         for redirect in range(6):
             await safe_url(url)
             for attempt in range(settings.http_retries + 1):
@@ -65,7 +69,7 @@ class Web:
                 url = target
                 continue
             r.raise_for_status()
-            if len(r.content) > 8_000_000:
+            if len(r.content) > max_bytes:
                 raise ValueError("Response too large")
             return r
         raise ValueError("Too many redirects")

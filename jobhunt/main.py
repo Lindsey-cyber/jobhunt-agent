@@ -50,6 +50,12 @@ async def lifespan(app):
     recover_previews()
     app.state.preview_tasks = set()
     stop = asyncio.Event()
+    if settings.catalog_scheduled:
+        from jobhunt.catalog import scheduled_catalog
+
+        catalog_task = asyncio.create_task(scheduled_catalog(stop))
+        app.state.preview_tasks.add(catalog_task)
+        catalog_task.add_done_callback(app.state.preview_tasks.discard)
     task = asyncio.create_task(run(stop)) if settings.worker_enabled else None
     app.state.worker_task = task
     if task:
@@ -183,8 +189,13 @@ def outreach_page(request: Request):
     from jobhunt.db import Opportunity
 
     with Session() as s:
-        rows = [o.payload for o in s.scalars(select(Opportunity).order_by(Opportunity.last_seen.desc()).limit(10000))]
-    return templates.TemplateResponse(request=request, name="outreach.html", context={"leads": outreach_queue(rows)})
+        rows = [
+            o.payload
+            for o in s.scalars(select(Opportunity).order_by(Opportunity.last_seen.desc()).limit(10000))
+        ]
+    return templates.TemplateResponse(
+        request=request, name="outreach.html", context={"leads": outreach_queue(rows)}
+    )
 
 
 @app.get("/api/outreach", dependencies=[Depends(auth)])
@@ -434,9 +445,20 @@ def preview_csv(run_id: str, view: str = "deduped", status: str = "all", days: i
         from jobhunt.catalog import freshness
         from jobhunt.preview import csv_content
 
-        rows = json.loads(path.with_name("jobs_all.json" if view == "all" else "jobs_deduplicated.json").read_text())
-        rows = [r for r in rows if (status == "all" or r["criteria_status"] == status) and (days not in {7, 30} or freshness(r, days))]
-        return Response(csv_content(rows), media_type="text/csv; charset=utf-8", headers={"Content-Disposition": 'attachment; filename="filtered-jobs.csv"'})
+        rows = json.loads(
+            path.with_name("jobs_all.json" if view == "all" else "jobs_deduplicated.json").read_text()
+        )
+        rows = [
+            r
+            for r in rows
+            if (status == "all" or r["criteria_status"] == status)
+            and (days not in {7, 30} or freshness(r, days))
+        ]
+        return Response(
+            csv_content(rows),
+            media_type="text/csv; charset=utf-8",
+            headers={"Content-Disposition": 'attachment; filename="filtered-jobs.csv"'},
+        )
     return FileResponse(path, media_type="text/csv; charset=utf-8", filename=path.name)
 
 

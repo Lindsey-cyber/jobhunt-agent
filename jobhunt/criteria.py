@@ -33,7 +33,7 @@ def text(html):
     return BeautifulSoup(html or "", "html.parser").get_text(" ", strip=True)
 
 
-def evaluate(title, location, description, *, requires_sponsorship=None):
+def evaluate(title, location, description, *, requires_sponsorship=None, unrestricted_authorization=None):
     body = text(description)
     if not ROLE.search(title):
         return "rejected", "Role outside AI/ML/data/research engineering"
@@ -41,6 +41,12 @@ def evaluate(title, location, description, *, requires_sponsorship=None):
         return "rejected", "Senior role"
     if re.search(r"\bintern(?:ship)?\b", title, re.I):
         return "rejected", "Internship, outside full-time early-career scope"
+    if not re.search(r"\bengineer(?:ing)?\b|research scientist|researcher|applied scientist", title, re.I):
+        return "review" if re.search(
+            r"data scien", title, re.I
+        ) else "rejected", "Adjacent/non-engineering role outside primary application scope"
+    if re.search(r"post.?doc|\bph\.?d\b|doctorate", title, re.I):
+        return "review", "Doctoral/postdoctoral qualification must be checked against verified education"
     restrictions = []
     for match in NO_SPONSOR.finditer(body):
         before, after = body[max(0, match.start() - 30) : match.start()], body[match.end() : match.end() + 40]
@@ -55,7 +61,20 @@ def evaluate(title, location, description, *, requires_sponsorship=None):
         return (
             ("rejected", "Explicit restriction conflicts with verified sponsorship requirement")
             if requires_sponsorship is True
-            else ("review", "Explicit sponsorship/work authorization restriction; verified personal facts unavailable")
+            else (
+                "review",
+                "Explicit sponsorship/work authorization restriction; verified personal facts unavailable",
+            )
+        )
+    if (
+        restrictions
+        and any("unrestricted" in r.casefold() for r in restrictions)
+        and unrestricted_authorization is not True
+    ):
+        return (
+            ("rejected", "Unrestricted authorization requirement conflicts with verified facts")
+            if unrestricted_authorization is False
+            else ("review", "Unrestricted authorization requirement needs a separately verified answer")
         )
     if re.search(
         r"(?:must|require[sd]?).{0,70}(?:us|u\.s\.)\s+(?:citizenship|citizen)|us citizens only", body, re.I
@@ -76,6 +95,11 @@ def evaluate(title, location, description, *, requires_sponsorship=None):
             return "review", "Experience requirement needs verification"
     if not (US.search(location) or US_STATE.search(location)):
         return "review", "US eligibility of location needs verification"
-    if not EARLY.search(title + " " + body):
+    body_early = re.search(
+        r"new (?:college )?grad|entry.?level|junior|early.?career|university grad|\b[012]\+?\s+years?\s+(?:of\s+)?(?:relevant |professional |industry |work )?experience",
+        body,
+        re.I,
+    )
+    if not (EARLY.search(title) or body_early):
         return "review", "Early-career eligibility needs verification"
     return "queued", "Matches criteria; missing sponsorship information is allowed"

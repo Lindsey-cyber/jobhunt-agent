@@ -500,7 +500,7 @@
       "url": "https://news.ycombinator.com/submitted?id=whoishiring",
       "kind": "hn",
       "channel": "hn_hiring",
-      "priority": 20,
+      "priority": 85,
       "official": false,
       "timeout": 100,
       "comment_limit": 40
@@ -509,7 +509,7 @@
       "url": "https://www.ycombinator.com/jobs",
       "kind": "career",
       "channel": "yc_jobs",
-      "priority": 15,
+      "priority": 80,
       "official": false,
       "timeout": 35
     },
@@ -517,7 +517,7 @@
       "url": "https://jobs.a16z.com/jobs",
       "kind": "career",
       "channel": "vc_portfolio",
-      "priority": 15,
+      "priority": 80,
       "official": false,
       "timeout": 35
     },
@@ -525,7 +525,7 @@
       "url": "https://aijobs.net/",
       "kind": "career",
       "channel": "ai_specialist",
-      "priority": 15,
+      "priority": 80,
       "official": false,
       "timeout": 35
     },
@@ -568,6 +568,15 @@
       "priority": 5,
       "enabled": false,
       "skip_reason": "Account/site authorization not configured"
+    },
+    {
+      "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages",
+      "kind": "gmail",
+      "channel": "gmail_alerts",
+      "priority": 115,
+      "enabled": false,
+      "skip_reason": "VPS Gmail read-only OAuth is not configured; connector/manual message import remains available",
+      "message_limit": 30
     }
   ]
 }

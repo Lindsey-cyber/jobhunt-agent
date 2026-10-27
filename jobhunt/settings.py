@@ -35,6 +35,10 @@ class Settings(BaseSettings):
     discovery_registry: Path = Path("config/discovery-sources.example.json")
     catalog_interval: int = 21600
     catalog_scheduled: bool = False
+    gmail_access_token: str = ""
+    gmail_client_id: str = ""
+    gmail_client_secret: str = ""
+    gmail_refresh_token: str = ""
 
 
 settings = Settings()

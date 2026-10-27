@@ -1,8 +1,9 @@
+import asyncio
 import json
 import logging
 import re
 from datetime import datetime, timezone
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import parse_qs, urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 from sqlalchemy import or_, select
@@ -20,6 +21,7 @@ ROLES = [
     "LLM engineer",
     "data engineer",
     "ML infrastructure engineer",
+    "ML platform engineer",
     "research engineer",
     "ML training engineer",
     "applied AI engineer",
@@ -31,6 +33,10 @@ SITES = [
     "site:jobs.ashbyhq.com",
     "site:myworkdayjobs.com",
     "careers",
+    "site:jobs.smartrecruiters.com",
+    "site:recruitee.com",
+    '"remote"',
+    '"relocation"',
 ]
 
 
@@ -39,7 +45,8 @@ def source_for(url):
     parts = p.path.strip("/").split("/")
     host = p.hostname or ""
     if host in {"boards.greenhouse.io", "job-boards.greenhouse.io", "boards.eu.greenhouse.io"} and parts[0]:
-        return "greenhouse", f"https://{host}/{parts[0]}"
+        slug = parse_qs(p.query).get("for", [parts[0]])[0] if parts[0] == "embed" else parts[0]
+        return "greenhouse", f"https://{host}/{slug}"
     if host in {"jobs.lever.co", "jobs.eu.lever.co"} and parts[0]:
         return "lever", f"https://{host}/{parts[0]}"
     if host == "jobs.ashbyhq.com" and parts[0]:
@@ -49,21 +56,29 @@ def source_for(url):
         start = 1 if re.fullmatch(r"[a-z]{2}-[A-Z]{2}", parts[0]) else 0
         board_name = parts[start] if len(parts) > start else ""
         return "workday", f"{p.scheme}://{host}/{board_name}"
+    if host in {"jobs.smartrecruiters.com", "careers.smartrecruiters.com"} and parts[0]:
+        return "smartrecruiters", f"https://careers.smartrecruiters.com/{parts[0]}"
+    if host.endswith(".recruitee.com"):
+        return "recruitee", f"https://{host}"
     return "career", canonical_url(url)
 
 
 def remember_source(url):
     kind, canonical = source_for(url)
-    with Session.begin() as s:
-        if not s.scalar(select(Source).where(Source.url == canonical)):
-            s.add(Source(url=canonical, kind=kind))
+    try:
+        with Session.begin() as s:
+            if not s.scalar(select(Source).where(Source.url == canonical)):
+                s.add(Source(url=canonical, kind=kind))
+    except IntegrityError:
+        pass
 
 
 def parse_date(value):
     try:
         if isinstance(value, (int, float)):
             return datetime.fromtimestamp(value / 1000, timezone.utc).replace(tzinfo=None)
-        return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return parsed.astimezone(timezone.utc).replace(tzinfo=None) if parsed.tzinfo else parsed
     except (ValueError, TypeError, AttributeError):
         return None
 
@@ -109,34 +124,40 @@ async def search(web):
         if not state:
             state = State(key="search_cursor", value={})
             s.add(state)
-        state.value = {"cursor": cursor + 6}
-    for i in range(cursor, cursor + 6):
+        state.value = {"cursor": cursor + settings.search_queries_per_cycle}
+    for i in range(cursor, cursor + settings.search_queries_per_cycle):
         query = f'{ROLES[i % len(ROLES)]} ("new grad" OR "entry level" OR junior) "United States" {SITES[(i // len(ROLES)) % len(SITES)]}'
-        try:
-            if settings.brave_api_key:
-                r = await web.get(
-                    "https://api.search.brave.com/res/v1/web/search",
-                    params={"q": query, "count": 20, "freshness": "pm"},
-                    headers={"X-Subscription-Token": settings.brave_api_key},
-                )
-                urls = [x["url"] for x in r.json().get("web", {}).get("results", [])]
-            else:
-                r = await web.client.post(
-                    "https://api.tavily.com/search",
-                    headers={"Authorization": f"Bearer {settings.tavily_api_key}"},
-                    json={
-                        "query": query,
-                        "max_results": 20,
-                        "search_depth": "advanced",
-                    },
-                )
-                r.raise_for_status()
-                urls = [x["url"] for x in r.json().get("results", [])]
-            for url in urls:
-                if urlsplit(url).scheme in {"https", "http"}:
-                    remember_source(url)
-        except Exception:
-            log.exception("Search failed")
+        for provider in ["brave", "tavily"]:
+            if not getattr(settings, provider + "_api_key"):
+                continue
+            try:
+                if provider == "brave":
+                    r = await web.get(
+                        "https://api.search.brave.com/res/v1/web/search",
+                        params={
+                            "q": query,
+                            "count": 20,
+                            "country": "US",
+                            "freshness": "pm",
+                            "offset": (i // (len(ROLES) * len(SITES))) % 3,
+                        },
+                        headers={"X-Subscription-Token": settings.brave_api_key},
+                    )
+                    urls = [x["url"] for x in r.json().get("web", {}).get("results", [])]
+                else:
+                    r = await web.post_read(
+                        "https://api.tavily.com/search",
+                        headers={"Authorization": f"Bearer {settings.tavily_api_key}"},
+                        json={"query": query, "max_results": 20, "search_depth": "advanced"},
+                    )
+                    urls = [x["url"] for x in r.json().get("results", [])]
+                for url in urls:
+                    if urlsplit(url).scheme in {"https", "http"}:
+                        remember_source(url)
+            except Exception as exc:
+                log.warning("Search provider %s failed: %s", provider, type(exc).__name__)
+                with Session.begin() as s:
+                    event(s, "search_failed", provider=provider, error=type(exc).__name__)
 
 
 async def board(web, source):
@@ -204,6 +225,10 @@ async def board(web, source):
                 )
     elif source.kind == "workday":
         await workday(web, source.url)
+    elif source.kind in {"smartrecruiters", "recruitee"}:
+        from jobhunt import ats
+
+        await getattr(ats, source.kind)(web, source.url, store_job)
     else:
         await career(web, source.url)
 
@@ -221,7 +246,7 @@ async def workday(web, url):
         from jobhunt.net import safe_url
 
         await safe_url(endpoint)
-        r = await web.client.post(
+        r = await web.post_read(
             endpoint, json={"appliedFacets": {}, "limit": 20, "offset": offset, "searchText": ""}
         )
         if r.status_code in {404, 405}:
@@ -252,6 +277,14 @@ async def career(web, url):
     if not await web.allowed(url):
         raise ValueError("robots.txt blocks crawling or could not be verified")
     r = await web.get(url)
+    if "xml" in r.headers.get("content-type", "") or r.text.lstrip().startswith("<?xml"):
+        for match in re.findall(r"<loc>\s*([^<]+)\s*</loc>", r.text)[:500]:
+            link = match.strip().replace("&amp;", "&")
+            if urlsplit(link).netloc == urlsplit(url).netloc and re.search(
+                r"career|job|position|opening|sitemap", link, re.I
+            ):
+                remember_source(link)
+        return
     soup = BeautifulSoup(r.text, "html.parser")
 
     def walk(obj):
@@ -260,6 +293,10 @@ async def career(web, url):
                 walk(child)
         elif isinstance(obj, dict):
             types = obj.get("@type", [])
+            if types == "ListItem" and isinstance(obj.get("url"), str):
+                link = urljoin(url, obj["url"])
+                if urlsplit(link).netloc == urlsplit(url).netloc:
+                    remember_source(link)
             if types == "JobPosting" or isinstance(types, list) and "JobPosting" in types:
                 org = obj.get("hiringOrganization", {})
                 locations = obj.get("jobLocation", [])
@@ -284,14 +321,14 @@ async def career(web, url):
             walk(json.loads(script.string or script.get_text()))
         except (ValueError, TypeError):
             continue
-    for a in soup.select("a[href]")[:400]:
-        link = urljoin(str(r.url), a["href"])
+    for a in soup.select("a[href],iframe[src],link[rel='sitemap']")[:500]:
+        link = urljoin(str(r.url), a.get("href", a.get("src", "")))
         if urlsplit(link).scheme not in {"http", "https"}:
             continue
         kind, _ = source_for(link)
         if kind != "career" or (
             urlsplit(link).netloc == urlsplit(url).netloc
-            and re.search(r"job|career|position|opening", link, re.I)
+            and re.search(r"job|career|position|opening|sitemap", link, re.I)
         ):
             remember_source(link)
 
@@ -302,15 +339,19 @@ async def discover():
         await search(web)
         with Session() as s:
             sources = s.scalars(
-                select(Source).order_by(Source.last_checked.asc().nullsfirst()).limit(60)
+                select(Source)
+                .order_by(Source.last_checked.asc().nullsfirst())
+                .limit(settings.sources_per_cycle)
             ).all()
-        for source in sources:
+
+        async def poll_source(source):
             if source.last_checked and (now() - source.last_checked).total_seconds() < min(
                 86400, settings.discovery_interval * 2 ** min(source.failures, 5)
             ):
-                continue
+                return
             try:
-                await board(web, source)
+                async with semaphore:
+                    await asyncio.wait_for(board(web, source), timeout=90)
                 error = ""
             except Exception as e:
                 error = f"{type(e).__name__}: {str(e)[:300]}"
@@ -320,6 +361,9 @@ async def discover():
                 row.last_checked = now()
                 row.error = error
                 row.failures = row.failures + 1 if error else 0
+
+        semaphore = asyncio.Semaphore(settings.discovery_concurrency)
+        await asyncio.gather(*(poll_source(source) for source in sources))
         with Session.begin() as s:
             event(s, "discovery_complete", sources=len(sources))
     finally:

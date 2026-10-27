@@ -2,6 +2,7 @@ import asyncio
 import hmac
 import logging
 import os
+import re
 import signal
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -12,7 +13,7 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from fastapi.templating import Jinja2Templates
 from sqlalchemy import func, select, text
 
-from jobhunt.db import Application, Event, Job, Session, Source, event, init_db, now
+from jobhunt.db import Application, Event, Job, Session, Source, State, event, init_db, now
 from jobhunt.discovery import remember_source
 from jobhunt.net import safe_url
 from jobhunt.settings import settings
@@ -93,6 +94,17 @@ def health():
     task = getattr(app.state, "worker_task", None)
     if settings.worker_enabled and (task is None or task.done()):
         raise HTTPException(503, "Worker is not running")
+    if settings.worker_enabled:
+        from datetime import datetime
+
+        with Session() as s:
+            beat = s.get(State, "worker")
+            if (
+                not beat
+                or (now() - datetime.fromisoformat(beat.value["heartbeat"])).total_seconds()
+                > settings.worker_stale_seconds
+            ):
+                raise HTTPException(503, "Worker heartbeat is stale")
     return {"status": "ok"}
 
 
@@ -107,12 +119,18 @@ def dashboard(request: Request, status: str = ""):
         jobs = s.scalars(q).all()
         counts = dict(s.execute(select(Job.status, func.count()).group_by(Job.status)).all())
         sources = s.scalars(select(Source).order_by(Source.id.desc()).limit(30)).all()
+        control = s.get(State, "control")
+        worker = s.get(State, "worker")
+        bank = s.get(State, "answers")
         events = s.scalars(select(Event).order_by(Event.id.desc()).limit(20)).all()
         return templates.TemplateResponse(
             request=request,
             name="dashboard.html",
             context={
                 "jobs": jobs,
+                "paused": bool(control and control.value.get("paused")),
+                "worker": worker.value if worker else {},
+                "answers": bank.value if bank else {},
                 "counts": counts,
                 "sources": sources,
                 "events": events,
@@ -151,7 +169,12 @@ def review_job(job_id: int, action: str = Form(), note: str = Form(""), csrf: st
         if not job or job.status not in {"review", "failed"}:
             raise HTTPException(409, "Job is not awaiting review")
         application = s.scalar(select(Application).where(Application.job_id == job_id))
-        uncertain = application and application.state in {"submission_intent", "uncertain", "submitted"}
+        uncertain = application and application.state in {
+            "submission_intent",
+            "step_intent",
+            "uncertain",
+            "submitted",
+        }
         if action == "queue":
             if uncertain:
                 raise HTTPException(
@@ -195,3 +218,54 @@ def evidence_image(job_id: int, name: str):
     if not path.is_file():
         raise HTTPException(404)
     return FileResponse(path)
+
+
+@app.post("/control", dependencies=[Depends(auth)])
+def control_worker(paused: bool = Form(), csrf: str = Form()):
+    csrf_check(csrf)
+    with Session.begin() as s:
+        row = s.get(State, "control")
+        if row:
+            row.value = {"paused": paused}
+        else:
+            s.add(State(key="control", value={"paused": paused}))
+        event(s, "worker_control", paused=paused)
+    return RedirectResponse("/", 303)
+
+
+@app.post("/answers", dependencies=[Depends(auth)])
+def save_answer(
+    key: str = Form(),
+    question: str = Form(),
+    value: str = Form(),
+    aliases: str = Form(""),
+    section: str = Form(""),
+    verified: str = Form(""),
+    csrf: str = Form(),
+):
+    csrf_check(csrf)
+    if (
+        verified != "yes"
+        or not re.fullmatch(r"[a-zA-Z0-9_-]{1,80}", key)
+        or not question.strip()
+        or not value.strip()
+    ):
+        raise HTTPException(400, "Provide a named answer and explicitly verify its truthfulness")
+    if len(value) > 10000 or len(question) > 1000 or len(aliases) > 5000:
+        raise HTTPException(400, "Answer is too large")
+    answer = {
+        "question": question.strip(),
+        "value": value,
+        "aliases": [x.strip() for x in aliases.splitlines() if x.strip()],
+        "section": section.strip(),
+        "verified": True,
+    }
+    with Session.begin() as s:
+        row = s.get(State, "answers")
+        entries = {**(row.value if row else {}), key: answer}
+        if row:
+            row.value = entries
+        else:
+            s.add(State(key="answers", value=entries))
+        event(s, "verified_answer_saved", answer_key=key, question=question)
+    return RedirectResponse("/", 303)

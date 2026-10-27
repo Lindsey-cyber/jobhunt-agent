@@ -12,3 +12,8 @@ config/resume.pdf
 tmp
 pw-browsers
 .ruff_cache
+repo
+jobhunt-tests-*
+.env.*
+backups
+*.sql

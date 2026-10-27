@@ -5,12 +5,13 @@ from zoneinfo import ZoneInfo
 
 from sqlalchemy import and_, func, or_, select, text
 
-from jobhunt.browser import Review, apply
+from jobhunt.browser import Review, apply, profile_answers
 from jobhunt.db import Application, Job, Session, State, engine, event, now
 from jobhunt.discovery import discover
 from jobhunt.settings import settings
 
 log = logging.getLogger(__name__)
+_lease = None
 
 
 def day_start():
@@ -29,7 +30,7 @@ def count_today(s):
             or_(
                 and_(Application.state == "submitted", Application.submitted_at >= day_start()),
                 and_(
-                    Application.state.in_(["submission_intent", "uncertain"]),
+                    Application.state.in_(["submission_intent", "step_intent", "uncertain"]),
                     Application.intent_at >= day_start(),
                 ),
             )
@@ -41,7 +42,7 @@ def recover():
     with Session.begin() as s:
         for job in s.scalars(select(Job).where(Job.status == "applying")):
             app = s.scalar(select(Application).where(Application.job_id == job.id))
-            if app and app.state in {"submission_intent", "uncertain"}:
+            if app and app.state in {"submission_intent", "step_intent", "uncertain"}:
                 app.state = "uncertain"
                 job.status, job.reason = "review", "Interrupted after submission intent; reconcile manually"
             elif app and app.state == "submitted":
@@ -110,7 +111,7 @@ def claim():
         if not job:
             return None
         app = s.scalar(select(Application).where(Application.job_id == job.id))
-        if app and app.state in {"submitted", "submission_intent", "uncertain"}:
+        if app and app.state in {"submitted", "submission_intent", "step_intent", "uncertain"}:
             job.status, job.reason = "review", "Existing submission record blocks retry"
             return None
         if not app:
@@ -125,6 +126,17 @@ def claim():
 
 
 def before_submit():
+    if engine.dialect.name == "postgresql":
+        if _lease is None or _lease.closed or _lease.invalidated:
+            raise Review("Worker lease is unavailable; submission blocked")
+        held = _lease.scalar(
+            text(
+                "SELECT EXISTS (SELECT 1 FROM pg_locks WHERE locktype='advisory' AND pid=pg_backend_pid() AND classid=0 AND objid=742019384 AND granted)"
+            )
+        )
+        _lease.commit()
+        if not held:
+            raise Review("Worker no longer owns the advisory lock; submission blocked")
     with Session() as s:
         if count_today(s) >= settings.daily_limit:
             raise Review("Daily cap reached")
@@ -138,7 +150,7 @@ def record_failure(job_id, exc):
             job.status = "submitted"
             event(s, "post_submission_cleanup_failed", job_id, reason=str(exc)[:1500])
             return
-        uncertain = app and app.state in {"submission_intent", "uncertain"}
+        uncertain = app and app.state in {"submission_intent", "step_intent", "uncertain"}
         if uncertain:
             app.state = "uncertain"
         job.status = (
@@ -152,55 +164,96 @@ def record_failure(job_id, exc):
         event(s, "application_" + job.status, job.id, reason=job.reason)
 
 
+async def wait_or_stop(stop, seconds):
+    try:
+        await asyncio.wait_for(stop.wait(), timeout=seconds)
+    except TimeoutError:
+        pass
+
+
+async def discovery_loop(stop):
+    while not stop.is_set():
+        with Session() as s:
+            last = s.get(State, "discovery")
+            due = (
+                not last
+                or (now() - datetime.fromisoformat(last.value["at"])).total_seconds()
+                >= settings.discovery_interval
+            )
+        if due:
+            try:
+                await asyncio.wait_for(discover(), timeout=600)
+                with Session.begin() as s:
+                    last = s.get(State, "discovery")
+                    value = {"at": now().isoformat(), "status": "ok"}
+                    if last:
+                        last.value = value
+                    else:
+                        s.add(State(key="discovery", value=value))
+            except Exception as exc:
+                log.exception("Discovery cycle failed")
+                with Session.begin() as s:
+                    event(s, "discovery_failed", reason=type(exc).__name__)
+                await wait_or_stop(stop, 60)
+        await wait_or_stop(stop, settings.poll_interval)
+
+
+def readiness():
+    missing = []
+    if not settings.openai_api_key:
+        missing.append("OPENAI_API_KEY")
+    if not settings.resume_path.is_file():
+        missing.append("resume PDF")
+    if not profile_answers():
+        missing.append("verified profile answers")
+    return missing
+
+
+async def application_loop(stop):
+    while not stop.is_set():
+        with Session() as s:
+            control = s.get(State, "control")
+            paused = control and control.value.get("paused")
+        job = claim() if not paused and not readiness() else None
+        if job:
+            try:
+                await asyncio.wait_for(apply(job, before_submit), timeout=900)
+            except Exception as exc:
+                log.warning("Application %s: %s", job.id, exc)
+                record_failure(job.id, exc)
+        await wait_or_stop(stop, settings.poll_interval)
+
+
+async def heartbeat_loop(stop, lock):
+    while not stop.is_set():
+        # A connection loss ends the TaskGroup and cancels browser work; never reconnect without re-locking.
+        lock.execute(text("SELECT 1"))
+        lock.commit()
+        with Session.begin() as s:
+            beat = s.get(State, "worker")
+            value = {"heartbeat": now().isoformat(), "blocked_by": readiness()}
+            if beat:
+                beat.value = value
+            else:
+                s.add(State(key="worker", value=value))
+            daily_report(s)
+        await wait_or_stop(stop, settings.heartbeat_interval)
+
+
 async def run(stop):
-    # Dedicated connection holds a singleton worker lock for the lifetime of the process.
+    global _lease
     lock = engine.connect()
     try:
         if engine.dialect.name == "postgresql":
             if not lock.scalar(text("SELECT pg_try_advisory_lock(742019384)")):
-                log.error("Another worker owns the database lock")
-                return
+                raise RuntimeError("Another worker owns the database lock")
             lock.commit()
+        _lease = lock
         recover()
-        while not stop.is_set():
-            # Losing this connection loses the lock: stop rather than operating concurrently.
-            lock.execute(text("SELECT 1"))
-            lock.commit()
-            try:
-                with Session.begin() as s:
-                    beat = s.get(State, "worker")
-                    value = {"heartbeat": now().isoformat()}
-                    if beat:
-                        beat.value = value
-                    else:
-                        s.add(State(key="worker", value=value))
-                    daily_report(s)
-                    last = s.get(State, "discovery")
-                    due = (
-                        not last
-                        or (now() - datetime.fromisoformat(last.value["at"])).total_seconds()
-                        >= settings.discovery_interval
-                    )
-                if due:
-                    await asyncio.wait_for(discover(), timeout=600)
-                    with Session.begin() as s:
-                        last = s.get(State, "discovery")
-                        if last:
-                            last.value = {"at": now().isoformat()}
-                        else:
-                            s.add(State(key="discovery", value={"at": now().isoformat()}))
-                job = claim()
-                if job:
-                    try:
-                        await asyncio.wait_for(apply(job, before_submit), timeout=900)
-                    except Exception as exc:
-                        log.warning("Application %s: %s", job.id, exc)
-                        record_failure(job.id, exc)
-            except Exception:
-                log.exception("Worker tick failed")
-            try:
-                await asyncio.wait_for(stop.wait(), timeout=settings.poll_interval)
-            except TimeoutError:
-                pass
+        async with asyncio.TaskGroup() as group:
+            group.create_task(heartbeat_loop(stop, lock))
+            group.create_task(discovery_loop(stop))
+            group.create_task(application_loop(stop))
     finally:
+        _lease = None
         lock.close()

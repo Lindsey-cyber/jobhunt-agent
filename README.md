@@ -1,17 +1,15 @@
 # JobHunt Agent
 
-A runnable Python MVP: one FastAPI process contains a durable polling worker, PostgreSQL stores jobs and an application ledger, and Playwright navigates forms with OpenAI selecting bounded actions. No broker, Redis, or microservices.
+A runnable Python agent (v0.2): one FastAPI process contains a durable polling worker, PostgreSQL stores jobs and an application ledger, and Playwright navigates forms with OpenAI selecting bounded actions. No broker, Redis, or microservices.
 
-**Status:** Implemented and tested with mock ATS feeds, a deterministic browser double, and crash simulations. A separate real Chromium/local employer test is included. No real job application has been submitted by this project during development. This is a runnable MVP, not evidence of production reliability across arbitrary employer sites. The limit of 100/day is a configurable ceiling, not a throughput promise.
+**Status:** Extended in place with deterministic verified-answer filling, radio/custom dropdown handling, journaled multi-step navigation, additional ATS readers, parallel source polling, independent scheduling loops, a database-backed verified answer bank and supervisor checks. Tested with mock ATS feeds, a deterministic browser double, and crash simulations. A separate real Chromium/local employer test is included. No real job application has been submitted by this project during development. This is a runnable MVP, not evidence of production reliability across arbitrary employer sites. The limit of 100/day is a configurable ceiling, not a throughput promise.
 
 ## Start on a VPS
 
 Requires Docker Engine with Compose v2, outbound HTTPS, and approximately 4 GB RAM to start (monitor Chromium memory for your workload).
 
 ```bash
-cp .env.example .env
-cp config/profile.example.json config/profile.json
-cp config/policies.example.json config/policies.json
+python3 scripts/configure.py
 # Put your actual resume at config/resume.pdf.
 # Edit .env, profile.json and policies.json before enabling submission.
 docker compose up -d --build
@@ -37,7 +35,7 @@ Changes to profile/answer bank and site policy files are read on each applicatio
 
 ## Personal profile and truthful answers
 
-`config/profile.json` is the persistent answer bank. Each answer has a question, exact label aliases, a string value, and `verified: true`. The examples are deliberately unverified placeholders. Enter your actual information and explicitly verify each answer. Exact labels/aliases are matched independently of the model after punctuation and case normalization. An LLM can select an existing answer key; it cannot invent or rewrite an answer.
+`config/profile.json` is the file-based answer bank; the dashboard can also store explicitly verified answers in PostgreSQL. Database entries override matching file keys and never enter Git. Each answer has a question, exact label aliases, a string value, and `verified: true`. The examples are deliberately unverified placeholders. Enter your actual information and explicitly verify each answer. Exact labels/aliases are matched independently of the model after punctuation and case normalization. An LLM can select an existing answer key; it cannot invent or rewrite an answer.
 
 Authorization and sponsorship answers must reflect your actual situation. Missing sponsorship information in a posting is allowed. Explicit restrictions are rejected by the deterministic filter. Location or early-career uncertainty goes to review. The filter is heuristic and the review queue is part of normal operation.
 
@@ -49,19 +47,19 @@ Add newly observed question labels to the appropriate verified answer's aliases 
 
 `AUTO_SUBMIT=false` is the initial preparation mode. Set `AUTO_SUBMIT=true` after filling your profile, resume, and per-site policies. The worker automatically submits supported, permitted, fully populated forms. You do not need to approve every normal submission. It stops for:
 
-- Unknown/ambiguous questions, unknown required fields, unsupported custom controls, checkbox/radio answers, or login/account creation.
+- Unknown/ambiguous questions, unknown required fields, unsupported custom controls, checkbox answers, radio groups without verified answers, or login/account creation.
 - CAPTCHA, access challenges, restricted automation, robots.txt exclusions, legal declarations, and consent/signature steps.
 - Ambiguous final buttons, absent confirmation, or browser/connection failure around submission.
 
 Review jobs in the dashboard. Open the employer page to finish manual steps or submit manually. After a manual submission, choose **Confirm submitted manually** and record a confirmation reference. To retry a pre-submission preparation problem, fix the bank/policy and choose **Queue after review**. The queue does not override site policy or legal stops. An uncertain submission is never automatically retried; reconcile it manually with the employer and mark submitted or reject it. The MVP intentionally offers no one-click reset of an uncertain side effect.
 
-The browser is a bounded DOM agent, not an unrestricted computer-control agent. Embedded cross-origin form widgets, complex custom controls, upload dialogs outside native file inputs, tenant-specific Workday flows and many login-dependent flows may require manual review or an adapter. Generic buttons defaulting to form submit are handled conservatively. No CAPTCHA solving, stealth plugins or anti-bot evasion are included.
+The browser is a bounded DOM agent, not an unrestricted computer-control agent. Embedded forms on explicitly allowed hosts, exact radio groups and supported ARIA comboboxes have implementation paths. Complex custom controls, upload dialogs outside native file inputs, tenant-specific Workday flows and many login-dependent flows may still require manual review or an adapter. Recognized Next/Save and Continue steps are journaled before clicking; interrupted or ambiguous navigation goes to review. Final submission remains a separate explicit action. No CAPTCHA solving, stealth plugins or anti-bot evasion are included.
 
 ## Discovery coverage
 
-There is no built-in company list. Six rotating searches per discovery cycle combine eight role families with general web, company career pages, Greenhouse, Lever, Ashby and Workday queries. Returned sites become persistent sources, and links on career pages discover further sources. New sources and existing sources are polled in age order with failure backoff (up to 60 sources per cycle).
+There is no built-in company list. Twelve configurable rotating searches per discovery cycle combine nine role families with general web, company career pages, Greenhouse, Lever, Ashby, Workday, SmartRecruiters, Recruitee, remote and relocation queries. Both configured providers are used independently and Brave result pages rotate. Returned sites become persistent sources, and links on career pages discover further sources. New sources and existing sources are polled in age order with failure backoff (up to 200 sources per cycle, with bounded concurrency of six).
 
-Adapters read paginated Lever public postings, Greenhouse public boards, Ashby public boards, common public Workday CXS career endpoints, and schema.org JobPosting JSON-LD on arbitrary career pages. Workday endpoint variants may fall back to HTML and require a new adapter. Generic JS-only pages without JSON-LD are not exhaustively scraped; their links are followed when visible in HTML. Search API indexing, provider coverage, robots rules and site-specific restrictions limit reach: no implementation can guarantee discovery of the entire web.
+Adapters read paginated Lever public postings, Greenhouse public boards, Ashby public boards, common public Workday CXS career endpoints, SmartRecruiters public postings, Recruitee public career offers, and schema.org JobPosting JSON-LD on arbitrary career pages. ATS iframe links, JSON-LD item lists and supplied sitemap pages can reveal additional sources. Workday endpoint variants may fall back to HTML and require a new adapter. Generic JS-only pages without JSON-LD are not exhaustively scraped; their links are followed when visible in HTML. Search API indexing, provider coverage, robots rules and site-specific restrictions limit reach: no implementation can guarantee discovery of the entire web.
 
 Sponsorship is not inferred from a company's reputation. The job text must contain an explicit restriction to trigger that rejection. Relevant jobs with uncertain US location or seniority are retained for review. The model does not broaden the search criteria silently.
 
@@ -71,7 +69,7 @@ ATS URL canonicalization and a unique employer/title fingerprint deduplicate job
 
 PostgreSQL enforces unique job URLs, fingerprints and one application record per job. One worker holds a PostgreSQL advisory lock and claims jobs transactionally. Run exactly one Uvicorn worker. A preparation crash is recoverable. Before the final click, an application intent and screenshot hash are committed. After that point a failure becomes uncertain and consumes daily capacity on the intent's local day. Only a newly observed explicit confirmation phrase records automatic success. Screenshots, URLs, timestamps, exact matched confirmation text and SHA-256 hashes are retained in the application evidence ledger. Confirmations are page evidence, not independent employer-side verification.
 
-Native required field validation runs before the final click. Hidden application state and custom widgets may need manual review. A single browser profile is persisted in `/app/data/browser`; the worker is serial to avoid conflicting profile writes. Expired sessions go to review.
+Native required field validation runs before the final click. Hidden application state and custom widgets may need manual review. Browser profiles are persisted separately in `/app/data/browser/<hostname>`; applications remain serial to avoid conflicting profile writes. Expired sessions go to review.
 
 Daily limits use `TIMEZONE` (default America/New_York); verified submission timestamps and uncertain intent timestamps determine daily usage. Daily JSON reports for the completed prior local calendar day are written to `/app/data/reports` at the first tick after rollover. After multi-day downtime, missed historical reports are not backfilled. The dashboard shows current counts and capacity. Reports are local, and no email is sent.
 
@@ -110,7 +108,7 @@ Optional real Chromium end-to-end test against a local HTTP employer fixture, wi
 RUN_BROWSER_TESTS=1 uv run pytest -q tests/test_real_browser.py
 ```
 
-The fixture hosts a resume-upload form and checks the confirmation ledger. Normal CI uses a deterministic browser double to check the same state machine, including failure during final click and missing confirmation. In the development sandbox, Docker/PostgreSQL were unavailable and Chromium's CDN download failed, so the Compose build, live browser integration and real ATS behavior still need verification on the deployment host.
+The fixture hosts a resume-upload form and checks the confirmation ledger. Normal CI uses a deterministic browser double to check the same state machine, including failure during final click and missing confirmation. In the development sandbox, Docker/PostgreSQL were unavailable. Chromium downloaded from a fallback mirror but exited with SIGTRAP when launched; the real browser fixture did not pass here. Compose, PostgreSQL locking, live browser integration and real ATS behavior still need verification on the deployment host.
 
 ## Protocol references
 
@@ -122,3 +120,7 @@ The fixture hosts a resume-upload form and checks the confirmation ledger. Norma
 - [Playwright Python Docker guidance](https://playwright.dev/python/docs/docker)
 
 See `VALIDATION.md` for the measured development results and unverified deployment checks.
+
+## Continued development
+
+See [research decisions](docs/RESEARCH.md), [VPS operations](docs/OPERATIONS.md), and `VALIDATION.md`. The private GitHub repository is https://github.com/Lindsey-cyber/jobhunt-agent. Its CI workflow defines PostgreSQL/browser/Compose checks. Check the repository Actions results for the status of each pushed commit; local validation does not imply a remote CI pass.

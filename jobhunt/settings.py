@@ -18,9 +18,15 @@ class Settings(BaseSettings):
     daily_limit: int = 100
     auto_submit: bool = False
     discovery_interval: int = 1800
+    search_queries_per_cycle: int = 12
+    sources_per_cycle: int = 200
+    discovery_concurrency: int = 6
+    http_retries: int = 3
+    heartbeat_interval: int = 15
+    worker_stale_seconds: int = 90
     poll_interval: int = 30
     max_attempts: int = 3
-    browser_steps: int = 25
+    browser_steps: int = 80
     timezone: str = "America/New_York"
     worker_enabled: bool = True
     allow_local_test_urls: bool = False

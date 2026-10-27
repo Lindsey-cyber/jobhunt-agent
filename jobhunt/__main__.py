@@ -27,6 +27,7 @@ def main():
         remember_source(args.url)
         print("Source registered")
     else:
+        init_db()
         policies = load_json(settings.policies_path, {}).get("sites", {})
         print(
             json.dumps(

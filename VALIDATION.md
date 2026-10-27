@@ -1,20 +1,19 @@
-# Validation record
+# Validation record · v0.2 · 2026-10-28
 
-Development validation on 2026-10-28:
+Measured locally:
 
-- Python dependencies installed successfully with `uv sync`; `uv.lock` checked.
-- `uv run pytest -q`: **32 passed, 1 skipped**. The skipped test is the opt-in real Chromium/local employer integration.
-- `uv run ruff check jobhunt tests`: passed.
-- Real Uvicorn startup with SQLite: HTTP 200 from `/healthz`, authenticated dashboard `/`, and authenticated `/api/stats`; clean shutdown verified.
-- Worker-enabled Uvicorn startup with SQLite: database heartbeat, initial discovery tick with no configured providers/sources, health response, and clean shutdown verified.
-- Mock adapter coverage: Greenhouse, Lever, Ashby, common Workday CXS, schema.org JobPosting, and discovery of a new ATS source through career-page links.
-- Browser state-machine coverage: verified answer fill, resume upload, committed intent before final click, new confirmation evidence, missing confirmation, and simulated browser crash during final click.
-- Other checks: sponsorship rules, US location ambiguity, source identity, cross-platform fingerprint deduplication, query-based job IDs, unsafe URL rejection, daily cap, preparation recovery, uncertain submission lockout, CSRF/authentication, and preservation of confirmed success after cleanup failure.
+- Normal test suite: **51 passed, 2 skipped**. Skips are the real Chromium fixture (opt-in) and PostgreSQL advisory-lock test (requires disposable PostgreSQL).
+- Ruff checks and dependency lock check passed. The existing installed Python dependencies are retained; version metadata is now 0.2.0.
+- Real Uvicorn/worker startup with SQLite passed: `/healthz`, authenticated `/`, and authenticated `/api/stats` returned HTTP 200. Worker heartbeat, setup-blocked state, discovery tick without configured search keys, and clean shutdown were verified.
+- Browser doubles exercise verified text fill, resume upload, final submission journaling, confirmation evidence, absent confirmation, final-click crash, successful multi-step save/continue, and crash during a step click.
+- Tests cover exact radio matching, custom dropdown selection planning, unknown required fields, conflicting prefilled values, repeated-section disambiguation, verified answer persistence, pause control, independent discovery during an application, UTC dates, HTTP retries, credential stripping on redirects, two search providers with one failing, additional ATS readers, iframe link discovery, supplied sitemaps, configuration generation and secret-scan redaction.
+- The baseline tests for sponsorship filtering, deduplication, daily caps, CSRF/authentication, crash recovery and uncertain-submission lockout remain passing.
 
-Not verified in this environment:
+Not passed or not run here:
 
-- Docker image build/Compose runtime and PostgreSQL-specific locking: Docker and PostgreSQL binaries were unavailable.
-- A real Chromium application flow: Playwright installed, but Chromium download returned an invalid archive from the CDN in this environment. The real-browser fixture remains available as `RUN_BROWSER_TESTS=1 uv run pytest -q tests/test_real_browser.py` after installing Chromium on the target host.
-- Live search provider requests, live OpenAI navigation, or employer submission: no credentials, personal profile, resume or site permissions were supplied.
+- The opt-in real Chromium test was explicitly attempted. Chromium downloaded from the fallback Microsoft mirror, but launched with SIGTRAP in this sandbox. The real browser test failed at launch; it is not a successful application test. Direct diagnostic launch also exited with SIGTRAP.
+- Docker/Compose build/runtime and PostgreSQL-specific behavior could not be executed: Docker and PostgreSQL binaries are absent. The workflow defines those checks for a connected repository, but remote CI has not run.
+- No live search-provider or OpenAI navigation call used user credentials. No real resume, verified personal profile, site permissions or VPS access was provided.
+- No actual employer application was submitted, and no production deployment or 100/day throughput has been demonstrated.
 
-**No real job applications were submitted.** The cap of 100 applications/day is implemented as a limit, and actual throughput/reliability remains to be measured on permitted sites with a completed verified profile. Arbitrary website compatibility and entire-web discovery are not guaranteed.
+GitHub status: private repository created and verified at https://github.com/Lindsey-cyber/jobhunt-agent. The MVP baseline has been committed remotely; the v0.2 source and CI workflow are being published through the connected GitHub API. Remote CI results are tracked separately from the local checks above. No deployment or real employer submission is implied by repository publication.

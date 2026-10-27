@@ -1,0 +1,8 @@
+[Unit]
+Description=Restart unhealthy JobHunt worker
+After=docker.service
+Requires=docker.service
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/jobhunt
+ExecStart=/bin/sh /opt/jobhunt/scripts/watchdog.sh

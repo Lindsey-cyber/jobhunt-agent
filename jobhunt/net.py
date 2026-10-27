@@ -1,6 +1,8 @@
 import asyncio
 import ipaddress
 import socket
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from urllib.parse import urlsplit
 from urllib.robotparser import RobotFileParser
 
@@ -32,20 +34,48 @@ class Web:
     async def close(self):
         await self.client.aclose()
 
-    async def get(self, url, **kwargs):
+    async def request(self, method, url, **kwargs):
         from urllib.parse import urljoin
 
-        for _ in range(6):
+        for redirect in range(6):
             await safe_url(url)
-            r = await self.client.get(url, **kwargs)
+            for attempt in range(settings.http_retries + 1):
+                try:
+                    r = await self.client.request(method, url, **kwargs)
+                    if r.status_code not in {429, 500, 502, 503, 504} or attempt == settings.http_retries:
+                        break
+                    delay = retry_delay(r.headers.get("retry-after"), attempt)
+                except (httpx.TimeoutException, httpx.NetworkError):
+                    if attempt == settings.http_retries:
+                        raise
+                    delay = min(30, 2**attempt)
+                await asyncio.sleep(delay)
             if r.is_redirect:
-                url = urljoin(url, r.headers["location"])
+                target = urljoin(url, r.headers["location"])
+                if urlsplit(url).scheme == "https" and urlsplit(target).scheme != "https":
+                    raise ValueError("HTTPS downgrade blocked")
+                if (urlsplit(target).scheme, urlsplit(target).netloc) != (
+                    urlsplit(url).scheme,
+                    urlsplit(url).netloc,
+                ):
+                    kwargs.pop("headers", None)  # Never forward provider credentials cross-origin.
+                kwargs.pop("params", None)
+                if method != "GET":
+                    raise ValueError("Unexpected redirect on a read-only POST endpoint")
+                url = target
                 continue
             r.raise_for_status()
             if len(r.content) > 8_000_000:
                 raise ValueError("Response too large")
             return r
         raise ValueError("Too many redirects")
+
+    async def get(self, url, **kwargs):
+        return await self.request("GET", url, **kwargs)
+
+    async def post_read(self, url, **kwargs):
+        """Retry-safe read endpoints ONLY. Never used for application submission."""
+        return await self.request("POST", url, **kwargs)
 
     async def allowed(self, url):
         p = urlsplit(url)
@@ -65,3 +95,17 @@ class Web:
                 return False
         rp = self.robots[origin]
         return rp is None or rp.can_fetch(USER_AGENT, url)
+
+
+def retry_delay(value, attempt):
+    if value:
+        try:
+            return max(0, min(30, float(value)))
+        except ValueError:
+            try:
+                return max(
+                    0, min(30, (parsedate_to_datetime(value) - datetime.now(timezone.utc)).total_seconds())
+                )
+            except (ValueError, TypeError):
+                pass
+    return min(30, 2**attempt)

@@ -76,7 +76,9 @@ class State(Base):
 engine = create_engine(
     settings.database_url,
     pool_pre_ping=True,
-    connect_args={"check_same_thread": False} if settings.database_url.startswith("sqlite") else {},
+    connect_args={"check_same_thread": False}
+    if settings.database_url.startswith("sqlite")
+    else {"connect_timeout": 10, "options": "-c statement_timeout=30000 -c lock_timeout=10000"},
 )
 Session = sessionmaker(engine, expire_on_commit=False)
 

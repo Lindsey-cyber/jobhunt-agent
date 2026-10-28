@@ -173,6 +173,17 @@ describe("buildPlan", () => {
     expect(items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["Lab", "Research Assistant", "January", "2026"]);
   });
 
+  // From Asana's, Lila's, Pinterest's and Block's forms.
+  it("answers sanctioned-country, residence, work-authorization-assistance and posted-location questions", () => {
+    const p = { ...user.profile, citizenship: ["China"], workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const yn = { kind: "combobox" as const, options: ["Yes", "No"] };
+    const one = (label: string) => buildPlan({ ...form([field(label, yn)]), jobLocation: "New York, NY" }, p, user.bank).items[0]!;
+    expect(one("Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?")).toMatchObject({ status: "fill", value: "No" });
+    expect(one("Will you require our assistance with work authorization now or in the future?")).toMatchObject({ status: "fill", value: "Yes" });
+    expect(one("Are you authorized to work lawfully in the location posted for this position?")).toMatchObject({ status: "fill", value: "Yes" });
+    expect(one("Do you currently reside within the continental United States?")).toMatchObject({ status: "fill" });
+  });
+
   it("answers transgender identity from the gender choice", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline" as const } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });

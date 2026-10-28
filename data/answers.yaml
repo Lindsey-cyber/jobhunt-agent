@@ -960,3 +960,20 @@ answers:
       - Are you comfortable with travel?
     answer: "Yes"
     origin: human
+  # Defaults (2026-10-28): messaging opt-ins declined (email only); she is open to on-site work.
+  - id: sms-opt-in
+    question: Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.
+    aliases:
+      - Do you opt-in to receive WhatsApp messages from {company} Recruiting?
+      - Do you consent to receive text messages about your application?
+    answer: "No"
+    origin: generated
+  - id: plan-remote
+    question: If this role offers the option to work from a remote location, do you plan to work remotely?
+    answer: "No"
+    origin: generated
+  - id: air-temp
+    question: Are you currently engaged as a temp or contractor in any capacity at AIR?
+    company: American Institutes for Research
+    answer: "No"
+    origin: human

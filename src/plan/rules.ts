@@ -30,7 +30,8 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 ];
 
 // "the country where the job is located" names no country; the posting does.
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b/;
+// Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocation s? you selected\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
@@ -183,6 +184,18 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // Asana: "Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?"
+    path: "citizenship",
+    pattern: /\bcitizen or (legal )?permanent resident of cuba\b/,
+    resolve: (p) => yesNo(p.citizenship.some((c) => /cuba|iran|north korea|syria|ukraine/i.test(c))),
+  },
+  {
+    // Lila Sciences: "Do you currently reside within the continental United States?"
+    path: "contact.address.country",
+    pattern: /^do you (currently )?(reside|live) (in|within) the (continental )?(united states|u s|us)$/,
+    resolve: (p) => yesNo(p.contact.address.country === "United States" && !/alaska|hawaii|^ak$|^hi$/i.test(p.contact.address.state ?? "")),
+  },
+  {
     // Export-control "U.S. person" questions, from citizenship. Her F-1 status
     // makes her none of citizen, permanent resident, refugee or asylee.
     path: "citizenship",
@@ -244,7 +257,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   {
     path: "workAuthorization.needsSponsorship",
-    pattern: /\b(sponsorship|sponsor)\b/,
+    // Pinterest: "Will you require our assistance with work authorization now or in the future?"
+    pattern: /\b(sponsorship|sponsor)\b|\bassistance with work authori[sz]ation\b/,
     // Options that split "now" from "in the future": authorized today and
     // needing sponsorship means the future one.
     resolve: (p, _label, ctx) => {

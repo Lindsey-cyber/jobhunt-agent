@@ -950,3 +950,13 @@ answers:
       - May we contact your present employer?
     answer: "Yes"
     origin: human
+  # The candidate (2026-10-28): willing to travel.
+  - id: travel
+    question: Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?
+    aliases:
+      - Are you willing to travel?
+      - Are you able to travel as required?
+      - Are you willing and able to travel as business needs require?
+      - Are you comfortable with travel?
+    answer: "Yes"
+    origin: human

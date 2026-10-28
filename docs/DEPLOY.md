@@ -1,6 +1,16 @@
 # 部署到 VPS
 
-目标：VPS 每天早上（纽约时间约 7:23）自动跑一遍总管：Gmail 提醒 → 多渠道发现 → 筛选 → 独立审计 → 报告，结果提交回 GitHub；Dashboard 只在 VPS 本机 127.0.0.1 上，通过 SSH 隧道看。系统是 Ubuntu 22.04/24.04 或 Debian 12，1 核 2 GB 内存够用。
+目标：VPS 每天早上（纽约时间约 7:23）自动跑一遍总管：Gmail 提醒 → 多渠道发现 → 筛选 → 独立审计 → 报告，结果提交回 GitHub；Dashboard 只在 VPS 本机 127.0.0.1 上，通过 SSH 隧道看。系统是 Ubuntu 22.04/24.04 或 Debian 12，x86 或 ARM64 都行；建议 2 核 4 GB（投递时 Chromium 和 Node 合计约 1 GB）。
+
+### Hetzner CAX11（ARM64，2 vCPU / 4 GB / 40 GB，Ubuntu 24.04）
+
+可以用，已核对：
+
+- 依赖全部有 linux-arm64 版本：Node 22（NodeSource）、TypeScript 7 原生编译器、esbuild、rolldown、lightningcss、Playwright Chromium（Playwright 支持 Ubuntu 24.04 arm64）。
+- 不需要 Docker、FastAPI、PostgreSQL：本项目是 Node + systemd，状态存在 `data/` 下的 jsonl/yaml 文件里。那套栈是 career-ops-autopilot 的；同一台机器上**不要两套系统同时投递**——两个账本互不知道对方，会对同一职位重复投递。
+- 内存：投递时约 1 GB；`install.sh` 在内存小于 6 GB 且没有 swap 时自动加 2 GB swap。
+- 磁盘：每次投递留证据约 2 MB（主要是截图），每天 100 份约 200 MB；`daily.sh` 自动删除 60 天前的截图，JSON 证据保留。
+- 机房 IP：部分招聘网站对数据中心 IP 更容易弹 hCaptcha；遇到会进你的每日手动清单，不会绕过。
 
 ## 1. 让 VPS 能读写这个私有仓库
 
@@ -30,13 +40,13 @@ sudo bash /opt/jobhunt-agent/deploy/install.sh
 
 ## 3. 放密钥（不进仓库）
 
-Anthropic API key 写进 `/etc/jobhunt/env`：
+API key 写进 `/etc/jobhunt/env`（`OPENAI_API_KEY` 用于起草表单个性化问题和审计；`ANTHROPIC_API_KEY` 可选）：
 
 ```bash
 sudo nano /etc/jobhunt/env
 ```
 
-把 `ANTHROPIC_API_KEY=` 补上。账户里要有余额（Console → Plans & Billing），否则审核 agent 调用会被拒绝。
+把 `OPENAI_API_KEY=` 补上（`JH_AUDIT_PROVIDER=openai` 已默认写好）。如果改用 Anthropic 审计，补 `ANTHROPIC_API_KEY=` 并把 provider 改成 `anthropic`，账户里要有余额。
 
 Gmail OAuth 客户端 JSON 放到 jobhunt 用户目录（文件从你电脑传上去，例如 `scp client_secret_*.json root@VPS:/tmp/gmail-client.json`）：
 

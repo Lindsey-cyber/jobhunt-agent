@@ -13,7 +13,16 @@ SRC_DIR=$(cd "$(dirname "$0")/.." && pwd)
 
 echo "== packages"
 apt-get update -qq
-apt-get install -y -qq git curl ca-certificates >/dev/null
+# poppler-utils: pdftotext reads the resume for drafted answers.
+apt-get install -y -qq git curl ca-certificates poppler-utils >/dev/null
+echo "arch $(dpkg --print-architecture)"  # amd64 and arm64 (Hetzner CAX) both work
+
+# Small VPS (4 GB): Chromium plus discovery can spike; a swap file keeps the OOM killer away.
+if [ "$(swapon --show --noheadings | wc -l)" = 0 ] && [ "$(awk '/MemTotal/{print int($2/1024)}' /proc/meminfo)" -lt 6000 ]; then
+  fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap -q /swapfile && swapon /swapfile
+  grep -q '^/swapfile ' /etc/fstab || echo '/swapfile none swap sw 0 0' >> /etc/fstab
+  echo "added 2G swap"
+fi
 if ! command -v node >/dev/null || [ "$(node -p 'process.versions.node.split(".")[0]')" -lt 22 ]; then
   curl -fsSL https://deb.nodesource.com/setup_22.x | bash - >/dev/null
   apt-get install -y -qq nodejs >/dev/null
@@ -53,8 +62,12 @@ install -d -m 750 -o root -g "$APP_USER" /etc/jobhunt
 if [ ! -f "$ENV_FILE" ]; then
   cat > "$ENV_FILE" <<'ENV'
 # Read by the jobhunt services. Owned by root, readable by the jobhunt group only.
+# OpenAI drafts answers to postings' own questions; either key runs the auditor.
+OPENAI_API_KEY=
 ANTHROPIC_API_KEY=
-# Optional: model for the triage auditor (default claude-opus-5-5).
+# anthropic or openai; unset picks whichever key is set, Anthropic first.
+JH_AUDIT_PROVIDER=openai
+# Optional: model for the triage auditor (default claude-opus-5-5 / gpt-5.5).
 # JH_AUDIT_MODEL=claude-opus-5-5
 ENV
 fi
@@ -74,7 +87,7 @@ systemctl list-timers jobhunt-daily.timer --no-pager | head -3
 cat <<NEXT
 
 Installed. Remaining one-time steps (see docs/DEPLOY.md):
-  1. Put the Anthropic API key in $ENV_FILE
+  1. Put the OpenAI (and optionally Anthropic) API key in $ENV_FILE
   2. Copy the Gmail OAuth client JSON to /home/$APP_USER/.config/jobhunt/gmail-client.json
      and authorize:  sudo -u $APP_USER bash -c 'cd $APP_DIR && npm run -s jh -- gmail auth'
   3. First run now:  sudo systemctl start jobhunt-daily.service && journalctl -u jobhunt-daily -f

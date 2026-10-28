@@ -370,3 +370,26 @@ answers:
       - Are you willing to work in the office?
     answer: "Yes"
     origin: human
+  # The candidate (2026-10-28): she knows no one at any company.
+  - id: know-anyone
+    question: Do you know anyone currently at {company}?
+    aliases:
+      - Do you know anyone who works at {company}?
+      - Do you know anyone who currently works at {company}?
+      - Do you have any friends or family who work at {company}?
+      - Were you referred by a current employee?
+      - Were you referred by a {company} employee?
+    answer: "No"
+    origin: human
+  # The candidate (2026-10-28): years of experience is 1.
+  - id: years-experience
+    question: Please input the total years of experience you have that are relevant for this role.
+    aliases:
+      - How many years of experience do you have?
+      - How many years of relevant experience do you have?
+      - Years of experience
+      - Years of relevant experience
+      - Total years of professional experience
+      - How many years of professional experience do you have?
+    answer: "1"
+    origin: human

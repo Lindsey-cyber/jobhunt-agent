@@ -18,13 +18,17 @@ fi
 jh daily || status=1
 # Apply manager: submit what the candidate approved, within the daily cap.
 jh apply-approved || status=1
-if [ -n "${ANTHROPIC_API_KEY:-}" ]; then
+# Postings' own questions: draft from the resume, then retry what they held.
+if [ -n "${OPENAI_API_KEY:-}" ]; then
+  jh draft && jh apply-approved || status=1
+fi
+if [ -n "${ANTHROPIC_API_KEY:-}${OPENAI_API_KEY:-}" ]; then
   jh audit run || { echo "audit run failed; the sample stays for the next session to judge"; status=1; }
 else
-  echo "ANTHROPIC_API_KEY not set; audit sample left for an in-session auditor"
+  echo "no auditor key set; audit sample left for an in-session auditor"
 fi
 
-git add docs/reports data/discovery/catalog.jsonl.gz data/discovery/latest.json data/review.jsonl data/trust.json data/labels 2>/dev/null
+git add docs/reports data/discovery/catalog.jsonl.gz data/discovery/latest.json data/review.jsonl data/trust.json data/labels data/answers.yaml 2>/dev/null
 if ! git diff --cached --quiet; then
   git commit --quiet -m "Daily discovery $(date -u +%Y-%m-%d) (VPS)"
   git push --quiet || { echo "git push failed; results stay committed locally"; status=1; }

@@ -50,3 +50,12 @@
 - VPS：`deploy/`（install.sh、每日 systemd timer、127.0.0.1 Dashboard）和 `docs/DEPLOY.md`；在临时仓库里完整彩排过一次 daily.sh（check → daily → 提交推送）。云会话出不了 22 端口，安装需要候选人在 VPS 上跑一条命令。
 - Greenhouse 适配器第一次在真实页面上验证（Scale AI，草稿不提交），修了 7 处只有真实页面才会暴露的问题。Lever 适配器基于真实页面完成，因为提交按钮带 hCaptcha，代理永远不点提交，由候选人自己点。
 - Ashby：真实页面已抓取（`fixtures/ashby/real-quora-40659fe7.html`），适配器未写。在真实申请表上做交互探测被会话的权限分类器拦下（视作真实交易），需要候选人放行后才能做在线草稿验证。Workday 申请需要注册账号，按规则必须由候选人决定。
+
+## Pause point (2026-10-28, ~16:40 UTC)
+
+- Apply batch 2 (`.scratch/batch2.log`, local only) was mid first pass: 4 confirmed (Nuro ×3, Together AI), Scopely
+  submitted but recorded unconfirmed (after-submit page says "Application Sent!"; the candidate resolves it), 23 held.
+  The chain then runs `jh draft` and a second `jh apply-approved` with every fix pushed today.
+- Next: deploy to Hetzner CAX11 (37.27.217.240, Ubuntu 24.04 ARM64) per docs/DEPLOY.md. Outbound SSH is blocked from
+  the cloud session, so the candidate runs install.sh herself or attaches the VPS through Remote Control.
+- Open for the candidate: Lyft (certification, employment section), Anduril (export controls), zip code (not in profile).

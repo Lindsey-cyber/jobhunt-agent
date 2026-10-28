@@ -26,6 +26,7 @@ A candidate opens `https://jobs.ashbyhq.com/<org>/<id>/application`, fills one R
 
 ## Gotchas
 
-- Not yet verified live (the capture has no scripts): yes/no buttons, search-box suggestions and their wording, the date picker, upload readback after Ashby replaces the dropzone, the confirmation text after submit, and how often reCAPTCHA challenges a headless browser.
+- Verified live 2026-10-28 (Quora, run `data/runs/ashby_jobs_ashbyhq_com_quora_40659fe7_…/2026-10-28T23-28-50-528Z`, held on unanswered questions): text, SMS consent, the location search ("New York, United States" for "New York, New York, United States"), the school search, degree radios, yes/no buttons, resume upload readback, EEO radios. All 14 filled fields read back.
+- Not yet verified live: the date picker, the confirmation text after submit, and how often reCAPTCHA challenges a headless browser.
 - "Graduation Date" is a react-datepicker; no rule fills it yet, so it holds.
 - "Are you legally authorized to work in that country?" refers to the previous question's country; it holds.

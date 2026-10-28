@@ -1,0 +1,130 @@
+# Long-running watchlist of official ATS boards. Every entry was checked live on
+# 2026-10-28 (the board answered with open jobs). size is a curated prioritization
+# band, not an audited headcount; unknown is resolved at run time from the
+# board's open-posting count (a proxy, reported as such). ai: true marks AI-first companies.
+# Add a company by adding a line; the discovery run reports any board that fails.
+greenhouse:
+  - { board: anthropic, company: 'Anthropic', size: medium_large, ai: true }
+  - { board: databricks, company: 'Databricks', size: medium_large }
+  - { board: stripe, company: 'Stripe', size: medium_large }
+  - { board: pinterest, company: 'Pinterest', size: medium_large }
+  - { board: reddit, company: 'Reddit', size: medium_large }
+  - { board: roblox, company: 'Roblox', size: medium_large }
+  - { board: duolingo, company: 'Duolingo', size: medium_large }
+  - { board: doordashusa, company: 'DoorDash', size: medium_large }
+  - { board: lyft, company: 'Lyft', size: medium_large }
+  - { board: newsbreak, company: 'NewsBreak', size: medium_large }
+  - { board: airbnb, company: 'Airbnb', size: medium_large }
+  - { board: dropbox, company: 'Dropbox', size: medium_large }
+  - { board: figma, company: 'Figma', size: medium_large }
+  - { board: coinbase, company: 'Coinbase', size: medium_large }
+  - { board: robinhood, company: 'Robinhood', size: medium_large }
+  - { board: instacart, company: 'Instacart', size: medium_large }
+  - { board: discord, company: 'Discord', size: medium_large }
+  - { board: gitlab, company: 'GitLab', size: medium_large }
+  - { board: cloudflare, company: 'Cloudflare', size: medium_large }
+  - { board: datadog, company: 'Datadog', size: medium_large }
+  - { board: mongodb, company: 'MongoDB', size: medium_large }
+  - { board: elastic, company: 'Elastic', size: medium_large }
+  - { board: twilio, company: 'Twilio', size: medium_large }
+  - { board: okta, company: 'Okta', size: medium_large }
+  - { board: asana, company: 'Asana', size: medium_large }
+  - { board: samsara, company: 'Samsara', size: medium_large }
+  - { board: brex, company: 'Brex', size: medium_large }
+  - { board: chime, company: 'Chime', size: medium_large }
+  - { board: affirm, company: 'Affirm', size: medium_large }
+  - { board: scaleai, company: 'Scale AI', size: medium_large }
+  - { board: togetherai, company: 'Together AI', size: medium_large, ai: true }
+  - { board: waymo, company: 'Waymo', size: medium_large, ai: true }
+  - { board: nuro, company: 'Nuro', size: medium_large, ai: true }
+  - { board: andurilindustries, company: 'Anduril', size: medium_large }
+  - { board: gleanwork, company: 'Glean', size: medium_large, ai: true }
+  - { board: vercel, company: 'Vercel', size: medium_large }
+  - { board: twitch, company: 'Twitch', size: medium_large }
+  - { board: snorkelai, company: 'Snorkel AI', size: medium_large, ai: true }
+  - { board: sofi, company: 'SoFi', size: medium_large }
+  - { board: nextdoor, company: 'Nextdoor', size: medium_large }
+  - { board: squarespace, company: 'Squarespace', size: medium_large }
+  - { board: peloton, company: 'Peloton', size: medium_large }
+  - { board: zocdoc, company: 'Zocdoc', size: medium_large }
+  - { board: oscar, company: 'Oscar Health', size: medium_large }
+  - { board: mozilla, company: 'Mozilla', size: medium_large }
+  - { board: hubspotjobs, company: 'HubSpot', size: medium_large }
+  - { board: toast, company: 'Toast', size: medium_large }
+  - { board: block, company: 'Block', size: medium_large }
+  - { board: gusto, company: 'Gusto', size: medium_large }
+  - { board: carta, company: 'Carta', size: medium_large }
+  - { board: verkada, company: 'Verkada', size: medium_large }
+  - { board: abnormalsecurity, company: 'Abnormal Security', size: medium_large }
+  - { board: faire, company: 'Faire', size: medium_large }
+lever:
+  - { board: palantir, company: 'Palantir', size: medium_large }
+  - { board: spotify, company: 'Spotify', size: medium_large }
+  - { board: zoox, company: 'Zoox', size: medium_large, ai: true }
+  - { board: shieldai, company: 'Shield AI', size: medium_large, ai: true }
+ashby:
+  - { board: openai, company: 'OpenAI', size: medium_large, ai: true }
+  - { board: applied, company: 'Applied Intuition', size: medium_large, ai: true }
+  - { board: quora, company: 'Quora', size: medium_large }
+  - { board: notion, company: 'Notion', size: medium_large }
+  - { board: snowflake, company: 'Snowflake', size: medium_large }
+  - { board: ramp, company: 'Ramp', size: medium_large }
+  - { board: cohere, company: 'Cohere', size: medium_large, ai: true }
+  - { board: perplexity, company: 'Perplexity', size: medium_large, ai: true }
+  - { board: cursor, company: 'Cursor (Anysphere)', size: medium_large, ai: true }
+  - { board: harvey, company: 'Harvey', size: medium_large, ai: true }
+  - { board: sierra, company: 'Sierra', size: medium_large, ai: true }
+  - { board: linear, company: 'Linear', size: medium_large }
+  - { board: replit, company: 'Replit', size: unknown, ai: true }
+  - { board: elevenlabs, company: 'ElevenLabs', size: medium_large, ai: true }
+  - { board: modal, company: 'Modal', size: unknown, ai: true }
+  - { board: baseten, company: 'Baseten', size: unknown, ai: true }
+  - { board: deepgram, company: 'Deepgram', size: unknown, ai: true }
+  - { board: writer, company: 'Writer', size: unknown, ai: true }
+  - { board: decagon, company: 'Decagon', size: unknown, ai: true }
+  - { board: lambda, company: 'Lambda', size: medium_large, ai: true }
+  - { board: suno, company: 'Suno', size: unknown, ai: true }
+  - { board: vanta, company: 'Vanta', size: medium_large }
+  - { board: plaid, company: 'Plaid', size: medium_large }
+  - { board: brainco, company: 'Brain Co.', size: unknown, ai: true }
+# Workday has no full-board API; each site is searched with these bounded queries.
+workdayQueries: [new grad, new college grad, university graduate, entry level, machine learning, AI engineer, applied scientist, research engineer]
+workday:
+  - { site: 'https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite', company: 'NVIDIA', size: medium_large }
+  - { site: 'https://adobe.wd5.myworkdayjobs.com/external_experienced', company: 'Adobe', size: medium_large }
+  - { site: 'https://salesforce.wd12.myworkdayjobs.com/External_Career_Site', company: 'Salesforce', size: medium_large }
+  - { site: 'https://intel.wd1.myworkdayjobs.com/External', company: 'Intel', size: medium_large }
+  - { site: 'https://capitalone.wd12.myworkdayjobs.com/Capital_One', company: 'Capital One', size: medium_large }
+  - { site: 'https://paypal.wd1.myworkdayjobs.com/jobs', company: 'PayPal', size: medium_large }
+  - { site: 'https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers', company: 'CrowdStrike', size: medium_large }
+  - { site: 'https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External', company: 'Zillow', size: medium_large }
+  - { site: 'https://autodesk.wd1.myworkdayjobs.com/Ext', company: 'Autodesk', size: medium_large }
+  - { site: 'https://workday.wd5.myworkdayjobs.com/Workday', company: 'Workday', size: medium_large }
+  - { site: 'https://disney.wd5.myworkdayjobs.com/disneycareer', company: 'Disney', size: medium_large }
+  - { site: 'https://target.wd5.myworkdayjobs.com/targetcareers', company: 'Target', size: medium_large }
+  - { site: 'https://globalfoundries.wd1.myworkdayjobs.com/External', company: 'GlobalFoundries', size: medium_large }
+  - { site: 'https://motorolasolutions.wd5.myworkdayjobs.com/Careers', company: 'Motorola Solutions', size: medium_large }
+  - { site: 'https://mastercard.wd1.myworkdayjobs.com/CorporateCareers', company: 'Mastercard', size: medium_large }
+  - { site: 'https://snapchat.wd1.myworkdayjobs.com/snap', company: 'Snap', size: medium_large }
+  - { site: 'https://hp.wd5.myworkdayjobs.com/ExternalCareerSite', company: 'HP', size: medium_large }
+  - { site: 'https://analogdevices.wd1.myworkdayjobs.com/External', company: 'Analog Devices', size: medium_large }
+  - { site: 'https://fmr.wd1.myworkdayjobs.com/FidelityCareers', company: 'Fidelity', size: medium_large }
+  - { site: 'https://verizon.wd12.myworkdayjobs.com/verizon-careers', company: 'Verizon', size: medium_large }
+  - { site: 'https://att.wd1.myworkdayjobs.com/ATTGeneral', company: 'AT&T', size: medium_large }
+  - { site: 'https://ebay.wd5.myworkdayjobs.com/apply', company: 'eBay', size: medium_large }
+  - { site: 'https://micron.wd1.myworkdayjobs.com/External', company: 'Micron', size: medium_large }
+  - { site: 'https://blackrock.wd1.myworkdayjobs.com/BlackRock_Professional', company: 'BlackRock', size: medium_large }
+  - { site: 'https://crowe.wd12.myworkdayjobs.com/external_careers', company: 'Crowe', size: medium_large }
+github:
+  - { name: SimplifyJobs/New-Grad-Positions, url: 'https://github.com/SimplifyJobs/New-Grad-Positions', raw: 'https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json', format: simplify-json }
+  - { name: speedyapply/2027-AI-College-Jobs, url: 'https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md', raw: 'https://raw.githubusercontent.com/speedyapply/2027-AI-College-Jobs/main/NEW_GRAD_USA.md', format: markdown }
+  - { name: Tar-ive/ML_Newgrad_2027, url: 'https://github.com/Tar-ive/ML_Newgrad_2027', raw: 'https://raw.githubusercontent.com/Tar-ive/ML_Newgrad_2027/main/README.md', format: markdown }
+hn:
+  commentLimit: 400
+# Sources with no approved API. Listed so every report states they were skipped and why.
+skipped:
+  - { name: LinkedIn direct, reason: 'No approved jobs API; covered through LinkedIn alert emails in Gmail' }
+  - { name: Indeed direct, reason: 'No approved jobs API; covered through Indeed alert emails in Gmail' }
+  - { name: Glassdoor direct, reason: 'No approved jobs API; covered through Glassdoor alert emails in Gmail' }
+  - { name: Handshake direct, reason: 'Needs an account integration; covered through Handshake emails in Gmail' }
+  - { name: Wellfound, reason: 'Account authorization not configured' }

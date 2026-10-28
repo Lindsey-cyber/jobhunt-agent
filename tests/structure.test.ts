@@ -10,10 +10,11 @@ const files = (dir: string): string[] =>
 const source = (f: string) => readFileSync(join(ROOT, f), "utf8");
 
 describe("structure", () => {
-  it("keeps the deciding code pure: plan, gate and verify never touch a browser or the disk", () => {
-    const offenders = ["src/plan", "src/gate", "src/verify"]
+  it("keeps the deciding code pure: plan, gate, verify and discover never touch a browser, the disk or the network", () => {
+    const offenders = ["src/plan", "src/gate", "src/verify", "src/discover"]
       .flatMap(files)
-      .filter((f) => /from "(playwright|node:fs|node:child_process)"/.test(source(f)));
+      // Type-only imports are erased at runtime, so they may name IO modules.
+      .filter((f) => /from "(playwright|node:fs|node:child_process|node:http|node:https)"|\bfetch\(|from "\.\.\/(sources|run|store|org)\//.test(source(f).replace(/^import type .*$/gm, "")));
     expect(offenders).toEqual([]);
   });
 

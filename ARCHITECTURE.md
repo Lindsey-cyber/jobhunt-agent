@@ -19,6 +19,30 @@ url ─▶ adapter.extract ─▶ FormSnapshot ─▶ buildPlan ─▶ FillPlan 
 | gate | `src/gate/gate.ts` | yes | submit, or hold with every reason |
 | submit | `src/run/apply.ts` | no | ledger `submitted` first, then the click, then `confirmed` or `unconfirmed` |
 
+## Discovery
+
+```
+config/watchlist.yaml ─▶ src/sources (fetch, read-only) ─▶ src/discover/parse ─▶ Sighting[]
+Gmail alerts (data/inbox) ─┘                                                        │
+       catalog ◀── link check ◀── triage ◀── mergeRun (JobKey only) ◀──────────────┘
+          │
+          └─▶ audit sample · approval queue · outreach queue · REPORT.md · dashboard.html
+```
+
+| stage | code | pure | output |
+|---|---|---|---|
+| fetch | `src/sources/fetch.ts` | no | official boards (Greenhouse, Lever, Ashby, bounded Workday search), New Grad GitHub lists, HN; boards found through list links are fetched too |
+| parse | `src/discover/parse.ts` | yes | one `Sighting` per job per source, with what its date means (`published`, `list_age`, `email_received`...) |
+| identity | `src/discover/identity.ts` | yes | `JobKey`: ATS job id (`greenhouse:<id>`, also from `gh_jid`), Lever/Ashby UUID, Workday tenant+requisition, platform ids for alerts, else the canonical URL. Company plus title never merges |
+| merge | `src/discover/merge.ts` | yes | one `Job` per key with every source's first and last sighting; official fields win |
+| triage | `src/discover/triage.ts` | yes | match, review or reject with a rule id; facts come from the profile |
+| link check | `src/discover/links.ts` + `src/run/discover.ts` | classify is | valid, invalid, blocked or unverified per match |
+| report | `src/discover/{metrics,render,outreach}.ts` | yes | channel metrics, CSVs, dashboard, outreach drafts |
+
+Sponsorship: silence passes. An explicit no-sponsorship statement on the official posting rejects when the profile needs sponsorship; the same statement in a third-party copy only sends it to review.
+
+`data/discovery/catalog.jsonl` carries history between runs (committed; descriptions only where triage read past the title). Raw run output stays in `data/runs/discovery/` (ignored). Alert emails live in `data/inbox/` (ignored: personal mail).
+
 ## Where answers come from
 
 In order: a veto list (compensation, emergency contacts, references, attestations) blocks the field. An exact answer-bank match wins next, so the candidate can override anything. Then structured profile rules (identity, contact, links, education, work authorization, sponsorship, EEO). Then a fuzzy answer-bank match, never for a sensitive question. Options are matched strictly; a sensitive answer that matches no option blocks.
@@ -51,6 +75,8 @@ coordinator (long-running on the VPS; schedules, budgets, writes the daily repor
     └─ verifier: source and date checker, assigns confidence
 ```
 
+What runs today (`src/org/coordinator.ts`, `jh daily`): the discovery manager's code worker, a blind audit sample for its verifier, the apply manager in phase-1 form (the day's best official matches go to the review list for approval) and the outreach manager (collects and drafts, never sends). The auditor is a separate agent on another model given only `audit/brief.md` and `audit/blind.jsonl`; `jh audit score` grades it against the hidden answer key. The triage auditor's brief is built from the profile, like every other fact.
+
 Rules for a verifier:
 
 - Independent: a different model or prompt from the worker, reading artifacts (pages, screenshots, raw records), never the worker's own summary.
@@ -59,7 +85,11 @@ Rules for a verifier:
 
 Anything code can check (readback, links, dedupe, confirmation) stays in code, not in an agent.
 
-Each stage has its own trust level, promoted on audit numbers and demoted automatically when an audit fails. Changes to triage rules, answer skills or models run against the eval set first and ship only if the score does not drop.
+Each stage has its own trust level in `data/trust.json` (`confirm` or `auto`, `src/discover/stagetrust.ts`). An audit with a false-match or miss rate above 10% (n ≥ 15) demotes the stage to `confirm` automatically; three clean audits (≤ 5%) only put a promotion proposal on the review list, and the candidate promotes with `jh trust promote`. The candidate's `jh label` decisions are the eval set (`data/labels/triage.jsonl`, with the evidence they were made on); `tests/eval.test.ts` fails `npm run check` when a rule change scores below the recorded baseline.
+
+## Review list
+
+`data/review.jsonl` (append-only, last line per id wins) holds everything waiting on the candidate: matches to approve, audit disagreements, failed sources, promotion proposals, outreach drafts with a public contact. `jh pending` prints it with held applications. Items are never re-asked once resolved.
 
 ## Ledger
 
@@ -77,4 +107,4 @@ Every run writes `data/runs/<key>/<timestamp>/` with the plan, readback, verify 
 
 ## Not built yet
 
-The agent organization above (coordinator, managers, verifiers, eval set), discovery (career-ops `providers/` and the old Python `feeds.py` for Greenhouse, Lever, Ashby and Workday public APIs), fit scoring, resume tailoring with a fact gate, Lever/Ashby/Workday adapters, inbox confirmation checks, an eval harness on captured pages, and a trust report per ATS.
+The coordinator as a long-running VPS service (systemd timer around `jh daily`, Gmail API read-only OAuth, the auditor as an API call), an LLM triage worker for `review` items, fit scoring, resume tailoring with a fact gate, Lever/Ashby/Workday adapters, inbox confirmation checks, an eval harness on captured pages, and a trust report per ATS.

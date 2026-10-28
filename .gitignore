@@ -1,3 +1,4 @@
 node_modules/
 data/runs/
 data/ledger.jsonl
+data/inbox/

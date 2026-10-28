@@ -230,6 +230,18 @@ export function parseAlert(m: AlertMessage, seenAt: string): Sighting[] {
         card = [];
       } else card.push(l);
     }
+  } else if (channel === "gmail_glassdoor" && !m.body.trim() && m.html) {
+    // The API copy is HTML only: each card is one <a> to the listing whose
+    // cells read company (with an optional "3.8 ★"), title, location, then pay and age.
+    for (const a of m.html.matchAll(/<a\b[^>]*href="([^"]*jobListingId[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi)) {
+      const cells = htmlToText(a[2]!.replace(/<!--[\s\S]*?-->/g, "").replace(/<\/(td|tr|table)>/gi, "\n"))
+        .split("\n")
+        .map((c) => c.trim())
+        .filter(Boolean);
+      if (cells.length < 3) continue;
+      const company = cells[0]!.replace(/\s+\d(\.\d)?\s*★\s*$/, "").trim();
+      out.push(sighting({ ...base, url: unwrap(decodeEntities(a[1]!)), company, title: cells[1]!, location: cells[2]! }));
+    }
   } else if (channel === "gmail_glassdoor") {
     // [| || | Company 4.1 ★ || Title || Location || salary | age |](url)
     for (const g of m.body.matchAll(/\[\|([^\]]*)\|\]\((\S+?)\)/g)) {

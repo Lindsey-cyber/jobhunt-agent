@@ -152,7 +152,7 @@ export function parseSecurityCode(text: string): string | undefined {
 // after `since` (the click that asked for it). Read-only.
 export async function waitForSecurityCode(company: string, since: Date, timeoutMs = 180_000): Promise<string | undefined> {
   const deadline = Date.now() + timeoutMs;
-  const q = new URLSearchParams({ q: `from:greenhouse-mail.io subject:"Security code" newer_than:1d`, maxResults: "10" });
+  const q = new URLSearchParams({ q: `subject:"Security code for your application" newer_than:1d`, maxResults: "10" });
   while (Date.now() < deadline) {
     const token = await accessToken();
     const get = async <T>(url: string) => (await (await fetch(url, { headers: { authorization: `Bearer ${token}` } })).json()) as T;

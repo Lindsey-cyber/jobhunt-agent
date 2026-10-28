@@ -103,6 +103,10 @@ describe("parsers", () => {
     ]);
     const aged = "[| || | ProviderTrust || AI Engineer || Nashville, TN | 1d |](https://www.glassdoor.com/partner/jobListing.htm?jobListingId=7)";
     expect(parseAlert({ id: "g2", date: T0, sender: "noreply@glassdoor.com", subject: "", body: aged }, T0)[0]?.location).toBe("Nashville, TN");
+    const html = `<a href="https://urldefense.com/v3/__https://www.glassdoor.com/partner/jobListing.htm?pos=102&amp;jobListingId=1010291&amp;cs=1"><table><tr><td><span>Coinbase</span><span> <!-- -->3.8 ★</span></td></tr></table><table><tr><td><p>Forward Deployed Engineer Intern</p></td></tr></table><table><tr><td>New York, NY</td></tr><tr><td>$50 (Employer est.)</td><td>1d</td></tr></table></a>`;
+    expect(parseAlert({ id: "g3", date: T0, sender: "noreply@glassdoor.com", subject: "", body: "", html }, T0).map((r) => [r.key, r.company, r.title, r.location])).toEqual([
+      ["glassdoor:1010291", "Coinbase", "Forward Deployed Engineer Intern", "New York, NY"],
+    ]);
     const hs = "New jobs just for you.\n\nAnthropic\nApplied AI, Research Engineer\n\n$300–400K/yr • Full-Time • Lancaster, CA (Hybrid)\n";
     const [lead] = parseAlert({ id: "h", date: T0, sender: "handshake@g.joinhandshake.com", subject: "", body: hs }, T0);
     expect(lead).toMatchObject({ key: "lead:handshake:h:0", company: "Anthropic", title: "Applied AI, Research Engineer", location: "Lancaster, CA (Hybrid)", hints: { unresolved: true } });

@@ -1,6 +1,6 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
-import { ATTESTATION_OPTION, jobCountry, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
+import { ATTESTATION_OPTION, jobCountry, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
 import { jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
@@ -31,9 +31,10 @@ function bankAnswer(entry: AnswerEntry, company: string): string {
   return entry.answer.replaceAll("{company}", company);
 }
 
-function bankScope(bank: AnswerBank, company: string): AnswerEntry[] {
+function bankScope(bank: AnswerBank, company: string, jobTitle: string): AnswerEntry[] {
   const c = normalize(company);
-  return bank.answers.filter((e) => !e.company || normalize(e.company) === c);
+  const t = normalize(jobTitle);
+  return bank.answers.filter((e) => (!e.company || normalize(e.company) === c) && (!e.jobTitle || normalize(e.jobTitle) === t));
 }
 
 function questionsOf(entry: AnswerEntry, company: string): string[] {
@@ -81,6 +82,10 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   // unless the candidate answered this exact question in the answer bank.
   const attestation = field.kind === "checkbox" && field.options.length > 0 && field.options.every((o) => ATTESTATION_OPTION.test(normalize(o)));
   if (attestation && !bank.some((e) => questionsOf(e, form.company).includes(label))) {
+    const text = normalize([field.label, ...field.options].join(" "));
+    if (profile.acknowledgePrivacyPolicies && field.options.length === 1 && PRIVACY_NOTICE.test(text) && !PRIVACY_EXCEPT.test(text)) {
+      return { status: "fill", field, value: field.options[0]!, source: { type: "profile", path: "acknowledgePrivacyPolicies" }, confidence: 1, sensitive: false };
+    }
     return unanswered(field, "acknowledgements and consents need the candidate");
   }
 
@@ -113,6 +118,6 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
 }
 
 export function buildPlan(form: FormSnapshot, profile: Profile, bank: AnswerBank): FillPlan {
-  const scoped = bankScope(bank, form.company);
+  const scoped = bankScope(bank, form.company, form.jobTitle);
   return { form, items: form.fields.map((f) => planField(f, form, profile, scoped)) };
 }

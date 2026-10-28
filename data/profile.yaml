@@ -31,6 +31,8 @@ education:
     gpa: "3.82"
 # The candidate (2026-10-28): no non-compete, non-solicitation or similar agreement.
 restrictiveAgreements: false
+# The candidate (2026-10-28): may tick "I have read the privacy policy" boxes for her.
+acknowledgePrivacyPolicies: true
 workAuthorization:
   authorizedCountries: [United States]
   needsSponsorship: true

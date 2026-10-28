@@ -11,6 +11,11 @@ export const VETO: { pattern: RegExp; reason: string }[] = [
 
 export const ATTESTATION_OPTION = /\b(i )?(acknowledge|agree|consent|accept|understand|certify|attest)\b/;
 
+// A single-option "I have read the privacy policy / notice" box. Anything that
+// also certifies answers, binds interview conduct or signs is not one.
+export const PRIVACY_NOTICE = /\bprivacy (policy|notice|statement)\b/;
+export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
+
 export const SENSITIVE =
   /\b(authori[sz]ed|authori[sz]ation|eligible to work|sponsor|sponsorship|visa|citizen|citizenship|criminal|convicted|conviction|background check|disability|disabled|veteran|gender|sex|race|racial|ethnicity|hispanic|latino|previously (been )?employed|previously worked|worked (here|for) before|relatives?|related to|export control)\b/;
 

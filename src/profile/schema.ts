@@ -44,6 +44,9 @@ export const Profile = z.object({
     .min(1),
   // The candidate (2026-10-28): bound by no non-compete, non-solicitation or similar agreement.
   restrictiveAgreements: z.boolean().optional(),
+  // The candidate lets the agent tick "I have read the privacy policy" boxes.
+  // Other acknowledgements (interview rules, accuracy certifications) still need her.
+  acknowledgePrivacyPolicies: z.boolean().default(false),
   // Employers from the resume, for "have you worked for X before?" questions.
   workHistory: z.array(z.object({ employer: z.string().min(1), title: z.string().optional(), start: z.string().optional(), end: z.string().optional() })).default([]),
   workAuthorization: z.object({
@@ -71,7 +74,11 @@ export const AnswerEntry = z.object({
   aliases: z.array(z.string()).default([]),
   answer: z.string().min(1),
   company: z.string().optional(),
+  // A drafted answer is written for one posting and only used there.
+  jobTitle: z.string().optional(),
   origin: z.enum(["human", "generated"]).default("human"),
+  // Generated answers: the resume and profile passages every fact came from.
+  evidence: z.array(z.string()).optional(),
 });
 export type AnswerEntry = z.infer<typeof AnswerEntry>;
 

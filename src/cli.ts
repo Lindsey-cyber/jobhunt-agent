@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { parseDocument, type YAMLSeq } from "yaml";
+import { parseDocument, type YAMLMap, type YAMLSeq } from "yaml";
 import { queueQuestions } from "./store/questions.ts";
 import { parseArgs } from "node:util";
 import { chromium } from "playwright";
@@ -11,6 +11,7 @@ import type { JobKey } from "./domain/job.ts";
 import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
 import { runAuditor } from "./org/auditor.ts";
+import { draftAnswers } from "./org/drafter.ts";
 import { authUrl, fetchAlerts, finishAuth, gmailConfigured } from "./sources/gmail.ts";
 import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
@@ -40,6 +41,9 @@ const USAGE = `jh <command>
   questions                            collect the questions holding applications into the review list, once each
   apply-approved [--limit <n>]         submit postings you approved (fit labels) that have an adapter, within the
                                        daily cap; skips excluded employers and anything already applied to
+  draft                                draft answers to postings' own questions (why this role, have you built X)
+                                       from the resume with OpenAI; every cited passage and number is checked
+                                       against your documents before the answer is used
   label <review-id|job-key> fit|not_fit [--note <text>]
                                        record your decision on a posting (feeds the eval set)
   answer <review-id> <text>            record your answer to a question on the review list
@@ -148,6 +152,14 @@ switch (command) {
     queueQuestions(ledger, new ReviewList(paths(u.dir).review));
     break;
   }
+  case "draft": {
+    const u = user();
+    const out = await draftAnswers(u, ledgerOf(u.dir), (s) => console.error(s));
+    const used = out.filter((o) => o.answer && !o.problems.length);
+    console.log(`${used.length} of ${out.length} questions drafted and checked; the rest stay on the review list`);
+    for (const o of out) console.log(`${o.problems.length ? "HELD" : "USED"}  ${o.company} · ${o.question}${o.answer ? `\n      ${o.answer}` : ""}${o.problems.length ? `\n      ${o.problems.join("; ")}` : ""}`);
+    break;
+  }
   case "status": {
     for (const e of ledgerOf(user().dir).latest()) console.log(`${e.at}  ${e.state.padEnd(11)}  ${e.key}`);
     break;
@@ -162,7 +174,7 @@ switch (command) {
       for (const r of reasons) console.log(`    - ${r}`);
     }
     const open = new ReviewList(paths(u.dir).review).open();
-    const kinds = ["submit_by_hand", "approve_match", "audit_disagreement", "question", "trust_change", "source_failure", "outreach_draft"] as const;
+    const kinds = ["submit_by_hand", "approve_match", "audit_disagreement", "question", "trust_change", "source_failure", "drafted_answer", "outreach_draft"] as const;
     for (const k of kinds) {
       const items = open.filter((i) => i.kind === k);
       if (!items.length) continue;
@@ -250,6 +262,17 @@ switch (command) {
       const doc = parseDocument(readFileSync(bankPath, "utf8"));
       const list = doc.get("answers") as YAMLSeq;
       list.add(doc.createNode({ id: url.slice("question:".length), question: item.subject, answer: arg2, origin: "human" }));
+      writeFileSync(bankPath, doc.toString());
+    }
+    // A drafted answer the candidate rewrites: her text replaces the draft.
+    if (url.startsWith("answer:draft:")) {
+      const bankPath = join(u.dir, "answers.yaml");
+      const doc = parseDocument(readFileSync(bankPath, "utf8"));
+      const entry = (doc.get("answers") as YAMLSeq<YAMLMap>).items.find((a) => a.get("id") === url.slice("answer:".length));
+      if (!entry) throw new Error(`no drafted answer ${url.slice("answer:".length)} in answers.yaml`);
+      entry.set("answer", arg2);
+      entry.set("origin", "human");
+      entry.delete("evidence");
       writeFileSync(bankPath, doc.toString());
     }
     review.resolve(url, arg2);

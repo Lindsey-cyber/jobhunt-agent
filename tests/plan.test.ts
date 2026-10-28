@@ -83,4 +83,22 @@ describe("buildPlan", () => {
     expect(item).toMatchObject({ status: "blocked", reason: "acknowledgements and consents need the candidate" });
     expect(buildPlan(form([field("LinkedIn URL")]), u.profile, u.bank).items[0]).toMatchObject({ status: "fill" });
   });
+
+  // From the real Waymo form: the candidate lets the agent tick privacy-policy boxes, nothing else.
+  it("ticks a privacy-policy acknowledgement only when the candidate allowed it, and never an interview-conduct one", () => {
+    const u = makeUserData();
+    const privacy = field("Please review and acknowledge our Candidate Privacy Policy linked below:", { kind: "checkbox", options: ["I acknowledge that I have read and understood the terms of the Waymo Applicant and Candidate Privacy Policy."] });
+    const ai = field("Waymo prohibits the use of artificial intelligence (AI) tools during the interview process. You acknowledge the above policies and our privacy policy.", { kind: "checkbox", options: ["I acknowledge the above policies."] });
+    expect(buildPlan(form([privacy]), u.profile, u.bank).items[0]).toMatchObject({ status: "blocked" });
+    const allowed = { ...u.profile, acknowledgePrivacyPolicies: true };
+    expect(buildPlan(form([privacy]), allowed, u.bank).items[0]).toMatchObject({ status: "fill", value: privacy.options[0] });
+    expect(buildPlan(form([ai]), allowed, u.bank).items[0]).toMatchObject({ status: "blocked" });
+  });
+
+  it("uses a drafted answer only on the posting it was written for", () => {
+    const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
+    const f = field("Why are you interested in this role?");
+    expect(buildPlan(form([f]), user.profile, { answers: [why] }).items[0]).toMatchObject({ status: "fill", value: "Because of the robots." });
+    expect(buildPlan({ ...form([f]), jobTitle: "Staff Engineer" }, user.profile, { answers: [why] }).items[0]).toMatchObject({ status: "blocked" });
+  });
 });

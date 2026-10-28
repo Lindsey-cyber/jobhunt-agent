@@ -4,7 +4,7 @@ import { dirname } from "node:path";
 // The daily review list. Anything the agent cannot resolve lands here instead of
 // blocking a run; the candidate reads it with `jh pending` at the end of the day.
 // Append-only: the last line for an id is its current state.
-export type ReviewKind = "submit_by_hand" | "approve_match" | "source_failure" | "question" | "audit_disagreement" | "outreach_draft" | "trust_change";
+export type ReviewKind = "submit_by_hand" | "approve_match" | "source_failure" | "question" | "audit_disagreement" | "outreach_draft" | "trust_change" | "drafted_answer";
 
 export interface ReviewItem {
   id: string;

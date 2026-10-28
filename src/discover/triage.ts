@@ -51,11 +51,13 @@ const US = new RegExp(
   [
     String.raw`\bunited states\b|\bu\.s\.a?\b|\busa\b|\bus\b|\bamericas?\b|\(US\)`,
     String.raw`new york|\bnyc\b|san francisco|\bsf\b|bay area|seattle|boston|austin|chicago|los angeles|mountain view|palo alto|sunnyvale|san jose|santa clara|menlo park|redmond|bellevue|cambridge, ma|pittsburgh|atlanta|denver|washington|philadelphia|san diego|irvine|dallas|houston|miami|raleigh|salt lake|portland|detroit|minneapolis|phoenix|nashville|baltimore|ann arbor|madison|columbus|charlotte|richmond|mclean|arlington|reston|herndon|princeton|jersey city|hoboken|stamford|cupertino|san mateo|redwood city|foster city|emeryville|oakland|berkeley|south san francisco|brooklyn|manhattan|lancaster, ca`,
-    String.raw`(?:,|\b)\s*(?:${US_STATES})\b(?![a-z])`,
-    String.raw`california|texas|washington state|massachusetts|illinois|colorado|georgia|virginia|north carolina|new jersey|pennsylvania|michigan|ohio|oregon|arizona|florida|utah|minnesota|maryland`,
+    String.raw`\b(?:alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new hampshire|new jersey|new mexico|north carolina|north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|south carolina|south dakota|tennessee|texas|utah|vermont|virginia|washington state|west virginia|wisconsin|wyoming)\b`,
   ].join("|"),
   "i",
 );
+// State codes only after a comma or as Workday's US-XX prefix, and only in
+// capitals: "IN-Pune" is India, not Indiana.
+const US_STATE_CODE = new RegExp(String.raw`(?:,\s*|\bUS-)(?:${US_STATES})\b(?![a-z])`);
 const NON_US =
   /canada|toronto|vancouver|montr[eé]al|ottawa|waterloo|london|united kingdom|\buk\b|england|scotland|ireland|dublin|germany|berlin|munich|hamburg|france|paris|netherlands|amsterdam|switzerland|z[uü]rich|india|bangalore|bengaluru|hyderabad|pune|chennai|gurgaon|gurugram|noida|mumbai|delhi|singapore|japan|tokyo|china|beijing|shanghai|shenzhen|hangzhou|hong kong|taiwan|taipei|korea|seoul|australia|sydney|melbourne|israel|tel aviv|poland|warsaw|krak[oó]w|spain|madrid|barcelona|brazil|s[aã]o paulo|mexico|argentina|buenos aires|romania|bucharest|serbia|belgrade|portugal|lisbon|sweden|stockholm|denmark|copenhagen|finland|helsinki|norway|oslo|italy|milan|czech|prague|hungary|budapest|ukraine|philippines|manila|vietnam|malaysia|kuala lumpur|indonesia|jakarta|uae|dubai|abu dhabi|saudi|riyadh|emea|apac|latam|europe|belgium|brussels|austria|vienna|greece|athens|costa rica|colombia|bogot[aá]|chile|santiago|new zealand|estonia|tallinn|lithuania|bulgaria|sofia|egypt|cairo|nigeria|lagos|kenya|nairobi|south africa|turkey|istanbul|pakistan|thailand|bangkok|luxembourg|cyprus|croatia|slovakia|latvia|uruguay|peru|lima|edinburgh|cambridge, uk|oxford|manchester|bristol|belfast|munich|stuttgart|lyon|zagreb|\((?!US\))[A-Z]{2}\)/i;
 
@@ -76,6 +78,9 @@ export function sponsorshipRestriction(body: string): string | undefined {
 export function requiredExperience(body: string): { years: number; context: string } | undefined {
   for (const m of body.matchAll(EXPERIENCE)) {
     const context = body.slice(Math.max(0, m.index - 80), m.index + m[0].length + 80).replace(/\s+/g, " ");
+    // "0-3 years" / "1 to 3 years": the range's floor is what is required.
+    const floor = /(\d+)\s*(?:[-–]|to)\s*$/.exec(body.slice(Math.max(0, m.index - 8), m.index));
+    if (floor && Number(floor[1]) <= 2) continue;
     if (/prefer|nice to have|bonus|plus\b|ideally/i.test(context)) continue;
     // "PhD or 3+ years" / "MS with 3 years or BS with 5": the degree path may waive it.
     if (/\b(?:ph\.?d|master'?s|m\.?s\.?)\b.{0,30}\bor\b/i.test(context)) continue;
@@ -87,7 +92,7 @@ export function requiredExperience(body: string): { years: number; context: stri
 export function usLocation(location: string): "us" | "non_us" | "unknown" {
   const l = location.trim();
   if (!l) return "unknown";
-  if (US.test(l)) return "us";
+  if (US.test(l) || US_STATE_CODE.test(l)) return "us";
   if (NON_US.test(l)) return "non_us";
   return "unknown";
 }
@@ -121,7 +126,7 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   if (hints.sponsorship && /not offer|citizenship/i.test(hints.sponsorship) && me.needsSponsorship) {
     return v("review", "auth.list_says_no_sponsorship", `New-grad list says "${hints.sponsorship}"; confirm on the official posting`);
   }
-  const citizenship = CITIZENSHIP.exec(body);
+  const citizenship = [...body.matchAll(new RegExp(CITIZENSHIP, "gi"))].find((m) => !/prefer|nice to have|a plus|bonus/i.test(body.slice(Math.max(0, m.index - 40), m.index + m[0].length + 20)));
   if (citizenship && !me.usCitizen) {
     const ctx = body.slice(Math.max(0, citizenship.index - 40), citizenship.index + citizenship[0].length + 30).replace(/\s+/g, " ");
     return official ? v("reject", "auth.citizenship", `Requires US citizenship or clearance: "${ctx.trim()}"`) : v("review", "auth.citizenship_unverified", `Third-party copy mentions citizenship or clearance: "${ctx.trim()}"`);
@@ -138,9 +143,9 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   }
   if (hints.unresolved) return v("review", "lead.unresolved", "Alert or hiring-post lead; find the official posting before judging");
   if (usLocation(location) === "unknown") return v("review", "location.unknown", `US location not established: "${location.slice(0, 80) || "none given"}"`);
-  if (!(earlyTitle || hints.earlyCareerList || EARLY_BODY.test(body))) {
-    return v("review", "level.unclear", "No new-grad or 0-2 year signal in title, description or source");
-  }
-  if (dataScience) return v("review", "role.data_science", "Data-science title; in scope only if the candidate wants DS roles");
-  return v("match", "match", official ? "New grad / early-career AI/ML role on the official posting" : "Matches on a third-party listing; official posting not yet seen");
+  const bodyEarly = EARLY_BODY.exec(body);
+  const signal = earlyTitle ? `title "${EARLY_TITLE.exec(title)![0]}"` : bodyEarly ? `description "${bodyEarly[0]}"` : hints.earlyCareerList ? "listed on a new-grad list" : "";
+  if (!signal) return v("review", "level.unclear", "No new-grad or 0-2 year signal in title, description or source");
+  if (dataScience) return v("review", "role.data_science", `Data-science title (early-career: ${signal}); in scope only if the candidate wants DS roles`);
+  return v("match", "match", `${official ? "Official posting" : "Third-party listing only"}; early-career: ${signal}`);
 }

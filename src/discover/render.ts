@@ -23,6 +23,7 @@ export interface ReportData {
   stage: StageState;
   outreach: OutreachEntry[];
   inboxMessages: number;
+  pending: { kind: string; count: number }[];
 }
 
 const CHANNEL_ZH: Record<string, string> = {
@@ -198,6 +199,10 @@ export function reportMarkdown(d: ReportData): string {
   const withContact = d.outreach.filter((o) => o.publicContacts.length);
   L.push(`${d.outreach.length} 家公司（官方 Board 在招 ≤30 个岗位作为规模代理，或在 HN Who is hiring 发帖）。其中 ${withContact.length} 家在公开招聘帖里写了联系邮箱；没有一个联系人是猜的或从别处查的。负责人姓名未核实一律留空。每家附一份草稿，经历部分留空待你填写，**没有发送任何邮件或私信**。详见 \`outreach.json\` / \`outreach.csv\`。`, "");
 
+  L.push("## 每日清单（`jh pending`）", "");
+  L.push(d.pending.length ? d.pending.map((p) => `- ${p.kind}：${p.count}`).join("\n") : "- 无", "");
+  L.push("批准或驳回用 `jh label <清单 id> fit|not_fit`，你的每个决定都存进评测集（`data/labels/triage.jsonl`），以后改规则先在上面跑分。", "");
+
   L.push("## 局限", "");
   L.push("- 规则只看文本。审计给出的是抽样估计，样本量见上表的区间；没有你的标签前，无法算出真实的误筛/漏筛。");
   L.push("- Workday 是关键词搜索，不是全量；LinkedIn/Indeed/Glassdoor/Handshake 只能通过提醒邮件看到，覆盖取决于你订阅的提醒。");
@@ -283,6 +288,7 @@ table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nu
 th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 thead th { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); background: var(--panel); position: sticky; top: 0; }
 .ledger td { font-family: var(--mono); font-size: .88rem; text-align: right; }
+.ledger thead th:not(:first-child) { text-align: right; }
 .filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .filters input[type=search] { flex: 1 1 220px; min-width: 0; }
 input, select { font: inherit; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }

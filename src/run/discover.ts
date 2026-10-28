@@ -151,7 +151,7 @@ export async function discover(opts: DiscoverOptions): Promise<DiscoverResult> {
   const toCheck = [...merged.values()]
     .filter((j) => j.lastSeen >= startedAt && j.triage.verdict === "match" && !j.key.startsWith("lead:"))
     .sort((a, b) => Number(b.official) - Number(a.official))
-    .slice(0, opts.linkCheckLimit ?? 400);
+    .slice(0, opts.linkCheckLimit ?? 1500);
   await pool(toCheck, 8, async (j) => {
     const at = new Date().toISOString();
     try {

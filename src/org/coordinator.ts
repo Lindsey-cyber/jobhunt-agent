@@ -71,6 +71,17 @@ export async function daily(o: DailyOptions) {
     review.add({ id: `outreach:${e.company.toLowerCase()}`, kind: "outreach_draft", subject: `${e.company}: draft ready, contact ${e.publicContacts.map((c) => c.value).join(", ")}`, detail: e.confidenceNote, link: e.hiringPosts[0]?.url ?? e.roles[0]?.url ?? "" });
   }
 
+  // Scope questions only the candidate can settle; asked once, never re-asked.
+  const ds = seen.filter((j) => j.triage.rule === "role.data_science").length;
+  if (ds) {
+    review.add({
+      id: "question:scope:data_science",
+      kind: "question",
+      subject: `Should Data Scientist roles without ML in the title count as matches? (${ds} today in review)`,
+      detail: "Today they sit in review. Answer yes or no; the rule and its test change to match, and your label decisions on a few of them seed the eval set.",
+    });
+  }
+
   for (const f of r.outcomes.filter((x) => !x.ok)) {
     review.refresh({ id: `source:${f.channel}:${f.name}`, kind: "source_failure", subject: `${f.name} failed`, detail: f.error ?? "", link: f.url });
   }
@@ -142,6 +153,7 @@ export function writeReport(user: UserData, watchlist: Watchlist) {
     stage: readTrust(user.dir).triage,
     outreach,
     inboxMessages: latest.inboxMessages,
+    pending: Object.entries(Object.groupBy(new ReviewList(paths(user.dir).review).open(), (i) => i.kind)).map(([kind, xs]) => ({ kind, count: xs?.length ?? 0 })),
   };
   const d = latest.reportDir;
   mkdirSync(d, { recursive: true });

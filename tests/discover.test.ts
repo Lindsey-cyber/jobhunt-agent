@@ -150,6 +150,13 @@ describe("triage", () => {
     expect(triage(job("Machine Learning Engineer", { description: "Requires 5+ years of experience in ML." }), me).rule).toBe("experience.too_senior");
     expect(triage(job("Machine Learning Engineer", { description: "3+ years of experience preferred. New grads welcome." }), me).verdict).toBe("match");
     expect(triage(job("ML Engineer, New Grad", { description: "Minimum 3 years of experience." }), me).rule).toBe("experience.conflict");
+    // A range's floor is the requirement: "0–3 years" is open to new grads.
+    expect(triage(job("Machine Learning Engineer", { description: "Entry level. 0–3 years of experience in ML." }), me).verdict).toBe("match");
+  });
+
+  it("reads clearance and citizenship as required only when not marked preferred", () => {
+    expect(triage(job("ML Engineer, New Grad", { description: "Must be a U.S. Citizen with an active Secret clearance." }), me).rule).toBe("auth.citizenship");
+    expect(triage(job("ML Engineer, New Grad", { description: "Preferred experience: Active DOD Secret clearance highly desired." }), me).verdict).toBe("match");
   });
 
   it("reads locations conservatively", () => {
@@ -159,6 +166,10 @@ describe("triage", () => {
     expect(usLocation("Singapore, Singapore (SG)")).toBe("non_us");
     expect(usLocation("New York, NY; London")).toBe("us");
     expect(usLocation("Remote")).toBe("unknown");
+    expect(usLocation("IN-Pune; India")).toBe("non_us");
+    expect(usLocation("US-WA-Bellevue")).toBe("us");
+    expect(usLocation("Montana")).toBe("us");
+    expect(usLocation("US, CA, Santa Clara")).toBe("us");
     expect(triage(job("ML Engineer, New Grad", { location: "Toronto, Canada" }), me).rule).toBe("location.non_us");
   });
 });

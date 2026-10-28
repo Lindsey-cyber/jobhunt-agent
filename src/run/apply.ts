@@ -82,6 +82,8 @@ export function formUrl(url: string): string {
   if (id.startsWith("greenhouse:") && u.hostname.endsWith("greenhouse.io") && board && board !== "embed") {
     return `https://job-boards.greenhouse.io/embed/job_app?for=${board}&token=${id.slice("greenhouse:".length)}`;
   }
+  // Lever's posting page links to its form at /apply.
+  if (u.hostname === "jobs.lever.co" && u.pathname.split("/").filter(Boolean).length === 2) return `${u.origin}${u.pathname.replace(/\/$/, "")}/apply`;
   return url;
 }
 

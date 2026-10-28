@@ -350,17 +350,6 @@ answers:
         3.71                                     Sep 2024 – May 2026
       - "Coursework: Deep Learning, Advanced Machine Learning, Statistical
         Analysis of Neural Data, Robot Learning"
-  # Drafted (2026-10-28): the agent finds postings on job lists and ATS boards,
-  # so "Job Board" is how she heard of them. Shown on her review list.
-  - id: how-heard
-    question: How did you hear about {company}?
-    aliases:
-      - How did you hear about us?
-      - How did you hear about this job?
-      - How did you hear about this opportunity?
-      - How did you hear about this position?
-    answer: Job Board
-    origin: generated
   # The candidate (2026-10-28): any US location, on-site 5 days or hybrid 3-4 days all work.
   - id: hybrid-ok
     question: Are you willing and able to commit to the hybrid policy if hired?
@@ -383,7 +372,8 @@ answers:
     origin: human
   # The candidate (2026-10-28): years of experience is 1.
   - id: years-experience
-    question: Please input the total years of experience you have that are relevant for this role.
+    question: Please input the total years of experience you have that are relevant
+      for this role.
     aliases:
       - How many years of experience do you have?
       - How many years of relevant experience do you have?
@@ -392,4 +382,17 @@ answers:
       - Total years of professional experience
       - How many years of professional experience do you have?
     answer: "1"
+    origin: human
+  - id: conflict-of-interest
+    question: CONFLICT OF INTEREST
+    aliases:
+      - Do you have any conflicts of interest?
+    answer: No
+    origin: human
+  - id: history-with-company
+    question: HISTORY WITH {company}
+    aliases:
+      - Have you ever been employed by {company} or any company that {company}
+        has acquired?
+    answer: No
     origin: human

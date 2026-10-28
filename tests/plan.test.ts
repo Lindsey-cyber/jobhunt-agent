@@ -160,6 +160,19 @@ describe("buildPlan", () => {
     expect(items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["Now Co", "Engineer"]);
   });
 
+  // From Anduril's and Lyft's forms.
+  it("answers export-control, clearance, how-heard and employment-history questions from the profile", () => {
+    const p = { ...user.profile, citizenship: ["China"], workHistory: [{ employer: "Now Co", title: "Engineer", start: "2026-05" }, { employer: "Lab", title: "Research Assistant", start: "2026-01", end: "2026-05" }] };
+    const one = (f: ReturnType<typeof field>) => buildPlan(form([f], "Anduril Industries"), p, user.bank).items[0]!;
+    const sel = (label: string, options: string[]) => one(field(label, { kind: "combobox", options }));
+    expect(sel("EXPORT CONTROLS - This position requires access to information subject to U.S. export controls.", ["A United States citizen or national", "A person lawfully admitted for permanent residence", "None of the above"])).toMatchObject({ status: "fill", value: "None of the above" });
+    expect(sel("CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.", ["Yes, I hold an active U.S. security clearance", "Yes, I am eligible for a U.S. security clearance", "No"])).toMatchObject({ status: "fill", value: "No" });
+    expect(sel("If you have held a U.S. security clearance in the past, what clearance level have you held?", ["N/A - have never held U.S. security clearance", "Secret"])).toMatchObject({ status: "fill", value: "N/A - have never held U.S. security clearance" });
+    expect(sel("How did you hear about Anduril?", ["Google job search", "LinkedIn", "GitHub"])).toMatchObject({ status: "fill", value: "GitHub" });
+    const items = buildPlan(form([field("Company name"), field("Title"), field("Start date month", { kind: "combobox", options: ["January", "May"] }), field("End date year")]), p, user.bank).items;
+    expect(items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["Lab", "Research Assistant", "January", "2026"]);
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");

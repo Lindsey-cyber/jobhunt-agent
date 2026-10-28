@@ -128,7 +128,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",
-    pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b/,
+    pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b|^(u s|us|united states) work authori[sz]ation$/,
     resolve: (p, label, ctx) => {
       const country = countryIn(label, ctx);
       return country ? yesNo(p.workAuthorization.authorizedCountries.includes(country)) : undefined;
@@ -165,6 +165,58 @@ export const PROFILE_RULES: ProfileRule[] = [
       const never = (ctx.options ?? []).filter((o) => /^(never|i have never|no\b)/i.test(o.trim()));
       if (!worked && never.length === 1) return never[0];
       return yesNo(worked);
+    },
+  },
+  {
+    // "How did you hear about us?": the candidate does not mind which; the
+    // agent finds postings on job lists, so the closest option says so.
+    path: "howHeard",
+    pattern: /^how did you (hear|learn) about /,
+    resolve: (_p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      if (!opts.length) return "Job board";
+      for (const want of [/^job ?boards?$/i, /\bjob board\b/i, /^github$/i, /^linkedin$/i, /careers? (site|page)|website/i, /^other$/i]) {
+        const hit = opts.find((o) => want.test(o.trim()));
+        if (hit) return hit;
+      }
+      return undefined;
+    },
+  },
+  {
+    // Export-control "U.S. person" questions, from citizenship. Her F-1 status
+    // makes her none of citizen, permanent resident, refugee or asylee.
+    path: "citizenship",
+    pattern: /\bexport controls?\b/,
+    resolve: (p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      if (p.citizenship.includes("United States")) return opts.find((o) => /\bcitizen\b/i.test(o));
+      return opts.find((o) => /^none of the above$/i.test(o.trim()));
+    },
+  },
+  {
+    // Eligibility for a U.S. security clearance requires U.S. citizenship;
+    // "Yes, I am eligible" would be false, whatever checks she accepts.
+    path: "citizenship",
+    pattern: /\bsecurity clearance\b/,
+    resolve: (p, label, ctx) => {
+      const opts = ctx.options ?? [];
+      if (p.citizenship.includes("United States")) return undefined;
+      if (/\bheld\b|\bclearance level\b/.test(label)) return opts.find((o) => /\bnever held\b|^n ?\/? ?a\b/i.test(o.trim()));
+      return opts.find((o) => /^no$/i.test(o.trim()));
+    },
+  },
+  {
+    // Lyft's employment section: the most recent finished role on the resume.
+    path: "workHistory",
+    pattern: /^(company name|employer name|title|job title|(start|end) date (month|year))$/,
+    resolve: (p, label, ctx) => {
+      const w = p.workHistory.filter((x) => x.start && x.end).sort((a, b) => b.end!.localeCompare(a.end!))[0];
+      if (!w) return undefined;
+      if (/company|employer/.test(label)) return w.employer;
+      if (/title/.test(label)) return w.title;
+      const [y, m] = (label.startsWith("start") ? w.start! : w.end!).split("-");
+      if (label.endsWith("year")) return y;
+      return new Date(Date.UTC(2000, Number(m) - 1, 1)).toLocaleString("en-US", { month: "long", timeZone: "UTC" });
     },
   },
   {

@@ -10,6 +10,8 @@ contact:
     line2: Apt 3BS
     city: Flushing
     state: NY
+    # The candidate (2026-10-28).
+    postalCode: "11354"
     country: United States
 citizenship: [China]
 links:

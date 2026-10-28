@@ -39,6 +39,12 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "identity.lastName", pattern: /^(legal )?last name$|^family name$|^surname$/, resolve: (p) => p.identity.lastName },
   { path: "contact.email", pattern: /^e ?mail( address)?$/, resolve: (p) => p.contact.email },
   { path: "contact.phone", pattern: /^(phone|mobile|phone number|mobile number)$/, resolve: (p) => p.contact.phone },
+  { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
+  { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
+  { path: "contact.address.city", pattern: /^city$/, resolve: (p) => p.contact.address.city },
+  { path: "contact.address.state", pattern: /^(state|state province|province)$/, resolve: (p) => p.contact.address.state },
+  { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode)$/, resolve: (p) => p.contact.address.postalCode },
+  { path: "contact.address.country", pattern: /^country( of residence)?$/, resolve: (p) => p.contact.address.country },
   { path: "links.linkedin", pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", pattern: /\bgithub\b/, resolve: (p) => p.links.github },
   { path: "links.website", pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },
@@ -52,6 +58,14 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, label) => {
       const country = countryIn(label);
       return country ? yesNo(p.workAuthorization.authorizedCountries.includes(country)) : undefined;
+    },
+  },
+  {
+    path: "citizenship",
+    pattern: /\b(citizen of|citizenship)\b/,
+    resolve: (p, label) => {
+      const country = countryIn(label);
+      return country ? yesNo(p.citizenship.includes(country)) : undefined;
     },
   },
   {

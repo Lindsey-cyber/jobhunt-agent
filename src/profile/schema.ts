@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+// "decline" maps onto an option like "I don't wish to answer"; "no" onto "No" or
+// "I am not a protected veteran"; anything else must match an option's text.
 const EeoChoice = z.string().default("decline");
 
 export const Profile = z.object({
@@ -11,10 +13,16 @@ export const Profile = z.object({
   contact: z.object({
     email: z.email(),
     phone: z.string().min(7),
-    city: z.string().min(1),
-    state: z.string().optional(),
-    country: z.string().min(1),
+    address: z.object({
+      line1: z.string().min(1),
+      line2: z.string().optional(),
+      city: z.string().min(1),
+      state: z.string().min(1),
+      postalCode: z.string().optional(),
+      country: z.string().min(1),
+    }),
   }),
+  citizenship: z.array(z.string().min(1)).min(1),
   links: z
     .object({
       linkedin: z.url().optional(),

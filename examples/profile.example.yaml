@@ -6,9 +6,13 @@ identity:
 contact:
   email: ada@example.com
   phone: "+1 212 555 0100"
-  city: New York
-  state: NY
-  country: United States
+  address:
+    line1: 1 Example St
+    city: New York
+    state: NY
+    postalCode: "10001"
+    country: United States
+citizenship: [United States]
 links:
   linkedin: https://www.linkedin.com/in/example
   github: https://github.com/example

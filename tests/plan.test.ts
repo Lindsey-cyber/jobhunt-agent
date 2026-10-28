@@ -22,9 +22,16 @@ describe("buildPlan", () => {
   });
 
   it("never fuzzy-matches a sensitive question to a different bank entry", () => {
-    const bank = { answers: [{ id: "ca", question: "Are you a citizen of Canada?", aliases: [], answer: "Yes", origin: "human" as const }] };
-    const item = plan1(field("Are you a citizen of the United States?", { kind: "select", options: ["Yes", "No"] }), bank);
+    const bank = { answers: [{ id: "misd", question: "Have you ever been convicted of a misdemeanor?", aliases: [], answer: "No", origin: "human" as const }] };
+    const item = plan1(field("Have you ever been convicted of a felony?", { kind: "select", options: ["Yes", "No"] }), bank);
     expect(item.status).toBe("blocked");
+  });
+
+  it("answers citizenship from structured data and veteran status onto the form's wording", () => {
+    expect(plan1(field("Are you a citizen of the United States?", { kind: "select", options: ["Yes", "No"] }))).toMatchObject({ status: "fill", value: "Yes" });
+    const vet = { ...user.profile, eeo: { ...user.profile.eeo, veteran: "no" } };
+    const item = buildPlan(form([field("Veteran Status", { kind: "select", options: ["I am a protected veteran", "I am not a protected veteran", "I don't wish to answer"] })]), vet, user.bank).items[0];
+    expect(item).toMatchObject({ status: "fill", value: "I am not a protected veteran" });
   });
 
   it("fuzzy-matches ordinary questions at amber confidence", () => {

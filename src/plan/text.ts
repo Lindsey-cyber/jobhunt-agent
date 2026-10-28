@@ -26,7 +26,8 @@ export function jaccard(a: string, b: string): number {
   return shared / (ta.size + tb.size - shared);
 }
 
-const DECLINE = /\b(decline|prefer not|not wish|dont wish|do not wish|choose not)\b/;
+const DECLINE = /\b(decline|prefer not|not wish|dont wish|do not wish|choose not|not to disclose|do not disclose)\b/;
+const NOT_VETERAN = /\b(not a (protected )?veteran|am not a veteran|not a protected)\b/;
 
 export interface OptionMatch {
   option: string;
@@ -47,7 +48,12 @@ export function matchOption(options: string[], answer: string, sensitive: boolea
 
   if (want === "yes" || want === "no") {
     const hits = norm.flatMap((o, i) => (o.split(" ")[0] === want ? [i] : []));
-    return hits.length === 1 ? { option: options[hits[0]!]!, confidence: 0.95 } : null;
+    if (hits.length === 1) return { option: options[hits[0]!]!, confidence: 0.95 };
+    if (want === "no" && hits.length === 0) {
+      const vet = norm.flatMap((o, i) => (NOT_VETERAN.test(o) ? [i] : []));
+      if (vet.length === 1) return { option: options[vet[0]!]!, confidence: 0.95 };
+    }
+    return null;
   }
 
   if (sensitive) return null;

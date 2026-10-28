@@ -84,3 +84,6 @@ export const Config = z.object({
   dailySubmitCap: z.number().int().min(0).default(10),
 });
 export type Config = z.infer<typeof Config>;
+
+export const SearchPrefs = z.object({ excludeCompanies: z.array(z.string().min(1)).default([]) });
+export type SearchPrefs = z.infer<typeof SearchPrefs>;

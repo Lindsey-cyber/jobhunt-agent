@@ -3,8 +3,8 @@
 # band, not an audited headcount; unknown is resolved at run time from the
 # board's open-posting count (a proxy, reported as such). ai: true marks AI-first companies.
 # Add a company by adding a line; the discovery run reports any board that fails.
+# Employers the candidate excluded (data/search.yaml) are not watched.
 greenhouse:
-  - { board: anthropic, company: 'Anthropic', size: medium_large, ai: true }
   - { board: databricks, company: 'Databricks', size: medium_large }
   - { board: stripe, company: 'Stripe', size: medium_large }
   - { board: pinterest, company: 'Pinterest', size: medium_large }
@@ -58,12 +58,10 @@ greenhouse:
   - { board: abnormalsecurity, company: 'Abnormal Security', size: medium_large }
   - { board: faire, company: 'Faire', size: medium_large }
 lever:
-  - { board: palantir, company: 'Palantir', size: medium_large }
   - { board: spotify, company: 'Spotify', size: medium_large }
   - { board: zoox, company: 'Zoox', size: medium_large, ai: true }
   - { board: shieldai, company: 'Shield AI', size: medium_large, ai: true }
 ashby:
-  - { board: openai, company: 'OpenAI', size: medium_large, ai: true }
   - { board: applied, company: 'Applied Intuition', size: medium_large, ai: true }
   - { board: quora, company: 'Quora', size: medium_large }
   - { board: notion, company: 'Notion', size: medium_large }

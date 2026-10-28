@@ -129,7 +129,9 @@ describe("triage", () => {
     ["Research Scientist, PhD Graduate", "reject"],
     ["ML Research Scientist (MS/PhD), New Grad", "match"],
     ["Machine Learning Engineer", "review"],
-    ["Data Scientist, New Grad", "review"],
+    ["Data Scientist, New Grad", "match"],
+    ["Data and Artificial Intelligence Analyst, New Grad", "match"],
+    ["Statistician, New Grad", "review"],
   ])("%s → %s", (title, verdict) => {
     expect(triage(job(title), me).verdict).toBe(verdict);
   });
@@ -175,15 +177,16 @@ describe("triage", () => {
     expect(triage(job("ML Engineer, New Grad", { description: "PhD preferred. Strong ML fundamentals." }), me).verdict).toBe("match");
   });
 
-  it("rejects postings that say they are for experienced engineers", () => {
-    expect(triage(job("AI Engineer - Forward Deployed (New Grad)", { description: "This role is intended for experienced engineers who have shipped ML systems." }), me).rule).toBe("experience.too_senior");
+  // The candidate's rule (2026-10-28): only a stated minimum of 3+ years excludes.
+  it("keeps postings that say 'experienced' without a number of years", () => {
+    expect(triage(job("AI Engineer - Forward Deployed (New Grad)", { description: "This role is intended for experienced engineers who have shipped ML systems." }), me).verdict).toBe("match");
   });
 
   // Cases from audit round 2.
-  it("applies years stated for a master's degree, and sends 2-year minimums to review", () => {
+  it("applies years stated for a master's degree, and keeps 2-year minimums in range", () => {
     expect(triage(job("Machine Learning Engineer", { description: "Qualifications: PhD, or 3+ years of applied ML experience (Master's). New grads welcome." }), me).rule).toBe("experience.too_senior");
-    expect(triage(job("Machine Learning Engineer, Radar", { description: "2+ years of experience developing, evaluating, and deploying machine learning models in production." }), me).rule).toBe("experience.two_years");
-    expect(triage(job("ML Engineer, New Grad", { description: "Minimum of 2+ years of work experience in developing ML models." }), me).rule).toBe("experience.two_years");
+    expect(triage(job("Machine Learning Engineer, Radar", { description: "2+ years of experience developing, evaluating, and deploying machine learning models in production." }), me).verdict).toBe("match");
+    expect(triage(job("ML Engineer, New Grad", { description: "Minimum of 2+ years of work experience in developing ML models." }), me).verdict).toBe("match");
     expect(triage(job("ML Engineer, New Grad", { description: "2+ years of experience with PyTorch is a plus." }), me).verdict).toBe("match");
   });
 
@@ -263,5 +266,21 @@ describe("link check", () => {
     expect(classifyLink(url, { status: 200, finalUrl: url, body: "<h1>ML Engineer</h1>" }, T0).status).toBe("valid");
     expect(classifyLink(url, { status: 200, finalUrl: url, body: "Sorry, this job is no longer available" }, T0).status).toBe("invalid");
     expect(classifyLink("https://www.linkedin.com/jobs/view/1", { status: 999, finalUrl: "", body: "" }, T0).status).toBe("blocked");
+  });
+});
+
+describe("excluded employers", () => {
+  it("matches the employer name as a whole word and leaves the rules' verdict out of it", async () => {
+    const { excludedBy } = await import("../src/discover/exclude.ts");
+    const list = ["OpenAI", "Anthropic", "TikTok", "Google", "Palantir"];
+    expect(excludedBy("Google DeepMind", list)).toBe("Google");
+    expect(excludedBy("Palantir Technologies", list)).toBe("Palantir");
+    expect(excludedBy("TikTok", list)).toBe("TikTok");
+    expect(excludedBy("Googleplex Robotics", list)).toBeUndefined();
+    expect(excludedBy("ByteDance", list)).toBeUndefined();
+    const s = { channel: "official_greenhouse" as const, source: "b", url: "https://job-boards.greenhouse.io/x/jobs/9", key: "greenhouse:9" as JobKey, seenAt: T0, official: true, company: "Google DeepMind", title: "ML Engineer, New Grad", location: "New York, NY", description: "", date: "", dateKind: "published" as const, hints: {} };
+    const j = mergeRun(new Map(), [s], me, list).get("greenhouse:9" as JobKey)!;
+    expect(j.triage).toMatchObject({ verdict: "reject", rule: "company.excluded" });
+    expect(triage(j, me).verdict).toBe("match");
   });
 });

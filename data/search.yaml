@@ -1,0 +1,11 @@
+# The candidate's search preferences. Written on the candidate's instruction
+# (2026-10-28); the candidate may edit it, the agent changes it only when asked.
+# Postings from these employers are recorded but never matched, queued or
+# applied to. A name matches the employer's name as a whole word, so "Google"
+# also covers "Google DeepMind".
+excludeCompanies:
+  - OpenAI
+  - Anthropic
+  - TikTok
+  - Google
+  - Palantir

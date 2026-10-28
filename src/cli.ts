@@ -25,6 +25,7 @@ const USAGE = `jh <command>
                                        score the independent auditor's blind verdicts; adjusts triage trust
   label <review-id|job-key> fit|not_fit [--note <text>]
                                        record your decision on a posting (feeds the eval set)
+  answer <review-id> <text>            record your answer to a question on the review list
   eval [--record]                      score triage rules on your labels; fails if worse than the baseline
   trust [promote <stage>]              stage trust levels; promotion is yours to make
   status                               latest state of every application
@@ -74,6 +75,7 @@ switch (command) {
       dataDir: u.dir,
       watchlist: loadWatchlist(),
       facts: candidateFacts(u.profile),
+      exclude: u.search.excludeCompanies,
       ...(values.inbox ? { inboxDir: values.inbox } : {}),
       ...(values.only ? { only: values.only.split(",") } : {}),
       log: (s) => console.error(s),
@@ -138,9 +140,18 @@ switch (command) {
     const key = (review.get(url) ? url.slice(url.indexOf(":") + 1) : url) as JobKey;
     const job = readCatalog(paths(u.dir).catalog).get(key);
     if (!job) throw new Error(`no posting ${key} in the catalog`);
+    if (job.official && !job.description) console.error(`warning: ${key} has no description in the catalog; its label will hold the title only. Label it again after the next jh daily.`);
     appendLabel(u.dir, labelFrom(job, arg2, values.note, new Date().toISOString()));
     for (const id of [`match:${key}`, `audit:${key}`]) if (review.get(id)?.status === "open") review.resolve(id, `${arg2}${values.note ? `: ${values.note}` : ""}`);
     console.log(`labeled ${key} ${arg2}`);
+    break;
+  }
+  case "answer": {
+    if (!url || !arg2) throw new Error("usage: jh answer <review-id> <text>");
+    const review = new ReviewList(paths(user().dir).review);
+    if (review.get(url)?.status !== "open") throw new Error(`no open review item ${url}`);
+    review.resolve(url, arg2);
+    console.log(`answered ${url}`);
     break;
   }
   case "eval": {

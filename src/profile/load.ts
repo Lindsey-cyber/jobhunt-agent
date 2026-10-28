@@ -1,13 +1,14 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
-import { AnswerBank, Config, Profile } from "./schema.ts";
+import { AnswerBank, Config, Profile, SearchPrefs } from "./schema.ts";
 
 export interface UserData {
   dir: string;
   profile: Profile;
   bank: AnswerBank;
   config: Config;
+  search: SearchPrefs;
 }
 
 function readYaml(path: string): unknown {
@@ -27,10 +28,12 @@ export function loadUserData(dir = process.env.JH_DATA_DIR ?? "data"): UserData 
   }
   const answersPath = join(root, "answers.yaml");
   const configPath = join(root, "config.yaml");
+  const searchPath = join(root, "search.yaml");
   return {
     dir: root,
     profile,
     bank: AnswerBank.parse(existsSync(answersPath) ? readYaml(answersPath) : {}),
     config: Config.parse(existsSync(configPath) ? readYaml(configPath) : {}),
+    search: SearchPrefs.parse(existsSync(searchPath) ? readYaml(searchPath) : {}),
   };
 }

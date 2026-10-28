@@ -38,7 +38,7 @@ export async function daily(o: DailyOptions) {
   const log = o.log ?? (() => {});
   const dir = o.user.dir;
   log("coordinator: discovery manager");
-  const r = await discover({ dataDir: dir, watchlist: o.watchlist, facts: candidateFacts(o.user.profile), ...(o.inboxDir ? { inboxDir: o.inboxDir } : {}), log });
+  const r = await discover({ dataDir: dir, watchlist: o.watchlist, facts: candidateFacts(o.user.profile), exclude: o.user.search.excludeCompanies, ...(o.inboxDir ? { inboxDir: o.inboxDir } : {}), log });
   const reportDir = join(o.reportRoot ?? "docs/reports", r.startedAt.slice(0, 10));
   // One audit dir per run, so a second run on the same day keeps the first audit.
   const auditDir = join(reportDir, "audit", r.startedAt.slice(11, 19).replace(/:/g, ""));

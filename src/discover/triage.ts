@@ -26,7 +26,12 @@ const ML_WORDS = /video generation|world models?|neural|multimodal|speech|robot 
 // In the description, a company blurb ("we use AI to transform drug discovery")
 // is not evidence; technical ML work is.
 const ML_WORK = /deep learning|neural net|\bllms?\b|large language model|reinforcement learning|computer vision|\bnlp\b|natural language processing|transformers?\b|pytorch|tensorflow|\bjax\b|(?:train|training|fine-tun\w*|evaluat\w*|deploy\w*)\s+(?:\w+\s+){0,3}models?|(?:ml|machine learning|generative|foundation|multimodal|vision|language) models?/i;
-const DATA_SCIENCE = /data scien|\bquantitative researcher\b|\bstatistician\b/i;
+// In scope by the candidate's decision (2026-10-28): data scientist roles and
+// AI/data analyst roles count like ML roles.
+const DATA_SCIENCE = /data scien/i;
+const AI_ANALYST = /\b(?:ai|artificial intelligence|machine learning|ml)\b[^,]{0,25}\banalyst\b/i;
+// Adjacent to the target; shown for review, not matched.
+const ADJACENT = /\bquantitative researcher\b|\bstatistician\b/i;
 const SENIOR = /\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished|architect|vp|vice president|chief|founding)\b|\b(engineer|scientist|developer)\s+(ii|iii|iv|2|3|4)\b|\b(l[5-9]|e[5-9]|ic[4-9])\b/i;
 const INTERN = /\bintern(ship)?s?\b|\bco-?op\b|summer 20\d\d|\bapprentice/i;
 const ENGINEERING = /\bengineer(ing)?\b|scientist|researcher|\bdeveloper\b|\bswe\b|\bmts\b|member of technical staff|programmer/i;
@@ -35,7 +40,6 @@ const NON_ENGINEERING = /\b(advocate|evangelist|sales|account|recruit|marketing|
 // "new college grad PhD researcher", "PhD in machine learning ... required".
 const PHD_REQUIRED_BODY = /(?:pursuing|currently enrolled in|completed|hold|have|holds|earned|requires?|required:?|minimum:?)\s+(?:an?\s+|your\s+)?ph\.?\s?d\b|\bph\.?\s?d\.?\s+(?:is\s+)?required|\bph\.?\s?d\.?\s+(?:degree\s+)?in\s+[a-z ,/&]{3,60}(?:or equivalent industry experience|required|is required)|\bph\.?\s?d\.?\s+(?:student|researcher|candidate|graduate)s?\b(?![^.]{0,40}(?:or|and) (?:ms|m\.s|master))/i;
 const MASTERS_BODY = /master'?s|\bm\.s\.|\bms\b(?! office| excel| word| teams)|\bmsc\b|\bms\/phd|graduate degree/i;
-const EXPERIENCED_ONLY = /(?:intended|designed|meant) for experienced\b[^.]{0,40}|not (?:an? )?(?:entry[- ]level|new grad)[^.]{0,20}(?:role|position)/i;
 const PHD_TITLE = /\bph\.?\s?d\b|doctoral|doctorate|post-?doc/i;
 const MASTERS_OK = /\bm\.?s\.?\b|master'?s|\bms\/phd\b|ms or phd|bs\/ms/i;
 const EARLY_TITLE =
@@ -44,9 +48,6 @@ const EARLY_BODY =
   /new (?:college )?grad|recent (?:college |university )?grad|entry.?level|early.?career|university graduate|graduating (?:in|by)|\b0\s*(?:[-–]|to)\s*[1-3]\s*years?|\b[12]\+?\s*years?\s+(?:of\s+)?(?:relevant |professional |industry |work |hands-on )?experience|no (?:prior )?(?:professional )?experience (?:is )?required/i;
 const EXPERIENCE =
   /\b([3-9]|1\d)\s*(?:\+|[-–]\s*\d+|\s*or more)?\s*(?:years?|yrs?)\s+(?:of\s+)?(?:[\w/+-]+\s+){0,3}?(?:experience|exp\b)/gi;
-// A stated minimum of two years ("2+ years of experience ... required",
-// "minimum of 2 years"), unless marked preferred.
-const TWO_YEARS_REQUIRED = /(?:minimum of |at least |requires? |required:? )2\+?\s*(?:years?|yrs)|\b2\+\s*(?:years?|yrs)\s+(?:of\s+)?(?:\w+\s+){0,3}(?:experience|exp\b)(?![^.]{0,60}(?:prefer|nice to have|a plus|bonus))/i;
 const NO_SPONSOR = new RegExp(
   [
     String.raw`(?:no|without)\s+(?:visa\s+|immigration\s+)?sponsorship`,
@@ -121,16 +122,17 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   if (hints.closed) return v("reject", "source.closed", "Source marks the posting closed");
   if (hints.unresolved && !title.trim()) return v("review", "lead.unresolved", "Lead without a role title; find the official posting");
 
-  const dataScience = DATA_SCIENCE.test(title) && !ROLE.test(title);
-  if (!ROLE.test(title) && !dataScience) return v("reject", "role.out_of_scope", "Title is not an AI/ML, research or data-engineering role");
+  const dataScience = (DATA_SCIENCE.test(title) && !ROLE.test(title)) || AI_ANALYST.test(title);
+  const adjacent = ADJACENT.test(title) && !ROLE.test(title);
+  if (!ROLE.test(title) && !dataScience && !adjacent) return v("reject", "role.out_of_scope", "Title is not an AI/ML, research or data-engineering role");
   if (INTERN.test(title)) return v("reject", "type.internship", "Internship or co-op, not a full-time role");
   // "[Junior / Senior / Staff] Engineer" hires at every level, including entry.
   const multiLevel = /\b(junior|new grad|entry[- ]level|early[- ]career)\b/i.test(title);
   if (SENIOR.test(title) && !multiLevel) return v("reject", "level.senior", "Senior, staff, lead or manager title");
-  if (NON_ENGINEERING.test(title) && !/\bengineer(ing)?\b|scientist|researcher/i.test(title)) {
+  if (NON_ENGINEERING.test(title) && !/\bengineer(ing)?\b|scientist|researcher/i.test(title) && !dataScience) {
     return v("reject", "role.non_engineering", "AI-adjacent but not an engineering or research role");
   }
-  if (!ENGINEERING.test(title) && !dataScience) return v("reject", "role.non_engineering", "Not an engineering, scientist or research title");
+  if (!ENGINEERING.test(title) && !dataScience && !adjacent) return v("reject", "role.non_engineering", "Not an engineering, scientist or research title");
   if (PHD_TITLE.test(title) && !MASTERS_OK.test(title) && !me.hasPhd) {
     return v("reject", "degree.phd_required", "Title asks for a PhD; the candidate's highest degree is a master's");
   }
@@ -168,16 +170,10 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
     const ctx = body.slice(Math.max(0, phdBody.index - 50), phdBody.index + phdBody[0].length + 50).replace(/\s+/g, " ").trim();
     return official ? v("reject", "degree.phd_required", `Description requires a PhD and never mentions a master's: "${ctx}"`) : v("review", "degree.phd_mentioned", `Copy mentions a PhD requirement: "${ctx}"`);
   }
-  const experienced = EXPERIENCED_ONLY.exec(body);
-  if (experienced) return v("reject", "experience.too_senior", `Posting is for experienced hires: "${experienced[0]}"`);
-
+  // Only a stated minimum of 3+ years excludes (the candidate's rule): "2+
+  // years" and unnumbered "experienced engineers" stay in range.
   const exp = requiredExperience(body);
   const earlyTitle = EARLY_TITLE.test(title);
-  const two = TWO_YEARS_REQUIRED.exec(body);
-  if (two && !(exp && exp.years >= 3)) {
-    const ctx = body.slice(Math.max(0, two.index - 40), two.index + two[0].length + 60).replace(/\s+/g, " ").trim();
-    return v("review", "experience.two_years", `Asks for at least 2 years: "${ctx}"; in scope only if the candidate counts 2-year minimums`);
-  }
   if (exp && exp.years >= 3) {
     if (earlyTitle) return v("review", "experience.conflict", `Early-career title but asks ${exp.years}+ years: "${exp.context}"`);
     return v("reject", "experience.too_senior", `Requires ${exp.years}+ years: "${exp.context}"`);
@@ -190,6 +186,6 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   const bodyEarly = EARLY_BODY.exec(body);
   const signal = earlyTitle ? `title "${EARLY_TITLE.exec(title)![0]}"` : bodyEarly ? `description "${bodyEarly[0]}"` : hints.earlyCareerList ? "listed on a new-grad list" : "";
   if (!signal) return v("review", "level.unclear", "No new-grad or 0-2 year signal in title, description or source");
-  if (dataScience) return v("review", "role.data_science", `Data-science title (early-career: ${signal}); in scope only if the candidate wants DS roles`);
+  if (adjacent) return v("review", "role.adjacent", `Quant or statistician title (early-career: ${signal}); adjacent to the target roles`);
   return v("match", "match", `${official ? "Official posting" : "Third-party listing only"}; early-career: ${signal}`);
 }

@@ -26,6 +26,7 @@ export interface DiscoverOptions {
   dataDir: string;
   watchlist: Watchlist;
   facts: CandidateFacts;
+  exclude?: readonly string[];
   // Directory of alert emails copied from Gmail (one JSON per message), if any.
   inboxDir?: string;
   expandLimit?: number;
@@ -137,7 +138,7 @@ export async function discover(opts: DiscoverOptions): Promise<DiscoverResult> {
   if (leads.size > expansion.length) log(`expansion capped: ${leads.size - expansion.length} boards not fetched`);
 
   const catalogPath = join(opts.dataDir, "discovery", "catalog.jsonl");
-  const merged = mergeRun(readCatalog(catalogPath), sightings, opts.facts);
+  const merged = mergeRun(readCatalog(catalogPath), sightings, opts.facts, opts.exclude ?? []);
 
   // Size band per job from the board that listed it, else from the watchlist by company name.
   const sizeBySource = new Map(outcomes.filter((o) => o.size).map((o) => [o.url, o.size!]));

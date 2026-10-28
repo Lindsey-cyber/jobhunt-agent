@@ -22,13 +22,13 @@ education:
     major: Statistics
     gradMonth: 5
     gradYear: 2026
-    gpa: "3.7"
+    gpa: "3.71"
   - school: Renmin University of China
     degree: Bachelor of Arts
     major: Economics
     gradMonth: 6
     gradYear: 2023
-    gpa: "3.8"
+    gpa: "3.82"
 workAuthorization:
   authorizedCountries: [United States]
   needsSponsorship: true

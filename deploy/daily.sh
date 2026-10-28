@@ -31,7 +31,7 @@ fi
 # Disk: keep every run's JSON evidence, drop screenshots after 60 days.
 find data/runs -name '*.png' -mtime +60 -delete 2>/dev/null || true
 
-git add docs/reports data/discovery/catalog.jsonl.gz data/discovery/latest.json data/review.jsonl data/trust.json data/labels data/answers.yaml 2>/dev/null
+git add docs/reports data/discovery/catalog.jsonl.gz data/discovery/latest.json data/review.jsonl data/trust.json data/labels data/answers.yaml data/ledger.jsonl 2>/dev/null
 if ! git diff --cached --quiet; then
   git commit --quiet -m "Daily discovery $(date -u +%Y-%m-%d) (VPS)"
   git push --quiet || { echo "git push failed; results stay committed locally"; status=1; }

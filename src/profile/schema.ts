@@ -47,6 +47,9 @@ export const Profile = z.object({
   // The candidate lets the agent tick "I have read the privacy policy" boxes.
   // Other acknowledgements (interview rules, accuracy certifications) still need her.
   acknowledgePrivacyPolicies: z.boolean().default(false),
+  // The candidate's own range for "salary expectations" text questions. Current
+  // or past pay and range dropdowns still go to her.
+  salaryExpectation: z.string().min(1).optional(),
   // Employers from the resume, for "have you worked for X before?" questions.
   workHistory: z.array(z.object({ employer: z.string().min(1), title: z.string().optional(), start: z.string().optional(), end: z.string().optional() })).default([]),
   workAuthorization: z.object({

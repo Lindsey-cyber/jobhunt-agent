@@ -1,6 +1,6 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
-import { ATTESTATION_OPTION, jobCountry, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
+import { ATTESTATION_OPTION, COMPENSATION_VETO, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
 import { jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
@@ -78,6 +78,8 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   const sensitive = SENSITIVE.test(label);
 
   const veto = VETO.find((v) => v.pattern.test(label));
+  const expectation = veto === COMPENSATION_VETO && profile.salaryExpectation && (field.kind === "text" || field.kind === "textarea") && SALARY_EXPECTATION.test(label) && !SALARY_HISTORY.test(label);
+  if (expectation) return { status: "fill", field, value: profile.salaryExpectation!, source: { type: "profile", path: "salaryExpectation" }, confidence: 1, sensitive: false };
   if (veto) return unanswered(field, veto.reason);
   // A checkbox whose only choices are "I acknowledge" / "I agree" is an attestation,
   // unless the candidate answered this exact question in the answer bank.

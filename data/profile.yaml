@@ -33,6 +33,8 @@ education:
 restrictiveAgreements: false
 # The candidate (2026-10-28): may tick "I have read the privacy policy" boxes for her.
 acknowledgePrivacyPolicies: true
+# The candidate (2026-10-28): salary expectation for "expected salary" questions.
+salaryExpectation: $100K–$150K
 workAuthorization:
   authorizedCountries: [United States]
   needsSponsorship: true

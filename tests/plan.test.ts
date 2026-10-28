@@ -43,6 +43,12 @@ describe("buildPlan", () => {
 
   it("refuses compensation even when required", () => {
     expect(plan1(field("What are your salary expectations?"))).toMatchObject({ status: "blocked", reason: expect.stringContaining("compensation") });
+    // The candidate's own range goes into expectation questions only, never current pay.
+    const p = { ...user.profile, salaryExpectation: "$100K–$150K" };
+    const one = (f: ReturnType<typeof field>) => buildPlan(form([f]), p, user.bank).items[0]!;
+    expect(one(field("What are your salary expectations? Please state a range."))).toMatchObject({ status: "fill", value: "$100K–$150K" });
+    expect(one(field("What is your current salary?"))).toMatchObject({ status: "blocked" });
+    expect(one(field("Desired salary", { kind: "select", options: ["$80-100K", "$100-150K"] }))).toMatchObject({ status: "blocked" });
   });
 
   it("skips an optional unknown question and blocks a required one", () => {

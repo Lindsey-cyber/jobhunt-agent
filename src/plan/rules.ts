@@ -9,6 +9,10 @@ export const VETO: { pattern: RegExp; reason: string }[] = [
   { pattern: /\b(signature|attest|certify)\b/, reason: "legal attestations need the candidate" },
 ];
 
+export const COMPENSATION_VETO = VETO[0]!;
+export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target)\b/;
+export const SALARY_HISTORY = /\b(current|previous|past|prior|last|history)\b/;
+
 export const ATTESTATION_OPTION = /\b(i )?(acknowledge|agree|consent|accept|understand|certify|attest)\b/;
 
 // A single-option "I have read the privacy policy / notice" box. Anything that

@@ -1,0 +1,42 @@
+identity:
+  firstName: Lanxin
+  lastName: Ma
+  preferredName: Lindsey
+contact:
+  email: lm3879@columbia.edu
+  phone: "9786681426"
+  address:
+    line1: 140-21 32nd Ave
+    line2: Apt 3BS
+    city: Flushing
+    state: NY
+    country: United States
+citizenship: [China]
+links:
+  linkedin: https://www.linkedin.com/in/lindsey-ma/
+  github: https://github.com/Lindsey-cyber
+  website: https://www.lindseyma.com/
+education:
+  - school: Columbia University
+    degree: Master of Science
+    major: Statistics
+    gradMonth: 5
+    gradYear: 2026
+    gpa: "3.7"
+  - school: Renmin University of China
+    degree: Bachelor of Arts
+    major: Economics
+    gradMonth: 6
+    gradYear: 2023
+    gpa: "3.8"
+workAuthorization:
+  authorizedCountries: [United States]
+  needsSponsorship: true
+eeo:
+  gender: decline
+  hispanicLatino: decline
+  race: decline
+  veteran: "no"
+  disability: "no"
+documents:
+  resume: Lindsey_Ma_Resume.pdf

@@ -12,6 +12,11 @@ const USAGE = `jh <command>
   pending                              held applications and what each one needs
   doctor                               check the data directory and the browser`;
 
+process.stdout.on("error", (e: NodeJS.ErrnoException) => {
+  if (e.code === "EPIPE") process.exit(0);
+  throw e;
+});
+
 const { positionals, values } = parseArgs({
   allowPositionals: true,
   options: { approve: { type: "boolean", default: false }, headed: { type: "boolean", default: false } },

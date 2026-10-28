@@ -1,0 +1,11 @@
+# Exact-match answers. Sensitive questions only fill when the question text
+# (after normalization) or an alias matches exactly.
+answers:
+  - id: visa-status
+    question: What is your current visa status?
+    aliases:
+      - What is your current immigration status?
+      - Current work authorization status
+      - Please specify your current visa status
+    answer: F-1 OPT
+    origin: human

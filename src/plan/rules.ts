@@ -107,7 +107,17 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
   { path: "links.website", kinds: ["text"], pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },
   { path: "education[0].school", pattern: /^(school|university|college)( name)?$/, resolve: (p) => firstEdu(p).school },
-  { path: "education[0].degree", pattern: /^degree$/, resolve: (p) => firstEdu(p).degree },
+  {
+    path: "education[0].degree",
+    pattern: /^degree$/,
+    // "Master of Science" onto a form's "Master's Degree".
+    resolve: (p, _label, ctx) => {
+      const degree = firstEdu(p).degree;
+      const level = /^(master|bachelor|doctor)/i.exec(degree)?.[1]?.toLowerCase();
+      const generic = level && (ctx.options ?? []).find((o) => new RegExp(`^${level}'?s( degree)?$`, "i").test(o.trim()));
+      return generic ?? degree;
+    },
+  },
   { path: "education[0].major", pattern: /^(discipline|major|field of study)$/, resolve: (p) => firstEdu(p).major },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {

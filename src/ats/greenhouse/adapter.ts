@@ -102,7 +102,8 @@ export const greenhouse: AtsAdapter = {
       case "combobox": {
         const container = comboboxContainer(page, field.id);
         await container.locator(".select__control").click();
-        if (field.options.length === 0) await el.fill(value);
+        // Long lists (schools) show only their first page until you type.
+        if (!field.options.some((o) => normalize(o) === normalize(value))) await el.fill(value);
         const options = container.locator('[role="option"]');
         await options.first().waitFor({ timeout: 5000 });
         const i = (await options.allInnerTexts()).findIndex((t) => normalize(optionText(t)) === normalize(value));

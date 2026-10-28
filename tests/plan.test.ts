@@ -103,6 +103,15 @@ describe("buildPlan", () => {
     expect(plan1(f)).toMatchObject({ status: "fill", value: "Never worked at Alphabet" });
   });
 
+  // From NewsBreak's form: a school list cut at 100 entries and generic degree names.
+  it("searches a truncated school list and maps a degree onto its generic option", () => {
+    const schools = Array.from({ length: 100 }, (_, i) => `A University ${i}`);
+    const school = plan1(field("School", { kind: "combobox", options: schools }));
+    expect(school).toMatchObject({ status: "fill", value: user.profile.education[0]!.school });
+    const degree = plan1(field("Degree", { kind: "combobox", options: ["Bachelor's Degree", "Master's Degree", "Other"] }));
+    expect(degree).toMatchObject({ status: "fill", value: "Master's Degree" });
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");

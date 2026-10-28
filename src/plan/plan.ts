@@ -20,6 +20,7 @@ export interface FillPlan {
 
 export const GREEN = 0.9;
 const FUZZY_MIN = 0.75;
+const TRUNCATED = 100;
 
 interface Candidate {
   value: string;
@@ -106,6 +107,11 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   }
 
   const option = matchOption(field.options, candidate.value, sensitive);
+  // A list cut off at its first page (100 schools from A) is searched by typing;
+  // the readback proves what got selected.
+  if (!option && field.kind === "combobox" && field.options.length >= TRUNCATED && !sensitive) {
+    return { status: "fill", field, value: candidate.value, source: candidate.source, confidence: Math.min(candidate.confidence, 0.8), sensitive };
+  }
   if (!option) return unanswered(field, `answer "${candidate.value}" matches none of the options`);
   return {
     status: "fill",

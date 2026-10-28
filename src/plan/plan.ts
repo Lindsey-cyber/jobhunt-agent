@@ -1,6 +1,6 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
-import { jobCountry, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
+import { ATTESTATION_OPTION, jobCountry, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
 import { jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
@@ -77,6 +77,10 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
 
   const veto = VETO.find((v) => v.pattern.test(label));
   if (veto) return unanswered(field, veto.reason);
+  // A checkbox whose only choices are "I acknowledge" / "I agree" is an attestation.
+  if (field.kind === "checkbox" && field.options.length > 0 && field.options.every((o) => ATTESTATION_OPTION.test(normalize(o)))) {
+    return unanswered(field, "acknowledgements and consents need the candidate");
+  }
 
   if (field.kind === "file") {
     if (RESUME.test(label)) {

@@ -9,6 +9,8 @@ export const VETO: { pattern: RegExp; reason: string }[] = [
   { pattern: /\b(signature|attest|certify)\b/, reason: "legal attestations need the candidate" },
 ];
 
+export const ATTESTATION_OPTION = /\b(i )?(acknowledge|agree|consent|accept|understand|certify|attest)\b/;
+
 export const SENSITIVE =
   /\b(authori[sz]ed|authori[sz]ation|eligible to work|sponsor|sponsorship|visa|citizen|citizenship|criminal|convicted|conviction|background check|disability|disabled|veteran|gender|sex|race|racial|ethnicity|hispanic|latino|previously (been )?employed|previously worked|worked (here|for) before|relatives?|related to|export control)\b/;
 
@@ -49,6 +51,8 @@ const firstEdu = (p: Profile) => p.education[0]!;
 // Ordered: the first rule whose pattern matches the normalized label wins.
 export const PROFILE_RULES: ProfileRule[] = [
   { path: "identity.preferredName", pattern: /\bpreferred (first )?name\b/, resolve: (p) => p.identity.preferredName },
+  // "Full name" only: a bare "Name" is often an attestation signature (Lever's EEO block).
+  { path: "identity.fullName", pattern: /^full (legal )?name$/, resolve: (p) => `${p.identity.firstName} ${p.identity.lastName}` },
   { path: "identity.firstName", pattern: /^(legal )?first name$|^given name$/, resolve: (p) => p.identity.firstName },
   { path: "identity.lastName", pattern: /^(legal )?last name$|^family name$|^surname$/, resolve: (p) => p.identity.lastName },
   { path: "contact.email", pattern: /^e ?mail( address)?$/, resolve: (p) => p.contact.email },
@@ -59,9 +63,9 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "contact.address.state", pattern: /^(state|state province|province)$/, resolve: (p) => p.contact.address.state },
   { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode)$/, resolve: (p) => p.contact.address.postalCode },
   { path: "contact.address.country", pattern: /^country( of residence)?$/, resolve: (p) => p.contact.address.country },
-  { path: "links.linkedin", pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
-  { path: "links.github", pattern: /\bgithub\b/, resolve: (p) => p.links.github },
-  { path: "links.website", pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },
+  { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
+  { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
+  { path: "links.website", kinds: ["text"], pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },
   { path: "education[0].school", pattern: /^(school|university|college)( name)?$/, resolve: (p) => firstEdu(p).school },
   { path: "education[0].degree", pattern: /^degree$/, resolve: (p) => firstEdu(p).degree },
   { path: "education[0].major", pattern: /^(discipline|major|field of study)$/, resolve: (p) => firstEdu(p).major },

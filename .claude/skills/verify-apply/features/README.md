@@ -26,4 +26,5 @@ Each ATS file has an H1, one paragraph, then exactly these H2s in order: `Sub-fe
 
 ## ATS
 
-- [Greenhouse](./greenhouse.md) covers text, combobox, file upload and EEO fields on job-boards.greenhouse.io.
+- [Greenhouse](./greenhouse.md) covers text, combobox, file upload and EEO fields on job-boards.greenhouse.io (verified on a live board).
+- [Lever](./lever.md) covers the native HTML form on jobs.lever.co; fills and verifies, never submits (hCaptcha).

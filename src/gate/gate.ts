@@ -10,12 +10,14 @@ export interface GateInput {
   config: Config;
   submittedToday: number;
   approved: boolean;
+  // Things on the page no approval lifts, e.g. a captcha the agent must not solve.
+  blockers?: string[];
 }
 
 // `approved` is a human who reviewed this run's evidence: it lifts the trust and
 // confidence checks, never a blocked field, a failed readback or the daily cap.
-export function gate({ plan, verify, config, submittedToday, approved }: GateInput): GateDecision {
-  const reasons: string[] = [];
+export function gate({ plan, verify, config, submittedToday, approved, blockers = [] }: GateInput): GateDecision {
+  const reasons: string[] = [...blockers];
   if (!approved && config.trust === "draft") reasons.push("trust level is draft: every application waits for review");
   if (!approved && !config.autoSubmitAts.includes(plan.form.ats)) reasons.push(`${plan.form.ats} is not in autoSubmitAts`);
   if (submittedToday >= config.dailySubmitCap) reasons.push(`daily cap of ${config.dailySubmitCap} reached`);

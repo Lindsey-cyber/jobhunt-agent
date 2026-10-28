@@ -1,4 +1,4 @@
-export type AtsName = "greenhouse";
+export type AtsName = "greenhouse" | "lever" | "ashby";
 
 export type FieldKind = "text" | "textarea" | "select" | "combobox" | "radio" | "checkbox" | "file";
 

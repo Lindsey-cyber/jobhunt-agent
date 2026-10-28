@@ -27,6 +27,9 @@ export function startFixtureServer(port = 0): Promise<FixtureServer> {
     try {
       if (path === "/static/widget.js") return send(200, "text/javascript", readFileSync(join(ROOT, "greenhouse/widget.js"), "utf8"));
       if (path === "/__submissions") return send(200, "application/json", JSON.stringify(submissions));
+      // Lever captures: /lever/<case>/apply serves fixtures/lever/<case>.html.
+      const lv = /^\/lever\/([\w-]+)\/apply$/.exec(path);
+      if (lv) return send(200, "text/html", readFileSync(join(ROOT, "lever", `${lv[1]}.html`), "utf8"));
       const m = /^\/[\w-]+\/jobs\/([\w-]+)(\/submit|\/confirmation)?$/.exec(path);
       if (!m) return send(404, "text/plain", "not found");
       const [, name, tail] = m;

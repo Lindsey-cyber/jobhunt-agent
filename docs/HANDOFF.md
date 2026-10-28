@@ -40,3 +40,13 @@
 1. 等候选人看报告、回答每日清单里的问题（Data Scientist 是否算目标岗位）并批准/驳回匹配，形成第一版评测集，然后 `jh eval --record`。
 2. 搜索质量确认后：Lever、Ashby、Workday 申请适配器（`add-ats-adapter` skill）。
 3. VPS：systemd timer 跑 `jh daily`；Gmail API 只读 OAuth 替换会话里的连接器复制；审核 agent 改为 API 调用（同样只给 brief + blind）；Dashboard 走 SSH 隧道。
+
+## 进度（2026-10-28 第二段）
+
+- 候选人的决定已落地：Data Scientist 算目标；只有严格要求 3 年以上才排除；2027 届岗位照投；不投 OpenAI、Anthropic、TikTok、Google、Palantir（`data/search.yaml`，在筛选之后单独排除，不影响评测集）。60 个标签进了评测集，基线 precision 97.8%、recall 100%。地点填 New York（`data/answers.yaml`）。新简历已替换，GPA 改为简历上的 3.71/3.82。
+- 审计第 4 轮：误筛 5.9%（n=34），漏筛 0%（n=20）。GPT-5.5 对同一样本复核：误筛 7.5%（n=40），两个审核者在都能判断的 87 个岗位上一致 82 个。
+- 审核 agent 可走 Claude API 或 OpenAI（`JH_AUDIT_PROVIDER`）；Anthropic 账户目前余额不足，暂用 gpt-5.5。密钥只在 `~/.config/jobhunt/env`（VPS 上是 `/etc/jobhunt/env`），不进仓库。
+- Gmail API（只读、PKCE）：`jh gmail auth` 两步授权，`jh daily` 自动拉提醒邮件。等候选人完成一次授权。
+- VPS：`deploy/`（install.sh、每日 systemd timer、127.0.0.1 Dashboard）和 `docs/DEPLOY.md`；在临时仓库里完整彩排过一次 daily.sh（check → daily → 提交推送）。云会话出不了 22 端口，安装需要候选人在 VPS 上跑一条命令。
+- Greenhouse 适配器第一次在真实页面上验证（Scale AI，草稿不提交），修了 7 处只有真实页面才会暴露的问题。Lever 适配器基于真实页面完成，因为提交按钮带 hCaptcha，代理永远不点提交，由候选人自己点。
+- Ashby：真实页面已抓取（`fixtures/ashby/real-quora-40659fe7.html`），适配器未写。在真实申请表上做交互探测被会话的权限分类器拦下（视作真实交易），需要候选人放行后才能做在线草稿验证。Workday 申请需要注册账号，按规则必须由候选人决定。

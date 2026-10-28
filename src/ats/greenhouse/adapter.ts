@@ -47,7 +47,11 @@ export const greenhouse: AtsAdapter = {
   name: "greenhouse",
 
   // The form renders after load on live boards, so wait for it briefly.
-  detect: async (page) => page.locator(FORM).first().waitFor({ timeout: 8000 }).then(() => true, () => false),
+  // Lever's form has the same id; its questions are .application-question blocks.
+  detect: async (page) =>
+    !/(lever\.co|ashbyhq\.com|myworkdayjobs\.com)$/.test(new URL(page.url()).hostname) &&
+    (await page.locator(FORM).first().waitFor({ timeout: 8000 }).then(() => true, () => false)) &&
+    (await page.locator(`${FORM} .application-question`).count()) === 0,
 
   async extract(page) {
     await page.locator(FORM).waitFor();

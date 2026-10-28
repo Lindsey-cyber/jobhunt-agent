@@ -74,4 +74,13 @@ describe("buildPlan", () => {
     const mixed = buildPlan({ ...form([q]), jobLocation: "New York, NY; London, UK" }, u.profile, u.bank).items[0]!;
     expect(mixed.status).toBe("blocked");
   });
+
+  // From the real Lever capture: an acknowledgement checkbox that mentions LinkedIn.
+  it("never fills an acknowledgement checkbox, and puts links only into text fields", () => {
+    const u = makeUserData();
+    const ack = field("AHEAD will consider the contents of an uploaded resume or LinkedIn profile only insofar as it pertains to employment history", { kind: "checkbox", options: ["I Acknowledge"] });
+    const [item] = buildPlan(form([ack]), u.profile, u.bank).items;
+    expect(item).toMatchObject({ status: "blocked", reason: "acknowledgements and consents need the candidate" });
+    expect(buildPlan(form([field("LinkedIn URL")]), u.profile, u.bank).items[0]).toMatchObject({ status: "fill" });
+  });
 });

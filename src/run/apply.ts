@@ -79,7 +79,8 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   writeFileSync(join(runDir, "before-submit.aria.yaml"), await page.locator("body").ariaSnapshot());
 
   const submittedToday = ledger.submittedOn(new Date().toISOString().slice(0, 10));
-  const decision = gate({ plan, verify, config: user.config, submittedToday, approved });
+  const blockers = (await adapter.blockers?.(page)) ?? [];
+  const decision = gate({ plan, verify, config: user.config, submittedToday, approved, blockers });
   save("gate.json", decision);
   const done = (state: AppState) => ({ outcome: "done" as const, key, state, runDir, plan, verify, decision, fillErrors });
 

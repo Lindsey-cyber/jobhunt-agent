@@ -135,11 +135,15 @@ export const PROFILE_RULES: ProfileRule[] = [
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
     pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?worked for .{1,60}\b(in the past|before)\b/,
-    resolve: (p, label) => {
+    resolve: (p, label, ctx) => {
       const m = /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ?? /\bworked (?:for|at) (.+?) (?:before|in the past|or a subsidiary)\b/.exec(label);
       const named = m?.[1]?.trim();
       if (!named) return undefined;
-      return yesNo(p.workHistory.some((w) => w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase())));
+      const worked = p.workHistory.some((w) => w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase()));
+      // Waymo: "Never worked at Alphabet" among current/former options.
+      const never = (ctx.options ?? []).filter((o) => /^(never|i have never|no\b)/i.test(o.trim()));
+      if (!worked && never.length === 1) return never[0];
+      return yesNo(worked);
     },
   },
   {

@@ -95,6 +95,14 @@ describe("buildPlan", () => {
     expect(buildPlan(form([ai]), allowed, u.bank).items[0]).toMatchObject({ status: "blocked" });
   });
 
+  it("picks the never-worked-here option from the resume's employers", () => {
+    const f = field("Are you a current or former Alphabet employee, intern, vendor, contractor, or temp (including Google and other Alphabet subsidiaries)?", {
+      kind: "select",
+      options: ["Current Alphabet Employee or Intern", "Former Alphabet Employee or Intern", "Current or Former member of Alphabet extended workforce", "Never worked at Alphabet"],
+    });
+    expect(plan1(f)).toMatchObject({ status: "fill", value: "Never worked at Alphabet" });
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");

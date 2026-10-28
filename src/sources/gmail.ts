@@ -120,10 +120,18 @@ export function toAlert(m: GmailMessage): AlertMessage {
 // Read-only: the scope cannot modify, label or send mail.
 export async function fetchAlerts(dir: string, query = ALERT_QUERY): Promise<{ saved: number }> {
   const token = await accessToken();
+  // The per-minute quota answers 403 rateLimitExceeded (or 429); wait it out.
   const get = async <T>(url: string): Promise<T> => {
-    const res = await fetch(url, { headers: { authorization: `Bearer ${token}` } });
-    if (!res.ok) throw new Error(`Gmail API ${res.status} for ${url.split("?")[0]}`);
-    return (await res.json()) as T;
+    for (let attempt = 0; ; attempt++) {
+      const res = await fetch(url, { headers: { authorization: `Bearer ${token}` } });
+      if (res.ok) return (await res.json()) as T;
+      const body = await res.text();
+      if (attempt < 5 && (res.status === 429 || /rateLimitExceeded/.test(body))) {
+        await new Promise((r) => setTimeout(r, 15_000 * (attempt + 1)));
+        continue;
+      }
+      throw new Error(`Gmail API ${res.status} for ${url.split("?")[0]}`);
+    }
   };
   const ids: string[] = [];
   let pageToken = "";
@@ -134,7 +142,8 @@ export async function fetchAlerts(dir: string, query = ALERT_QUERY): Promise<{ s
     pageToken = page.nextPageToken ?? "";
   } while (pageToken);
   mkdirSync(join(dir, "raw"), { recursive: true });
-  await pool(ids, 6, async (id) => {
+  await pool(ids, 4, async (id) => {
+    if (existsSync(join(dir, `${id}.json`))) return;
     const m = await get<GmailMessage>(`${API}/messages/${id}?format=full`);
     writeFileSync(join(dir, "raw", `${id}.json`), JSON.stringify(m));
     writeFileSync(join(dir, `${id}.json`), JSON.stringify(toAlert(m)));

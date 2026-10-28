@@ -1,6 +1,6 @@
 # 部署到 VPS
 
-目标：VPS 每天早上（纽约时间约 7:23）自动跑一遍总管：Gmail 提醒 → 多渠道发现 → 筛选 → 独立审计 → 报告，结果提交回 GitHub；Dashboard 只在 VPS 本机 127.0.0.1 上，通过 SSH 隧道看。系统是 Ubuntu 22.04/24.04 或 Debian 12，x86 或 ARM64 都行；建议 2 核 4 GB（投递时 Chromium 和 Node 合计约 1 GB）。
+目标：VPS 每天纽约时间中午 12 点、下午 6 点、半夜 12 点各跑一遍总管：Gmail 提醒 → 多渠道发现 → 筛选 → 独立审计 → 报告，结果提交回 GitHub；Dashboard 只在 VPS 本机 127.0.0.1 上，通过 SSH 隧道看。系统是 Ubuntu 22.04/24.04 或 Debian 12，x86 或 ARM64 都行；建议 2 核 4 GB（投递时 Chromium 和 Node 合计约 1 GB）。
 
 ### Hetzner CAX11（ARM64，2 vCPU / 4 GB / 40 GB，Ubuntu 24.04）
 

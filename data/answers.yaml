@@ -396,3 +396,557 @@ answers:
         has acquired?
     answer: No
     origin: human
+  - id: draft:db05efa603
+    question: In 1–2 sentences, please describe your MS program, including your
+      research focus, specialization, or primary area of study.
+    answer: I completed my M.S. in Statistics at Columbia University in May 2026,
+      with coursework centered on Deep Learning, Advanced Machine Learning,
+      Statistical Analysis of Neural Data, and Robot Learning. My primary area
+      of study was applied statistical machine learning, including
+      self-supervised learning for neural imaging and computational statistics
+      work on neural connectome analysis.
+    company: embed
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - Columbia University, M.S. in Statistics, GPA
+        3.71                                     Sep 2024 – May 2026
+      - "Coursework: Deep Learning, Advanced Machine Learning, Statistical
+        Analysis of Neural Data, Robot Learning"
+      - Research Assistant - Self-Supervised Learning for Neural
+        Imaging                            Jan 2026 – May 2026
+      - FlyWire Connectome Analysis - Computational Statistics
+        Project                                         May 2025
+  - id: draft:2c2e39223b
+    question: Describe a production ML or GenAI system where you did model-level
+      work (training, fine-tuning, optimization, or evaluation) on a
+      transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).
+    answer: "I don’t want to overstate this: my documented transformer model-level
+      work has been evaluation and interpretability research, not a production
+      rollout. In Columbia AI Alignment Club, I worked on Qwen3-4B and Qwen3-8B:
+      implementing activation hooks across 28 transformer layers, linear probes,
+      steering interventions, randomized and sham controls, grouped-bootstrap
+      controls, and response/token-level evaluations to test whether observed
+      logit shifts reflected reliable hallucination or refusal behavior.
+      Separately, I have deployment-facing experience from a real-time robotics
+      system, where I optimized inference with ONNX Runtime, quantization,
+      asynchronous video pipelines, and integrated a locally hosted language
+      model through Ollama into the robot control workflow. For Databricks AI
+      FDE, I would bring the evaluation rigor from the Qwen work together with
+      practical inference and systems integration experience."
+    company: Databricks
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - Columbia AI Alignment Club - Technical
+        Fellow                                               Feb 2025 – May 2025
+      - Reproduced and critically evaluated Anthropic-style
+        hallucination-circuit analysis in Qwen3-4B using pretrained transcoders
+        and feature-attribution graphs, investigating candidate refusal-related
+        mechanisms and limitations of circuit faithfulness.
+      - Implemented activation hooks across 28 transformer layers, linear
+        probes, and bidirectional steering scripts with randomized-direction,
+        sham-intervention, and grouped-bootstrap controls; validated Qwen3-8B
+        FP32 inference and Hugging Face–TransformerLens consistency, with logit
+        discrepancies below 4.2 × 10−5 .
+      - Designed controlled known-versus-unknown entity experiments on Qwen3-8B,
+        evaluating 40 natural-language responses across matched prompt templates
+        and multiple random seeds; identified unstable answer-withholding
+        behavior that prevented progression to reliable causal circuit analysis.
+      - Analyzed full-response semantics and token-level generation
+        trajectories, identifying a shared-prefix case in which factual
+        attribution and answer withholding diverged at the seventh generated
+        token; demonstrated why first-token logit shifts cannot independently
+        establish semantic hallucination effects.
+      - Developed a real-time vision pipeline for an autonomous
+        badminton-training robot, integrating YOLOv8-based player detection,
+        pose estimation, shuttlecock tracking, and court localization, achieving
+        20+ FPS.
+      - Implemented stereo 3D shuttlecock tracking and landing-point prediction;
+        optimized Raspberry Pi inference with ONNX Runtime, quantization, and
+        asynchronous video pipelines.
+      - Integrated a locally hosted language model through Ollama for
+        voice-based robot commands and natural-language interaction, connecting
+        user instructions with the robot’s control workflow.
+  - id: draft:71b70affb3
+    question: Describe a time you worked directly with an external enterprise
+      customer on an ML/AI problem.
+    answer: "I don’t want to overstate this: I have not yet owned a direct external
+      enterprise customer engagement on an ML/AI problem. The closest analogue
+      is my applied ML work at Arborphy AI, where I worked through an ambiguous
+      domain problem end to end: plant identification and botanical reasoning. I
+      designed and evaluated vision/biological embedding architectures, built
+      disjoint benchmarks for species identification and retrieval, created a
+      human-review set, and developed a multi-agent botanical reasoning
+      prototype with knowledge-graph evidence aggregation. At Columbia, I also
+      made research code usable for non-ML wet-lab researchers through
+      packaging, documentation, and step-by-step guides. That is the
+      customer-facing muscle I would bring to Databricks, while being clear that
+      enterprise client ownership would be a growth area."
+    company: Databricks
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - |-
+        Research Engineer Intern - Applied ML for Plant Identification                                May 2026 – Present
+        Arborphy AI LLC                                                                                       New York
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Developed individual- and species-disjoint benchmarks for species
+        identification, organ classification, and
+           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
+           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
+           spanning 85 species.
+      - >-
+        Built a multi-agent botanical reasoning prototype with autonomous tool
+        generation, specialized visual-analysis
+           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
+           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
+      - >-
+        Organized laboratory research code into a downloadable software package
+        and developed public documen-
+           tation and step-by-step guides for wet-lab researchers.
+  - id: draft:e08d9a34da
+    question: If you selected a response to the prior question other than “none of
+      the above,” please confirm whether any of the following also applies to
+      you. Select all that apply.
+    answer: Individual granted citizenship in a country other than Cuba, Iran, North
+      Korea, or Syria
+    company: Databricks
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - "citizenship: [China]"
+  - id: draft:5eb1bddef9
+    question: Please select the country where you currently reside.
+    answer: US
+    company: Stripe
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - "country: United States"
+  - id: draft:a7e292a8bc
+    question: Have you ever been employed by Stripe or a Stripe affiliate?
+    answer: No
+    company: Stripe
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+      - >-
+        Software Developer - Real-Time Vision for
+        Robotics                                          May 2025 – Dec 2025
+
+        InnoX Academy Incubator Robotics Lab
+      - >-
+        Research Assistant - Self-Supervised Learning for Neural
+        Imaging                            Jan 2026 – May 2026
+
+        Center for Theoretical Neuroscience, Columbia Zuckerman Institute
+  - id: draft:aa68b1bfdb
+    question: Who is your current or previous employer?
+    answer: Arborphy AI LLC
+    company: Stripe
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+  - id: draft:d1caf42c61
+    question: What is your current or previous job title?
+    answer: Research Engineer Intern
+    company: Stripe
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+  - id: draft:f933800f02
+    question: Please select the country or countries you anticipate working in for
+      the role in which you are applying.
+    answer: US
+    company: Stripe
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - |-
+        address:
+            line1: 140-21 32nd Ave
+            line2: Apt 3BS
+            city: Flushing
+            state: NY
+            # The candidate (2026-10-28).
+            postalCode: "11354"
+            country: United States
+      - |-
+        workAuthorization:
+          authorizedCountries: [United States]
+  - id: draft:46bb499f8e
+    question: Please enter your relevant employment and military service above using
+      the + Add Another Employment link.
+    answer: Thank you
+    company: Lyft
+    jobTitle: ""
+    origin: generated
+    evidence: []
+  - id: draft:93e3942762
+    question: Can you perform these essential functions of the job with reasonable
+      accommodation?
+    answer: Yes
+    company: Lyft
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - |-
+        eeo:
+          gender: decline
+          hispanicLatino: decline
+          race: decline
+          veteran: "no"
+          disability: "no"
+  - id: draft:105bfd8f6f
+    question: "Please review the linked document:"
+    answer: I acknowledge that I have read and understood the terms of the Lyft
+      Candidate Privacy Notice.
+    company: Lyft
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - '# The candidate (2026-10-28): may tick "I have read the privacy policy"
+        boxes for her.'
+      - "acknowledgePrivacyPolicies: true"
+  - id: draft:cc71d1fa24
+    question: Have you been employed by Lyft, or any subsidiary, affiliate, or
+      business unit of Lyft, in the past (whether on a full-time or part-time
+      basis)?
+    answer: No
+    company: Lyft
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:81d413c159
+    question: Zip / postal code
+    answer: "11354"
+    company: Lyft
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - 'postalCode: "11354"'
+  - id: draft:a31f49c830
+    question: Have you worked at DoorDash?
+    answer: I have not worked at DoorDash
+    company: DoorDash USA
+    jobTitle: Software Engineer, ML Infrastructure (MDX)
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:9b37f7c8bc
+    question: Applicant Privacy Acknowledgement
+    answer: Yes
+    company: DoorDash USA
+    jobTitle: Software Engineer, ML Infrastructure (MDX)
+    origin: generated
+    evidence:
+      - "acknowledgePrivacyPolicies: true"
+  - id: draft:dafe929107
+    question: Current Company
+    answer: Arborphy AI LLC
+    company: Asana
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+  - id: draft:c2581a923d
+    question: Current Title
+    answer: Research Engineer Intern
+    company: Asana
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+  - id: draft:d44ee8f9e9
+    question: Have you been employed, or otherwise engaged, by an Asana entity in
+      the past? (Previous independent contractors, select "Yes.")
+    answer: No
+    company: Asana
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:4c4eb27c99
+    question: Do you currently work for or have you ever worked for a U.S.
+      government entity, either as a contractor or employee?
+    answer: No, I have never.
+    company: Asana
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+      - >-
+        Software Developer - Real-Time Vision for
+        Robotics                                          May 2025 – Dec 2025
+
+        InnoX Academy Incubator Robotics Lab
+      - >-
+        Research Assistant - Self-Supervised Learning for Neural
+        Imaging                            Jan 2026 – May 2026
+
+        Center for Theoretical Neuroscience, Columbia Zuckerman Institute
+  - id: draft:d65f612f94
+    question: If you answered “Yes,” please list the U.S. government entity you
+      worked for. If not applicable, type 'N/A.'
+    answer: N/A
+    company: Asana
+    jobTitle: ""
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+      - >-
+        Software Developer - Real-Time Vision for
+        Robotics                                          May 2025 – Dec 2025
+
+        InnoX Academy Incubator Robotics Lab
+      - >-
+        Research Assistant - Self-Supervised Learning for Neural
+        Imaging                            Jan 2026 – May 2026
+
+        Center for Theoretical Neuroscience, Columbia Zuckerman Institute
+  - id: draft:6caaf06a28
+    question: Have you worked at DoorDash?
+    answer: I have not worked at DoorDash
+    company: DoorDash USA
+    jobTitle: Software Engineer, Data Platform
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:2b4429057a
+    question: Applicant Privacy Acknowledgement
+    answer: Yes
+    company: DoorDash USA
+    jobTitle: Software Engineer, Data Platform
+    origin: generated
+    evidence:
+      - '# The candidate (2026-10-28): may tick "I have read the privacy policy"
+        boxes for her.'
+      - "acknowledgePrivacyPolicies: true"
+  - id: draft:c88d9f354e
+    question: Do you identify as transgender?
+    answer: I don't wish to answer
+    company: DoorDash USA
+    jobTitle: Software Engineer, Data Platform
+    origin: generated
+    evidence:
+      - |-
+        eeo:
+          gender: decline
+          hispanicLatino: decline
+          race: decline
+  - id: draft:abf0cbe503
+    question: What AI tools are you currently using today and how are you using them?
+    answer: "Today, in my current Research Engineer Intern role at Arborphy AI, I’m
+      using EfficientNet, BioCLIP, and DINOv3 to study plant-identification
+      models and representation quality. I use frozen linear probes, clustering,
+      nearest-neighbor retrieval, local PCA rotations, and centroid shrinkage to
+      understand whether representations capture species identity, organ
+      morphology, or photographic-scale confounding. I’m also building
+      evaluation loops: individual- and species-disjoint benchmarks for species
+      identification, organ classification, and cross-species retrieval, plus
+      human-review sets for model errors. On the agent side, I’ve built a
+      multi-agent botanical reasoning prototype with autonomous tool generation,
+      visual-analysis agents, constrained planning, per-step information-gain
+      evaluation, and knowledge-graph evidence aggregation. That maps closely to
+      assistant quality work: retrieval, grounding, evaluation, and iterative
+      improvement."
+    company: Glean
+    jobTitle: Machine Learning Engineer, Assistant Quality
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using
+           frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
+           shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding.
+      - >-
+        Developed individual- and species-disjoint benchmarks for species
+        identification, organ classification, and
+           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
+           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
+           spanning 85 species.
+      - >-
+        Built a multi-agent botanical reasoning prototype with autonomous tool
+        generation, specialized visual-analysis
+           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
+           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
+  - id: draft:a6d0e3af7b
+    question: EXPORT CONTROLS - This position requires access to information and
+      technology that is subject to U.S. export controls. Your responses to the
+      questions below will be used solely to determine your eligibility under
+      U.S. law to receive information and materials subject to U.S. export
+      controls.
+    answer: None of the above
+    company: Anduril Industries
+    jobTitle: Software Engineer, Perception
+    origin: generated
+    evidence:
+      - "citizenship: [China]"
+      - "needsSponsorship: true"
+  - id: draft:243b82b034
+    question: HISTORY WITH ANDURIL
+    answer: No
+    company: Anduril Industries
+    jobTitle: Software Engineer, Perception
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:e2d08d58db
+    question: Have you ever been employed by Anduril or any company that Anduril has
+      acquired?
+    answer: No
+    company: Anduril Industries
+    jobTitle: Software Engineer, Perception
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:e2c2e7aad4
+    question: CLEARANCE ELIGIBILITY - This position requires eligibility to obtain
+      and maintain a U.S. security clearance.
+    answer: No
+    company: Anduril Industries
+    jobTitle: Software Engineer, Perception
+    origin: generated
+    evidence:
+      - "citizenship: [China]"
+      - |-
+        workAuthorization:
+          authorizedCountries: [United States]
+          needsSponsorship: true
+  - id: draft:7fdc622609
+    question: Why Lila, why this role, and why at this moment in your life?
+    answer: "Lila is compelling to me because the role is about making AI part of
+      the scientific method, not just building models around it. The posting’s
+      emphasis on agentic AI, workflow/code generation, and
+      evaluation/reliability matches the work I have been gravitating toward:
+      scientific ML systems with benchmarks, tool use, and careful error
+      analysis. At Arborphy, I have been building plant-identification models,
+      disjoint evaluation benchmarks, and a multi-agent botanical reasoning
+      prototype; at Columbia, I worked on self-supervised denoising for neural
+      imaging and packaging research code for wet-lab researchers. This moment
+      is right because I finished my M.S. in Statistics in May 2026 and now want
+      to move from research projects into a team building reliable AI systems
+      that can interface with real scientific workflows."
+    company: Lila Sciences
+    jobTitle: Senior / Engineer II, AI Lab Research Engineer
+    origin: generated
+    evidence:
+      - Columbia University, M.S. in Statistics, GPA
+        3.71                                     Sep 2024 – May 2026
+      - "Coursework: Deep Learning, Advanced Machine Learning, Statistical
+        Analysis of Neural Data, Robot Learning"
+      - Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Developed individual- and species-disjoint benchmarks for species
+        identification, organ classification, and
+           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
+           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
+           spanning 85 species.
+      - >-
+        Built a multi-agent botanical reasoning prototype with autonomous tool
+        generation, specialized visual-analysis
+           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
+           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
+      - Research Assistant - Self-Supervised Learning for Neural
+        Imaging                            Jan 2026 – May 2026
+      - >-
+        Designed and implemented a four-direction spatial masking strategy for
+        self-supervised denoising of
+           two-photon calcium-imaging data, integrating it with PMD spatial-component selection and achieving up to
+           20% reduction in residual energy on an individual dataset.
+      - >-
+        Organized laboratory research code into a downloadable software package
+        and developed public documen-
+           tation and step-by-step guides for wet-lab researchers.
+  # The candidate (2026-10-28): employers may contact her current employer.
+  - id: contact-current-employer
+    question: May we contact your current employer?
+    aliases:
+      - Can we contact your current employer?
+      - May we contact your present employer?
+    answer: "Yes"
+    origin: human

@@ -19,7 +19,7 @@ interface RawField {
   required: boolean;
   options: string[];
 }
-const CONFIRMED = /thank you for applying|application (has been )?(received|submitted)/i;
+const CONFIRMED = /thank you for applying|application (has been )?(received|submitted|sent)/i;
 
 const cleanLabel = (s: string) => s.replace(/\s+/g, " ").replace(/\s*\*\s*$/, "").trim();
 // The phone country list reads "United States +1"; the dialing code is not part of the answer.

@@ -536,6 +536,36 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Iambic Therapeutics",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Research Scientist II/Senior, Computational Chemistry",
+        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/6236b729-9139-4971-8a31-3f5a9add1ed4",
+        "verdict": "match",
+        "location": "San Diego HQ; Remote - US; United States"
+      },
+      {
+        "title": "Research Scientist II/Senior, Discovery Machine Learning",
+        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/9ddc2691-8f3d-491e-ab10-3a96fe32600a",
+        "verdict": "review",
+        "location": "San Diego HQ; United States"
+      },
+      {
+        "title": "Machine Learning Scientist – Clinical Prediction",
+        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/e418c9bf-4fe6-4484-92ad-e9a320557815",
+        "verdict": "review",
+        "location": "Boston Office; Remote - US; US"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Iambic Therapeutics team,\n\nI came across the Research Scientist II/Senior, Computational Chemistry opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "LiteLLM",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -638,6 +668,24 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Preference Model",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Member of Technical Staff - AI/ML Infrastructure Engineer, RL Post-training",
+        "url": "https://jobs.ashbyhq.com/Preference-Model/8ebf53cf-bc91-4bb7-9604-37a16c23fd53",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Preference Model team,\n\nI came across the Member of Technical Staff - AI/ML Infrastructure Engineer, RL Post-training opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Silna Health",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -722,6 +770,30 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "JUPUS",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [
+      {
+        "title": "JUPUS | Engineering Manager, Applied AI | REMOTE (CET ±2) | Full-time | Up to €160k base | https://jupus.de",
+        "url": "https://jobs.ashbyhq.com/jupus/a40c4367-20c9-4afe-9b6c-bdc8608c6677",
+        "verdict": "review",
+        "location": "Engineering Manager, Applied AI | REMOTE (CET ±2) | Full-time | Up to €160k base | https://jupus.de"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/jupus/a40c4367-20c9-4afe-9b6c-bdc8608c6677 (linked from HN post)",
+        "date": "2026-10-02T08:09:37.000Z",
+        "excerpt": "JUPUS | Engineering Manager, Applied AI | REMOTE (CET ±2) | Full-time | Up to €160k base | https://jupus.de\nJUPUS is an AI platform for German law firms, from client intake to drafted briefs. 2,000+ lawyers use it daily.\nYou'll own AI at JUPUS: the Applied AI team (5 direct repor"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi JUPUS team,\n\nI came across the JUPUS | Engineering Manager, Applied AI | REMOTE (CET ±2) | Full-time | Up to €160k base | https://jupus.de opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Deeter Analytics",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -761,24 +833,6 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Sheer Health ( https://www.sheerhealth.com ) team,\n\nI came across the Sheer Health ( https://www.sheerhealth.com ) | New York, NY | Full-Time | ONSITE opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
-    "company": "Iambic Therapeutics",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Machine Learning Scientist – Clinical Prediction",
-        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/e418c9bf-4fe6-4484-92ad-e9a320557815",
-        "verdict": "review",
-        "location": "Boston Office; Remote - US; US"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Iambic Therapeutics team,\n\nI came across the Machine Learning Scientist – Clinical Prediction opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -1604,6 +1658,54 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Fig",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [
+      {
+        "title": "Fig | Founding Engineer | San Francisco | ONSITE (hybrid) | Full-time | $180K-$270K + .5 - 2% equity | https://www.growfig.ai",
+        "url": "https://jobs.ashbyhq.com/growfig",
+        "verdict": "review",
+        "location": "Founding Engineer | San Francisco | ONSITE (hybrid) | Full-time | $180K-$270K + .5 - 2% equity | https://www.growfig.ai"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/growfig (linked from HN post)",
+        "date": "2026-10-02T03:17:51.000Z",
+        "excerpt": "Fig | Founding Engineer | San Francisco | ONSITE (hybrid) | Full-time | $180K-$270K + .5 - 2% equity | https://www.growfig.ai\nFig builds AI agents purpose-fit to food production workflows, focusing on immediate revenue generation and cost saving activities.\nWe're looking for a fo"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Fig team,\n\nI came across the Fig | Founding Engineer | San Francisco | ONSITE (hybrid) | Full-time | $180K-$270K + .5 - 2% equity | https://www.growfig.ai opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Oscilar.com",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [
+      {
+        "title": "Oscilar.com | Sr/Staff Software Engineers, Data Scientist, FDE, PM| REMOTE (US/Canada/Brazil/Poland/UK/India)",
+        "url": "https://jobs.ashbyhq.com/oscilar",
+        "verdict": "review",
+        "location": "Sr/Staff Software Engineers, Data Scientist, FDE, PM| REMOTE (US/Canada/Brazil/Poland/UK/India)"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/oscilar (linked from HN post)",
+        "date": "2026-10-06T16:43:59.000Z",
+        "excerpt": "Oscilar.com | Sr/Staff Software Engineers, Data Scientist, FDE, PM| REMOTE (US/Canada/Brazil/Poland/UK/India)\nFull-time AI Risk Decisioning™ platform that helps organizations manage onboarding, fraud, credit, and compliance risks\nOpen roles:\n- Sr./Staff Analytics & Data Architect"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Oscilar.com team,\n\nI came across the Oscilar.com | Sr/Staff Software Engineers, Data Scientist, FDE, PM| REMOTE (US/Canada/Brazil/Poland/UK/India) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Prior Labs",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [
@@ -2184,6 +2286,23 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Mozilla / Thunderbird / Thunderbolt",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49926511",
+        "date": "2026-10-01T20:12:14.000Z",
+        "excerpt": "Mozilla / Thunderbird / Thunderbolt | Staff Product Engineer, Enterprise AI | REMOTE (US or Canada) | Full-Time | $185K–$220K USD / $155K–$185K CAD | https://grnh.se/viz7vum71us\nWe're building Thunderbolt ( https://github.com/thunderbird/thunderbolt ). We're an 8-person and growi"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Mozilla / Thunderbird / Thunderbolt team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Innolitics",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [],
@@ -2325,6 +2444,23 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Sourcegraph",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49927984",
+        "date": "2026-10-01T22:51:25.000Z",
+        "excerpt": "Sourcegraph | Remote | Full-Time | SWE, Tech Lead, ML Engineer, Product Manager, Product Marketing Manager | https://sourcegraph.com\nSourcegraph is building the context layer for AI-powered software development. As AI accelerates code creation, we help engineering teams understan"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Sourcegraph team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "ARTIFICIAL ANALYSIS",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [],
@@ -2399,6 +2535,45 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Stellar Science team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Ambito (ambito.io) — Founding AI Engineer / Equity Partner — Remote but Boston b",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49929368",
+        "date": "2026-10-02T02:45:47.000Z",
+        "excerpt": "Ambito (ambito.io) — Founding AI Engineer / Equity Partner — Remote but Boston based only\nAmbito is a CRM-connected QBR generator for B2B sales teams. The product is live, with the sales module, template engine, and CRM integrations already built.\nWe're looking for a founding AI "
+      }
+    ],
+    "publicContacts": [
+      {
+        "value": "contact@ambito.io",
+        "source": "https://news.ycombinator.com/item?id=49929368"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
+    "draft": "Hi Ambito (ambito.io) — Founding AI Engineer / Equity Partner — Remote but Boston b team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Seeq",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49929522",
+        "date": "2026-10-02T03:21:00.000Z",
+        "excerpt": "Seeq | https://seeq.com | Staff/Principal Software Engineer (Full-Stack, AI, Backend, Platform) | REMOTE (Some crossover w/ PST required) | Full-time | $170k-$205k + annual cash bonus + equity. Salary range for US-based; local adjustments for other countries.\nSeeq creates cutting"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Seeq team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -2570,6 +2745,28 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Founding Engineer (Security / AI / Distributed Systems) — Stealth Project",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49934114",
+        "date": "2026-10-02T14:46:57.000Z",
+        "excerpt": "Founding Engineer (Security / AI / Distributed Systems) — Stealth Project\nNext-Gen Secure DePIN x Multi-Agent SLM Trading Platform (Stealth / DM for Proposal)\nWe are building a highly secure, decentralized AI-automated asset management and trading platform running on edge DePIN n"
+      }
+    ],
+    "publicContacts": [
+      {
+        "value": "tai3426g@gmail.com",
+        "source": "https://news.ycombinator.com/item?id=49934114"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
+    "draft": "Hi Founding Engineer (Security / AI / Distributed Systems) — Stealth Project team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Fredrin",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [],
@@ -2587,6 +2784,23 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Koop AI",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49934886",
+        "date": "2026-10-02T15:50:28.000Z",
+        "excerpt": "Koop AI | Senior Software Engineer | NYC/JC Hybrid\n------ Position Filled -------"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Koop AI team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "At Tether ( https://tether.io/ ) we're hiring! We envision a world where technol",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [],
@@ -2601,6 +2815,23 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi At Tether ( https://tether.io/ ) we're hiring! We envision a world where technol team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Tempus AI",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49935083",
+        "date": "2026-10-02T16:04:04.000Z",
+        "excerpt": "Tempus AI | AI Scientist (Staff, Senior) | REMOTE (US) | Full-time | https://www.tempus.com\nTempus is a leading precision medicine AI company with an exceptional data flywheel in oncology: multi-modal data (pathology, DNA/RNA, spatial -omics, longitudinal outcomes, etc.) for mill"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Tempus AI team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -2682,6 +2913,28 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "GC AI",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49943713",
+        "date": "2026-10-03T12:32:42.000Z",
+        "excerpt": "GC AI | Member of Technical Staff, Applied AI | REMOTE (US/Canada) | $180K–$430K + equity\nGC AI is building an AI platform for in-house legal teams, helping lawyers draft, review, and analyze legal documents. The product is used by 1,800+ companies, including 150+ public companie"
+      }
+    ],
+    "publicContacts": [
+      {
+        "value": "mernaahmedemara13@gmail.com",
+        "source": "https://news.ycombinator.com/item?id=49943713"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
+    "draft": "Hi GC AI team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Location: Dubrovnik, Croatia (CET)",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [],
@@ -2701,6 +2954,28 @@
     "confidence": "medium",
     "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
     "draft": "Hi Location: Dubrovnik, Croatia (CET) team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Pond AI",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49951635",
+        "date": "2026-10-04T07:52:17.000Z",
+        "excerpt": "Pond AI | Head of Engineering (founding-level) | San Francisco | Onsite | Full-time | https://joinpond.ai\nMost non-tech businesses know exactly which workflows they want AI agents to handle, but have no one to build, connect and run them. Pond delivers custom AI agents to these b"
+      }
+    ],
+    "publicContacts": [
+      {
+        "value": "dylan@joinpond.ai",
+        "source": "https://news.ycombinator.com/item?id=49951635"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
+    "draft": "Hi Pond AI team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -2911,6 +3186,45 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Flowstate (London, UK) — Founding Engineer — TypeScript / React / Postgres / AI",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=49991656",
+        "date": "2026-10-07T12:11:44.000Z",
+        "excerpt": "Flowstate (London, UK) — Founding Engineer — TypeScript / React / Postgres / AI\nFlowstate ( https://www.flowstate.inc ) is building infrastructure for the emerging human + AI workforce.\nCompanies are rapidly adopting Claude, ChatGPT, Cursor, Copilot and internal agents, but most "
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Flowstate (London, UK) — Founding Engineer — TypeScript / React / Postgres / AI team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "OneChronos",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=50012248",
+        "date": "2026-10-08T21:04:09.000Z",
+        "excerpt": "OneChronos | Engineering Manager, Data Platform (NYC, Hybrid) · Software Engineer, Quality / SDET (Flexible/U.S. Remote) | Full-Time\nWe’re a Series B trading technology company reimagining how financial markets match buyers and sellers -- applying auction theory and innovative te"
+      }
+    ],
+    "publicContacts": [
+      {
+        "value": "careers@onechronos.com",
+        "source": "https://news.ycombinator.com/item?id=50012248"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
+    "draft": "Hi OneChronos team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "vvd",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [],
@@ -2947,6 +3261,28 @@
     "confidence": "medium",
     "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
     "draft": "Hi SKIES (Visual Choices AAC) team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Propel Labs",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=50020012",
+        "date": "2026-10-09T13:12:43.000Z",
+        "excerpt": "Propel Labs | Staff Full-Stack Engineer, Quality & Delivery | Remote (North America hours) | Full-time | https://propellabs.ai\nHello HN, Lisa here from Propel! We're a bunch of interdisciplinary builder-maker-designers leading a venture studio and building software for mining and"
+      }
+    ],
+    "publicContacts": [
+      {
+        "value": "lisa@propellabs.ai",
+        "source": "https://news.ycombinator.com/item?id=50020012"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
+    "draft": "Hi Propel Labs team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -3091,6 +3427,23 @@
     "confidence": "medium",
     "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
     "draft": "Hi GovStar team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "exLabora AI (General Purpose Robot Workforce)",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [],
+    "hiringPosts": [
+      {
+        "url": "https://news.ycombinator.com/item?id=50091446",
+        "date": "2026-10-14T17:28:12.000Z",
+        "excerpt": "exLabora AI (General Purpose Robot Workforce) | https://exlabora.com/open-roles.html | Founding Robotic Engineer (Software, Mechatronics, AI)"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi exLabora AI (General Purpose Robot Workforce) team,\n\nI came across your hiring post and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {

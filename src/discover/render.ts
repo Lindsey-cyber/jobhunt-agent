@@ -125,7 +125,7 @@ export function reportMarkdown(d: ReportData): string {
   L.push(`- 长期监控名单（\`config/watchlist.yaml\`）：${kinds.map((k) => `${CHANNEL_ZH[k]} ${wl.filter((o) => o.channel === k).length} 家`).join("，")}，共 ${wl.reduce((a, o) => a + o.count, 0)} 个在招岗位。Workday 没有全量接口，每家用固定关键词做有界搜索，召回不完整。`);
   L.push(`- 从第三方列表顺藤摸瓜抓取的官方 Board：${ex.length} 个（成功 ${ex.filter((o) => o.ok).length}），让官方要求而不是转载内容决定筛选。`);
   for (const o of d.outcomes.filter((x) => x.channel === "github_newgrad" || x.channel === "hn_hiring")) L.push(`- ${o.name}：${o.ok ? `${o.count} 条` : `失败：${o.error}`}${o.note ? `（${o.note}）` : ""}`);
-  L.push(`- Gmail：读取近 30 天 ${d.inboxMessages} 封 LinkedIn/Glassdoor/Handshake/Indeed 提醒邮件（会话中的 Gmail 连接器，只读；VPS 上改用 Gmail API OAuth）。`);
+  L.push(`- Gmail：读取近 30 天 ${d.inboxMessages} 封 LinkedIn/Glassdoor/Handshake/Indeed 提醒邮件（Gmail API，只读授权）。`);
   for (const o of d.outcomes.filter((x) => x.channel.startsWith("gmail_"))) L.push(`  - ${o.name}：${o.ok ? `${o.count} 条` : o.error}${o.note ? `（${o.note}）` : ""}`);
   if (failed.length) {
     L.push("", "失败的来源：", "");

@@ -112,6 +112,22 @@ describe("buildPlan", () => {
     expect(degree).toMatchObject({ status: "fill", value: "Master's Degree" });
   });
 
+  // From Together AI's form: sponsorship now versus in the future.
+  it("chooses future sponsorship for a candidate authorized in the job's country today", () => {
+    const f = field("Will you now or in the future require company sponsorship to retain or extend your work authorization in the country where the job is located?", {
+      kind: "combobox",
+      options: [
+        "Yes, I will require immigration sponsorship now to legally work in the country where the job is located.",
+        "Yes, I will require immigration sponsorship in the future to legally work in the country where the job is located.",
+        "No, I do not and will not require immigration sponsorship to legally work in the country where the job is located.",
+      ],
+    });
+    const p = { ...user.profile, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const us = { ...form([f]), jobLocation: "San Francisco, CA" };
+    expect(buildPlan(us, p, user.bank).items[0]).toMatchObject({ status: "fill", value: f.options[1] });
+    expect(buildPlan(form([f]), p, user.bank).items[0]!.status).toBe("blocked");
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");

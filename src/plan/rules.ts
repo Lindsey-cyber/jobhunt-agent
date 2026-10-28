@@ -159,7 +159,20 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "workAuthorization.needsSponsorship",
     pattern: /\b(sponsorship|sponsor)\b/,
-    resolve: (p) => yesNo(p.workAuthorization.needsSponsorship),
+    // Options that split "now" from "in the future": authorized today and
+    // needing sponsorship means the future one.
+    resolve: (p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      const yes = opts.filter((o) => /^yes\b/i.test(o.trim()));
+      if (p.workAuthorization.needsSponsorship && yes.length > 1) {
+        if (!ctx.jobCountry) return undefined;
+        const now = p.workAuthorization.authorizedCountries.includes(ctx.jobCountry);
+        const pick = yes.filter((o) => (now ? /\bin the future\b/i : /\bnow\b/i).test(o));
+        if (pick.length === 1) return pick[0];
+        return undefined;
+      }
+      return yesNo(p.workAuthorization.needsSponsorship);
+    },
   },
   { path: "eeo.hispanicLatino", pattern: /\b(hispanic|latino)\b/, resolve: (p) => p.eeo.hispanicLatino },
   { path: "eeo.gender", pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/, resolve: (p) => p.eeo.gender },

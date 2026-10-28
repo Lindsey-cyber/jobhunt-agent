@@ -32,7 +32,7 @@ const DATA_SCIENCE = /data scien/i;
 const AI_ANALYST = /\b(?:ai|artificial intelligence|machine learning|ml)\b[^,]{0,25}\banalyst\b/i;
 // Adjacent to the target; shown for review, not matched.
 const ADJACENT = /\bquantitative researcher\b|\bstatistician\b/i;
-const SENIOR = /\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished|architect|vp|vice president|chief|founding)\b|\b(engineer|scientist|developer)\s+(ii|iii|iv|2|3|4)\b|\b(l[5-9]|e[5-9]|ic[4-9])\b/i;
+const SENIOR = /\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished|architect|vp|vice president|chief|founding)\b|\b(engineer|scientist|developer)\s+(iii|iv|3|4)\b|\b(l[5-9]|e[5-9]|ic[4-9])\b/i;
 const INTERN = /\bintern(ship)?s?\b|\bco-?op\b|summer 20\d\d|\bapprentice/i;
 const ENGINEERING = /\bengineer(ing)?\b|scientist|researcher|\bdeveloper\b|\bswe\b|\bmts\b|member of technical staff|programmer/i;
 const NON_ENGINEERING = /\b(advocate|evangelist|sales|account|recruit|marketing|product manager|program manager|project manager|designer|writer|counsel|legal|support specialist|customer success|operations|analyst|consultant|teacher|instructor|tutor|trainer|annotator|labell?er)\b/i;
@@ -43,7 +43,7 @@ const MASTERS_BODY = /master'?s|\bm\.s\.|\bms\b(?! office| excel| word| teams)|\
 const PHD_TITLE = /\bph\.?\s?d\b|doctoral|doctorate|post-?doc/i;
 const MASTERS_OK = /\bm\.?s\.?\b|master'?s|\bms\/phd\b|ms or phd|bs\/ms/i;
 const EARLY_TITLE =
-  /new (?:college )?grad|\bgraduate\b|\bgrad\b|entry.?level|\bjunior\b|\bjr\.?\b|early.?career|university|campus|\bassociate\b|\b(?:engineer|scientist|developer)\s*(?:i|1)\b|\b(?:202[6-8])\b|\bresidency\b|\bresident\b|\bl3\b|\be3\b/i;
+  /new (?:college )?grad|\bgraduate\b|\bgrad\b|entry.?level|\bjunior\b|\bjr\.?\b|early.?career|university|campus|\bassociate\b|\b(?:engineer|scientist|developer)\s*(?:i|1|ii|2)\b|\b(?:202[6-8])\b|\bresidency\b|\bresident\b|\bl3\b|\be3\b/i;
 const EARLY_BODY =
   /new (?:college )?grad|recent (?:college |university )?grad|entry.?level|early.?career|university graduate|graduating (?:in|by)|\b0\s*(?:[-–]|to)\s*[1-3]\s*years?|\b[12]\+?\s*years?\s+(?:of\s+)?(?:relevant |professional |industry |work |hands-on )?experience|no (?:prior )?(?:professional )?experience (?:is )?required/i;
 const EXPERIENCE =
@@ -127,7 +127,10 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   if (!ROLE.test(title) && !dataScience && !adjacent) return v("reject", "role.out_of_scope", "Title is not an AI/ML, research or data-engineering role");
   if (INTERN.test(title)) return v("reject", "type.internship", "Internship or co-op, not a full-time role");
   // "[Junior / Senior / Staff] Engineer" hires at every level, including entry.
-  const multiLevel = /\b(junior|new grad|entry[- ]level|early[- ]career)\b/i.test(title);
+  // "Senior / Engineer II": a title offering several levels counts when one of them is not senior.
+  // Level II (about 2 years) is in range by the candidate's rule (2026-10-28).
+  const levels = title.split(/\s*\/\s*/);
+  const multiLevel = /\b(junior|new grad|entry[- ]level|early[- ]career)\b/i.test(title) || (levels.length > 1 && levels.some((l) => !SENIOR.test(l)));
   if (SENIOR.test(title) && !multiLevel) return v("reject", "level.senior", "Senior, staff, lead or manager title");
   if (NON_ENGINEERING.test(title) && !/\bengineer(ing)?\b|scientist|researcher/i.test(title) && !dataScience) {
     return v("reject", "role.non_engineering", "AI-adjacent but not an engineering or research role");

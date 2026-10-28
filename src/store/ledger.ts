@@ -15,7 +15,9 @@ const NEXT: Record<AppState | "new", readonly AppState[]> = {
   verified: ["planned", "held", "submitted"],
   submitted: ["confirmed", "unconfirmed"],
   confirmed: [],
-  unconfirmed: [],
+  // A confirmation can arrive later (an email, a finished security-code step);
+  // it never sends the application back to planned.
+  unconfirmed: ["confirmed"],
 };
 
 export interface LedgerEvent {

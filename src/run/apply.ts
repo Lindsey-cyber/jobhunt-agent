@@ -1,12 +1,15 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { chromium, type Page } from "playwright";
 import { applicationKey, type ApplicationKey } from "../domain/form.ts";
+import type { SubmitHelpers } from "../ats/adapter.ts";
 import { adapterFor } from "../ats/registry.ts";
+import { gmailConfigured, waitForSecurityCode } from "../sources/gmail.ts";
 import { gate, type GateDecision } from "../gate/gate.ts";
 import { buildPlan, type FillPlan } from "../plan/plan.ts";
 import type { UserData } from "../profile/load.ts";
 import type { AppState, Ledger } from "../store/ledger.ts";
+import { ReviewList } from "../store/review.ts";
 import { compareReadback, type VerifyReport } from "../verify/compare.ts";
 
 export interface ApplyOptions {
@@ -25,6 +28,28 @@ export type ApplyResult =
 
 const stamp = () => new Date().toISOString().replace(/[:.]/g, "-");
 const slug = (key: string) => key.replace(/[^a-zA-Z0-9]+/g, "_").replace(/^_|_$/g, "");
+
+// Where an emailed security code comes from: the Gmail API when authorized;
+// otherwise a file named by JH_CODE_FILE that a session fills from the inbox.
+function codeHelper(): SubmitHelpers {
+  if (gmailConfigured()) return { emailCode: (company, since) => waitForSecurityCode(company, since) };
+  const file = process.env.JH_CODE_FILE;
+  if (!file) return {};
+  return {
+    emailCode: async () => {
+      console.error(`waiting for the emailed security code in ${file}`);
+      for (let i = 0; i < 120; i++) {
+        if (existsSync(file)) {
+          const code = readFileSync(file, "utf8").trim();
+          rmSync(file);
+          return code;
+        }
+        await new Promise((r) => setTimeout(r, 5000));
+      }
+      return undefined;
+    },
+  };
+}
 
 export async function apply(opts: ApplyOptions): Promise<ApplyResult> {
   const browser = opts.page ? undefined : await chromium.launch({ headless: !opts.headed });
@@ -84,6 +109,17 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   save("gate.json", decision);
   const done = (state: AppState) => ({ outcome: "done" as const, key, state, runDir, plan, verify, decision, fillErrors });
 
+  // What the agent cannot submit goes to the candidate's daily list with the evidence.
+  const handOff = (why: string) =>
+    new ReviewList(join(user.dir, "review.jsonl")).refresh({
+      id: `submit:${key}`,
+      kind: "submit_by_hand",
+      subject: `${form.company} · ${form.jobTitle}: ${why}`,
+      detail: `Filled values and screenshots: ${runDir}`,
+      link: url,
+    });
+  if (blockers.length && verify.ok && !plan.items.some((i) => i.status === "blocked")) handOff(blockers.join("; "));
+
   if (!verify.ok) {
     ledger.transition(key, "held", runDir, decision);
     return done("held");
@@ -97,11 +133,12 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   // Recorded before the click: if anything dies after this line the
   // application can never be retried automatically.
   ledger.transition(key, "submitted", runDir, { approved });
-  await adapter.submit(page);
+  await adapter.submit(page, codeHelper(), form.company);
   const confirmation = await adapter.confirmation(page, confirmTimeoutMs);
   await page.screenshot({ path: join(runDir, "after-submit.png"), fullPage: true });
   save("confirmation.json", confirmation);
   const state = confirmation ? "confirmed" : "unconfirmed";
   ledger.transition(key, state, runDir, confirmation);
+  if (!confirmation) handOff("submit was clicked but no confirmation appeared (a security code or captcha may be waiting); check the screenshot and your inbox, and finish it by hand if it did not go through");
   return done(state);
 }

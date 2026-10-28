@@ -201,6 +201,13 @@ describe("triage", () => {
     expect(triage(job("ML Engineer, New Grad", { description: "Must be eligible to obtain and maintain an active U.S. Secret security clearance." }), me).rule).toBe("auth.citizenship");
   });
 
+  // The candidate's labels (2026-10-28): level II is in range; mixed-level titles count.
+  it("keeps level II and mixed-level titles such as 'Senior / Engineer II'", () => {
+    expect(triage(job("Senior / Engineer II, AI Lab Research Engineer", { description: "Train models with PyTorch." }), me).verdict).not.toBe("reject");
+    expect(triage(job("Machine Learning Engineer II, New Grad"), me).verdict).toBe("match");
+    expect(triage(job("Machine Learning Engineer III"), me).rule).toBe("level.senior");
+  });
+
   it("keeps a multi-level title that includes junior, and nothing else senior", () => {
     expect(triage(job("Senior Associate, Data Scientist - Applied AI"), me).rule).toBe("level.senior");
     expect(triage(job("Principal Scientist / Associate Director, Agentic AI Research"), me).rule).toBe("level.senior");

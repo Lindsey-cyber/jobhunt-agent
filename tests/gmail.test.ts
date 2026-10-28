@@ -21,4 +21,11 @@ describe("Gmail API messages", () => {
     expect(a).toMatchObject({ id: "m1", sender: "LinkedIn Job Alerts <jobalerts-noreply@linkedin.com>", subject: "Kargo ML Engineer", date: "2026-10-28T02:24:00.000Z", html: '<a href="https://x">job</a>' });
     expect(a.body).toContain("View job:");
   });
+
+  it("reads Greenhouse's security code from the email text", async () => {
+    const { parseSecurityCode } = await import("../src/sources/gmail.ts");
+    const body = "Copy and paste this code into the security code field on your application:\n# tL24j2Rn\n\nAfter you enter the code, resubmit your application.";
+    expect(parseSecurityCode(body)).toBe("tL24j2Rn");
+    expect(parseSecurityCode("Your application was received.")).toBeUndefined();
+  });
 });

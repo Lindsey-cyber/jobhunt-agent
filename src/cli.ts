@@ -114,7 +114,7 @@ switch (command) {
       for (const r of reasons) console.log(`    - ${r}`);
     }
     const open = new ReviewList(paths(u.dir).review).open();
-    const kinds = ["approve_match", "audit_disagreement", "question", "trust_change", "source_failure", "outreach_draft"] as const;
+    const kinds = ["submit_by_hand", "approve_match", "audit_disagreement", "question", "trust_change", "source_failure", "outreach_draft"] as const;
     for (const k of kinds) {
       const items = open.filter((i) => i.kind === k);
       if (!items.length) continue;

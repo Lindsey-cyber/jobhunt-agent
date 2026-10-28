@@ -26,3 +26,12 @@ answers:
       - Current city
     answer: New York
     origin: human
+  # The candidate (2026-10-28): no non-compete, non-solicitation or similar agreement.
+  - id: restrictive-agreements
+    question: Are you currently bound by any agreements with a current or former employer that may restrict your ability to work for {company} or perform the duties of the position for which you are applying? This includes, but is not limited to, non-compete agreements, non-solicitation agreements, confidentiality or non-disclosure agreements, or any other contractual obligations that could limit your employment activities.
+    aliases:
+      - Are you currently bound by a non-compete agreement?
+      - Are you subject to any non-compete or non-solicitation agreements?
+      - Are you bound by any restrictive covenants with a current or former employer?
+    answer: "No"
+    origin: human

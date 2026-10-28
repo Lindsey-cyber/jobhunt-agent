@@ -68,8 +68,8 @@ export async function finishAuth(redirected: string): Promise<string> {
     headers: { "content-type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({ code, client_id: c.client_id, client_secret: c.client_secret, redirect_uri: REDIRECT, grant_type: "authorization_code", code_verifier: pending.verifier }),
   });
-  const body = (await res.json()) as { refresh_token?: string; scope?: string; error_description?: string };
-  if (!res.ok || !body.refresh_token) throw new Error(`token exchange failed: ${body.error_description ?? res.status}`);
+  const body = (await res.json()) as { refresh_token?: string; scope?: string; error?: string; error_description?: string };
+  if (!res.ok || !body.refresh_token) throw new Error(`token exchange failed: ${body.error ?? res.status}${body.error_description ? ` (${body.error_description})` : ""}`);
   if (body.scope !== SCOPE) throw new Error(`unexpected scope granted: ${body.scope}`);
   writePrivate(tokenFile(), { refresh_token: body.refresh_token, scope: body.scope, created: new Date().toISOString() });
   writePrivate(pendingFile(), {});
@@ -140,4 +140,32 @@ export async function fetchAlerts(dir: string, query = ALERT_QUERY): Promise<{ s
     writeFileSync(join(dir, `${id}.json`), JSON.stringify(toAlert(m)));
   });
   return { saved: ids.length };
+}
+
+// Greenhouse emails an 8-character code before it accepts some applications:
+// "Copy and paste this code into the security code field on your application: tL24j2Rn".
+export function parseSecurityCode(text: string): string | undefined {
+  return /security code field on your application:\s*#?\s*([A-Za-z0-9]{6,10})\b/i.exec(text)?.[1];
+}
+
+// Polls for the newest security-code email for this company that arrived
+// after `since` (the click that asked for it). Read-only.
+export async function waitForSecurityCode(company: string, since: Date, timeoutMs = 180_000): Promise<string | undefined> {
+  const deadline = Date.now() + timeoutMs;
+  const q = new URLSearchParams({ q: `from:greenhouse-mail.io subject:"Security code" newer_than:1d`, maxResults: "10" });
+  while (Date.now() < deadline) {
+    const token = await accessToken();
+    const get = async <T>(url: string) => (await (await fetch(url, { headers: { authorization: `Bearer ${token}` } })).json()) as T;
+    const list = await get<{ messages?: { id: string }[] }>(`${API}/messages?${q}`);
+    for (const { id } of list.messages ?? []) {
+      const m = await get<GmailMessage>(`${API}/messages/${id}?format=full`);
+      const a = toAlert(m);
+      if (Date.parse(a.date) < since.getTime() - 5000) continue;
+      if (company && !a.subject.toLowerCase().includes(company.toLowerCase())) continue;
+      const code = parseSecurityCode(a.body || a.html || "");
+      if (code) return code;
+    }
+    await new Promise((r) => setTimeout(r, 5000));
+  }
+  return undefined;
 }

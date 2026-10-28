@@ -73,7 +73,13 @@ export const greenhouse: AtsAdapter = {
       fields.push(field);
     }
 
-    const company = (await page.locator("[data-company-name]").first().getAttribute("data-company-name").catch(() => null)) ?? new URL(page.url()).pathname.split("/").filter(Boolean)[0] ?? "";
+    // Boards title the page "Job Application for <title> at <Company>"; the URL only has the board slug.
+    const fromTitle = / at (.+?)\s*$/.exec(await page.title())?.[1];
+    const company =
+      (await page.locator("[data-company-name]").first().getAttribute("data-company-name", { timeout: 1000 }).catch(() => null)) ??
+      fromTitle ??
+      new URL(page.url()).pathname.split("/").filter(Boolean)[0] ??
+      "";
     const jobTitle = (await page.locator("h1").first().innerText().catch(() => "")).trim();
     const jobLocation = (await page.locator(".job__location").first().innerText({ timeout: 2000 }).catch(() => "")).trim();
     return { ats: "greenhouse", url: page.url(), company, jobTitle, ...(jobLocation ? { jobLocation } : {}), fields };
@@ -164,7 +170,19 @@ export const greenhouse: AtsAdapter = {
     return out;
   },
 
-  async submit(page) {
+  // Some boards email an 8-character code after the first click and accept the
+  // application only when it is entered. Each click sends a new code, so it
+  // must be entered in this same page; without a code the run ends unconfirmed.
+  async submit(page, helpers, company = "") {
+    const clicked = new Date();
+    await page.locator(`${FORM} button[type="submit"]`).click();
+    const asked = await page.getByText(/verification code was sent/i).first().waitFor({ timeout: 15000 }).then(() => true, () => false);
+    if (!asked || !helpers?.emailCode) return;
+    const code = await helpers.emailCode(company, clicked);
+    if (!code) return;
+    const boxes = page.locator(`${FORM} input[id^="security-input"], ${FORM} input[maxlength="1"]`);
+    await boxes.first().click();
+    await page.keyboard.type(code, { delay: 60 });
     await page.locator(`${FORM} button[type="submit"]`).click();
   },
 

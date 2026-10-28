@@ -4,4 +4,4 @@
 trust: draft
 autoSubmitAts: []
 allowGeneratedAnswers: false
-dailySubmitCap: 10
+dailySubmitCap: 100

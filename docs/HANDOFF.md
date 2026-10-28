@@ -4,6 +4,12 @@
 
 - 代码在私有仓库 Lindsey-cyber/jobhunt-agent 的 `v2` 分支（TypeScript + Playwright），在这个分支上继续提交和推送。`main` 分支是旧的 Python 版，只作参考：`jobhunt/feeds.py`、`catalog.py`、`identity.py`、`criteria.py` 里的职位发现逻辑和 `docs/SEARCH_REPORT_2026-10-28.md` 的真实搜索结果值得借鉴，其余不用管。
 - 先读 `CLAUDE.md`、`ARCHITECTURE.md` 和 `.claude/skills/`。设计原则来自 Lauren Tan 的 pstack：先让 agent 能自己验证，再放开自主；每纠正一次就把它沉淀到代码、类型或测试里；关键判断用独立的审核 agent（不同模型、只看证据）。
+- 系统按 Lauren 的组织方式搭：总管（只排程和汇总，以后常驻 VPS）→ 发现/投递/Outreach 三个经理 → 工人 + 独立验证者。
+  验证者必须换模型或换 prompt，只看证据、不看工人的说法；能用代码判对错的环节（读回核对、链接、去重、提交确认）一律用代码。
+- 第一阶段就要有筛选审计 agent：抽查"通过"和"被排除"的岗位，盲评后算出误筛率和漏筛率，写进报告。
+- 每日清单里我的批准/驳回要存成带标签的评测集；改筛选规则、答题 skill 或换模型前，先在评测集上跑分，不降才上线。
+- 每个环节单独设信任等级，凭审计数据升级，审计出问题自动降回"等我确认"。审计发现的错误要沉淀成规则、测试或适配器修复。
+- 第一阶段先在云会话里跑通总管和经理的骨架；我开好 VPS 后再搬过去常驻（Claude Agent SDK 或 Claude Code 无交互模式 + systemd，Gmail 改用 Gmail API 只读授权，Dashboard 走 SSH 隧道）。
 - 我的真实资料在 `data/`（profile、answers、简历），已提交。不填紧急联系人、薪资、推荐人。
 - 当前阶段是第一阶段：真实搜索测试，`trust: draft`，不自动提交。要做的：
   1. 多渠道职位发现：美国中大型科技公司和 AI 公司的官方 ATS（Greenhouse、Lever、Ashby、Workday）长期监控名单、New Grad GitHub 仓库的增量更新、Gmail 里 LinkedIn/Glassdoor/Handshake/Indeed 的职位提醒（会话里有 Gmail 连接器；VPS 上以后改用 Gmail API OAuth）。

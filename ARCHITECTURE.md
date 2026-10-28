@@ -34,6 +34,33 @@ Confidence of 0.9 and above is green. Amber fills the field but holds an unatten
 
 `--approve` lifts trust and confidence checks only. Nothing lifts a blocked field, a failed readback or the cap.
 
+## Agent organization
+
+Modeled on Lauren Tan's setup: one coordinator, managers per pipeline, workers, and independent verifiers.
+
+```
+coordinator (long-running on the VPS; schedules, budgets, writes the daily report and review list)
+├─ discovery manager
+│   ├─ workers: source fetchers (code), Gmail alert parser, triage agent (is this a New Grad AI/ML fit?)
+│   └─ verifier: triage auditor, blind re-judges a sample of matches and rejects, reports precision and recall
+├─ apply manager
+│   ├─ workers: fill pipeline (code), answer writer (open questions only), adapter fixer (opens PRs)
+│   └─ verifiers: answer reviewer (every claim traced to the candidate's data), submission auditor (evidence vs plan vs profile)
+└─ outreach manager
+    ├─ worker: hiring-contact and posting researcher
+    └─ verifier: source and date checker, assigns confidence
+```
+
+Rules for a verifier:
+
+- Independent: a different model or prompt from the worker, reading artifacts (pages, screenshots, raw records), never the worker's own summary.
+- Measured: its verdicts are scored against the candidate's daily approve/reject decisions, which are stored as a labeled eval set.
+- Structural: every error it finds ends as a rule, test or adapter fix, so it is not caught by hand twice.
+
+Anything code can check (readback, links, dedupe, confirmation) stays in code, not in an agent.
+
+Each stage has its own trust level, promoted on audit numbers and demoted automatically when an audit fails. Changes to triage rules, answer skills or models run against the eval set first and ship only if the score does not drop.
+
 ## Ledger
 
 `data/ledger.jsonl` is append-only. States: planned, held, verified, submitted, confirmed, unconfirmed. Transitions are a table in `src/store/ledger.ts`; illegal ones throw. A run that dies before `submitted` restarts; nothing after `submitted` ever does.
@@ -50,4 +77,4 @@ Every run writes `data/runs/<key>/<timestamp>/` with the plan, readback, verify 
 
 ## Not built yet
 
-Discovery (career-ops `providers/` for Greenhouse, Lever and Ashby public APIs), fit scoring, resume tailoring with a fact gate, Lever/Ashby/Workday adapters, inbox confirmation checks, an eval harness on captured pages, and a trust report per ATS.
+The agent organization above (coordinator, managers, verifiers, eval set), discovery (career-ops `providers/` and the old Python `feeds.py` for Greenhouse, Lever, Ashby and Workday public APIs), fit scoring, resume tailoring with a fact gate, Lever/Ashby/Workday adapters, inbox confirmation checks, an eval harness on captured pages, and a trust report per ATS.

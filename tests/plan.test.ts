@@ -134,6 +134,26 @@ describe("buildPlan", () => {
     expect(buildPlan(form([f]), p, user.bank).items[0]!.status).toBe("blocked");
   });
 
+  // From Lyft's form.
+  it("answers Lyft's work authorization, worked-here and one-option privacy dropdown", () => {
+    const p = { ...user.profile, acknowledgePrivacyPolicies: true, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const one = (f: ReturnType<typeof field>) => buildPlan(form([f], "Lyft"), p, user.bank).items[0]!;
+    const auth = field("Work Authorization", {
+      kind: "combobox",
+      options: [
+        "I am authorized to work for any employer in the country in which this position is based.",
+        "I require/will require Lyft's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)",
+        "My status to work in the country in which this position is based is unknown.",
+      ],
+    });
+    expect(one(auth)).toMatchObject({ status: "fill", value: auth.options[1] });
+    expect(one(field("Have you been employed by Lyft, or any subsidiary, affiliate, or business unit of Lyft, in the past (whether on a full-time or part-time basis)?", { kind: "combobox", options: ["Yes", "No"] }))).toMatchObject({ status: "fill", value: "No" });
+    const dd = (q: string) => buildPlan(form([field(q, { kind: "combobox", options: ["Yes", "No"] })], "DoorDash USA"), p, user.bank).items[0]!;
+    expect(dd("Have you worked at DoorDash?")).toMatchObject({ status: "fill", value: "No" });
+    expect(dd("Have you worked at a startup?")).toMatchObject({ status: "blocked" });
+    expect(one(field("Please review the linked document:", { kind: "combobox", options: ["I acknowledge that I have read and understood the terms of the Lyft Candidate Privacy Notice."] }))).toMatchObject({ status: "fill" });
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");

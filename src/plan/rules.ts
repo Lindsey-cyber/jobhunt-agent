@@ -43,6 +43,8 @@ export interface RuleContext {
   options?: string[];
   // Set only when every location the posting lists is in that country.
   jobCountry?: string;
+  // The hiring company, as the form names it.
+  company?: string;
 }
 
 const STATES: Record<string, string> = { AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", DC: "District of Columbia", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming" };
@@ -148,16 +150,33 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
-    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?worked for .{1,60}\b(in the past|before)\b/,
+    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$/,
     resolve: (p, label, ctx) => {
-      const m = /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ?? /\bworked (?:for|at) (.+?) (?:before|in the past|or a subsidiary)\b/.exec(label);
-      const named = m?.[1]?.trim();
+      const m =
+        /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ??
+        /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label);
+      // Bare "Have you worked at DoorDash?" only when it names the hiring company.
+      const bare = /^have you (?:ever )?worked (?:at|for) (.+)$/.exec(label)?.[1];
+      const company = (ctx.company ?? "").toLowerCase();
+      const named = m?.[1]?.trim() ?? (bare && company && company.split(/\s+/)[0] === bare.split(" ")[0] ? bare : undefined);
       if (!named) return undefined;
       const worked = p.workHistory.some((w) => w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase()));
       // Waymo: "Never worked at Alphabet" among current/former options.
       const never = (ctx.options ?? []).filter((o) => /^(never|i have never|no\b)/i.test(o.trim()));
       if (!worked && never.length === 1) return never[0];
       return yesNo(worked);
+    },
+  },
+  {
+    // Waymo, Lyft: "Work Authorization" with any-employer / needs-our-sponsorship / unknown options.
+    path: "workAuthorization.needsSponsorship",
+    pattern: /^work authori[sz]ation( status)?$/,
+    resolve: (p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      const pick = p.workAuthorization.needsSponsorship
+        ? opts.filter((o) => /\brequire\b.*\bsponsorship\b/i.test(o))
+        : opts.filter((o) => /\bauthori[sz]ed to work for any employer\b/i.test(o));
+      return pick.length === 1 ? pick[0] : undefined;
     },
   },
   {

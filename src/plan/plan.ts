@@ -83,7 +83,8 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   if (veto) return unanswered(field, veto.reason);
   // A checkbox whose only choices are "I acknowledge" / "I agree" is an attestation,
   // unless the candidate answered this exact question in the answer bank.
-  const attestation = field.kind === "checkbox" && field.options.length > 0 && field.options.every((o) => ATTESTATION_OPTION.test(normalize(o)));
+  // Lyft asks the same as a one-option dropdown.
+  const attestation = (field.kind === "checkbox" || (field.options.length === 1 && field.kind !== "radio")) && field.options.length > 0 && field.options.every((o) => ATTESTATION_OPTION.test(normalize(o)));
   if (attestation && !bank.some((e) => questionsOf(e, form.company).includes(label))) {
     const text = normalize([field.label, ...field.options].join(" "));
     if (profile.acknowledgePrivacyPolicies && field.options.length === 1 && PRIVACY_NOTICE.test(text) && !PRIVACY_EXCEPT.test(text)) {
@@ -99,7 +100,7 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     return unanswered(field, "no document for this upload");
   }
 
-  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
+  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, company: form.company, ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
   if (!candidate) return unanswered(field, sensitive ? "sensitive question with no exact answer" : "no answer in profile or answer bank");
 
   const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0);

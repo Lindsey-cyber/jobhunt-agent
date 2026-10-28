@@ -115,7 +115,7 @@ switch (command) {
     const seen = r.jobs.filter((j) => j.lastSeen >= r.startedAt);
     const n = (v: string) => seen.filter((j) => j.triage.verdict === v).length;
     console.log(`postings seen ${seen.length}: match ${n("match")}, review ${n("review")}, reject ${n("reject")}`);
-    console.log(`queued ${r.queued} for approval; audit sample ${r.auditSize}; outreach ${r.outreach.length} companies`);
+    console.log(`queued ${r.queued} for approval; audit sample ${r.auditSize} in ${r.auditDir}; outreach ${r.outreach.length} companies`);
     console.log(`report ${r.reportDir}/REPORT.md`);
     break;
   }

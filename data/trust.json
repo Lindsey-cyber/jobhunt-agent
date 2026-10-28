@@ -1,0 +1,28 @@
+{
+  "triage": {
+    "level": "confirm",
+    "since": "2026-10-28T09:36:50.756Z",
+    "reason": "audit 2026-10-28T09:36:50.755Z: false-match 27.0%, miss 5.0% (limit 10%)",
+    "audits": [
+      {
+        "at": "2026-10-28T09:36:50.755Z",
+        "falseMatchRate": 0.2702702702702703,
+        "missRate": 0.05,
+        "matchJudged": 37,
+        "rejectJudged": 20
+      }
+    ]
+  },
+  "apply": {
+    "level": "confirm",
+    "since": "2026-10-28T09:36:50.756Z",
+    "reason": "every stage starts at confirm",
+    "audits": []
+  },
+  "outreach": {
+    "level": "confirm",
+    "since": "2026-10-28T09:36:50.756Z",
+    "reason": "every stage starts at confirm",
+    "audits": []
+  }
+}

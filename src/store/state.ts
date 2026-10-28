@@ -23,6 +23,7 @@ const writeJson = (p: string, v: unknown) => {
 export interface LatestRun {
   runDir: string;
   reportDir: string;
+  auditDir: string;
   startedAt: string;
   finishedAt: string;
   inboxMessages: number;

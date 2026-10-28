@@ -164,6 +164,11 @@ export function reportMarkdown(d: ReportData): string {
     L.push(`| 边缘排除中被认为合适 | ${ci(a.nearMissRate, a.nearJudged)} |`);
     L.push(`| 待核实 → 审核者：合适 / 不合适 | ${a.reviewFit} / ${a.reviewNotFit} |`);
     L.push(`| 审核者“无法判断” | ${a.unsure} |`, "");
+    if (d.stage.audits.length > 1) {
+      L.push("历次审计（每轮都是新的盲样本、新的审核者实例）：", "", "| 时间 | 误筛率 | n | 漏筛率 | n |", "| --- | ---: | ---: | ---: | ---: |");
+      for (const r of d.stage.audits) L.push(`| ${sh(r.at)} | ${pct(r.falseMatchRate)} | ${r.matchJudged} | ${pct(r.missRate)} | ${r.rejectJudged} |`);
+      L.push("");
+    }
     L.push(`筛选环节信任等级：\`${d.stage.level}\`（${d.stage.reason}）。超过 10% 自动降回“等我确认”；连续 3 次审计误筛和漏筛都 ≤5% 才会建议升级，由你决定。`, "");
     if (a.disagreements.length) {
       L.push("分歧（已进每日清单，你的判断会存成评测集）：", "");

@@ -127,7 +127,7 @@ describe("triage", () => {
     ["AI Developer Advocate", "reject"],
     ["Account Executive", "reject"],
     ["Research Scientist, PhD Graduate", "reject"],
-    ["Research Scientist (MS/PhD), New Grad", "match"],
+    ["ML Research Scientist (MS/PhD), New Grad", "match"],
     ["Machine Learning Engineer", "review"],
     ["Data Scientist, New Grad", "review"],
   ])("%s → %s", (title, verdict) => {
@@ -157,6 +157,32 @@ describe("triage", () => {
   it("reads clearance and citizenship as required only when not marked preferred", () => {
     expect(triage(job("ML Engineer, New Grad", { description: "Must be a U.S. Citizen with an active Secret clearance." }), me).rule).toBe("auth.citizenship");
     expect(triage(job("ML Engineer, New Grad", { description: "Preferred experience: Active DOD Secret clearance highly desired." }), me).verdict).toBe("match");
+  });
+
+  // Cases from audit round 1 (2026-10-28), where the blind auditor was right.
+  it("needs ML evidence before a research title counts", () => {
+    expect(triage(job("Research Scientist In Vitro Pharmacology", { description: "Run cell-based assays for drug discovery." }), me).rule).toBe("role.research_unclear");
+    expect(triage(job("Materials Research Scientist/Engineer, New Grad", { description: "Develop thin-film materials and characterize them. ".repeat(20) }), me).rule).toBe("role.research_not_ml");
+    expect(triage(job("Research Scientist, New Grad", { description: "Train large language models (LLMs) for code." }), me).verdict).toBe("match");
+    expect(triage(job("Research Scientist, Monetization - New Grad", { official: false, description: "List category: AI/ML/Data" }), me).verdict).toBe("match");
+    expect(triage(job("Research Scientist In Vitro Pharmacology", { description: "Deep Genomics uses artificial intelligence to transform drug discovery, with expertise spanning machine learning and biology. You will run cell assays. ".repeat(6) }), me).rule).toBe("role.research_not_ml");
+  });
+
+  it("reads a PhD requirement in the description unless a master's also qualifies", () => {
+    expect(triage(job("Research Scientist, Generative AI - New College Grad 2026", { description: "What we need to see: Pursuing PhD in Computer Science or related field." }), me).rule).toBe("degree.phd_required");
+    expect(triage(job("ML Research Engineer, New Grad", { description: "A PhD in computer vision, machine learning or equivalent industry experience." }), me).rule).toBe("degree.phd_required");
+    expect(triage(job("ML Engineer, New Grad", { description: "A PhD is required, or a Master's degree with research experience." }), me).verdict).toBe("match");
+    expect(triage(job("ML Engineer, New Grad", { description: "PhD preferred. Strong ML fundamentals." }), me).verdict).toBe("match");
+  });
+
+  it("rejects postings that say they are for experienced engineers", () => {
+    expect(triage(job("AI Engineer - Forward Deployed (New Grad)", { description: "This role is intended for experienced engineers who have shipped ML systems." }), me).rule).toBe("experience.too_senior");
+  });
+
+  it("keeps a multi-level title that includes junior, and nothing else senior", () => {
+    expect(triage(job("Senior Associate, Data Scientist - Applied AI"), me).rule).toBe("level.senior");
+    expect(triage(job("Principal Scientist / Associate Director, Agentic AI Research"), me).rule).toBe("level.senior");
+    expect(triage(job("[Junior / Senior / Staff] Software Engineer, Inference / Compute Infrastructure", { location: "San Francisco, CA" }), me).verdict).not.toBe("reject");
   });
 
   it("reads locations conservatively", () => {

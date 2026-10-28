@@ -5,10 +5,10 @@ import type { Job, JobKey } from "../domain/job.ts";
 
 // One line per posting ever seen, with every source's first and last sighting.
 // Rewritten whole after each discovery run; history lives in the source records.
-// Descriptions are kept only where triage read past the title, and capped, so
-// the file stays manageable. The plain file is ignored by git; a gzip copy next
+// Descriptions are kept, whole, only where triage read past the title: rules
+// such as an ITAR clause often sit at the very end, and labels store this text
+// as their evidence. The plain file is ignored by git; a gzip copy next
 // to it is committed so a fresh cloud session keeps first-seen history.
-const KEEP_DESCRIPTION = 4000;
 const TITLE_RULES = ["role.out_of_scope", "type.internship", "level.senior", "role.non_engineering", "degree.phd_required", "location.non_us", "source.closed"];
 
 export function readCatalog(path: string): Map<JobKey, Job> {
@@ -29,7 +29,7 @@ export function writeCatalog(path: string, jobs: Iterable<Job>): void {
       // Hiring posts keep their text whatever triage said: outreach reads it.
       const post = j.sources.some((s) => s.channel === "hn_hiring");
       const titleOnly = !post && TITLE_RULES.includes(j.triage.rule);
-      return JSON.stringify({ ...j, description: titleOnly ? "" : j.description.slice(0, KEEP_DESCRIPTION) });
+      return JSON.stringify({ ...j, description: titleOnly ? "" : j.description });
     });
   const text = lines.join("\n") + "\n";
   writeFileSync(path, text);

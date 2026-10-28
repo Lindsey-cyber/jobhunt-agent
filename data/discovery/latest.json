@@ -1,0 +1,9 @@
+{
+  "runDir": "/home/user/jobhunt-agent/data/runs/discovery/2026-10-28T09-30-56-262Z",
+  "reportDir": "docs/reports/2026-10-28",
+  "startedAt": "2026-10-28T09:30:56.262Z",
+  "finishedAt": "2026-10-28T09:33:45.954Z",
+  "inboxMessages": 157,
+  "auditSeed": 31010182,
+  "auditDir": "docs/reports/2026-10-28/audit/093056"
+}

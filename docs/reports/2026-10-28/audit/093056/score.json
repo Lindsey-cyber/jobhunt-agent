@@ -1,0 +1,153 @@
+{
+  "at": "2026-10-28T09:36:50.755Z",
+  "auditor": "Sonnet subagent, blind, brief + postings only",
+  "sampleSize": 110,
+  "missing": [],
+  "score": {
+    "judged": 98,
+    "unsure": 12,
+    "falseMatchRate": 0.2702702702702703,
+    "matchJudged": 37,
+    "missRate": 0.05,
+    "rejectJudged": 20,
+    "nearMissRate": 0,
+    "nearJudged": 28,
+    "reviewFit": 9,
+    "reviewNotFit": 4,
+    "byRule": {
+      "match": {
+        "judged": 37,
+        "disagree": 10
+      },
+      "role.out_of_scope": {
+        "judged": 17,
+        "disagree": 0
+      },
+      "level.senior": {
+        "judged": 21,
+        "disagree": 1
+      },
+      "role.non_engineering": {
+        "judged": 4,
+        "disagree": 0
+      },
+      "location.non_us": {
+        "judged": 2,
+        "disagree": 0
+      },
+      "auth.citizenship": {
+        "judged": 2,
+        "disagree": 0
+      },
+      "type.internship": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "experience.too_senior": {
+        "judged": 1,
+        "disagree": 0
+      }
+    },
+    "disagreements": [
+      {
+        "id": "a004",
+        "key": "workday:americanredcross:rc91319",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Clinical Research Scientist\" is a clinical role, not AI/ML."
+      },
+      {
+        "id": "a049",
+        "key": "url:https://careers-sri.icims.com/jobs/6428/materials-research-scientist-engineer/job",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Materials Research Scientist/Engineer\" is not AI/ML."
+      },
+      {
+        "id": "a057",
+        "key": "ashby:99726ac8-75b2-4719-b0ea-e470cda3148b",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"A PhD in computer vision, machine learning\" is the stated qualification."
+      },
+      {
+        "id": "a058",
+        "key": "workday:nvidia:jr2011267",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Pursuing PhD in Computer Science/Engineering\" required."
+      },
+      {
+        "id": "a061",
+        "key": "greenhouse:5186628007",
+        "stratum": "reject_any",
+        "verdict": "reject",
+        "rule": "level.senior",
+        "fit": "yes",
+        "reason": "\"[Junior / Senior / Staff] Software Engineer, Inference / Compute Infrastructure\" in San Francisco includes junior level."
+      },
+      {
+        "id": "a066",
+        "key": "workday:nvidia:jr2012979",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"new college grad PhD researcher\" required."
+      },
+      {
+        "id": "a090",
+        "key": "ashby:0b7ed96c-9a41-4027-8664-1c5ed6369ea9",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Electrophysiology of Rodent Cognition\" is wet-lab neuroscience."
+      },
+      {
+        "id": "a092",
+        "key": "lever:2ec45717-17a1-47a7-8e41-737ec3bc9bf9",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Research Scientist In Vitro Pharmacology\" is wet-lab biology."
+      },
+      {
+        "id": "a099",
+        "key": "workday:vrtx:req-30307",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Computational Chemistry Research Scientist\" is drug design chemistry."
+      },
+      {
+        "id": "a106",
+        "key": "ashby:50be2fab-54c1-4310-8cec-3fe6123b8a8f",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"PhD in machine learning, computer science ... or equivalent industry experience\" required."
+      },
+      {
+        "id": "a108",
+        "key": "greenhouse:8546367002",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"intended for experienced engineers\" AI FDE."
+      }
+    ]
+  }
+}

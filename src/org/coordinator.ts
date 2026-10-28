@@ -40,19 +40,21 @@ export async function daily(o: DailyOptions) {
   log("coordinator: discovery manager");
   const r = await discover({ dataDir: dir, watchlist: o.watchlist, facts: candidateFacts(o.user.profile), ...(o.inboxDir ? { inboxDir: o.inboxDir } : {}), log });
   const reportDir = join(o.reportRoot ?? "docs/reports", r.startedAt.slice(0, 10));
-  mkdirSync(join(reportDir, "audit"), { recursive: true });
+  // One audit dir per run, so a second run on the same day keeps the first audit.
+  const auditDir = join(reportDir, "audit", r.startedAt.slice(11, 19).replace(/:/g, ""));
+  mkdirSync(auditDir, { recursive: true });
   const review = new ReviewList(paths(dir).review);
   const seen = r.jobs.filter((j) => j.lastSeen >= r.startedAt);
 
   // Discovery verifier: blind sample now, scored once the auditor answers.
   const seed = Date.parse(r.startedAt) % 2 ** 31;
   const { blind, key } = drawSample(seen, seed);
-  writeFileSync(join(reportDir, "audit", "blind.jsonl"), blind.map((b) => JSON.stringify(b)).join("\n") + "\n");
-  writeFileSync(join(reportDir, "audit", "brief.md"), auditorBrief(o.user.profile) + "\n");
+  writeFileSync(join(auditDir, "blind.jsonl"), blind.map((b) => JSON.stringify(b)).join("\n") + "\n");
+  writeFileSync(join(auditDir, "brief.md"), auditorBrief(o.user.profile) + "\n");
   // The answer key stays out of the report dir until scoring, so an auditor
   // pointed at that dir cannot read it.
   writeFileSync(join(r.runDir, "audit-key.json"), JSON.stringify(key, null, 2));
-  log(`coordinator: audit sample of ${blind.length} written to ${reportDir}/audit`);
+  log(`coordinator: audit sample of ${blind.length} written to ${auditDir}`);
 
   // Apply manager, phase 1: the best matches go to the candidate for approval.
   // Approvals and rejections become the labeled eval set.
@@ -86,9 +88,9 @@ export async function daily(o: DailyOptions) {
     review.refresh({ id: `source:${f.channel}:${f.name}`, kind: "source_failure", subject: `${f.name} failed`, detail: f.error ?? "", link: f.url });
   }
 
-  writeLatest(dir, { runDir: r.runDir, reportDir, startedAt: r.startedAt, finishedAt: r.finishedAt, inboxMessages: o.inboxDir ? readInbox(o.inboxDir).length : 0, auditSeed: seed });
+  writeLatest(dir, { runDir: r.runDir, reportDir, auditDir, startedAt: r.startedAt, finishedAt: r.finishedAt, inboxMessages: o.inboxDir ? readInbox(o.inboxDir).length : 0, auditSeed: seed });
   writeReport(o.user, o.watchlist);
-  return { ...r, reportDir, auditSize: blind.length, queued, outreach };
+  return { ...r, reportDir, auditDir, auditSize: blind.length, queued, outreach };
 }
 
 // Verifier step: score the auditor's verdicts, adjust stage trust, and put every
@@ -101,9 +103,9 @@ export function scoreLatestAudit(user: UserData, watchlist: Watchlist, verdictsP
   const missing = key.filter((k) => !verdicts.some((v) => v.id === k.id));
   const score = scoreAudit(key, verdicts);
   const at = new Date().toISOString();
-  writeFileSync(join(latest.reportDir, "audit", "verdicts.jsonl"), verdicts.map((v) => JSON.stringify(v)).join("\n") + "\n");
-  copyFileSync(join(latest.runDir, "audit-key.json"), join(latest.reportDir, "audit", "answer-key.json"));
-  writeFileSync(join(latest.reportDir, "audit", "score.json"), JSON.stringify({ at, auditor, sampleSize: key.length, missing: missing.map((m) => m.id), score }, null, 2));
+  writeFileSync(join(latest.auditDir, "verdicts.jsonl"), verdicts.map((v) => JSON.stringify(v)).join("\n") + "\n");
+  copyFileSync(join(latest.runDir, "audit-key.json"), join(latest.auditDir, "answer-key.json"));
+  writeFileSync(join(latest.auditDir, "score.json"), JSON.stringify({ at, auditor, sampleSize: key.length, missing: missing.map((m) => m.id), score }, null, 2));
 
   const trust = readTrust(user.dir);
   const result = recordAudit(trust.triage, score, at);
@@ -134,7 +136,7 @@ export function writeReport(user: UserData, watchlist: Watchlist) {
   const jobs = [...catalog.values()];
   const sightings = readFileSync(join(latest.runDir, "sightings.jsonl"), "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l) as Sighting);
   const outcomes = JSON.parse(readFileSync(join(latest.runDir, "outcomes.json"), "utf8")) as SourceOutcome[];
-  const scorePath = join(latest.reportDir, "audit", "score.json");
+  const scorePath = join(latest.auditDir, "score.json");
   const audit = existsSync(scorePath) ? (JSON.parse(readFileSync(scorePath, "utf8")) as { at: string; auditor: string; sampleSize: number; score: AuditScore }) : undefined;
   const seen = jobs.filter((j) => j.lastSeen >= latest.startedAt);
   const outreach: OutreachEntry[] = outreachQueue(seen, user.profile, latest.startedAt);

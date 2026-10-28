@@ -19,11 +19,23 @@ export interface TriageInput {
 
 export const ROLE =
   /deep learning|computer vision|machine learning|\bml\b|\bmlops\b|\bai\b|\bagi\b|artificial intelligence|\bllms?\b|gen(?:erative)? ?ai|research engineer|research scientist|applied scientist|\bdata engineer|\binference\b|recommend(?:ation|er)|\branking\b|\bnlp\b|natural language|perception|robot learning|reinforcement learning|data (?:platform|infra(?:structure)?|arch(?:itecture)?)|model (?:training|serving|evaluation)|foundation model|\bai\/ml\b|\bml\/ai\b/i;
+// Titles that are AI/ML only when the work is: a "Research Scientist" in
+// pharmacology or materials is not. These need ML words in the title or text.
+const RESEARCH_ONLY = /research engineer|research scientist|applied scientist/i;
+const ML_WORDS = /video generation|world models?|neural|multimodal|speech|robot learning|\bvision\b|perception|machine learning|deep learning|\bml\b|\bai\b|artificial intelligence|\bllms?\b|neural network|reinforcement learning|computer vision|\bnlp\b|natural language|generative|foundation model|transformer/i;
+// In the description, a company blurb ("we use AI to transform drug discovery")
+// is not evidence; technical ML work is.
+const ML_WORK = /deep learning|neural net|\bllms?\b|large language model|reinforcement learning|computer vision|\bnlp\b|natural language processing|transformers?\b|pytorch|tensorflow|\bjax\b|(?:train|training|fine-tun\w*|evaluat\w*|deploy\w*)\s+(?:\w+\s+){0,3}models?|(?:ml|machine learning|generative|foundation|multimodal|vision|language) models?/i;
 const DATA_SCIENCE = /data scien|\bquantitative researcher\b|\bstatistician\b/i;
 const SENIOR = /\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished|architect|vp|vice president|chief|founding)\b|\b(engineer|scientist|developer)\s+(ii|iii|iv|2|3|4)\b|\b(l[5-9]|e[5-9]|ic[4-9])\b/i;
 const INTERN = /\bintern(ship)?s?\b|\bco-?op\b|summer 20\d\d|\bapprentice/i;
 const ENGINEERING = /\bengineer(ing)?\b|scientist|researcher|\bdeveloper\b|\bswe\b|\bmts\b|member of technical staff|programmer/i;
 const NON_ENGINEERING = /\b(advocate|evangelist|sales|account|recruit|marketing|product manager|program manager|project manager|designer|writer|counsel|legal|support specialist|customer success|operations|analyst|consultant|teacher|instructor|tutor|trainer|annotator|labell?er)\b/i;
+// A PhD stated as the requirement (not "preferred"), e.g. "Pursuing PhD in CS",
+// "new college grad PhD researcher", "PhD in machine learning ... required".
+const PHD_REQUIRED_BODY = /(?:pursuing|currently enrolled in|completed|hold|have|holds|earned|requires?|required:?|minimum:?)\s+(?:an?\s+|your\s+)?ph\.?\s?d\b|\bph\.?\s?d\.?\s+(?:is\s+)?required|\bph\.?\s?d\.?\s+(?:degree\s+)?in\s+[a-z ,/&]{3,60}(?:or equivalent industry experience|required|is required)|\bph\.?\s?d\.?\s+(?:student|researcher|candidate|graduate)s?\b(?![^.]{0,40}(?:or|and) (?:ms|m\.s|master))/i;
+const MASTERS_BODY = /master'?s|\bm\.s\.|\bms\b(?! office| excel| word| teams)|\bmsc\b|\bms\/phd|graduate degree/i;
+const EXPERIENCED_ONLY = /(?:intended|designed|meant) for experienced\b[^.]{0,40}|not (?:an? )?(?:entry[- ]level|new grad)[^.]{0,20}(?:role|position)/i;
 const PHD_TITLE = /\bph\.?\s?d\b|doctoral|doctorate|post-?doc/i;
 const MASTERS_OK = /\bm\.?s\.?\b|master'?s|\bms\/phd\b|ms or phd|bs\/ms/i;
 const EARLY_TITLE =
@@ -105,7 +117,9 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   const dataScience = DATA_SCIENCE.test(title) && !ROLE.test(title);
   if (!ROLE.test(title) && !dataScience) return v("reject", "role.out_of_scope", "Title is not an AI/ML, research or data-engineering role");
   if (INTERN.test(title)) return v("reject", "type.internship", "Internship or co-op, not a full-time role");
-  if (SENIOR.test(title)) return v("reject", "level.senior", "Senior, staff, lead or manager title");
+  // "[Junior / Senior / Staff] Engineer" hires at every level, including entry.
+  const multiLevel = /\b(junior|new grad|entry[- ]level|early[- ]career)\b/i.test(title);
+  if (SENIOR.test(title) && !multiLevel) return v("reject", "level.senior", "Senior, staff, lead or manager title");
   if (NON_ENGINEERING.test(title) && !/\bengineer(ing)?\b|scientist|researcher/i.test(title)) {
     return v("reject", "role.non_engineering", "AI-adjacent but not an engineering or research role");
   }
@@ -114,6 +128,14 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
     return v("reject", "degree.phd_required", "Title asks for a PhD; the candidate's highest degree is a master's");
   }
 
+  const researchOnly = RESEARCH_ONLY.test(title) && !ROLE.test(title.replace(new RegExp(RESEARCH_ONLY, "gi"), ""));
+  const listSaysMl = /^List category: .*(AI|ML)/m.test(body);
+  if (researchOnly && !ML_WORDS.test(title) && !ML_WORK.test(body) && !listSaysMl) {
+    // Only a full official description can show the work is not ML.
+    return official && body.length > 600
+      ? v("reject", "role.research_not_ml", "Research title, but the posting describes no ML work")
+      : v("review", "role.research_unclear", "Research title; the text given does not show whether the work is ML");
+  }
   const nonUs = usLocation(location) === "non_us";
   if (nonUs) return v("reject", "location.non_us", `Location outside the US: ${location.slice(0, 80)}`);
 
@@ -132,13 +154,21 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
     return official ? v("reject", "auth.citizenship", `Requires US citizenship or clearance: "${ctx.trim()}"`) : v("review", "auth.citizenship_unverified", `Third-party copy mentions citizenship or clearance: "${ctx.trim()}"`);
   }
 
+  const phdBody = PHD_REQUIRED_BODY.exec(body);
+  if (phdBody && !me.hasPhd && !MASTERS_BODY.test(body)) {
+    const ctx = body.slice(Math.max(0, phdBody.index - 50), phdBody.index + phdBody[0].length + 50).replace(/\s+/g, " ").trim();
+    return official ? v("reject", "degree.phd_required", `Description requires a PhD and never mentions a master's: "${ctx}"`) : v("review", "degree.phd_mentioned", `Copy mentions a PhD requirement: "${ctx}"`);
+  }
+  const experienced = EXPERIENCED_ONLY.exec(body);
+  if (experienced) return v("reject", "experience.too_senior", `Posting is for experienced hires: "${experienced[0]}"`);
+
   const exp = requiredExperience(body);
   const earlyTitle = EARLY_TITLE.test(title);
   if (exp && exp.years >= 3) {
     if (earlyTitle) return v("review", "experience.conflict", `Early-career title but asks ${exp.years}+ years: "${exp.context}"`);
     return v("reject", "experience.too_senior", `Requires ${exp.years}+ years: "${exp.context}"`);
   }
-  if ((PHD_TITLE.test(title) && !MASTERS_OK.test(title)) || /\bph\.?d\.?\b[^.]{0,40}\brequired\b/i.test(body)) {
+  if ((PHD_TITLE.test(title) && !MASTERS_OK.test(title)) || (/\bph\.?d\.?\b[^.]{0,40}\brequired\b/i.test(body) && !MASTERS_BODY.test(body))) {
     return v("review", "degree.phd_mentioned", "PhD mentioned; check whether a master's qualifies");
   }
   if (hints.unresolved) return v("review", "lead.unresolved", "Alert or hiring-post lead; find the official posting before judging");

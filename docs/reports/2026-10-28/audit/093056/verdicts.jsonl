@@ -1,0 +1,110 @@
+{"id":"a001","fit":"unsure","reason":"Title \"Research Engineer\" with no description, level and focus unknown."}
+{"id":"a002","fit":"yes","reason":"\"Software Engineer - AI Engineering\", US, \"2+ years of experience building and deploying AI/ML\" within the stated 2-year range."}
+{"id":"a003","fit":"yes","reason":"\"AI and Data Engineering Analyst\" in Austin, TX, an analyst-level AI/data engineering role."}
+{"id":"a004","fit":"no","reason":"\"Clinical Research Scientist\" is a clinical role, not AI/ML."}
+{"id":"a005","fit":"no","reason":"\"Contractor: DevOps Engineer\" requiring \"4+ years\" and not AI/ML or full-time."}
+{"id":"a006","fit":"yes","reason":"\"Data Platform Engineer Graduate\" in Seattle, a new-grad data infrastructure role."}
+{"id":"a007","fit":"no","reason":"Location \"Belgrade; Serbia\" and Vice President level."}
+{"id":"a008","fit":"yes","reason":"\"Applied Scientist - Trust and Safety - Multimodal Foundation Model\" in San Jose, AI/ML category."}
+{"id":"a009","fit":"no","reason":"Location \"Vancouver, British Columbia, Canada\" and an implementation consulting role."}
+{"id":"a010","fit":"no","reason":"\"3+ years\" required and climbing towers, hardware field deployment, not AI/ML."}
+{"id":"a011","fit":"no","reason":"\"Environmental Health & Safety Specialist\" and ITAR restricts to US persons."}
+{"id":"a012","fit":"yes","reason":"\"Machine Learning Engineer Graduate\" in Seattle, WA."}
+{"id":"a013","fit":"no","reason":"Location \"Bangalore, India\" and \"4+ years\"."}
+{"id":"a014","fit":"yes","reason":"\"ML Research Engineer\" in Brooklyn, no experience bar stated."}
+{"id":"a015","fit":"no","reason":"\"Business Development Rep\" is a sales role."}
+{"id":"a016","fit":"yes","reason":"\"Applied AI Engineer\" in New York with no seniority stated."}
+{"id":"a017","fit":"no","reason":"\"US Citizenship with an active TS/SCI\" and SME level."}
+{"id":"a018","fit":"yes","reason":"\"Requires at least Masters\" and \"1+ years of experience in backend software development\" for an AI Software Engineer."}
+{"id":"a019","fit":"yes","reason":"\"Research Scientist New Grad - Trust and Safety\" in Seattle."}
+{"id":"a020","fit":"unsure","reason":"\"AI Performance Engineer\" listed under category Hardware with no description."}
+{"id":"a021","fit":"no","reason":"\"Senior Machine Learning Engineer\"."}
+{"id":"a022","fit":"no","reason":"\"Supervisor, Recovery Operations\" is not AI/ML."}
+{"id":"a023","fit":"no","reason":"Location \"Toronto, ON, CAN\" and \"5+ years\" TPM."}
+{"id":"a024","fit":"no","reason":"\"PhD Intern\" and \"Job Type: Student / Intern\"."}
+{"id":"a025","fit":"no","reason":"Location \"Israel, Yokneam\" and Senior level."}
+{"id":"a026","fit":"no","reason":"\"5+ years of relevant data science\" required."}
+{"id":"a027","fit":"no","reason":"\"senior AI Deployment Lead\" customer-facing leadership role."}
+{"id":"a028","fit":"no","reason":"UX Designer in \"Tokyo, Japan\"."}
+{"id":"a029","fit":"no","reason":"\"Stage\" internship in \"Paris (FR)\"."}
+{"id":"a030","fit":"yes","reason":"\"Machine Learning Engineer Graduate\" in San Jose, CA."}
+{"id":"a031","fit":"no","reason":"\"Staff Software Engineer\" seeking a \"seasoned\" engineer."}
+{"id":"a032","fit":"no","reason":"\"Mechanical Engineer, Rocket Motor Systems\" is not AI/ML."}
+{"id":"a033","fit":"no","reason":"\"Senior Research Scientist\" in systems software."}
+{"id":"a034","fit":"yes","reason":"Data Engineer with \"1+ years of experience in a data analytical role\" in New York."}
+{"id":"a035","fit":"no","reason":"\"Sr. Supply Chain Planner\" is not AI/ML."}
+{"id":"a036","fit":"no","reason":"\"PhD in Machine Learning, Computer Science, Robotics\" required with strong publication record."}
+{"id":"a037","fit":"yes","reason":"\"Software Engineer Graduate - Recommendation Infrastructure\" in San Jose, new-grad ML/data infrastructure."}
+{"id":"a038","fit":"unsure","reason":"\"Research Scientist - LLM\" with no description, degree requirement unknown (often PhD)."}
+{"id":"a039","fit":"no","reason":"\"Growth Recruiter ... Contract\" is not AI/ML."}
+{"id":"a040","fit":"unsure","reason":"\"AI Engineer / Search Engineer\" in Georgia with no description or level."}
+{"id":"a041","fit":"unsure","reason":"Applied AI Engineer is customer-facing advisory but no years or degree stated in the text given."}
+{"id":"a042","fit":"no","reason":"\"AI Engineer, Supercomputing, Special Programs - Top Secret Clearance\" requires clearance, which requires US citizenship."}
+{"id":"a043","fit":"no","reason":"\"Research Program Manager\" is not an engineering or science role."}
+{"id":"a044","fit":"no","reason":"\"Principal Software Engineer\" in \"Poland\"."}
+{"id":"a045","fit":"no","reason":"\"Director of Engineering\" in \"Bengaluru, India\"."}
+{"id":"a046","fit":"yes","reason":"\"Applied Machine Learning Engineer, AI for VLSI Design - New College Grad 2026\" in Santa Clara."}
+{"id":"a047","fit":"yes","reason":"\"Machine Learning Engineer\" in the United States with no restrictive text."}
+{"id":"a048","fit":"yes","reason":"\"Machine Learning Engineer, LLM Post-Training\" in Mountain View, no years or PhD stated."}
+{"id":"a049","fit":"no","reason":"\"Materials Research Scientist/Engineer\" is not AI/ML."}
+{"id":"a050","fit":"yes","reason":"\"Machine Learning Software Engineer 1\" at entry level, US locations."}
+{"id":"a051","fit":"no","reason":"\"Senior Staff\" and \"7+ years\"."}
+{"id":"a052","fit":"no","reason":"\"Senior Data Engineer\" at a federal contractor."}
+{"id":"a053","fit":"yes","reason":"\"Applied Research Scientist\" accepting \"PhD or Master's ... or equivalent experience\"."}
+{"id":"a054","fit":"no","reason":"\"Sr AI Engineer\" requiring \"3+ years\"."}
+{"id":"a055","fit":"yes","reason":"\"Research Engineer\" at Google in Mountain View, AI/ML category, no restrictive text."}
+{"id":"a056","fit":"unsure","reason":"\"Research Scientist - Multiple Teams\" with no description, degree unknown."}
+{"id":"a057","fit":"no","reason":"\"A PhD in computer vision, machine learning\" is the stated qualification."}
+{"id":"a058","fit":"no","reason":"\"Pursuing PhD in Computer Science/Engineering\" required."}
+{"id":"a059","fit":"no","reason":"\"Data Entry Operator IV\" with \"Required Clearance: Secret\"."}
+{"id":"a060","fit":"no","reason":"\"Senior Data Engineer\" in \"Bangalore, India\"."}
+{"id":"a061","fit":"yes","reason":"\"[Junior / Senior / Staff] Software Engineer, Inference / Compute Infrastructure\" in San Francisco includes junior level."}
+{"id":"a062","fit":"yes","reason":"\"Associate Data Scientist\" in Charlotte, AI/ML/Data category."}
+{"id":"a063","fit":"no","reason":"\"Enterprise Account Executive\" with \"7+ years\" sales."}
+{"id":"a064","fit":"unsure","reason":"\"Founding Research Engineer\" with no description, likely senior but unstated."}
+{"id":"a065","fit":"unsure","reason":"Research Scientist on hierarchical RL with \"Preferred: PhD\" and level not stated."}
+{"id":"a066","fit":"no","reason":"\"new college grad PhD researcher\" required."}
+{"id":"a067","fit":"yes","reason":"\"You Are Early in your career: 1-3 years of professional experience\" for Software Engineer, Foundation AI."}
+{"id":"a068","fit":"unsure","reason":"\"AI Software Engineer\" at Booz Allen with no description, clearance and level unknown."}
+{"id":"a069","fit":"yes","reason":"\"General Hire Multi-modal Machine Learning Engineer\" in San Jose."}
+{"id":"a070","fit":"no","reason":"\"Lead Data Scientist\"."}
+{"id":"a071","fit":"no","reason":"\"Staff Avionics Manufacturing Engineer\" with \"7+ years\"."}
+{"id":"a072","fit":"unsure","reason":"\"Member of Technical Staff - Inference Runtime\" with no stated years and systems-heavy focus."}
+{"id":"a073","fit":"unsure","reason":"\"Forward Deployed Engineer, AI Agentic Delivery\" with no description."}
+{"id":"a074","fit":"no","reason":"\"AI Trainer\" contributor task work, not an engineering role."}
+{"id":"a075","fit":"yes","reason":"\"AI Research Engineer/Scientist\" in Santa Clara with no restrictive text."}
+{"id":"a076","fit":"no","reason":"Location \"London\" and a solutions architect role."}
+{"id":"a077","fit":"no","reason":"Location \"Penang, Malaysia\" and Lead level."}
+{"id":"a078","fit":"no","reason":"\"AI Product Designer\" is a design role."}
+{"id":"a079","fit":"no","reason":"\"Account Executive, Mid Market\" is a sales role."}
+{"id":"a080","fit":"yes","reason":"\"Machine Learning Engineer Graduate\" in San Jose, CA."}
+{"id":"a081","fit":"yes","reason":"\"AI Software Engineer (2027 New College Graduate)\" in the US."}
+{"id":"a082","fit":"no","reason":"\"Data and Controls Systems Test Engineer\" is hardware test, not AI/ML."}
+{"id":"a083","fit":"yes","reason":"\"2027 University Graduate - Machine Learning Engineer\" in the US."}
+{"id":"a084","fit":"no","reason":"\"Digital Sales Representative\" is a sales role."}
+{"id":"a085","fit":"no","reason":"\"Industrial Engineer\" requiring \"5+ years\" manufacturing."}
+{"id":"a086","fit":"no","reason":"\"Active TS/SCI is required\" and \"5 years of experience as a data engineer\"."}
+{"id":"a087","fit":"yes","reason":"\"AI Software Engineer I\" in Long Beach, entry level."}
+{"id":"a088","fit":"no","reason":"\"Remote in Canada\" paid data task."}
+{"id":"a089","fit":"no","reason":"\"Mechanical Engineering Specialist - AI Trainer\" is not an engineering opening."}
+{"id":"a090","fit":"no","reason":"\"Electrophysiology of Rodent Cognition\" is wet-lab neuroscience."}
+{"id":"a091","fit":"no","reason":"\"senior technical owner\" Applied AI Architect, customer-facing senior role."}
+{"id":"a092","fit":"no","reason":"\"Research Scientist In Vitro Pharmacology\" is wet-lab biology."}
+{"id":"a093","fit":"yes","reason":"\"Software Engineer Graduate (... Recommendation & Search Architecture) - 2027 Start\" in the US."}
+{"id":"a094","fit":"yes","reason":"\"ML Research Engineer, ML Systems\" in New York with no restrictive text."}
+{"id":"a095","fit":"yes","reason":"\"Have 0-2 years of experience\" for ML Infrastructure Engineer in Palo Alto."}
+{"id":"a096","fit":"yes","reason":"\"Graduate Software Engineer - Data-Intelligent Creation-AI Platform\" in San Jose."}
+{"id":"a097","fit":"yes","reason":"\"2+ years of experience\" for Software Engineer on the AI Teammates Platform in San Francisco."}
+{"id":"a098","fit":"unsure","reason":"\"Research Engineer\" listing with no company detail or description."}
+{"id":"a099","fit":"no","reason":"\"Computational Chemistry Research Scientist\" is drug design chemistry."}
+{"id":"a100","fit":"no","reason":"\"Lead Software Engineer\" requiring \"5+ years\"."}
+{"id":"a101","fit":"no","reason":"\"Staff/Senior Staff\" with \"7+ years\"."}
+{"id":"a102","fit":"yes","reason":"\"Applied Scientist - Monetization Technology\" in San Jose, AI/ML category."}
+{"id":"a103","fit":"yes","reason":"\"Machine Learning Engineer Graduate\" in San Jose, CA."}
+{"id":"a104","fit":"no","reason":"\"AI Conversation Recording Contributor\" in \"Montreal, QC, Canada\"."}
+{"id":"a105","fit":"yes","reason":"\"Software Engineer - AI Powered Engineering\" working \"closely with experienced engineers\" in Chicago, junior-level."}
+{"id":"a106","fit":"no","reason":"\"PhD in machine learning, computer science ... or equivalent industry experience\" required."}
+{"id":"a107","fit":"no","reason":"\"Senior/Principal\" with \"PhD in a computational discipline\"."}
+{"id":"a108","fit":"no","reason":"\"intended for experienced engineers\" AI FDE."}
+{"id":"a109","fit":"yes","reason":"\"Machine Learning Engineer\" in the United States with no restrictive text."}
+{"id":"a110","fit":"yes","reason":"\"Backend Inference Runtime Engineer New Grad - AML Inference\" in San Jose."}

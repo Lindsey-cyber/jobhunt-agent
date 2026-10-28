@@ -22,6 +22,7 @@ import { paths } from "../store/state.ts";
 import { checkDraft, type Draft } from "../verify/grounding.ts";
 
 export const DRAFT_MODEL = "gpt-5.5";
+const SELF_ID = /\b(gender|transgender|sexual orientation|pronouns?|race|ethnicity|disability|disabled|accommodation|veteran|religion|sms|whatsapp|text messages?|opt in)\b/;
 
 const SYSTEM = `You write a job candidate's answers to an employer's application questions, in English, in her voice.
 
@@ -99,6 +100,8 @@ function heldQuestions(ledger: Ledger, user: UserData): { plan: FillPlan; url: s
     const plan = JSON.parse(readFileSync(planPath, "utf8")) as FillPlan;
     for (const item of plan.items) {
       if (item.status !== "blocked" || item.reason !== "no answer in profile or answer bank" || item.field.kind === "file") continue;
+      // Self-identification and consent are hers, never a model's.
+      if (SELF_ID.test(normalize(item.field.label))) continue;
       const label = normalize(item.field.label);
       const answered = user.bank.answers.some(
         (a) => normalize(a.question) === label && (!a.company || normalize(a.company) === normalize(plan.form.company)) && (!a.jobTitle || normalize(a.jobTitle) === normalize(plan.form.jobTitle)),

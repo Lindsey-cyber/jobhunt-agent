@@ -101,11 +101,19 @@ export const greenhouse: AtsAdapter = {
         return;
       case "combobox": {
         const container = comboboxContainer(page, field.id);
-        await container.locator(".select__control").click();
-        // Long lists (schools) show only their first page until you type.
-        if (!field.options.some((o) => normalize(o) === normalize(value))) await el.fill(value);
         const options = container.locator('[role="option"]');
-        await options.first().waitFor({ timeout: 5000 });
+        // The first dropdown on a page can be clicked before React hydrates it
+        // (Country stayed empty on Waymo, Pinterest, NewsBreak); try again.
+        for (let attempt = 1; ; attempt++) {
+          await container.locator(".select__control").click();
+          // Long lists (schools) show only their first page until you type.
+          if (!field.options.some((o) => normalize(o) === normalize(value))) await el.fill(value);
+          const opened = await options.first().waitFor({ timeout: 5000 }).then(() => true, () => false);
+          if (opened) break;
+          if (attempt === 3) throw new Error(`the ${field.id} menu did not open`);
+          await page.keyboard.press("Escape");
+          await page.waitForTimeout(2000);
+        }
         const i = (await options.allInnerTexts()).findIndex((t) => normalize(optionText(t)) === normalize(value));
         if (i < 0) throw new Error(`no option "${value}" in ${field.id}`);
         await options.nth(i).click();

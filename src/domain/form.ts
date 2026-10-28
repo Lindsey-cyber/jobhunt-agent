@@ -15,6 +15,8 @@ export interface FormSnapshot {
   url: string;
   company: string;
   jobTitle: string;
+  // Where the posting says the job is, as the page shows it.
+  jobLocation?: string;
   fields: FormField[];
 }
 

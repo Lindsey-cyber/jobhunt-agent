@@ -1,5 +1,9 @@
 (form) => {
   const labelText = (el) => {
+    // File inputs carry a hidden "Attach" label; the upload group names the field.
+    const group = el.type === "file" && el.closest('[role="group"][aria-labelledby]');
+    const groupLabel = group && document.getElementById(group.getAttribute("aria-labelledby"));
+    if (groupLabel) return groupLabel.textContent || "";
     const by = (el.getAttribute("aria-labelledby") || "").split(/\s+/)[0];
     const node = (by && document.getElementById(by)) || (el.id && form.querySelector(`label[for="${el.id}"]`));
     return node ? node.textContent || "" : el.getAttribute("aria-label") || "";
@@ -10,6 +14,8 @@
 
   for (const el of form.querySelectorAll("input, textarea, select")) {
     if (el.closest(".select__container") && !el.matches('input.select__input[role="combobox"]')) continue;
+    // The phone input's country picker (intl-tel-input) is UI, not a question.
+    if (el.closest(".iti__country-container, .iti__dropdown-content")) continue;
     if (el.tagName === "INPUT" && ["hidden", "submit", "button", "radio", "checkbox"].includes(el.type)) continue;
     const label = labelText(el);
     const kind = el.matches('[role="combobox"]')

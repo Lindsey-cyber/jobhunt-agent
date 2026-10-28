@@ -33,7 +33,8 @@ async function applyTo(name: string, user: ReturnType<typeof makeUserData>, appr
   }
 }
 
-describe("apply on a Greenhouse form", () => {
+// Real browser runs: each apply extracts the form twice and opens every dropdown.
+describe("apply on a Greenhouse form", { timeout: 30_000 }, () => {
   it("in draft mode fills and verifies everything, leaves evidence, and submits nothing", async () => {
     const { result } = await applyTo("basic", makeUserData());
     expect(result.outcome).toBe("done");

@@ -196,6 +196,11 @@ describe("triage", () => {
     expect(triage(job("Entry Level Software Engineer, Recommendations", { description: "Applicants must be currently authorized to work in the United States on a full-time basis, without the need for current or future employer sponsorship for an employment-based visa status." }), me).rule).toBe("auth.no_sponsorship");
   });
 
+  // From GPT-5.5's cross-check of audit round 4.
+  it("reads 'eligible to obtain' a clearance as a clearance requirement", () => {
+    expect(triage(job("ML Engineer, New Grad", { description: "Must be eligible to obtain and maintain an active U.S. Secret security clearance." }), me).rule).toBe("auth.citizenship");
+  });
+
   it("keeps a multi-level title that includes junior, and nothing else senior", () => {
     expect(triage(job("Senior Associate, Data Scientist - Applied AI"), me).rule).toBe("level.senior");
     expect(triage(job("Principal Scientist / Associate Director, Agentic AI Research"), me).rule).toBe("level.senior");

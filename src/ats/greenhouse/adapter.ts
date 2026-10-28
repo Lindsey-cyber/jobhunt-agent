@@ -22,25 +22,32 @@ interface RawField {
 const CONFIRMED = /thank you for applying|application (has been )?(received|submitted)/i;
 
 const cleanLabel = (s: string) => s.replace(/\s+/g, " ").replace(/\s*\*\s*$/, "").trim();
+// The phone country list reads "United States +1"; the dialing code is not part of the answer.
+const optionText = (s: string) => s.trim().replace(/\s+\+\d{1,4}$/, "");
 
 function comboboxContainer(page: Page, id: string): Locator {
-  return page.locator(`${FORM} .select__container`).filter({ has: page.locator(`input[id="${id}"]`) });
+  // CSS :has(), not filter({ has }): on live boards the latter matched nothing.
+  return page.locator(`${FORM} .select__container:has(input[id="${id}"])`);
 }
 
-async function openOptions(page: Page, id: string): Promise<string[]> {
+// Opens a dropdown and lists its options. A menu that opens empty is a
+// server-searched field; a menu that never opened means the page was not ready.
+async function openOptions(page: Page, id: string): Promise<{ opened: boolean; options: string[] }> {
   const container = comboboxContainer(page, id);
   await container.locator(".select__control").click();
+  const opened = await container.locator('.select__menu, [role="listbox"]').first().waitFor({ timeout: 2000 }).then(() => true, () => false);
   const options = container.locator('[role="option"]');
-  await options.first().waitFor({ timeout: 3000 }).catch(() => undefined);
-  const texts = (await options.allInnerTexts()).map((t) => t.trim());
+  if (opened) await options.first().waitFor({ timeout: 1500 }).catch(() => undefined);
+  const texts = (await options.allInnerTexts()).map(optionText);
   await page.keyboard.press("Escape");
-  return texts;
+  return { opened, options: texts };
 }
 
 export const greenhouse: AtsAdapter = {
   name: "greenhouse",
 
-  detect: async (page) => (await page.locator(FORM).count()) > 0,
+  // The form renders after load on live boards, so wait for it briefly.
+  detect: async (page) => page.locator(FORM).first().waitFor({ timeout: 8000 }).then(() => true, () => false),
 
   async extract(page) {
     await page.locator(FORM).waitFor();
@@ -49,13 +56,23 @@ export const greenhouse: AtsAdapter = {
     const fields: FormField[] = [];
     for (const f of raw) {
       const field: FormField = { id: f.id, label: cleanLabel(f.label), kind: f.kind as FormField["kind"], required: f.required, options: f.options };
-      if (field.kind === "combobox") field.options = await openOptions(page, field.id);
+      if (field.kind === "combobox") {
+        // The form is server-rendered before it is interactive: a dropdown that
+        // ignores the click is retried once the page has hydrated.
+        let r = await openOptions(page, field.id);
+        for (let i = 0; !r.opened && i < 3; i++) {
+          await page.waitForTimeout(1500);
+          r = await openOptions(page, field.id);
+        }
+        field.options = r.options;
+      }
       fields.push(field);
     }
 
     const company = (await page.locator("[data-company-name]").first().getAttribute("data-company-name").catch(() => null)) ?? new URL(page.url()).pathname.split("/").filter(Boolean)[0] ?? "";
     const jobTitle = (await page.locator("h1").first().innerText().catch(() => "")).trim();
-    return { ats: "greenhouse", url: page.url(), company, jobTitle, fields };
+    const jobLocation = (await page.locator(".job__location").first().innerText({ timeout: 2000 }).catch(() => "")).trim();
+    return { ats: "greenhouse", url: page.url(), company, jobTitle, ...(jobLocation ? { jobLocation } : {}), fields };
   },
 
   async fill(page, field, value) {
@@ -77,7 +94,7 @@ export const greenhouse: AtsAdapter = {
         if (field.options.length === 0) await el.fill(value);
         const options = container.locator('[role="option"]');
         await options.first().waitFor({ timeout: 5000 });
-        const i = (await options.allInnerTexts()).findIndex((t) => normalize(t) === normalize(value));
+        const i = (await options.allInnerTexts()).findIndex((t) => normalize(optionText(t)) === normalize(value));
         if (i < 0) throw new Error(`no option "${value}" in ${field.id}`);
         await options.nth(i).click();
         return;
@@ -105,9 +122,13 @@ export const greenhouse: AtsAdapter = {
         case "textarea":
           out[f.id] = await el.inputValue();
           break;
-        case "file":
-          out[f.id] = await el.evaluate((x) => (x as HTMLInputElement).files?.[0]?.name ?? "");
+        case "file": {
+          // After an upload the board replaces the input with the file's name.
+          const shown = page.locator(`${FORM} [role="group"][aria-labelledby="upload-label-${f.id}"] p`);
+          out[f.id] = (await el.count()) > 0 ? await el.evaluate((x) => (x as HTMLInputElement).files?.[0]?.name ?? "") : "";
+          if (!out[f.id] && (await shown.count()) > 0) out[f.id] = (await shown.first().innerText()).trim();
           break;
+        }
         case "select":
           out[f.id] = await el.evaluate((x) => {
             const s = x as HTMLSelectElement;
@@ -117,7 +138,15 @@ export const greenhouse: AtsAdapter = {
         case "combobox": {
           const container = comboboxContainer(page, f.id);
           const value = container.locator(".select__single-value");
-          out[f.id] = (await value.count()) > 0 ? (await value.innerText()).trim() : "";
+          out[f.id] = (await value.count()) > 0 ? optionText(await value.innerText()) : "";
+          // A value shown as a dialing code ("+1") is ambiguous; read which option the menu marks selected.
+          if (/^\+\d+$/.test(out[f.id]!)) {
+            await container.locator(".select__control").click();
+            const selected = container.locator(".select__option--is-selected");
+            await selected.first().waitFor({ timeout: 3000 }).catch(() => undefined);
+            out[f.id] = (await selected.count()) > 0 ? optionText(await selected.first().innerText()) : "";
+            await page.keyboard.press("Escape");
+          }
           break;
         }
         case "radio":

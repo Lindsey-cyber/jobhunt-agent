@@ -3,3 +3,4 @@ data/runs/
 data/ledger.jsonl
 data/inbox/
 data/discovery/catalog.jsonl
+.scratch/

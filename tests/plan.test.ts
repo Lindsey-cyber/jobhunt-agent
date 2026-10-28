@@ -64,4 +64,14 @@ describe("buildPlan", () => {
     expect(plan1(field("Resume/CV", { kind: "file" }))).toMatchObject({ status: "fill", value: user.profile.documents.resume });
     expect(plan1(field("Cover Letter", { kind: "file", required: false })).status).toBe("skip");
   });
+
+  it("answers 'authorized in the country where the job is located' only when every job location is in one known country", async () => {
+    const { buildPlan } = await import("../src/plan/plan.ts");
+    const q = field("Are you legally authorized to work in the country where the job is located?", { kind: "select", options: ["Yes", "No"] });
+    const u = makeUserData();
+    const us = buildPlan({ ...form([q]), jobLocation: "San Francisco, CA; Seattle, WA; New York, NY" }, u.profile, u.bank).items[0]!;
+    expect(us).toMatchObject({ status: "fill", source: { type: "profile", path: "workAuthorization.authorizedCountries" } });
+    const mixed = buildPlan({ ...form([q]), jobLocation: "New York, NY; London, UK" }, u.profile, u.bank).items[0]!;
+    expect(mixed.status).toBe("blocked");
+  });
 });

@@ -1,5 +1,6 @@
 import type { FormField } from "../domain/form.ts";
 import type { Profile } from "../profile/schema.ts";
+import { usLocation } from "../discover/triage.ts";
 
 export const VETO: { pattern: RegExp; reason: string }[] = [
   { pattern: /\b(salary|compensation|pay expectation|desired pay|expected pay)\b/, reason: "compensation is never filled automatically" },
@@ -17,8 +18,21 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
   { name: "United States", pattern: /\b(united states|usa|u s a|u s|(in|within) the us)\b/ },
 ];
 
-function countryIn(label: string): string | undefined {
-  return COUNTRIES.find((c) => c.pattern.test(label))?.name;
+// "the country where the job is located" names no country; the posting does.
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b/;
+
+function countryIn(label: string, ctx: RuleContext): string | undefined {
+  return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
+}
+
+export interface RuleContext {
+  // Set only when every location the posting lists is in that country.
+  jobCountry?: string;
+}
+
+export function jobCountry(location: string | undefined): string | undefined {
+  const parts = (location ?? "").split(/;|\||\bor\b|\n/).map((x) => x.trim()).filter(Boolean);
+  return parts.length > 0 && parts.every((x) => usLocation(x) === "us") ? "United States" : undefined;
 }
 
 const yesNo = (b: boolean) => (b ? "Yes" : "No");
@@ -27,7 +41,7 @@ export interface ProfileRule {
   path: string;
   pattern: RegExp;
   kinds?: FormField["kind"][];
-  resolve: (p: Profile, normalizedLabel: string) => string | undefined;
+  resolve: (p: Profile, normalizedLabel: string, ctx: RuleContext) => string | undefined;
 }
 
 const firstEdu = (p: Profile) => p.education[0]!;
@@ -55,16 +69,16 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "workAuthorization.authorizedCountries",
     pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b/,
-    resolve: (p, label) => {
-      const country = countryIn(label);
+    resolve: (p, label, ctx) => {
+      const country = countryIn(label, ctx);
       return country ? yesNo(p.workAuthorization.authorizedCountries.includes(country)) : undefined;
     },
   },
   {
     path: "citizenship",
     pattern: /\b(citizen of|citizenship)\b/,
-    resolve: (p, label) => {
-      const country = countryIn(label);
+    resolve: (p, label, ctx) => {
+      const country = countryIn(label, ctx);
       return country ? yesNo(p.citizenship.includes(country)) : undefined;
     },
   },

@@ -1,6 +1,6 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
-import { PROFILE_RULES, RESUME, SENSITIVE, VETO } from "./rules.ts";
+import { jobCountry, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
 import { jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
@@ -57,11 +57,11 @@ function fromBank(label: string, bank: AnswerEntry[], company: string, sensitive
   };
 }
 
-function fromProfile(label: string, field: FormField, profile: Profile): Candidate | undefined {
+function fromProfile(label: string, field: FormField, profile: Profile, ctx: RuleContext): Candidate | undefined {
   for (const rule of PROFILE_RULES) {
     if (!rule.pattern.test(label)) continue;
     if (rule.kinds && !rule.kinds.includes(field.kind)) continue;
-    const value = rule.resolve(profile, label);
+    const value = rule.resolve(profile, label, ctx);
     return value === undefined ? undefined : { value, source: { type: "profile", path: rule.path }, confidence: 1 };
   }
   return undefined;
@@ -85,7 +85,7 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     return unanswered(field, "no document for this upload");
   }
 
-  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile);
+  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
   if (!candidate) return unanswered(field, sensitive ? "sensitive question with no exact answer" : "no answer in profile or answer bank");
 
   const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0);

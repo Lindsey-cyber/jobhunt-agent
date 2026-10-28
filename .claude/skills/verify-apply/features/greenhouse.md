@@ -30,7 +30,11 @@ Preconditions:
 
 ## Gotchas
 
-- All fixtures are SYNTHETIC (see `fixtures/greenhouse/README.md`). No selector here has been checked against a live board from this repo yet. Treat the first live run as a verification of the adapter, at draft trust.
-- Unverified on live boards: the "Location (City)" geo search combobox, School as a server-searched combobox, multi-selects in `#demographic-section`, education blocks whose ids (`school--N`) change between renders, the phone country picker that displays only a flag after selection.
+- Verified on a live board (Scale AI 4728014005, draft run 2026-10-28, `data/runs/greenhouse_job_boards_greenhouse_io_scaleai_jobs_4728014005/2026-10-28T14-37-19-271Z`): text fields, phone with its country picker, the "Location (City)" geo search (answer bank `current-location`), resume upload, yes/no screening comboboxes, EEO dropdowns. Real capture: `fixtures/greenhouse/real-scaleai-4728014005.html` (scripts stripped; `tests/greenhouse-real.test.ts`).
+- Live-board fixes, each from a failed draft run: the intl-tel-input search box is UI, not a field; file inputs take their label from the upload group; after an upload the input is replaced by the file name, which readback reads; dropdowns ignore clicks until hydration (wait for network idle); the phone country shows only "+1" when selected, so readback reads the option marked selected; options carry dial codes ("United States +1"), stripped before matching; `filter({ has })` matched nothing live, so containers use CSS `:has()`.
+- Boards sometimes serve a blank page to quick repeat visits; `apply` reloads with backoff.
+- Pages carry an invisible reCAPTCHA. Not yet seen at submit; if a challenge appears, the run must hold and ask the candidate, never solve it.
+- A board configured with the employer's own careers page redirects there and embeds the form in an iframe (Nuro). Open `https://job-boards.greenhouse.io/embed/job_app?for=<board>&token=<id>` instead; not automated yet.
+- Still unverified live: School as a server-searched combobox, multi-selects in `#demographic-section`, education blocks whose ids (`school--N`) change between renders, the confirmation text after a real submit.
 - Extract opens every combobox to read its options. A board with a server-searched combobox returns zero options; the plan types the answer and caps confidence at amber.
 - The confirmation regex is a guess at Greenhouse's wording. An `unconfirmed` state after a real submit means check the inbox, never re-run.

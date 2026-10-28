@@ -9,3 +9,20 @@ answers:
       - Please specify your current visa status
     answer: F-1 OPT
     origin: human
+  # The candidate (2026-10-28): forms should show New York, not Flushing.
+  # Location search boxes (Greenhouse "Location (City)") offer the full form.
+  - id: current-location
+    question: Location (City)
+    aliases:
+      - Location
+      - Current location
+      - Current Location (City)
+      - Where are you currently located?
+    answer: New York, New York, United States
+    origin: human
+  - id: current-city
+    question: City
+    aliases:
+      - Current city
+    answer: New York
+    origin: human

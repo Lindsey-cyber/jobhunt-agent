@@ -59,7 +59,7 @@ const NO_SPONSOR = new RegExp(
   ].join("|"),
   "gi",
 );
-const CITIZENSHIP = /(?:must|require[sd]?|only).{0,60}\b(?:u\.?s\.?|united states)\s+(?:citizen(?:ship)?|person)|us citizens? only|\b(?:active|current|ability to obtain)\b.{0,30}(?:security|ts\/sci|secret) clearance|clearance (?:is )?required/i;
+const CITIZENSHIP = /(?:must|require[sd]?|only).{0,60}\b(?:u\.?s\.?|united states)\s+(?:citizen(?:ship)?|person)|us citizens? only|\b(?:active|current|ability to obtain|eligible to obtain|able to obtain)\b.{0,30}(?:security|ts\/sci|secret) clearance|clearance (?:is )?required/i;
 
 const US_STATES =
   "AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC";

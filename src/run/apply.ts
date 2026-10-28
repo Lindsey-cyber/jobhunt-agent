@@ -38,7 +38,13 @@ export async function apply(opts: ApplyOptions): Promise<ApplyResult> {
 
 async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000 }: ApplyOptions): Promise<ApplyResult> {
   await page.goto(url);
-  const adapter = await adapterFor(page);
+  // Boards sometimes serve a blank page to quick repeat visits; reload with backoff before giving up.
+  let adapter = await adapterFor(page);
+  for (let i = 1; !adapter && i <= 3; i++) {
+    await page.waitForTimeout(5000 * i);
+    await page.reload();
+    adapter = await adapterFor(page);
+  }
   if (!adapter) throw new Error(`no adapter recognizes ${url}`);
 
   const key = applicationKey(adapter.name, url);
@@ -61,7 +67,10 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   }
 
   const fieldsNow = (await adapter.extract(page)).fields;
-  const readback = await adapter.readback(page, fieldsNow);
+  // Read back every planned field, including ones the page re-rendered away
+  // (an upload input replaced by the uploaded file's name).
+  const nowIds = new Set(fieldsNow.map((f) => f.id));
+  const readback = await adapter.readback(page, [...fieldsNow, ...plan.items.map((i) => i.field).filter((f) => !nowIds.has(f.id))]);
   const compared = compareReadback(plan, fieldsNow, readback);
   const verify = { ...compared, ok: compared.ok && fillErrors.length === 0 };
   save("readback.json", readback);

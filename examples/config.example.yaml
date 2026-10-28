@@ -1,0 +1,7 @@
+# Copy to data/config.yaml.
+# draft: never submits; every run leaves evidence for you and holds.
+# auto:  submits when every gate check passes for an ATS listed in autoSubmitAts.
+trust: draft
+autoSubmitAts: []
+allowGeneratedAnswers: false
+dailySubmitCap: 10

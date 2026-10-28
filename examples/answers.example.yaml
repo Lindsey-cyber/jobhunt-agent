@@ -1,0 +1,12 @@
+# Copy to data/answers.yaml. Exact question text (after normalization) or an
+# alias fills sensitive questions; other questions may also match fuzzily.
+# {company} is replaced with the company on the form.
+answers:
+  - id: why-company
+    question: Why do you want to work at {company}?
+    answer: I want to build robots that leave the lab, and {company} ships them.
+    origin: human
+  - id: hear-about
+    question: How did you hear about this job?
+    aliases: [How did you hear about us?]
+    answer: Company careers page

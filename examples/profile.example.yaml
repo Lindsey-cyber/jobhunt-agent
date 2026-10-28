@@ -1,0 +1,31 @@
+# Copy to data/profile.yaml. Everything the agent may assert about you lives here
+# or in data/answers.yaml. It never invents an answer that is not in one of them.
+identity:
+  firstName: Ada
+  lastName: Lovelace
+contact:
+  email: ada@example.com
+  phone: "+1 212 555 0100"
+  city: New York
+  state: NY
+  country: United States
+links:
+  linkedin: https://www.linkedin.com/in/example
+  github: https://github.com/example
+education:
+  - school: Columbia University
+    degree: Master of Science
+    major: Electrical Engineering
+    gradMonth: 5
+    gradYear: 2027
+workAuthorization:
+  authorizedCountries: [United States]
+  needsSponsorship: true
+eeo:
+  gender: decline
+  hispanicLatino: decline
+  race: decline
+  veteran: decline
+  disability: decline
+documents:
+  resume: resume.pdf

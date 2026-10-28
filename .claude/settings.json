@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(data/config.yaml)",
+      "Write(data/config.yaml)",
+      "Edit(data/ledger.jsonl)",
+      "Write(data/ledger.jsonl)"
+    ]
+  }
+}

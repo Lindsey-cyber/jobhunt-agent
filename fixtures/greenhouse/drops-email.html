@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Robotics Software Intern at Acme Robotics</title>
+<link rel="canonical" href="https://job-boards.greenhouse.io/acmerobotics/jobs/0000">
+<style>.select__menu{border:1px solid #888}.select__option{padding:4px;cursor:pointer}.select__control{border:1px solid #888;min-height:28px;cursor:pointer}</style>
+</head>
+<body>
+<main data-company-name="Acme Robotics">
+<h1>Robotics Software Intern</h1>
+<form id="application-form" class="application--form">
+  <div class="input-wrapper"><label for="first_name">First Name*</label><input class="input" id="first_name" name="first_name" aria-required="true"></div>
+  <div class="input-wrapper"><label for="last_name">Last Name*</label><input class="input" id="last_name" name="last_name" aria-required="true"></div>
+  <div class="input-wrapper"><label for="preferred_name">Preferred First Name</label><input class="input" id="preferred_name" name="preferred_name"></div>
+  <div class="input-wrapper"><label for="email">Email*</label><input class="input" id="email" name="email" type="email" aria-required="true"></div>
+  <div class="input-wrapper"><label for="phone">Phone*</label><input class="input" id="phone" name="phone" type="tel" aria-required="true"></div>
+  <div class="file-upload" aria-required="true"><label for="resume">Resume/CV*</label><input id="resume" name="resume" type="file"></div>
+  <div class="input-wrapper"><label for="question_101">LinkedIn Profile</label><input class="input" id="question_101" name="question_101"></div>
+  <div class="select__container" data-options='["Yes","No"]'>
+    <label id="question_102-label">Are you legally authorized to work in the United States?*</label>
+    <div class="select__control"><div class="select__value-container"><div class="select__placeholder">Select...</div>
+      <input class="select__input" id="question_102" role="combobox" aria-labelledby="question_102-label" aria-required="true"></div></div>
+    <input type="hidden" name="question_102">
+  </div>
+  <div class="select__container" data-options='["Yes","No"]'>
+    <label id="question_103-label">Will you now or in the future require sponsorship for employment visa status?*</label>
+    <div class="select__control"><div class="select__value-container"><div class="select__placeholder">Select...</div>
+      <input class="select__input" id="question_103" role="combobox" aria-labelledby="question_103-label" aria-required="true"></div></div>
+    <input type="hidden" name="question_103">
+  </div>
+
+  <div id="demographic-section">
+  <div class="select__container" data-options='["Male","Female","Non-binary","I don&#39;t wish to answer"]'>
+    <label id="gender-label">Gender</label>
+    <div class="select__control"><div class="select__value-container"><div class="select__placeholder">Select...</div>
+      <input class="select__input" id="gender" role="combobox" aria-labelledby="gender-label"></div></div>
+    <input type="hidden" name="gender">
+  </div>
+  </div>
+  <p id="errors" role="alert"></p>
+  <button type="submit">Submit application</button>
+</form>
+</main>
+<script src="/static/widget.js"></script>
+<script>/* Like a React re-render that discards a value set from outside. */ document.getElementById("email").addEventListener("input", (e) => setTimeout(() => (e.target.value = ""), 0));</script>
+</body>
+</html>

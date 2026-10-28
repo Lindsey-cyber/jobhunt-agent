@@ -1,0 +1,56 @@
+// Label normalization ported from formhand (MIT, github.com/fdjfnd222dd/formhand, core/matcher.js).
+export function normalize(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[’']/g, "")
+    .replace(/\bplease (select|choose|enter)( one)?\b/g, " ")
+    .replace(/\bselect one\b/g, " ")
+    .replace(/\((required|optional)\)/g, " ")
+    .replace(/\b(required|optional)\s*$/g, " ")
+    .replace(/[^a-z0-9{}]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function tokens(text: string): Set<string> {
+  return new Set(normalize(text).split(" ").filter((t) => t.length > 1));
+}
+
+export function jaccard(a: string, b: string): number {
+  const ta = tokens(a);
+  const tb = tokens(b);
+  if (ta.size === 0 || tb.size === 0) return 0;
+  let shared = 0;
+  for (const t of ta) if (tb.has(t)) shared++;
+  return shared / (ta.size + tb.size - shared);
+}
+
+const DECLINE = /\b(decline|prefer not|not wish|dont wish|do not wish|choose not)\b/;
+
+export interface OptionMatch {
+  option: string;
+  confidence: number;
+}
+
+export function matchOption(options: string[], answer: string, sensitive: boolean): OptionMatch | null {
+  const want = normalize(answer);
+  const norm = options.map(normalize);
+
+  const exact = norm.indexOf(want);
+  if (exact >= 0) return { option: options[exact]!, confidence: 1 };
+
+  if (want === "decline") {
+    const i = norm.findIndex((o) => DECLINE.test(o));
+    return i >= 0 ? { option: options[i]!, confidence: 1 } : null;
+  }
+
+  if (want === "yes" || want === "no") {
+    const hits = norm.flatMap((o, i) => (o.split(" ")[0] === want ? [i] : []));
+    return hits.length === 1 ? { option: options[hits[0]!]!, confidence: 0.95 } : null;
+  }
+
+  if (sensitive) return null;
+  const hits = norm.flatMap((o, i) => (` ${o} `.includes(` ${want} `) ? [i] : []));
+  return hits.length === 1 ? { option: options[hits[0]!]!, confidence: 0.85 } : null;
+}

@@ -93,3 +93,19 @@ describe("outreach", () => {
     expect(e!.draft).toContain(u.profile.education[0]!.school);
   });
 });
+
+describe("catalog", () => {
+  it("keeps hiring-post text through a save, since outreach reads it", async () => {
+    const { mkdtempSync } = await import("node:fs");
+    const { tmpdir } = await import("node:os");
+    const { join } = await import("node:path");
+    const { readCatalog, writeCatalog } = await import("../src/store/catalog.ts");
+    const path = join(mkdtempSync(join(tmpdir(), "cat-")), "catalog.jsonl");
+    const post = job(1, "reject", { key: "url:https://news.ycombinator.com/item?id=9" as JobKey, description: "We use machine learning. jobs@x.ai", sources: [{ channel: "hn_hiring", source: "t", url: "u", official: false, date: "", dateKind: "post_time", firstSeen: T0, lastSeen: T0 }] });
+    const other = job(2, "reject", { description: "Accounting role" });
+    writeCatalog(path, [post, other]);
+    const back = readCatalog(path);
+    expect(back.get(post.key)!.description).toBe("We use machine learning. jobs@x.ai");
+    expect(back.get(other.key)!.description).toBe("");
+  });
+});

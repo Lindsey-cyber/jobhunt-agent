@@ -19,3 +19,20 @@
   5. 小公司单独建 Outreach 队列：岗位、招聘帖、公开的招聘负责人信息，带来源和可信度。只收集、只起草，不发送。
 - 没有权限或 Key 的来源就跳过，并在报告里写明；绝不用假数据冒充真实结果。解决不了的问题放进每日清单（`jh pending`），我每天结束时看。
 - 报告做完先发给我看，搜索质量确认后再做自动投递（Lever、Ashby、Workday 适配器）和 VPS 部署。
+
+## 进度（2026-10-28 会话）
+
+已完成（第一阶段骨架）：
+
+- 发现：`config/watchlist.yaml` 长期监控 106 个官方 Board（Greenhouse 53、Lever 4、Ashby 24、Workday 25，全部当日实测可访问），3 个 New Grad GitHub 列表（Simplify 用其机器可读的 `listings.json`），HN Who is hiring，Gmail 提醒（LinkedIn、Glassdoor、Handshake、Indeed）。第三方列表里出现的 Greenhouse/Lever/Ashby 链接会顺藤摸瓜抓取该公司官方 Board。
+- 来源归因：`src/discover/identity.ts` 只按 ATS Job ID（含 `gh_jid`）、Lever/Ashby UUID、Workday 租户+需求号、平台 ID 或规范化官方链接合并；`data/discovery/catalog.jsonl` 保存每个来源的首次和最后发现时间。
+- 筛选：`src/discover/triage.ts`，每个结论带规则 id；签证没写不过滤，官方明确不担保才排除。
+- 审计：`jh daily` 抽 110 个盲样本，独立审核 agent（另一个模型，只看 `brief.md` + `blind.jsonl`）判定，`jh audit score` 用代码对照隐藏答案键算误筛率/漏筛率，分歧进每日清单，超过 10% 自动降级。
+- 评测集：`jh label` 存候选人的决定（带当时的证据），`tests/eval.test.ts` 让 `npm run check` 在规则变差时失败。
+- 总管/经理骨架：`src/org/coordinator.ts`；流程写在 `.claude/skills/daily-discovery/SKILL.md`。
+
+下一步：
+
+1. 等候选人看报告、回答每日清单里的问题（Data Scientist 是否算目标岗位）并批准/驳回匹配，形成第一版评测集，然后 `jh eval --record`。
+2. 搜索质量确认后：Lever、Ashby、Workday 申请适配器（`add-ats-adapter` skill）。
+3. VPS：systemd timer 跑 `jh daily`；Gmail API 只读 OAuth 替换会话里的连接器复制；审核 agent 改为 API 调用（同样只给 brief + blind）；Dashboard 走 SSH 隧道。

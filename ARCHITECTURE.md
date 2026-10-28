@@ -41,7 +41,7 @@ Gmail alerts (data/inbox) ─┘                                                
 
 Sponsorship: silence passes. An explicit no-sponsorship statement on the official posting rejects when the profile needs sponsorship; the same statement in a third-party copy only sends it to review.
 
-`data/discovery/catalog.jsonl` carries history between runs (committed; descriptions only where triage read past the title). Raw run output stays in `data/runs/discovery/` (ignored). Alert emails live in `data/inbox/` (ignored: personal mail).
+`data/discovery/catalog.jsonl` carries history between runs (descriptions only where triage read past the title); git keeps its gzip copy `catalog.jsonl.gz`, which a fresh session reads when the plain file is missing. Raw run output stays in `data/runs/discovery/` (ignored). Alert emails live in `data/inbox/` (ignored: personal mail).
 
 ## Where answers come from
 

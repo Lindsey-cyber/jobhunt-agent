@@ -133,7 +133,7 @@ switch (command) {
     const fit = [...new Map(readLabels(u.dir).map((l) => [l.key, l])).values()].filter((l) => l.label === "fit");
     const ready = fit
       .map((l) => catalog.get(l.key as JobKey))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever|ashby):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         return !prior || ledger.canStart(prior.key);

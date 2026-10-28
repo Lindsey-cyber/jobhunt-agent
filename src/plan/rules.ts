@@ -125,7 +125,7 @@ export const PROFILE_RULES: ProfileRule[] = [
       return generic ?? degree;
     },
   },
-  { path: "education[0].major", pattern: /^(discipline|major|field of study)$/, resolve: (p) => firstEdu(p).major },
+  { path: "education[0].major", pattern: /^(discipline|major|field of study|discipline field of study|major field of study)$/, resolve: (p) => firstEdu(p).major },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",

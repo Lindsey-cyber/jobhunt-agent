@@ -6,7 +6,10 @@ cd "$(dirname "$0")/.."
 jh() { npm run -s jh -- "$@"; }
 status=0
 
-git pull --ff-only --quiet || echo "warning: git pull failed; running the checked-out code"
+# The ledger, review list, labels and answers are append-only; merge them line by line
+# (also in .gitattributes, set here so it holds before the first pull that brings it).
+printf 'data/*.jsonl merge=union\ndata/labels/*.jsonl merge=union\ndata/answers.yaml merge=union\n' > .git/info/attributes
+git pull --no-rebase --no-edit --quiet || echo "warning: git pull failed; running the checked-out code"
 if ! git diff --quiet HEAD@{1} HEAD -- package-lock.json 2>/dev/null; then npm ci --no-audit --no-fund --silent; fi
 
 # The deciding code must pass its checks before it decides anything.
@@ -34,6 +37,7 @@ find data/runs -name '*.png' -mtime +60 -delete 2>/dev/null || true
 git add docs/reports data/discovery/catalog.jsonl.gz data/discovery/latest.json data/review.jsonl data/trust.json data/labels data/answers.yaml data/ledger.jsonl 2>/dev/null
 if ! git diff --cached --quiet; then
   git commit --quiet -m "Daily discovery $(date -u +%Y-%m-%d) (VPS)"
+  git pull --no-rebase --no-edit --quiet || echo "warning: git pull before push failed"
   git push --quiet || { echo "git push failed; results stay committed locally"; status=1; }
 fi
 exit $status

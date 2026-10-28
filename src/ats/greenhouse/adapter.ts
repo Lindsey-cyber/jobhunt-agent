@@ -78,6 +78,7 @@ export const greenhouse: AtsAdapter = {
     const company =
       (await page.locator("[data-company-name]").first().getAttribute("data-company-name", { timeout: 1000 }).catch(() => null)) ??
       fromTitle ??
+      new URL(page.url()).searchParams.get("for") ??
       new URL(page.url()).pathname.split("/").filter(Boolean)[0] ??
       "";
     const jobTitle = (await page.locator("h1").first().innerText().catch(() => "")).trim();

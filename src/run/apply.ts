@@ -21,6 +21,8 @@ export interface ApplyOptions {
   page?: Page;
   headed?: boolean;
   confirmTimeoutMs?: number;
+  // The catalog's names for the posting, for embed pages that show neither.
+  job?: { company: string; title: string };
 }
 
 export type ApplyResult =
@@ -83,7 +85,7 @@ export function formUrl(url: string): string {
   return url;
 }
 
-async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000 }: ApplyOptions): Promise<ApplyResult> {
+async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000, job }: ApplyOptions): Promise<ApplyResult> {
   const earlier = sameJob(ledger, url);
   if (earlier && !ledger.canStart(earlier.key)) return { outcome: "skipped", key: earlier.key, state: earlier.state };
   await page.goto(formUrl(url));
@@ -102,6 +104,9 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   if (!ledger.canStart(key)) return { outcome: "skipped", key, state: prior! };
 
   const form = await adapter.extract(page);
+  // An embed page may carry no title and only the board slug ("pinterest").
+  if (job && !form.jobTitle) form.jobTitle = job.title;
+  if (job && /^[a-z0-9-]*$/.test(form.company)) form.company = job.company;
   const runDir = join(user.dir, "runs", slug(key), stamp());
   mkdirSync(runDir, { recursive: true });
   const save = (name: string, data: unknown) => writeFileSync(join(runDir, name), JSON.stringify(data, null, 2));

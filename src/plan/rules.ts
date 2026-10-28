@@ -168,6 +168,17 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // Asana: "Current Company"; the work-history entry with no end date.
+    path: "workHistory",
+    pattern: /^(current|most recent) (company|employer)( name)?$/,
+    resolve: (p) => p.workHistory.find((w) => !w.end)?.employer,
+  },
+  {
+    path: "workHistory",
+    pattern: /^(current|most recent) (job )?(title|position|role)$/,
+    resolve: (p) => p.workHistory.find((w) => !w.end)?.title,
+  },
+  {
     // Waymo, Lyft: "Work Authorization" with any-employer / needs-our-sponsorship / unknown options.
     path: "workAuthorization.needsSponsorship",
     pattern: /^work authori[sz]ation( status)?$/,

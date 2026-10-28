@@ -154,6 +154,12 @@ describe("buildPlan", () => {
     expect(one(field("Please review the linked document:", { kind: "combobox", options: ["I acknowledge that I have read and understood the terms of the Lyft Candidate Privacy Notice."] }))).toMatchObject({ status: "fill" });
   });
 
+  it("fills current company and title from the open work-history entry", () => {
+    const p = { ...user.profile, workHistory: [{ employer: "Old Co", title: "Intern", start: "2024-01", end: "2024-06" }, { employer: "Now Co", title: "Engineer", start: "2026-05" }] };
+    const items = buildPlan(form([field("Current Company"), field("Current Title")]), p, user.bank).items;
+    expect(items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["Now Co", "Engineer"]);
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");

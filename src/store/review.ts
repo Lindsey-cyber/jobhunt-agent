@@ -35,10 +35,12 @@ export class ReviewList {
     return this.items.get(id);
   }
 
-  // Adds an item unless one with this id already exists (open or resolved), so a
-  // daily run never re-asks a question the candidate answered.
+  // Adds an item unless one with this id already exists, so a daily run never
+  // re-asks a question the candidate answered. Items the agent withdrew itself
+  // (over the daily cap, no longer matching) may come back.
   add(item: Omit<ReviewItem, "at" | "status">): boolean {
-    if (this.items.has(item.id)) return false;
+    const was = this.items.get(item.id);
+    if (was && !(was.status === "resolved" && was.resolution?.startsWith("withdrawn"))) return false;
     this.write({ ...item, at: new Date().toISOString(), status: "open" });
     return true;
   }

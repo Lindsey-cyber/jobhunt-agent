@@ -1,0 +1,772 @@
+[
+  {
+    "id": "a001",
+    "key": "workday:verizon:r-1102754-1",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a002",
+    "key": "ashby:c6b7bcc8-5454-4e6e-844f-c6a55607309a",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a003",
+    "key": "url:https://jobs.bytedance.com/en/position/7667334059728341253/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a004",
+    "key": "greenhouse:8039151003",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a005",
+    "key": "greenhouse:6207801004",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "type.internship"
+  },
+  {
+    "id": "a006",
+    "key": "greenhouse:8916036002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a007",
+    "key": "linkedin:4463475665",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a008",
+    "key": "tiktok:7678145401619237173",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a009",
+    "key": "tiktok:7660238838679832837",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a010",
+    "key": "ashby:ca8c19ad-2be8-4d4f-96af-e0a37ff76fb8",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a011",
+    "key": "greenhouse:8739392002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a012",
+    "key": "tiktok:7672532801686571317",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a013",
+    "key": "workday:hpe:1213475",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a014",
+    "key": "lever:0eebb462-b5a2-4e3a-b830-d8ef7505b014",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "degree.phd_required"
+  },
+  {
+    "id": "a015",
+    "key": "greenhouse:8243617",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a016",
+    "key": "lever:515a3498-4257-4e68-91ff-cf82e854f12d",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a017",
+    "key": "workday:caci:333761",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a018",
+    "key": "greenhouse:4718748006",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a019",
+    "key": "ashby:4c9f8f00-0caf-4927-80da-02a3e53cb0cd",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a020",
+    "key": "linkedin:4475349302",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a021",
+    "key": "ashby:71168628-1998-47d3-87a9-be7bc56a430d",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "type.internship"
+  },
+  {
+    "id": "a022",
+    "key": "tiktok:7517107684337748242",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a023",
+    "key": "greenhouse:4732798005",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a024",
+    "key": "url:https://jobs.bytedance.com/en/position/7623543228228536581/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a025",
+    "key": "ashby:1f148786-2e00-472a-96b9-0b29015980e1",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a026",
+    "key": "linkedin:4429630004",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a027",
+    "key": "ashby:ca7e4019-bf93-42fd-8f15-fac59c6e237c",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a028",
+    "key": "lever:10d11950-8fab-425b-a8ce-ac903e598514",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a029",
+    "key": "workday:kla:2640190",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.research_unclear"
+  },
+  {
+    "id": "a030",
+    "key": "tiktok:7668854153882011957",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a031",
+    "key": "workday:nvidia:jr2017486-1",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a032",
+    "key": "linkedin:4483336390",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a033",
+    "key": "url:https://aerotech.applytojob.com/apply/JAm0BSsTqQ/Electrical-Computer-Engineer-Firmware-FPGA",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a034",
+    "key": "workday:meijer:r000692154",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a035",
+    "key": "glassdoor:1010300509047",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a036",
+    "key": "greenhouse:6359139003",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a037",
+    "key": "greenhouse:8262154",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "type.internship"
+  },
+  {
+    "id": "a038",
+    "key": "workday:equifax:j00179159",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a039",
+    "key": "workday:nvidia:jr2021784-1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a040",
+    "key": "greenhouse:8769568002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a041",
+    "key": "greenhouse:4709657005",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a042",
+    "key": "greenhouse:4726268005",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a043",
+    "key": "greenhouse:8140219",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a044",
+    "key": "ashby:2aee4ca5-53c5-431b-a4b7-26ef05dca311",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a045",
+    "key": "url:https://jobs.bytedance.com/en/position/7671095905295075637/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a046",
+    "key": "url:https://edbz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25017581",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a047",
+    "key": "linkedin:4456519481",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.research_unclear"
+  },
+  {
+    "id": "a048",
+    "key": "greenhouse:8829033002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a049",
+    "key": "url:https://www.citadel.com/careers/details/machine-learning-researcher-phd-graduate-us",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "degree.phd_required"
+  },
+  {
+    "id": "a050",
+    "key": "greenhouse:4954897007",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a051",
+    "key": "tiktok:7670335888371927349",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a052",
+    "key": "workday:pg:r000157463",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a053",
+    "key": "greenhouse:8366850002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a054",
+    "key": "greenhouse:5368034008",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a055",
+    "key": "ashby:5f80131b-bf21-4e2a-ab86-bd0a047637a0",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a056",
+    "key": "url:https://www.jobleads.com/us/job/llm-backend-engineer-graduate-applied-machine-learning-2027-start-bachelor-master-graduate--san-jose--e6a9cba1d7b1d204c2368643be7e841db",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a057",
+    "key": "greenhouse:8192812",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a058",
+    "key": "lever:827f30da-67cd-4274-91e7-87fb12019a23",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a059",
+    "key": "ashby:9d48e2e6-41a9-4a90-8b3b-6cc960e95c2f",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a060",
+    "key": "greenhouse:5229594007",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a061",
+    "key": "smartrecruiters:3743990015832401",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a062",
+    "key": "workday:amat:r2622877-1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a063",
+    "key": "url:https://jobs.bytedance.com/en/position/7629126608919382277/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a064",
+    "key": "linkedin:4474377006",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a065",
+    "key": "workday:intel:jr0287019",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "type.internship"
+  },
+  {
+    "id": "a066",
+    "key": "greenhouse:5196196008",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a067",
+    "key": "tiktok:7629188203299735813",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a068",
+    "key": "greenhouse:7793089",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a069",
+    "key": "greenhouse:7431070",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a070",
+    "key": "url:https://www.google.com/about/careers/applications/jobs/results/91223711167718086",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a071",
+    "key": "workday:nvidia:jr2019758",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a072",
+    "key": "linkedin:4473989585",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a073",
+    "key": "url:https://careers.jhuapl.edu/jobs/59654?icims=1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a074",
+    "key": "greenhouse:4229947009",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a075",
+    "key": "tiktok:7628321017978767621",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a076",
+    "key": "greenhouse:8114754",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a077",
+    "key": "greenhouse:8872835002",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a078",
+    "key": "ashby:a67d16f7-0273-4052-bb48-06bf9c478eb6",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a079",
+    "key": "greenhouse:8243615",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a080",
+    "key": "url:https://careers.qualcomm.com/careers/job/446721429496",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a081",
+    "key": "tiktok:7670285949553707317",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a082",
+    "key": "greenhouse:8127006",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a083",
+    "key": "greenhouse:4202443009",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a084",
+    "key": "greenhouse:8451762002",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a085",
+    "key": "greenhouse:4608068006",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a086",
+    "key": "url:https://jobs.bytedance.com/en/position/7668595575944186117/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a087",
+    "key": "url:https://amazon.jobs/en/jobs/10490741/software-development-engineer-i-ai-ml-network-infrastructure-annapurna-labs",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a088",
+    "key": "ashby:5f0c6579-0bfb-4a06-8a43-1dd371499e10",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a089",
+    "key": "ashby:71e7252f-abb1-4b74-8e69-318413042357",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a090",
+    "key": "ashby:9d731858-01bf-4d42-89e5-5912ae94cf55",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a091",
+    "key": "ashby:e522c734-6e4e-4d69-80c1-d09d5144eab4",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a092",
+    "key": "workday:ebay:r0076549-1",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a093",
+    "key": "url:https://news.ycombinator.com/item?id=49939260",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "lead.unresolved"
+  },
+  {
+    "id": "a094",
+    "key": "greenhouse:4854284101",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a095",
+    "key": "greenhouse:8561432002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a096",
+    "key": "lever:826ab5e6-bee6-496f-a1b2-98a764e1b318",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a097",
+    "key": "url:https://jobs.bytedance.com/en/position/7629137778379557173/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a098",
+    "key": "workday:nvidia:jr2026739",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a099",
+    "key": "greenhouse:4741104008",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a100",
+    "key": "greenhouse:8911335002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a101",
+    "key": "greenhouse:4720573005",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a102",
+    "key": "tiktok:7669700358734170373",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a103",
+    "key": "greenhouse:4307427009",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a104",
+    "key": "url:https://apply.workable.com/avalore/j/B542E4DD72",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a105",
+    "key": "greenhouse:5256727007",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a106",
+    "key": "greenhouse:6224938004",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a107",
+    "key": "greenhouse:8689127002",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a108",
+    "key": "ashby:622a014b-ff77-45bd-9caa-61a6506884ed",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a109",
+    "key": "ashby:4b7b35d9-6a2c-43a2-8c36-2bf6974e3b0f",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a110",
+    "key": "url:https://jobs.bytedance.com/en/position/7670932427485186309/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  }
+]

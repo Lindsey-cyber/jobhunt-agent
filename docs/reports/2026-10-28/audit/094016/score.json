@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-28T09:45:03.448Z",
+  "auditor": "Sonnet subagent (fresh instance), blind, brief + postings only",
+  "sampleSize": 110,
+  "missing": [],
+  "score": {
+    "judged": 90,
+    "unsure": 20,
+    "falseMatchRate": 0.16666666666666666,
+    "matchJudged": 30,
+    "missRate": 0,
+    "rejectJudged": 20,
+    "nearMissRate": 0,
+    "nearJudged": 27,
+    "reviewFit": 3,
+    "reviewNotFit": 10,
+    "byRule": {
+      "role.out_of_scope": {
+        "judged": 16,
+        "disagree": 0
+      },
+      "match": {
+        "judged": 30,
+        "disagree": 5
+      },
+      "role.non_engineering": {
+        "judged": 3,
+        "disagree": 0
+      },
+      "type.internship": {
+        "judged": 4,
+        "disagree": 0
+      },
+      "level.senior": {
+        "judged": 18,
+        "disagree": 0
+      },
+      "degree.phd_required": {
+        "judged": 2,
+        "disagree": 0
+      },
+      "location.non_us": {
+        "judged": 3,
+        "disagree": 0
+      },
+      "experience.too_senior": {
+        "judged": 1,
+        "disagree": 0
+      }
+    },
+    "disagreements": [
+      {
+        "id": "a012",
+        "key": "tiktok:7672532801686571317",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Backend Engineer Graduate - Vertical Recommendation Architecture\" is general backend software, not ML or data infrastructure."
+      },
+      {
+        "id": "a015",
+        "key": "greenhouse:8243617",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"2+ years of experience developing, evaluating, and deploying machine learning models in a production environment\" is a minimum requirement beyond a new grad."
+      },
+      {
+        "id": "a039",
+        "key": "workday:nvidia:jr2021784-1",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Minimum of 2+ years of work experience in developing and deploying machine learning models in production\" plus 1+ years in content safety."
+      },
+      {
+        "id": "a077",
+        "key": "greenhouse:8872835002",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "Requires \"3+ years of applied ML experience (Master's)\"."
+      },
+      {
+        "id": "a107",
+        "key": "greenhouse:8689127002",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "Requires \"2+ years of experience in machine learning modeling\" and the role is to \"lead the design\"."
+      }
+    ]
+  }
+}

@@ -109,3 +109,21 @@ describe("catalog", () => {
     expect(back.get(other.key)!.description).toBe("");
   });
 });
+
+describe("review list", () => {
+  it("never re-asks what the candidate answered but can re-queue what the agent withdrew", async () => {
+    const { mkdtempSync } = await import("node:fs");
+    const { tmpdir } = await import("node:os");
+    const { join } = await import("node:path");
+    const { ReviewList } = await import("../src/store/review.ts");
+    const path = join(mkdtempSync(join(tmpdir(), "rv-")), "review.jsonl");
+    const r = new ReviewList(path);
+    const item = { id: "match:a", kind: "approve_match" as const, subject: "s", detail: "d" };
+    expect(r.add(item)).toBe(true);
+    r.resolve("match:a", "fit");
+    expect(r.add(item)).toBe(false);
+    r.add({ ...item, id: "match:b" });
+    r.resolve("match:b", "withdrawn: over the cap");
+    expect(new ReviewList(path).add({ ...item, id: "match:b" })).toBe(true);
+  });
+});

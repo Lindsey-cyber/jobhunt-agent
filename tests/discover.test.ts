@@ -179,6 +179,14 @@ describe("triage", () => {
     expect(triage(job("AI Engineer - Forward Deployed (New Grad)", { description: "This role is intended for experienced engineers who have shipped ML systems." }), me).rule).toBe("experience.too_senior");
   });
 
+  // Cases from audit round 2.
+  it("applies years stated for a master's degree, and sends 2-year minimums to review", () => {
+    expect(triage(job("Machine Learning Engineer", { description: "Qualifications: PhD, or 3+ years of applied ML experience (Master's). New grads welcome." }), me).rule).toBe("experience.too_senior");
+    expect(triage(job("Machine Learning Engineer, Radar", { description: "2+ years of experience developing, evaluating, and deploying machine learning models in production." }), me).rule).toBe("experience.two_years");
+    expect(triage(job("ML Engineer, New Grad", { description: "Minimum of 2+ years of work experience in developing ML models." }), me).rule).toBe("experience.two_years");
+    expect(triage(job("ML Engineer, New Grad", { description: "2+ years of experience with PyTorch is a plus." }), me).verdict).toBe("match");
+  });
+
   it("keeps a multi-level title that includes junior, and nothing else senior", () => {
     expect(triage(job("Senior Associate, Data Scientist - Applied AI"), me).rule).toBe("level.senior");
     expect(triage(job("Principal Scientist / Associate Director, Agentic AI Research"), me).rule).toBe("level.senior");

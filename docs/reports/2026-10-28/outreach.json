@@ -1,35 +1,5 @@
 [
   {
-    "company": "Hedra",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Research Scientist",
-        "url": "https://jobs.ashbyhq.com/hedra/0558c340-1810-4a6f-8f23-8a46952f488d",
-        "verdict": "review",
-        "location": "San Francisco; United States"
-      },
-      {
-        "title": "Research Engineer",
-        "url": "https://jobs.ashbyhq.com/hedra/b99b5901-84ff-4d39-a50f-77ef9767ddd3",
-        "verdict": "review",
-        "location": "San Francisco; United States"
-      },
-      {
-        "title": "Inference Optimization Engineer",
-        "url": "https://jobs.ashbyhq.com/hedra/f28645f7-2bed-4754-9da2-a3aaa7d6aa27",
-        "verdict": "match",
-        "location": "San Francisco; United States"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Hedra team,\n\nI came across the Inference Optimization Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
     "company": "Somana",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [
@@ -357,54 +327,6 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "Iambic Therapeutics",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Research Scientist I/II, Purification Sciences",
-        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/35fa46c2-1cd5-4222-88f5-987e7bf26db7",
-        "verdict": "review",
-        "location": "San Diego HQ; United States"
-      },
-      {
-        "title": "Research Scientist I/II, Immunology",
-        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/41e94f6a-c5ea-4c52-b527-e2976a08347d",
-        "verdict": "match",
-        "location": "San Diego HQ; United States"
-      },
-      {
-        "title": "Research Scientist I/II, Bioanalytical Sciences & Assay Development",
-        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/4a04c67c-1be5-4109-8f9f-b3e8dd818e37",
-        "verdict": "match",
-        "location": "San Diego HQ; United States"
-      },
-      {
-        "title": "Machine Learning Scientist — Large Multimodal Models (Post-Training)",
-        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/50be2fab-54c1-4310-8cec-3fe6123b8a8f",
-        "verdict": "match",
-        "location": "Boston Office; US"
-      },
-      {
-        "title": "Research Scientist I / II – High Throughput Chemistry",
-        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/702f22c3-49a3-405e-8760-f0936953e0c6",
-        "verdict": "review",
-        "location": "San Diego HQ; United States"
-      },
-      {
-        "title": "Machine Learning Scientist – Clinical Prediction",
-        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/e418c9bf-4fe6-4484-92ad-e9a320557815",
-        "verdict": "review",
-        "location": "Boston Office; Remote - US; US"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Iambic Therapeutics team,\n\nI came across the Research Scientist I/II, Immunology opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
     "company": "Idler",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -450,6 +372,24 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi LiveFlow team,\n\nI came across the Graduate Engineer - AI Agents opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Synhawk",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Member of Technical Staff: Junior AI Researcher",
+        "url": "https://jobs.ashbyhq.com/synhawk/4f6cca01-cf7d-4cb6-8f18-b9c5acf7d540",
+        "verdict": "match",
+        "location": "San Francisco; USA"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Synhawk team,\n\nI came across the Member of Technical Staff: Junior AI Researcher opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -520,12 +460,6 @@
         "title": "AI Operations Engineer",
         "url": "https://jobs.ashbyhq.com/surge-ai/73c5fe8d-0cb6-40e1-a634-d46928702f85",
         "verdict": "match",
-        "location": "United States - Remote; United States"
-      },
-      {
-        "title": "Research Engineer, Coding Evaluation & Training Data",
-        "url": "https://jobs.ashbyhq.com/surge-ai/b5a5d0fa-dee2-4ff2-ad41-173edab613d3",
-        "verdict": "review",
         "location": "United States - Remote; United States"
       },
       {
@@ -806,6 +740,24 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Iambic Therapeutics",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Scientist – Clinical Prediction",
+        "url": "https://jobs.ashbyhq.com/iambic-therapeutics/e418c9bf-4fe6-4484-92ad-e9a320557815",
+        "verdict": "review",
+        "location": "Boston Office; Remote - US; US"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Iambic Therapeutics team,\n\nI came across the Machine Learning Scientist – Clinical Prediction opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Collaborative Robotics",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -830,12 +782,6 @@
       {
         "title": "Applied AI Engineer — Early Career",
         "url": "https://jobs.ashbyhq.com/goaly/ff6ec280-f5c6-4151-8bfd-e75ff8004c89",
-        "verdict": "match",
-        "location": "Palo Alto, CA, USA; United States"
-      },
-      {
-        "title": "AI Research Scientist - Early Career (PHD/MS)",
-        "url": "https://jobs.ashbyhq.com/goaly/ffc80152-df35-45d6-8c2c-36ea8b67eb37",
         "verdict": "match",
         "location": "Palo Alto, CA, USA; United States"
       }
@@ -1182,24 +1128,6 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "Edmentum",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Research Scientist, Applied AI Research",
-        "url": "https://job-boards.greenhouse.io/edmentum/jobs/6211309004",
-        "verdict": "match",
-        "location": "United States"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Edmentum team,\n\nI came across the Research Scientist, Applied AI Research opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
     "company": "Aquatic Capital Management",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -1278,6 +1206,52 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Relativity Space",
+    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "roles": [
+      {
+        "title": "Senior Software Engineer (Factory Platform)",
+        "url": "https://job-boards.greenhouse.io/relativity/jobs/8633354002",
+        "verdict": "reject",
+        "location": "Long Beach, California, United States"
+      },
+      {
+        "title": "Software Engineer I (Factory Platform)",
+        "url": "https://job-boards.greenhouse.io/relativity/jobs/8834005002",
+        "verdict": "reject",
+        "location": "Long Beach, California, United States"
+      },
+      {
+        "title": "Software Engineer II (Factory Platform)",
+        "url": "https://job-boards.greenhouse.io/relativity/jobs/8834015002",
+        "verdict": "reject",
+        "location": "Long Beach, California, United States"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://boards.greenhouse.io/relativity/jobs/8633354002?gh_jid=8633354002 (linked from HN post)",
+        "date": "2026-10-02T03:26:18.000Z",
+        "excerpt": "At Relativity Space, we’re building rockets to serve today’s needs and tomorrow’s breakthroughs. Our Terran R vehicle will deliver customer payloads to orbit, meeting the growing demand for launch capacity. But that’s just the start. Achieving commercial success with Terran R wil"
+      },
+      {
+        "url": "https://boards.greenhouse.io/relativity/jobs/8834005002?gh_jid=8834005002 (linked from HN post)",
+        "date": "2026-10-02T03:26:18.000Z",
+        "excerpt": "At Relativity Space, we’re building rockets to serve today’s needs and tomorrow’s breakthroughs. Our Terran R vehicle will deliver customer payloads to orbit, meeting the growing demand for launch capacity. But that’s just the start. Achieving commercial success with Terran R wil"
+      },
+      {
+        "url": "https://boards.greenhouse.io/relativity/jobs/8834015002?gh_jid=8834015002 (linked from HN post)",
+        "date": "2026-10-02T03:26:18.000Z",
+        "excerpt": "At Relativity Space, we’re building rockets to serve today’s needs and tomorrow’s breakthroughs. Our Terran R vehicle will deliver customer payloads to orbit, meeting the growing demand for launch capacity. But that’s just the start. Achieving commercial success with Terran R wil"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Relativity Space team,\n\nI came across the Senior Software Engineer (Factory Platform) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Cleveland Guardians - Baseball Operations",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -1329,24 +1303,6 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Graviton Research Capital LLP team,\n\nI came across the Quantitative Researcher - 2027 Graduates opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
-    "company": "Deep Genomics",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Research Scientist In Vitro Pharmacology",
-        "url": "https://jobs.lever.co/deepgenomics/2ec45717-17a1-47a7-8e41-737ec3bc9bf9",
-        "verdict": "match",
-        "location": "Cambridge, MA (US)"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Deep Genomics team,\n\nI came across the Research Scientist In Vitro Pharmacology opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -1525,24 +1481,6 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Hatch IT team,\n\nI came across the NLP/Linguistics Software Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
-    "company": "Nio",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "AI Robotics Researcher",
-        "url": "https://jobs.lever.co/nio-usa/aeb18492-fd65-481d-88a3-00dcceb55840",
-        "verdict": "match",
-        "location": "San Jose, CA (US)"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Nio team,\n\nI came across the AI Robotics Researcher opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {

@@ -43,7 +43,10 @@ const EARLY_TITLE =
 const EARLY_BODY =
   /new (?:college )?grad|recent (?:college |university )?grad|entry.?level|early.?career|university graduate|graduating (?:in|by)|\b0\s*(?:[-–]|to)\s*[1-3]\s*years?|\b[12]\+?\s*years?\s+(?:of\s+)?(?:relevant |professional |industry |work |hands-on )?experience|no (?:prior )?(?:professional )?experience (?:is )?required/i;
 const EXPERIENCE =
-  /\b([3-9]|1\d)\s*(?:\+|[-–]\s*\d+|\s*or more)?\s*(?:years?|yrs?)\s+(?:of\s+)?(?:relevant |professional |industry |work |hands-on |full-time |post-graduate |practical )?(?:experience|exp\b)/gi;
+  /\b([3-9]|1\d)\s*(?:\+|[-–]\s*\d+|\s*or more)?\s*(?:years?|yrs?)\s+(?:of\s+)?(?:[\w/+-]+\s+){0,3}?(?:experience|exp\b)/gi;
+// A stated minimum of two years ("2+ years of experience ... required",
+// "minimum of 2 years"), unless marked preferred.
+const TWO_YEARS_REQUIRED = /(?:minimum of |at least |requires? |required:? )2\+?\s*(?:years?|yrs)|\b2\+\s*(?:years?|yrs)\s+(?:of\s+)?(?:\w+\s+){0,3}(?:experience|exp\b)(?![^.]{0,60}(?:prefer|nice to have|a plus|bonus))/i;
 const NO_SPONSOR = new RegExp(
   [
     String.raw`(?:no|without)\s+(?:visa\s+|immigration\s+)?sponsorship`,
@@ -94,8 +97,12 @@ export function requiredExperience(body: string): { years: number; context: stri
     const floor = /(\d+)\s*(?:[-–]|to)\s*$/.exec(body.slice(Math.max(0, m.index - 8), m.index));
     if (floor && Number(floor[1]) <= 2) continue;
     if (/prefer|nice to have|bonus|plus\b|ideally/i.test(context)) continue;
-    // "PhD or 3+ years" / "MS with 3 years or BS with 5": the degree path may waive it.
-    if (/\b(?:ph\.?d|master'?s|m\.?s\.?)\b.{0,30}\bor\b/i.test(context)) continue;
+    // "3+ years (Master's)" / "Master's with 3 years": the years apply to the candidate's degree.
+    const after = body.slice(m.index + m[0].length, m.index + m[0].length + 40);
+    const before = body.slice(Math.max(0, m.index - 40), m.index);
+    const forMasters = /^[^.]{0,25}(?:\(|with an? |for )?(?:master'?s|m\.?s\.?\b)/i.test(after) || /(?:master'?s|m\.?s\.?)(?: degree)?(?: and| with| plus)\s*$/i.test(before);
+    // "PhD or 3+ years" / "BS with 5 or MS with 3": another degree path may waive it.
+    if (!forMasters && /\b(?:ph\.?d|master'?s|m\.?s\.?)\b.{0,30}\bor\b/i.test(context)) continue;
     return { years: Number(m[1]), context: context.trim() };
   }
   return undefined;
@@ -164,6 +171,11 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
 
   const exp = requiredExperience(body);
   const earlyTitle = EARLY_TITLE.test(title);
+  const two = TWO_YEARS_REQUIRED.exec(body);
+  if (two && !(exp && exp.years >= 3)) {
+    const ctx = body.slice(Math.max(0, two.index - 40), two.index + two[0].length + 60).replace(/\s+/g, " ").trim();
+    return v("review", "experience.two_years", `Asks for at least 2 years: "${ctx}"; in scope only if the candidate counts 2-year minimums`);
+  }
   if (exp && exp.years >= 3) {
     if (earlyTitle) return v("review", "experience.conflict", `Early-career title but asks ${exp.years}+ years: "${exp.context}"`);
     return v("reject", "experience.too_senior", `Requires ${exp.years}+ years: "${exp.context}"`);

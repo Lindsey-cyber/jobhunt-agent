@@ -60,9 +60,16 @@ export async function daily(o: DailyOptions) {
   // Approvals and rejections become the labeled eval set.
   const trust = readTrust(dir);
   const ready = seen.filter((j) => j.triage.verdict === "match" && j.official && j.link?.status !== "invalid").sort(priority);
+  const byKey = new Map(seen.map((j) => [`match:${j.key}`, j]));
+  for (const item of review.open().filter((i) => i.kind === "approve_match")) {
+    const j = byKey.get(item.id);
+    if (j && j.triage.verdict !== "match") review.resolve(item.id, `withdrawn: no longer a match after a rule change (${j.triage.rule})`);
+  }
+  const today = r.startedAt.slice(0, 10);
   let queued = 0;
+  const already = review.open().filter((i) => i.kind === "approve_match" && i.at.startsWith(today)).length;
   for (const j of ready) {
-    if (queued >= APPROVALS_PER_DAY) break;
+    if (already + queued >= APPROVALS_PER_DAY) break;
     if (review.add({ id: `match:${j.key}`, kind: "approve_match", subject: `${j.company} · ${j.title}`, detail: `${j.location} — ${j.triage.reason}${j.publishedAt ? `; published ${j.publishedAt.slice(0, 10)}` : ""}`, link: j.url })) queued++;
   }
   log(`coordinator: apply manager queued ${queued} matches for approval (triage trust: ${trust.triage.level})`);
@@ -81,6 +88,16 @@ export async function daily(o: DailyOptions) {
       kind: "question",
       subject: `Should Data Scientist roles without ML in the title count as matches? (${ds} today in review)`,
       detail: "Today they sit in review. Answer yes or no; the rule and its test change to match, and your label decisions on a few of them seed the eval set.",
+    });
+  }
+
+  const two = seen.filter((j) => j.triage.rule === "experience.two_years").length;
+  if (two) {
+    review.add({
+      id: "question:scope:two_year_minimum",
+      kind: "question",
+      subject: `Should postings that require at least 2 years of experience count as matches? (${two} today in review)`,
+      detail: "The blind auditor judged them not new-grad roles; your 0-2 year target could include them. Answer yes or no.",
     });
   }
 

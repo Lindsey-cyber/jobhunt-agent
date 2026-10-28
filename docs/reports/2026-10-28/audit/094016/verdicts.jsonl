@@ -1,0 +1,110 @@
+{"id":"a001","fit":"no","reason":"Requires \"Six or more years of relevant experience\"."}
+{"id":"a002","fit":"no","reason":"\"Executive Programs Lead\" is a senior marketing people-leadership role, not ML."}
+{"id":"a003","fit":"yes","reason":"\"Software Engineer Graduate - AI Infrastructure Compute\" is a new-grad ML infrastructure role in San Jose, CA."}
+{"id":"a004","fit":"no","reason":"\"quota-carrying sales role\"."}
+{"id":"a005","fit":"no","reason":"\"PhD Intern\" internship requiring a Ph.D. student."}
+{"id":"a006","fit":"no","reason":"Supply chain sourcing role requiring \"Advanced degree and 4+ years\"."}
+{"id":"a007","fit":"yes","reason":"\"Machine Learning Engineer\" in New York, a target title with no seniority or sponsorship restriction given."}
+{"id":"a008","fit":"yes","reason":"\"Machine Learning Engineer Graduate\" in Seattle is a new-grad ML role."}
+{"id":"a009","fit":"unsure","reason":"\"Data Scientist - Multiple Positions\" has no description, so ML focus and level cannot be judged."}
+{"id":"a010","fit":"no","reason":"\"AI Marketing Technologist Lead\" is a marketing operations role."}
+{"id":"a011","fit":"no","reason":"ITAR: \"applicant must be a (i) U.S. citizen\" or permanent resident, and it is an avionics hardware role."}
+{"id":"a012","fit":"no","reason":"\"Backend Engineer Graduate - Vertical Recommendation Architecture\" is general backend software, not ML or data infrastructure."}
+{"id":"a013","fit":"yes","reason":"\"AI and Machine Learning Engineering Graduate\" in Durham, NC is a new-grad ML role."}
+{"id":"a014","fit":"no","reason":"\"You have a Ph.D. in Computer Science\" required."}
+{"id":"a015","fit":"no","reason":"\"2+ years of experience developing, evaluating, and deploying machine learning models in a production environment\" is a minimum requirement beyond a new grad."}
+{"id":"a016","fit":"yes","reason":"\"AI Engineer - Infrustructure\" in New York on a new-grad list, with no restrictions stated."}
+{"id":"a017","fit":"unsure","reason":"\"AI Prompt Engineer\" at CACI has no description, so level, clearance and ML depth are unknown."}
+{"id":"a018","fit":"no","reason":"\"3 years' experience in data engineering or platform engineering roles\"."}
+{"id":"a019","fit":"yes","reason":"\"AI/ML Engineer, 2027 New Grad\" full-time in the Bay Area."}
+{"id":"a020","fit":"no","reason":"\"Staff AI Research Engineer\" is a senior level."}
+{"id":"a021","fit":"no","reason":"\"Internship\" in London, United Kingdom."}
+{"id":"a022","fit":"yes","reason":"\"Machine Learning Engineer Graduate\" in Seattle is a new-grad ML role."}
+{"id":"a023","fit":"no","reason":"\"Senior Machine Learning Engineer\" requiring \"an active TS security clearance\" and 5+ years."}
+{"id":"a024","fit":"yes","reason":"\"Research Scientist Graduate - Seed Vision Foundation Model\" is a new-grad research scientist role in San Jose."}
+{"id":"a025","fit":"no","reason":"Product data scientist role focused on growth and strategy, not ML engineering, seeking experienced \"record of influencing product strategy\"."}
+{"id":"a026","fit":"yes","reason":"\"Applied AI Engineer\" in New York with no restrictions given."}
+{"id":"a027","fit":"no","reason":"\"Have 5+ years of technical consulting, post-sales engineering\"."}
+{"id":"a028","fit":"no","reason":"Location \"Gurugram, Haryana (IN)\" is outside the United States."}
+{"id":"a029","fit":"unsure","reason":"\"Research Scientist\" at KLA has no description, so degree and level requirements are unknown."}
+{"id":"a030","fit":"unsure","reason":"\"Research Scientist/Software Engineer - Neural Graphics and World Models\" has no description, so degree requirements are unknown."}
+{"id":"a031","fit":"no","reason":"\"Power Methodology and Modeling Engineer\" is a hardware role, not ML."}
+{"id":"a032","fit":"no","reason":"\"Machine Learning Engineer 4\" is a senior level at Capital One, beyond entry level."}
+{"id":"a033","fit":"no","reason":"\"Electrical / Computer Engineer - Firmware & FPGA\" is hardware."}
+{"id":"a034","fit":"yes","reason":"\"Software Engineer 1, AI\" is an entry-level AI engineering role in Grand Rapids, MI."}
+{"id":"a035","fit":"unsure","reason":"\"AI Specialist\" with no description is too ambiguous to tell whether it is an ML engineering role."}
+{"id":"a036","fit":"yes","reason":"\"Early Career Software Engineer – Applied AI\" building AI agents, requiring a Bachelor's degree."}
+{"id":"a037","fit":"no","reason":"\"2027 Summer Intern, PhD\" is an internship requiring a PhD."}
+{"id":"a038","fit":"yes","reason":"\"Generative AI Engineer\" in Alpharetta, GA on a new-grad list with no restrictions stated."}
+{"id":"a039","fit":"no","reason":"\"Minimum of 2+ years of work experience in developing and deploying machine learning models in production\" plus 1+ years in content safety."}
+{"id":"a040","fit":"no","reason":"Location \"Toronto, ON, Canada\" is outside the United States."}
+{"id":"a041","fit":"no","reason":"\"Senior Machine Learning Engineer\" in Montreal requiring \"5+ years\"."}
+{"id":"a042","fit":"no","reason":"Technical program manager requiring \"Active TS/SCI clearance\" and \"5+ years\"."}
+{"id":"a043","fit":"yes","reason":"\"Master's University Grad Machine Learning Engineer 2027 (USA)\" requires \"Master's in Computer Science, ML, NLP, Statistics\"."}
+{"id":"a044","fit":"no","reason":"\"Growth Product Manager - Product Marketing\" is not an ML role."}
+{"id":"a045","fit":"yes","reason":"\"Agent Evaluation & Evolution Researcher Graduate - Applied Machine Learning\" is a new-grad applied ML role in San Jose."}
+{"id":"a046","fit":"no","reason":"\"Product Engineer\" listed under \"Hardware\" at Texas Instruments."}
+{"id":"a047","fit":"unsure","reason":"\"Research Scientist\" at Snorkel AI has no description, so degree and level requirements are unknown."}
+{"id":"a048","fit":"no","reason":"Location \"Costa Rica\" is outside the United States."}
+{"id":"a049","fit":"no","reason":"\"Machine Learning Researcher – PhD Graduate\" targets PhD holders."}
+{"id":"a050","fit":"no","reason":"\"Staff Software Engineer\" requiring \"10+ years\" and \"Must be a U.S. Person\"."}
+{"id":"a051","fit":"unsure","reason":"\"Research Engineer New Grad - Realtime Codec Optimizations-Video Codec\" is entry level but video codec work with no description may not be ML."}
+{"id":"a052","fit":"yes","reason":"\"Data Engineer - North America Fabric Care\" on a new-grad AI/ML/Data list, a data engineering role with no restrictions given."}
+{"id":"a053","fit":"unsure","reason":"\"Data Engineer\" at Brex shows no experience level or restriction in the given text, so entry-level fit cannot be decided."}
+{"id":"a054","fit":"no","reason":"\"Staff+ Software Engineer\" requiring \"8+ years\"."}
+{"id":"a055","fit":"no","reason":"\"Staff Engineer, GenAI Tooling & DevEx\" is a staff level developer tooling role."}
+{"id":"a056","fit":"yes","reason":"\"LLM Backend Engineer Graduate (Applied Machine Learning) - 2027 Start Bachelor/Master Graduate\" is a new-grad ML role."}
+{"id":"a057","fit":"no","reason":"\"AI Product Support Specialist\" is a support role, not ML engineering."}
+{"id":"a058","fit":"yes","reason":"\"(Jr) Machine Learning (ML) Developer\" seeking \"ambitious, hard-working recent graduates\"."}
+{"id":"a059","fit":"no","reason":"\"Software Engineer, Developer Productivity\" focused on CI/CD tooling, not ML or data engineering."}
+{"id":"a060","fit":"no","reason":"\"Senior Technical Program Manager\" requiring \"7+ years\"."}
+{"id":"a061","fit":"unsure","reason":"\"Data Scientist - M-Powering Teacher Coaching\" at Harvard has no description, so ML focus and sponsorship cannot be judged."}
+{"id":"a062","fit":"yes","reason":"\"Computer Vision/Machine Learning/Deep Learning Algorithm Developer\" in Santa Clara on a new-grad list with no restrictions stated."}
+{"id":"a063","fit":"unsure","reason":"\"Research Scientist - Compute AI Infra - Global Frontier Tech Recruitment Program\" has no description, so the degree requirement (possibly PhD) is unknown."}
+{"id":"a064","fit":"unsure","reason":"\"Research Engineer - Inference\" at ElevenLabs has no description, so seniority is unknown."}
+{"id":"a065","fit":"no","reason":"\"Must be pursuing a PhD\" and \"Job Type: Student / Intern\"."}
+{"id":"a066","fit":"no","reason":"\"Staff Software Engineer\" requiring \"12+ years\" in Toronto, Canada."}
+{"id":"a067","fit":"unsure","reason":"\"Applied Scientist - Multiple Teams\" has no description, so degree and level requirements are unknown."}
+{"id":"a068","fit":"no","reason":"\"Senior Machine Learning Engineer\" requiring \"3+ years of industry experience\"."}
+{"id":"a069","fit":"no","reason":"\"Staff Machine Learning Engineer\" with \"Remote - Canada\" location."}
+{"id":"a070","fit":"yes","reason":"\"Software Engineer, Consumer Shopping Quality, ... Recommendations, Rankings, Predictions\" in Mountain View on a new-grad list."}
+{"id":"a071","fit":"no","reason":"Location \"China, Shanghai; China, Beijing\" and \"MS ... with 4+ years\"."}
+{"id":"a072","fit":"yes","reason":"\"Machine Learning Engineer, Applied AI\" in New York, a target title with no restrictions stated."}
+{"id":"a073","fit":"yes","reason":"\"Software Engineering/ML/Data Scientist New Grad - Intelligence Systems\" is an explicit new-grad ML role in Laurel, MD."}
+{"id":"a074","fit":"no","reason":"Location \"India\" and \"8+ years of professional experience\"."}
+{"id":"a075","fit":"unsure","reason":"\"Research Scientist - Generative AI - Tiktok Search\" has no description, so degree and level requirements are unknown."}
+{"id":"a076","fit":"no","reason":"\"Staff/Lead Machine Learning Engineer\" requiring \"7+ years\"."}
+{"id":"a077","fit":"no","reason":"Requires \"3+ years of applied ML experience (Master's)\"."}
+{"id":"a078","fit":"no","reason":"\"GPT Infrastructure Lead\" is a data center program leadership role."}
+{"id":"a079","fit":"no","reason":"\"Staff Machine Learning Engineer\" setting \"technical strategy and multi-quarter roadmap\"."}
+{"id":"a080","fit":"yes","reason":"\"Machine Learning Engineer - Generative AI\" in San Diego on a new-grad list with no restrictions stated."}
+{"id":"a081","fit":"yes","reason":"\"Machine Learning Engineer Graduate\" in Seattle is a new-grad ML role."}
+{"id":"a082","fit":"no","reason":"Requires \"3+ years of professional experience in Machine Learning\"."}
+{"id":"a083","fit":"no","reason":"\"Senior Director\" requiring \"12+ years of software development experience\"."}
+{"id":"a084","fit":"no","reason":"\"Graduate Quantitative Researcher\" is a quant trading role, not AI/ML engineering."}
+{"id":"a085","fit":"no","reason":"\"Cleared GenAI Engineer\" requires a security clearance, which a visa-dependent Chinese citizen cannot hold."}
+{"id":"a086","fit":"unsure","reason":"\"Research Scientist Graduate - Quantum Chemistry and Machine Learning\" has no description, so the degree requirement and ML fit cannot be decided."}
+{"id":"a087","fit":"yes","reason":"\"Software Development Engineer 1 - AI/ML Network Infrastructure\" is an entry-level AI/ML infrastructure role in Cupertino."}
+{"id":"a088","fit":"no","reason":"Expects \"a track record of ... first author publications\" and owning \"a research agenda\", a research-scientist bar beyond this candidate."}
+{"id":"a089","fit":"no","reason":"\"Have 5+ years of experience as a software engineer, ML engineer\"."}
+{"id":"a090","fit":"no","reason":"\"Revenue Accountant\" is a finance role."}
+{"id":"a091","fit":"no","reason":"Location \"Munich, Germany\" is outside the United States."}
+{"id":"a092","fit":"no","reason":"Location \"Amsterdam; Netherlands\" is outside the United States."}
+{"id":"a093","fit":"no","reason":"\"Growth Marketing Engineer\" on a \"Part-time contract\", not a full-time ML role."}
+{"id":"a094","fit":"no","reason":"\"Korean Fluent Speakers - AI Training\" is language annotation work, not an ML engineering role."}
+{"id":"a095","fit":"no","reason":"ITAR: \"applicant must be a (i) U.S. citizen\" or permanent resident, and a GNC rocket role."}
+{"id":"a096","fit":"no","reason":"Location \"Bangalore, Karnataka, India\" and \"Software Development Lead\" with 4 to 6 years."}
+{"id":"a097","fit":"unsure","reason":"\"Graduate Research Scientist - Multimedia Standards - Global Tech Research Program\" has no description, so ML focus and degree requirement are unclear."}
+{"id":"a098","fit":"unsure","reason":"\"Research Scientist - Fundamental Generative AI - New College Grad 2026\" has no description, so whether a Master's qualifies (versus PhD) cannot be decided."}
+{"id":"a099","fit":"no","reason":"\"Engineering Manager\" requiring \"1+ years of management experience\" in a technical environment."}
+{"id":"a100","fit":"no","reason":"Locations are \"Remote Ireland; Remote, Germany; Remote, Spain; Remote, United Kingdom\" and it is a services sales-type role."}
+{"id":"a101","fit":"unsure","reason":"\"Frontier Agents Engineer (Applied AI)\" is a target AI role in San Francisco but the shown text states no experience requirement."}
+{"id":"a102","fit":"yes","reason":"\"Machine Learning Engineer Graduate - Ads Signal & Measurement\" is a new-grad ML role in San Jose."}
+{"id":"a103","fit":"unsure","reason":"\"Generative AI Associate\" with no description may be annotation work rather than ML engineering."}
+{"id":"a104","fit":"unsure","reason":"\"Data Engineer\" in Arlington, VA with no description, so level and any citizenship or clearance requirement are unknown."}
+{"id":"a105","fit":"no","reason":"\"Division Talent, Planning & Strategy\" is a recruiting planning role."}
+{"id":"a106","fit":"yes","reason":"\"ML Infrastructure Engineer New Grad\" in Austin or San Jose."}
+{"id":"a107","fit":"no","reason":"Requires \"2+ years of experience in machine learning modeling\" and the role is to \"lead the design\"."}
+{"id":"a108","fit":"yes","reason":"\"ideal for early-career engineers (new grad to ~3 years)\" and \"BS or MS in Computer Science\"."}
+{"id":"a109","fit":"unsure","reason":"\"Software Engineer, Applied AI / Product\" works on agents and evals but the shown text gives no experience level, so entry-level fit is undetermined."}
+{"id":"a110","fit":"yes","reason":"\"Machine Learning Engineer Graduate - Agent Evaluation & Evolution\" is a new-grad ML role in San Jose."}

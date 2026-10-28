@@ -1,21 +1,21 @@
 # 多渠道职位发现报告 · 2026-10-28
 
-运行 2026-10-28 09:30 UTC → 2026-10-28 09:33 UTC，报告生成 2026-10-28 09:36 UTC。信任等级 `draft`：**本轮只发现和筛选，没有打开任何申请表，提交 0 份。**
+运行 2026-10-28 09:40 UTC → 2026-10-28 09:43 UTC，报告生成 2026-10-28 09:45 UTC。信任等级 `draft`：**本轮只发现和筛选，没有打开任何申请表，提交 0 份。**
 
 | 项目 | 数量 |
 | --- | ---: |
-| 原始发现记录（sightings，含跨渠道重复） | 33540 |
-| 去重后岗位（按 ATS Job ID / 官方链接） | 32396 |
-| 合并掉的重复记录 | 1122 |
+| 原始发现记录（sightings，含跨渠道重复） | 33541 |
+| 去重后岗位（按 ATS Job ID / 官方链接） | 32395 |
+| 合并掉的重复记录 | 1124 |
 | 无链接线索（Handshake 提醒等，不参与合并） | 22 |
-| 规则匹配 match | 625（官方页 158，仅第三方 467） |
-| 待核实 review / 排除 reject | 761 / 31010 |
-| 匹配岗位链接核验：有效 / 失效 / 受限 / 未能核验 | 588 / 25 / 12 / 0（共核验 625） |
-| 匹配岗位中官方发布于近 7 / 30 天 | 5 / 39（489 个无官方发布日期） |
-| 全部岗位中官方发布于近 7 / 30 天 | 2317 / 9019 |
-| 观察到的公司 / 有匹配的公司 | 1759 / 235 |
-| 匹配岗位中属于名单内中大型公司 | 75 / 625 |
-| 来源成功 / 失败或跳过 | 222 / 5 |
+| 规则匹配 match | 575（官方页 141，仅第三方 434） |
+| 待核实 review / 排除 reject | 765 / 31055 |
+| 匹配岗位链接核验：有效 / 失效 / 受限 / 未能核验 | 539 / 25 / 11 / 0（共核验 575） |
+| 匹配岗位中官方发布于近 7 / 30 天 | 6 / 34（450 个无官方发布日期） |
+| 全部岗位中官方发布于近 7 / 30 天 | 2320 / 9024 |
+| 观察到的公司 / 有匹配的公司 | 1754 / 215 |
+| 匹配岗位中属于名单内中大型公司 | 68 / 575 |
+| 来源成功 / 失败或跳过 | 224 / 5 |
 
 “近 7/30 天”只用雇主 ATS 给出的发布时间（Greenhouse `first_published`、Lever `createdAt`、Ashby `publishedAt`）。Workday 只给 start date，GitHub 列表和邮件只有转载/收件时间，这些都不当成发布时间。本仓库从今天开始记录每个来源的首次发现时间，下次运行起才能统计“我们新发现”的岗位。
 
@@ -23,23 +23,23 @@
 
 | 渠道 | 发现记录 | 岗位数 | 独有 | 与其他渠道共有 | 渠道内重复率 | 匹配 | 独有匹配 | 官方近7/30天（全部） | 匹配近7/30天 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| GitHub New Grad 列表 | 4105 | 3530 | 3129 | 401 | 14.0% | 576 | 465 | 29/118 | 5/35 |
+| GitHub New Grad 列表 | 4097 | 3522 | 3119 | 403 | 14.0% | 527 | 432 | 29/118 | 5/29 |
 | Gmail · Glassdoor 提醒 | 145 | 108 | 108 | 0 | 25.5% | 1 | 1 | 0/0 | 0/0 |
 | Gmail · Handshake 提醒 | 22 | 22 | 22 | 0 | 0.0% | 0 | 0 | 0/0 | 0/0 |
 | Gmail · LinkedIn 提醒 | 421 | 319 | 319 | 0 | 24.2% | 1 | 1 | 0/0 | 0/0 |
 | HN Who is hiring | 320 | 320 | 313 | 7 | 0.0% | 0 | 0 | 0/0 | 0/0 |
-| 官方 Ashby | 5776 | 5776 | 5660 | 116 | 0.0% | 65 | 15 | 687/2265 | 4/19 |
-| 官方 Greenhouse | 19615 | 19615 | 19416 | 199 | 0.0% | 52 | 19 | 1498/6097 | 1/11 |
-| 官方 Lever | 2379 | 2379 | 2304 | 75 | 0.0% | 19 | 1 | 132/657 | 0/9 |
-| 官方 Workday | 757 | 757 | 739 | 18 | 0.0% | 22 | 12 | 0/0 | 0/0 |
+| 官方 Ashby | 5784 | 5784 | 5666 | 118 | 0.0% | 57 | 16 | 689/2272 | 4/17 |
+| 官方 Greenhouse | 19615 | 19615 | 19416 | 199 | 0.0% | 52 | 20 | 1498/6094 | 2/10 |
+| 官方 Lever | 2380 | 2380 | 2305 | 75 | 0.0% | 16 | 1 | 133/658 | 0/7 |
+| 官方 Workday | 757 | 757 | 739 | 18 | 0.0% | 16 | 9 | 0/0 | 0/0 |
 
 “独有”= 本轮只有这个渠道报告了这个 Job ID。一个岗位可被多个渠道报告，各列不能相加。第三方渠道（GitHub、邮件、HN）的“官方近7/30天”来自同一岗位的官方记录，没有官方记录就算未知。
 
 ## 来源覆盖
 
-- 长期监控名单（`config/watchlist.yaml`）：官方 Greenhouse 53 家，官方 Lever 4 家，官方 Ashby 24 家，官方 Workday 25 家，共 19216 个在招岗位。Workday 没有全量接口，每家用固定关键词做有界搜索，召回不完整。
-- 从第三方列表顺藤摸瓜抓取的官方 Board：107 个（成功 107），让官方要求而不是转载内容决定筛选。
-- SimplifyJobs/New-Grad-Positions：3022 条（16119 rows marked closed by the list were skipped）
+- 长期监控名单（`config/watchlist.yaml`）：官方 Greenhouse 53 家，官方 Lever 4 家，官方 Ashby 24 家，官方 Workday 25 家，共 19215 个在招岗位。Workday 没有全量接口，每家用固定关键词做有界搜索，召回不完整。
+- 从第三方列表顺藤摸瓜抓取的官方 Board：109 个（成功 109），让官方要求而不是转载内容决定筛选。
+- SimplifyJobs/New-Grad-Positions：3014 条（16129 rows marked closed by the list were skipped）
 - speedyapply/2027-AI-College-Jobs：520 条（0 rows marked closed by the list were skipped）
 - Tar-ive/ML_Newgrad_2027：563 条（0 rows marked closed by the list were skipped）
 - HN Who is hiring：320 条（Ask HN: Who is hiring? (October 2026); 319 of 319 top-level posts read）
@@ -64,57 +64,60 @@ New Grad / 0–2 年 + AI/ML、研究、数据工程类岗位。签证：职位�
 
 | 结果 | 规则 | 数量 | 说明 |
 | --- | --- | ---: | --- |
-| reject | `role.out_of_scope` | 27604 | Title is not an AI/ML, research or data-engineering role |
-| reject | `level.senior` | 2124 | Senior, staff, lead or manager title |
-| match | `match` | 625 | Official posting; early-career |
-| review | `level.unclear` | 544 | No new-grad or 0-2 year signal in title, description or source |
-| reject | `location.non_us` | 337 | Location outside the US |
-| reject | `role.non_engineering` | 334 | Not an engineering, scientist or research title |
+| reject | `role.out_of_scope` | 27597 | Title is not an AI/ML, research or data-engineering role |
+| reject | `level.senior` | 2123 | Senior, staff, lead or manager title |
+| match | `match` | 575 | Official posting; early-career |
+| review | `level.unclear` | 472 | No new-grad or 0-2 year signal in title, description or source |
+| reject | `role.non_engineering` | 336 | Not an engineering, scientist or research title |
+| reject | `location.non_us` | 334 | Location outside the US |
 | reject | `type.internship` | 203 | Internship or co-op, not a full-time role |
 | review | `role.data_science` | 168 | Data-science title (early-career |
-| reject | `experience.too_senior` | 167 | Requires 3+ years |
+| reject | `experience.too_senior` | 164 | Requires 3+ years |
 | reject | `auth.citizenship` | 150 | Requires US citizenship or clearance |
-| reject | `degree.phd_required` | 68 | Title asks for a PhD; the candidate's highest degree is a master's |
-| review | `location.unknown` | 30 | US location not established |
+| reject | `degree.phd_required` | 87 | Description requires a PhD and never mentions a master's |
+| review | `role.research_unclear` | 80 | Research title; the text given does not show whether the work is ML |
+| reject | `role.research_not_ml` | 38 | Research title, but the posting describes no ML work |
+| review | `location.unknown` | 28 | US location not established |
 | reject | `auth.no_sponsorship` | 23 | Posting says no sponsorship |
 | review | `lead.unresolved` | 13 | Alert or hiring-post lead; find the official posting before judging |
-| review | `experience.conflict` | 4 | Early-career title but asks 9+ years |
+| review | `experience.conflict` | 2 | Early-career title but asks 4+ years |
 | review | `degree.phd_mentioned` | 1 | PhD mentioned; check whether a master's qualifies |
 | review | `auth.no_sponsorship_unverified` | 1 | A third-party copy says no sponsorship |
 
 ## 筛选审计（独立审核 agent 盲评）
 
-抽样 110 个岗位，分层：规则匹配、全部排除中随机、“标题像 AI/ML 却被排除”的边缘排除、待核实。审核者：Sonnet subagent, blind, brief + postings only。它只看岗位原文和候选人事实，看不到规则结论，也看不到工人的说法；评分由代码对照隐藏的答案键完成。
+抽样 110 个岗位，分层：规则匹配、全部排除中随机、“标题像 AI/ML 却被排除”的边缘排除、待核实。审核者：Sonnet subagent (fresh instance), blind, brief + postings only。它只看岗位原文和候选人事实，看不到规则结论，也看不到工人的说法；评分由代码对照隐藏的答案键完成。
 
 | 指标 | 结果 |
 | --- | --- |
-| 误筛率（匹配里审核者认为不合适） | 27.0%（95% 区间 15%–43%，n=37） |
-| 漏筛率（随机排除里审核者认为合适） | 5.0%（95% 区间 1%–24%，n=20） |
-| 边缘排除中被认为合适 | 0.0%（95% 区间 0%–12%，n=28） |
-| 待核实 → 审核者：合适 / 不合适 | 9 / 4 |
-| 审核者“无法判断” | 12 |
+| 误筛率（匹配里审核者认为不合适） | 16.7%（95% 区间 7%–34%，n=30） |
+| 漏筛率（随机排除里审核者认为合适） | 0.0%（95% 区间 0%–16%，n=20） |
+| 边缘排除中被认为合适 | 0.0%（95% 区间 0%–12%，n=27） |
+| 待核实 → 审核者：合适 / 不合适 | 3 / 10 |
+| 审核者“无法判断” | 20 |
 
-筛选环节信任等级：`confirm`（audit 2026-10-28T09:36:50.755Z: false-match 27.0%, miss 5.0% (limit 10%)）。超过 10% 自动降回“等我确认”；连续 3 次审计误筛和漏筛都 ≤5% 才会建议升级，由你决定。
+历次审计（每轮都是新的盲样本、新的审核者实例）：
+
+| 时间 | 误筛率 | n | 漏筛率 | n |
+| --- | ---: | ---: | ---: | ---: |
+| 2026-10-28 09:36 UTC | 27.0% | 37 | 5.0% | 20 |
+| 2026-10-28 09:45 UTC | 16.7% | 30 | 0.0% | 20 |
+
+筛选环节信任等级：`confirm`（audit 2026-10-28T09:45:03.448Z: false-match 16.7%, miss 0.0% (limit 10%)）。超过 10% 自动降回“等我确认”；连续 3 次审计误筛和漏筛都 ≤5% 才会建议升级，由你决定。
 
 分歧（已进每日清单，你的判断会存成评测集）：
 
 | 规则结论 | 规则 | 审核者 | 理由 | 岗位 |
 | --- | --- | --- | --- | --- |
-| match | `match` | no | "Clinical Research Scientist" is a clinical role, not AI/ML. | [americanredcross · Clinical Research Scientist](https://americanredcross.wd1.myworkdayjobs.com/en-US/american_red_cross_careers/job/Rockville-MD/Clinical-Research-Scientist_RC91319) |
-| match | `match` | no | "Materials Research Scientist/Engineer" is not AI/ML. | [SRI International · Materials Research Scientist/Engineer](https://careers-sri.icims.com/jobs/6428/materials-research-scientist-engineer/job) |
-| match | `match` | no | "A PhD in computer vision, machine learning" is the stated qualification. | [Shield AI · Perception Engineer - Multimodal & Embodied AI (R6022)](https://jobs.ashbyhq.com/f7d8749a-72d6-407c-bf98-292ea630c73a/99726ac8-75b2-4719-b0ea-e470cda3148b) |
-| match | `match` | no | "Pursuing PhD in Computer Science/Engineering" required. | [NVIDIA · Research Scientist, AI for Graphics and Gaming - New College Grad 2026](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--AI-for-Graphics-and-Gaming---New-College-Grad-2026_JR2011267) |
-| reject | `level.senior` | yes | "[Junior / Senior / Staff] Software Engineer, Inference / Compute Infrastructure" in San Francisco includes junior level. | [Together AI · [Junior / Senior / Staff] Software Engineer, Inference / Compute Infrastructure Engineering](https://job-boards.greenhouse.io/togetherai/jobs/5186628007) |
-| match | `match` | no | "new college grad PhD researcher" required. | [NVIDIA · Research Scientist, Electronic Design Automation - New College Grad 2026](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Electronic-Design-Automation---New-College-Grad-2026_JR2012979) |
-| match | `match` | no | "Electrophysiology of Rodent Cognition" is wet-lab neuroscience. | [Astera Institute · Research Scientist, Multiregional Electrophysiology of Rodent Cognition](https://jobs.ashbyhq.com/astera/0b7ed96c-9a41-4027-8664-1c5ed6369ea9) |
-| match | `match` | no | "Research Scientist In Vitro Pharmacology" is wet-lab biology. | [Deep Genomics · Research Scientist In Vitro Pharmacology](https://jobs.lever.co/deepgenomics/2ec45717-17a1-47a7-8e41-737ec3bc9bf9) |
-| match | `match` | no | "Computational Chemistry Research Scientist" is drug design chemistry. | [Vertex · Computational Chemistry Research Scientist - Computational Drug Design](https://vrtx.wd501.myworkdayjobs.com/en-US/vertex_careers/job/Boston-MA/Computational-Chemistry-Research-Scientist---Computational-Drug-Design--_REQ-30307) |
-| match | `match` | no | "PhD in machine learning, computer science ... or equivalent industry experience" required. | [Iambic Therapeutics · Machine Learning Scientist — Large Multimodal Models (Post-Training)](https://jobs.ashbyhq.com/iambic-therapeutics/50be2fab-54c1-4310-8cec-3fe6123b8a8f) |
-| match | `match` | no | "intended for experienced engineers" AI FDE. | [Databricks · AI Engineer – Forward Deployed Engineering (AI FDE)](https://job-boards.greenhouse.io/databricks/jobs/8546367002) |
+| match | `match` | no | "Backend Engineer Graduate - Vertical Recommendation Architecture" is general backend software, not ML or data infrastructure. | [TikTok · Backend Engineer Graduate - TikTok Vertical Recommendation Architecture - 2027 Start](https://lifeattiktok.com/search/7672532801686571317) |
+| match | `match` | no | "2+ years of experience developing, evaluating, and deploying machine learning models in a production environment" is a minimum requirement beyond a new grad. | [Stripe · Machine Learning Engineer, Radar](https://job-boards.greenhouse.io/stripe/jobs/8243617) |
+| match | `match` | no | "Minimum of 2+ years of work experience in developing and deploying machine learning models in production" plus 1+ years in content safety. | [NVIDIA · Machine Learning Engineer, AI Safety](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Machine-Learning-Engineer--AI-Safety_JR2021784-1) |
+| match | `match` | no | Requires "3+ years of applied ML experience (Master's)". | [Twitch · Applied Scientist](https://job-boards.greenhouse.io/twitch/jobs/8872835002) |
+| match | `match` | no | Requires "2+ years of experience in machine learning modeling" and the role is to "lead the design". | [Lyft · Machine Learning Engineer](https://job-boards.greenhouse.io/lyft/jobs/8689127002) |
 
 ## 链接抽样核验
 
-对本轮全部匹配岗位（官方优先）逐个请求岗位页：625 个中有效 588、失效 25、站点拒绝自动访问 12、未能核验 0。“有效”= HTTP 200、没有跳回 Board 首页、页面没有“职位已关闭”字样；官方 API 本轮仍列出该岗位是更强的在招证据。页面有效不等于申请表能提交成功。
+对本轮全部匹配岗位（官方优先）逐个请求岗位页：575 个中有效 539、失效 25、站点拒绝自动访问 11、未能核验 0。“有效”= HTTP 200、没有跳回 Board 首页、页面没有“职位已关闭”字样；官方 API 本轮仍列出该岗位是更强的在招证据。页面有效不等于申请表能提交成功。
 
 | 状态 | 岗位 | 说明 |
 | --- | --- | --- |
@@ -150,6 +153,7 @@ New Grad / 0–2 年 + AI/ML、研究、数据工程类岗位。签证：职位�
 
 | 公司 | 岗位 | 地点 | 官方发布 | 来源 | 链接 |
 | --- | --- | --- | --- | --- | --- |
+| Together AI | [(Senior/Junior AI Inference Reliability Engineer, Compute Infra](https://job-boards.greenhouse.io/togetherai/jobs/5268939007) | San Francisco | 2026-10-27 | 官方·Greenhouse | valid |
 | Quora | [Machine Learning Engineer, New Grad - Quora (Remote)](https://jobs.ashbyhq.com/quora/40659fe7-545e-4b08-b6d7-2567b18b9ed3) | Remote - Multiple Locations; United States; Canada; United S | 2026-10-15 | 官方·Ashby、GitHub New Grad 列表 | valid |
 | DoorDash USA | [Software Engineer, ML Infrastructure (MDX)](https://job-boards.greenhouse.io/doordashusa/jobs/8283735) | San Francisco, CA; Sunnyvale, CA; Seattle, WA | 2026-10-15 | 官方·Greenhouse | valid |
 | Asana | [Software Engineer - AI Teammates Platform](https://job-boards.greenhouse.io/asana/jobs/8194522) | San Francisco | 2026-10-14 | 官方·Greenhouse | valid |
@@ -157,9 +161,9 @@ New Grad / 0–2 年 + AI/ML、研究、数据工程类岗位。签证：职位�
 | Twitch | [Applied Scientist](https://job-boards.greenhouse.io/twitch/jobs/8872835002) | San Francisco, CA | 2026-10-08 | 官方·Greenhouse、GitHub New Grad 列表 | valid |
 | Palantir | [Data Engineer - Talent Acquisition Operations](https://jobs.lever.co/palantir/1b690123-1766-4e75-a0ef-0f58afa864b4) | New York, NY (US) | 2026-10-07 | 官方·Lever、GitHub New Grad 列表 | valid |
 | Stripe | [Machine Learning Engineer, Radar](https://job-boards.greenhouse.io/stripe/jobs/8243617) | Seattle | 2026-10-07 | 官方·Greenhouse | valid |
-| Shield AI | [Perception Engineer - Multimodal & Embodied AI (R6022)](https://jobs.lever.co/shieldai/8c213d66-730b-4604-91b1-97dca42a59e3) | San Diego, California; San Mateo, California (US) | 2026-10-03 | 官方·Lever、GitHub New Grad 列表 | valid |
 | Pinterest | [Master's University Grad Machine Learning Engineer 2027 (USA)](https://job-boards.greenhouse.io/pinterest/jobs/8140219) | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; N | 2026-10-01 | 官方·Greenhouse、GitHub New Grad 列表 | valid |
 | Quora | [Software Engineer New Grad, Machine Learning Platform - Quora (Remote)](https://jobs.ashbyhq.com/quora/cf34f80e-fe5c-454d-bc9a-4c59993ffda0) | Remote - Multiple Locations; United States; Canada; United S | 2026-09-25 | 官方·Ashby、GitHub New Grad 列表 | valid |
+| Perplexity | [Member of Technical Staff, AI Products (Early Career - Industry)](https://jobs.ashbyhq.com/perplexity/daa9120e-94ff-46e0-b4bd-4d2d290cb409) | San Francisco; United States | 2026-09-23 | 官方·Ashby | valid |
 | Applied Intuition | [Robot Learning Engineer - Manipulation](https://jobs.ashbyhq.com/applied/ef7fb9ed-e254-4b90-aef2-efa9c30e7cd8) | Sunnyvale; United States | 2026-09-21 | 官方·Ashby | valid |
 | Waymo | [Research Scientist, Map Scalability](https://job-boards.greenhouse.io/waymo/jobs/8180692) | Mountain View, CA, U.S.A ; San Francisco, CA, U.S.A ; New Yo | 2026-09-08 | 官方·Greenhouse、GitHub New Grad 列表 | valid |
 | Snowflake | [AI Research Scientist, New Grad – Agents & Reinforcement Learning](https://jobs.ashbyhq.com/snowflake/1bad12df-f443-426f-9d09-e96fc780d698) | US-WA-Bellevue; United States | 2026-09-03 | 官方·Ashby、GitHub New Grad 列表 | valid |
@@ -176,13 +180,12 @@ New Grad / 0–2 年 + AI/ML、研究、数据工程类岗位。签证：职位�
 | Applied Intuition | [Machine Learning Engineer - Behavior and Planning](https://jobs.ashbyhq.com/applied/129325ce-77e6-4d2a-a24a-6726acb53749) | Sunnyvale; United States | 2026-07-29 | 官方·Ashby | valid |
 | NewsBreak | [Applied AI Engineer, Advertising Agents (New Grad)](https://job-boards.greenhouse.io/newsbreak/jobs/4700278006) | Mountain View, California, United States | 2026-07-27 | 官方·Greenhouse、GitHub New Grad 列表 | valid |
 | Applied Intuition | [Research Scientist - 3D Vision and Generation, Self-Driving](https://jobs.ashbyhq.com/applied/5f15c171-ae5a-496b-a8eb-c6a351d55b6b) | Sunnyvale; United States | 2026-07-24 | 官方·Ashby、GitHub New Grad 列表 | valid |
+| Together AI | [[Junior / Senior / Staff] Software Engineer, Inference / Compute Infrastructure Engineering](https://job-boards.greenhouse.io/togetherai/jobs/5186628007) | San Francisco | 2026-07-16 | 官方·Greenhouse | valid |
 | NewsBreak | [NewsBreak Venture, AI Growth Intelligence Engineer (New Grad）](https://job-boards.greenhouse.io/newsbreak/jobs/4694899006) | Mountain View, California, United States | 2026-07-06 | 官方·Greenhouse、GitHub New Grad 列表 | valid |
-| Notion | [Software Engineer, Early Career (AI)](https://jobs.ashbyhq.com/notion/85947779-6b87-466a-98bc-30a640448c28) | San Francisco, California; United States | 2026-07-06 | 官方·Ashby、GitHub New Grad 列表 | valid |
 | Together AI | [Research Engineer, Post-Training Inference](https://job-boards.greenhouse.io/togetherai/jobs/5179372007) | San Francisco | 2026-07-06 | 官方·Greenhouse | valid |
 | NewsBreak | [Applied AI Engineer, Advertising Agents](https://job-boards.greenhouse.io/newsbreak/jobs/4690262006) | Mountain View, California, United States | 2026-06-17 | 官方·Greenhouse、GitHub New Grad 列表 | valid |
 | Nuro | [Software Engineer, ML Infrastructure, Optimization](https://job-boards.greenhouse.io/nuro/jobs/6916236) | Mountain View, California (HQ) | 2026-06-16 | 官方·Greenhouse | valid |
 | Anduril Industries | [Software Engineer, Perception](https://job-boards.greenhouse.io/andurilindustries/jobs/5165250007) | Costa Mesa, California, United States | 2026-06-15 | 官方·Greenhouse | valid |
-| Databricks | [AI Engineer – Forward Deployed Engineering (AI FDE)](https://job-boards.greenhouse.io/databricks/jobs/8546367002) | United States | 2026-05-13 | 官方·Greenhouse | valid |
 | Applied Intuition | [Software Engineer - AI Engineering](https://jobs.ashbyhq.com/applied/981054d6-d6d9-4553-9db8-38e56939d3b8) | Sunnyvale; United States | 2026-03-25 | 官方·Ashby | valid |
 | Applied Intuition | [Software Engineer - Systems Engineering AI Tooling](https://jobs.ashbyhq.com/applied/6cce20b1-2250-4350-9952-9691f58fb074) | Sunnyvale; United States | 2026-03-07 | 官方·Ashby | valid |
 | Applied Intuition | [Research Engineer - Reinforcement Learning, Self-Driving](https://jobs.ashbyhq.com/applied/36a49d01-e60f-4c01-8c8c-5a7f79347f51) | Sunnyvale; United States | 2026-02-13 | 官方·Ashby | valid |
@@ -210,14 +213,8 @@ New Grad / 0–2 年 + AI/ML、研究、数据工程类岗位。签证：职位�
 | GlobalFoundries | [AI Software Engineer (2027 New College Graduate)](https://globalfoundries.wd1.myworkdayjobs.com/External/job/USA---California---Santa-Clara/AI-Software-Engineer--2027-New-College-Graduate-_JR-2604055) | USA - California - Santa Clara; USA - Texas - Richardson; Un | 未知 | 官方·Workday、GitHub New Grad 列表 | valid |
 | GlobalFoundries | [AI/ML Systems Engineer (2027 New College Graduate)](https://globalfoundries.wd1.myworkdayjobs.com/External/job/USA---Texas---Richardson/AI-ML-Systems-Engineer--2027-New-College-Graduate-_JR-2604163) | USA - Texas - Richardson; United States of America | 未知 | 官方·Workday、GitHub New Grad 列表 | valid |
 | HP | [AI Software Engineer - HP IQ](https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/San-Francisco-California-United-States-of-America/AI-Software-Engineer---HP-IQ_3163597-2) | San Francisco, California, United States of America; United  | 未知 | 官方·Workday | valid |
-| Intel | [Operations Research Engineer](https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Operations-Research-Engineer_JR0284429) | US, Arizona, Phoenix; US, California, Folsom; US, Oregon, Hi | 未知 | 官方·Workday | valid |
-| NVIDIA | [Research Scientist, AI for Graphics and Gaming - New College Grad 2026](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--AI-for-Graphics-and-Gaming---New-College-Grad-2026_JR2011267) | US, CA, Santa Clara; United States of America | 未知 | 官方·Workday | valid |
-| NVIDIA | [Research Scientist, AI Accelerator Design and VLSI - New College Grad 2026](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--AI-Accelerator-SW-HW-Co-Design---New-College-Grad-2026_JR2011644) | US, CA, Santa Clara; United States of America | 未知 | 官方·Workday | valid |
-| NVIDIA | [Research Scientist, Fundamental Generative AI - New College Grad 2026](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Fundamental-Generative-AI---New-College-Grad-2026_JR2012698) | US, CA, Santa Clara; United States of America | 未知 | 官方·Workday、GitHub New Grad 列表 | valid |
-| NVIDIA | [Research Scientist, Electronic Design Automation - New College Grad 2026](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Electronic-Design-Automation---New-College-Grad-2026_JR2012979) | US, CA, Santa Clara; United States of America | 未知 | 官方·Workday、GitHub New Grad 列表 | valid |
 | NVIDIA | [Machine Learning Engineer, AI Safety](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Machine-Learning-Engineer--AI-Safety_JR2021784-1) | US, CA, Santa Clara; US, CA, Remote; United States of Americ | 未知 | 官方·Workday | valid |
 | NVIDIA | [Applied Machine Learning Engineer, AI for VLSI Design - New College Grad 2026](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-Machine-Learning-Engineer--AI-for-VLSI-Design---New-College-Grad-2026_JR2026576) | US, CA, Santa Clara; United States of America | 未知 | 官方·Workday、GitHub New Grad 列表 | valid |
-| Salesforce | [Research Scientist - Salesforce AI Research](https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---Palo-Alto/Research-Scientist---Salesforce-AI-Research_JR214107-1) | California - Palo Alto; California - San Francisco; United S | 未知 | 官方·Workday、GitHub New Grad 列表 | valid |
 | Workday | [AI Engineer](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/AI-Engineer_JR-0110881) | USA, CA, Pleasanton; United States of America | 未知 | 官方·Workday | valid |
 | Fuel Cycle | [Associate AI Engineer (Onsite in Los Angeles)](https://jobs.ashbyhq.com/fuel-cycle/0d24c1b6-e79b-4880-890f-a8ddb53b6d0d) | Los Angeles Office; USA | 2026-10-27 | GitHub New Grad 列表、官方·Ashby | valid |
 | Fab2 | [Computer Vision Software Engineer](https://jobs.ashbyhq.com/fab2/d9edb922-6cae-4e65-9b20-ba452f3e2edf) | Austin; United States | 2026-10-27 | GitHub New Grad 列表、官方·Ashby | valid |
@@ -230,17 +227,23 @@ New Grad / 0–2 年 + AI/ML、研究、数据工程类岗位。签证：职位�
 | Hive | [Machine Learning Engineer](https://jobs.lever.co/hive/b60b0f85-8aed-4751-9f2c-5b92060c64a2) | San Francisco | 2026-10-15 | GitHub New Grad 列表、官方·Lever | valid |
 | Thumbtack | [Software Engineer, AI/ML Infrastructure (US-Based)](https://jobs.ashbyhq.com/thumbtack/3efb1a7b-cfaf-475a-86a9-abff37581b4b) | Remote, United States; United States | 2026-10-14 | GitHub New Grad 列表、官方·Ashby | valid |
 | Arizent | [Data & AI Engineer](https://jobs.ashbyhq.com/arizent/5f246f2b-8cd1-41ec-916c-9ed37a6b07a5) | NYC \| Midtown Manhattan; United States | 2026-10-13 | GitHub New Grad 列表、官方·Ashby | valid |
+| Brillio | [AI Engineer](https://jobs.lever.co/brillio-2/3de75f8b-9ddc-4908-b67d-d6e91bafd9e2) | Dallas, Texas, United States (US) | 2026-10-12 | GitHub New Grad 列表、官方·Lever | valid |
+| Handshake | [Machine Learning Engineer](https://jobs.ashbyhq.com/handshake/42aca7f5-2f58-40ef-a6ce-19027d32a12f) | San Francisco, CA; United States | 2026-10-08 | GitHub New Grad 列表、官方·Ashby | valid |
+| Artera | [Machine Learning Scientist, Computational Pathology](https://jobs.lever.co/artera/e69fa8b3-ecad-4f6a-b8b6-77d6542dfbe1) | Remote-US (US) | 2026-10-08 | GitHub New Grad 列表、官方·Lever | valid |
+| Niantic Spatial | [AI Engineer, Computer Vision](https://jobs.ashbyhq.com/niantic-spatial/aa5cac58-e677-4238-9d90-f05f3da9cd4f) | San Francisco, CA; United States | 2026-10-07 | GitHub New Grad 列表、官方·Ashby | valid |
+| SteerBridge | [Junior NLP Data Scientist](https://jobs.lever.co/steerbridge/16c834c5-5462-46dd-bd83-da94dc2f0101) | Vienna, VA (US) | 2026-10-06 | GitHub New Grad 列表、官方·Lever | valid |
+| Mach9 | [ML Engineer, Product](https://jobs.ashbyhq.com/mach9/622a014b-ff77-45bd-9caa-61a6506884ed) | San Francisco; USA | 2026-10-01 | GitHub New Grad 列表、官方·Ashby | valid |
 
 ## 小公司 Outreach 队列
 
-142 家公司（官方 Board 在招 ≤30 个岗位作为规模代理，或在 HN Who is hiring 发帖）。其中 24 家在公开招聘帖里写了联系邮箱；没有一个联系人是猜的或从别处查的。负责人姓名未核实一律留空。每家附一份草稿，经历部分留空待你填写，**没有发送任何邮件或私信**。详见 `outreach.json` / `outreach.csv`。
+140 家公司（官方 Board 在招 ≤30 个岗位作为规模代理，或在 HN Who is hiring 发帖）。其中 24 家在公开招聘帖里写了联系邮箱；没有一个联系人是猜的或从别处查的。负责人姓名未核实一律留空。每家附一份草稿，经历部分留空待你填写，**没有发送任何邮件或私信**。详见 `outreach.json` / `outreach.csv`。
 
 ## 每日清单（`jh pending`）
 
 - approve_match：40
 - outreach_draft：24
 - question：1
-- audit_disagreement：11
+- audit_disagreement：16
 
 批准或驳回用 `jh label <清单 id> fit|not_fit`，你的每个决定都存进评测集（`data/labels/triage.jsonl`），以后改规则先在上面跑分。
 

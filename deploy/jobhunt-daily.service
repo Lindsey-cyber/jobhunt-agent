@@ -1,0 +1,14 @@
+[Unit]
+Description=jobhunt-agent daily coordinator pass (discovery, audit, report)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=jobhunt
+Group=jobhunt
+WorkingDirectory=/opt/jobhunt-agent
+EnvironmentFile=/etc/jobhunt/env
+ExecStart=/opt/jobhunt-agent/deploy/daily.sh
+TimeoutStartSec=2h
+Nice=5

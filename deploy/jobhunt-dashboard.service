@@ -1,0 +1,13 @@
+[Unit]
+Description=jobhunt-agent dashboard on 127.0.0.1:8787 (reach it through an SSH tunnel)
+After=network.target
+
+[Service]
+User=jobhunt
+Group=jobhunt
+WorkingDirectory=/opt/jobhunt-agent
+ExecStart=/usr/bin/npm run -s jh -- serve --port 8787
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

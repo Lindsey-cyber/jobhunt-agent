@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the jobhunt-agent coordinator every morning
+
+[Timer]
+# 11:23 UTC is 7:23 in New York (6:23 in winter); results are ready before the day starts.
+OnCalendar=*-*-* 11:23:00 UTC
+RandomizedDelaySec=10min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

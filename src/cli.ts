@@ -10,6 +10,7 @@ import { DEFAULT_AUDIT_MODEL, runAuditor } from "./org/auditor.ts";
 import { authUrl, fetchAlerts, finishAuth, gmailConfigured } from "./sources/gmail.ts";
 import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
+import { serve } from "./run/serve.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { readCatalog } from "./store/catalog.ts";
 import { Ledger } from "./store/ledger.ts";
@@ -34,6 +35,7 @@ const USAGE = `jh <command>
   answer <review-id> <text>            record your answer to a question on the review list
   eval [--record]                      score triage rules on your labels; fails if worse than the baseline
   trust [promote <stage>]              stage trust levels; promotion is yours to make
+  serve [--port <n>]                   dashboard, report and review list on 127.0.0.1 (default port 8787)
   status                               latest state of every application
   pending                              today's review list: held applications, matches to approve, questions
   doctor                               check the data directory and the browser`;
@@ -55,6 +57,7 @@ const { positionals, values } = parseArgs({
     record: { type: "boolean", default: false },
     model: { type: "string" },
     code: { type: "string" },
+    port: { type: "string", default: "8787" },
   },
 });
 const [command, url, arg2] = positionals;
@@ -145,6 +148,11 @@ switch (command) {
     console.log(`postings seen ${seen.length}: match ${n("match")}, review ${n("review")}, reject ${n("reject")}`);
     console.log(`queued ${r.queued} for approval; audit sample ${r.auditSize} in ${r.auditDir}; outreach ${r.outreach.length} companies`);
     console.log(`report ${r.reportDir}/REPORT.md`);
+    break;
+  }
+  case "serve": {
+    serve(user().dir, Number(values.port));
+    console.log(`serving on http://127.0.0.1:${values.port}`);
     break;
   }
   case "report": {

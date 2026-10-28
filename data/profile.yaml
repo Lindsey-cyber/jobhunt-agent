@@ -29,6 +29,8 @@ education:
     gradMonth: 6
     gradYear: 2023
     gpa: "3.82"
+# The candidate (2026-10-28): no non-compete, non-solicitation or similar agreement.
+restrictiveAgreements: false
 workAuthorization:
   authorizedCountries: [United States]
   needsSponsorship: true
@@ -40,3 +42,8 @@ eeo:
   disability: "no"
 documents:
   resume: Lindsey_Ma_Resume.pdf
+# From the resume (2026-10-28), for "have you worked for X before?" questions.
+workHistory:
+  - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+  - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+  - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }

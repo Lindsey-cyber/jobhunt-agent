@@ -16,6 +16,8 @@ if ! npm run -s check > /tmp/jobhunt-check.log 2>&1; then
 fi
 
 jh daily || status=1
+# Apply manager: submit what the candidate approved, within the daily cap.
+jh apply-approved || status=1
 if [ -n "${ANTHROPIC_API_KEY:-}" ]; then
   jh audit run || { echo "audit run failed; the sample stays for the next session to judge"; status=1; }
 else

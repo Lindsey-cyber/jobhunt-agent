@@ -42,6 +42,10 @@ export const Profile = z.object({
       }),
     )
     .min(1),
+  // The candidate (2026-10-28): bound by no non-compete, non-solicitation or similar agreement.
+  restrictiveAgreements: z.boolean().optional(),
+  // Employers from the resume, for "have you worked for X before?" questions.
+  workHistory: z.array(z.object({ employer: z.string().min(1), title: z.string().optional(), start: z.string().optional(), end: z.string().optional() })).default([]),
   workAuthorization: z.object({
     authorizedCountries: z.array(z.string().min(1)),
     needsSponsorship: z.boolean(),

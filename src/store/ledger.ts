@@ -49,6 +49,10 @@ export class Ledger {
     return this.events.filter((e) => e.state === "submitted" && e.at.startsWith(day)).length;
   }
 
+  history(key: ApplicationKey): LedgerEvent[] {
+    return this.events.filter((e) => e.key === key);
+  }
+
   latest(): LedgerEvent[] {
     const byKey = new Map<ApplicationKey, LedgerEvent>();
     for (const e of this.events) byKey.set(e.key, e);

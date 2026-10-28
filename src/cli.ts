@@ -1,8 +1,12 @@
+import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { parseDocument, type YAMLSeq } from "yaml";
+import { queueQuestions } from "./store/questions.ts";
 import { parseArgs } from "node:util";
 import { chromium } from "playwright";
 import { loadUserData } from "./profile/load.ts";
-import { apply } from "./run/apply.ts";
+import { apply, sameJob } from "./run/apply.ts";
+import { excludedBy } from "./discover/exclude.ts";
 import type { JobKey } from "./domain/job.ts";
 import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
@@ -11,6 +15,7 @@ import { authUrl, fetchAlerts, finishAuth, gmailConfigured } from "./sources/gma
 import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
 import { serve } from "./run/serve.ts";
+import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { readCatalog } from "./store/catalog.ts";
 import { Ledger } from "./store/ledger.ts";
@@ -31,6 +36,10 @@ const USAGE = `jh <command>
                                        the latest blind sample, then score it
   audit score <verdicts.jsonl> [--auditor <name>]
                                        score the independent auditor's blind verdicts; adjusts triage trust
+  applications [--out <dir>]           page of every application: fields filled, read back, screenshot
+  questions                            collect the questions holding applications into the review list, once each
+  apply-approved [--limit <n>]         submit postings you approved (fit labels) that have an adapter, within the
+                                       daily cap; skips excluded employers and anything already applied to
   label <review-id|job-key> fit|not_fit [--note <text>]
                                        record your decision on a posting (feeds the eval set)
   answer <review-id> <text>            record your answer to a question on the review list
@@ -59,6 +68,8 @@ const { positionals, values } = parseArgs({
     model: { type: "string" },
     code: { type: "string" },
     port: { type: "string", default: "8787" },
+    limit: { type: "string" },
+    out: { type: "string" },
   },
 });
 const [command, url, arg2] = positionals;
@@ -98,6 +109,43 @@ switch (command) {
     console.log(`match ${count("match")}  review ${count("review")}  reject ${count("reject")}`);
     console.log(`sources ok ${r.outcomes.filter((o) => o.ok).length}, failed ${r.outcomes.filter((o) => !o.ok).length}`);
     console.log(`run ${r.runDir}`);
+    break;
+  }
+  case "applications": {
+    const u = user();
+    console.log(await writeApplicationsPage(ledgerOf(u.dir), values.out ?? join(u.dir, "runs", "applications")));
+    break;
+  }
+  case "questions": {
+    const u = user();
+    const n = queueQuestions(ledgerOf(u.dir), new ReviewList(paths(u.dir).review));
+    console.log(`${n} distinct questions hold applications; see jh pending and answer with jh answer <id> <text>`);
+    break;
+  }
+  case "apply-approved": {
+    const u = user();
+    const ledger = ledgerOf(u.dir);
+    const catalog = readCatalog(paths(u.dir).catalog);
+    const fit = [...new Map(readLabels(u.dir).map((l) => [l.key, l])).values()].filter((l) => l.label === "fit");
+    const ready = fit
+      .map((l) => catalog.get(l.key as JobKey))
+      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      .filter((j) => {
+        const prior = sameJob(ledger, j.url);
+        return !prior || ledger.canStart(prior.key);
+      });
+    const limit = Number(values.limit ?? u.config.dailySubmitCap);
+    console.log(`${ready.length} approved postings with an adapter are not yet applied to; trying up to ${limit}`);
+    for (const j of ready.slice(0, limit)) {
+      if (ledger.submittedOn(new Date().toISOString().slice(0, 10)) >= u.config.dailySubmitCap) break;
+      try {
+        const r = await apply({ url: j.url, user: u, ledger, approved: true });
+        console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
+      } catch (e) {
+        console.log(`${j.company} · ${j.title}: error ${(e as Error).message.split("\n")[0]}`);
+      }
+    }
+    queueQuestions(ledger, new ReviewList(paths(u.dir).review));
     break;
   }
   case "status": {
@@ -192,8 +240,18 @@ switch (command) {
   }
   case "answer": {
     if (!url || !arg2) throw new Error("usage: jh answer <review-id> <text>");
-    const review = new ReviewList(paths(user().dir).review);
-    if (review.get(url)?.status !== "open") throw new Error(`no open review item ${url}`);
+    const u = user();
+    const review = new ReviewList(paths(u.dir).review);
+    const item = review.get(url);
+    if (item?.status !== "open") throw new Error(`no open review item ${url}`);
+    // A form question: the answer goes into the answer bank, reused on every form.
+    if (url.startsWith("question:form:")) {
+      const bankPath = join(u.dir, "answers.yaml");
+      const doc = parseDocument(readFileSync(bankPath, "utf8"));
+      const list = doc.get("answers") as YAMLSeq;
+      list.add(doc.createNode({ id: url.slice("question:".length), question: item.subject, answer: arg2, origin: "human" }));
+      writeFileSync(bankPath, doc.toString());
+    }
     review.resolve(url, arg2);
     console.log(`answered ${url}`);
     break;

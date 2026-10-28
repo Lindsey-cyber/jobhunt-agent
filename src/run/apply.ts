@@ -4,6 +4,7 @@ import { chromium, type Page } from "playwright";
 import { applicationKey, type ApplicationKey } from "../domain/form.ts";
 import type { SubmitHelpers } from "../ats/adapter.ts";
 import { adapterFor } from "../ats/registry.ts";
+import { jobKey } from "../discover/identity.ts";
 import { gmailConfigured, waitForSecurityCode } from "../sources/gmail.ts";
 import { gate, type GateDecision } from "../gate/gate.ts";
 import { buildPlan, type FillPlan } from "../plan/plan.ts";
@@ -61,8 +62,32 @@ export async function apply(opts: ApplyOptions): Promise<ApplyResult> {
   }
 }
 
+// The same posting reached through another URL (an employer domain with
+// gh_jid, the embed form) must never count as a new application.
+export function sameJob(ledger: Ledger, url: string): { key: ApplicationKey; state: AppState } | undefined {
+  const id = jobKey(url);
+  if (id.startsWith("url:")) return undefined;
+  const hit = ledger.latest().find((e) => jobKey(`https://${e.key.slice(e.key.indexOf(":") + 1)}`) === id);
+  return hit && { key: hit.key, state: hit.state };
+}
+
+// Hosted Greenhouse boards may redirect to the employer's careers page and
+// frame the form there; the embed URL serves the same form directly.
+export function formUrl(url: string): string {
+  const id = jobKey(url);
+  const u = new URL(url);
+  const board = u.pathname.split("/").filter(Boolean)[0];
+  if (id.startsWith("greenhouse:") && u.hostname.endsWith("greenhouse.io") && board && board !== "embed") {
+    return `https://job-boards.greenhouse.io/embed/job_app?for=${board}&token=${id.slice("greenhouse:".length)}`;
+  }
+  return url;
+}
+
 async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000 }: ApplyOptions): Promise<ApplyResult> {
-  await page.goto(url);
+  const earlier = sameJob(ledger, url);
+  if (earlier && !ledger.canStart(earlier.key)) return { outcome: "skipped", key: earlier.key, state: earlier.state };
+  await page.goto(formUrl(url));
+  if (/[?&]error=true/.test(page.url())) throw new Error(`the posting is closed (the board redirected to ${page.url()})`);
   // Boards sometimes serve a blank page to quick repeat visits; reload with backoff before giving up.
   let adapter = await adapterFor(page);
   for (let i = 1; !adapter && i <= 3; i++) {

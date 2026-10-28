@@ -148,7 +148,9 @@ export const greenhouse: AtsAdapter = {
         case "combobox": {
           const container = comboboxContainer(page, f.id);
           const value = container.locator(".select__single-value");
-          out[f.id] = (await value.count()) > 0 ? optionText(await value.innerText()) : "";
+          // Multi-selects show each choice as a tag instead of one value.
+          const tags = container.locator(".select__multi-value__label");
+          out[f.id] = (await value.count()) > 0 ? optionText(await value.innerText()) : (await tags.allInnerTexts()).map(optionText).join(", ");
           // A value shown as a dialing code ("+1") is ambiguous; read which option the menu marks selected.
           if (/^\+\d+$/.test(out[f.id]!)) {
             await container.locator(".select__control").click();

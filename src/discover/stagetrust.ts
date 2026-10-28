@@ -48,5 +48,9 @@ export function recordAudit(state: StageState, score: AuditScore, at: string): {
   }
   const last = audits.slice(-THRESHOLDS.cleanAuditsToPromote);
   const promotable = state.level === "confirm" && last.length === THRESHOLDS.cleanAuditsToPromote && last.every(clean);
-  return { state: { ...state, audits }, demoted: false, promotable };
+  let streak = 0;
+  for (const a of [...audits].reverse()) if (clean(a)) streak++; else break;
+  const pct = (x: number | null) => (x == null ? "n/a" : `${(x * 100).toFixed(1)}%`);
+  const reason = `audit ${at}: false-match ${pct(rec.falseMatchRate)}, miss ${pct(rec.missRate)}, within the ${THRESHOLDS.demoteAbove * 100}% limit; ${streak} of ${THRESHOLDS.cleanAuditsToPromote} clean (≤${THRESHOLDS.promoteAtMost * 100}%) audits in a row toward proposing auto`;
+  return { state: { ...state, audits, reason }, demoted: false, promotable };
 }

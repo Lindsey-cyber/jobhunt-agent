@@ -1,7 +1,7 @@
 name,channel,url,ok,count,size,note,discoveredFrom
 Anthropic,official_greenhouse,https://job-boards.greenhouse.io/anthropic,true,681,medium_large,,
 Databricks,official_greenhouse,https://job-boards.greenhouse.io/databricks,true,893,medium_large,,
-Stripe,official_greenhouse,https://job-boards.greenhouse.io/stripe,true,715,medium_large,,
+Stripe,official_greenhouse,https://job-boards.greenhouse.io/stripe,true,716,medium_large,,
 Pinterest,official_greenhouse,https://job-boards.greenhouse.io/pinterest,true,160,medium_large,,
 Reddit,official_greenhouse,https://job-boards.greenhouse.io/reddit,true,160,medium_large,,
 Roblox,official_greenhouse,https://job-boards.greenhouse.io/roblox,true,271,medium_large,,
@@ -18,7 +18,7 @@ Instacart,official_greenhouse,https://job-boards.greenhouse.io/instacart,true,94
 Discord,official_greenhouse,https://job-boards.greenhouse.io/discord,true,46,medium_large,,
 GitLab,official_greenhouse,https://job-boards.greenhouse.io/gitlab,true,238,medium_large,,
 Cloudflare,official_greenhouse,https://job-boards.greenhouse.io/cloudflare,true,461,medium_large,,
-Datadog,official_greenhouse,https://job-boards.greenhouse.io/datadog,true,424,medium_large,,
+Datadog,official_greenhouse,https://job-boards.greenhouse.io/datadog,true,422,medium_large,,
 MongoDB,official_greenhouse,https://job-boards.greenhouse.io/mongodb,true,363,medium_large,,
 Elastic,official_greenhouse,https://job-boards.greenhouse.io/elastic,true,406,medium_large,,
 Twilio,official_greenhouse,https://job-boards.greenhouse.io/twilio,true,132,medium_large,,

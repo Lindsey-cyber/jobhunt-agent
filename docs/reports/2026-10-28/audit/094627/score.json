@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-28T09:50:59.780Z",
+  "auditor": "Sonnet subagent (fresh instance), blind, brief + postings only",
+  "sampleSize": 110,
+  "missing": [],
+  "score": {
+    "judged": 95,
+    "unsure": 15,
+    "falseMatchRate": 0.06060606060606061,
+    "matchJudged": 33,
+    "missRate": 0,
+    "rejectJudged": 20,
+    "nearMissRate": 0.06896551724137931,
+    "nearJudged": 29,
+    "reviewFit": 5,
+    "reviewNotFit": 8,
+    "byRule": {
+      "level.senior": {
+        "judged": 17,
+        "disagree": 0
+      },
+      "match": {
+        "judged": 33,
+        "disagree": 2
+      },
+      "role.out_of_scope": {
+        "judged": 18,
+        "disagree": 0
+      },
+      "type.internship": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "location.non_us": {
+        "judged": 3,
+        "disagree": 0
+      },
+      "experience.too_senior": {
+        "judged": 4,
+        "disagree": 1
+      },
+      "role.non_engineering": {
+        "judged": 4,
+        "disagree": 1
+      },
+      "auth.citizenship": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "degree.phd_required": {
+        "judged": 1,
+        "disagree": 0
+      }
+    },
+    "disagreements": [
+      {
+        "id": "a006",
+        "key": "url:https://careers-peraton.icims.com/jobs/171539/artificial-intelligence-machine-learning-%28ai-ml%29-engineer-1-top-secret-sci-w-poly/job",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "Title requires \"Top Secret/SCI w/Poly\" clearance, which needs US citizenship."
+      },
+      {
+        "id": "a036",
+        "key": "url:https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210773954",
+        "stratum": "reject_near",
+        "verdict": "reject",
+        "rule": "role.non_engineering",
+        "fit": "yes",
+        "reason": "\"Data and Artificial Intelligence Analyst\" on a new-grad list in US locations."
+      },
+      {
+        "id": "a037",
+        "key": "ashby:23c60c30-8329-443a-8297-73cfc529c103",
+        "stratum": "reject_near",
+        "verdict": "reject",
+        "rule": "experience.too_senior",
+        "fit": "yes",
+        "reason": "\"AI Performance Engineer\" for distributed training and inference infrastructure in Sunnyvale, listed on a new-grad list with no years stated."
+      },
+      {
+        "id": "a042",
+        "key": "lever:303b3b2f-9679-4a77-8908-456e29240486",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"applicants must be currently authorized to work in the United States ... without the need for current or future employer sponsorship\"."
+      }
+    ]
+  }
+}

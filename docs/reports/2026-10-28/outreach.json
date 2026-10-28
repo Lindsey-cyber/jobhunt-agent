@@ -174,7 +174,7 @@
       {
         "title": "AI Space Systems Software Engineer",
         "url": "https://jobs.ashbyhq.com/oligo/1eda6c7f-694c-497e-a648-f9f388130cbc",
-        "verdict": "match",
+        "verdict": "review",
         "location": "Hawthorne; United States"
       }
     ],
@@ -698,24 +698,6 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "Spectral Labs",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Research Scientist, RL",
-        "url": "https://jobs.ashbyhq.com/spectral%20labs/c77ef954-886e-4c28-a979-479a94091a63",
-        "verdict": "review",
-        "location": "San Francisco; United States"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Spectral Labs team,\n\nI came across the Research Scientist, RL opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
     "company": "Sheer Health ( https://www.sheerhealth.com )",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [
@@ -1128,30 +1110,6 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "Aquatic Capital Management",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Quantitative Researcher",
-        "url": "https://job-boards.greenhouse.io/aquaticcapitalmanagement/jobs/7529282002",
-        "verdict": "review",
-        "location": "Chicago; New York; London"
-      },
-      {
-        "title": "Quantitative Researcher, Early Career",
-        "url": "https://job-boards.greenhouse.io/aquaticcapitalmanagement/jobs/8489150002",
-        "verdict": "review",
-        "location": "Chicago; New York"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Aquatic Capital Management team,\n\nI came across the Quantitative Researcher opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
     "company": "Descript",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -1203,6 +1161,24 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Tubi team,\n\nI came across the Data Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Aquatic Capital Management",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Quantitative Researcher, Early Career",
+        "url": "https://job-boards.greenhouse.io/aquaticcapitalmanagement/jobs/8489150002",
+        "verdict": "review",
+        "location": "Chicago; New York"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Aquatic Capital Management team,\n\nI came across the Quantitative Researcher, Early Career opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {

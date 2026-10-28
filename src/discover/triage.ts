@@ -54,7 +54,7 @@ const NO_SPONSOR = new RegExp(
     String.raw`sponsorship\s+(?:(?:is|will be)\s+)?(?:not (?:available|provided|offered|supported|possible)|unavailable)`,
     String.raw`not (?:eligible|able) (?:for|to receive) (?:visa |immigration )?sponsorship`,
     String.raw`(?:must|require[sd]?).{0,80}unrestricted.{0,40}(?:authorization|right to work)`,
-    String.raw`(?:authorized|eligible|authorization)\s+to\s+work.{0,90}without.{0,40}(?:the need for |requiring )?(?:visa\s+)?sponsorship`,
+    String.raw`(?:authorized|eligible|authorization)\s+to\s+work.{0,90}without.{0,70}?(?:visa\s+)?sponsorship`,
   ].join("|"),
   "gi",
 );
@@ -155,6 +155,8 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   if (hints.sponsorship && /not offer|citizenship/i.test(hints.sponsorship) && me.needsSponsorship) {
     return v("review", "auth.list_says_no_sponsorship", `New-grad list says "${hints.sponsorship}"; confirm on the official posting`);
   }
+  const clearanceTitle = /\b(?:ts\/sci|top secret|secret clearance|clearance required|cleared|w\/\s?poly|polygraph)\b/i.exec(title);
+  if (clearanceTitle && !me.usCitizen) return v("reject", "auth.citizenship", `Title requires a security clearance: "${clearanceTitle[0]}"`);
   const citizenship = [...body.matchAll(new RegExp(CITIZENSHIP, "gi"))].find((m) => !/prefer|nice to have|a plus|bonus/i.test(body.slice(Math.max(0, m.index - 40), m.index + m[0].length + 20)));
   if (citizenship && !me.usCitizen) {
     const ctx = body.slice(Math.max(0, citizenship.index - 40), citizenship.index + citizenship[0].length + 30).replace(/\s+/g, " ");

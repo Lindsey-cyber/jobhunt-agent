@@ -31,6 +31,10 @@
 - 评测集：`jh label` 存候选人的决定（带当时的证据），`tests/eval.test.ts` 让 `npm run check` 在规则变差时失败。
 - 总管/经理骨架：`src/org/coordinator.ts`；流程写在 `.claude/skills/daily-discovery/SKILL.md`。
 
+审计结果（同一天三轮，每轮新的盲样本 + 新的 Sonnet 审核实例，代码打分）：误筛率 27.0% → 16.7% → 6.1%（n=37/30/33），漏筛率 5.0% → 0% → 0%（n=20）。每轮的分歧都已变成规则修复和测试（`tests/discover.test.ts` 里按轮次标注）。第三轮后又修了两处（标题里的安全许可、41 字符长的不担保句子），下一次 `jh daily` 生效，尚未单独审计。筛选环节信任等级保持 `confirm`。
+
+已知局限：Gmail 邮件是 agent 按机械规则手抄到 `data/inbox/`，5/5 抽查与原邮件逐条一致，但不是程序直接保存；VPS 上改用 Gmail API 后消除。Workday 只做关键词搜索。仅第三方来源的匹配（434/535，多为 TikTok/ByteDance 等无公开 ATS API 的公司）没有官方发布日期。
+
 下一步：
 
 1. 等候选人看报告、回答每日清单里的问题（Data Scientist 是否算目标岗位）并批准/驳回匹配，形成第一版评测集，然后 `jh eval --record`。

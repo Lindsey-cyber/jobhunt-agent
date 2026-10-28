@@ -1,0 +1,772 @@
+[
+  {
+    "id": "a001",
+    "key": "ashby:affd3040-91e4-4e0c-bd2f-4b022c613f91",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a002",
+    "key": "url:https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26012988",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a003",
+    "key": "workday:relx:r119818",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a004",
+    "key": "ashby:a01fc9ed-de08-4326-9206-4ee3f08000dc",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a005",
+    "key": "linkedin:4471125075",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a006",
+    "key": "url:https://careers-peraton.icims.com/jobs/171539/artificial-intelligence-machine-learning-%28ai-ml%29-engineer-1-top-secret-sci-w-poly/job",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a007",
+    "key": "lever:0f7d1e01-1f74-4786-944d-910208d390fa",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a008",
+    "key": "glassdoor:1010301622995",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a009",
+    "key": "greenhouse:4702215006",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a010",
+    "key": "lever:a4b9313c-b668-492b-a337-f02bad316c05",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a011",
+    "key": "workday:nvidia:jr2025542",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "type.internship"
+  },
+  {
+    "id": "a012",
+    "key": "greenhouse:4662901006",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a013",
+    "key": "greenhouse:8036541",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a014",
+    "key": "tiktok:7615352357392697653",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a015",
+    "key": "lever:5feb731a-a187-4484-a901-0d378c91889d",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a016",
+    "key": "greenhouse:4333066009",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a017",
+    "key": "greenhouse:4534631005",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a018",
+    "key": "url:https://joinbytedance.com/search/7671034858089040181",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a019",
+    "key": "greenhouse:8614963002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a020",
+    "key": "greenhouse:8041360",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a021",
+    "key": "greenhouse:7351066",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a022",
+    "key": "workday:nvidia:jr2027611",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a023",
+    "key": "linkedin:4475318943",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a024",
+    "key": "workday:nvidia:jr2021814",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a025",
+    "key": "workday:blackrock:r266949",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a026",
+    "key": "ashby:4b543db7-650d-4fea-a379-7181f65de144",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a027",
+    "key": "greenhouse:4681256006",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a028",
+    "key": "url:https://fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/nfcu/job/32743",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a029",
+    "key": "workday:nvidia:jr2021918",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a030",
+    "key": "greenhouse:8180692",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a031",
+    "key": "greenhouse:5433011008",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a032",
+    "key": "workday:capitalone:r1003211-1",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a033",
+    "key": "url:https://infinitive.applytojob.com/apply/6LPXaivOQd/Consultant-Data-Engineer",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a034",
+    "key": "greenhouse:4402424009",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a035",
+    "key": "tiktok:7668854153882011957",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a036",
+    "key": "url:https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210773954",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a037",
+    "key": "ashby:23c60c30-8329-443a-8297-73cfc529c103",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a038",
+    "key": "lever:cc43bf88-ed84-408f-a557-3d1c7263ddff",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a039",
+    "key": "greenhouse:8189002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a040",
+    "key": "tiktok:7668389759463393589",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a041",
+    "key": "tiktok:7685552743586826549",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a042",
+    "key": "lever:303b3b2f-9679-4a77-8908-456e29240486",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a043",
+    "key": "greenhouse:4513943005",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a044",
+    "key": "url:https://apply.workable.com/opendatajobs/j/3E1192A290",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a045",
+    "key": "greenhouse:8130355",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a046",
+    "key": "ashby:48cbdfbc-c377-49bd-b39b-4c2d77357135",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a047",
+    "key": "ashby:4e7b3471-20b7-4a37-8455-8b2735bfaf26",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a048",
+    "key": "workday:varsitybrands:jr114562",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a049",
+    "key": "tiktok:7665973724622342453",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a050",
+    "key": "greenhouse:5196852008",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a051",
+    "key": "tiktok:7153294049829849351",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a052",
+    "key": "url:https://jobs.bytedance.com/en/position/7623545981743286533/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a053",
+    "key": "workday:gevernova:r5057035-2",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a054",
+    "key": "workday:nvidia:jr2028237",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a055",
+    "key": "lever:d7723e9e-43cb-4faf-85c0-e6edbad992d8",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a056",
+    "key": "greenhouse:4675694005",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a057",
+    "key": "greenhouse:8745037002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a058",
+    "key": "ashby:89ed36d3-d7e4-4c41-b466-2e39a30a84f4",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a059",
+    "key": "ashby:a611aef9-b53e-4da1-bd1f-da78e0da22a0",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a060",
+    "key": "greenhouse:5100128007",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a061",
+    "key": "ashby:872ca3d0-c8c0-4585-9a34-7f9ed6b4dbf9",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a062",
+    "key": "tiktok:7676647728043280645",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a063",
+    "key": "greenhouse:8652223002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a064",
+    "key": "url:https://jobs.bytedance.com/en/position/7623543401908848949/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a065",
+    "key": "lever:8cc1d9ff-c189-41f0-a24d-ec98be70b9ee",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a066",
+    "key": "workday:draper:jr003064",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a067",
+    "key": "lever:fb28b563-9ede-4845-802a-b1c505c7f7da",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a068",
+    "key": "url:https://www.tesla.com/careers/search/job/279543",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a069",
+    "key": "ashby:332102e4-db8a-4276-9bb4-de7bc92a8f2a",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a070",
+    "key": "workday:generalmotors:jr-202620428",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a071",
+    "key": "tiktok:7665989305914984709",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a072",
+    "key": "url:https://careers-steampunk.icims.com/jobs/8036/mlops-engineer/job",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a073",
+    "key": "greenhouse:8627768002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a074",
+    "key": "url:https://wd1.myworkdaysite.com/recruiting/fmr/FidelityCareers/job/Durham-NC/Principal-AI-ML-Engineer_2135682",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a075",
+    "key": "greenhouse:8207747",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a076",
+    "key": "url:https://jobs.bytedance.com/en/position/7670550401380878645/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a077",
+    "key": "url:https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21550",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a078",
+    "key": "workday:ebay:r0075757",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a079",
+    "key": "greenhouse:8234060",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a080",
+    "key": "greenhouse:4695183006",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "auth.citizenship"
+  },
+  {
+    "id": "a081",
+    "key": "url:https://qualcomm.eightfold.ai/careers/job/446718018413",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a082",
+    "key": "greenhouse:8039191",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a083",
+    "key": "tiktok:7668669015051405573",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a084",
+    "key": "url:https://jobs.l3harris.com/job/Carlsbad-Sr-Associate,-Software-Engineer-CA-92009/1429219000?ats=successfactors",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a085",
+    "key": "linkedin:4477162347",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a086",
+    "key": "tiktok:7631070662808160565",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.research_unclear"
+  },
+  {
+    "id": "a087",
+    "key": "glassdoor:1010294298137",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a088",
+    "key": "tiktok:7633601975876880645",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a089",
+    "key": "url:https://careers-cfins.icims.com/jobs/5053/associate-data-engineer-%28remote%29/job",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a090",
+    "key": "greenhouse:5455627008",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a091",
+    "key": "url:https://jobs.bytedance.com/en/position/7629126608919382277/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a092",
+    "key": "url:https://www.google.com/about/careers/applications/jobs/results/123087196289671878",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "degree.phd_required"
+  },
+  {
+    "id": "a093",
+    "key": "greenhouse:8875025002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a094",
+    "key": "greenhouse:5141647007",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a095",
+    "key": "url:http://careers.jhuapl.edu/jobs/59653",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a096",
+    "key": "workday:aero:r016459",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a097",
+    "key": "workday:hpe:1213631",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a098",
+    "key": "ashby:5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a099",
+    "key": "ashby:7f299784-2c75-4d73-99e5-1e5043ec7b48",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a100",
+    "key": "greenhouse:5212860007",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a101",
+    "key": "greenhouse:8487768002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a102",
+    "key": "lever:499543e3-78e7-473a-8a1d-a82ce9ce9030",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a103",
+    "key": "workday:thermofisher:r-01372756",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a104",
+    "key": "greenhouse:8036615003",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a105",
+    "key": "greenhouse:5285557008",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a106",
+    "key": "url:https://jobs.bytedance.com/en/position/7667334059728341253/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a107",
+    "key": "workday:gevernova:r5057035-1",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.data_science"
+  },
+  {
+    "id": "a108",
+    "key": "greenhouse:4092111009",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a109",
+    "key": "greenhouse:8832899002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a110",
+    "key": "tiktok:7675616322118584629",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  }
+]

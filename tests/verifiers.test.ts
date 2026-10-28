@@ -127,3 +127,15 @@ describe("review list", () => {
     expect(new ReviewList(path).add({ ...item, id: "match:b" })).toBe(true);
   });
 });
+
+describe("catalog rules", () => {
+  it("drops text only for rules that never read the description", async () => {
+    const { TITLE_RULES } = await import("../src/store/catalog.ts");
+    const { triage } = await import("../src/discover/triage.ts");
+    const me = { needsSponsorship: true, usCitizen: false, hasPhd: false };
+    const bodyOnly = (description: string) => triage({ title: "ML Engineer, New Grad", location: "New York, NY", description, official: true, hints: {} }, me).rule;
+    for (const d of ["Pursuing PhD in Computer Science.", "Must be a U.S. Citizen with an active Secret clearance.", "Requires 5+ years of experience.", "We are unable to sponsor visas."]) {
+      expect(TITLE_RULES).not.toContain(bodyOnly(d));
+    }
+  });
+});

@@ -187,6 +187,12 @@ describe("triage", () => {
     expect(triage(job("ML Engineer, New Grad", { description: "2+ years of experience with PyTorch is a plus." }), me).verdict).toBe("match");
   });
 
+  // Cases from audit round 3.
+  it("reads clearances in titles and long no-sponsorship sentences", () => {
+    expect(triage(job("Artificial Intelligence/Machine Learning (AI/ML) Engineer 1 - Top Secret/SCI w/Poly", { location: "Herndon, VA" }), me).rule).toBe("auth.citizenship");
+    expect(triage(job("Entry Level Software Engineer, Recommendations", { description: "Applicants must be currently authorized to work in the United States on a full-time basis, without the need for current or future employer sponsorship for an employment-based visa status." }), me).rule).toBe("auth.no_sponsorship");
+  });
+
   it("keeps a multi-level title that includes junior, and nothing else senior", () => {
     expect(triage(job("Senior Associate, Data Scientist - Applied AI"), me).rule).toBe("level.senior");
     expect(triage(job("Principal Scientist / Associate Director, Agentic AI Research"), me).rule).toBe("level.senior");

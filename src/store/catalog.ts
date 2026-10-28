@@ -9,7 +9,9 @@ import type { Job, JobKey } from "../domain/job.ts";
 // such as an ITAR clause often sit at the very end, and labels store this text
 // as their evidence. The plain file is ignored by git; a gzip copy next
 // to it is committed so a fresh cloud session keeps first-seen history.
-const TITLE_RULES = ["role.out_of_scope", "type.internship", "level.senior", "role.non_engineering", "degree.phd_required", "location.non_us", "source.closed"];
+// Rules decided from the title or location alone. A rule that can also fire on
+// the description (degree.phd_required, auth.citizenship) must not be listed.
+export const TITLE_RULES = ["role.out_of_scope", "type.internship", "level.senior", "role.non_engineering", "location.non_us", "source.closed"];
 
 export function readCatalog(path: string): Map<JobKey, Job> {
   const out = new Map<JobKey, Job>();

@@ -1,0 +1,110 @@
+{"id":"a001","fit":"no","reason":"Location \"IND.Pune; India\" is outside the United States."}
+{"id":"a002","fit":"unsure","reason":"Title \"Software Engineer - SnowConvert AI\" is SWE but builds agentic AI and data migration pipelines with no stated years minimum."}
+{"id":"a003","fit":"unsure","reason":"Mixed posting \"Junior SWE ... Research Engineer, Alignment\" in San Francisco with no requirements given."}
+{"id":"a004","fit":"yes","reason":"\"PhD or Masters in a quantitative discipline\" AI research engineer in SF or Cambridge, no years minimum stated."}
+{"id":"a005","fit":"no","reason":"\"Product Manager, Ecosystem\" requires \"10+ years\" and is not a target role."}
+{"id":"a006","fit":"yes","reason":"\"Research Scientist New Grad\" in Seattle, WA on AI/ML/Data list."}
+{"id":"a007","fit":"yes","reason":"\"Associate Data Engineer - Remote\" is an entry-level US data engineering role."}
+{"id":"a008","fit":"no","reason":"Location \"India, Bengaluru\" and \"4+ years of experience in Physical Design\"."}
+{"id":"a009","fit":"yes","reason":"\"Data Lake Infrastructure & Data Analytics Research Engineer Graduate\" in Seattle, WA is a data infra grad role."}
+{"id":"a010","fit":"no","reason":"Located in \"London, UK\" and states \"No visa sponsorship\"."}
+{"id":"a011","fit":"yes","reason":"\"Machine Learning Engineer, GenAI Technology\" in New York, NY with no disqualifier shown."}
+{"id":"a012","fit":"unsure","reason":"\"Research Scientist - Personalization\" in New York with no description, degree and seniority unknown."}
+{"id":"a013","fit":"no","reason":"\"we do not offer sponsorship for this role.\""}
+{"id":"a014","fit":"no","reason":"Dublin, Ireland and \"12+ years of experience\" compliance role."}
+{"id":"a015","fit":"yes","reason":"\"Jr. AI Prompt Engineer\" in Ashburn, VA is a junior AI role."}
+{"id":"a016","fit":"no","reason":"\"Research Intern\" is an internship, not full-time."}
+{"id":"a017","fit":"yes","reason":"\"Data Scientist\" in San Francisco requiring \"BS/MS\" and \"2+ years\", within the allowed range."}
+{"id":"a018","fit":"no","reason":"\"CRM Project Intern\" in Milan (IT)."}
+{"id":"a019","fit":"yes","reason":"\"Data Scientist / Technical Analyst\" in US locations on AI/ML/Data new-grad list."}
+{"id":"a020","fit":"no","reason":"Location \"PRC, Shanghai; China\"."}
+{"id":"a021","fit":"no","reason":"\"Summer Placement 2027\" is a UK placement/internship, not US full-time."}
+{"id":"a022","fit":"yes","reason":"\"Artificial Intelligence Engineer New Grad\" in Laurel, MD."}
+{"id":"a023","fit":"yes","reason":"\"Machine Learning Engineer New Grad - Search Ads\" in San Jose, CA."}
+{"id":"a024","fit":"unsure","reason":"CV/ML engineer role with \"2+ years\" and MS accepted, but requires \"Eligible to obtain and maintain an active U.S. Secret security clearance\"."}
+{"id":"a025","fit":"no","reason":"\"Software Development Engineer 1 - AI/ML Network Infrastructure\" is a software/network infrastructure role, not ML or data."}
+{"id":"a026","fit":"yes","reason":"\"R&D Researcher - AI and Machine Learning\" in Warren, Michigan, no disqualifier shown."}
+{"id":"a027","fit":"yes","reason":"\"AI Scientist\" in New York with no stated disqualifier."}
+{"id":"a028","fit":"yes","reason":"\"Generative AI Engineer\" in Alpharetta, GA with no stated disqualifier."}
+{"id":"a029","fit":"yes","reason":"\"Applied Scientist, Fauna\" in New York, NY is a target applied scientist role with no disqualifier shown."}
+{"id":"a030","fit":"no","reason":"Location \"Germany, Munich\" and \"10+ years of experience\"."}
+{"id":"a031","fit":"no","reason":"\"7+ years of experience\" operations manager role, not a target role."}
+{"id":"a032","fit":"unsure","reason":"\"Associate Research Scientist\" at Northeastern with no description, field and requirements unknown."}
+{"id":"a033","fit":"no","reason":"\"3+ years of experience writing high-performance, well-tested, production-quality code.\""}
+{"id":"a034","fit":"no","reason":"\"4 years of experience in data engineering\" plus \"Senior Data Engineer\" and clearance required."}
+{"id":"a035","fit":"yes","reason":"\"Associate Data Science - Marketing Science\" in NYC is an entry-level data science role."}
+{"id":"a036","fit":"yes","reason":"\"Data Science Analyst\" in Waukesha, WI with no disqualifier shown."}
+{"id":"a037","fit":"yes","reason":"\"Software Engineer, AI Platform - New Grad\" on Data Platform/ML Infrastructure teams in Mountain View."}
+{"id":"a038","fit":"no","reason":"\"AI Operations Team Lead\" overseeing a team is an operations leadership role, not a target role."}
+{"id":"a039","fit":"unsure","reason":"\"Software Engineer, ... Recommendations, Rankings, Predictions\" has no description, SWE with possible ML focus."}
+{"id":"a040","fit":"no","reason":"\"AI Trainer - Voice and Speech Evaluation\" is annotation/evaluation work, not a target role."}
+{"id":"a041","fit":"unsure","reason":"\"Senior Research Scientist\" accepts \"M.S. or Ph.D.\" with no years, but requires \"Eligible to obtain and maintain an active U.S. Top Secret SCI security clearance\"."}
+{"id":"a042","fit":"no","reason":"\"Engineering Manager\" requiring \"8+ years of relevant experience\"."}
+{"id":"a043","fit":"no","reason":"\"At least 4 years of experience in application development\" for Data Engineer 4."}
+{"id":"a044","fit":"no","reason":"\"Head of Enterprise Sales, Japan\" in Tokyo, Japan."}
+{"id":"a045","fit":"yes","reason":"\"AI Software ... Machine Learning Engineering\" in San Diego on new-grad list."}
+{"id":"a046","fit":"no","reason":"\"Winter 2027 Systems Engineer Co-op\" is a co-op, not full-time."}
+{"id":"a047","fit":"yes","reason":"\"Research Engineer, Safety\" in SF/NYC with \"2+ years of experience in AI/ML engineering\", within the allowed range."}
+{"id":"a048","fit":"yes","reason":"\"Data Scientist\" in Bellevue, Washington on new-grad list."}
+{"id":"a049","fit":"yes","reason":"\"Master's degree ... plus One (1) year of experience\" for Software Engineer, Machine Learning in San Francisco."}
+{"id":"a050","fit":"no","reason":"Location \"London, UK; Glasgow, UK\"."}
+{"id":"a051","fit":"no","reason":"\"Systems Test Engineer\" on the Hardware list is not a target role."}
+{"id":"a052","fit":"yes","reason":"\"Machine Learning Engineer\" requiring \"2+ years of industry experience\", within the allowed range."}
+{"id":"a053","fit":"unsure","reason":"\"Quantitative Researcher\" requires \"graduating between December 2026 and August 2027\" which may not match a May 2026 graduate, though statistical learning fits."}
+{"id":"a054","fit":"unsure","reason":"\"Research Scientist\" at Teledyne in Durham with no description and a neuroscience-oriented posting URL."}
+{"id":"a055","fit":"yes","reason":"\"Data Engineer I\" in Little Rock, AR is an entry-level data engineering role."}
+{"id":"a056","fit":"yes","reason":"\"LLM Applications Engineer\" in New York/SF requiring \"2+ years of software development experience\", within the allowed range."}
+{"id":"a057","fit":"no","reason":"Location \"Toronto, Ontario, Canada\" and an \"Engineering Manager\" role."}
+{"id":"a058","fit":"no","reason":"Location \"Bangalore; Noida; India\" and \"5+ years of experience\" in operations."}
+{"id":"a059","fit":"no","reason":"\"12+ years of relevant professional experience\"."}
+{"id":"a060","fit":"no","reason":"Location \"Toronto, Ontario, Canada\" and \"minimum of 12 years of related experience\" for Staff role."}
+{"id":"a061","fit":"no","reason":"\"Sr. Procurement Specialist\" requiring \"5-7+ years of procurement experience\", not a target role."}
+{"id":"a062","fit":"unsure","reason":"\"Software Engineer 1 - Full-stack, Generative AI, Cloud\" is entry-level SWE with a GenAI component and no description."}
+{"id":"a063","fit":"yes","reason":"\"AI Engineer - Infrustructure\" in New York City, NY on new-grad list."}
+{"id":"a064","fit":"no","reason":"\"Software Engineer, Scribe AI\" is a full-stack web/iOS role requiring \"Python, JavaScript/TypeScript ... iOS development with Swift\", not an ML role."}
+{"id":"a065","fit":"yes","reason":"\"ML Infrastructure Engineer\" with \"0-2 years of experience and a minimum of a BS and/or MS in Computer Science\"."}
+{"id":"a066","fit":"unsure","reason":"\"Artificial Intelligence Software Engineer - Development Infrastructure\" on the Software list, unclear whether ML or general dev tooling."}
+{"id":"a067","fit":"yes","reason":"\"Learned Trajectory Machine Learning Engineer\" with \"BS, MS, or PhD degree\" and no years minimum."}
+{"id":"a068","fit":"unsure","reason":"\"Quantitative Researcher - Early Career\" has no description, and quant research is only loosely a target role."}
+{"id":"a069","fit":"no","reason":"\"Enterprise Account Executive II\" is a sales role."}
+{"id":"a070","fit":"yes","reason":"\"Master's degree in a technical field + 1+ year of post-grad software development experience\" for ML Infrastructure, Core Inference."}
+{"id":"a071","fit":"no","reason":"\"Integration & Test Engineer\" requiring a mechanical/aerospace degree, not a target role."}
+{"id":"a072","fit":"yes","reason":"\"Data Scientist\" in Greenville, SC on AI/ML/Data new-grad list."}
+{"id":"a073","fit":"yes","reason":"\"Junior AI Engineer\" in San Diego, CA."}
+{"id":"a074","fit":"yes","reason":"\"Software Engineer New Grad, Machine Learning Platform\" remote in the US, \"No previous ML infrastructure experience is required\"."}
+{"id":"a075","fit":"unsure","reason":"\"AI Automation Engineer\" on the Software list with no description, unclear whether ML-focused."}
+{"id":"a076","fit":"unsure","reason":"\"Lead Machine Learning Engineer\" is senior by title but the visible text states no explicit years minimum."}
+{"id":"a077","fit":"no","reason":"\"Model Operations Lead\" is \"a people-management role\" that hires and leads a team."}
+{"id":"a078","fit":"unsure","reason":"\"Research Scientist - 3D Vision\" says \"open to all years of experience\" but the \"Strong rese...\" requirements are cut off and may require a PhD."}
+{"id":"a079","fit":"no","reason":"\"At least 3 years of professional development experience\" for a full-stack role."}
+{"id":"a080","fit":"yes","reason":"\"Data Scientist\" with US locations (Chantilly, VA) and no disqualifier shown."}
+{"id":"a081","fit":"no","reason":"Location \"Toronto, ON; Canada\"."}
+{"id":"a082","fit":"yes","reason":"\"Data and Artificial Intelligence Analyst\" in US cities on AI/ML/Data new-grad list."}
+{"id":"a083","fit":"unsure","reason":"\"Senior Machine Learning Engineer - Perception\" has no description or stated years, though it is on a new-grad list."}
+{"id":"a084","fit":"no","reason":"\"This is not a traditional full-time role. It's a part-time, remote, flexible, project-specific opportunity\" doing data labeling."}
+{"id":"a085","fit":"unsure","reason":"\"Architect ML - AI Researcher\" is remote US with no description, seniority unclear from the title."}
+{"id":"a086","fit":"no","reason":"Location \"Portugal\" and \"Principal Software Engineer\" front-end role."}
+{"id":"a087","fit":"yes","reason":"\"Research Scientist / Engineer - Training Infrastructure\" in New York, NY with no disqualifier shown."}
+{"id":"a088","fit":"yes","reason":"\"Artificial Intelligence / Machine Learning Verification and Validation Engineer\" in State College, PA on AI/ML/Data list."}
+{"id":"a089","fit":"yes","reason":"\"Graduate AI Model Optimization Engineer\" in San Jose, CA is a new-grad ML role."}
+{"id":"a090","fit":"yes","reason":"\"AI Engineer 1\" in Sunrise, FL is an entry-level AI role."}
+{"id":"a091","fit":"no","reason":"\"Senior Software Engineer, Backend\" requiring \"5+ years of experience\"."}
+{"id":"a092","fit":"no","reason":"\"Specialist Seller\" is a sales role."}
+{"id":"a093","fit":"yes","reason":"\"AI Data Engineer\" in Norristown, PA with no disqualifier shown."}
+{"id":"a094","fit":"no","reason":"\"5+ years of industry experience in software engineering, with 3+ years focused on applied machine learning\"."}
+{"id":"a095","fit":"no","reason":"\"5+ years of post-PhD research\" and a PhD requirement for a Principal Scientist."}
+{"id":"a096","fit":"no","reason":"\"Research Scientist I or II - Oligonucleotide Chemistry\" is a chemistry role."}
+{"id":"a097","fit":"yes","reason":"\"Research Engineer\" in the New York City area at an AI company with no disqualifier shown."}
+{"id":"a098","fit":"unsure","reason":"\"AI Research Scientist, Ads Ranking\" has no description and such roles may require a PhD."}
+{"id":"a099","fit":"yes","reason":"\"Junior Data Engineer\" in Chantilly, VA on AI/ML/Data list."}
+{"id":"a100","fit":"unsure","reason":"\"AI Engineer, Special Programs\" has entry-level qualifications but \"requires successfully obtaining and maintaining a Top Secret Security Clearance\"."}
+{"id":"a101","fit":"yes","reason":"\"Data Scientist - Starlink\" in Redmond, WA on new-grad list."}
+{"id":"a102","fit":"yes","reason":"\"Applied AI Engineer\" in San Francisco, CA on new-grad list."}
+{"id":"a103","fit":"no","reason":"\"3+ years of relevant experience in ML optimization infrastructure\" for Senior/Staff role."}
+{"id":"a104","fit":"no","reason":"\"Investor Relations Manager\" requiring \"5+ years at a public company\"."}
+{"id":"a105","fit":"yes","reason":"\"Data Scientist, 2027 Graduate U.S.\" in Seattle, WA is a new-grad data science role."}
+{"id":"a106","fit":"no","reason":"\"Head of Sales Development\" is a sales leadership role."}
+{"id":"a107","fit":"unsure","reason":"\"Junior ML/AI Engineer\" is a good title fit but location is only \"Remote\" with no stated country."}
+{"id":"a108","fit":"unsure","reason":"\"Applied Researcher 4\" at Capital One with truncated requirements, degree and years minimum not visible."}
+{"id":"a109","fit":"yes","reason":"\"Associate AI Engineer - Early Career Consult Program\" in Dallas, TX."}
+{"id":"a110","fit":"no","reason":"Location \"Bangalore, India\" and \"3+ years building distributed systems\"."}

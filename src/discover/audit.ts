@@ -57,7 +57,8 @@ export const AUDIT_PLAN: Record<Stratum, number> = { match: 40, reject_near: 30,
 // all rejects and is what the miss-rate estimate uses.
 export function drawSample(jobs: Job[], seed: number, plan = AUDIT_PLAN): { blind: BlindItem[]; key: AnswerKeyItem[] } {
   const rand = rng(seed);
-  const open = jobs.filter((j) => !j.key.startsWith("lead:") && !j.hints.closed);
+  // Exclusions are the candidate's preference, not a rule the auditor can judge.
+  const open = jobs.filter((j) => !j.key.startsWith("lead:") && !j.hints.closed && j.triage.rule !== "company.excluded");
   const pools: Record<Stratum, Job[]> = {
     match: open.filter((j) => j.triage.verdict === "match"),
     reject_near: open.filter((j) => j.triage.verdict === "reject" && ROLE.test(j.title)),
@@ -108,7 +109,7 @@ export interface AuditScore {
 
 export function scoreAudit(key: AnswerKeyItem[], verdicts: AuditVerdict[]): AuditScore {
   const byId = new Map(verdicts.map((v) => [v.id, v]));
-  const rows = key.flatMap((k) => (byId.get(k.id) ? [{ ...k, ...byId.get(k.id)! }] : []));
+  const rows = key.filter((k) => k.rule !== "company.excluded").flatMap((k) => (byId.get(k.id) ? [{ ...k, ...byId.get(k.id)! }] : []));
   const judged = rows.filter((r) => r.fit !== "unsure");
   const rate = (xs: typeof judged, bad: (r: (typeof judged)[number]) => boolean) => (xs.length ? xs.filter(bad).length / xs.length : null);
   const disagrees = (r: (typeof rows)[number]) => (r.verdict === "match" && r.fit === "no") || (r.verdict === "reject" && r.fit === "yes");

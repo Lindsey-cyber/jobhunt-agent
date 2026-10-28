@@ -6,21 +6,27 @@ import { apply } from "./run/apply.ts";
 import type { JobKey } from "./domain/job.ts";
 import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
+import { DEFAULT_AUDIT_MODEL, runAuditor } from "./org/auditor.ts";
+import { authUrl, fetchAlerts, finishAuth, gmailConfigured } from "./sources/gmail.ts";
 import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { readCatalog } from "./store/catalog.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
-import { appendLabel, paths, readBaseline, readLabels, readTrust, writeBaseline, writeTrust } from "./store/state.ts";
+import { appendLabel, paths, readBaseline, readLabels, readLatest, readTrust, writeBaseline, writeTrust } from "./store/state.ts";
 
 const USAGE = `jh <command>
 
   apply <url> [--approve] [--headed]   fill, verify and (if the gate allows) submit one application
   discover [--inbox <dir>] [--only greenhouse,lever,ashby,workday,github,hn,gmail]
                                        fetch every source, merge into the catalog, triage, check links
-  daily [--inbox <dir>]                coordinator run: discover, audit sample, approval queue, outreach, report
+  daily [--inbox <dir>]                coordinator run: Gmail alerts (when authorized), discover, audit sample,
+                                       approval queue, outreach, report
+  gmail auth [--code <address>]        authorize read-only Gmail access (two steps; prints a consent link first)
+  gmail fetch [--inbox <dir>]          save the last 30 days of job-alert emails
   report                               re-render the latest report and dashboard
+  audit run [--model <id>]             have the API auditor judge the latest blind sample, then score it
   audit score <verdicts.jsonl> [--auditor <name>]
                                        score the independent auditor's blind verdicts; adjusts triage trust
   label <review-id|job-key> fit|not_fit [--note <text>]
@@ -47,6 +53,8 @@ const { positionals, values } = parseArgs({
     auditor: { type: "string", default: "unnamed auditor" },
     note: { type: "string", default: "" },
     record: { type: "boolean", default: false },
+    model: { type: "string" },
+    code: { type: "string" },
   },
 });
 const [command, url, arg2] = positionals;
@@ -112,8 +120,26 @@ switch (command) {
     if (!held.length && !open.length) console.log("Nothing waiting on you.");
     break;
   }
+  case "gmail": {
+    if (url === "auth" && !values.code) {
+      console.log(`1. Open this link, sign in as the candidate and allow read-only Gmail access:\n\n${authUrl()}\n`);
+      console.log("2. The browser then fails to open a localhost page. Copy that page's full address and run:\n   jh gmail auth --code '<address>'");
+    } else if (url === "auth") {
+      console.log(`authorized; refresh token saved to ${await finishAuth(values.code!)}`);
+    } else if (url === "fetch") {
+      const dir = values.inbox ?? join(user().dir, "inbox", new Date().toISOString().slice(0, 10));
+      console.log(`saved ${(await fetchAlerts(dir)).saved} messages to ${dir}`);
+    } else throw new Error("usage: jh gmail auth [--code <address>] | jh gmail fetch [--inbox <dir>]");
+    break;
+  }
   case "daily": {
-    const r = await daily({ user: user(), watchlist: loadWatchlist(), ...(values.inbox ? { inboxDir: values.inbox } : {}), log: (s) => console.error(s) });
+    const u = user();
+    let inbox = values.inbox;
+    if (!inbox && gmailConfigured()) {
+      inbox = join(u.dir, "inbox", new Date().toISOString().slice(0, 10));
+      console.error(`gmail: saved ${(await fetchAlerts(inbox)).saved} alert emails to ${inbox}`);
+    }
+    const r = await daily({ user: u, watchlist: loadWatchlist(), ...(inbox ? { inboxDir: inbox } : {}), log: (s) => console.error(s) });
     const seen = r.jobs.filter((j) => j.lastSeen >= r.startedAt);
     const n = (v: string) => seen.filter((j) => j.triage.verdict === v).length;
     console.log(`postings seen ${seen.length}: match ${n("match")}, review ${n("review")}, reject ${n("reject")}`);
@@ -126,8 +152,18 @@ switch (command) {
     break;
   }
   case "audit": {
-    if (url !== "score" || !arg2) throw new Error("usage: jh audit score <verdicts.jsonl> [--auditor <name>]");
-    const r = scoreLatestAudit(user(), loadWatchlist(), arg2, values.auditor);
+    let verdicts = arg2;
+    let auditor = values.auditor;
+    if (url === "run") {
+      const latest = readLatest(user().dir);
+      if (!latest) throw new Error("no discovery run yet; run jh daily first");
+      const model = values.model ?? DEFAULT_AUDIT_MODEL;
+      const run = await runAuditor(latest.auditDir, model, (s) => console.error(s));
+      console.log(`verdicts ${run.path}: ${run.answered} answered, ${run.missing.length} recorded as unsure`);
+      verdicts = run.path;
+      auditor = `${model} via the Claude API, blind, brief + postings only`;
+    } else if (url !== "score" || !arg2) throw new Error("usage: jh audit run [--model <id>] | jh audit score <verdicts.jsonl> [--auditor <name>]");
+    const r = scoreLatestAudit(user(), loadWatchlist(), verdicts!, auditor);
     const p = (x: number | null) => (x == null ? "n/a" : `${(x * 100).toFixed(1)}%`);
     console.log(`false-match ${p(r.score.falseMatchRate)} (n=${r.score.matchJudged}); miss ${p(r.score.missRate)} (n=${r.score.rejectJudged}); near-miss ${p(r.score.nearMissRate)} (n=${r.score.nearJudged})`);
     console.log(`disagreements ${r.score.disagreements.length}; unanswered ${r.missing}; triage trust ${r.trust.state.level}${r.trust.demoted ? " (demoted)" : ""}`);

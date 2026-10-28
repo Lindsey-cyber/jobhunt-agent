@@ -191,7 +191,9 @@ export function parseMarkdownJobTable(md: string, source: string, seenAt: string
 
 // ── Gmail job alerts ───────────────────────────────────────────────────────
 
-export interface AlertMessage { id: string; date: string; sender: string; subject: string; viewUrl?: string; body: string }
+// body is the plain-text alternative; html is set when the Gmail API saved the
+// message (the session connector gave text only).
+export interface AlertMessage { id: string; date: string; sender: string; subject: string; viewUrl?: string; body: string; html?: string }
 
 export function alertChannel(sender: string): Channel | undefined {
   const s = sender.toLowerCase();

@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-28T14:00:03.011Z",
+  "auditor": "Sonnet subagent (fresh instance), blind, brief + postings only",
+  "sampleSize": 110,
+  "missing": [],
+  "score": {
+    "judged": 88,
+    "unsure": 20,
+    "falseMatchRate": 0.058823529411764705,
+    "matchJudged": 34,
+    "missRate": 0,
+    "rejectJudged": 20,
+    "nearMissRate": 0.045454545454545456,
+    "nearJudged": 22,
+    "reviewFit": 10,
+    "reviewNotFit": 2,
+    "byRule": {
+      "level.senior": {
+        "judged": 16,
+        "disagree": 1
+      },
+      "role.out_of_scope": {
+        "judged": 15,
+        "disagree": 0
+      },
+      "match": {
+        "judged": 34,
+        "disagree": 2
+      },
+      "location.non_us": {
+        "judged": 4,
+        "disagree": 0
+      },
+      "auth.no_sponsorship": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "type.internship": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "experience.too_senior": {
+        "judged": 2,
+        "disagree": 0
+      },
+      "role.non_engineering": {
+        "judged": 3,
+        "disagree": 0
+      }
+    },
+    "disagreements": [
+      {
+        "id": "a004",
+        "key": "greenhouse:4029507009",
+        "stratum": "reject_near",
+        "verdict": "reject",
+        "rule": "level.senior",
+        "fit": "yes",
+        "reason": "\"PhD or Masters in a quantitative discipline\" AI research engineer in SF or Cambridge, no years minimum stated."
+      },
+      {
+        "id": "a025",
+        "key": "url:https://amazon.jobs/en/jobs/10490741/software-development-engineer-i-ai-ml-network-infrastructure-annapurna-labs",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Software Development Engineer 1 - AI/ML Network Infrastructure\" is a software/network infrastructure role, not ML or data."
+      },
+      {
+        "id": "a064",
+        "key": "ashby:259988fe-0389-461f-823c-36d81840d465",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"Software Engineer, Scribe AI\" is a full-stack web/iOS role requiring \"Python, JavaScript/TypeScript ... iOS development with Swift\", not an ML role."
+      }
+    ]
+  }
+}

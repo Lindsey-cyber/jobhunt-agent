@@ -120,11 +120,15 @@ export function scoreLatestAudit(user: UserData, watchlist: Watchlist, verdictsP
   const missing = key.filter((k) => !verdicts.some((v) => v.id === k.id));
   const score = scoreAudit(key, verdicts);
   const at = new Date().toISOString();
+  // Re-scoring the same run replaces its earlier record in the trust history.
+  const scorePath = join(latest.auditDir, "score.json");
+  const previous = existsSync(scorePath) ? (JSON.parse(readFileSync(scorePath, "utf8")) as { at: string }).at : undefined;
   writeFileSync(join(latest.auditDir, "verdicts.jsonl"), verdicts.map((v) => JSON.stringify(v)).join("\n") + "\n");
   copyFileSync(join(latest.runDir, "audit-key.json"), join(latest.auditDir, "answer-key.json"));
   writeFileSync(join(latest.auditDir, "score.json"), JSON.stringify({ at, auditor, sampleSize: key.length, missing: missing.map((m) => m.id), score }, null, 2));
 
   const trust = readTrust(user.dir);
+  if (previous) trust.triage.audits = trust.triage.audits.filter((r) => r.at !== previous);
   const result = recordAudit(trust.triage, score, at);
   trust.triage = result.state;
   writeTrust(user.dir, trust);

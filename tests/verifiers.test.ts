@@ -53,6 +53,8 @@ describe("audit", () => {
     expect(s).toMatchObject({ falseMatchRate: 0.5, missRate: 0, nearMissRate: 1, unsure: 1 });
     expect(s.disagreements.map((d) => d.id)).toEqual(["a1", "a4"]);
     expect(s.byRule["level.senior"]).toEqual({ judged: 2, disagree: 1 });
+    const excluded = scoreAudit([{ id: "x", key: "k", stratum: "reject_any", verdict: "reject", rule: "company.excluded" }], [{ id: "x", fit: "yes", reason: "" }]);
+    expect(excluded).toMatchObject({ missRate: null, disagreements: [] });
   });
 });
 

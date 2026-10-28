@@ -174,7 +174,7 @@
       {
         "title": "AI Space Systems Software Engineer",
         "url": "https://jobs.ashbyhq.com/oligo/1eda6c7f-694c-497e-a648-f9f388130cbc",
-        "verdict": "review",
+        "verdict": "match",
         "location": "Hawthorne; United States"
       }
     ],
@@ -216,7 +216,7 @@
       {
         "title": "Data Scientist",
         "url": "https://jobs.ashbyhq.com/sciemo/208da924-4a08-4be7-a20c-a420f08e77d2",
-        "verdict": "review",
+        "verdict": "match",
         "location": "New York City; United States; Raleigh-Durham; Atlanta; Philadelphia; United States"
       }
     ],
@@ -463,6 +463,12 @@
         "location": "United States - Remote; United States"
       },
       {
+        "title": "AI Programs Analyst, Finance Domain",
+        "url": "https://jobs.ashbyhq.com/surge-ai/ed00a1d5-5555-4ad8-bbb5-f935b2a9ee75",
+        "verdict": "review",
+        "location": "United States - Remote; United States"
+      },
+      {
         "title": "Data Scientist",
         "url": "https://jobs.ashbyhq.com/surge-ai/ed9a34be-a3f7-4c09-8602-9932edb47939",
         "verdict": "review",
@@ -572,7 +578,7 @@
       {
         "title": "Associate Data Scientist (College Grad 2027)",
         "url": "https://jobs.ashbyhq.com/solace/77ca492c-4142-4931-beeb-e85d9d0ac443",
-        "verdict": "review",
+        "verdict": "match",
         "location": "Redwood City, CA; United States"
       },
       {
@@ -587,6 +593,24 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Solace Health team,\n\nI came across the Associate Data Scientist (College Grad 2027) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Moab",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data & AI Analyst",
+        "url": "https://jobs.ashbyhq.com/moab/8ab10f9b-2a49-409d-8b20-7ecf1ed92ee4",
+        "verdict": "match",
+        "location": "New York City ; USA"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Moab team,\n\nI came across the Data & AI Analyst opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -611,6 +635,24 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Tenki Cloud by Luxor Tech team,\n\nI came across the Tenki Cloud by Luxor Tech | San Francisco, CA | Founding Sales | Full-time | SF-based preferred | https://tenki.cloud/ opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Silna Health",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Deployment Analyst",
+        "url": "https://jobs.ashbyhq.com/silnahealth.com/8ed75986-4032-425b-b82a-fa6010a18656",
+        "verdict": "match",
+        "location": "NYC; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Silna Health team,\n\nI came across the AI Deployment Analyst opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -1050,6 +1092,24 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Bracebridge Capital",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Analyst",
+        "url": "https://job-boards.greenhouse.io/bracebridgecapital/jobs/4715042005",
+        "verdict": "match",
+        "location": "Boston, MA"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Bracebridge Capital team,\n\nI came across the Machine Learning Analyst opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "BlackEdge Capital",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -1098,7 +1158,7 @@
       {
         "title": "Data Scientist, Project Success and Innovation",
         "url": "https://job-boards.greenhouse.io/americaninstitutesforresearch/jobs/5454172008",
-        "verdict": "review",
+        "verdict": "match",
         "location": "US-Remote | US-VA-Arlington | US-NC-Chapel Hill | US-IL-Chicago | US-CA-Sacramento | US-TX-Austin"
       }
     ],
@@ -1152,7 +1212,7 @@
       {
         "title": "Data Scientist",
         "url": "https://job-boards.greenhouse.io/tubitv/jobs/8232190",
-        "verdict": "review",
+        "verdict": "match",
         "location": "USA - Remote"
       }
     ],
@@ -1234,7 +1294,7 @@
       {
         "title": "Data Scientist",
         "url": "https://job-boards.greenhouse.io/clevelandguardiansbops/jobs/8770570002",
-        "verdict": "review",
+        "verdict": "match",
         "location": "Cleveland, Ohio, United States"
       }
     ],
@@ -1279,6 +1339,30 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Graviton Research Capital LLP team,\n\nI came across the Quantitative Researcher - 2027 Graduates opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "RosaicLabs",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Accelerator RTL Microarchitecture/Design Engineer - Full Time",
+        "url": "https://jobs.lever.co/rosaiclabs/261df0f6-b4c6-4711-a5ee-a0bb67bcb840",
+        "verdict": "match",
+        "location": "Santa Clara, CA; Austin, TX; remote-india (US)"
+      },
+      {
+        "title": "AI Accelerator Design Verification Engineer - Full Time",
+        "url": "https://jobs.lever.co/rosaiclabs/2d6be587-79ac-413e-be7f-ef54efac96e3",
+        "verdict": "review",
+        "location": "Santa Clara, CA; Austin, TX; remote-colorado; remote-india; remote-california (US)"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi RosaicLabs team,\n\nI came across the AI Accelerator RTL Microarchitecture/Design Engineer - Full Time opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -1397,6 +1481,24 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi WeRide.ai team,\n\nI came across the New Grads 2027 - Software Engineer - Perception/Computer Vision opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "WisdomTree",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Solutions Analyst",
+        "url": "https://jobs.lever.co/wisdomtree/621718c3-779f-4e9c-9681-be75dafc427e",
+        "verdict": "match",
+        "location": "Hybrid - New York, NY (US)"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi WisdomTree team,\n\nI came across the AI Solutions Analyst opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {

@@ -1,12 +1,11 @@
 name,channel,url,ok,count,size,note,discoveredFrom
-Anthropic,official_greenhouse,https://job-boards.greenhouse.io/anthropic,true,681,medium_large,,
-Databricks,official_greenhouse,https://job-boards.greenhouse.io/databricks,true,893,medium_large,,
-Stripe,official_greenhouse,https://job-boards.greenhouse.io/stripe,true,716,medium_large,,
-Pinterest,official_greenhouse,https://job-boards.greenhouse.io/pinterest,true,160,medium_large,,
-Reddit,official_greenhouse,https://job-boards.greenhouse.io/reddit,true,160,medium_large,,
+Databricks,official_greenhouse,https://job-boards.greenhouse.io/databricks,true,894,medium_large,,
+Stripe,official_greenhouse,https://job-boards.greenhouse.io/stripe,true,717,medium_large,,
+Pinterest,official_greenhouse,https://job-boards.greenhouse.io/pinterest,true,161,medium_large,,
+Reddit,official_greenhouse,https://job-boards.greenhouse.io/reddit,true,162,medium_large,,
 Roblox,official_greenhouse,https://job-boards.greenhouse.io/roblox,true,271,medium_large,,
 Duolingo,official_greenhouse,https://job-boards.greenhouse.io/duolingo,true,58,medium_large,,
-DoorDash,official_greenhouse,https://job-boards.greenhouse.io/doordashusa,true,442,medium_large,,
+DoorDash,official_greenhouse,https://job-boards.greenhouse.io/doordashusa,true,444,medium_large,,
 Lyft,official_greenhouse,https://job-boards.greenhouse.io/lyft,true,178,medium_large,,
 NewsBreak,official_greenhouse,https://job-boards.greenhouse.io/newsbreak,true,66,medium_large,,
 Airbnb,official_greenhouse,https://job-boards.greenhouse.io/airbnb,true,196,medium_large,,
@@ -16,23 +15,23 @@ Coinbase,official_greenhouse,https://job-boards.greenhouse.io/coinbase,true,227,
 Robinhood,official_greenhouse,https://job-boards.greenhouse.io/robinhood,true,159,medium_large,,
 Instacart,official_greenhouse,https://job-boards.greenhouse.io/instacart,true,94,medium_large,,
 Discord,official_greenhouse,https://job-boards.greenhouse.io/discord,true,46,medium_large,,
-GitLab,official_greenhouse,https://job-boards.greenhouse.io/gitlab,true,238,medium_large,,
-Cloudflare,official_greenhouse,https://job-boards.greenhouse.io/cloudflare,true,461,medium_large,,
-Datadog,official_greenhouse,https://job-boards.greenhouse.io/datadog,true,422,medium_large,,
-MongoDB,official_greenhouse,https://job-boards.greenhouse.io/mongodb,true,363,medium_large,,
+GitLab,official_greenhouse,https://job-boards.greenhouse.io/gitlab,true,237,medium_large,,
+Cloudflare,official_greenhouse,https://job-boards.greenhouse.io/cloudflare,true,460,medium_large,,
+Datadog,official_greenhouse,https://job-boards.greenhouse.io/datadog,true,402,medium_large,,
+MongoDB,official_greenhouse,https://job-boards.greenhouse.io/mongodb,true,365,medium_large,,
 Elastic,official_greenhouse,https://job-boards.greenhouse.io/elastic,true,406,medium_large,,
-Twilio,official_greenhouse,https://job-boards.greenhouse.io/twilio,true,132,medium_large,,
+Twilio,official_greenhouse,https://job-boards.greenhouse.io/twilio,true,135,medium_large,,
 Okta,official_greenhouse,https://job-boards.greenhouse.io/okta,true,385,medium_large,,
 Asana,official_greenhouse,https://job-boards.greenhouse.io/asana,true,113,medium_large,,
 Samsara,official_greenhouse,https://job-boards.greenhouse.io/samsara,true,320,medium_large,,
 Brex,official_greenhouse,https://job-boards.greenhouse.io/brex,true,261,medium_large,,
 Chime,official_greenhouse,https://job-boards.greenhouse.io/chime,true,72,medium_large,,
-Affirm,official_greenhouse,https://job-boards.greenhouse.io/affirm,true,240,medium_large,,
+Affirm,official_greenhouse,https://job-boards.greenhouse.io/affirm,true,241,medium_large,,
 Scale AI,official_greenhouse,https://job-boards.greenhouse.io/scaleai,true,169,medium_large,,
 Together AI,official_greenhouse,https://job-boards.greenhouse.io/togetherai,true,87,medium_large,,
 Waymo,official_greenhouse,https://job-boards.greenhouse.io/waymo,true,369,medium_large,,
 Nuro,official_greenhouse,https://job-boards.greenhouse.io/nuro,true,97,medium_large,,
-Anduril,official_greenhouse,https://job-boards.greenhouse.io/andurilindustries,true,2526,medium_large,,
+Anduril,official_greenhouse,https://job-boards.greenhouse.io/andurilindustries,true,2524,medium_large,,
 Glean,official_greenhouse,https://job-boards.greenhouse.io/gleanwork,true,133,medium_large,,
 Vercel,official_greenhouse,https://job-boards.greenhouse.io/vercel,true,93,medium_large,,
 Twitch,official_greenhouse,https://job-boards.greenhouse.io/twitch,true,62,medium_large,,
@@ -42,31 +41,29 @@ Nextdoor,official_greenhouse,https://job-boards.greenhouse.io/nextdoor,true,23,m
 Squarespace,official_greenhouse,https://job-boards.greenhouse.io/squarespace,true,27,medium_large,,
 Peloton,official_greenhouse,https://job-boards.greenhouse.io/peloton,true,57,medium_large,,
 Zocdoc,official_greenhouse,https://job-boards.greenhouse.io/zocdoc,true,61,medium_large,,
-Oscar Health,official_greenhouse,https://job-boards.greenhouse.io/oscar,true,232,medium_large,,
+Oscar Health,official_greenhouse,https://job-boards.greenhouse.io/oscar,true,235,medium_large,,
 Mozilla,official_greenhouse,https://job-boards.greenhouse.io/mozilla,true,121,medium_large,,
-HubSpot,official_greenhouse,https://job-boards.greenhouse.io/hubspotjobs,true,76,medium_large,,
-Toast,official_greenhouse,https://job-boards.greenhouse.io/toast,true,339,medium_large,,
+HubSpot,official_greenhouse,https://job-boards.greenhouse.io/hubspotjobs,true,78,medium_large,,
+Toast,official_greenhouse,https://job-boards.greenhouse.io/toast,true,338,medium_large,,
 Block,official_greenhouse,https://job-boards.greenhouse.io/block,true,202,medium_large,,
 Gusto,official_greenhouse,https://job-boards.greenhouse.io/gusto,true,93,medium_large,,
 Carta,official_greenhouse,https://job-boards.greenhouse.io/carta,true,74,medium_large,,
 Verkada,official_greenhouse,https://job-boards.greenhouse.io/verkada,true,332,medium_large,,
 Abnormal Security,official_greenhouse,https://job-boards.greenhouse.io/abnormalsecurity,true,89,medium_large,,
 Faire,official_greenhouse,https://job-boards.greenhouse.io/faire,true,67,medium_large,,
-Palantir,official_lever,https://jobs.lever.co/palantir,true,306,medium_large,,
 Spotify,official_lever,https://jobs.lever.co/spotify,true,89,medium_large,,
 Zoox,official_lever,https://jobs.lever.co/zoox,true,228,medium_large,,
 Shield AI,official_lever,https://jobs.lever.co/shieldai,true,659,medium_large,,
-OpenAI,official_ashby,https://jobs.ashbyhq.com/openai,true,805,medium_large,,
-Applied Intuition,official_ashby,https://jobs.ashbyhq.com/applied,true,329,medium_large,,
+Applied Intuition,official_ashby,https://jobs.ashbyhq.com/applied,true,328,medium_large,,
 Quora,official_ashby,https://jobs.ashbyhq.com/quora,true,9,medium_large,,
-Notion,official_ashby,https://jobs.ashbyhq.com/notion,true,139,medium_large,,
-Snowflake,official_ashby,https://jobs.ashbyhq.com/snowflake,true,365,medium_large,,
+Notion,official_ashby,https://jobs.ashbyhq.com/notion,true,141,medium_large,,
+Snowflake,official_ashby,https://jobs.ashbyhq.com/snowflake,true,366,medium_large,,
 Ramp,official_ashby,https://jobs.ashbyhq.com/ramp,true,172,medium_large,,
 Cohere,official_ashby,https://jobs.ashbyhq.com/cohere,true,118,medium_large,,
 Perplexity,official_ashby,https://jobs.ashbyhq.com/perplexity,true,134,medium_large,,
-Cursor (Anysphere),official_ashby,https://jobs.ashbyhq.com/cursor,true,122,medium_large,,
+Cursor (Anysphere),official_ashby,https://jobs.ashbyhq.com/cursor,true,123,medium_large,,
 Harvey,official_ashby,https://jobs.ashbyhq.com/harvey,true,368,medium_large,,
-Sierra,official_ashby,https://jobs.ashbyhq.com/sierra,true,214,medium_large,,
+Sierra,official_ashby,https://jobs.ashbyhq.com/sierra,true,213,medium_large,,
 Linear,official_ashby,https://jobs.ashbyhq.com/linear,true,32,medium_large,,
 Replit,official_ashby,https://jobs.ashbyhq.com/replit,true,32,unknown,,
 ElevenLabs,official_ashby,https://jobs.ashbyhq.com/elevenlabs,true,154,medium_large,,
@@ -77,37 +74,37 @@ Writer,official_ashby,https://jobs.ashbyhq.com/writer,true,46,unknown,,
 Decagon,official_ashby,https://jobs.ashbyhq.com/decagon,true,132,unknown,,
 Lambda,official_ashby,https://jobs.ashbyhq.com/lambda,true,96,medium_large,,
 Suno,official_ashby,https://jobs.ashbyhq.com/suno,true,71,unknown,,
-Vanta,official_ashby,https://jobs.ashbyhq.com/vanta,true,79,medium_large,,
+Vanta,official_ashby,https://jobs.ashbyhq.com/vanta,true,78,medium_large,,
 Plaid,official_ashby,https://jobs.ashbyhq.com/plaid,true,129,medium_large,,
 Brain Co.,official_ashby,https://jobs.ashbyhq.com/brainco,true,44,unknown,,
-NVIDIA,official_workday,https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite,true,141,medium_large,"8 searches, 282 results, 141 AI/ML titles, 141 details read",
+NVIDIA,official_workday,https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite,true,141,medium_large,"8 searches, 283 results, 141 AI/ML titles, 141 details read",
 Adobe,official_workday,https://adobe.wd5.myworkdayjobs.com/external_experienced,true,31,medium_large,"8 searches, 189 results, 31 AI/ML titles, 31 details read",
 Salesforce,official_workday,https://salesforce.wd12.myworkdayjobs.com/External_Career_Site,true,23,medium_large,"8 searches, 231 results, 23 AI/ML titles, 23 details read",
 Intel,official_workday,https://intel.wd1.myworkdayjobs.com/External,true,51,medium_large,"8 searches, 249 results, 51 AI/ML titles, 51 details read",
-Capital One,official_workday,https://capitalone.wd12.myworkdayjobs.com/Capital_One,true,92,medium_large,"8 searches, 318 results, 92 AI/ML titles, 92 details read",
+Capital One,official_workday,https://capitalone.wd12.myworkdayjobs.com/Capital_One,true,93,medium_large,"8 searches, 318 results, 93 AI/ML titles, 93 details read",
 PayPal,official_workday,https://paypal.wd1.myworkdayjobs.com/jobs,true,17,medium_large,"8 searches, 144 results, 17 AI/ML titles, 17 details read",
-CrowdStrike,official_workday,https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers,true,21,medium_large,"8 searches, 140 results, 21 AI/ML titles, 21 details read",
+CrowdStrike,official_workday,https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers,true,21,medium_large,"8 searches, 139 results, 21 AI/ML titles, 21 details read",
 Zillow,official_workday,https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External,true,20,medium_large,"8 searches, 128 results, 20 AI/ML titles, 20 details read",
 Autodesk,official_workday,https://autodesk.wd1.myworkdayjobs.com/Ext,true,14,medium_large,"8 searches, 97 results, 14 AI/ML titles, 14 details read",
 Workday,official_workday,https://workday.wd5.myworkdayjobs.com/Workday,true,46,medium_large,"8 searches, 196 results, 46 AI/ML titles, 46 details read",
 Disney,official_workday,https://disney.wd5.myworkdayjobs.com/disneycareer,true,17,medium_large,"8 searches, 167 results, 17 AI/ML titles, 17 details read",
-Target,official_workday,https://target.wd5.myworkdayjobs.com/targetcareers,true,26,medium_large,"8 searches, 179 results, 26 AI/ML titles, 26 details read",
+Target,official_workday,https://target.wd5.myworkdayjobs.com/targetcareers,true,26,medium_large,"8 searches, 180 results, 26 AI/ML titles, 26 details read",
 GlobalFoundries,official_workday,https://globalfoundries.wd1.myworkdayjobs.com/External,true,22,medium_large,"8 searches, 257 results, 22 AI/ML titles, 22 details read",
 Motorola Solutions,official_workday,https://motorolasolutions.wd5.myworkdayjobs.com/Careers,true,31,medium_large,"8 searches, 212 results, 31 AI/ML titles, 31 details read",
 Mastercard,official_workday,https://mastercard.wd1.myworkdayjobs.com/CorporateCareers,true,21,medium_large,"8 searches, 182 results, 21 AI/ML titles, 21 details read",
 Snap,official_workday,https://snapchat.wd1.myworkdayjobs.com/snap,true,24,medium_large,"8 searches, 164 results, 24 AI/ML titles, 24 details read",
-HP,official_workday,https://hp.wd5.myworkdayjobs.com/ExternalCareerSite,true,20,medium_large,"8 searches, 225 results, 20 AI/ML titles, 20 details read",
+HP,official_workday,https://hp.wd5.myworkdayjobs.com/ExternalCareerSite,true,19,medium_large,"8 searches, 223 results, 19 AI/ML titles, 19 details read",
 Analog Devices,official_workday,https://analogdevices.wd1.myworkdayjobs.com/External,true,27,medium_large,"8 searches, 213 results, 27 AI/ML titles, 27 details read",
 Fidelity,official_workday,https://fmr.wd1.myworkdayjobs.com/FidelityCareers,true,13,medium_large,"8 searches, 139 results, 13 AI/ML titles, 13 details read",
-Verizon,official_workday,https://verizon.wd12.myworkdayjobs.com/verizon-careers,true,19,medium_large,"8 searches, 166 results, 19 AI/ML titles, 19 details read",
-AT&T,official_workday,https://att.wd1.myworkdayjobs.com/ATTGeneral,true,5,medium_large,"8 searches, 109 results, 5 AI/ML titles, 5 details read",
-eBay,official_workday,https://ebay.wd5.myworkdayjobs.com/apply,true,23,medium_large,"8 searches, 154 results, 23 AI/ML titles, 23 details read",
-Micron,official_workday,https://micron.wd1.myworkdayjobs.com/External,true,17,medium_large,"8 searches, 349 results, 17 AI/ML titles, 17 details read",
-BlackRock,official_workday,https://blackrock.wd1.myworkdayjobs.com/BlackRock_Professional,true,19,medium_large,"8 searches, 195 results, 19 AI/ML titles, 19 details read",
+Verizon,official_workday,https://verizon.wd12.myworkdayjobs.com/verizon-careers,true,21,medium_large,"8 searches, 171 results, 21 AI/ML titles, 21 details read",
+AT&T,official_workday,https://att.wd1.myworkdayjobs.com/ATTGeneral,true,5,medium_large,"8 searches, 112 results, 5 AI/ML titles, 5 details read",
+eBay,official_workday,https://ebay.wd5.myworkdayjobs.com/apply,true,23,medium_large,"8 searches, 153 results, 23 AI/ML titles, 23 details read",
+Micron,official_workday,https://micron.wd1.myworkdayjobs.com/External,true,17,medium_large,"8 searches, 348 results, 17 AI/ML titles, 17 details read",
+BlackRock,official_workday,https://blackrock.wd1.myworkdayjobs.com/BlackRock_Professional,true,19,medium_large,"8 searches, 193 results, 19 AI/ML titles, 19 details read",
 Crowe,official_workday,https://crowe.wd12.myworkdayjobs.com/external_careers,true,17,medium_large,"8 searches, 91 results, 17 AI/ML titles, 17 details read",
-SimplifyJobs/New-Grad-Positions,github_newgrad,https://github.com/SimplifyJobs/New-Grad-Positions,true,3014,,16129 rows marked closed by the list were skipped,
+SimplifyJobs/New-Grad-Positions,github_newgrad,https://github.com/SimplifyJobs/New-Grad-Positions,true,3000,,16142 rows marked closed by the list were skipped,
 speedyapply/2027-AI-College-Jobs,github_newgrad,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md,true,520,,0 rows marked closed by the list were skipped,
-Tar-ive/ML_Newgrad_2027,github_newgrad,https://github.com/Tar-ive/ML_Newgrad_2027,true,563,,0 rows marked closed by the list were skipped,
+Tar-ive/ML_Newgrad_2027,github_newgrad,https://github.com/Tar-ive/ML_Newgrad_2027,true,558,,0 rows marked closed by the list were skipped,
 HN Who is hiring,hn_hiring,https://news.ycombinator.com/item?id=49922569,true,320,,Ask HN: Who is hiring? (October 2026); 319 of 319 top-level posts read,
 Gmail linkedin alerts,gmail_linkedin,data/inbox/2026-10-28,true,421,,122 alert emails,
 Gmail glassdoor alerts,gmail_glassdoor,data/inbox/2026-10-28,true,145,,21 alert emails,
@@ -121,21 +118,25 @@ LiveFlow,official_ashby,https://jobs.ashbyhq.com/liveflow,true,4,small_proxy,,ht
 Makai Labs,official_ashby,https://jobs.ashbyhq.com/makai-labs,true,10,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Evolver,official_greenhouse,https://job-boards.greenhouse.io/evolver,true,18,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Mariana Minerals,official_ashby,https://jobs.ashbyhq.com/marianaminerals,true,98,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+Innodata,official_greenhouse,https://job-boards.greenhouse.io/innodatainc,true,106,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Hatch IT,official_lever,https://jobs.lever.co/hatchit,true,22,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Jumio,official_greenhouse,https://job-boards.greenhouse.io/jumio,true,18,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Saronic,official_ashby,https://jobs.ashbyhq.com/saronic,true,246,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+Moab,official_ashby,https://jobs.ashbyhq.com/moab,true,9,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 IMC Trading,official_greenhouse,https://job-boards.greenhouse.io/imc,true,169,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Preference Model,official_ashby,https://jobs.ashbyhq.com/Preference-Model,true,5,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Revenue Analytics,official_lever,https://jobs.lever.co/revenueanalytics,true,2,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 DRW,official_greenhouse,https://job-boards.greenhouse.io/drweng,true,162,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+Bracebridge Capital,official_greenhouse,https://job-boards.greenhouse.io/bracebridgecapital,true,5,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 The Brattle Group,official_greenhouse,https://job-boards.greenhouse.io/thebrattlegroup,true,58,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Lightfield,official_ashby,https://jobs.ashbyhq.com/Lightfield,true,26,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
+Bottom Line,official_greenhouse,https://job-boards.greenhouse.io/bottomlinetechnologies,true,37,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 PMG,official_greenhouse,https://job-boards.greenhouse.io/pmg,true,87,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Bot Auto,official_greenhouse,https://job-boards.greenhouse.io/botauto,true,25,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Oligo Space,official_ashby,https://jobs.ashbyhq.com/oligo,true,4,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 AppLovin,official_greenhouse,https://job-boards.greenhouse.io/applovin,true,43,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Voyager Technologies,official_greenhouse,https://job-boards.greenhouse.io/voyagertechnologiesinc,true,177,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
-Relativity Space,official_greenhouse,https://job-boards.greenhouse.io/relativity,true,402,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+Relativity Space,official_greenhouse,https://job-boards.greenhouse.io/relativity,true,404,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Dark Wolf Solutions,official_greenhouse,https://job-boards.greenhouse.io/darkwolfsolutions,true,71,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Sciemo,official_ashby,https://jobs.ashbyhq.com/sciemo,true,2,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Cerebras,official_ashby,https://jobs.ashbyhq.com/cerebras,true,119,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
@@ -143,10 +144,12 @@ True Anomaly,official_greenhouse,https://job-boards.greenhouse.io/trueanomalyinc
 Embedding VC,official_ashby,https://jobs.ashbyhq.com/embedding-vc,true,55,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Global Lending Services,official_lever,https://jobs.lever.co/glsllc,true,48,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Iambic Therapeutics,official_ashby,https://jobs.ashbyhq.com/iambic-therapeutics,true,30,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
-Solace Health,official_ashby,https://jobs.ashbyhq.com/solace,true,23,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
-Accenture,official_greenhouse,https://job-boards.greenhouse.io/accenturefederalservices,true,716,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+Solace Health,official_ashby,https://jobs.ashbyhq.com/solace,true,22,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
+WisdomTree,official_lever,https://jobs.lever.co/wisdomtree,true,3,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
+Accenture,official_greenhouse,https://job-boards.greenhouse.io/accenturefederalservices,true,715,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Surge AI,official_ashby,https://jobs.ashbyhq.com/surge-ai,true,28,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 ID.me,official_greenhouse,https://job-boards.greenhouse.io/idmeuniversityrecruiting,true,8,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
+Silna Health,official_ashby,https://jobs.ashbyhq.com/silnahealth.com,true,11,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Bertram Capital Management,official_greenhouse,https://job-boards.greenhouse.io/bertramcapitalmanagement,true,5,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Rover,official_lever,https://jobs.lever.co/rover,true,35,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Garner Health,official_greenhouse,https://job-boards.greenhouse.io/garnerhealth,true,74,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
@@ -155,21 +158,21 @@ CHAOS Industries,official_greenhouse,https://job-boards.greenhouse.io/chaosindus
 BlackEdge Capital,official_greenhouse,https://job-boards.greenhouse.io/blackedgecapital,true,3,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Major League Baseball,official_greenhouse,https://job-boards.greenhouse.io/clevelandguardiansbops,true,3,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 VML,official_greenhouse,https://job-boards.greenhouse.io/map,true,53,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
-AHEAD,official_lever,https://jobs.lever.co/thinkahead,true,146,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
-Flow Traders,official_greenhouse,https://job-boards.greenhouse.io/flowtraders,true,46,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+AHEAD,official_lever,https://jobs.lever.co/thinkahead,true,148,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+Flow Traders,official_greenhouse,https://job-boards.greenhouse.io/flowtraders,true,47,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Commure,official_ashby,https://jobs.ashbyhq.com/Commure,true,82,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Klaviyo,official_greenhouse,https://job-boards.greenhouse.io/klaviyocampus,true,7,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Laminar,official_lever,https://jobs.lever.co/runlaminar,true,18,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Synhawk,official_ashby,https://jobs.ashbyhq.com/synhawk,true,3,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Mach9,official_ashby,https://jobs.ashbyhq.com/mach9,true,17,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Niantic Spatial,official_ashby,https://jobs.ashbyhq.com/niantic-spatial,true,17,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
-66 Degrees,official_greenhouse,https://job-boards.greenhouse.io/66degrees,true,18,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
+66 Degrees,official_greenhouse,https://job-boards.greenhouse.io/66degrees,true,17,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Duolingo,official_greenhouse,https://job-boards.greenhouse.io/duolingounirecruitment,true,5,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Brillio,official_lever,https://jobs.lever.co/brillio-2,true,220,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Periodic Labs,official_ashby,https://jobs.ashbyhq.com/periodic-labs,true,33,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 American Institutes for Research,official_greenhouse,https://job-boards.greenhouse.io/americaninstitutesforresearch,true,16,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Graviton,official_greenhouse,https://job-boards.greenhouse.io/gravitonresearchcapital,true,23,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
-Schonfeld,official_greenhouse,https://job-boards.greenhouse.io/schonfeld,true,66,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
+Schonfeld,official_greenhouse,https://job-boards.greenhouse.io/schonfeld,true,67,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Humble Robotics,official_lever,https://jobs.lever.co/humble-robotics,true,22,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Ekimetrics,official_lever,https://jobs.lever.co/ekimetrics,true,32,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Lightcast,official_lever,https://jobs.lever.co/economicmodeling,true,25,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
@@ -183,6 +186,7 @@ Spectral Labs,official_ashby,https://jobs.ashbyhq.com/spectral labs,true,12,smal
 Nio,official_lever,https://jobs.lever.co/nio-usa,true,5,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Shield AI,official_ashby,https://jobs.ashbyhq.com/f7d8749a-72d6-407c-bf98-292ea630c73a,true,684,unknown,,https://github.com/SimplifyJobs/New-Grad-Positions
 Within,official_ashby,https://jobs.ashbyhq.com/within.ai,true,20,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
+RosaicLabs,official_lever,https://jobs.lever.co/rosaiclabs,true,9,small_proxy,,https://github.com/SimplifyJobs/New-Grad-Positions
 Jerry,official_ashby,https://jobs.ashbyhq.com/jerry.ai,true,37,unknown,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 Abacus Insights,official_greenhouse,https://job-boards.greenhouse.io/abacusinsights,true,22,small_proxy,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 SpaceX,official_greenhouse,https://job-boards.greenhouse.io/spacex,true,2834,unknown,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
@@ -192,6 +196,7 @@ Arizent,official_ashby,https://jobs.ashbyhq.com/arizent,true,4,small_proxy,,http
 Handshake,official_ashby,https://jobs.ashbyhq.com/handshake,true,84,unknown,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 Petra Security,official_ashby,https://jobs.ashbyhq.com/petra-security,true,13,small_proxy,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 Artera,official_lever,https://jobs.lever.co/artera,true,8,small_proxy,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
+Palantir,official_lever,https://jobs.lever.co/palantir,true,306,unknown,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 SteerBridge,official_lever,https://jobs.lever.co/steerbridge,true,47,unknown,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 Coherent Solutions,official_greenhouse,https://job-boards.greenhouse.io/coherentsolutions,true,14,small_proxy,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 DataLab USA,official_lever,https://jobs.lever.co/datalabusa,true,16,small_proxy,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
@@ -214,11 +219,12 @@ Pangram Labs,official_ashby,https://jobs.ashbyhq.com/pangramlabs,true,15,small_p
 LiteLLM,official_ashby,https://jobs.ashbyhq.com/litellm,true,9,small_proxy,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 Amira Learning,official_greenhouse,https://job-boards.greenhouse.io/amiralearning,true,4,small_proxy,,https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md
 Applied Underwriters,official_lever,https://jobs.lever.co/auw,true,21,small_proxy,,https://github.com/Tar-ive/ML_Newgrad_2027
+OpenAI,official_ashby,https://jobs.ashbyhq.com/openai,true,805,unknown,,https://github.com/Tar-ive/ML_Newgrad_2027
 Belvedere Trading,official_lever,https://jobs.lever.co/belvederetrading,true,17,small_proxy,,https://github.com/Tar-ive/ML_Newgrad_2027
 Tabs,official_ashby,https://jobs.ashbyhq.com/tabs,true,27,small_proxy,,https://github.com/Tar-ive/ML_Newgrad_2027
 Descript,official_greenhouse,https://job-boards.greenhouse.io/descript,true,9,small_proxy,,https://github.com/Tar-ive/ML_Newgrad_2027
 Scopely,official_greenhouse,https://job-boards.greenhouse.io/scopely,true,180,unknown,,https://github.com/Tar-ive/ML_Newgrad_2027
-Veepee,official_lever,https://jobs.lever.co/veepee,true,111,unknown,,https://github.com/Tar-ive/ML_Newgrad_2027
+Veepee,official_lever,https://jobs.lever.co/veepee,true,112,unknown,,https://github.com/Tar-ive/ML_Newgrad_2027
 PingWind,official_lever,https://jobs.lever.co/pingwind,true,100,unknown,,https://github.com/Tar-ive/ML_Newgrad_2027
 Layup Parts,official_lever,https://jobs.lever.co/layup,true,32,unknown,,https://github.com/Tar-ive/ML_Newgrad_2027
 WeRide.ai,official_lever,https://jobs.lever.co/weride,true,14,small_proxy,,https://github.com/Tar-ive/ML_Newgrad_2027

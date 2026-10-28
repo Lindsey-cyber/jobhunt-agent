@@ -22,7 +22,7 @@ export interface ApplyOptions {
   headed?: boolean;
   confirmTimeoutMs?: number;
   // The catalog's names for the posting, for embed pages that show neither.
-  job?: { company: string; title: string };
+  job?: { company: string; title: string; location?: string };
 }
 
 export type ApplyResult =
@@ -107,6 +107,7 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   // An embed page may carry no title and only the board slug ("pinterest").
   if (job && !form.jobTitle) form.jobTitle = job.title;
   if (job && /^[a-z0-9-]*$/.test(form.company)) form.company = job.company;
+  if (job?.location && !form.jobLocation) form.jobLocation = job.location;
   const runDir = join(user.dir, "runs", slug(key), stamp());
   mkdirSync(runDir, { recursive: true });
   const save = (name: string, data: unknown) => writeFileSync(join(runDir, name), JSON.stringify(data, null, 2));

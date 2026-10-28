@@ -143,7 +143,7 @@ switch (command) {
     for (const j of ready.slice(0, limit)) {
       if (ledger.submittedOn(new Date().toISOString().slice(0, 10)) >= u.config.dailySubmitCap) break;
       try {
-        const r = await apply({ url: j.url, user: u, ledger, approved: true, job: { company: j.company, title: j.title } });
+        const r = await apply({ url: j.url, user: u, ledger, approved: true, job: { company: j.company, title: j.title, location: j.location } });
         console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
       } catch (e) {
         console.log(`${j.company} · ${j.title}: error ${(e as Error).message.split("\n")[0]}`);

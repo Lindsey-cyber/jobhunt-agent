@@ -156,7 +156,7 @@ export async function draftAnswers(user: UserData, ledger: Ledger, log: (s: stri
     user.bank.answers.push({ id, question: q.label, aliases: [], answer: draft.answer, company, jobTitle, origin: "generated", evidence: draft.evidence });
     const item = {
       id: `answer:${id}`,
-      kind: "drafted_answer",
+      kind: "drafted_answer" as const,
       subject: `${company} · ${jobTitle}: ${q.label}`,
       detail: `Drafted from your resume and used on the form: "${draft.answer}". To change it: jh answer answer:${id} "<your text>"`,
       link: q.url,

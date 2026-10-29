@@ -140,7 +140,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, _label, ctx) => usStateName(p.contact.address.state, ctx.options),
   },
   { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode|zip postal( code)?)$/, resolve: (p) => p.contact.address.postalCode },
-  { path: "contact.address.country", pattern: /^country( of residence| region)?$/, resolve: (p) => p.contact.address.country },
+  { path: "contact.address.country", pattern: /^country( of residence| region| territory)?$/, resolve: (p) => p.contact.address.country },
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
   { path: "links.website", kinds: ["text"], pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },

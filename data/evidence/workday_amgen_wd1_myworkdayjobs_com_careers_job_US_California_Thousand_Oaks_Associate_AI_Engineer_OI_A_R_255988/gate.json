@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Country / Territory\": no answer in profile or answer bank",
+    "required \"Country / Territory Phone Code\": no answer in profile or answer bank"
+  ]
+}

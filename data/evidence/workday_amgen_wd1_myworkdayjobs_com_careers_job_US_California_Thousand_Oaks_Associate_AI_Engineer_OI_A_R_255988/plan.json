@@ -1,0 +1,793 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://amgen.wd1.myworkdayjobs.com/careers/job/US---California---Thousand-Oaks/Associate-AI-Engineer--OI-A_R-255988/apply/applyManually",
+    "company": "Amgen",
+    "jobTitle": "Associate AI Engineer, OI&A",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "AAAS/Science (Science Careers Jobs)",
+          "AAPS (American Association Pharmaceutical Scientists",
+          "ACC (Association of Corporate Counsel)",
+          "AfroBioTech - African Americans in Biotechnology",
+          "Afrotech",
+          "American Chemistry Society",
+          "Amgen Biotech Fellowship",
+          "Amgen Recruiter",
+          "Amgen Sourcer",
+          "Amgen Staff Member Referred Me",
+          "Amgen Tech Talent-con",
+          "AWIS – Association for Women in Science",
+          "BC Tech Jobs",
+          "Bioinformatics.ca",
+          "BioSpace",
+          "BioTalent Canada",
+          "Bizreach",
+          "Boston Women In Biotech",
+          "BSidesLisbon",
+          "Canadian Society for Molecular Biosciences",
+          "Career Builder",
+          "CBE - Coalition of Black Excellence",
+          "College Career Fair",
+          "Conference",
+          "Corporate Website",
+          "Current Amgen Fellowship",
+          "Current Amgen Intern/Co-Op",
+          "Dice",
+          "Direct Employers",
+          "DisabilityIN",
+          "Diversity Career Fair",
+          "Facebook",
+          "Facebook Post",
+          "Fairy God Boss",
+          "Forte",
+          "Forte MBA Women’s Leadership Conference",
+          "Franklin Cummings Technical School",
+          "Georgia Tech - Georgia Institute of Technology",
+          "GetLawyerJobs.com",
+          "GettingHired.com",
+          "Glassdoor.com",
+          "Glassdoor Post",
+          "Handshake",
+          "HBA - Healthcare Businesswomen's Association",
+          "I am a Current Amgen Contractor/Temp",
+          "I am a Former Amgen Contractor/Temp",
+          "I am a Former Amgen Staff",
+          "Indeed",
+          "Instagram Post",
+          "Intern Conversion",
+          "Intern Extension",
+          "Irishjobs.ie",
+          "Job Alert",
+          "Job Board - Other",
+          "Jobs.ch (The Network) - Switzerland",
+          "Job Target",
+          "jobvector.de",
+          "Jobware.de",
+          "Keck Graduate Institute - KGI",
+          "LifeSciencesBC.CA",
+          "LinkedIn",
+          "LinkedIn Post",
+          "LiveHire Application",
+          "LiveHire Referral",
+          "LiveHire Search",
+          "Magazine/Newspaper/Trade Journal",
+          "MBA Consortium",
+          "MBA Vets Expo",
+          "Medzilla",
+          "Military / Veteran / Military Spouse Career Fair",
+          "Military/Veteran Conference",
+          "Military/Veteran Job Board",
+          "MIT LGO",
+          "Moorpark Community College",
+          "National Sales Network",
+          "Nature Jobs",
+          "NBMBAA",
+          "NC Biotech MOVE Veteran",
+          "New: WIIM Women In Influencer Marketing",
+          "New SWE Society of Women Engineers",
+          "NextOps",
+          "NOBCChE - National Organization for the Professional Advancement of Black Chemists and Chemical Engs",
+          "NSBE – National Society of Black Engineers",
+          "Operations Talent Scout",
+          "Oplign",
+          "Paradox",
+          "PharmaDiversity",
+          "PharmiWeb",
+          "Prior Amgen Fellowship",
+          "Prior Amgen Intern/Co-Op",
+          "Private Public Partnership Office (P3O)",
+          "Professional Career Fair",
+          "Professional Diversity Network",
+          "SACNAS - Society for Advancement of Chicanos/Hispanics and Native Americans in Science",
+          "SCWIST: Society for Canadian Women in Science & Technology",
+          "SEEK",
+          "Service Academy Career Conference",
+          "SimplyHired",
+          "Social Media - Other",
+          "Society of Women Engineers",
+          "Sr_AMG-CG",
+          "Sr_AMG-JCD",
+          "Sr_AMG-LS",
+          "Sr_AMG-PG",
+          "Sr_AMG-SM",
+          "StepStone.de (The Network) - Germany",
+          "Talent Community Specialist",
+          "TheLadders",
+          "TotalJobs.com (The Network) - United Kingdom",
+          "TUR - Gensenta",
+          "Twitter - Careers",
+          "Twitter Post",
+          "UR Referral",
+          "USC MBV Program",
+          "Veteran Recruiter",
+          "VetJobs",
+          "WISE",
+          "Women in Manufacturing (WIM)",
+          "Women in Technology International",
+          "Women in the Pharmaceutical Industry",
+          "Women Who Code",
+          "Work for Warriors",
+          "Workopolis - Canada",
+          "XING",
+          "ZipRecruiter"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you worked at Amgen as an Employee, Consultant or Contractor? If yes, please provide an answer to at least one of the questions to follow.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Thousand Oaks, CA"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "AAAS/Science (Science Careers Jobs)",
+          "AAPS (American Association Pharmaceutical Scientists",
+          "ACC (Association of Corporate Counsel)",
+          "AfroBioTech - African Americans in Biotechnology",
+          "Afrotech",
+          "American Chemistry Society",
+          "Amgen Biotech Fellowship",
+          "Amgen Recruiter",
+          "Amgen Sourcer",
+          "Amgen Staff Member Referred Me",
+          "Amgen Tech Talent-con",
+          "AWIS – Association for Women in Science",
+          "BC Tech Jobs",
+          "Bioinformatics.ca",
+          "BioSpace",
+          "BioTalent Canada",
+          "Bizreach",
+          "Boston Women In Biotech",
+          "BSidesLisbon",
+          "Canadian Society for Molecular Biosciences",
+          "Career Builder",
+          "CBE - Coalition of Black Excellence",
+          "College Career Fair",
+          "Conference",
+          "Corporate Website",
+          "Current Amgen Fellowship",
+          "Current Amgen Intern/Co-Op",
+          "Dice",
+          "Direct Employers",
+          "DisabilityIN",
+          "Diversity Career Fair",
+          "Facebook",
+          "Facebook Post",
+          "Fairy God Boss",
+          "Forte",
+          "Forte MBA Women’s Leadership Conference",
+          "Franklin Cummings Technical School",
+          "Georgia Tech - Georgia Institute of Technology",
+          "GetLawyerJobs.com",
+          "GettingHired.com",
+          "Glassdoor.com",
+          "Glassdoor Post",
+          "Handshake",
+          "HBA - Healthcare Businesswomen's Association",
+          "I am a Current Amgen Contractor/Temp",
+          "I am a Former Amgen Contractor/Temp",
+          "I am a Former Amgen Staff",
+          "Indeed",
+          "Instagram Post",
+          "Intern Conversion",
+          "Intern Extension",
+          "Irishjobs.ie",
+          "Job Alert",
+          "Job Board - Other",
+          "Jobs.ch (The Network) - Switzerland",
+          "Job Target",
+          "jobvector.de",
+          "Jobware.de",
+          "Keck Graduate Institute - KGI",
+          "LifeSciencesBC.CA",
+          "LinkedIn",
+          "LinkedIn Post",
+          "LiveHire Application",
+          "LiveHire Referral",
+          "LiveHire Search",
+          "Magazine/Newspaper/Trade Journal",
+          "MBA Consortium",
+          "MBA Vets Expo",
+          "Medzilla",
+          "Military / Veteran / Military Spouse Career Fair",
+          "Military/Veteran Conference",
+          "Military/Veteran Job Board",
+          "MIT LGO",
+          "Moorpark Community College",
+          "National Sales Network",
+          "Nature Jobs",
+          "NBMBAA",
+          "NC Biotech MOVE Veteran",
+          "New: WIIM Women In Influencer Marketing",
+          "New SWE Society of Women Engineers",
+          "NextOps",
+          "NOBCChE - National Organization for the Professional Advancement of Black Chemists and Chemical Engs",
+          "NSBE – National Society of Black Engineers",
+          "Operations Talent Scout",
+          "Oplign",
+          "Paradox",
+          "PharmaDiversity",
+          "PharmiWeb",
+          "Prior Amgen Fellowship",
+          "Prior Amgen Intern/Co-Op",
+          "Private Public Partnership Office (P3O)",
+          "Professional Career Fair",
+          "Professional Diversity Network",
+          "SACNAS - Society for Advancement of Chicanos/Hispanics and Native Americans in Science",
+          "SCWIST: Society for Canadian Women in Science & Technology",
+          "SEEK",
+          "Service Academy Career Conference",
+          "SimplyHired",
+          "Social Media - Other",
+          "Society of Women Engineers",
+          "Sr_AMG-CG",
+          "Sr_AMG-JCD",
+          "Sr_AMG-LS",
+          "Sr_AMG-PG",
+          "Sr_AMG-SM",
+          "StepStone.de (The Network) - Germany",
+          "Talent Community Specialist",
+          "TheLadders",
+          "TotalJobs.com (The Network) - United Kingdom",
+          "TUR - Gensenta",
+          "Twitter - Careers",
+          "Twitter Post",
+          "UR Referral",
+          "USC MBV Program",
+          "Veteran Recruiter",
+          "VetJobs",
+          "WISE",
+          "Women in Manufacturing (WIM)",
+          "Women in Technology International",
+          "Women in the Pharmaceutical Industry",
+          "Women Who Code",
+          "Work for Warriors",
+          "Workopolis - Canada",
+          "XING",
+          "ZipRecruiter"
+        ]
+      },
+      "value": "Job Board - Other",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you worked at Amgen as an Employee, Consultant or Contractor? If yes, please provide an answer to at least one of the questions to follow.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Apt 3BS",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line2"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

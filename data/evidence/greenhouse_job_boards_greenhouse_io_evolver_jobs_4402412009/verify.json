@@ -1,0 +1,196 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "cover_letter",
+      "label": "Cover Letter",
+      "expected": "evolver.pdf",
+      "actual": "evolver.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics & Decision Theory",
+      "actual": "Statistics & Decision Theory",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7551715009",
+      "label": "Have you worked directly with non-technical stakeholders?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7551716009",
+      "label": "Have you built and deployed production systems (not academic projects)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7551717009",
+      "label": "Are you legally authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7551718009",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7551719009",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7551720009",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "4010567009",
+      "label": "How would you describe your gender identity?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4010568009",
+      "label": "How would you describe your racial/ethnic background?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4010569009",
+      "label": "How would you describe your sexual orientation?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4010570009",
+      "label": "Do you identify as transgender?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4010571009",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "4010572009",
+      "label": "Are you a veteran or active member of the United States Armed Forces?",
+      "expected": "No, I am not a veteran or active member",
+      "actual": "No, I am not a veteran or active member",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

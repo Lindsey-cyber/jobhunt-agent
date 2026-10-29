@@ -495,7 +495,7 @@ export const PROFILE_RULES: ProfileRule[] = [
       const opts = ctx.options ?? [];
       // A search box (Workday) finds "LinkedIn" as one item; job-alert emails are one of the sources.
       if (!opts.length) return "LinkedIn";
-      for (const want of [/^job ?boards?$/i, /\bjob board\b/i, /^github$/i, /^linkedin$/i, /careers? (site|page)|website/i, /^other$/i]) {
+      for (const want of [/^job ?boards?$/i, /\b(job|recruiting) boards?\b/i, /^github$/i, /^linkedin$/i, /careers? (site|page)|website/i, /^other$/i]) {
         const hit = opts.find((o) => want.test(o.trim()));
         if (hit) return hit;
       }

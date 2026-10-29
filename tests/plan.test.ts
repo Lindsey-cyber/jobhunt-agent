@@ -381,6 +381,7 @@ describe("buildPlan", () => {
     expect(one("What source(s) of information influenced your decision to apply for a P&G position?", ["P&G Career Site (pgcareers.com)", "LinkedIn", "Job Board (Indeed, Glassdoor, etc.)", "Other"], "Procter & Gamble", "checkbox")).toMatchObject({ value: "Job Board (Indeed, Glassdoor, etc.)" });
     expect(one("Have you ever been an employee of any Government (civil service or military) (https://careers.gevernova.com/global/en/definition-of-government)?", ["Yes", "No"], "GE Vernova")).toMatchObject({ value: "No" });
     expect(one("Are you currently serving or have you ever served as part of the military?", ["Yes", "No"], "Procter & Gamble")).toMatchObject({ value: "No" });
+    expect(one("How Did You Hear About Us?", ["Recruiting Boards", "Recruiting Event", "Social"], "R1 RCM")).toMatchObject({ value: "Recruiting Boards" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

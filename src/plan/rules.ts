@@ -343,7 +343,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       if (/\b(relative|family|familial|client|customer|government|partner|competitor)\b/.test(label)) return undefined;
-      const first = normalize(ctx.company ?? "").split(" ")[0];
+      const first = normalize(ctx.company ?? "").replace(/^the /, "").split(" ")[0];
       // "American Institutes for Research" is also "AIR".
       const initials = (ctx.company ?? "").split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]!.toLowerCase()).join("");
       const names = [first, initials.length >= 3 ? initials : ""].filter((x): x is string => Boolean(x && x.length >= 2));

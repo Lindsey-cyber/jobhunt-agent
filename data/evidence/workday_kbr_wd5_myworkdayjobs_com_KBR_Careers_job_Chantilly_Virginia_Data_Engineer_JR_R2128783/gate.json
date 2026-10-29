@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Phone Device Type\": answer \"Mobile\" matches none of the options",
+    "required \"What's their name or email address?\": no answer in profile or answer bank",
+    "required \"What's their name or email address?\" is empty after filling"
+  ]
+}

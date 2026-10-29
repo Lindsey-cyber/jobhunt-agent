@@ -1,0 +1,9 @@
+{
+  "_systemfield_name": "",
+  "_systemfield_email": "lm3879@columbia.edu",
+  "_systemfield_resume": "Lindsey_Ma_Resume.pdf",
+  "77c1cd5d-eb95-4d6c-9754-112118067807": "https://www.linkedin.com/in/lindsey-ma/",
+  "bc733795-7ff9-4fec-ad1c-4189103df0f6": "https://www.lindseyma.com/",
+  "87150380-52f4-442e-bc62-30d5ce73fb2f": "One ML system I worked on was the real-time vision pipeline for an autonomous badminton-training robot at InnoX Academy. The problem was to estimate the player, shuttlecock, and court state from video quickly enough for the robot to react. I developed the pipeline around YOLOv8-based player detection, pose estimation, shuttlecock tracking, and court localization, reaching 20+ FPS. I also implemented stereo 3D shuttlecock tracking and landing-point prediction, then optimized Raspberry Pi inference with ONNX Runtime, quantization, and asynchronous video pipelines. The useful lesson for me was that perception quality and system constraints had to be handled together: the model needed to be accurate, but also fast and integrated enough to support real-time robotics behavior.",
+  "a8978b8f-2522-4921-acb2-6d749a41ac86": ""
+}

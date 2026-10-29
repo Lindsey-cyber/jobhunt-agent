@@ -1,0 +1,72 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "405ff173-943e-4e81-bd7c-0e39003ef116",
+      "label": "What is your LinkedIn URL?",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "49b35ed8-ca5c-41af-9c9f-798d6cf7d439",
+      "label": "Will you now or in the future require sponsorship to work in the US?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "9b719d89-60d8-4874-ab63-0549c6261000",
+      "label": "How did you hear about Commure?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_gender",
+      "label": "Gender",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_race",
+      "label": "Race",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "1ff2c884-b6e5-4b31-bb25-a81f9d16057f",
+      "label": "Please specify the type of sponsorship you will require, alongside any deadlines we should be aware of.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name"
+  ],
+  "fillErrors": []
+}

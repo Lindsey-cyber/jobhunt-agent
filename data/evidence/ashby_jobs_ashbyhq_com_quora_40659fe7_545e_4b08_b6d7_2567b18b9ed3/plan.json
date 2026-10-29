@@ -235,7 +235,8 @@
           "I prefer not to say"
         ]
       }
-    ]
+    ],
+    "priorApplications": 0
   },
   "items": [
     {
@@ -386,7 +387,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "79679009-d30c-4729-8f92-ad1ab82ef830",
         "label": "Graduation Date or Anticipated Graduation Date",
@@ -394,7 +395,13 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "education[0].gradYear"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -422,7 +429,7 @@
         "required": true,
         "options": []
       },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -442,7 +449,7 @@
       "reason": "no document for this upload"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "6eac2cef-81c0-43ef-a17d-ac3b12c04175",
         "label": "What is your preferred programming language for your interviews (you can change this later)?",
@@ -454,7 +461,14 @@
           "Python"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Python",
+      "source": {
+        "type": "bank",
+        "id": "interview-language",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -482,7 +496,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "b5311071-d921-44c5-b5e5-62a008c1044b",
         "label": "In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?",
@@ -494,7 +508,14 @@
           "Other"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "United States",
+      "source": {
+        "type": "bank",
+        "id": "draft:5e09fac49a",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "skip",

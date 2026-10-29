@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Name\": no answer in profile or answer bank",
+    "required \"Aurora believes in-person work increases collaboration, empathy, and our ability to lead effectively. As such, this opportunity requires you to work from one of Aurora's offices at least 3 days per week. Please indicate your preferred Aurora office location for this role.\": no answer in profile or answer bank",
+    "required \"Name\" is empty after filling",
+    "required \"Aurora believes in-person work increases collaboration, empathy, and our ability to lead effectively. As such, this opportunity requires you to work from one of Aurora's offices at least 3 days per week. Please indicate your preferred Aurora office location for this role.\" is empty after filling"
+  ]
+}

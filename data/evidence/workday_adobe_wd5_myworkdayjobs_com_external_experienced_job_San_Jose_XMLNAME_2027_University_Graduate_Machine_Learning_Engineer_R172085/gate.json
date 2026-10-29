@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Country\": answer \"United States\" matches none of the options",
+    "required \"Given Name(s)\": no answer in profile or answer bank",
+    "required \"Given Name(s)\" is empty after filling"
+  ]
+}

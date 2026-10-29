@@ -93,17 +93,17 @@
       "pass": true
     },
     {
-      "fieldId": "question_69886287",
-      "label": "Have you worked at DoorDash?",
-      "expected": "I have not worked at DoorDash",
-      "actual": "I have not worked at DoorDash",
-      "pass": true
-    },
-    {
       "fieldId": "question_69886288",
       "label": "Applicant Privacy Acknowledgement",
       "expected": "Yes",
       "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69886289",
+      "label": "Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.",
+      "expected": "No",
+      "actual": "No",
       "pass": true
     },
     {
@@ -114,10 +114,17 @@
       "pass": true
     },
     {
-      "fieldId": "1332",
-      "label": "Are you Hispanic or Latinx?",
+      "fieldId": "1328",
+      "label": "Do you identify as transgender?",
       "expected": "I don't wish to answer",
       "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "1332",
+      "label": "Are you Hispanic or Latinx?",
+      "expected": "No",
+      "actual": "No",
       "pass": true
     },
     {
@@ -136,8 +143,7 @@
     }
   ],
   "emptyRequired": [
-    "Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.",
-    "Do you identify as transgender?",
+    "Have you worked at DoorDash?",
     "Race (*Please select one option that best describes how you identify*)"
   ],
   "fillErrors": []

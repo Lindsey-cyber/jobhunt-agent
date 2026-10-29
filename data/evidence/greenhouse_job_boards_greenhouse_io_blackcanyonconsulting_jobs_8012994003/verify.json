@@ -1,0 +1,114 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32983466003",
+      "label": "Will you now, or in the future, require visa sponsorship? This includes if you are on a STEM OPT, J-1, F-1 visa currently.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32983461003",
+      "label": "Describe a project where you used Python or R to analyze clinical, biomedical, or other complex health-related data. What was the research question, what data did you work with, and what analytical approach did you use?",
+      "expected": "At Columbia’s Zuckerman Institute, I worked on a biomedical imaging project asking how well self-supervised learning could denoise two-photon calcium-imaging data while preserving neuronal signal. The data included real calcium-imaging videos and synthetic imaging datasets built from real neuronal spatial footprints, simulated temporal traces, and controlled Gaussian noise. I used Python-based deep learning workflows to implement a four-direction spatial masking strategy, integrate it with PMD spatial-component selection, and evaluate ResNet, U-Net, and lightweight convolutional models. I compared spatial, temporal, and combined denoising approaches, ran ablations on receptive fields, normalization, losses, and training settings, and assessed reconstruction fidelity, temporal correlation, signal retention, and rank-selection trade-offs.",
+      "actual": "At Columbia’s Zuckerman Institute, I worked on a biomedical imaging project asking how well self-supervised learning could denoise two-photon calcium-imaging data while preserving neuronal signal. The data included real calcium-imaging videos and synthetic imaging datasets built from real neuronal spatial footprints, simulated temporal traces, and controlled Gaussian noise. I used Python-based deep learning workflows to implement a four-direction spatial masking strategy, integrate it with PMD spatial-component selection, and evaluate ResNet, U-Net, and lightweight convolutional models. I compared spatial, temporal, and combined denoising approaches, ran ablations on receptive fields, normalization, losses, and training settings, and assessed reconstruction fidelity, temporal correlation, signal retention, and rank-selection trade-offs.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32983462003",
+      "label": "Tell us about a project where you used NLP, large language models, or retrieval-augmented generation to extract or structure information from unstructured text. What techniques or tools did you use, and how did you evaluate the accuracy and reliability of the results?",
+      "expected": "In Columbia AI Alignment Club, I worked on a project evaluating when Qwen models withhold versus produce answers for known and unknown entities. It was not a production RAG system, but it directly involved structuring and validating LLM behavior from unstructured natural-language responses. I used Hugging Face and TransformerLens, activation hooks across transformer layers, linear probes, feature-attribution graphs, and steering scripts. For reliability, I used matched prompt templates, multiple random seeds, randomized-direction and sham-intervention controls, grouped-bootstrap controls, and checked FP32 inference consistency with logit discrepancies below 4.2 × 10−5. I evaluated 40 natural-language responses and token-level generation trajectories, and the main conclusion was deliberately conservative: the behavior was too unstable to support a reliable causal circuit claim.",
+      "actual": "In Columbia AI Alignment Club, I worked on a project evaluating when Qwen models withhold versus produce answers for known and unknown entities. It was not a production RAG system, but it directly involved structuring and validating LLM behavior from unstructured natural-language responses. I used Hugging Face and TransformerLens, activation hooks across transformer layers, linear probes, feature-attribution graphs, and steering scripts. For reliability, I used matched prompt templates, multiple random seeds, randomized-direction and sham-intervention controls, grouped-bootstrap controls, and checked FP32 inference consistency with logit discrepancies below 4.2 × 10−5. I evaluated 40 natural-language responses and token-level generation trajectories, and the main conclusion was deliberately conservative: the behavior was too unstable to support a reliable causal circuit claim.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32983463003",
+      "label": "Describe a time you worked with clinicians, scientists, or other non-technical subject matter experts on a research or data-analysis project. How did you translate their research needs into an analytical approach, and how did you communicate your findings back to them?",
+      "expected": "A clear example is my Research Assistant work at Columbia Zuckerman Institute on two-photon calcium-imaging data. The research problem was not just to build a model, but to evaluate whether self-supervised denoising improved reconstruction quality without sacrificing neuronal signal. I translated that into controlled analytical comparisons: four-direction spatial masking, PMD spatial-component selection, ResNet/U-Net/lightweight CNN configurations, Noise2Noise training-pair tests, and synthetic datasets with controlled noise levels. To make the results usable for scientists and wet-lab researchers, I reported trade-offs in signal retention, temporal correlation, reconstruction fidelity, and rank selection rather than only model metrics. I also organized the lab code into a downloadable package with public documentation and step-by-step guides, which is the same communication discipline I would bring to BCC’s clinical collaborators.",
+      "actual": "A clear example is my Research Assistant work at Columbia Zuckerman Institute on two-photon calcium-imaging data. The research problem was not just to build a model, but to evaluate whether self-supervised denoising improved reconstruction quality without sacrificing neuronal signal. I translated that into controlled analytical comparisons: four-direction spatial masking, PMD spatial-component selection, ResNet/U-Net/lightweight CNN configurations, Noise2Noise training-pair tests, and synthetic datasets with controlled noise levels. To make the results usable for scientists and wet-lab researchers, I reported trade-offs in signal retention, temporal correlation, reconstruction fidelity, and rank selection rather than only model metrics. I also organized the lab code into a downloadable package with public documentation and step-by-step guides, which is the same communication discipline I would bring to BCC’s clinical collaborators.",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "No",
+      "actual": "Decline To Self Identify",
+      "pass": false
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "race",
+      "label": "Please identify your race",
+      "expected": "Decline To Self Identify",
+      "actual": "",
+      "pass": false
+    }
+  ],
+  "emptyRequired": [
+    "What are your salary requirements?"
+  ],
+  "fillErrors": []
+}

@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Name\": no answer in profile or answer bank",
+    "required \"What are your salary requirements?\": compensation is never filled automatically",
+    "required \"Name\" is empty after filling",
+    "required \"What are your salary requirements?\" is empty after filling"
+  ]
+}

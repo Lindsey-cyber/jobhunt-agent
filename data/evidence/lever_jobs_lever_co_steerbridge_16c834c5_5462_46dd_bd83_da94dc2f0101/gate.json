@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "Lever submits through hCaptcha: review the filled form and press Submit yourself",
+    "required \"Name\" is empty after filling",
+    "required \"Date\" is empty after filling"
+  ]
+}

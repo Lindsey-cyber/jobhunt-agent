@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Cover Letter\": no document for this upload",
+    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
+    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\""
+  ]
+}

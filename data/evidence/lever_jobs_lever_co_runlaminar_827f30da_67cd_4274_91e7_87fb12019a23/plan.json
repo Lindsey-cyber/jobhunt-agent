@@ -1,0 +1,378 @@
+{
+  "form": {
+    "ats": "lever",
+    "url": "https://jobs.lever.co/runlaminar/827f30da-67cd-4274-91e7-87fb12019a23/apply",
+    "company": "Laminar",
+    "jobTitle": "(Jr) Machine Learning (ML) Developer",
+    "jobLocation": "Boston, MA",
+    "fields": [
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "cards[d8456217-247a-4453-a4a8-ce16904f8334][field0]",
+        "label": "Are you authorized to work lawfully in the United States for Laminar?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "cards[237f47d2-09e8-4787-add5-e65faeddffc0][field0]",
+        "label": "Are you able to work in-person at least 3-4 days a week in the following locations?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes - Boston, MA",
+          "Yes - San Francisco, CA",
+          "No"
+        ]
+      },
+      {
+        "id": "cards[84717842-528d-4e9e-bc24-0acdd9e722de][field0]",
+        "label": "Would you like to share who referred you to this opportunity? If so, please include here.",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "cards[0210f88a-db0b-4862-b732-851ce6e79733][field0]",
+        "label": "What interests you about this role, and how do your skills or experience make you a good fit?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[61b45b58-e9d7-4b0f-ae49-b2e6158e37d2][field0]",
+        "label": "Will you now or in the future require Laminar to commence (“sponsor”) an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)? This is sometimes called “sponsorship” for an employment-based visa status.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[d8456217-247a-4453-a4a8-ce16904f8334][field0]",
+        "label": "Are you authorized to work lawfully in the United States for Laminar?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[237f47d2-09e8-4787-add5-e65faeddffc0][field0]",
+        "label": "Are you able to work in-person at least 3-4 days a week in the following locations?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes - Boston, MA",
+          "Yes - San Francisco, CA",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cards[84717842-528d-4e9e-bc24-0acdd9e722de][field0]",
+        "label": "Would you like to share who referred you to this opportunity? If so, please include here.",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[0210f88a-db0b-4862-b732-851ce6e79733][field0]",
+        "label": "What interests you about this role, and how do your skills or experience make you a good fit?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "What draws me to Laminar is that the models are judged in contact with messy physical processes, not just clean benchmarks. That matches the work I have enjoyed most: building experiments that reveal when models generalize, fail, or pick up confounds. At Arborphy AI, I designed dual-encoder plant-identification models, compared encoder and fusion choices, and ran individual-disjoint, multi-seed, and held-out evaluations. At Columbia Zuckerman, I worked on self-supervised denoising for calcium-imaging data with ablations across architectures, losses, and training settings. I also built real-time robotics vision pipelines with optimized inference. Laminar’s focus on preprocessing, feature extraction, drift/anomaly robustness, and clean ML tooling is a strong match for my Python, PyTorch, and scikit-learn background and my habit of turning research questions into reproducible code.",
+      "source": {
+        "type": "bank",
+        "id": "draft:3af926a7b2",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[61b45b58-e9d7-4b0f-ae49-b2e6158e37d2][field0]",
+        "label": "Will you now or in the future require Laminar to commence (“sponsor”) an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)? This is sometimes called “sponsorship” for an employment-based visa status.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    }
+  ]
+}

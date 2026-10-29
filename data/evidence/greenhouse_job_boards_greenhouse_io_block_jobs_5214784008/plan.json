@@ -688,6 +688,7 @@
         ]
       }
     ],
+    "priorApplications": 0,
     "jobLocation": "Bay Area, CA, United States of America"
   },
   "items": [
@@ -1048,7 +1049,7 @@
         "required": true,
         "options": []
       },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1380,7 +1381,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_15960945008",
         "label": "Are you authorized to work lawfully in the location posted for this position?",
@@ -1391,7 +1392,13 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "blocked",
@@ -1455,7 +1462,7 @@
       "reason": "legal attestations need the candidate"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_15960952008",
         "label": "What is your Legal First Name?",
@@ -1463,7 +1470,14 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Lanxin",
+      "source": {
+        "type": "bank",
+        "id": "draft:32883d9888",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",

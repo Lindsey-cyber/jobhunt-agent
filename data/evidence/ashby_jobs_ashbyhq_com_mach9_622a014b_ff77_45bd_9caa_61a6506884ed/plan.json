@@ -1,0 +1,171 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/mach9/622a014b-ff77-45bd-9caa-61a6506884ed/application",
+    "company": "Mach9",
+    "jobTitle": "ML Engineer, Product",
+    "jobLocation": "San Francisco",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "77c1cd5d-eb95-4d6c-9754-112118067807",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "bc733795-7ff9-4fec-ad1c-4189103df0f6",
+        "label": "Personal Website (optional)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "87150380-52f4-442e-bc62-30d5ce73fb2f",
+        "label": "Describe a ML model that you worked on. What problem did it solve? (Choose either a published paper or a production system if you can.)",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "a8978b8f-2522-4921-acb2-6d749a41ac86",
+        "label": "How many days of the week have the letter \"y\" in them?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "77c1cd5d-eb95-4d6c-9754-112118067807",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "bc733795-7ff9-4fec-ad1c-4189103df0f6",
+        "label": "Personal Website (optional)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "87150380-52f4-442e-bc62-30d5ce73fb2f",
+        "label": "Describe a ML model that you worked on. What problem did it solve? (Choose either a published paper or a production system if you can.)",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "One ML system I worked on was the real-time vision pipeline for an autonomous badminton-training robot at InnoX Academy. The problem was to estimate the player, shuttlecock, and court state from video quickly enough for the robot to react. I developed the pipeline around YOLOv8-based player detection, pose estimation, shuttlecock tracking, and court localization, reaching 20+ FPS. I also implemented stereo 3D shuttlecock tracking and landing-point prediction, then optimized Raspberry Pi inference with ONNX Runtime, quantization, and asynchronous video pipelines. The useful lesson for me was that perception quality and system constraints had to be handled together: the model needed to be accurate, but also fast and integrated enough to support real-time robotics behavior.",
+      "source": {
+        "type": "bank",
+        "id": "draft:0adfdd8470",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "a8978b8f-2522-4921-acb2-6d749a41ac86",
+        "label": "How many days of the week have the letter \"y\" in them?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

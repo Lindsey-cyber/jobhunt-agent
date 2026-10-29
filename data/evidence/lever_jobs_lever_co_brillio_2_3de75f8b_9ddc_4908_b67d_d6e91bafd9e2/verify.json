@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "resume",
@@ -33,8 +33,8 @@
       "fieldId": "location",
       "label": "Current location",
       "expected": "New York, New York, United States",
-      "actual": "",
-      "pass": false
+      "actual": "New York, New York, United States",
+      "pass": true
     },
     {
       "fieldId": "org",
@@ -100,8 +100,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Current location"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

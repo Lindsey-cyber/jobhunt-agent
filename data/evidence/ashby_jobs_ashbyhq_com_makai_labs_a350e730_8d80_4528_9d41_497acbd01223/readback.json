@@ -1,0 +1,13 @@
+{
+  "_systemfield_name": "",
+  "_systemfield_email": "lm3879@columbia.edu",
+  "_systemfield_resume": "Lindsey_Ma_Resume.pdf",
+  "35984533-f384-4437-b048-54a31c19334d": "https://www.linkedin.com/in/lindsey-ma/",
+  "132ce063-3f9c-4179-85a0-579167e45513": "",
+  "5e0aa4b0-a687-4102-a1ec-7e80a7a22b62": "Yes",
+  "d38bee2a-1c09-4965-ae44-1afd9f96a4cb": "Yes",
+  "_systemfield_location": "New York, United States",
+  "aac40bf9-3e02-4230-804c-6d2f3a5c94b0": "",
+  "bf7d974a-2a88-40a3-95f7-ccd77306deba": "My resume does not show a commercial production LLM system, so I would not overstate that. My closest deployment-oriented LLM work was at InnoX, where I integrated a locally hosted language model through Ollama for voice-based robot commands and connected natural-language instructions to the robot’s control workflow. That sat alongside a real-time robotics vision stack with YOLOv8 detection, pose estimation, shuttlecock tracking, court localization, stereo 3D tracking, ONNX Runtime optimization, quantization, and asynchronous video pipelines. For Makai’s work on LLM workflows, retrieval, agents, and client-ready systems, I also bring research experience building a multi-agent botanical reasoning prototype with autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation.",
+  "50fc8819-2654-44bc-b2d2-7047274fdc57": "I’ve worked mainly in Python with PyTorch, Hugging Face, scikit-learn, and computer-vision/ML frameworks around EfficientNet, BioCLIP, DINOv3, ResNet, U-Net, and YOLOv8. For work close to Makai’s LLM, retrieval, agents, and structured-workflow needs, I’ve built a multi-agent botanical reasoning prototype with autonomous tool generation and knowledge-graph-based evidence aggregation, integrated a locally hosted language model through Ollama, and used vLLM, Neo4j, FastAPI, Docker, Linux, and Git. I’ve also used ONNX Runtime and quantization for optimized edge inference, plus TransformerLens-style activation hooks and probes for LLM analysis."
+}

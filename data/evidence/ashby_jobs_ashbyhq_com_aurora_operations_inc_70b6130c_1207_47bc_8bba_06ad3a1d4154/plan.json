@@ -1,0 +1,508 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/aurora-operations-inc/70b6130c-1207-47bc-8bba-06ad3a1d4154/application",
+    "company": "Aurora",
+    "jobTitle": "Software Engineer II, Perception",
+    "jobLocation": "Pittsburgh, PA",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "59bc7ede-6e4e-4787-83d9-ab510c441ecc",
+        "label": "Preferred Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "communicationConsent",
+        "label": "Do you consent to receive text messages about your application?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "0c2c1773-ed1f-43d0-acdb-e7df7fe3452e",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "143b6496-b4a5-42cd-87c9-94fdc74992b7",
+        "label": "Most Recent Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "444b2a3d-a4fd-4af1-9f30-a6898808413d",
+        "label": "Most Recent Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "a3f5c889-23b3-4317-9bf5-e29f56db25eb",
+        "label": "Are you a former employee of Aurora?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f35c8db3-4fe8-45d9-a9c1-f6001f7d221d",
+        "label": "Are you currently performing work on behalf of Aurora as a contractor, agency worker, or third-party vendor?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "b0d982ae-26eb-499c-8a5f-745bae4bcb68",
+        "label": "Are you currently authorized to work lawfully in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1ef32a3a-e1be-47ee-9f6a-73492ada975a",
+        "label": "Will you now, or in the future, require Aurora to sponsor you for an employment-based visa in order to employ you (e.g. H-1B visa)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "0fb4944a-b57a-4e77-969b-fbe9e45d4d36",
+        "label": "Aurora believes in-person work increases collaboration, empathy, and our ability to lead effectively. As such, this opportunity requires you to work from one of Aurora's offices at least 3 days per week. Please indicate your preferred Aurora office location for this role.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Bozeman, MT",
+          "Coppell, TX",
+          "Livonia, MI",
+          "Louisville, CO",
+          "Mountain View, CA",
+          "Pittsburgh, PA",
+          "San Francisco, CA",
+          "Seattle, WA"
+        ]
+      },
+      {
+        "id": "a5c4cdd4-8f1a-47ff-a455-f5bf5ab7cb89",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "3a9d874b-7a03-4854-9dd8-41d89ca6c99c",
+        "label": "Website Link (github, portfolio, other)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "1316240f-e74d-448c-87e4-43dd615a4479",
+        "label": "How would you describe your racial/ethnic background?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "477c445b-9cfa-4db6-ae91-8f002183fc04",
+        "label": "Do you identify as LGBTQIA+?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I do not identify as LGBTQIA+",
+          "I identify as LGBTQIA+",
+          "I prefer to self-describe",
+          "I prefer not to answer"
+        ]
+      },
+      {
+        "id": "024582b7-6356-47b9-971e-32b423d51aa5",
+        "label": "How would you describe your gender identity?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "59bc7ede-6e4e-4787-83d9-ab510c441ecc",
+        "label": "Preferred Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "communicationConsent",
+        "label": "Do you consent to receive text messages about your application?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "sms-opt-in",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "0c2c1773-ed1f-43d0-acdb-e7df7fe3452e",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "143b6496-b4a5-42cd-87c9-94fdc74992b7",
+        "label": "Most Recent Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "444b2a3d-a4fd-4af1-9f30-a6898808413d",
+        "label": "Most Recent Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Research Engineer Intern",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a3f5c889-23b3-4317-9bf5-e29f56db25eb",
+        "label": "Are you a former employee of Aurora?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:8a8015e51c",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f35c8db3-4fe8-45d9-a9c1-f6001f7d221d",
+        "label": "Are you currently performing work on behalf of Aurora as a contractor, agency worker, or third-party vendor?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:89f0ca87f1",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "b0d982ae-26eb-499c-8a5f-745bae4bcb68",
+        "label": "Are you currently authorized to work lawfully in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1ef32a3a-e1be-47ee-9f6a-73492ada975a",
+        "label": "Will you now, or in the future, require Aurora to sponsor you for an employment-based visa in order to employ you (e.g. H-1B visa)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "0fb4944a-b57a-4e77-969b-fbe9e45d4d36",
+        "label": "Aurora believes in-person work increases collaboration, empathy, and our ability to lead effectively. As such, this opportunity requires you to work from one of Aurora's offices at least 3 days per week. Please indicate your preferred Aurora office location for this role.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Bozeman, MT",
+          "Coppell, TX",
+          "Livonia, MI",
+          "Louisville, CO",
+          "Mountain View, CA",
+          "Pittsburgh, PA",
+          "San Francisco, CA",
+          "Seattle, WA"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a5c4cdd4-8f1a-47ff-a455-f5bf5ab7cb89",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3a9d874b-7a03-4854-9dd8-41d89ca6c99c",
+        "label": "Website Link (github, portfolio, other)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "1316240f-e74d-448c-87e4-43dd615a4479",
+        "label": "How would you describe your racial/ethnic background?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "477c445b-9cfa-4db6-ae91-8f002183fc04",
+        "label": "Do you identify as LGBTQIA+?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I do not identify as LGBTQIA+",
+          "I identify as LGBTQIA+",
+          "I prefer to self-describe",
+          "I prefer not to answer"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "024582b7-6356-47b9-971e-32b423d51aa5",
+        "label": "How would you describe your gender identity?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "decline",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    }
+  ]
+}

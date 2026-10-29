@@ -1,0 +1,45 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Family Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you currently or have you previously been directly employed, accepted an offer, or contracted with Intel or an Intel subsidiary?",
+    "Given Name(s)"
+  ],
+  "fillErrors": []
+}

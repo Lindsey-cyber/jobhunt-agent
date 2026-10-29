@@ -1,0 +1,17 @@
+{
+  "resume": "Lindsey_Ma_Resume.pdf",
+  "name": "Lanxin Ma",
+  "email": "lm3879@columbia.edu",
+  "phone": "9786681426",
+  "location": "New York, New York, United States",
+  "org": "Arborphy AI LLC",
+  "urls[LinkedIn]": "https://www.linkedin.com/in/lindsey-ma/",
+  "urls[Twitter]": "",
+  "urls[GitHub]": "https://github.com/Lindsey-cyber",
+  "urls[Portfolio]": "https://www.lindseyma.com/",
+  "cards[d8456217-247a-4453-a4a8-ce16904f8334][field0]": "Yes",
+  "cards[237f47d2-09e8-4787-add5-e65faeddffc0][field0]": "",
+  "cards[84717842-528d-4e9e-bc24-0acdd9e722de][field0]": "",
+  "cards[0210f88a-db0b-4862-b732-851ce6e79733][field0]": "What draws me to Laminar is that the models are judged in contact with messy physical processes, not just clean benchmarks. That matches the work I have enjoyed most: building experiments that reveal when models generalize, fail, or pick up confounds. At Arborphy AI, I designed dual-encoder plant-identification models, compared encoder and fusion choices, and ran individual-disjoint, multi-seed, and held-out evaluations. At Columbia Zuckerman, I worked on self-supervised denoising for calcium-imaging data with ablations across architectures, losses, and training settings. I also built real-time robotics vision pipelines with optimized inference. Laminar’s focus on preprocessing, feature extraction, drift/anomaly robustness, and clean ML tooling is a strong match for my Python, PyTorch, and scikit-learn background and my habit of turning research questions into reproducible code.",
+  "cards[61b45b58-e9d7-4b0f-ae49-b2e6158e37d2][field0]": "Yes"
+}

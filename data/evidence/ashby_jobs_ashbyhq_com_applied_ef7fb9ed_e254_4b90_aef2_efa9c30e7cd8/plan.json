@@ -1,0 +1,481 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/applied/ef7fb9ed-e254-4b90-aef2-efa9c30e7cd8/application",
+    "company": "Applied Intuition",
+    "jobTitle": "Robot Learning Engineer - Manipulation",
+    "jobLocation": "Sunnyvale",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "4617e33d-4aab-4b8b-a80e-aafb66d6e5b0",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "025f2963-0cb3-4ac7-b0d4-fb599a67be15",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "70a2a92f-1363-4b02-9d7f-632cf9121490",
+        "label": "GitHub",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "_systemfield_education_history",
+        "label": "Education History",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Still Student?"
+        ]
+      },
+      {
+        "id": "ed26ea04-cc9c-4743-a932-d6a9faa76998",
+        "label": "Current Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "784ca35d-2aab-4923-92ce-81dfb19ff9d6",
+        "label": "Are you open to being in-office 5 days a week in Sunnyvale?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "bafc0527-0fc0-4e39-b90e-34727ac9ade5",
+        "label": "How did you hear about us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "063e9de9-4f44-4c96-bd27-a6b96d190a14",
+        "label": "If you chose \"search engine\", \"conference\", \"current customer\", \"current employee\", or \"other\", please specify here.",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "71dd2bca-07d8-40f4-ac1c-4b2a43735e64",
+        "label": "Why Applied Intuition?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "1fae144c-ea01-431a-86f4-a5a2302f0adb",
+        "label": "What is your preferred programming language for interviews?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "3030ec6e-372a-494b-b9fe-2367b567f2f0",
+        "label": "Will you need sponsorship to work in the U.S. now or anytime in the future?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "7d2607de-f31b-4b75-980d-cf088a70d847",
+        "label": "Do you currently have an active immigration case (ex H-1B extension, green card)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey Ma",
+      "source": {
+        "type": "bank",
+        "id": "draft:a1b28318c3",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "4617e33d-4aab-4b8b-a80e-aafb66d6e5b0",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "025f2963-0cb3-4ac7-b0d4-fb599a67be15",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "70a2a92f-1363-4b02-9d7f-632cf9121490",
+        "label": "GitHub",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_education_history",
+        "label": "Education History",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Still Student?"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ed26ea04-cc9c-4743-a932-d6a9faa76998",
+        "label": "Current Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "784ca35d-2aab-4923-92ce-81dfb19ff9d6",
+        "label": "Are you open to being in-office 5 days a week in Sunnyvale?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "bafc0527-0fc0-4e39-b90e-34727ac9ade5",
+        "label": "How did you hear about us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "063e9de9-4f44-4c96-bd27-a6b96d190a14",
+        "label": "If you chose \"search engine\", \"conference\", \"current customer\", \"current employee\", or \"other\", please specify here.",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "71dd2bca-07d8-40f4-ac1c-4b2a43735e64",
+        "label": "Why Applied Intuition?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "I’m drawn to Applied Intuition because this role treats robot learning as an end-to-end engineering problem: task definition, data, training, failure diagnosis, deployment, and customer-facing reliability on real hardware. That matches the direction I’ve been building toward through real-time robotics vision work and ML research. At InnoX, I developed perception for an autonomous badminton-training robot, including 3D tracking, landing-point prediction, Raspberry Pi inference optimization, and connecting natural-language commands to the robot control workflow. In research, I’ve leaned into controlled experiments and careful evaluation rather than only benchmark numbers. Dana’s focus on making robots learn industrial tasks and keep improving is the kind of hands-on, measurable robotics work I want to do next.",
+      "source": {
+        "type": "bank",
+        "id": "draft:306a683786",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1fae144c-ea01-431a-86f4-a5a2302f0adb",
+        "label": "What is your preferred programming language for interviews?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Python",
+      "source": {
+        "type": "bank",
+        "id": "interview-language",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3030ec6e-372a-494b-b9fe-2367b567f2f0",
+        "label": "Will you need sponsorship to work in the U.S. now or anytime in the future?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "7d2607de-f31b-4b75-980d-cf088a70d847",
+        "label": "Do you currently have an active immigration case (ex H-1B extension, green card)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    }
+  ]
+}

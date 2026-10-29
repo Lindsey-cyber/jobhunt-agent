@@ -1,0 +1,66 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "35984533-f384-4437-b048-54a31c19334d",
+      "label": "Linkedin Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "5e0aa4b0-a687-4102-a1ec-7e80a7a22b62",
+      "label": "Will you now or in the future require Makai Labs to sponsor an immigration case in order to employ you?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "bf7d974a-2a88-40a3-95f7-ccd77306deba",
+      "label": "AI/LLM Experience - Describe your hands-on experience building or deploying AI/LLM-powered systems in production environments.",
+      "expected": "My resume does not show a commercial production LLM system, so I would not overstate that. My closest deployment-oriented LLM work was at InnoX, where I integrated a locally hosted language model through Ollama for voice-based robot commands and connected natural-language instructions to the robot’s control workflow. That sat alongside a real-time robotics vision stack with YOLOv8 detection, pose estimation, shuttlecock tracking, court localization, stereo 3D tracking, ONNX Runtime optimization, quantization, and asynchronous video pipelines. For Makai’s work on LLM workflows, retrieval, agents, and client-ready systems, I also bring research experience building a multi-agent botanical reasoning prototype with autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation.",
+      "actual": "My resume does not show a commercial production LLM system, so I would not overstate that. My closest deployment-oriented LLM work was at InnoX, where I integrated a locally hosted language model through Ollama for voice-based robot commands and connected natural-language instructions to the robot’s control workflow. That sat alongside a real-time robotics vision stack with YOLOv8 detection, pose estimation, shuttlecock tracking, court localization, stereo 3D tracking, ONNX Runtime optimization, quantization, and asynchronous video pipelines. For Makai’s work on LLM workflows, retrieval, agents, and client-ready systems, I also bring research experience building a multi-agent botanical reasoning prototype with autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation.",
+      "pass": true
+    },
+    {
+      "fieldId": "50fc8819-2654-44bc-b2d2-7047274fdc57",
+      "label": "AI Frameworks / Tooling - Which AI/ML tools or frameworks have you worked with?",
+      "expected": "I’ve worked mainly in Python with PyTorch, Hugging Face, scikit-learn, and computer-vision/ML frameworks around EfficientNet, BioCLIP, DINOv3, ResNet, U-Net, and YOLOv8. For work close to Makai’s LLM, retrieval, agents, and structured-workflow needs, I’ve built a multi-agent botanical reasoning prototype with autonomous tool generation and knowledge-graph-based evidence aggregation, integrated a locally hosted language model through Ollama, and used vLLM, Neo4j, FastAPI, Docker, Linux, and Git. I’ve also used ONNX Runtime and quantization for optimized edge inference, plus TransformerLens-style activation hooks and probes for LLM analysis.",
+      "actual": "I’ve worked mainly in Python with PyTorch, Hugging Face, scikit-learn, and computer-vision/ML frameworks around EfficientNet, BioCLIP, DINOv3, ResNet, U-Net, and YOLOv8. For work close to Makai’s LLM, retrieval, agents, and structured-workflow needs, I’ve built a multi-agent botanical reasoning prototype with autonomous tool generation and knowledge-graph-based evidence aggregation, integrated a locally hosted language model through Ollama, and used vLLM, Neo4j, FastAPI, Docker, Linux, and Git. I’ve also used ONNX Runtime and quantization for optimized edge inference, plus TransformerLens-style activation hooks and probes for LLM analysis.",
+      "pass": true
+    },
+    {
+      "fieldId": "d38bee2a-1c09-4965-ae44-1afd9f96a4cb",
+      "label": "Please describe the type of employment visa sponsorship you will need.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name",
+    "Important Reminder: To help us better understand your communication style and thought process, we ask that you answer the screening questions without the use of AI writing tools (e.g., ChatGPT). We’re looking to evaluate your natural writing ability, and any use of AI assistance may lead to disqualification."
+  ],
+  "fillErrors": []
+}

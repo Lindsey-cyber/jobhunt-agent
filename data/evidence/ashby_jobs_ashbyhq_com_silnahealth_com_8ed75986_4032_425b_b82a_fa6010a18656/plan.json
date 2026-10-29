@@ -1,0 +1,164 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/silnahealth.com/8ed75986-4032-425b-b82a-fa6010a18656/application",
+    "company": "Silna Health",
+    "jobTitle": "AI Deployment Analyst",
+    "jobLocation": "NYC",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "267da7ca-9990-4f09-9232-492177481e47",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "596fc6b1-d0a0-427a-89eb-095a8ec784bd",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "110b6ab1-66cd-469b-a28d-c4b9dc124046",
+        "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "267da7ca-9990-4f09-9232-492177481e47",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "596fc6b1-d0a0-427a-89eb-095a8ec784bd",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "110b6ab1-66cd-469b-a28d-c4b9dc124046",
+        "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    }
+  ]
+}

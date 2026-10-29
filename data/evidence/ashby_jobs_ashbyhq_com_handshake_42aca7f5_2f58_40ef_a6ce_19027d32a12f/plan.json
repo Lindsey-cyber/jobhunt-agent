@@ -1,0 +1,500 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/handshake/42aca7f5-2f58-40ef-a6ce-19027d32a12f/application",
+    "company": "Handshake",
+    "jobTitle": "Machine Learning Engineer",
+    "jobLocation": "San Francisco, CA",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "36e042a7-71c3-4d17-a72f-54d355a547b9",
+        "label": "Name Pronunciation",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "ad70a2c7-3548-440d-bd8f-4b72c54fc521",
+        "label": "Pronouns",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "communicationConsent",
+        "label": "Do you consent to receive text messages about your application?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "07a6faf7-45d0-4d84-81ae-d404cec151bc",
+        "label": "Phone number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "bf0351d8-15a5-4fad-a269-406628bcb49a",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "aebd5254-2ac1-40d3-827f-01e4eaadaf29",
+        "label": "LinkedIn Profile (indicate N/A if you don't have one)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "12dbebde-3be7-43d9-8cb8-c58ac278a822",
+        "label": "How did you hear about this job?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "fb61f6eb-5a53-477d-9f04-8f6118f14a4f",
+        "label": "Are you willing to relocate for this position if required?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I'm already located where the position is based"
+        ]
+      },
+      {
+        "id": "1cd98c1a-3766-498b-8ab7-f7e325a11883",
+        "label": "This role is onsite and in person. Are you willing to work from our local office Monday-Friday?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "28aa6e1c-b695-442a-adea-8ac56073529d",
+        "label": "Are you authorized to work lawfully in the United States for Handshake?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "c86cc07c-951c-46a2-8804-dfdbc4a00150",
+        "label": "Will you now, or in the future, require sponsorship for employment visa status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      {
+        "id": "_systemfield_data_consent_ack",
+        "label": "",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I agree"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "36e042a7-71c3-4d17-a72f-54d355a547b9",
+        "label": "Name Pronunciation",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "ad70a2c7-3548-440d-bd8f-4b72c54fc521",
+        "label": "Pronouns",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "communicationConsent",
+        "label": "Do you consent to receive text messages about your application?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "sms-opt-in",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "07a6faf7-45d0-4d84-81ae-d404cec151bc",
+        "label": "Phone number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "bf0351d8-15a5-4fad-a269-406628bcb49a",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "aebd5254-2ac1-40d3-827f-01e4eaadaf29",
+        "label": "LinkedIn Profile (indicate N/A if you don't have one)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "12dbebde-3be7-43d9-8cb8-c58ac278a822",
+        "label": "How did you hear about this job?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "fb61f6eb-5a53-477d-9f04-8f6118f14a4f",
+        "label": "Are you willing to relocate for this position if required?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I'm already located where the position is based"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "1cd98c1a-3766-498b-8ab7-f7e325a11883",
+        "label": "This role is onsite and in person. Are you willing to work from our local office Monday-Friday?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "28aa6e1c-b695-442a-adea-8ac56073529d",
+        "label": "Are you authorized to work lawfully in the United States for Handshake?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "c86cc07c-951c-46a2-8804-dfdbc4a00150",
+        "label": "Will you now, or in the future, require sponsorship for employment visa status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "_systemfield_data_consent_ack",
+        "label": "",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I agree"
+        ]
+      },
+      "reason": "acknowledgements and consents need the candidate"
+    }
+  ]
+}

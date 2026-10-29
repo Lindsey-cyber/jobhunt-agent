@@ -1,0 +1,75 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "7f1a591d-211e-4da0-9a57-a54dafd24bdd",
+      "label": "Portfolio - website link",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "9b9cea50-ba3c-47af-94c1-a3cfcd83f215",
+      "label": "What’s something you’ve built, led, or improved that you’re most proud of?",
+      "expected": "I’m most proud of the real-time vision system I built for an autonomous badminton-training robot, because it forced me to make perception work under hardware and latency constraints rather than just in an offline notebook. I integrated player detection, pose estimation, shuttlecock tracking, and court localization into one pipeline and got it running at 20+ FPS. I also implemented stereo 3D shuttlecock tracking and landing-point prediction, then optimized Raspberry Pi inference with ONNX Runtime, quantization, and asynchronous video pipelines. That project maps closely to Fab2’s need for vision software that extracts reliable measurements from images and integrates with electromechanical systems.",
+      "actual": "I’m most proud of the real-time vision system I built for an autonomous badminton-training robot, because it forced me to make perception work under hardware and latency constraints rather than just in an offline notebook. I integrated player detection, pose estimation, shuttlecock tracking, and court localization into one pipeline and got it running at 20+ FPS. I also implemented stereo 3D shuttlecock tracking and landing-point prediction, then optimized Raspberry Pi inference with ONNX Runtime, quantization, and asynchronous video pipelines. That project maps closely to Fab2’s need for vision software that extracts reliable measurements from images and integrates with electromechanical systems.",
+      "pass": true
+    },
+    {
+      "fieldId": "db56b2e9-4a03-46a0-874e-f2d17b3c904f",
+      "label": "Are you currently authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "7a5064ba-8201-4e6f-b30c-4dc0dfbad1eb",
+      "label": "Will you, now or in the future, require employer sponsorship to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "2f009e35-6a5a-40f7-8fac-5e96cadbba2d",
+      "label": "How did you hear about us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "25b2a54e-603b-45da-9c7d-bb1e59102db9",
+      "label": "I am one of the following: (a) a citizen of the United States; (b) a lawful permanent resident of the United States; or (c) a person admitted into the United States as an asylee or refugee:",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name",
+    "Portfolio - File upload",
+    "Ideal start date in office",
+    "If no, is your home country listed below?"
+  ],
+  "fillErrors": []
+}

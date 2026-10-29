@@ -1,0 +1,409 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/fuel-cycle/0d24c1b6-e79b-4880-890f-a8ddb53b6d0d/application",
+    "company": "Fuel Cycle",
+    "jobTitle": "Associate AI Engineer (Onsite in Los Angeles)",
+    "jobLocation": "Los Angeles Office",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Legal Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "767694c5-c311-4332-8a39-9593683760f0",
+        "label": "Preferred Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "8a0081e2-5537-47bf-a1be-35c0454d0c36",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "aa1e9d6b-729b-45f4-bc86-60ba6eae6249",
+        "label": "LinkedIn Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "6bcca0dd-b95c-4ac7-ac70-c0b4a5cc2412",
+        "label": "Have you previously worked at a supplier market research firm?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "7e83dbcd-e7c5-45c5-a79d-e5f2f5b56237",
+        "label": "Are you willing and able to work in-office five days per week as required for this role?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "da6ba703-0470-451b-a938-29a2e11e2c76",
+        "label": "What are your salary requirements?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "ccbf8004-f0db-493e-9170-57d3c892a212",
+        "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B, L-1, OPT, etc.)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "8decbf7e-2226-4b4d-bee4-3e6d204211da",
+        "label": "Are you able to be located in Los Angeles and start this role within the next 2 weeks?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Legal Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "767694c5-c311-4332-8a39-9593683760f0",
+        "label": "Preferred Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "8a0081e2-5537-47bf-a1be-35c0454d0c36",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "aa1e9d6b-729b-45f4-bc86-60ba6eae6249",
+        "label": "LinkedIn Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "6bcca0dd-b95c-4ac7-ac70-c0b4a5cc2412",
+        "label": "Have you previously worked at a supplier market research firm?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "7e83dbcd-e7c5-45c5-a79d-e5f2f5b56237",
+        "label": "Are you willing and able to work in-office five days per week as required for this role?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "da6ba703-0470-451b-a938-29a2e11e2c76",
+        "label": "What are your salary requirements?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "compensation is never filled automatically"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ccbf8004-f0db-493e-9170-57d3c892a212",
+        "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B, L-1, OPT, etc.)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "8decbf7e-2226-4b4d-bee4-3e6d204211da",
+        "label": "Are you able to be located in Los Angeles and start this role within the next 2 weeks?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    }
+  ]
+}

@@ -170,7 +170,8 @@
           "Non-binary"
         ]
       }
-    ]
+    ],
+    "priorApplications": 0
   },
   "items": [
     {
@@ -182,7 +183,7 @@
         "required": true,
         "options": []
       },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"

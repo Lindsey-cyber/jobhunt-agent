@@ -1,0 +1,548 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/snowflake/1bad12df-f443-426f-9d09-e96fc780d698/application",
+    "company": "Snowflake",
+    "jobTitle": "AI RESEARCH SCIENTIST, NEW GRAD – AGENTS & REINFORCEMENT LEARNING",
+    "jobLocation": "US-WA-Bellevue",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "label": "LinkedIn Profile, if available",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "c773adde-72b8-494f-8f4f-bb9b84608c29",
+        "label": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "4c8e248b-f134-416f-9fa5-38c9e679f7b1",
+        "label": "In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "b1890667-a914-4163-b3c1-c5b694fd412c",
+        "label": "Additional Attachments",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+        "label": "Where have you most recently worked?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "962f2552-c3ca-4d6c-a7d8-b7b1340558ae",
+        "label": "Have you worked at Snowflake in the past in a Full-time, Part-time, contractor or Intern capacity?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "a3cc08ef-4552-444a-b493-c608c65670df",
+        "label": "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "0a2a2426-a42d-4c4f-a68f-5083d6b8a72a",
+        "label": "A “U.S. person” is a citizen, legal permanent resident, or legal temporary resident (i.e., a refugee or asylee) of the United States. Which of the following best describes your “U.S. person” status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "I am a U.S. person",
+          "I am a citizen of Cuba, Iran, North Korea, or Syria AND I am NOT a U.S. person",
+          "None of the above; I am a citizen of a different country"
+        ]
+      },
+      {
+        "id": "5c859149-0940-42e7-8962-ec82679d8074",
+        "label": "Due to SEC auditor independence requirements, please let us know whether you have previously worked at, or if currently working at PricewaterhouseCoopers (PwC), who is our independent auditor.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes - I have previously worked at, or is currently working at PwC",
+          "No - I have never been employed by PwC"
+        ]
+      },
+      {
+        "id": "a7d1a4bb-e59b-4149-a733-f46f352b0cb5",
+        "label": "Have you ever been directly employed by (1) any government or military entity, state-owned enterprise, or publicly-funded institution, or (2) a government contractor in a role that recommended Snowflake as part of Government procurement?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "2633dee9-9a40-40d2-a8d4-4fabd726c126",
+        "label": "In any materials you submit, you may redact or remove age-identifying information such as age, date of birth, or dates of school attendance or graduation. You will not be penalized for redacting or removing this information.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "I Acknowledge"
+        ]
+      },
+      {
+        "id": "2ded3ef9-36d5-4e49-a11c-9cd79f053a35",
+        "label": "Snowflake will process your personal information in accordance with the Snowflake Candidate Privacy Notice.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "I have read and agree to the Snowflake Candidate Privacy Notice."
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "label": "LinkedIn Profile, if available",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "c773adde-72b8-494f-8f4f-bb9b84608c29",
+        "label": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "4c8e248b-f134-416f-9fa5-38c9e679f7b1",
+        "label": "In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "b1890667-a914-4163-b3c1-c5b694fd412c",
+        "label": "Additional Attachments",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+        "label": "Where have you most recently worked?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Most recently, I worked as a Research Engineer Intern at Arborphy AI LLC in New York, focused on applied machine learning for plant identification. In that role, I designed and evaluated deep visual representation and fusion approaches, including an EfficientNet–BioCLIP dual-encoder architecture, and ran controlled experiments across encoders, clustering, retrieval, and held-out evaluations. I also built a multi-agent botanical reasoning prototype with autonomous tool generation, specialized visual-analysis agents, iterative planning, and knowledge-graph-based evidence aggregation, which is especially relevant to Snowflake’s focus on agentic frameworks and autonomous research agents.",
+      "source": {
+        "type": "bank",
+        "id": "draft:c73de3f3ca",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "962f2552-c3ca-4d6c-a7d8-b7b1340558ae",
+        "label": "Have you worked at Snowflake in the past in a Full-time, Part-time, contractor or Intern capacity?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:752b723dd3",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "a3cc08ef-4552-444a-b493-c608c65670df",
+        "label": "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "0a2a2426-a42d-4c4f-a68f-5083d6b8a72a",
+        "label": "A “U.S. person” is a citizen, legal permanent resident, or legal temporary resident (i.e., a refugee or asylee) of the United States. Which of the following best describes your “U.S. person” status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "I am a U.S. person",
+          "I am a citizen of Cuba, Iran, North Korea, or Syria AND I am NOT a U.S. person",
+          "None of the above; I am a citizen of a different country"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "5c859149-0940-42e7-8962-ec82679d8074",
+        "label": "Due to SEC auditor independence requirements, please let us know whether you have previously worked at, or if currently working at PricewaterhouseCoopers (PwC), who is our independent auditor.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes - I have previously worked at, or is currently working at PwC",
+          "No - I have never been employed by PwC"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d1a4bb-e59b-4149-a733-f46f352b0cb5",
+        "label": "Have you ever been directly employed by (1) any government or military entity, state-owned enterprise, or publicly-funded institution, or (2) a government contractor in a role that recommended Snowflake as part of Government procurement?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:8382fabe24",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "2633dee9-9a40-40d2-a8d4-4fabd726c126",
+        "label": "In any materials you submit, you may redact or remove age-identifying information such as age, date of birth, or dates of school attendance or graduation. You will not be penalized for redacting or removing this information.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "I Acknowledge"
+        ]
+      },
+      "reason": "acknowledgements and consents need the candidate"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "2ded3ef9-36d5-4e49-a11c-9cd79f053a35",
+        "label": "Snowflake will process your personal information in accordance with the Snowflake Candidate Privacy Notice.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "I have read and agree to the Snowflake Candidate Privacy Notice."
+        ]
+      },
+      "value": "I have read and agree to the Snowflake Candidate Privacy Notice.",
+      "source": {
+        "type": "profile",
+        "path": "acknowledgePrivacyPolicies"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    }
+  ]
+}

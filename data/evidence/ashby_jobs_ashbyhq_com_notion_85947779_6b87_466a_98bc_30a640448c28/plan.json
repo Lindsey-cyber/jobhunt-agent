@@ -1,0 +1,711 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/notion/85947779-6b87-466a-98bc-30a640448c28/application",
+    "company": "Notion",
+    "jobTitle": "Software Engineer, Early Career (AI)",
+    "jobLocation": "San Francisco, California",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "fd57cc8d-8046-4295-af7e-1a197ecf0480",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "57be2707-7183-4396-a71a-2ea76ed99b55",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Current Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "9f012c17-08fe-43d4-8b12-0da980f7be83",
+        "label": "What pronouns would you like our team to use when addressing you?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "He/Him",
+          "She/Her",
+          "They/Them",
+          "Prefer not to say",
+          "Not represented here"
+        ]
+      },
+      {
+        "id": "6f7ad525-d2de-4627-aa6d-850d22d5a8cc",
+        "label": "We work from our offices on Mondays, Tuesdays, and Thursdays (Anchor Days). If you need an accommodation, we’ll partner with you and explore reasonable options consistent with applicable law. Are you able to commit to working from one of our offices on Anchor Days each week?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "0454d065-8ca6-42ad-8adc-57a183c3e7cd",
+        "label": "This role requires that you are willing to relocate to one of the following locations New York, NY, USA or San Francisco, CA, USA. Please confirm that you are willing to relocate for this role?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "74833e1f-e869-44b9-944f-7fdcf51b77ca",
+        "label": "Please indicate all of the locations that you would be interested in relocating to for this position.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "New York, NY",
+          "San Francisco, CA"
+        ]
+      },
+      {
+        "id": "c2615aa4-5807-4308-bf35-035e46b3e6a8",
+        "label": "Are you authorized to work lawfully in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "4c486a4e-24ef-40ea-afc2-a054c247c078",
+        "label": "Will you now or at any time in the future require sponsorship for employment visa status (e.g. H1B, OPT)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "OPT",
+          "H1B",
+          "TN",
+          "None",
+          "Other"
+        ]
+      },
+      {
+        "id": "588b7e12-87ea-4bb7-80e9-6426c97669fd",
+        "label": "How did you hear about this opportunity? (select all that apply)",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "LinkedIn",
+          "Glassdoor",
+          "Notion Blog",
+          "Notion Employee",
+          "Notion Website",
+          "Billboard/Outdoor Ads",
+          "Conference or Meetup"
+        ]
+      },
+      {
+        "id": "a6f79feb-bfab-45bb-9d1e-171b9b80fabb",
+        "label": "Do you have experience with LLMs?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "912c025f-f7a1-4af9-9efe-105113d25828",
+        "label": "Have you built a personal project using LLM’s?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "265166de-3b04-4ec6-84e0-0ca7203a9980",
+        "label": "Please describe your AI experience.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "1dab9be1-ccb6-4584-96fe-574bbffeb9a9",
+        "label": "What are some AI specific technologies you are comfortable with?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "4b31a0ec-c052-4046-84c1-acb10812ec01",
+        "label": "Why do you want to work at Notion?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "f2262e49-45d9-4cfc-83bd-6c80911deb25",
+        "label": "Github Link",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "0ab135b6-037a-4c6f-910f-4f4d081fb6d7",
+        "label": "School",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "1fa60eb7-a1de-4f1b-8e1c-a7135381b242",
+        "label": "Graduation Date",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "01049e9e-60e2-41e3-81d6-d3af3e07474d",
+        "label": "Degree Type",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Undergraduate/Bachelors",
+          "Master's",
+          "PhD",
+          "MBA"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fd57cc8d-8046-4295-af7e-1a197ecf0480",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "57be2707-7183-4396-a71a-2ea76ed99b55",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Current Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "9f012c17-08fe-43d4-8b12-0da980f7be83",
+        "label": "What pronouns would you like our team to use when addressing you?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "He/Him",
+          "She/Her",
+          "They/Them",
+          "Prefer not to say",
+          "Not represented here"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "6f7ad525-d2de-4627-aa6d-850d22d5a8cc",
+        "label": "We work from our offices on Mondays, Tuesdays, and Thursdays (Anchor Days). If you need an accommodation, we’ll partner with you and explore reasonable options consistent with applicable law. Are you able to commit to working from one of our offices on Anchor Days each week?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "0454d065-8ca6-42ad-8adc-57a183c3e7cd",
+        "label": "This role requires that you are willing to relocate to one of the following locations New York, NY, USA or San Francisco, CA, USA. Please confirm that you are willing to relocate for this role?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "74833e1f-e869-44b9-944f-7fdcf51b77ca",
+        "label": "Please indicate all of the locations that you would be interested in relocating to for this position.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "New York, NY",
+          "San Francisco, CA"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "c2615aa4-5807-4308-bf35-035e46b3e6a8",
+        "label": "Are you authorized to work lawfully in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "4c486a4e-24ef-40ea-afc2-a054c247c078",
+        "label": "Will you now or at any time in the future require sponsorship for employment visa status (e.g. H1B, OPT)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "OPT",
+          "H1B",
+          "TN",
+          "None",
+          "Other"
+        ]
+      },
+      "reason": "answer \"Yes\" matches none of the options"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "588b7e12-87ea-4bb7-80e9-6426c97669fd",
+        "label": "How did you hear about this opportunity? (select all that apply)",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "LinkedIn",
+          "Glassdoor",
+          "Notion Blog",
+          "Notion Employee",
+          "Notion Website",
+          "Billboard/Outdoor Ads",
+          "Conference or Meetup"
+        ]
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a6f79feb-bfab-45bb-9d1e-171b9b80fabb",
+        "label": "Do you have experience with LLMs?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "draft:a415b99d1c",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "912c025f-f7a1-4af9-9efe-105113d25828",
+        "label": "Have you built a personal project using LLM’s?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:33d1d8a1bc",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "265166de-3b04-4ec6-84e0-0ca7203a9980",
+        "label": "Please describe your AI experience.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "My AI experience spans applied ML research, computer vision systems, and LLM-based prototypes, which maps well to Notion’s focus on model-powered features, retrieval/orchestration, and eval loops. At Arborphy AI, I work on plant identification models, including an EfficientNet–BioCLIP dual-encoder with cross-attention, and I run controlled fusion, retrieval, and held-out evaluations to understand when model changes actually improve recognition. I also built a multi-agent botanical reasoning prototype with tool generation, iterative planning, and knowledge-graph evidence aggregation. Previously, I built a real-time robotics vision pipeline with YOLOv8, pose estimation, stereo tracking, and ONNX Runtime optimization, and integrated a locally hosted language model through Ollama for voice-based robot commands. I’ve also studied hallucination mechanisms in Qwen models using activation hooks, probes, and steering controls.",
+      "source": {
+        "type": "bank",
+        "id": "draft:13967e1c35",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1dab9be1-ccb6-4584-96fe-574bbffeb9a9",
+        "label": "What are some AI specific technologies you are comfortable with?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "I’m comfortable working in Python with PyTorch, Hugging Face, scikit-learn, and vLLM. On the model side, I’ve worked with LLMs and transformer tooling, including Qwen3, TransformerLens, activation hooks, linear probes, steering scripts, and Hugging Face consistency checks. I’ve also integrated a locally hosted language model through Ollama for voice-based robot commands. For vision and ML systems, I’ve used EfficientNet, BioCLIP, DINOv3, YOLOv8, ResNet, U-Net, ONNX Runtime, quantization, and retrieval-style benchmarks. I’ve built evaluation loops with multi-seed experiments, grouped held-out evaluations, ablations, and controlled known-versus-unknown prompt experiments, which maps well to Notion’s focus on LLM-powered features and evals.",
+      "source": {
+        "type": "bank",
+        "id": "draft:bf535e461e",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "4b31a0ec-c052-4046-84c1-acb10812ec01",
+        "label": "Why do you want to work at Notion?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "I want to work at Notion because this role treats AI as part of a real working product: UX, APIs, retrieval, orchestration, quality, reliability, and evals, rather than as a model demo. That matches how I like to build. I’ve integrated a locally hosted language model into a robot control workflow, built a multi-agent botanical reasoning prototype with tool generation and evidence aggregation, and run careful controlled experiments to understand when an architecture actually improves outcomes. I’m especially drawn to Notion’s focus on helping people work with less fragmentation. My research and engineering work has often been about turning complex ML systems into usable pipelines, tools, and documentation for other people, and I’d like to do that at product scale.",
+      "source": {
+        "type": "bank",
+        "id": "draft:64ba8f323d",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f2262e49-45d9-4cfc-83bd-6c80911deb25",
+        "label": "Github Link",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "0ab135b6-037a-4c6f-910f-4f4d081fb6d7",
+        "label": "School",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1fa60eb7-a1de-4f1b-8e1c-a7135381b242",
+        "label": "Graduation Date",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "education[0].gradYear"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "01049e9e-60e2-41e3-81d6-d3af3e07474d",
+        "label": "Degree Type",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Undergraduate/Bachelors",
+          "Master's",
+          "PhD",
+          "MBA"
+        ]
+      },
+      "value": "Master's",
+      "source": {
+        "type": "bank",
+        "id": "draft:9bb0819b35",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    }
+  ]
+}

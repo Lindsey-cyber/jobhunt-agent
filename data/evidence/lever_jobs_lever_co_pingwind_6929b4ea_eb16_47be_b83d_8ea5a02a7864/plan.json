@@ -1,0 +1,538 @@
+{
+  "form": {
+    "ats": "lever",
+    "url": "https://jobs.lever.co/pingwind/6929b4ea-eb16-47be-b83d-8ea5a02a7864/apply",
+    "company": "PingWind",
+    "jobTitle": "Data Scientist I",
+    "jobLocation": "Remote",
+    "fields": [
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Other]",
+        "label": "Other website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "cards[2fc0ec48-b055-4210-a900-d68ca54d50bd][field0]",
+        "label": "Do you have an active clearance?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "cards[2fc0ec48-b055-4210-a900-d68ca54d50bd][field1]",
+        "label": "What level clearance do you possess?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[2fc0ec48-b055-4210-a900-d68ca54d50bd][field2]",
+        "label": "What IT certifications do you have?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[234a94b9-1c29-4680-9548-451cf40b5ed6][field0]",
+        "label": "What is your desired salary range?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "eeo[gender]",
+        "label": "Gender",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "eeo[race]",
+        "label": "Race",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "eeo[veteran]",
+        "label": "Veteran status",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      {
+        "id": "eeo[disability]",
+        "label": "Disability status",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes, I have a disability, or have had one in the past",
+          "No, I do not have a disability and have not had one in the past",
+          "I do not want to answer"
+        ]
+      },
+      {
+        "id": "eeo[disabilitySignature]",
+        "label": "Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "eeo[disabilitySignatureDate]",
+        "label": "Date",
+        "kind": "text",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[Other]",
+        "label": "Other website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[2fc0ec48-b055-4210-a900-d68ca54d50bd][field0]",
+        "label": "Do you have an active clearance?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:50b67cf401",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[2fc0ec48-b055-4210-a900-d68ca54d50bd][field1]",
+        "label": "What level clearance do you possess?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[2fc0ec48-b055-4210-a900-d68ca54d50bd][field2]",
+        "label": "What IT certifications do you have?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[234a94b9-1c29-4680-9548-451cf40b5ed6][field0]",
+        "label": "What is your desired salary range?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "eeo[gender]",
+        "label": "Gender",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "eeo[race]",
+        "label": "Race",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "eeo[veteran]",
+        "label": "Veteran status",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "eeo[disability]",
+        "label": "Disability status",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes, I have a disability, or have had one in the past",
+          "No, I do not have a disability and have not had one in the past",
+          "I do not want to answer"
+        ]
+      },
+      "value": "No, I do not have a disability and have not had one in the past",
+      "source": {
+        "type": "profile",
+        "path": "eeo.disability"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "eeo[disabilitySignature]",
+        "label": "Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "eeo[disabilitySignatureDate]",
+        "label": "Date",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

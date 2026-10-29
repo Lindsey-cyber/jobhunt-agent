@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently located in a Cobot Hub Location\": no answer in profile or answer bank",
+    "required \"If not currently in a Cobot location hub, are you willing to relocate?\": no answer in profile or answer bank",
+    "required \"Are you near a major airport hub and comfortable with the travel requirements?*\": no answer in profile or answer bank",
+    "required \"Are you currently located in a Cobot Hub Location\" is empty after filling",
+    "required \"If not currently in a Cobot location hub, are you willing to relocate?\" is empty after filling",
+    "required \"Are you near a major airport hub and comfortable with the travel requirements?*\" is empty after filling"
+  ]
+}

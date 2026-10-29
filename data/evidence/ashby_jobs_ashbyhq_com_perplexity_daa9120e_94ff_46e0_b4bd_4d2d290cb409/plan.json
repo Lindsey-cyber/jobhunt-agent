@@ -1,0 +1,308 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/perplexity/daa9120e-94ff-46e0-b4bd-4d2d290cb409/application",
+    "company": "Perplexity",
+    "jobTitle": "Member of Technical Staff, AI Products (Early Career - Industry)",
+    "jobLocation": "San Francisco",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "245e538f-1153-422f-b58e-32e1371f5ed3",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "791b5b1d-0019-4a54-80fd-aa15dbc174c8",
+        "label": "Will you now or in the future require sponsorship for employment visa status in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "af5808ac-50b3-40d3-b059-50ace899f1ee",
+        "label": "Are you able to come into the office four days per week?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "babff616-a249-4975-bff9-554ce3773044",
+        "label": "Current education status",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "I am currently a student enrolled in a degree program.",
+          "I graduated (or dropped out) from a degree program within the last 10 months.",
+          "I graduated (or dropped out) from a degree program more than 10 months ago.",
+          "I have never attended university."
+        ]
+      },
+      {
+        "id": "ba984ea0-24c7-4b71-b6fd-e891f82ce061",
+        "label": "What are the most interesting aspects of Perplexity that you're excited to work on?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "5233a981-7f96-43ff-9b45-9c530366169a",
+        "label": "How do you use AI in your day-to-day work? What are some of the underappreciated benefits and/or pain points of your favorite AI tools?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "987874f5-61a2-4309-90ac-4526207f5045",
+        "label": "Exercise Submission (Shared URL)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_data_consent_ack",
+        "label": "",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I agree"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "245e538f-1153-422f-b58e-32e1371f5ed3",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "791b5b1d-0019-4a54-80fd-aa15dbc174c8",
+        "label": "Will you now or in the future require sponsorship for employment visa status in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "af5808ac-50b3-40d3-b059-50ace899f1ee",
+        "label": "Are you able to come into the office four days per week?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "babff616-a249-4975-bff9-554ce3773044",
+        "label": "Current education status",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "I am currently a student enrolled in a degree program.",
+          "I graduated (or dropped out) from a degree program within the last 10 months.",
+          "I graduated (or dropped out) from a degree program more than 10 months ago.",
+          "I have never attended university."
+        ]
+      },
+      "value": "I graduated (or dropped out) from a degree program within the last 10 months.",
+      "source": {
+        "type": "bank",
+        "id": "draft:203cf949d3",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ba984ea0-24c7-4b71-b6fd-e891f82ce061",
+        "label": "What are the most interesting aspects of Perplexity that you're excited to work on?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "The most interesting part of Perplexity to me is the way Search, Comet, and Computer connect model reasoning to real user action, not just answers. I’m especially drawn to the end-to-end product ownership in this role: shaping the interface, the application logic, and the search/model calls together, then using usage data and evals to decide what survives. That matches how I like to build. In my recent work I’ve built multi-agent reasoning prototypes with tool generation and evidence aggregation, integrated local LLMs into robot command workflows, and developed reproducible ML systems. I’d be excited to work on agentic AI surfaces where reliability, latency, and product judgment matter together.",
+      "source": {
+        "type": "bank",
+        "id": "draft:f38a9f55e4",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "5233a981-7f96-43ff-9b45-9c530366169a",
+        "label": "How do you use AI in your day-to-day work? What are some of the underappreciated benefits and/or pain points of your favorite AI tools?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "In my current research engineering work, I use AI as an experimental collaborator and as a system component rather than as a black-box answer machine. At Arborphy, that means comparing visual encoders like BioCLIP, DINOv3, and EfficientNet, building a multi-agent botanical reasoning prototype with tool generation and evidence aggregation, and using reproducible evals to decide what actually improves recognition. My favorite tools are local and inspectable ones: Ollama for embedding a language model into a robot workflow, and Hugging Face/TransformerLens-style workflows for inspecting model behavior. The underappreciated benefit is faster iteration when the model is close to the data and the evaluation loop is explicit. The pain point is that models can look persuasive while adding no measurable value: I have seen fusion fail to beat BioCLIP alone, and hallucination-circuit work break down because behavior was unstable and first-token evidence was too weak.",
+      "source": {
+        "type": "bank",
+        "id": "draft:ad0248eba6",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "987874f5-61a2-4309-90ac-4526207f5045",
+        "label": "Exercise Submission (Shared URL)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "_systemfield_data_consent_ack",
+        "label": "",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I agree"
+        ]
+      },
+      "reason": "acknowledgements and consents need the candidate"
+    }
+  ]
+}

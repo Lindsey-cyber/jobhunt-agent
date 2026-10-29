@@ -1,0 +1,45 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "77c1cd5d-eb95-4d6c-9754-112118067807",
+      "label": "LinkedIn",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "bc733795-7ff9-4fec-ad1c-4189103df0f6",
+      "label": "Personal Website (optional)",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "87150380-52f4-442e-bc62-30d5ce73fb2f",
+      "label": "Describe a ML model that you worked on. What problem did it solve? (Choose either a published paper or a production system if you can.)",
+      "expected": "One ML system I worked on was the real-time vision pipeline for an autonomous badminton-training robot at InnoX Academy. The problem was to estimate the player, shuttlecock, and court state from video quickly enough for the robot to react. I developed the pipeline around YOLOv8-based player detection, pose estimation, shuttlecock tracking, and court localization, reaching 20+ FPS. I also implemented stereo 3D shuttlecock tracking and landing-point prediction, then optimized Raspberry Pi inference with ONNX Runtime, quantization, and asynchronous video pipelines. The useful lesson for me was that perception quality and system constraints had to be handled together: the model needed to be accurate, but also fast and integrated enough to support real-time robotics behavior.",
+      "actual": "One ML system I worked on was the real-time vision pipeline for an autonomous badminton-training robot at InnoX Academy. The problem was to estimate the player, shuttlecock, and court state from video quickly enough for the robot to react. I developed the pipeline around YOLOv8-based player detection, pose estimation, shuttlecock tracking, and court localization, reaching 20+ FPS. I also implemented stereo 3D shuttlecock tracking and landing-point prediction, then optimized Raspberry Pi inference with ONNX Runtime, quantization, and asynchronous video pipelines. The useful lesson for me was that perception quality and system constraints had to be handled together: the model needed to be accurate, but also fast and integrated enough to support real-time robotics behavior.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name",
+    "How many days of the week have the letter \"y\" in them?"
+  ],
+  "fillErrors": []
+}

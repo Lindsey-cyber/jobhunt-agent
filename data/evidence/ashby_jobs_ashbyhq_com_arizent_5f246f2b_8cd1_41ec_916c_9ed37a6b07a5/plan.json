@@ -1,0 +1,419 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/arizent/5f246f2b-8cd1-41ec-916c-9ed37a6b07a5/application",
+    "company": "Arizent",
+    "jobTitle": "Data & AI Engineer",
+    "jobLocation": "NYC | Midtown Manhattan",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "0a4d0408-07bd-42c3-bfdd-a95134451686",
+        "label": "What are your salary requirements?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "47485b17-1c9c-48b8-99d8-964a3eb0752c",
+        "label": "Do you have prior employment history with our organization?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "cba7b0c6-4780-48b2-a071-b3480c2b0f84",
+        "label": "If so, in what role?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "511ab6b2-5abd-4144-acfb-864b477fb329",
+        "label": "How did you hear about this role? (If referred, by whom?)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "f4ca677e-1cd0-4fcd-84de-dfa94a6cb828",
+        "label": "Are you currently legally authorized to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6b4fa87f-3182-4a60-be36-284a94150e63",
+        "label": "Will you now or in the future require Arizent to file, petition for, sponsor, support, provide documentation for, or otherwise participate—directly or indirectly—in an immigration or work authorization matter in order for you to begin or continue employment with Arizent? This includes situations in which a third-party agent or other entity would serve as the petitioner but Arizent would be required to provide an employment agreement, itinerary, confirmation of employment, supporting documentation, signatures, fees, indemnification, or assume any related legal or financial responsibility.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "df61824d-5b86-429e-852e-a412b76cf40b",
+        "label": "Describe your approach to validating and testing AI agent outputs before they are deployed to production.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "41dc2274-74f3-47e7-8b4c-6e4966c159db",
+        "label": "Describe the most complex AI agent or agentic workflow you have designed or implemented. What business problem did it solve, what technologies did you use, and what were your specific contributions?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "b62e4715-9490-4eb8-87ce-090a430d1a12",
+        "label": "Describe a challenging data quality, SQL, integration, tracking or analytics issue you resolved. How did you diagnose the root cause, what solution did you implement, and what was the outcome?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "0a4d0408-07bd-42c3-bfdd-a95134451686",
+        "label": "What are your salary requirements?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "compensation is never filled automatically"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "47485b17-1c9c-48b8-99d8-964a3eb0752c",
+        "label": "Do you have prior employment history with our organization?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:13c5fb82a7",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cba7b0c6-4780-48b2-a071-b3480c2b0f84",
+        "label": "If so, in what role?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "N/A — I have not previously worked for Arizent.",
+      "source": {
+        "type": "bank",
+        "id": "draft:08128e148f",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "511ab6b2-5abd-4144-acfb-864b477fb329",
+        "label": "How did you hear about this role? (If referred, by whom?)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f4ca677e-1cd0-4fcd-84de-dfa94a6cb828",
+        "label": "Are you currently legally authorized to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6b4fa87f-3182-4a60-be36-284a94150e63",
+        "label": "Will you now or in the future require Arizent to file, petition for, sponsor, support, provide documentation for, or otherwise participate—directly or indirectly—in an immigration or work authorization matter in order for you to begin or continue employment with Arizent? This includes situations in which a third-party agent or other entity would serve as the petitioner but Arizent would be required to provide an employment agreement, itinerary, confirmation of employment, supporting documentation, signatures, fees, indemnification, or assume any related legal or financial responsibility.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "df61824d-5b86-429e-852e-a412b76cf40b",
+        "label": "Describe your approach to validating and testing AI agent outputs before they are deployed to production.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "My approach is to turn agent behavior into testable claims before any production deployment. I start by mapping the workflow, expected outputs, likely failure modes, and acceptance criteria tied to the business task—accuracy, reliability, and end-user usefulness, which connects directly to Arizent’s need to continuously test agents over time. For LLM and agent work, I would build a fixed evaluation set with edge cases, run repeated tests across prompts or seeds, inspect intermediate reasoning/tool steps, and require evidence traces rather than judging only the final answer. In my botanical reasoning prototype, I used constrained iterative planning, per-step information-gain evaluation, and knowledge-graph evidence aggregation. I also use controlled evaluations and sham/randomized controls to catch leakage, unstable behavior, or misleading causal claims before release, then document limitations clearly for stakeholders.",
+      "source": {
+        "type": "bank",
+        "id": "draft:b226363765",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "41dc2274-74f3-47e7-8b4c-6e4966c159db",
+        "label": "Describe the most complex AI agent or agentic workflow you have designed or implemented. What business problem did it solve, what technologies did you use, and what were your specific contributions?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "The most complex agentic workflow I built was a multi-agent botanical reasoning prototype at Arborphy AI for applied plant identification. The problem was that visual plant ID can mix species identity, organ morphology, and photographic-scale artifacts, so the workflow needed to gather evidence rather than rely on one model output. I built specialized visual-analysis agents, autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation. I also connected this work to controlled experiments around BioCLIP, DINOv3, and EfficientNet representations, using reproducible research pipelines and interactive analysis tools. My specific contribution was the end-to-end design and implementation of the prototype and the surrounding evaluation workflow, which is close to Arizent’s need for tested, reliable agents tied to real data workflows.",
+      "source": {
+        "type": "bank",
+        "id": "draft:28b075c9da",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "b62e4715-9490-4eb8-87ce-090a430d1a12",
+        "label": "Describe a challenging data quality, SQL, integration, tracking or analytics issue you resolved. How did you diagnose the root cause, what solution did you implement, and what was the outcome?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "A good example is from my Columbia Zuckerman Institute research assistant work on two-photon calcium-imaging denoising. I found that one result did not line up numerically when comparing spatial-component behavior with reconstructed-video outputs, which mattered because downstream analysis depended on trusting the preprocessing. I diagnosed the issue by analyzing denoising at both the spatial-component and reconstructed-video levels and tracing the discrepancy to PMD’s blockwise spatial update. I then implemented a fixed-temporal-basis least-squares refitting correction and contributed it through pull requests. The outcome was a corrected, more reproducible research pipeline, which I also helped turn into a downloadable software package with public documentation and step-by-step guides for wet-lab researchers.",
+      "source": {
+        "type": "bank",
+        "id": "draft:0042b9b8bf",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_gender",
+        "label": "Gender",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_race",
+        "label": "Race",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Hispanic or Latino",
+          "White (Not Hispanic or Latino)",
+          "Black or African American (Not Hispanic or Latino)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "Asian (Not Hispanic or Latino)",
+          "American Indian or Alaska Native (Not Hispanic or Latino)",
+          "Two or More Races (Not Hispanic or Latino)",
+          "Decline to self-identify"
+        ]
+      },
+      "value": "Decline to self-identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_eeoc_veteran_status",
+        "label": "Veteran Status",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "I identify as one or more of the classifications of protected veteran listed above",
+          "I am not a protected veteran",
+          "I decline to self-identify for protected veteran status"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    }
+  ]
+}

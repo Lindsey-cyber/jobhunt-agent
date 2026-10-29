@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Name\": no answer in profile or answer bank",
+    "required \"In Office Requirement\": no answer in profile or answer bank",
+    "required \"This position is based in the city listed on the job description and requires being in-office 3x/week for individual contributors or 4x/week for people leaders. Please select the statement that best describes your status:\": no answer in profile or answer bank",
+    "required \"Name\" is empty after filling",
+    "required \"In Office Requirement\" is empty after filling",
+    "required \"This position is based in the city listed on the job description and requires being in-office 3x/week for individual contributors or 4x/week for people leaders. Please select the statement that best describes your status:\" is empty after filling"
+  ]
+}

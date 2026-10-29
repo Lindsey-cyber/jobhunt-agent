@@ -65,10 +65,17 @@
       "pass": true
     },
     {
+      "fieldId": "question_4180237009",
+      "label": "Do you currently reside within the continental United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_4180239009",
       "label": "Why Lila, why this role, and why at this moment in your life?",
-      "expected": "Lila is compelling to me because the role is about making AI part of the scientific method, not just building models around it. The posting’s emphasis on agentic AI, workflow/code generation, and evaluation/reliability matches the work I have been gravitating toward: scientific ML systems with benchmarks, tool use, and careful error analysis. At Arborphy, I have been building plant-identification models, disjoint evaluation benchmarks, and a multi-agent botanical reasoning prototype; at Columbia, I worked on self-supervised denoising for neural imaging and packaging research code for wet-lab researchers. This moment is right because I finished my M.S. in Statistics in May 2026 and now want to move from research projects into a team building reliable AI systems that can interface with real scientific workflows.",
-      "actual": "Lila is compelling to me because the role is about making AI part of the scientific method, not just building models around it. The posting’s emphasis on agentic AI, workflow/code generation, and evaluation/reliability matches the work I have been gravitating toward: scientific ML systems with benchmarks, tool use, and careful error analysis. At Arborphy, I have been building plant-identification models, disjoint evaluation benchmarks, and a multi-agent botanical reasoning prototype; at Columbia, I worked on self-supervised denoising for neural imaging and packaging research code for wet-lab researchers. This moment is right because I finished my M.S. in Statistics in May 2026 and now want to move from research projects into a team building reliable AI systems that can interface with real scientific workflows.",
+      "expected": "Lila stands out because this role is not just model building; it is agentic AI tied to scientific workflows, evaluation, and real lab execution. That is the direction my work has been converging toward: applying ML to biological data, building reasoning prototypes, and making systems measurable and usable by researchers. At Arborphy, I built a multi-agent botanical reasoning prototype and designed controlled evaluations for representation and fusion behavior; at Columbia Zuckerman, I worked on self-supervised denoising for calcium imaging and packaged code and documentation for wet-lab researchers. I have also connected perception and language-model interaction to a robotics control workflow. This moment fits because I have completed my M.S. in Statistics and moved from coursework into hands-on research engineering; I want my next step to be building reliable AI systems for scientific discovery.",
+      "actual": "Lila stands out because this role is not just model building; it is agentic AI tied to scientific workflows, evaluation, and real lab execution. That is the direction my work has been converging toward: applying ML to biological data, building reasoning prototypes, and making systems measurable and usable by researchers. At Arborphy, I built a multi-agent botanical reasoning prototype and designed controlled evaluations for representation and fusion behavior; at Columbia Zuckerman, I worked on self-supervised denoising for calcium imaging and packaged code and documentation for wet-lab researchers. I have also connected perception and language-model interaction to a robotics control workflow. This moment fits because I have completed my M.S. in Statistics and moved from coursework into hands-on research engineering; I want my next step to be building reliable AI systems for scientific discovery.",
       "pass": true
     },
     {
@@ -80,7 +87,6 @@
     }
   ],
   "emptyRequired": [
-    "Do you currently reside within the continental United States?",
     "Are you able to work in the specified job location, or are you willing to relocate for this position?"
   ],
   "fillErrors": []

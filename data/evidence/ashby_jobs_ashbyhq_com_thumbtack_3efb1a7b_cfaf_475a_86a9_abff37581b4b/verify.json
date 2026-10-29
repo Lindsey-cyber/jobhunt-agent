@@ -1,0 +1,79 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "d69ac2bf-af53-414a-913f-268725df2da6",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "a21f0a15-ba79-48c8-a39b-55b7fed11b57",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "963e38fb-277a-4b07-982c-ed2e975c10e5",
+      "label": "LinkedIn",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "453f41a2-29d2-4df2-aee4-639570ea21d5",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g. H-1B visa status)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_gender",
+      "label": "Gender",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_race",
+      "label": "Race",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Thumbtack currently supports remote work in a number of locations across the United States, Ontario and the Philippines. Using the drop down list below, please select the location you intend to work from. If you are not currently located in or able to work from a location listed below, please select \"Location not listed.\""
+  ],
+  "fillErrors": []
+}

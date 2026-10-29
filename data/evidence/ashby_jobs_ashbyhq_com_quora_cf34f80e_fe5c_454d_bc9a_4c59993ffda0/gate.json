@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).\": no answer in profile or answer bank",
+    "required \"Are you legally authorized to work in that country?\": sensitive question with no exact answer",
+    "required \"I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).\" is empty after filling",
+    "required \"Are you legally authorized to work in that country?\" is empty after filling"
+  ]
+}

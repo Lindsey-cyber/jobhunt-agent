@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Name\": no answer in profile or answer bank",
+    "required \"Important Reminder: To help us better understand your communication style and thought process, we ask that you answer the screening questions without the use of AI writing tools (e.g., ChatGPT). We’re looking to evaluate your natural writing ability, and any use of AI assistance may lead to disqualification.\": acknowledgements and consents need the candidate",
+    "required \"Name\" is empty after filling",
+    "required \"Important Reminder: To help us better understand your communication style and thought process, we ask that you answer the screening questions without the use of AI writing tools (e.g., ChatGPT). We’re looking to evaluate your natural writing ability, and any use of AI assistance may lead to disqualification.\" is empty after filling"
+  ]
+}

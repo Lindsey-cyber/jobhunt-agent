@@ -1,0 +1,52 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Job Board - 104",
+      "actual": "Job Board - 104",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Family Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Pers Mobile",
+      "actual": "Pers Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.",
+    "Given Name(s)"
+  ],
+  "fillErrors": []
+}

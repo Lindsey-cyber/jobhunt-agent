@@ -1,0 +1,446 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/San-Francisco-California-United-States-of-America/AI-Software-Engineer---HP-IQ_3163597-2/apply/applyManually",
+    "company": "HP",
+    "jobTitle": "AI Software Engineer - HP IQ",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "AfricanAmericanJobsite.com",
+          "AsianAmericanJobsite.com",
+          "CareerExpo-job fair",
+          "Career fair",
+          "CINDE Job Fair",
+          "Direct Employers",
+          "DiversityJobsite.com",
+          "Enable America",
+          "European Women in Technology",
+          "Fairygodboss",
+          "Findem AI",
+          "Google",
+          "HBCU",
+          "Hispanic Jobsite.com",
+          "HP Company Website",
+          "HP Social Impact and Foundation Partner",
+          "India Grace Hopper",
+          "ITSFM (Information Technology Senior Management Forum)",
+          "Job Board - 104",
+          "Job Board - 51job China",
+          "Job Board - Deficiente Online",
+          "Job Board - Ejobs Romania",
+          "Job Board - El Empleo",
+          "Job Board - Handshake",
+          "Job Board - Hipo",
+          "Job Board - Indeed",
+          "Job Board - Indeed - Paid",
+          "Job Board - infojobs.net",
+          "Job Board - Jobs.bg",
+          "Job Board - Jobs.cz",
+          "Job Board - Job Street",
+          "Job Board - Jobteaser",
+          "Job Board - Liepin",
+          "Job Board - Naukri",
+          "Job Board - Other",
+          "Job Board - pracuj.pl",
+          "Job Board - SEEK",
+          "Job Board - Vietnam Works",
+          "Job Board - Xing",
+          "LATAM Female Talent Summit",
+          "Lesbian's Who Tech",
+          "Linkedin Job post",
+          "Minority Jobsite.com",
+          "Mission 44",
+          "MyGWorks",
+          "National Society of Black Engineers (NSBE)",
+          "Other",
+          "Other Inclusion Sources",
+          "Recruit Military",
+          "Referral",
+          "SHPE (Society of Hispanic Professional Engineers)",
+          "Singapore HP Campus Week",
+          "Social media - Facebook",
+          "Social media - Facebook Profile",
+          "Social media - Glassdoor",
+          "Social media - Glassdoor Int Jobads",
+          "Social media - Glassdoor Jobads",
+          "Social Media - Glassdoor - Paid",
+          "Social media - GlassdoorProfile",
+          "Social media - Indeed - Sponsored",
+          "Social media - Instagram",
+          "Social media - LinkedIn",
+          "Social media - LinkedIn Profile",
+          "Social Media - Other",
+          "Social media - Twitter",
+          "Social media - WeChat / Weibo",
+          "Society for Women Engineers (SWE)",
+          "Top Employer - Career Fairs",
+          "University Iberia",
+          "US.jobs.disability",
+          "US.jobs.diversity",
+          "US.jobs.veterans",
+          "Veterans job Bank",
+          "Vetscentral",
+          "Women for hire",
+          "Women in Business and Industry"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country/Region",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Finland"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "Given Name(s)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Family Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "citySubdivision1",
+        "label": "Postal District or City",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Dormitory",
+          "Home",
+          "Main",
+          "Other",
+          "Pager 1",
+          "Pager 2",
+          "Pers Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country/Region Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "San Francisco, California, United States of America; United States of America"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "AfricanAmericanJobsite.com",
+          "AsianAmericanJobsite.com",
+          "CareerExpo-job fair",
+          "Career fair",
+          "CINDE Job Fair",
+          "Direct Employers",
+          "DiversityJobsite.com",
+          "Enable America",
+          "European Women in Technology",
+          "Fairygodboss",
+          "Findem AI",
+          "Google",
+          "HBCU",
+          "Hispanic Jobsite.com",
+          "HP Company Website",
+          "HP Social Impact and Foundation Partner",
+          "India Grace Hopper",
+          "ITSFM (Information Technology Senior Management Forum)",
+          "Job Board - 104",
+          "Job Board - 51job China",
+          "Job Board - Deficiente Online",
+          "Job Board - Ejobs Romania",
+          "Job Board - El Empleo",
+          "Job Board - Handshake",
+          "Job Board - Hipo",
+          "Job Board - Indeed",
+          "Job Board - Indeed - Paid",
+          "Job Board - infojobs.net",
+          "Job Board - Jobs.bg",
+          "Job Board - Jobs.cz",
+          "Job Board - Job Street",
+          "Job Board - Jobteaser",
+          "Job Board - Liepin",
+          "Job Board - Naukri",
+          "Job Board - Other",
+          "Job Board - pracuj.pl",
+          "Job Board - SEEK",
+          "Job Board - Vietnam Works",
+          "Job Board - Xing",
+          "LATAM Female Talent Summit",
+          "Lesbian's Who Tech",
+          "Linkedin Job post",
+          "Minority Jobsite.com",
+          "Mission 44",
+          "MyGWorks",
+          "National Society of Black Engineers (NSBE)",
+          "Other",
+          "Other Inclusion Sources",
+          "Recruit Military",
+          "Referral",
+          "SHPE (Society of Hispanic Professional Engineers)",
+          "Singapore HP Campus Week",
+          "Social media - Facebook",
+          "Social media - Facebook Profile",
+          "Social media - Glassdoor",
+          "Social media - Glassdoor Int Jobads",
+          "Social media - Glassdoor Jobads",
+          "Social Media - Glassdoor - Paid",
+          "Social media - GlassdoorProfile",
+          "Social media - Indeed - Sponsored",
+          "Social media - Instagram",
+          "Social media - LinkedIn",
+          "Social media - LinkedIn Profile",
+          "Social Media - Other",
+          "Social media - Twitter",
+          "Social media - WeChat / Weibo",
+          "Society for Women Engineers (SWE)",
+          "Top Employer - Career Fairs",
+          "University Iberia",
+          "US.jobs.disability",
+          "US.jobs.diversity",
+          "US.jobs.veterans",
+          "Veterans job Bank",
+          "Vetscentral",
+          "Women for hire",
+          "Women in Business and Industry"
+        ]
+      },
+      "value": "Job Board - 104",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "country",
+        "label": "Country/Region",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Finland"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "Given Name(s)",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Family Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "citySubdivision1",
+        "label": "Postal District or City",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Dormitory",
+          "Home",
+          "Main",
+          "Other",
+          "Pager 1",
+          "Pager 2",
+          "Pers Mobile"
+        ]
+      },
+      "value": "Pers Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country/Region Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/cobot/f060d83e-3b73-4a41-b8e1-c19359d572b4/application",
+    "company": "Cobot",
+    "jobTitle": "Mechanical Engineer, AI Data Collection",
+    "jobLocation": "Santa Clara",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "0ddff14e-b83b-44f2-bfac-8955164288eb",
+        "label": "Preferred Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "07773b80-5dc7-4078-87df-a7457709cbfa",
+        "label": "Pronouns",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "She/Her",
+          "He/HIm",
+          "They/Them",
+          "Prefer not to say",
+          "Other"
+        ]
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "53877610-282a-4003-b638-cda12a083561",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "aa4cdfef-c1b7-4011-8396-422197734292",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "e171f37d-6e50-40dc-a043-c85dd08e00c1",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "d7148599-a911-47a3-8209-a00fb4e0dd50",
+        "label": "Are you currently eligible to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "2754190b-45a4-4a41-833c-5efc47ab97eb",
+        "label": "Do you now or in the future require visa sponsorship to continue working in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "be9968ac-4d17-4d59-b78d-6430c50c01ec",
+        "label": "Have you earned a Bachelor's degree in one of the fields mentioned above, as listed in the Minimum Requirements section?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "54a8b2f8-25b4-4781-a86b-8de7912e2d3c",
+        "label": "Are you currently located in a Cobot Hub Location",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "02f805a3-9bf7-4a7e-b9d8-123b8d1526b0",
+        "label": "If not currently in a Cobot location hub, are you willing to relocate?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "785bef4c-436b-4672-bebf-bf6d188a83c3",
+        "label": "Please provide your current address",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "e0b0d12b-63be-49cf-a1b5-c0876facc985",
+        "label": "Are you near a major airport hub and comfortable with the travel requirements?*",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "0ddff14e-b83b-44f2-bfac-8955164288eb",
+        "label": "Preferred Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "07773b80-5dc7-4078-87df-a7457709cbfa",
+        "label": "Pronouns",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "She/Her",
+          "He/HIm",
+          "They/Them",
+          "Prefer not to say",
+          "Other"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "53877610-282a-4003-b638-cda12a083561",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "aa4cdfef-c1b7-4011-8396-422197734292",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "e171f37d-6e50-40dc-a043-c85dd08e00c1",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "d7148599-a911-47a3-8209-a00fb4e0dd50",
+        "label": "Are you currently eligible to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "2754190b-45a4-4a41-833c-5efc47ab97eb",
+        "label": "Do you now or in the future require visa sponsorship to continue working in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "be9968ac-4d17-4d59-b78d-6430c50c01ec",
+        "label": "Have you earned a Bachelor's degree in one of the fields mentioned above, as listed in the Minimum Requirements section?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:e929b3fb6b",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "54a8b2f8-25b4-4781-a86b-8de7912e2d3c",
+        "label": "Are you currently located in a Cobot Hub Location",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "02f805a3-9bf7-4a7e-b9d8-123b8d1526b0",
+        "label": "If not currently in a Cobot location hub, are you willing to relocate?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "785bef4c-436b-4672-bebf-bf6d188a83c3",
+        "label": "Please provide your current address",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "source": {
+        "type": "bank",
+        "id": "draft:9eccafda25",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "e0b0d12b-63be-49cf-a1b5-c0876facc985",
+        "label": "Are you near a major airport hub and comfortable with the travel requirements?*",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

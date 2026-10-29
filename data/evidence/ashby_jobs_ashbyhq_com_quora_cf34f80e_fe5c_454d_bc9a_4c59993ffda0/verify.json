@@ -1,0 +1,136 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "communicationConsent",
+      "label": "Do you consent to receive text messages about your application?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "ac061e86-2644-429c-9f9f-58ecfe59b7e5",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_education_history",
+      "label": "School Name",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "2ea59dee-9288-462d-8d23-14d1ec333b73",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "842bb240-06cd-4b26-8c17-aa094b1c9dab",
+      "label": "Discipline/Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "751b69d2-5b38-4552-b010-e3bdd1e891f2",
+      "label": "Graduation Date or Anticipated Graduation Date",
+      "expected": "05/2026",
+      "actual": "05/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "d1cca810-eaa2-4407-bb68-7a7bcaf926a4",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "861cde0a-7b5e-4057-bd59-fe4c505e31cc",
+      "label": "What is your preferred programming language for your interviews (you can change this later)?",
+      "expected": "Python",
+      "actual": "Python",
+      "pass": true
+    },
+    {
+      "fieldId": "1821fd3c-40e5-488b-afd7-a03c5454d198",
+      "label": "This role is about the infrastructure ML models run on — distributed systems, GPU serving, and developer tooling — working alongside the ML engineers who train the models, rather than training models yourself. Pick one project (coursework, internship, personal, or open source) and tell us in 200 words or less: what you built, what you owned or decided, a tradeoff you wrestled with, and what you learned.",
+      "expected": "One project I would pick is my real-time vision work for an autonomous badminton-training robot at InnoX. I built the perception pipeline that combined YOLOv8 player detection, pose estimation, shuttlecock tracking, court localization, stereo 3D tracking, and landing-point prediction, reaching 20+ FPS. My main ownership was the system path from camera input to robot-usable perception outputs, including the inference optimization choices on Raspberry Pi. The tradeoff I wrestled with was speed versus model and pipeline fidelity: ONNX Runtime, quantization, and asynchronous video processing made real-time inference feasible, but they also forced me to be careful about timing alignment and not treating model accuracy in isolation from serving constraints. I learned that deploying ML is often an infrastructure problem as much as a modeling problem: latency, throughput, hardware limits, and clean interfaces determine whether a model is actually usable in a real system.",
+      "actual": "One project I would pick is my real-time vision work for an autonomous badminton-training robot at InnoX. I built the perception pipeline that combined YOLOv8 player detection, pose estimation, shuttlecock tracking, court localization, stereo 3D tracking, and landing-point prediction, reaching 20+ FPS. My main ownership was the system path from camera input to robot-usable perception outputs, including the inference optimization choices on Raspberry Pi. The tradeoff I wrestled with was speed versus model and pipeline fidelity: ONNX Runtime, quantization, and asynchronous video processing made real-time inference feasible, but they also forced me to be careful about timing alignment and not treating model accuracy in isolation from serving constraints. I learned that deploying ML is often an infrastructure problem as much as a modeling problem: latency, throughput, hardware limits, and clean interfaces determine whether a model is actually usable in a real system.",
+      "pass": true
+    },
+    {
+      "fieldId": "41edd870-0735-4403-9f9a-1a039b9c47e9",
+      "label": "In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "3710353f-ee10-43fa-b7a9-e747deb6ff04",
+      "label": "Will you now or in the future require sponsorship for employment visa status?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "e7b4579e-1421-4cc5-84b6-6c46a59d5384",
+      "label": "How would you describe your gender identity?",
+      "expected": "I prefer not to say",
+      "actual": "I prefer not to say",
+      "pass": true
+    },
+    {
+      "fieldId": "4511c0ad-5a56-4cae-9394-66e9b9232dfd",
+      "label": "US candidates only: Are you a veteran/have you served in the military?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "a3f83af9-2202-431d-8ec8-2aff0eae0303",
+      "label": "US candidates only: Do you live with a disability (as outlined in the Americans with Disabilities Act)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).",
+    "Are you legally authorized to work in that country?"
+  ],
+  "fillErrors": []
+}

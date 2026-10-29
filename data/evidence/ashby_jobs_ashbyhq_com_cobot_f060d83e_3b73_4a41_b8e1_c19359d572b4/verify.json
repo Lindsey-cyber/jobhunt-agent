@@ -1,0 +1,88 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "0ddff14e-b83b-44f2-bfac-8955164288eb",
+      "label": "Preferred Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "53877610-282a-4003-b638-cda12a083561",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "aa4cdfef-c1b7-4011-8396-422197734292",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "e171f37d-6e50-40dc-a043-c85dd08e00c1",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "d7148599-a911-47a3-8209-a00fb4e0dd50",
+      "label": "Are you currently eligible to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "2754190b-45a4-4a41-833c-5efc47ab97eb",
+      "label": "Do you now or in the future require visa sponsorship to continue working in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "be9968ac-4d17-4d59-b78d-6430c50c01ec",
+      "label": "Have you earned a Bachelor's degree in one of the fields mentioned above, as listed in the Minimum Requirements section?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "785bef4c-436b-4672-bebf-bf6d188a83c3",
+      "label": "Please provide your current address",
+      "expected": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "actual": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you currently located in a Cobot Hub Location",
+    "If not currently in a Cobot location hub, are you willing to relocate?",
+    "Are you near a major airport hub and comfortable with the travel requirements?*"
+  ],
+  "fillErrors": []
+}

@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What pronouns would you like our team to use when addressing you?\": no answer in profile or answer bank",
+    "required \"We work from our offices on Mondays, Tuesdays, and Thursdays (Anchor Days). If you need an accommodation, we’ll partner with you and explore reasonable options consistent with applicable law. Are you able to commit to working from one of our offices on Anchor Days each week?\": no answer in profile or answer bank",
+    "required \"This role requires that you are willing to relocate to one of the following locations New York, NY, USA or San Francisco, CA, USA. Please confirm that you are willing to relocate for this role?\": no answer in profile or answer bank",
+    "required \"Please indicate all of the locations that you would be interested in relocating to for this position.\": no answer in profile or answer bank",
+    "required \"Will you now or at any time in the future require sponsorship for employment visa status (e.g. H1B, OPT)?\": answer \"Yes\" matches none of the options",
+    "readback mismatch on \"Current Location\": expected \"New York, New York, United States\", got \"\"",
+    "required \"Current Location\" is empty after filling",
+    "required \"What pronouns would you like our team to use when addressing you?\" is empty after filling",
+    "required \"We work from our offices on Mondays, Tuesdays, and Thursdays (Anchor Days). If you need an accommodation, we’ll partner with you and explore reasonable options consistent with applicable law. Are you able to commit to working from one of our offices on Anchor Days each week?\" is empty after filling",
+    "required \"This role requires that you are willing to relocate to one of the following locations New York, NY, USA or San Francisco, CA, USA. Please confirm that you are willing to relocate for this role?\" is empty after filling",
+    "required \"Please indicate all of the locations that you would be interested in relocating to for this position.\" is empty after filling",
+    "required \"Will you now or at any time in the future require sponsorship for employment visa status (e.g. H1B, OPT)?\" is empty after filling"
+  ]
+}

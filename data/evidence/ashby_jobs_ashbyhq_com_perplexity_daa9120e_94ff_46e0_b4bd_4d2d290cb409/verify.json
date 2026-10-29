@@ -1,0 +1,67 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "245e538f-1153-422f-b58e-32e1371f5ed3",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "791b5b1d-0019-4a54-80fd-aa15dbc174c8",
+      "label": "Will you now or in the future require sponsorship for employment visa status in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "babff616-a249-4975-bff9-554ce3773044",
+      "label": "Current education status",
+      "expected": "I graduated (or dropped out) from a degree program within the last 10 months.",
+      "actual": "I graduated (or dropped out) from a degree program within the last 10 months.",
+      "pass": true
+    },
+    {
+      "fieldId": "ba984ea0-24c7-4b71-b6fd-e891f82ce061",
+      "label": "What are the most interesting aspects of Perplexity that you're excited to work on?",
+      "expected": "The most interesting part of Perplexity to me is the way Search, Comet, and Computer connect model reasoning to real user action, not just answers. I’m especially drawn to the end-to-end product ownership in this role: shaping the interface, the application logic, and the search/model calls together, then using usage data and evals to decide what survives. That matches how I like to build. In my recent work I’ve built multi-agent reasoning prototypes with tool generation and evidence aggregation, integrated local LLMs into robot command workflows, and developed reproducible ML systems. I’d be excited to work on agentic AI surfaces where reliability, latency, and product judgment matter together.",
+      "actual": "The most interesting part of Perplexity to me is the way Search, Comet, and Computer connect model reasoning to real user action, not just answers. I’m especially drawn to the end-to-end product ownership in this role: shaping the interface, the application logic, and the search/model calls together, then using usage data and evals to decide what survives. That matches how I like to build. In my recent work I’ve built multi-agent reasoning prototypes with tool generation and evidence aggregation, integrated local LLMs into robot command workflows, and developed reproducible ML systems. I’d be excited to work on agentic AI surfaces where reliability, latency, and product judgment matter together.",
+      "pass": true
+    },
+    {
+      "fieldId": "5233a981-7f96-43ff-9b45-9c530366169a",
+      "label": "How do you use AI in your day-to-day work? What are some of the underappreciated benefits and/or pain points of your favorite AI tools?",
+      "expected": "In my current research engineering work, I use AI as an experimental collaborator and as a system component rather than as a black-box answer machine. At Arborphy, that means comparing visual encoders like BioCLIP, DINOv3, and EfficientNet, building a multi-agent botanical reasoning prototype with tool generation and evidence aggregation, and using reproducible evals to decide what actually improves recognition. My favorite tools are local and inspectable ones: Ollama for embedding a language model into a robot workflow, and Hugging Face/TransformerLens-style workflows for inspecting model behavior. The underappreciated benefit is faster iteration when the model is close to the data and the evaluation loop is explicit. The pain point is that models can look persuasive while adding no measurable value: I have seen fusion fail to beat BioCLIP alone, and hallucination-circuit work break down because behavior was unstable and first-token evidence was too weak.",
+      "actual": "In my current research engineering work, I use AI as an experimental collaborator and as a system component rather than as a black-box answer machine. At Arborphy, that means comparing visual encoders like BioCLIP, DINOv3, and EfficientNet, building a multi-agent botanical reasoning prototype with tool generation and evidence aggregation, and using reproducible evals to decide what actually improves recognition. My favorite tools are local and inspectable ones: Ollama for embedding a language model into a robot workflow, and Hugging Face/TransformerLens-style workflows for inspecting model behavior. The underappreciated benefit is faster iteration when the model is close to the data and the evaluation loop is explicit. The pain point is that models can look persuasive while adding no measurable value: I have seen fusion fail to beat BioCLIP alone, and hallucination-circuit work break down because behavior was unstable and first-token evidence was too weak.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name",
+    "Are you able to come into the office four days per week?",
+    "Exercise Submission (Shared URL)"
+  ],
+  "fillErrors": []
+}

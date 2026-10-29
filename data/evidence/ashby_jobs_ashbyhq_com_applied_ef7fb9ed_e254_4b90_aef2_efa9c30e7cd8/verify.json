@@ -1,0 +1,109 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Name",
+      "expected": "Lindsey Ma",
+      "actual": "Lindsey Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "4617e33d-4aab-4b8b-a80e-aafb66d6e5b0",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "025f2963-0cb3-4ac7-b0d4-fb599a67be15",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "70a2a92f-1363-4b02-9d7f-632cf9121490",
+      "label": "GitHub",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    },
+    {
+      "fieldId": "ed26ea04-cc9c-4743-a932-d6a9faa76998",
+      "label": "Current Company",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "bafc0527-0fc0-4e39-b90e-34727ac9ade5",
+      "label": "How did you hear about us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "71dd2bca-07d8-40f4-ac1c-4b2a43735e64",
+      "label": "Why Applied Intuition?",
+      "expected": "I’m drawn to Applied Intuition because this role treats robot learning as an end-to-end engineering problem: task definition, data, training, failure diagnosis, deployment, and customer-facing reliability on real hardware. That matches the direction I’ve been building toward through real-time robotics vision work and ML research. At InnoX, I developed perception for an autonomous badminton-training robot, including 3D tracking, landing-point prediction, Raspberry Pi inference optimization, and connecting natural-language commands to the robot control workflow. In research, I’ve leaned into controlled experiments and careful evaluation rather than only benchmark numbers. Dana’s focus on making robots learn industrial tasks and keep improving is the kind of hands-on, measurable robotics work I want to do next.",
+      "actual": "I’m drawn to Applied Intuition because this role treats robot learning as an end-to-end engineering problem: task definition, data, training, failure diagnosis, deployment, and customer-facing reliability on real hardware. That matches the direction I’ve been building toward through real-time robotics vision work and ML research. At InnoX, I developed perception for an autonomous badminton-training robot, including 3D tracking, landing-point prediction, Raspberry Pi inference optimization, and connecting natural-language commands to the robot control workflow. In research, I’ve leaned into controlled experiments and careful evaluation rather than only benchmark numbers. Dana’s focus on making robots learn industrial tasks and keep improving is the kind of hands-on, measurable robotics work I want to do next.",
+      "pass": true
+    },
+    {
+      "fieldId": "1fae144c-ea01-431a-86f4-a5a2302f0adb",
+      "label": "What is your preferred programming language for interviews?",
+      "expected": "Python",
+      "actual": "Python",
+      "pass": true
+    },
+    {
+      "fieldId": "3030ec6e-372a-494b-b9fe-2367b567f2f0",
+      "label": "Will you need sponsorship to work in the U.S. now or anytime in the future?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_gender",
+      "label": "Gender",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_race",
+      "label": "Race",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Education History",
+    "Are you open to being in-office 5 days a week in Sunnyvale?",
+    "Do you currently have an active immigration case (ex H-1B extension, green card)?"
+  ],
+  "fillErrors": []
+}

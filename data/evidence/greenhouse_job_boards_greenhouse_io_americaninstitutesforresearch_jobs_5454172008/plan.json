@@ -438,8 +438,24 @@
           "I identify as one or more of the classifications of a protected veteran",
           "I don't wish to answer"
         ]
+      },
+      {
+        "id": "race",
+        "label": "Please identify your race",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "White",
+          "Native Hawaiian or Other Pacific Islander",
+          "Two or More Races",
+          "Decline To Self Identify"
+        ]
       }
-    ]
+    ],
+    "priorApplications": 0
   },
   "items": [
     {
@@ -799,7 +815,7 @@
         "required": true,
         "options": []
       },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -808,7 +824,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_18991830008",
         "label": "Are you currently engaged as a temp or contractor in any capacity at AIR?",
@@ -819,7 +835,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "air-temp",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -924,7 +947,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_19008304008",
         "label": "Do you have a master's or doctoral degree in a quantitative field (e.g., statistics, economics, data science, quantitative psychology, computational social science, or a related discipline)?",
@@ -935,7 +958,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "draft:d8893b946f",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -999,7 +1029,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
+      "value": "No",
       "source": {
         "type": "profile",
         "path": "eeo.hispanicLatino"
@@ -1026,6 +1056,31 @@
         "path": "eeo.veteran"
       },
       "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "race",
+        "label": "Please identify your race",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "White",
+          "Native Hawaiian or Other Pacific Islander",
+          "Two or More Races",
+          "Decline To Self Identify"
+        ]
+      },
+      "value": "Decline To Self Identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
       "sensitive": true
     }
   ]

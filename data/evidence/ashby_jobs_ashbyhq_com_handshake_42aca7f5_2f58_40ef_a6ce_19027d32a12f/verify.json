@@ -1,0 +1,95 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "communicationConsent",
+      "label": "Do you consent to receive text messages about your application?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "07a6faf7-45d0-4d84-81ae-d404cec151bc",
+      "label": "Phone number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "aebd5254-2ac1-40d3-827f-01e4eaadaf29",
+      "label": "LinkedIn Profile (indicate N/A if you don't have one)",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "12dbebde-3be7-43d9-8cb8-c58ac278a822",
+      "label": "How did you hear about this job?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "28aa6e1c-b695-442a-adea-8ac56073529d",
+      "label": "Are you authorized to work lawfully in the United States for Handshake?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "c86cc07c-951c-46a2-8804-dfdbc4a00150",
+      "label": "Will you now, or in the future, require sponsorship for employment visa status?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_gender",
+      "label": "Gender",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_race",
+      "label": "Race",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name",
+    "Are you willing to relocate for this position if required?",
+    "This role is onsite and in person. Are you willing to work from our local office Monday-Friday?"
+  ],
+  "fillErrors": []
+}

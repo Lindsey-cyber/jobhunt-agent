@@ -51,6 +51,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_18991830008",
+      "label": "Are you currently engaged as a temp or contractor in any capacity at AIR?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "question_18991833008",
       "label": "Do you have any non-compete or non-solicitation agreements that would prevent you from working on specific projects or with certain agencies for any period of time? (Enter “N/A” if not applicable)",
       "expected": "No",
@@ -65,6 +72,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_19008304008",
+      "label": "Do you have a master's or doctoral degree in a quantitative field (e.g., statistics, economics, data science, quantitative psychology, computational social science, or a related discipline)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "gender",
       "label": "Gender",
       "expected": "Decline To Self Identify",
@@ -74,9 +88,9 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "Decline To Self Identify",
+      "expected": "No",
       "actual": "Decline To Self Identify",
-      "pass": true
+      "pass": false
     },
     {
       "fieldId": "veteran_status",
@@ -84,14 +98,19 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
+    },
+    {
+      "fieldId": "race",
+      "label": "Please identify your race",
+      "expected": "Decline To Self Identify",
+      "actual": "",
+      "pass": false
     }
   ],
   "emptyRequired": [
-    "Are you currently engaged as a temp or contractor in any capacity at AIR?",
     "Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)",
     "Acknowledgement of GDPR Notice (shown below)",
     "Current Level of Education",
-    "Do you have a master's or doctoral degree in a quantitative field (e.g., statistics, economics, data science, quantitative psychology, computational social science, or a related discipline)?",
     "Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?",
     "Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?"
   ],

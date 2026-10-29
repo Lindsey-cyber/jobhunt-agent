@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Education History\": no answer in profile or answer bank",
+    "required \"Are you open to being in-office 5 days a week in Sunnyvale?\": no answer in profile or answer bank",
+    "required \"Do you currently have an active immigration case (ex H-1B extension, green card)?\": no answer in profile or answer bank",
+    "required \"Education History\" is empty after filling",
+    "required \"Are you open to being in-office 5 days a week in Sunnyvale?\" is empty after filling",
+    "required \"Do you currently have an active immigration case (ex H-1B extension, green card)?\" is empty after filling"
+  ]
+}

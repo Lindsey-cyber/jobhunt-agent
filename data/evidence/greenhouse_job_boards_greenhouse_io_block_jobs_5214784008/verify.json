@@ -93,6 +93,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_15960945008",
+      "label": "Are you authorized to work lawfully in the location posted for this position?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_15960952008",
+      "label": "What is your Legal First Name?",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
       "fieldId": "4004524008",
       "label": "Gender",
       "expected": "I don't wish to answer",
@@ -108,11 +122,9 @@
     }
   ],
   "emptyRequired": [
-    "Are you authorized to work lawfully in the location posted for this position?",
     "Have you ever been employed full-time at Block or its subsidiaries?",
     "Have you ever provided any contract work for Block, Inc. or any of its subsidiaries or affiliates (whether in the U.S. or internationally)?",
     "I certify that all of the information I have provided is correct and complete and realize that falsification or misrepresentation, including omission, on this or any other personnel record, or in the hiring process, may be grounds for refusal of employment, or if hired, may lead to disciplinary action, up to and including termination. By signing this Electronic Signature Acknowledgment Online Form, I agree that my electronic signature is the legally binding equivalent to my handwritten signature. Whenever I execute an electronic signature, it has the same validity and meaning as my handwritten signature. I will not, at any time in the future, repudiate the meaning of my electronic signature or claim that my electronic signature is not legally binding. Please sign by typing your Full Legal First, Middle Initial, and Last Name.",
-    "What is your Legal First Name?",
     "What is your Legal Last Name?",
     "How we interview: Our hiring process prioritizes authenticity and fairness, and we ask all candidates to adhere to a few key expectations. Acceptable use of AI may differ depending on the role, so we encourage you to confirm with your recruiter what is or isn’t permitted during the process. Recording any part of the interview without consent is prohibited. However, if you need recording as an accommodation, please notify your recruiter before your scheduled interview. During virtual interviews, keep your video on to foster meaningful engagement; if you require accommodations, please inform our team in advance. Lastly, maintain confidentiality by refraining from sharing any proprietary or trade secret information from previous employers or other sources throughout the interview process.",
     "With your permission, we may use AI transcription software to transcribe and summarize your interview to help us capture accurate notes. Participation is entirely voluntary, and your decision will not affect the outcome of your application. You can withdraw consent at any time. Do you consent to us using AI to transcribe and summarize your interview?",

@@ -1,0 +1,117 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "59bc7ede-6e4e-4787-83d9-ab510c441ecc",
+      "label": "Preferred Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "communicationConsent",
+      "label": "Do you consent to receive text messages about your application?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "0c2c1773-ed1f-43d0-acdb-e7df7fe3452e",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "143b6496-b4a5-42cd-87c9-94fdc74992b7",
+      "label": "Most Recent Company",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "444b2a3d-a4fd-4af1-9f30-a6898808413d",
+      "label": "Most Recent Job Title",
+      "expected": "Research Engineer Intern",
+      "actual": "Research Engineer Intern",
+      "pass": true
+    },
+    {
+      "fieldId": "a3f5c889-23b3-4317-9bf5-e29f56db25eb",
+      "label": "Are you a former employee of Aurora?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "f35c8db3-4fe8-45d9-a9c1-f6001f7d221d",
+      "label": "Are you currently performing work on behalf of Aurora as a contractor, agency worker, or third-party vendor?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "b0d982ae-26eb-499c-8a5f-745bae4bcb68",
+      "label": "Are you currently authorized to work lawfully in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1ef32a3a-e1be-47ee-9f6a-73492ada975a",
+      "label": "Will you now, or in the future, require Aurora to sponsor you for an employment-based visa in order to employ you (e.g. H-1B visa)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "a5c4cdd4-8f1a-47ff-a455-f5bf5ab7cb89",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "3a9d874b-7a03-4854-9dd8-41d89ca6c99c",
+      "label": "Website Link (github, portfolio, other)",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    },
+    {
+      "fieldId": "024582b7-6356-47b9-971e-32b423d51aa5",
+      "label": "How would you describe your gender identity?",
+      "expected": "decline",
+      "actual": "decline",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name",
+    "Aurora believes in-person work increases collaboration, empathy, and our ability to lead effectively. As such, this opportunity requires you to work from one of Aurora's offices at least 3 days per week. Please indicate your preferred Aurora office location for this role."
+  ],
+  "fillErrors": [
+    "How would you describe your gender identity?: locator.waitFor: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('[role=\"listbox\"] [role=\"option\"]').first() to be visible\n"
+  ]
+}

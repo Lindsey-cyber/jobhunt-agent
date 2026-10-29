@@ -1,9 +1,11 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?\": no answer in profile or answer bank",
+    "required \"Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).\": no answer in profile or answer bank",
     "required \"Do you currently or have you previously worked for Databricks in the past?\": sensitive question with no exact answer",
-    "required \"Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?\" is empty after filling",
+    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
+    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
+    "required \"Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).\" is empty after filling",
     "required \"Do you currently or have you previously worked for Databricks in the past?\" is empty after filling"
   ]
 }

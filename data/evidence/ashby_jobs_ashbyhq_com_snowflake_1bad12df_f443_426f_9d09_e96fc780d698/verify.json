@@ -1,0 +1,111 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "1c1690a4-cce6-4e38-99cb-71dc879c5164",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+      "label": "LinkedIn Profile, if available",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "c773adde-72b8-494f-8f4f-bb9b84608c29",
+      "label": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?",
+      "expected": "Yes",
+      "actual": "YES",
+      "pass": true
+    },
+    {
+      "fieldId": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+      "label": "Where have you most recently worked?",
+      "expected": "Most recently, I worked as a Research Engineer Intern at Arborphy AI LLC in New York, focused on applied machine learning for plant identification. In that role, I designed and evaluated deep visual representation and fusion approaches, including an EfficientNet–BioCLIP dual-encoder architecture, and ran controlled experiments across encoders, clustering, retrieval, and held-out evaluations. I also built a multi-agent botanical reasoning prototype with autonomous tool generation, specialized visual-analysis agents, iterative planning, and knowledge-graph-based evidence aggregation, which is especially relevant to Snowflake’s focus on agentic frameworks and autonomous research agents.",
+      "actual": "Most recently, I worked as a Research Engineer Intern at Arborphy AI LLC in New York, focused on applied machine learning for plant identification. In that role, I designed and evaluated deep visual representation and fusion approaches, including an EfficientNet–BioCLIP dual-encoder architecture, and ran controlled experiments across encoders, clustering, retrieval, and held-out evaluations. I also built a multi-agent botanical reasoning prototype with autonomous tool generation, specialized visual-analysis agents, iterative planning, and knowledge-graph-based evidence aggregation, which is especially relevant to Snowflake’s focus on agentic frameworks and autonomous research agents.",
+      "pass": true
+    },
+    {
+      "fieldId": "962f2552-c3ca-4d6c-a7d8-b7b1340558ae",
+      "label": "Have you worked at Snowflake in the past in a Full-time, Part-time, contractor or Intern capacity?",
+      "expected": "No",
+      "actual": "NO",
+      "pass": true
+    },
+    {
+      "fieldId": "a7d1a4bb-e59b-4149-a733-f46f352b0cb5",
+      "label": "Have you ever been directly employed by (1) any government or military entity, state-owned enterprise, or publicly-funded institution, or (2) a government contractor in a role that recommended Snowflake as part of Government procurement?",
+      "expected": "No",
+      "actual": "NO",
+      "pass": true
+    },
+    {
+      "fieldId": "2ded3ef9-36d5-4e49-a11c-9cd79f053a35",
+      "label": "Snowflake will process your personal information in accordance with the Snowflake Candidate Privacy Notice.",
+      "expected": "I have read and agree to the Snowflake Candidate Privacy Notice.",
+      "actual": "I have read and agree to the Snowflake Candidate Privacy Notice.",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_gender",
+      "label": "Gender",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_race",
+      "label": "Race",
+      "expected": "Decline to self-identify",
+      "actual": "Decline to self-identify",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_eeoc_veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?",
+    "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?",
+    "A “U.S. person” is a citizen, legal permanent resident, or legal temporary resident (i.e., a refugee or asylee) of the United States. Which of the following best describes your “U.S. person” status?",
+    "Due to SEC auditor independence requirements, please let us know whether you have previously worked at, or if currently working at PricewaterhouseCoopers (PwC), who is our independent auditor.",
+    "In any materials you submit, you may redact or remove age-identifying information such as age, date of birth, or dates of school attendance or graduation. You will not be penalized for redacting or removing this information."
+  ],
+  "fillErrors": []
+}

@@ -2,10 +2,7 @@
   "decision": "hold",
   "reasons": [
     "Lever submits through hCaptcha: review the filled form and press Submit yourself",
-    "required \"What is/was your GPA?\": no answer in profile or answer bank",
     "required \"Please check all that apply:\": no answer in profile or answer bank",
-    "readback mismatch on \"Current location\": expected \"New York, New York, United States\", got \"\"",
-    "required \"What is/was your GPA?\" is empty after filling",
     "required \"Please check all that apply:\" is empty after filling"
   ]
 }

@@ -33,8 +33,8 @@
       "fieldId": "location",
       "label": "Current location",
       "expected": "New York, New York, United States",
-      "actual": "",
-      "pass": false
+      "actual": "New York, New York, United States",
+      "pass": true
     },
     {
       "fieldId": "org",
@@ -72,6 +72,13 @@
       "pass": true
     },
     {
+      "fieldId": "cards[4ff91e55-6f2e-4b6d-af0a-22f12cc082a4][field0]",
+      "label": "Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "cards[4dfaf797-9fb3-44ce-a81f-526006d14e10][field0]",
       "label": "Would you require any form of Sponsorship or Visa? If Yes, please elaborate below.",
       "expected": "Yes",
@@ -94,7 +101,6 @@
     }
   ],
   "emptyRequired": [
-    "Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.",
     "Tell us about a self-supervised or foundation model you have worked with, whether trained from scratch, pretrained, or adapted to a downstream task. What did you do with it, and how did you evaluate whether it worked well for your use case?",
     "Describe a project where your model did not generalize as well as expected across datasets, sites, devices, populations, or other conditions. How did you investigate the problem, and what did you try to improve robustness?",
     "Tell us about a machine-learning project where you had to understand or explain what the model was learning. What methods did you use, and what did you learn from them?",

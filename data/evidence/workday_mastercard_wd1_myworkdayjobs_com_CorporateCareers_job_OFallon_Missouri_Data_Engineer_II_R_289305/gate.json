@@ -1,0 +1,10 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you ever worked for Mastercard as an employee or provided services as a contingent worker (contractor, consultant)?\": no answer in profile or answer bank",
+    "required \"Country\": answer \"United States\" matches none of the options",
+    "required \"Given Name(s)\": no answer in profile or answer bank",
+    "required \"Have you ever worked for Mastercard as an employee or provided services as a contingent worker (contractor, consultant)?\" is empty after filling",
+    "required \"Given Name(s)\" is empty after filling"
+  ]
+}

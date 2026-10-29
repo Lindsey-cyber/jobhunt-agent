@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "Lever submits through hCaptcha: review the filled form and press Submit yourself",
+    "required \"Are you able to work in-person at least 3-4 days a week in the following locations?\": no answer in profile or answer bank",
+    "required \"Are you able to work in-person at least 3-4 days a week in the following locations?\" is empty after filling"
+  ]
+}

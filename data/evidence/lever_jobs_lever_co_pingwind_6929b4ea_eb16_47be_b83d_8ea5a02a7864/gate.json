@@ -1,0 +1,12 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "Lever submits through hCaptcha: review the filled form and press Submit yourself",
+    "required \"What level clearance do you possess?\": no answer in profile or answer bank",
+    "required \"What IT certifications do you have?\": no answer in profile or answer bank",
+    "required \"What level clearance do you possess?\" is empty after filling",
+    "required \"What IT certifications do you have?\" is empty after filling",
+    "required \"Name\" is empty after filling",
+    "required \"Date\" is empty after filling"
+  ]
+}

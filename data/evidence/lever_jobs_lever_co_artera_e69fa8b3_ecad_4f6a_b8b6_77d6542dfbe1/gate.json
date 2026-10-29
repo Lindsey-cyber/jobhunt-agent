@@ -2,13 +2,10 @@
   "decision": "hold",
   "reasons": [
     "Lever submits through hCaptcha: review the filled form and press Submit yourself",
-    "required \"Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.\": no answer in profile or answer bank",
     "required \"Tell us about a self-supervised or foundation model you have worked with, whether trained from scratch, pretrained, or adapted to a downstream task. What did you do with it, and how did you evaluate whether it worked well for your use case?\": no answer in profile or answer bank",
     "required \"Describe a project where your model did not generalize as well as expected across datasets, sites, devices, populations, or other conditions. How did you investigate the problem, and what did you try to improve robustness?\": no answer in profile or answer bank",
     "required \"Tell us about a machine-learning project where you had to understand or explain what the model was learning. What methods did you use, and what did you learn from them?\": no answer in profile or answer bank",
     "required \"Describe a clinical, biological, or other real-world problem you helped translate into a machine-learning problem. How did you define the prediction target and decide how to evaluate the model?\": no answer in profile or answer bank",
-    "readback mismatch on \"Current location\": expected \"New York, New York, United States\", got \"\"",
-    "required \"Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.\" is empty after filling",
     "required \"Tell us about a self-supervised or foundation model you have worked with, whether trained from scratch, pretrained, or adapted to a downstream task. What did you do with it, and how did you evaluate whether it worked well for your use case?\" is empty after filling",
     "required \"Describe a project where your model did not generalize as well as expected across datasets, sites, devices, populations, or other conditions. How did you investigate the problem, and what did you try to improve robustness?\" is empty after filling",
     "required \"Tell us about a machine-learning project where you had to understand or explain what the model was learning. What methods did you use, and what did you learn from them?\" is empty after filling",

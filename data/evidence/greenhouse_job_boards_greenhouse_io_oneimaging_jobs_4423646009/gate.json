@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you interested in working out of our Miami HQ?\": no answer in profile or answer bank",
+    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
+    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
+    "required \"Are you interested in working out of our Miami HQ?\" is empty after filling"
+  ]
+}

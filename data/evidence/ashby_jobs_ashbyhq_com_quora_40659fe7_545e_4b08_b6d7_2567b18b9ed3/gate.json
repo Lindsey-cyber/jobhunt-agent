@@ -1,17 +1,11 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Graduation Date or Anticipated Graduation Date\": no answer in profile or answer bank",
-    "required \"What is your preferred programming language for your interviews (you can change this later)?\": no answer in profile or answer bank",
     "required \"Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.\": no answer in profile or answer bank",
     "required \"I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).\": no answer in profile or answer bank",
-    "required \"In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?\": no answer in profile or answer bank",
     "required \"Are you legally authorized to work in that country?\": sensitive question with no exact answer",
-    "required \"Graduation Date or Anticipated Graduation Date\" is empty after filling",
-    "required \"What is your preferred programming language for your interviews (you can change this later)?\" is empty after filling",
     "required \"Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.\" is empty after filling",
     "required \"I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).\" is empty after filling",
-    "required \"In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?\" is empty after filling",
     "required \"Are you legally authorized to work in that country?\" is empty after filling"
   ]
 }

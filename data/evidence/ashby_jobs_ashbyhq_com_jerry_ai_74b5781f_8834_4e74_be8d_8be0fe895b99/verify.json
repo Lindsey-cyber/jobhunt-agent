@@ -1,0 +1,53 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "5f4ff0aa-b56c-4c55-8fd4-e77949dba7c7",
+      "label": "LinkedIn Profile URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "5d2d464f-8b93-407d-821c-6e6fd71bf4ac",
+      "label": "Are you legally authorized to work in the U.S. or Canada?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "19fbeb6f-440c-4913-a72d-5a816ac41c21",
+      "label": "Will you now or in the future require visa sponsorship?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "5b81cbd5-298d-4c93-ae16-f829bd1c4ee5",
+      "label": "Where do you currently reside? Jerry.ai can only hire in the locations listed below. If your location is not listed, unfortunately we are unable to process your application.",
+      "expected": "Flushing, NY, United States",
+      "actual": "Flushing, NY, United States",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name"
+  ],
+  "fillErrors": [
+    "Where do you currently reside? Jerry.ai can only hire in the locations listed below. If your location is not listed, unfortunately we are unable to process your application.: locator.waitFor: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('[role=\"listbox\"] [role=\"option\"]').first() to be visible\n"
+  ]
+}

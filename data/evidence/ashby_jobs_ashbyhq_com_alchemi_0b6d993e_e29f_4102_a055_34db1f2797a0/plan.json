@@ -1,0 +1,172 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/alchemi/0b6d993e-e29f-4102-a055-34db1f2797a0/application",
+    "company": "Alchemi",
+    "jobTitle": "AI Engineer",
+    "jobLocation": "NYC preferred",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "ab67f8b6-2280-4109-879f-09e91812fec1",
+        "label": "LinkedIn profile",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "ef032094-352b-4bcb-804f-2874e22f7bff",
+        "label": "Why Alchemi?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "fc4da288-5c7a-453b-9fbd-7338f308b541",
+        "label": "What else are you weighing right now?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "83e6f28d-aceb-4136-82de-c7b165419bb7",
+        "label": "What's the best thing you've built? Include a link if you can.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ab67f8b6-2280-4109-879f-09e91812fec1",
+        "label": "LinkedIn profile",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ef032094-352b-4bcb-804f-2874e22f7bff",
+        "label": "Why Alchemi?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "Alchemi is compelling to me because the role treats agents as the product, not a side feature: understanding expert workflows, choosing retrieval/tools/orchestration, writing evals, and shipping to customers quickly. That maps closely to how I’ve worked: building a multi-agent botanical reasoning prototype with tool generation, planning, per-step information-gain evaluation, and knowledge-graph evidence aggregation; designing controlled fusion and grouped held-out evaluations; and organizing research software and documentation for wet-lab researchers. I also value that the work sits in clinical development workflows where reliability matters. My background spans applied ML, biological and neural data, Python engineering, and LLM integration, so I’d be ready to contribute to agent systems while learning directly from scientists and customers.",
+      "source": {
+        "type": "bank",
+        "id": "draft:e0bc2ceb6a",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "fc4da288-5c7a-453b-9fbd-7338f308b541",
+        "label": "What else are you weighing right now?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "83e6f28d-aceb-4136-82de-c7b165419bb7",
+        "label": "What's the best thing you've built? Include a link if you can.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "The best thing I’ve built is a multi-agent botanical reasoning prototype at Arborphy AI. I built autonomous tool generation, specialized visual-analysis agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation. What I’m proud of is that it was not just “LLM around an image model”; the system was designed to reason through visual evidence step by step and make its intermediate evidence inspectable. That maps closely to the kind of agent work Alchemi describes: tools, orchestration, retrieval/evidence, and evals that show whether the agent is actually improving. I do not have a project-specific public link, but my GitHub is here: https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "bank",
+        "id": "draft:745dc75ed0",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

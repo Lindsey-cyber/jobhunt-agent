@@ -58,17 +58,17 @@
       "pass": true
     },
     {
-      "fieldId": "question_36499753002",
-      "label": "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).",
-      "expected": "I don’t want to overstate this: my documented transformer model-level work has been evaluation and interpretability research, not a production rollout. In Columbia AI Alignment Club, I worked on Qwen3-4B and Qwen3-8B: implementing activation hooks across 28 transformer layers, linear probes, steering interventions, randomized and sham controls, grouped-bootstrap controls, and response/token-level evaluations to test whether observed logit shifts reflected reliable hallucination or refusal behavior. Separately, I have deployment-facing experience from a real-time robotics system, where I optimized inference with ONNX Runtime, quantization, asynchronous video pipelines, and integrated a locally hosted language model through Ollama into the robot control workflow. For Databricks AI FDE, I would bring the evaluation rigor from the Qwen work together with practical inference and systems integration experience.",
-      "actual": "I don’t want to overstate this: my documented transformer model-level work has been evaluation and interpretability research, not a production rollout. In Columbia AI Alignment Club, I worked on Qwen3-4B and Qwen3-8B: implementing activation hooks across 28 transformer layers, linear probes, steering interventions, randomized and sham controls, grouped-bootstrap controls, and response/token-level evaluations to test whether observed logit shifts reflected reliable hallucination or refusal behavior. Separately, I have deployment-facing experience from a real-time robotics system, where I optimized inference with ONNX Runtime, quantization, asynchronous video pipelines, and integrated a locally hosted language model through Ollama into the robot control workflow. For Databricks AI FDE, I would bring the evaluation rigor from the Qwen work together with practical inference and systems integration experience.",
+      "fieldId": "question_37586354002",
+      "label": "Describe a time you worked directly with an external enterprise customer on an ML/AI problem.",
+      "expected": "I have not yet owned a direct external enterprise-customer engagement on an ML/AI problem, so I would not want to overstate that. The closest analogue is stakeholder-facing ML work where the users were domain experts rather than ML engineers. At Columbia Zuckerman, after building self-supervised denoising workflows for two-photon calcium-imaging data, I organized the research code into a downloadable package and wrote step-by-step documentation for wet-lab researchers. I also presented survey-analysis findings to board members at the Columbia Asian Faculty Association. For Databricks AI FDE, I would bring that same habit of translating model behavior, evaluation tradeoffs, and implementation details into decisions a customer can act on, while continuing to build direct enterprise-facing experience.",
+      "actual": "I have not yet owned a direct external enterprise-customer engagement on an ML/AI problem, so I would not want to overstate that. The closest analogue is stakeholder-facing ML work where the users were domain experts rather than ML engineers. At Columbia Zuckerman, after building self-supervised denoising workflows for two-photon calcium-imaging data, I organized the research code into a downloadable package and wrote step-by-step documentation for wet-lab researchers. I also presented survey-analysis findings to board members at the Columbia Asian Faculty Association. For Databricks AI FDE, I would bring that same habit of translating model behavior, evaluation tradeoffs, and implementation details into decisions a customer can act on, while continuing to build direct enterprise-facing experience.",
       "pass": true
     },
     {
-      "fieldId": "question_37586354002",
-      "label": "Describe a time you worked directly with an external enterprise customer on an ML/AI problem.",
-      "expected": "I don’t want to overstate this: I have not yet owned a direct external enterprise customer engagement on an ML/AI problem. The closest analogue is my applied ML work at Arborphy AI, where I worked through an ambiguous domain problem end to end: plant identification and botanical reasoning. I designed and evaluated vision/biological embedding architectures, built disjoint benchmarks for species identification and retrieval, created a human-review set, and developed a multi-agent botanical reasoning prototype with knowledge-graph evidence aggregation. At Columbia, I also made research code usable for non-ML wet-lab researchers through packaging, documentation, and step-by-step guides. That is the customer-facing muscle I would bring to Databricks, while being clear that enterprise client ownership would be a growth area.",
-      "actual": "I don’t want to overstate this: I have not yet owned a direct external enterprise customer engagement on an ML/AI problem. The closest analogue is my applied ML work at Arborphy AI, where I worked through an ambiguous domain problem end to end: plant identification and botanical reasoning. I designed and evaluated vision/biological embedding architectures, built disjoint benchmarks for species identification and retrieval, created a human-review set, and developed a multi-agent botanical reasoning prototype with knowledge-graph evidence aggregation. At Columbia, I also made research code usable for non-ML wet-lab researchers through packaging, documentation, and step-by-step guides. That is the customer-facing muscle I would bring to Databricks, while being clear that enterprise client ownership would be a growth area.",
+      "fieldId": "question_38146974002",
+      "label": "Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?",
+      "expected": "Yes",
+      "actual": "Yes",
       "pass": true
     },
     {
@@ -88,8 +88,8 @@
     {
       "fieldId": "question_36493420002",
       "label": "How did you hear about this job?",
-      "expected": "Job board",
-      "actual": "Job board",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
       "pass": true
     },
     {
@@ -116,9 +116,9 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "Decline To Self Identify",
+      "expected": "No",
       "actual": "Decline To Self Identify",
-      "pass": true
+      "pass": false
     },
     {
       "fieldId": "veteran_status",
@@ -140,10 +140,17 @@
       "expected": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
       "actual": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
       "pass": true
+    },
+    {
+      "fieldId": "race",
+      "label": "Please identify your race",
+      "expected": "Decline To Self Identify",
+      "actual": "",
+      "pass": false
     }
   ],
   "emptyRequired": [
-    "Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?",
+    "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).",
     "Do you currently or have you previously worked for Databricks in the past?"
   ],
   "fillErrors": []

@@ -33,8 +33,8 @@
       "fieldId": "location",
       "label": "Current location",
       "expected": "New York, New York, United States",
-      "actual": "",
-      "pass": false
+      "actual": "New York, New York, United States",
+      "pass": true
     },
     {
       "fieldId": "org",
@@ -72,6 +72,13 @@
       "pass": true
     },
     {
+      "fieldId": "cards[980d5710-67c8-46a8-be6e-4e891a2d3eb7][field0]",
+      "label": "What is/was your GPA?",
+      "expected": "My M.S. GPA at Columbia University was 3.71, and my B.A. GPA at Renmin University of China was 3.82.",
+      "actual": "My M.S. GPA at Columbia University was 3.71, and my B.A. GPA at Renmin University of China was 3.82.",
+      "pass": true
+    },
+    {
       "fieldId": "cards[980d5710-67c8-46a8-be6e-4e891a2d3eb7][field1]",
       "label": "Will you now or in the future require sponsorship for employment? If so, please explain in detail (e.g., OPT with STEM extension).",
       "expected": "Yes",
@@ -80,7 +87,6 @@
     }
   ],
   "emptyRequired": [
-    "What is/was your GPA?",
     "Please check all that apply:"
   ],
   "fillErrors": []

@@ -160,7 +160,8 @@
         "required": true,
         "options": []
       }
-    ]
+    ],
+    "priorApplications": 0
   },
   "items": [
     {
@@ -172,7 +173,7 @@
         "required": true,
         "options": []
       },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -368,7 +369,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "cards[4ff91e55-6f2e-4b6d-af0a-22f12cc082a4][field0]",
         "label": "Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.",
@@ -379,7 +380,14 @@
           "No (Please do not apply at this time)"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "draft:4d13937daf",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

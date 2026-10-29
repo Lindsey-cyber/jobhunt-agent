@@ -1,0 +1,207 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/jerry.ai/74b5781f-8834-4e74-be8d-8be0fe895b99/application",
+    "company": "Jerry.ai",
+    "jobTitle": "Data Scientist",
+    "jobLocation": "New York, New York; Boston, Massachusetts; Chicago, Illinois; San Francisco Bay Area",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "5f4ff0aa-b56c-4c55-8fd4-e77949dba7c7",
+        "label": "LinkedIn Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "5d2d464f-8b93-407d-821c-6e6fd71bf4ac",
+        "label": "Are you legally authorized to work in the U.S. or Canada?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "19fbeb6f-440c-4913-a72d-5a816ac41c21",
+        "label": "Will you now or in the future require visa sponsorship?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "5b81cbd5-298d-4c93-ae16-f829bd1c4ee5",
+        "label": "Where do you currently reside? Jerry.ai can only hire in the locations listed below. If your location is not listed, unfortunately we are unable to process your application.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "2fadc6f2-0e71-4ec4-a8f0-5de6f2b6482b",
+        "label": "What’s motivating you to explore a new role, and why does Jerry feel like potentially the right next step?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "5f4ff0aa-b56c-4c55-8fd4-e77949dba7c7",
+        "label": "LinkedIn Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "5d2d464f-8b93-407d-821c-6e6fd71bf4ac",
+        "label": "Are you legally authorized to work in the U.S. or Canada?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "19fbeb6f-440c-4913-a72d-5a816ac41c21",
+        "label": "Will you now or in the future require visa sponsorship?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "5b81cbd5-298d-4c93-ae16-f829bd1c4ee5",
+        "label": "Where do you currently reside? Jerry.ai can only hire in the locations listed below. If your location is not listed, unfortunately we are unable to process your application.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Flushing, NY, United States",
+      "source": {
+        "type": "bank",
+        "id": "draft:96f1ccbb84",
+        "origin": "generated"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "2fadc6f2-0e71-4ec4-a8f0-5de6f2b6482b",
+        "label": "What’s motivating you to explore a new role, and why does Jerry feel like potentially the right next step?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

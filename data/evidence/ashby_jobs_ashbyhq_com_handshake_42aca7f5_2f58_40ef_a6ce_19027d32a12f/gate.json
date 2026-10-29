@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Name\": no answer in profile or answer bank",
+    "required \"Are you willing to relocate for this position if required?\": no answer in profile or answer bank",
+    "required \"This role is onsite and in person. Are you willing to work from our local office Monday-Friday?\": no answer in profile or answer bank",
+    "required \"Name\" is empty after filling",
+    "required \"Are you willing to relocate for this position if required?\" is empty after filling",
+    "required \"This role is onsite and in person. Are you willing to work from our local office Monday-Friday?\" is empty after filling"
+  ]
+}

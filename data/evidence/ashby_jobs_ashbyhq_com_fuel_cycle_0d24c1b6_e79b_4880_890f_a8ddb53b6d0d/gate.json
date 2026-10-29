@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you previously worked at a supplier market research firm?\": sensitive question with no exact answer",
+    "required \"Are you willing and able to work in-office five days per week as required for this role?\": no answer in profile or answer bank",
+    "required \"What are your salary requirements?\": compensation is never filled automatically",
+    "required \"Are you able to be located in Los Angeles and start this role within the next 2 weeks?\": no answer in profile or answer bank",
+    "required \"Have you previously worked at a supplier market research firm?\" is empty after filling",
+    "required \"Are you willing and able to work in-office five days per week as required for this role?\" is empty after filling",
+    "required \"What are your salary requirements?\" is empty after filling",
+    "required \"Are you able to be located in Los Angeles and start this role within the next 2 weeks?\" is empty after filling"
+  ]
+}

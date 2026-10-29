@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Where did you complete your undergraduate degree?\": no answer in profile or answer bank",
+    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
+    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
+    "required \"Where did you complete your undergraduate degree?\" is empty after filling"
+  ]
+}

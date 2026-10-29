@@ -60,8 +60,8 @@
     {
       "fieldId": "title-0",
       "label": "Title",
-      "expected": "Research Assistant",
-      "actual": "Research Assistant",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
       "pass": true
     },
     {
@@ -121,8 +121,8 @@
       "pass": true
     },
     {
-      "fieldId": "question_37676317002",
-      "label": "Can you perform these essential functions of the job with reasonable accommodation?",
+      "fieldId": "question_37676316002",
+      "label": "May we contact your current employer?",
       "expected": "Yes",
       "actual": "Yes",
       "pass": true
@@ -172,9 +172,9 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "Decline To Self Identify",
+      "expected": "No",
       "actual": "Decline To Self Identify",
-      "pass": true
+      "pass": false
     },
     {
       "fieldId": "veteran_status",
@@ -182,10 +182,17 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
+    },
+    {
+      "fieldId": "race",
+      "label": "Please identify your race",
+      "expected": "Decline To Self Identify",
+      "actual": "",
+      "pass": false
     }
   ],
   "emptyRequired": [
-    "May we contact your current employer?",
+    "Can you perform these essential functions of the job with reasonable accommodation?",
     "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in New York City or are you open to relocating?",
     "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references."
   ],

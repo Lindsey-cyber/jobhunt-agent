@@ -1,0 +1,364 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/fab2/d9edb922-6cae-4e65-9b20-ba452f3e2edf/application",
+    "company": "Fab2",
+    "jobTitle": "Computer Vision Software Engineer",
+    "jobLocation": "Austin",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "e27fb180-7bda-47d1-abae-2c0476a81e7a",
+        "label": "Portfolio - File upload",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "7f1a591d-211e-4da0-9a57-a54dafd24bdd",
+        "label": "Portfolio - website link",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "2efdcc3e-0de0-44e1-9bc5-5a4bb8b31660",
+        "label": "Tell us a bit about yourself and why you'd like to join fab2",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "9b9cea50-ba3c-47af-94c1-a3cfcd83f215",
+        "label": "What’s something you’ve built, led, or improved that you’re most proud of?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "7f170837-7c78-411e-901d-7dc12d997ffb",
+        "label": "Ideal start date in office",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "db56b2e9-4a03-46a0-874e-f2d17b3c904f",
+        "label": "Are you currently authorized to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "7a5064ba-8201-4e6f-b30c-4dc0dfbad1eb",
+        "label": "Will you, now or in the future, require employer sponsorship to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "2f009e35-6a5a-40f7-8fac-5e96cadbba2d",
+        "label": "How did you hear about us?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Referral",
+          "Word of mouth",
+          "Sam's Youtube",
+          "X",
+          "LinkedIn",
+          "Indeed or other search engine",
+          "Google Search",
+          "Other"
+        ]
+      },
+      {
+        "id": "25b2a54e-603b-45da-9c7d-bb1e59102db9",
+        "label": "I am one of the following: (a) a citizen of the United States; (b) a lawful permanent resident of the United States; or (c) a person admitted into the United States as an asylee or refugee:",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "50773615-bd40-4517-a6e7-9da8651c211f",
+        "label": "If no, is your home country listed below?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "blocked",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "e27fb180-7bda-47d1-abae-2c0476a81e7a",
+        "label": "Portfolio - File upload",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7f1a591d-211e-4da0-9a57-a54dafd24bdd",
+        "label": "Portfolio - website link",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "2efdcc3e-0de0-44e1-9bc5-5a4bb8b31660",
+        "label": "Tell us a bit about yourself and why you'd like to join fab2",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "9b9cea50-ba3c-47af-94c1-a3cfcd83f215",
+        "label": "What’s something you’ve built, led, or improved that you’re most proud of?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "I’m most proud of the real-time vision system I built for an autonomous badminton-training robot, because it forced me to make perception work under hardware and latency constraints rather than just in an offline notebook. I integrated player detection, pose estimation, shuttlecock tracking, and court localization into one pipeline and got it running at 20+ FPS. I also implemented stereo 3D shuttlecock tracking and landing-point prediction, then optimized Raspberry Pi inference with ONNX Runtime, quantization, and asynchronous video pipelines. That project maps closely to Fab2’s need for vision software that extracts reliable measurements from images and integrates with electromechanical systems.",
+      "source": {
+        "type": "bank",
+        "id": "draft:713b1a0550",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "7f170837-7c78-411e-901d-7dc12d997ffb",
+        "label": "Ideal start date in office",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "db56b2e9-4a03-46a0-874e-f2d17b3c904f",
+        "label": "Are you currently authorized to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7a5064ba-8201-4e6f-b30c-4dc0dfbad1eb",
+        "label": "Will you, now or in the future, require employer sponsorship to work in the United States?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "2f009e35-6a5a-40f7-8fac-5e96cadbba2d",
+        "label": "How did you hear about us?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Referral",
+          "Word of mouth",
+          "Sam's Youtube",
+          "X",
+          "LinkedIn",
+          "Indeed or other search engine",
+          "Google Search",
+          "Other"
+        ]
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "25b2a54e-603b-45da-9c7d-bb1e59102db9",
+        "label": "I am one of the following: (a) a citizen of the United States; (b) a lawful permanent resident of the United States; or (c) a person admitted into the United States as an asylee or refugee:",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "50773615-bd40-4517-a6e7-9da8651c211f",
+        "label": "If no, is your home country listed below?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

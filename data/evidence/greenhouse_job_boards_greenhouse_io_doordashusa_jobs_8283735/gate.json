@@ -1,11 +1,9 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.\": no answer in profile or answer bank",
-    "required \"Do you identify as transgender?\": no answer in profile or answer bank",
+    "required \"Have you worked at DoorDash?\": answer \"No\" matches none of the options",
     "required \"Race (*Please select one option that best describes how you identify*)\": sensitive question with no exact answer",
-    "required \"Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.\" is empty after filling",
-    "required \"Do you identify as transgender?\" is empty after filling",
+    "required \"Have you worked at DoorDash?\" is empty after filling",
     "required \"Race (*Please select one option that best describes how you identify*)\" is empty after filling"
   ]
 }

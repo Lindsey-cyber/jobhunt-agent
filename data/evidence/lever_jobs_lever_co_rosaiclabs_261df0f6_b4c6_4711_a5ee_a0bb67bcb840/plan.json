@@ -1,0 +1,299 @@
+{
+  "form": {
+    "ats": "lever",
+    "url": "https://jobs.lever.co/rosaiclabs/261df0f6-b4c6-4711-a5ee-a0bb67bcb840/apply",
+    "company": "RosaicLabs",
+    "jobTitle": "AI Accelerator RTL Microarchitecture/Design Engineer - Full Time",
+    "jobLocation": "Santa Clara, CA / Austin, TX / Remote-India",
+    "fields": [
+      {
+        "id": "opportunityLocationId",
+        "label": "Which location are you applying for?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Santa Clara, CA",
+          "Austin, TX",
+          "remote-india"
+        ]
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Other]",
+        "label": "Other website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "skip",
+      "field": {
+        "id": "opportunityLocationId",
+        "label": "Which location are you applying for?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Santa Clara, CA",
+          "Austin, TX",
+          "remote-india"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[Other]",
+        "label": "Other website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

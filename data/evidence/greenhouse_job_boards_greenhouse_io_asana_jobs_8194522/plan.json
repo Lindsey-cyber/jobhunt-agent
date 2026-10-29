@@ -475,6 +475,7 @@
         ]
       }
     ],
+    "priorApplications": 0,
     "jobLocation": "San Francisco"
   },
   "items": [
@@ -835,7 +836,7 @@
         "required": true,
         "options": []
       },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1000,7 +1001,7 @@
       "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "blocked",
       "field": {
         "id": "question_69119893",
         "label": "Have you been employed, or otherwise engaged, by an Asana entity in the past? (Previous independent contractors, select \"Yes.\")",
@@ -1011,17 +1012,10 @@
           "No"
         ]
       },
-      "value": "No",
-      "source": {
-        "type": "bank",
-        "id": "draft:d44ee8f9e9",
-        "origin": "generated"
-      },
-      "confidence": 1,
-      "sensitive": false
+      "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69119894",
         "label": "Asana is seeking the below information for the exclusive and limited purpose of complying with U.S. export control laws given that the position for which you are applying may require access to technology subject to those laws. We will not use the information that you provide for any other purpose. Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?",
@@ -1032,10 +1026,16 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "blocked",
       "field": {
         "id": "question_69119895",
         "label": "Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?",
@@ -1046,17 +1046,10 @@
           "No, I have never."
         ]
       },
-      "value": "No, I have never.",
-      "source": {
-        "type": "bank",
-        "id": "draft:4c4eb27c99",
-        "origin": "generated"
-      },
-      "confidence": 1,
-      "sensitive": false
+      "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "fill",
+      "status": "blocked",
       "field": {
         "id": "question_69119896",
         "label": "If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'",
@@ -1064,14 +1057,7 @@
         "required": true,
         "options": []
       },
-      "value": "N/A",
-      "source": {
-        "type": "bank",
-        "id": "draft:d65f612f94",
-        "origin": "generated"
-      },
-      "confidence": 1,
-      "sensitive": false
+      "reason": "no answer in profile or answer bank"
     },
     {
       "status": "blocked",

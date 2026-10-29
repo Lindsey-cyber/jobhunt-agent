@@ -120,7 +120,8 @@
         "required": false,
         "options": []
       }
-    ]
+    ],
+    "priorApplications": 0
   },
   "items": [
     {
@@ -132,7 +133,7 @@
         "required": true,
         "options": []
       },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -306,7 +307,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "cards[980d5710-67c8-46a8-be6e-4e891a2d3eb7][field0]",
         "label": "What is/was your GPA?",
@@ -314,7 +315,14 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "My M.S. GPA at Columbia University was 3.71, and my B.A. GPA at Renmin University of China was 3.82.",
+      "source": {
+        "type": "bank",
+        "id": "draft:b9d6af93c8",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

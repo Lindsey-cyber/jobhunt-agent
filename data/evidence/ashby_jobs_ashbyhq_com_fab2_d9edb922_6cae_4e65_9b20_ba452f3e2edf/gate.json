@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Name\": no answer in profile or answer bank",
+    "required \"Portfolio - File upload\": no document for this upload",
+    "required \"Ideal start date in office\": no answer in profile or answer bank",
+    "required \"If no, is your home country listed below?\": no answer in profile or answer bank",
+    "required \"Name\" is empty after filling",
+    "required \"Portfolio - File upload\" is empty after filling",
+    "required \"Ideal start date in office\" is empty after filling",
+    "required \"If no, is your home country listed below?\" is empty after filling"
+  ]
+}

@@ -372,6 +372,19 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^yes\b/i.test(o.trim())),
   },
   {
+    // Start date in any wording: "November 15, 2026", or 11/15/2026 where the box asks for MM/DD/YYYY.
+    path: "availableFrom",
+    pattern: /\b(desired|earliest|anticipated|ideal|available|soonest|possible) (start|starting) date\b|\bstart date\b.{0,20}\b(for this role|availability)\b|\bwhen (can|could|would) you (start|begin)\b|\bavailable to (start|begin)\b|^start date$/,
+    kinds: ["text", "textarea"],
+    resolve: (p, label) => {
+      const d = p.availableFrom;
+      if (!d) return undefined;
+      const [y, m, day] = d.split("-");
+      if (/mm ?\/? ?dd/.test(label)) return `${m}/${day}/${y}`;
+      return `${new Date(Date.UTC(Number(y), Number(m) - 1, Number(day))).toLocaleString("en-US", { month: "long", timeZone: "UTC" })} ${Number(day)}, ${y}`;
+    },
+  },
+  {
     // Notice period as choices ("Immediately Available", "1 Month", ...): the shortest option that covers hers.
     path: "noticePeriodWeeks",
     pattern: /\bnotice period\b/,

@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What is your desired start date?\": no answer in profile or answer bank",
+    "required \"Are you currently an InterDigital consultant, contract or temporary worker?\": no answer in profile or answer bank",
+    "required \"Are you a previous employee of Interdigital or any subsidary?\": no answer in profile or answer bank",
+    "required \"US Canada Export Control laws restrict the transfer of certain information to citizens/permanent residents of other countries. If you are a citizen, permanent resident or have been granted asylum from one of these countries, InterDigital may be required to obtain an export license before you commence employment with InterDigital and/or granted access to certain information. Are you a citizen or lawful permanent resident of any of the following countries: Cuba, Iran, North Korea, Sudan or Syria?\": sensitive question with no exact answer",
+    "required \"Are you a citizen or lawful permanent resident of any of the following countries: Armenia, Azerbaijan, Belarus, Cambodia, People's Republic of China (including Hong Kong), Georgia, Iraq, Kazakhstan, Kosovo, Kyrgyzstan, Laos, Libya, Macau, Moldova, Mongolia, Russia, Tajikistan, Turkmenistan, Uzbekistan, Venezuela, Vietnam and Yemen?\": sensitive question with no exact answer",
+    "required \"Are you legally permitted to work in the country where this job is located?\": no answer in profile or answer bank",
+    "required \"What is your desired start date?\" is empty after filling",
+    "required \"Are you currently an InterDigital consultant, contract or temporary worker?\" is empty after filling",
+    "required \"Are you a previous employee of Interdigital or any subsidary?\" is empty after filling",
+    "required \"US Canada Export Control laws restrict the transfer of certain information to citizens/permanent residents of other countries. If you are a citizen, permanent resident or have been granted asylum from one of these countries, InterDigital may be required to obtain an export license before you commence employment with InterDigital and/or granted access to certain information. Are you a citizen or lawful permanent resident of any of the following countries: Cuba, Iran, North Korea, Sudan or Syria?\" is empty after filling",
+    "required \"Are you a citizen or lawful permanent resident of any of the following countries: Armenia, Azerbaijan, Belarus, Cambodia, People's Republic of China (including Hong Kong), Georgia, Iraq, Kazakhstan, Kosovo, Kyrgyzstan, Laos, Libya, Macau, Moldova, Mongolia, Russia, Tajikistan, Turkmenistan, Uzbekistan, Venezuela, Vietnam and Yemen?\" is empty after filling",
+    "required \"Are you legally permitted to work in the country where this job is located?\" is empty after filling"
+  ]
+}

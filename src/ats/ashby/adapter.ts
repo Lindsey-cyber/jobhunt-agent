@@ -28,6 +28,44 @@ async function optionLabels(entry: Locator, selector: string): Promise<{ input: 
   return out;
 }
 
+// Ashby's "Education History" system field: one block of school (a search box),
+// degree, field of study and start/end month-year dropdowns. The plan's value is
+// "School | Degree | Field | MM/YYYY | MM/YYYY", and the readback is the same shape.
+export const EDUCATION = "_systemfield_education_history";
+
+async function fillEducation(page: Page, entry: Locator, value: string): Promise<void> {
+  const [school, degree, major, start, end] = value.split(" | ").map((x) => x.trim());
+  const search = entry.locator('input[role="combobox"]').first();
+  await search.click();
+  await search.fill(school!);
+  const options = page.locator('[role="listbox"] [role="option"]');
+  await options.first().waitFor({ timeout: 8000 });
+  const texts = await options.allInnerTexts();
+  const i = texts.findIndex((t) => normalize(t).startsWith(normalize(school!)));
+  if (i < 0) throw new Error(`no school suggestion starts with "${school}"`);
+  await options.nth(i).click();
+  await entry.locator(`[id="${EDUCATION}-degree"]`).fill(degree!);
+  await entry.locator(`[id="${EDUCATION}-major"]`).fill(major!);
+  for (const [part, date] of [["startDate", start], ["endDate", end]] as const) {
+    if (!date) continue;
+    const [m, y] = date.split("/");
+    const selects = entry.locator(`[id="${EDUCATION}-${part}"] select`);
+    await selects.nth(0).selectOption({ value: String(Number(m)) });
+    await selects.nth(1).selectOption({ label: y! });
+  }
+}
+
+async function readEducation(entry: Locator): Promise<string> {
+  const v = (sel: string) => entry.locator(sel).first().inputValue({ timeout: 1000 }).catch(() => "");
+  const date = async (part: string) => {
+    const s = entry.locator(`[id="${EDUCATION}-${part}"] select`);
+    const [m, y] = [await s.nth(0).inputValue({ timeout: 1000 }).catch(() => ""), await s.nth(1).evaluate((x) => (x as HTMLSelectElement).selectedOptions[0]?.text.trim() ?? "", undefined, { timeout: 1000 }).catch(() => "")];
+    return m && y ? `${m.padStart(2, "0")}/${y}` : "";
+  };
+  const parts = [await v('input[role="combobox"]'), await v(`[id="${EDUCATION}-degree"]`), await v(`[id="${EDUCATION}-major"]`), await date("startDate"), await date("endDate")];
+  return parts.some(Boolean) ? parts.join(" | ") : "";
+}
+
 export const ashby: AtsAdapter = {
   name: "ashby",
 
@@ -59,6 +97,7 @@ export const ashby: AtsAdapter = {
       return;
     }
     const entry = entryOf(page, field.id);
+    if (field.id === EDUCATION) return fillEducation(page, entry, value);
     switch (field.kind) {
       case "text":
       case "textarea":
@@ -124,6 +163,10 @@ export const ashby: AtsAdapter = {
       const entry = entryOf(page, f.id);
       if ((await entry.count()) === 0) {
         out[f.id] = "";
+        continue;
+      }
+      if (f.id === EDUCATION) {
+        out[f.id] = await readEducation(entry);
         continue;
       }
       switch (f.kind) {

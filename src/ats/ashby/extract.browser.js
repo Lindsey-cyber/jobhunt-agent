@@ -25,6 +25,17 @@
       });
     }
 
+    // System fields: the name box is the full name; education history is one
+    // composite block the adapter fills from a single value.
+    if (id === "_systemfield_name") {
+      fields.push({ id, label: "Full Name", kind: "text", required, options: [] });
+      continue;
+    }
+    if (id === "_systemfield_education_history") {
+      fields.push({ id, label: "Education History", kind: "text", required, options: [] });
+      continue;
+    }
+
     let kind = "text";
     let options = [];
     if (entry.querySelector('input[type="file"]')) kind = "file";

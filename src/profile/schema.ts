@@ -36,6 +36,8 @@ export const Profile = z.object({
         school: z.string().min(1),
         degree: z.string().min(1),
         major: z.string().min(1),
+        // YYYY-MM, from the resume.
+        start: z.string().regex(/^\d{4}-\d{2}$/).optional(),
         gradMonth: z.number().int().min(1).max(12),
         gradYear: z.number().int().min(1950).max(2100),
         gpa: z.string().optional(),
@@ -46,6 +48,8 @@ export const Profile = z.object({
   restrictiveAgreements: z.boolean().optional(),
   // New-grad cohorts she applies to (2026-10-28: "2027年的也投"), even though she graduated in 2026.
   newGradCohorts: z.array(z.number().int()).default([]),
+  // The candidate (2026-10-28): on-site (five days or hybrid) and relocation anywhere in the US.
+  workArrangement: z.object({ onsite: z.boolean().optional(), relocate: z.boolean().optional() }).optional(),
   // The candidate (2026-10-28): no relatives at any employer she applies to.
   relativesAtEmployers: z.boolean().optional(),
   // The candidate lets the agent tick "I have read the privacy policy" boxes.

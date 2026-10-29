@@ -145,6 +145,17 @@ export const PROFILE_RULES: ProfileRule[] = [
       return e.gradMonth ? `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}` : undefined;
     },
   },
+  {
+    // Ashby's "Education History" block: "School | Degree | Field | MM/YYYY | MM/YYYY", most recent degree.
+    path: "education[0]",
+    pattern: /^education history$/,
+    kinds: ["text"],
+    resolve: (p) => {
+      const e = firstEdu(p);
+      const start = e.start ? `${e.start.slice(5, 7)}/${e.start.slice(0, 4)}` : "";
+      return [e.school, e.degree, e.major, start, `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}`].join(" | ");
+    },
+  },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",
@@ -175,11 +186,13 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
-    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b|\bhave you previously worked as [a-z ]{1,40}? for\b/,
+    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b|\bhave you previously worked as [a-z ]{1,40}? for\b|\bhave you (ever )?(previously )?been employed (at|by) .{1,60} for any length of time\b/,
     resolve: (p, label, ctx) => {
       const m =
         /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ??
         /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label) ??
+        // Affirm: "Have you previously been employed at Affirm for any length of time?"
+        /\bbeen employed (?:at|by) (.+?) for any length of time\b/.exec(label) ??
         // ADI: "Are you now or have you previously been employed by Analog Devices Inc. (ADI) or Maxim Integrated as a ..."
         /\bnow or have you previously been employed by (.+?) (?:as|in) a\b/.exec(label) ??
         // GlobalFoundries: "Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, ..."
@@ -191,16 +204,29 @@ export const PROFILE_RULES: ProfileRule[] = [
       if (!named) return undefined;
       const worked = p.workHistory.some((w) => w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase()));
       // Waymo: "Never worked at Alphabet" among current/former options.
-      const never = (ctx.options ?? []).filter((o) => /^(never|i have never|no\b)/i.test(o.trim()));
+      const never = (ctx.options ?? []).filter((o) => /^(never|i have never|i have not|no\b)/i.test(o.trim()));
       if (!worked && never.length === 1) return never[0];
       return yesNo(worked);
+    },
+  },
+  {
+    // The candidate (2026-10-28): any US location; on-site five days, hybrid and relocation all work.
+    // Yes/no only, and only for a posting located in the US.
+    path: "workArrangement",
+    pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion)|commute)\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, label, ctx) => {
+      if (ctx.jobCountry !== "United States" || !(ctx.options ?? []).some((o) => /^yes\b/i.test(o.trim()))) return undefined;
+      if (/\b(support|assistance|package|stipend|reimburse)/.test(label)) return undefined;
+      const ok = /\brelocat/.test(label) ? p.workArrangement?.relocate : p.workArrangement?.onsite;
+      return ok === undefined ? undefined : yesNo(ok);
     },
   },
   {
     // "How did you hear about us?": the candidate does not mind which; the
     // agent finds postings on job lists, so the closest option says so.
     path: "howHeard",
-    pattern: /^how did you (hear|learn) about /,
+    pattern: /^how did you (first )?(hear|learn) about /,
     resolve: (_p, _label, ctx) => {
       const opts = ctx.options ?? [];
       // A search box (Workday) finds "LinkedIn" as one item; job-alert emails are one of the sources.
@@ -385,7 +411,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "eeo.hispanicLatino", pattern: /\b(hispanic|latino)\b/, resolve: (p) => p.eeo.hispanicLatino },
   // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
   // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
-  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b/, resolve: () => "decline" },
+  // Pronouns follow her gender choice: undisclosed where the list lets her decline.
+  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b|^(your )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
   // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",

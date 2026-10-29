@@ -18,7 +18,8 @@ export interface DraftCheck {
 const flat = (s: string) => normalize(s).replace(/[^a-z0-9]/g, "");
 const NUMBER = /\$?\d+(?:[.,]\d+)*%?/g;
 
-export function checkDraft(draft: Draft, sources: string[], posting: string, options: string[] = []): DraftCheck {
+// A sensitive question (authorization, prior employment...) needs a cited passage for any answer, No included.
+export function checkDraft(draft: Draft, sources: string[], posting: string, options: string[] = [], sensitive = false): DraftCheck {
   const problems: string[] = [];
   const answer = draft.answer.trim();
   const known = flat(sources.join("\n"));
@@ -26,7 +27,7 @@ export function checkDraft(draft: Draft, sources: string[], posting: string, opt
   if (options.length && !options.includes(answer)) problems.push(`"${answer}" is not one of the options`);
 
   const yes = /^yes\b/i.test(answer);
-  if (options.length && yes && !draft.evidence.length) problems.push("a Yes needs a cited passage");
+  if (options.length && (yes || sensitive) && !draft.evidence.length) problems.push(sensitive ? "an answer to a sensitive question needs a cited passage" : "a Yes needs a cited passage");
   if (!options.length && !draft.evidence.length) problems.push("no cited passages");
   for (const e of draft.evidence) {
     if (flat(e).length < 15) problems.push(`citation too short to check: "${e}"`);

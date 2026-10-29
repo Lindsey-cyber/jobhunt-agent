@@ -24,4 +24,10 @@ describe("drafted answers", () => {
     expect(checkDraft({ answer: "Yes", evidence: [] }, [resume], "", ["Yes", "No"]).ok).toBe(false);
     expect(checkDraft({ answer: "No", evidence: [] }, [resume], "", ["Yes", "No"]).ok).toBe(true);
   });
+
+  it("needs a cited passage for any answer to a sensitive question, No included", () => {
+    const docs = ["Authorized to work in the United States on F-1 OPT"];
+    expect(checkDraft({ answer: "No", evidence: [] }, docs, "", ["Yes", "No"], true).ok).toBe(false);
+    expect(checkDraft({ answer: "No", evidence: [] }, docs, "", ["Yes", "No"]).ok).toBe(true);
+  });
 });

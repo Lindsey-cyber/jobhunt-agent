@@ -30,3 +30,8 @@ A candidate opens `https://jobs.ashbyhq.com/<org>/<id>/application`, fills one R
 - Not yet verified live: the date picker, the confirmation text after submit, and how often reCAPTCHA challenges a headless browser.
 - "Graduation Date" is a react-datepicker; no rule fills it yet, so it holds.
 - "Are you legally authorized to work in that country?" refers to the previous question's country; it holds.
+
+## System fields (2026-10-29)
+
+- `_systemfield_name` is extracted as "Full Name" (a bare "Name" elsewhere can be a signature).
+- `_systemfield_education_history` is one composite block: school search box, degree, field of study, start and end month/year dropdowns, "Still Student?". The plan value is `School | Degree | Field | MM/YYYY | MM/YYYY` (most recent degree); the adapter fills each part and reads the same shape back. Verified live on Applied Intuition (dry run).

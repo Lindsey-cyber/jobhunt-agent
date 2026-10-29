@@ -1,0 +1,6 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"Field of Study\": expected \"Statistics\", got \"Applied Economics and Statistics\""
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently employed with Magna? (If you are a current Magna employee, please use the \"Jobs Hub\" in Workday to apply for this role. If you are a current contingent/supplemental/contract worker, please select \"No\".)\": no answer in profile or answer bank",
+    "required \"Are you over the age of 18?\": no answer in profile or answer bank",
+    "required \"Are you currently employed with Magna? (If you are a current Magna employee, please use the \"Jobs Hub\" in Workday to apply for this role. If you are a current contingent/supplemental/contract worker, please select \"No\".)\" is empty after filling",
+    "required \"Are you over the age of 18?\" is empty after filling"
+  ]
+}

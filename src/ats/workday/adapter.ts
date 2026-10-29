@@ -58,6 +58,26 @@ async function listboxOptions(page: Page, button: Locator): Promise<string[]> {
   return [];
 }
 
+// The how-heard search box ("source") at GM lists fixed choices when clicked;
+// typing does not filter them. Read the first level so the plan can choose among them.
+async function promptOptions(page: Page, id: string): Promise<string[]> {
+  const b = box(page, id);
+  if ((await b.locator('[data-automation-id="selectedItem"]').count()) > 0) return [];
+  const input = b.locator("input").first();
+  if (!(await input.click({ force: true, timeout: 5000 }).then(() => true, () => false))) return [];
+  const prompt = page.locator('[data-automation-id="promptOption"]');
+  await page.waitForTimeout(1500);
+  // Chosen items elsewhere on the page (the phone code) share the automation id.
+  const chosen = new Set((await page.locator('[data-automation-id="selectedItem"]').allInnerTexts().catch(() => [])).map((t) => t.trim()));
+  const texts = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim()).filter((t) => t && !chosen.has(t));
+  await page.keyboard.press("Escape").catch(() => undefined);
+  await page.waitForTimeout(400);
+  return texts;
+}
+
+// Choices made inside a category, by field id (see fill and readback).
+const underCategory = new Map<string, { category: string; child: string }>();
+
 async function clickOption(page: Page, value: string, match: (want: string, got: string) => boolean): Promise<void> {
   const opts = page.locator(`${MENU_OPTION}, [data-automation-id="promptOption"]:visible`);
   await opts.first().waitFor({ timeout: 8000 });
@@ -243,6 +263,7 @@ export const workday: AtsAdapter = {
         // A menu that would not open: answer by its text and let the readback prove it.
         fields.push({ ...f, kind: options.length ? "select" : "combobox", options });
       }
+      else if (f.kind === "combobox" && f.id === "source" && !f.options?.length) fields.push({ ...(f as FormField), options: await promptOptions(page, f.id) });
       else if (f.kind === "date") fields.push({ ...f, kind: "text" });
       else fields.push(f as FormField);
     }
@@ -296,10 +317,17 @@ export const workday: AtsAdapter = {
           // A category ("LinkedIn" at Draper) opens its own list instead of being chosen:
           // take the child that names the answer, or its only child.
           if ((await pills.count()) === 0 && (await prompt.count()) > 0) {
-            const kids = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim());
-            let k = kids.findIndex((t) => searchMatch(value, t));
-            if (k < 0 && kids.length === 1) k = 0;
-            if (k >= 0) await prompt.nth(k).click({ force: true });
+            // Chosen items elsewhere (the phone code) share the automation id.
+            const chosen = new Set((await page.locator('[data-automation-id="selectedItem"]').allInnerTexts().catch(() => [])).map((t) => t.trim()));
+            const all = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim());
+            const kids = all.map((t, j) => ({ t, j })).filter(({ t }) => !chosen.has(t));
+            let k = kids.find(({ t }) => searchMatch(value, t))?.j ?? -1;
+            if (k < 0 && kids.length === 1) k = kids[0]!.j;
+            if (k >= 0) {
+              await prompt.nth(k).click({ force: true });
+              // The chip shows only the child ("Other"); the readback reports the category too.
+              underCategory.set(field.id, { category: texts[i]!, child: all[k]! });
+            }
           }
           return true;
         };
@@ -369,6 +397,7 @@ export const workday: AtsAdapter = {
             break;
           }
           out[f.id] = [...new Set((await b.locator('[data-automation-id="selectedItem"]').allInnerTexts().catch(() => [])).map((t) => t.trim()).filter(Boolean))].join(", ");
+          if (underCategory.get(f.id)?.child === out[f.id]) out[f.id] = `${underCategory.get(f.id)!.category} › ${out[f.id]}`;
           break;
         default: {
           const picked: string[] = [];

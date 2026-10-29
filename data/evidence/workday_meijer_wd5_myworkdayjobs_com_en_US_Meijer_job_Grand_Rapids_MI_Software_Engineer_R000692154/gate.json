@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Please indicate your current age range.\": no answer in profile or answer bank",
+    "required \"Please indicate your current age range.\" is empty after filling"
+  ]
+}

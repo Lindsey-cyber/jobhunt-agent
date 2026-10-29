@@ -35,6 +35,8 @@ function same(field: FormField, expected: string, actual: string, isPhone: boole
   // A planned "decline" on a menu read only at fill time: any decline option is it, nothing else.
   if (expected === "decline") return DECLINE.test(normalize(actual));
   if (field.kind === "combobox" && field.options.length === 0) return searchMatch(expected, actual);
+  // Workday: an option that is a category takes a choice inside it ("Internet Job Board › Other").
+  if (field.kind === "combobox" && actual.startsWith(`${expected} › `)) return true;
   if (isPhone) return expected.replace(/\D/g, "").endsWith(actual.replace(/\D/g, "")) && actual.replace(/\D/g, "").length >= 7;
   return normalize(actual) === normalize(expected);
 }

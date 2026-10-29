@@ -1,0 +1,212 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn corporate page",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Have you ever been employed by TTI or any of its subsidiaries (Milwaukee Tool, TTI Floor Care, TTI Power Equipment, Team TTI, etc.)? If yes, please indicate location, manager, or email. NOTE: If you’re a current employee, please discontinue this application and apply through the internal site.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine2",
+      "label": "Address Line 2",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "regionSubdivision1",
+      "label": "County",
+      "expected": "Queens",
+      "actual": "Queens",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "jobTitle",
+      "label": "Job Title",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
+      "pass": true
+    },
+    {
+      "fieldId": "companyName",
+      "label": "Company",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "startDate",
+      "label": "From",
+      "expected": "01/2026",
+      "actual": "01/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "endDate",
+      "label": "To",
+      "expected": "05/2026",
+      "actual": "05/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "schoolName",
+      "label": "School or University",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "fieldOfStudy",
+      "label": "Field of Study",
+      "expected": "Statistics",
+      "actual": "Applied Economics and Statistics",
+      "pass": false
+    },
+    {
+      "fieldId": "gradeAverage",
+      "label": "Overall Result (GPA)",
+      "expected": "3.71",
+      "actual": "3.71",
+      "pass": true
+    },
+    {
+      "fieldId": "firstYearAttended",
+      "label": "From",
+      "expected": "2024",
+      "actual": "2024",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "LinkedIn",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": [
+    "Field of Study: no suggestion fits \"Statistics\" in fieldOfStudy"
+  ]
+}

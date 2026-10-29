@@ -376,6 +376,9 @@ describe("buildPlan", () => {
     expect(one("Are you able to work in the specified job location, or are you willing to relocate for this position?", ["Yes", "No"], "Lila Sciences", "checkbox", "Cambridge, MA USA; San Francisco, CA USA")).toMatchObject({ value: "Yes" });
     expect(one("Have you been previously employed with us?", ["Yes", "No"], "KSB")).toMatchObject({ value: "No" });
     expect(one("Phone Device Type", ["Main/Home"])).toMatchObject({ value: "Main/Home" });
+    expect(one("Are you currently employed with Magna? (If you are a current Magna employee, please use the \"Jobs Hub\" in Workday to apply for this role.)", ["Yes", "No"], "Magna")).toMatchObject({ value: "No" });
+    expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
+    expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });
 
   it("keys employer-page Greenhouse postings by job id, and reads Billtrust's and Bracebridge's wording", async () => {
@@ -479,5 +482,15 @@ describe("buildPlan", () => {
     expect(plan.items[0]).toMatchObject({ status: "fill", value: "decline" });
     expect(compareReadback(plan, [f], { [f.id]: "I do not wish to self-identify" }).ok).toBe(true);
     expect(compareReadback(plan, [f], { [f.id]: "American Indian or Alaska Native" }).ok).toBe(false);
+  });
+
+  it("answers GM's how-heard search box from its categories, and accepts the choice inside the category", async () => {
+    const { compareReadback } = await import("../src/verify/compare.ts");
+    const opts = ["Career Fair / Professional Organization Event", "Contacted by Company Recruiter", "Email / Newsletter", "GM.com Website", "GM Careers Website", "Internet Job Board /  Job Search", "Referred by GM Employee"];
+    const f = { ...field("How Did You Hear About Us?", { kind: "combobox", options: opts }), id: "source", required: true };
+    const plan = buildPlan({ ...form([f]), ats: "workday" }, user.profile, user.bank);
+    expect(plan.items[0]).toMatchObject({ status: "fill", value: "Internet Job Board /  Job Search" });
+    expect(compareReadback(plan, [f], { source: "Internet Job Board /  Job Search › Other" }).ok).toBe(true);
+    expect(compareReadback(plan, [f], { source: "Other" }).ok).toBe(false);
   });
 });

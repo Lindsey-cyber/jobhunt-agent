@@ -327,7 +327,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Any other "have you worked for / been employed by / contracted with <this company>?":
     // the hiring company must be named, and her resume's employers decide.
     path: "workHistory",
-    pattern: /\b(worked|been (previously )?employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bare you an? (previous|former|prior) [a-z ]{1,40}\bemployee\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
+    pattern: /\b(worked|been (previously )?employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bare you currently employed (with|at|by)\b|\bare you an? (previous|former|prior) [a-z ]{1,40}\bemployee\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       if (/\b(relative|family|familial|client|customer|government|partner|competitor)\b/.test(label)) return undefined;
@@ -369,9 +369,14 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Age 18+: her B.A. ran 2019-2023 (answers.yaml over-18), in any wording.
     path: "age",
-    pattern: /\b(over|at least|older than) (the age of )?18\b|\b18 (years|yrs) (of age )?(or older|and older|of age)\b|\blegal (working )?age\b/,
+    pattern: /\b(over|at least|older than) (the age of )?18\b|\b18 (years|yrs) (of age )?(or older|and older|of age)\b|\blegal (working )?age\b|\b(current )?age range\b/,
     kinds: ["select", "radio", "combobox", "checkbox"],
-    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^yes\b/i.test(o.trim())),
+    // Meijer: "18 years or older" among age ranges; Magna's menu that would not open: "Yes".
+    resolve: (_p, _l, ctx) => {
+      const opts = ctx.options ?? [];
+      if (!opts.length) return "Yes";
+      return opts.find((o) => /^yes\b/i.test(o.trim())) ?? opts.find((o) => /^18\b.*\b(older|over)\b|^18 ?\+/i.test(o.trim()));
+    },
   },
   {
     // Start date in any wording: "November 15, 2026", or 11/15/2026 where the box asks for MM/DD/YYYY.

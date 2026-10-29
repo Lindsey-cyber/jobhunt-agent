@@ -386,6 +386,7 @@ describe("buildPlan", () => {
     expect(one("Are you currently an associate of Simmons Bank? IMPORTANT! Current Simmons associates need to apply using their internal Workday account.", ["No, I’m not an associate of Simmons Bank.", "Yes, I’m currently employed by Simmons Bank."], "Simmons Bank")).toMatchObject({ value: "No, I’m not an associate of Simmons Bank." });
     expect(one("Are you related by blood, adoption, or marriage to a current employee?", ["Yes", "No"], "Smith+Nephew")).toMatchObject({ value: "No" });
     expect(one("Are you currently, or have you previously been employed by The Home Depot, or any of our subsidiaries?", ["Yes", "No"], "The Home Depot")).toMatchObject({ value: "No" });
+    expect(one("Are you currently, or have you previously been employed by The Home Depot, or any of our subsidiaries? For a complete listing of subsidiaries, please click here.", ["Current Associate with The Home Depot", "Current Associate with a subsidiary of The Home Depot", "Former Associate of The Home Depot, or subsidiary", "Not Applicable"], "The Home Depot")).toMatchObject({ value: "Not Applicable" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

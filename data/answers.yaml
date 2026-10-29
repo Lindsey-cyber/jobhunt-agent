@@ -553,3 +553,22 @@ answers:
     aliases: []
     answer: "Yes"
     origin: human
+  # Inferred (standing permission, 2026-10-29): she would take a drug test where a role requires one.
+  - id: drug-test-willing
+    question: Are you willing to take a drug test if the position requires?
+    aliases:
+      - Are you willing to take a drug test?
+    answer: "Yes"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): she approved these postings as fits for her experience.
+  - id: required-relevant-experience
+    question: Based on the job description, do you have the required amount of directly relevant work experience?
+    aliases: []
+    answer: "Yes"
+    origin: human
+  # From her profile: M.S. Statistics (Columbia, 2026); the approved postings ask for a bachelor's or master's.
+  - id: meets-educational-requirement
+    question: Do you meet the educational requirement as specified in the job description?
+    aliases: []
+    answer: "Yes"
+    origin: human

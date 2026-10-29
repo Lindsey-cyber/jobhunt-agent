@@ -77,7 +77,9 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   const label = normalize(field.label);
   const sensitive = SENSITIVE.test(label);
 
-  const veto = VETO.find((v) => v.pattern.test(label));
+  // The one signature the candidate allowed: the voluntary disability self-identification form.
+  const allowedSignature = profile.signSelfIdentificationForms && /^self identification form signature (name|date)$/.test(label);
+  const veto = allowedSignature ? undefined : VETO.find((v) => v.pattern.test(label));
   const expectation = veto === COMPENSATION_VETO && profile.salaryExpectation && (field.kind === "text" || field.kind === "textarea") && SALARY_EXPECTATION.test(label) && !SALARY_HISTORY.test(label);
   if (expectation) return { status: "fill", field, value: profile.salaryExpectation!, source: { type: "profile", path: "salaryExpectation" }, confidence: 1, sensitive: false };
   if (veto) return unanswered(field, veto.reason);

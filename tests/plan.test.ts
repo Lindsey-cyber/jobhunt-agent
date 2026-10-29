@@ -223,6 +223,14 @@ describe("buildPlan", () => {
     expect(buildPlan(form([field("Veterans status", { kind: "select", options })]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "I AM NOT A VETERAN" });
   });
 
+  it("signs only the self-identification form, and only with the candidate's permission", () => {
+    const sig = field("Self-identification form signature name");
+    expect(buildPlan(form([sig]), user.profile, user.bank).items[0]).toMatchObject({ status: "blocked" });
+    const p = { ...user.profile, signSelfIdentificationForms: true };
+    expect(buildPlan(form([sig]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: `${p.identity.firstName} ${p.identity.lastName}` });
+    expect(buildPlan(form([field("Signature")]), p, user.bank).items[0]).toMatchObject({ status: "blocked" });
+  });
+
   it("declines transgender identity, which the candidate has not answered", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "Female" } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });

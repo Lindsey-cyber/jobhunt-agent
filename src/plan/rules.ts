@@ -586,12 +586,15 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Asana: "Current Company"; the work-history entry with no end date.
     path: "workHistory",
+    kinds: ["text", "textarea", "combobox"],
     pattern: /^(name of (your )?)?(current|most recent|current or most recent) (company|employer)( name)?$|^where have you most recently worked$|^who is your (current|most recent|current or most recent) employer$/,
     resolve: (p) => p.workHistory.find((w) => !w.end)?.employer,
   },
   {
     path: "workHistory",
     pattern: /^(current|most recent|current or most recent) (job )?(title|position|role)$|^what is your (current|most recent) (job )?(title|position|role)$/,
+    // (Not Greenhouse's "Current role" checkbox in the employment section.)
+    kinds: ["text", "textarea"],
     resolve: (p) => p.workHistory.find((w) => !w.end)?.title,
   },
   {

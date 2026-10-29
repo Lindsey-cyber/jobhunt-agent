@@ -315,13 +315,20 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): location answers say New York. "Do you have a location preference?" among the posting's offices.
     path: "contact.address.city",
-    pattern: /^(do you have a )?(preferred|location preference|preferred (work |office )?location)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b|^what is your preferred (work |office )?location$/,
+    pattern: /\bmetropolitan area\b.{0,30}\b(closest|nearest)\b.{0,40}\bresidence\b|^(do you have a )?(preferred|location preference|preferred (work |office )?location)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b|^what is your preferred (work |office )?location$/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, _l, ctx) => {
       const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
       const hit = (ctx.options ?? []).filter((o) => normalize(o).startsWith(metro));
       return hit.length === 1 ? hit[0] : (ctx.options ?? []).find((o) => /^(no preference|either|any|open to any)\b/i.test(o.trim()));
     },
+  },
+  {
+    // Coding-interview language: Python, from her resume (Quora's answer bank entry says the same).
+    path: "interviewLanguage",
+    pattern: /\b(programming languages?|coding (exercise|interview)s?)\b.{0,80}\bprefer/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^python\b/i.test(o.trim())),
   },
   {
     // Notice period as choices ("Immediately Available", "1 Month", ...): the shortest option that covers hers.
@@ -365,10 +372,12 @@ export const PROFILE_RULES: ProfileRule[] = [
     // The candidate (2026-10-28): any US location; on-site five days, hybrid and relocation all work.
     // Yes/no only, and only for a posting located in the US.
     path: "workArrangement",
-    pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location|(able|willing) to work (from|in|out of) [a-z ]{3,30}|fully in person)\b/,
+    pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location|(able|willing) to work (from|in|out of) [a-z ]{3,30}|fully in person|office hubs?)\b/,
     kinds: ["select", "radio", "combobox", "checkbox", "text"],
     resolve: (p, label, ctx) => {
-      if (ctx.jobCountry !== "United States" || /\b(legally|lawfully|authori[sz]|eligible|sponsor|visa)/.test(label)) return undefined;
+      // A posting with any US location (Lila: Cambridge, London, San Francisco) has a place she would work.
+      const anyUs = ctx.jobCountry === "United States" || (ctx.jobLocation ?? "").split(/;|\|/).some((x) => usLocation(x.trim()) === "us");
+      if (!anyUs || /\b(legally|lawfully|authori[sz]|eligible|sponsor|visa)/.test(label)) return undefined;
       const opts = ctx.options ?? [];
       // A yes/no asked in a text box (Bot Auto: "Would you be able to work onsite at Houston, TX office?").
       if (!opts.length && !/^(are|would|will|can|do|is)\b|\b(are|would|will|can|do) you\b/.test(label)) return undefined;
@@ -479,6 +488,8 @@ export const PROFILE_RULES: ProfileRule[] = [
       // Relativity: "I am currently a U.S. Person" / "I am not a U.S. Person".
       const notPerson = opts.filter((o) => /\bnot an? .{0,3}u\.?\s?s\.? person\b/i.test(o));
       if (notPerson.length === 1) return notPerson[0];
+      // CoreWeave: "Please indicate whether you are a U.S. person" with Yes/No.
+      if (/\bu s person\b/.test(normalize(_label)) && opts.some((o) => /^no$/i.test(o.trim()))) return opts.find((o) => /^no$/i.test(o.trim()));
       return opts.find((o) => /^none of the above$/i.test(o.trim()));
     },
   },

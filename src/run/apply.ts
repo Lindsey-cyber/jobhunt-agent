@@ -168,7 +168,7 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
       return "stuck" as const;
     });
     if (step !== "next") break;
-    form = { ...(await adapter.extract(page)), company: first.company, jobTitle: first.jobTitle, ...(first.jobLocation ? { jobLocation: first.jobLocation } : {}) };
+    form = { ...(await adapter.extract(page)), company: first.company, jobTitle: first.jobTitle, priorApplications, ...(first.jobLocation ? { jobLocation: first.jobLocation } : {}) };
   }
   const plan: FillPlan = { form: { ...first, fields: pages.flatMap((p) => p.plan.form.fields) }, items: pages.flatMap((p) => p.plan.items) };
   const fillErrors = pages.flatMap((p) => p.fillErrors);

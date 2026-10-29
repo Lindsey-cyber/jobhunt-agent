@@ -242,6 +242,8 @@ describe("buildPlan", () => {
     expect(one("Have you applied to GLOBAL FOUNDRIES within the past 6 months?", 0)).toMatchObject({ value: "No" });
     expect(one("Have you applied to GLOBAL FOUNDRIES within the past 6 months?", 1)).toMatchObject({ value: "Yes" });
     expect(one("Have you held an active U.S. security clearance within the last 2 years?")).toMatchObject({ value: "No" });
+    const located = buildPlan({ ...form([field("Are you legally authorized to work for GLOBAL FOUNDRIES in the position's country?", yn)], "GLOBAL FOUNDRIES"), jobLocation: "USA - California - Santa Clara; United States of America" }, { ...p, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } }, user.bank).items[0]!;
+    expect(located).toMatchObject({ status: "fill", value: "Yes" });
     expect(one("Have you previously worked for GLOBAL FOUNDRIES, IBM Microelectronics, or Chartered Semiconductor (including any joint-ventures or overseas locations)?")).toMatchObject({ value: "No" });
   });
 

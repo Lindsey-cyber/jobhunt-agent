@@ -302,6 +302,19 @@ export const PROFILE_RULES: ProfileRule[] = [
       return new Date(Date.UTC(2000, Number(m) - 1, 1)).toLocaleString("en-US", { month: "long", timeZone: "UTC" });
     },
   },
+  // Workday's disability self-identification form: its language, and (only with her
+  // permission) the typed name and date that sign it.
+  { path: "language", pattern: /^language$/, resolve: (_p, _l, ctx) => ((ctx.options ?? []).includes("English") ? "English" : undefined) },
+  {
+    path: "signSelfIdentificationForms",
+    pattern: /^self identification form signature (name|date)$/,
+    resolve: (p, label, ctx) => {
+      if (!p.signSelfIdentificationForms) return undefined;
+      if (label.endsWith("name")) return `${p.identity.firstName} ${p.identity.lastName}`;
+      const d = ctx.today && ctx.today.length >= 10 ? ctx.today : new Date().toISOString().slice(0, 10);
+      return `${d.slice(5, 7)}/${d.slice(8, 10)}/${d.slice(0, 4)}`;
+    },
+  },
   {
     // Asana: "Current Company"; the work-history entry with no end date.
     path: "workHistory",

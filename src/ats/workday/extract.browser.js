@@ -16,6 +16,10 @@
     if (/^preferredName--/.test(id)) label = `Preferred ${label}`;
     // The resume block's upload is labelled "Upload a file (5MB max)".
     if (box.querySelector('[id^="resumeAttachments"]')) label = "Resume/CV";
+    // The voluntary disability form (CC-305) is signed with a typed name and date.
+    if (id === "dateSignedOn") label = "Self-identification form signature date";
+    if (id === "disabilityStatus") label = "Disability status";
+    if (id === "name" && root.querySelector('[data-automation-id="formField-dateSignedOn"]')) label = "Self-identification form signature name";
     const required = /\*\s*$/.test(raw) || Boolean(box.querySelector('[aria-required="true"], [required]'));
     let kind = "text";
     let options = [];

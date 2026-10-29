@@ -213,10 +213,9 @@ export const workday: AtsAdapter = {
     const b = box(page, field.id);
     const date = b.locator('[data-automation-id^="dateSectionMonth"] input, input[data-automation-id^="dateSectionMonth"]');
     if ((await date.count()) > 0) {
-      // "MM/YYYY" into the month and year spin boxes.
-      const [m, y] = value.split("/");
+      // "MM/YYYY" or "MM/DD/YYYY" typed into the spin boxes, which advance on their own.
       await date.first().click();
-      await page.keyboard.type(`${m}${y}`);
+      await page.keyboard.type(value.replace(/\D/g, ""));
       return;
     }
     switch (field.kind) {
@@ -290,8 +289,10 @@ export const workday: AtsAdapter = {
       if ((await month.count()) > 0) {
         const year = b.locator('[data-automation-id^="dateSectionYear"] input, input[data-automation-id^="dateSectionYear"]');
         const m = await month.first().inputValue().catch(() => "");
+        const day = b.locator('[data-automation-id^="dateSectionDay"] input, input[data-automation-id^="dateSectionDay"]');
+        const dd = (await day.count()) ? await day.first().inputValue().catch(() => "") : "";
         const y = await year.first().inputValue().catch(() => "");
-        out[f.id] = m && y ? `${m}/${y}` : "";
+        out[f.id] = m && y ? [m.padStart(2, "0"), ...(dd ? [dd.padStart(2, "0")] : []), y].join("/") : "";
         continue;
       }
       switch (f.kind) {

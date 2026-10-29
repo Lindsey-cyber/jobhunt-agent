@@ -49,6 +49,9 @@ export const Profile = z.object({
   acknowledgePrivacyPolicies: z.boolean().default(false),
   // The candidate lets the agent tick an application's "I accept the Terms and Conditions".
   acceptApplicationTerms: z.boolean().default(false),
+  // The candidate lets the agent type her name and today's date on the voluntary
+  // disability self-identification form (CC-305). Nothing else is signed for her.
+  signSelfIdentificationForms: z.boolean().default(false),
   // The candidate's own range for "salary expectations" text questions. Current
   // or past pay and range dropdowns still go to her.
   salaryExpectation: z.string().min(1).optional(),

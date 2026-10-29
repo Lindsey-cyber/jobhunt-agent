@@ -283,3 +283,47 @@ answers:
       - Do you currently have an immigration case in process (e.g. H-1B extension, green card)?
     answer: "No"
     origin: human
+  # The candidate (2026-10-29): no plan to pursue a CPA; no driver's license.
+  - id: cpa-plan
+    question: Do you plan to pursue a CPA?
+    aliases:
+      - Do you plan to pursue CPA licensure?
+      - Are you planning to sit for the CPA exam?
+    answer: "No"
+    origin: human
+  - id: drivers-license
+    question: Do you have a valid driver's license?
+    aliases:
+      - Do you have a valid driver’s license?
+      - Do you possess a valid driver's license?
+      - Do you have a current, valid driver's license?
+    answer: "No"
+    origin: human
+  # The candidate (2026-10-29): two weeks' notice.
+  - id: notice-period
+    question: What is your current notice period?
+    aliases:
+      - What is your notice period?
+      - How much notice do you need to give your current employer?
+      - If offered the position, how soon could you start?
+    answer: 2 weeks
+    origin: human
+  # The candidate (2026-10-29): Arborphy AI is a small independent company (founded by a friend of her
+  # professor), not a client, subsidiary or affiliate of any employer she applies to.
+  - id: employer-client
+    question: Do you currently work at a Crowe client?
+    aliases:
+      - Is your current employer a client of ours?
+      - Are you currently employed by a client of the firm?
+    answer: "No"
+    origin: human
+  # The candidate (2026-10-29): she uses ChatGPT and Codex to help with her work.
+  - id: ai-tools
+    question: What AI tools are you currently using today and how are you using them?
+    aliases:
+      - What AI tools do you use in your work?
+      - Which AI tools do you use day to day, and how?
+    answer: I use ChatGPT and OpenAI's Codex day to day. ChatGPT helps me think through problems, check my understanding and draft writing; Codex helps me write, refactor and review code, and I verify what it produces with tests and my own review.
+    origin: human
+  # Standing permission (2026-10-29: "这些不重要的问题你就都按常理推测就行，不用每次等我来给一个确认的答案"):
+  # minor, low-stakes questions may be answered by common sense in a session; each such entry says "Inferred".

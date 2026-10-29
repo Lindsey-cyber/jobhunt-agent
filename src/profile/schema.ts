@@ -59,6 +59,10 @@ export const Profile = z.object({
   acknowledgePrivacyPolicies: z.boolean().default(false),
   // The candidate lets the agent tick an application's "I accept the Terms and Conditions".
   acceptApplicationTerms: z.boolean().default(false),
+  // The candidate (2026-10-29: "都允许") lets the agent agree to an application's
+  // accuracy certification, arbitration agreement, interview-conduct rules (AI use)
+  // and interview recording or transcription. A typed signature still needs her.
+  acceptApplicationAttestations: z.boolean().default(false),
   // The candidate lets the agent type her name and today's date on the voluntary
   // disability self-identification form (CC-305). Nothing else is signed for her.
   signSelfIdentificationForms: z.boolean().default(false),

@@ -1,6 +1,6 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
-import { ATTESTATION_OPTION, COMPENSATION_VETO, TERMS_NOTICE, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
+import { AGREEING_OPTION, ATTESTATION_ALLOWED, ATTESTATION_OPTION, COMPENSATION_VETO, TERMS_NOTICE, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
 import { jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
@@ -79,6 +79,12 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
 
   // The one signature the candidate allowed: the voluntary disability self-identification form.
   const allowedSignature = profile.signSelfIdentificationForms && /^self identification form signature (name|date)$/.test(label);
+  // Certifications, arbitration, interview rules and recording she agreed to (2026-10-29):
+  // a choice field whose agreeing option is unambiguous. Typed signatures and free text stay hers.
+  if (profile.acceptApplicationAttestations && field.kind !== "text" && field.kind !== "textarea" && field.kind !== "file" && ATTESTATION_ALLOWED.test(label) && !/\b(signature|sign here|type your (full )?name|initials)\b/.test(label)) {
+    const agree = field.options.length === 1 ? field.options : field.options.filter((o) => AGREEING_OPTION.test(o.trim()));
+    if (agree.length === 1) return { status: "fill", field, value: agree[0]!, source: { type: "profile", path: "acceptApplicationAttestations" }, confidence: 1, sensitive: false };
+  }
   const veto = allowedSignature ? undefined : VETO.find((v) => v.pattern.test(label));
   const expectation = veto === COMPENSATION_VETO && profile.salaryExpectation && (field.kind === "text" || field.kind === "textarea") && SALARY_EXPECTATION.test(label) && !SALARY_HISTORY.test(label);
   if (expectation) return { status: "fill", field, value: profile.salaryExpectation!, source: { type: "profile", path: "salaryExpectation" }, confidence: 1, sensitive: false };

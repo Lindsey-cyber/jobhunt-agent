@@ -8,17 +8,18 @@ export interface Label {
   key: string;
   label: "fit" | "not_fit";
   at: string;
-  // Who decided: only "candidate" labels count toward the eval score.
-  by: "candidate";
+  // Who decided: only "candidate" labels (one posting judged on its evidence)
+  // count toward the eval score; "bulk" approvals of a whole list only approve.
+  by: "candidate" | "bulk";
   note: string;
   evidence: TriageInput & { company: string };
 }
 
-export const labelFrom = (j: Job, label: Label["label"], note: string, at: string): Label => ({
+export const labelFrom = (j: Job, label: Label["label"], note: string, at: string, by: Label["by"] = "candidate"): Label => ({
   key: j.key,
   label,
   at,
-  by: "candidate",
+  by,
   note,
   evidence: { company: j.company, title: j.title, location: j.location, description: j.description, official: j.official, hints: j.hints },
 });
@@ -35,7 +36,7 @@ export interface EvalScore {
 }
 
 export function scoreEval(labels: Label[], judge: (e: TriageInput) => Triage): EvalScore {
-  const latest = new Map(labels.map((l) => [l.key, l]));
+  const latest = new Map(labels.filter((l) => l.by !== "bulk").map((l) => [l.key, l]));
   const rows = [...latest.values()].map((l) => ({ want: l.label === "fit", verdict: judge(l.evidence).verdict }));
   const shown = rows.filter((r) => r.verdict === "match");
   const wanted = rows.filter((r) => r.want);

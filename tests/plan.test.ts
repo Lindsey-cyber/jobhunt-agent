@@ -318,4 +318,17 @@ describe("buildPlan", () => {
     expect(one("Just-In-Time Notice: We use an AI-assisted resume-screening tool to help recruiters manage applications.", "Crowe", { kind: "select", options: ["Opt In", "Opt Out"] })).toMatchObject({ value: "Opt In" });
     expect(one("We would like to contact you via SMS or WhatsApp to provide updates on your progress. Mark yes if you agree.", "DoorDash", yn)).toMatchObject({ value: "No" });
   });
+
+  it("agrees to certifications, arbitration, interview rules and recording only with her permission, and nothing broader", () => {
+    const p = { ...user.profile, acceptApplicationAttestations: true };
+    const one = (label: string, over: Partial<ReturnType<typeof field>>, prof = p) => buildPlan(form([field(label, over)]), prof, user.bank).items[0]!;
+    const certify = "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge.";
+    expect(one(certify, { kind: "checkbox", options: ["I agree"] })).toMatchObject({ status: "fill", value: "I agree" });
+    expect(one(certify, { kind: "checkbox", options: ["I agree"] }, user.profile)).toMatchObject({ status: "blocked" });
+    expect(one("By clicking accept, you agree that any disputes shall be submitted to binding arbitration.", { kind: "select", options: ["Accept", "Decline"] })).toMatchObject({ value: "Accept" });
+    expect(one("I consent to my interview being recorded via BrightHire, Inc. to assist in our recruiting efforts.", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ value: "Yes" });
+    expect(one("Have you ever been convicted or do you have a criminal record?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
+    expect(one("Do you use AI tools in your daily work?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
+    expect(one("Signature: I certify the above is true and complete", { kind: "text" })).toMatchObject({ status: "blocked" });
+  });
 });

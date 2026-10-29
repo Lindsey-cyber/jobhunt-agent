@@ -100,6 +100,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_69521846",
+      "label": "What is the soonest date you would be available to start?",
+      "expected": "November 15, 2026",
+      "actual": "November 15, 2026",
+      "pass": true
+    },
+    {
       "fieldId": "question_69521849",
       "label": "Are you authorized to work lawfully in the United States for Quantifind?",
       "expected": "Yes",
@@ -115,7 +122,6 @@
     }
   ],
   "emptyRequired": [
-    "What is the soonest date you would be available to start?",
     "What is your preferred location?",
     "What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)"
   ],

@@ -11,28 +11,32 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "preferred_name",
         "label": "Preferred First Name",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -291,7 +295,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "resume",
@@ -647,14 +652,16 @@
         "label": "What is your desired base salary?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_67935789",
         "label": "Zip / Postal",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "597",
@@ -756,7 +763,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -773,7 +781,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -790,7 +799,8 @@
         "label": "Preferred First Name",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lindsey",
       "source": {
@@ -807,7 +817,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -1086,7 +1097,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -1445,7 +1457,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_67935784",
         "label": "State of Residence",
@@ -1508,7 +1520,13 @@
           "I do not reside in the U.S."
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "NY",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -1532,7 +1550,8 @@
         "label": "What is your desired base salary?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "$100K–$150K",
       "source": {
@@ -1549,7 +1568,8 @@
         "label": "Zip / Postal",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },

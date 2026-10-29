@@ -194,7 +194,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   {
     path: "education[0].gradYear",
-    pattern: /^what is your (anticipated |expected )?graduation (month )?(and )?(year|month year|date)$/,
+    pattern: /^what is your (anticipated |expected )?graduation (month )?(and )?(year|month year|date)$|\bgraduation month ?\/? ?year for your masters? or highest completed degree\b/,
     resolve: (p, _l, ctx) => {
       const e = firstEdu(p);
       // Klaviyo: "May 2026" among choices.
@@ -311,12 +311,12 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): location answers say New York. "Do you have a location preference?" among the posting's offices.
     path: "contact.address.city",
-    pattern: /^(do you have a )?(preferred|location preference|preferred (work |office )?location)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b/,
+    pattern: /^(do you have a )?(preferred|location preference|preferred (work |office )?location)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b|^what is your preferred (work |office )?location$/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, _l, ctx) => {
       const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
       const hit = (ctx.options ?? []).filter((o) => normalize(o).startsWith(metro));
-      return hit.length === 1 ? hit[0] : (ctx.options ?? []).find((o) => /^no preference$/i.test(o.trim()));
+      return hit.length === 1 ? hit[0] : (ctx.options ?? []).find((o) => /^(no preference|either|any|open to any)\b/i.test(o.trim()));
     },
   },
   {

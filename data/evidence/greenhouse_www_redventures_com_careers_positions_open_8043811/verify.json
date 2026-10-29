@@ -86,6 +86,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_67935784",
+      "label": "State of Residence",
+      "expected": "NY",
+      "actual": "NY",
+      "pass": true
+    },
+    {
       "fieldId": "question_67935788",
       "label": "What is your desired base salary?",
       "expected": "$100K–$150K",
@@ -122,7 +129,6 @@
     }
   ],
   "emptyRequired": [
-    "State of Residence",
     "This role is to be based out of the location listed in the job description with hybrid in-office requirements.",
     "Zip / Postal",
     "I identify my ethnicity as (mark all that apply):",

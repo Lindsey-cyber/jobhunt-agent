@@ -11,21 +11,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -284,7 +287,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "candidate-location",
@@ -437,28 +441,32 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_69521844",
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_69521845",
         "label": "How did you hear about this job?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_69521846",
         "label": "What is the soonest date you would be available to start?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_69521847",
@@ -476,7 +484,8 @@
         "label": "What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_69521849",
@@ -493,7 +502,8 @@
         "label": "Will you now or in the future require Quantifind to commence (“sponsor”) an immigration case in order to employ you?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       }
     ],
     "priorApplications": 0
@@ -506,7 +516,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -523,7 +534,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -540,7 +552,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -819,7 +832,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -1047,7 +1061,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -1064,7 +1079,8 @@
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.lindseyma.com/",
       "source": {
@@ -1081,7 +1097,8 @@
         "label": "How did you hear about this job?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "LinkedIn",
       "source": {
@@ -1092,15 +1109,23 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69521846",
         "label": "What is the soonest date you would be available to start?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "November 15, 2026",
+      "source": {
+        "type": "bank",
+        "id": "form:b07f5f48d7",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -1124,7 +1149,8 @@
         "label": "What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1155,7 +1181,8 @@
         "label": "Will you now or in the future require Quantifind to commence (“sponsor”) an immigration case in order to employ you?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Yes",
       "source": {

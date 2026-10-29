@@ -85,6 +85,9 @@ const user = () => loadUserData();
 const ledgerOf = (dir: string) => new Ledger(join(dir, "ledger.jsonl"));
 
 const SAME_COMPANY_GAP_MS = 2 * 60_000;
+// Workday is still being finished in a cloud session (2026-10-29): the VPS skips it
+// until this is true. A session sets JH_WORKDAY=on to drive it by hand.
+const WORKDAY_READY = process.env.JH_WORKDAY === "on";
 // Round-robin over companies so two postings at one employer are never back to back.
 function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
   const groups = new Map<string, T[]>();
@@ -146,7 +149,7 @@ switch (command) {
     const fit = [...new Map(readLabels(u.dir).map((l) => [l.key, l])).values()].filter((l) => l.label === "fit");
     const ready = fit
       .map((l) => catalog.get(l.key as JobKey))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever|ashby|workday):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      .filter((j): j is NonNullable<typeof j> => Boolean(j) && (/^(greenhouse|lever|ashby):/.test(j!.key) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         return !prior || ledger.canStart(prior.key);

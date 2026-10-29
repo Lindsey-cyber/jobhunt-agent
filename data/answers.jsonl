@@ -55,3 +55,33 @@
 {"id":"draft:b66d1b305d","question":"Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.","answer":"The most interesting LLM system I’ve built is a multi-agent botanical reasoning prototype at Arborphy AI. It uses specialized visual-analysis agents, autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation to reason over plant-identification evidence. I built it because my broader research was testing how visual representations such as BioCLIP, DINOv3, and EfficientNet capture species identity, organ morphology, and confounding factors, and I wanted a more structured way to turn model observations into inspectable evidence. The hardest part was keeping the agent workflow constrained and evaluable rather than merely conversational. I knew it was working by using per-step information-gain evaluation and interactive analysis tools to inspect whether each step added useful evidence. This is close to what interests me about Quora’s LLM-powered moderation agents: building systems that can be evaluated, debugged, and improved.","company":"Quora","jobTitle":"Machine Learning Engineer, New Grad - Quora (Remote)","origin":"generated","evidence":["Built a multi-agent botanical reasoning prototype with autonomous tool generation, specialized visual-analysis agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation; developed reproducible research pipelines and interactive analysis tools.","Investigated semantic and geometric properties of BioCLIP, DINOv3, and EfficientNet representations using frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding."]}
 {"id":"draft:5e09fac49a","question":"In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?","answer":"United States","company":"Quora","jobTitle":"Machine Learning Engineer, New Grad - Quora (Remote)","origin":"generated","evidence":["authorizedCountries: [United States]","country: United States"]}
 {"id":"draft:4d13937daf","question":"Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.","answer":"Yes","company":"Artera","jobTitle":"Machine Learning Scientist, Computational Pathology","origin":"generated","evidence":["# The candidate (2026-10-28).\n    postalCode: \"11354\"\n    country: United States","city: Flushing\n    state: NY"]}
+{"id":"draft:012ba583ee","withdrawn":true}
+{"id":"draft:fbb90ad1e5","withdrawn":true}
+{"id":"draft:03973e78b7","withdrawn":true}
+{"id":"draft:6d40cca6f5","withdrawn":true}
+{"id":"draft:2c0d476b02","withdrawn":true}
+{"id":"draft:8c84f17ca8","withdrawn":true}
+{"id":"draft:784179a74e","withdrawn":true}
+{"id":"draft:db05efa603","withdrawn":true}
+{"id":"draft:2c2e39223b","withdrawn":true}
+{"id":"draft:a7e292a8bc","withdrawn":true}
+{"id":"draft:93e3942762","withdrawn":true}
+{"id":"draft:cc71d1fa24","withdrawn":true}
+{"id":"draft:a31f49c830","withdrawn":true}
+{"id":"draft:d44ee8f9e9","withdrawn":true}
+{"id":"draft:4c4eb27c99","withdrawn":true}
+{"id":"draft:d65f612f94","withdrawn":true}
+{"id":"draft:6caaf06a28","withdrawn":true}
+{"id":"draft:c88d9f354e","withdrawn":true}
+{"id":"draft:243b82b034","withdrawn":true}
+{"id":"draft:e2d08d58db","withdrawn":true}
+{"id":"draft:6df2c26373","withdrawn":true}
+{"id":"draft:18899e66ca","withdrawn":true}
+{"id":"draft:174061ba06","withdrawn":true}
+{"id":"draft:504ea11f6d","withdrawn":true}
+{"id":"draft:4e356042bf","withdrawn":true}
+{"id":"draft:e560fd89af","withdrawn":true}
+{"id":"draft:7762bc1ea5","withdrawn":true}
+{"id":"draft:43ec6314f1","withdrawn":true}
+{"id":"draft:ca483ed9ae","withdrawn":true}
+{"id":"draft:b66d1b305d","withdrawn":true}

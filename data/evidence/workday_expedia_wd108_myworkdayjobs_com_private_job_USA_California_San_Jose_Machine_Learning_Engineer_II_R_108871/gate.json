@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you ever worked at Expedia or any of its affiliates in any capacity, e.g., full time or part time employee, independent contractor, vendor, agency or temporary worker?\": no answer in profile or answer bank",
+    "required \"Would you be open to relocation? (National / International)\": no answer in profile or answer bank",
+    "required \"Please enter your current Address City (required)\": no answer in profile or answer bank",
+    "required \"Please enter your current Address State (required)\": no answer in profile or answer bank",
+    "required \"Have you ever worked at Expedia or any of its affiliates in any capacity, e.g., full time or part time employee, independent contractor, vendor, agency or temporary worker?\" is empty after filling",
+    "required \"Would you be open to relocation? (National / International)\" is empty after filling",
+    "required \"Please enter your current Address City (required)\" is empty after filling",
+    "required \"Please enter your current Address State (required)\" is empty after filling"
+  ]
+}

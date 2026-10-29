@@ -1,0 +1,131 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Job Advert/Job Board",
+      "actual": "Job Advert/Job Board",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "If you would like us to view your LinkedIn profile, provide your profile URL (i.e. https://www.linkedin.com/in/YOURNAME).",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "0758e5dcf240100160b9fb93ef3d0005",
+      "label": "Are you legally authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "0758e5dcf240100160b9fb93ef3d0008",
+      "label": "Do you need, or will you need in the future, any immigration related support or sponsorship from Expedia Group to begin or continue employment with Expedia Group? This includes support (such as J-1, F-1 CPT letter or STEM OPT Training Plan), visa sponsorship for employment (H-1B, H-1B1, E-3, O-1, or TN), and any EAD holders that will need longer term employment authorization (temporary work visa or permanent residency)",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "0758e5dcf240100160b9fc2d8bca0002",
+      "label": "If visa sponsorship is needed, what is your current US visa status?Note: Expedia Group may at its discretion provide you with immigration support and sponsorship where you and the role are eligible. If you indicated you require, or will require, immigration support to work at Expedia Group, your response may be shared with Expedia Group’s trusted third-party immigration services providers. In such cases, this information will not be used for any other purposes.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "0758e5dcf240100160b9fc2d8bca0006",
+      "label": "We value the authenticity and originality of responses during our assessment and interview process. Therefore, we ask that you not use Artificial Intelligence (AI) to answer questions. We believe that genuine, personal insights are crucial for a meaningful evaluation. By proceeding, you acknowledge and agree not to utilize any AI tools during the assessment and/or interview process. Note that If selected to interview, you may request a disability accommodation and usage of tools may be considered. Please enter “Yes” if you acknowledge. If you enter “No” we may not consider your application.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Have you ever worked at Expedia or any of its affiliates in any capacity, e.g., full time or part time employee, independent contractor, vendor, agency or temporary worker?",
+    "Would you be open to relocation? (National / International)",
+    "Please enter your current Address City (required)",
+    "Please enter your current Address State (required)"
+  ],
+  "fillErrors": []
+}

@@ -140,10 +140,10 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
   { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
-  { path: "contact.address.city", pattern: /^city$/, resolve: (p) => p.contact.address.city },
+  { path: "contact.address.city", pattern: /^city$|\b(current )?address city\b/, resolve: (p) => p.contact.address.city },
   {
     path: "contact.address.state",
-    pattern: /^(state|state province|province)$|^state of residence$|^which u ?s state are you located in$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
+    pattern: /^(state|state province|province)$|^state of residence$|\b(current )?address state\b|^which u ?s state are you located in$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
     resolve: (p, _label, ctx) => usStateName(p.contact.address.state, ctx.options),
   },
   { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode|zip postal( code)?)$/, resolve: (p) => p.contact.address.postalCode },
@@ -317,7 +317,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     pattern: /\b(worked|been employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
-      if (/\b(relative|family|familial|client|customer|government|vendor|partner|competitor)\b/.test(label)) return undefined;
+      if (/\b(relative|family|familial|client|customer|government|partner|competitor)\b/.test(label)) return undefined;
       const first = normalize(ctx.company ?? "").split(" ")[0];
       // "American Institutes for Research" is also "AIR".
       const initials = (ctx.company ?? "").split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]!.toLowerCase()).join("");
@@ -413,6 +413,9 @@ export const PROFILE_RULES: ProfileRule[] = [
         // Near when the posting's place (or the office the question names) is her metro: New York for a NY address.
         const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
         const near = Boolean(metro) && normalize(`${ctx.jobLocation ?? ""} ${label}`).includes(metro) && !/\b(san francisco|seattle|boston|chicago|austin|los angeles)\b/.test(normalize(`${ctx.jobLocation ?? ""} ${label}`));
+        // Expedia: "Nationally" / "Internationally" / "No": she relocates within the US.
+        const national = p.workArrangement?.relocate ? opts.filter((o) => /^nationally$/i.test(o.trim())) : [];
+        if (national.length === 1) return national[0];
         const pick = near ? opts.filter((o) => /\balready (reside|live)\b|\bable to commute\b/i.test(o)) : p.workArrangement?.relocate ? opts.filter((o) => /\b(willing|able) to relocate\b/i.test(o) && !/\bnot (willing|able)\b/i.test(o)) : [];
         return pick.length === 1 ? pick[0] : undefined;
       }

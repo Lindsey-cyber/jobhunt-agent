@@ -1766,7 +1766,7 @@
           "2026"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "reason": "answer \"2019\" matches none of the options"
     },
     {
       "status": "blocked",
@@ -1868,7 +1868,7 @@
         "type": "profile",
         "path": "education[0].gpa"
       },
-      "confidence": 0.85,
+      "confidence": 1,
       "sensitive": false
     },
     {

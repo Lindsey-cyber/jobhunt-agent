@@ -364,6 +364,10 @@ answers:
       - Where do you currently reside?
       - What city and state do you live in?
       - Current location (City, State)
+      - Where are you currently located? (city, state)
+      - Where are you currently located?
+      - Where are you based?
+      - What is your current location?
     answer: New York, NY
     origin: human
   # Inferred (standing permission, 2026-10-29): on F-1 status; not a service member.

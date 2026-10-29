@@ -422,4 +422,11 @@ describe("buildPlan", () => {
     expect(buildPlan(form([f]), user.profile, bank).items[0]).toMatchObject({ status: "fill", value: "First sentence here." });
     expect(buildPlan(form([{ ...f, maxLength: 10 }]), user.profile, bank).items[0]).toMatchObject({ status: "blocked" });
   });
+
+  it("answers a yes/no on-site question asked in a text box, and the master's completion year", () => {
+    const p = { ...user.profile, workArrangement: { onsite: true, relocate: true }, education: [{ school: "Columbia University", degree: "Master of Science", major: "Statistics", gradMonth: 5, gradYear: 2026 }] };
+    const one = (label: string) => buildPlan({ ...form([field(label)]), jobLocation: "Houston, TX" }, p, user.bank).items[0]!;
+    expect(one("Our primary office location for this role is Houston, TX. Would you be able to work onsite at Houston, TX office?")).toMatchObject({ value: "Yes" });
+    expect(one("If applicable, what year did/will you complete your Master’s degree?")).toMatchObject({ value: "2026" });
+  });
 });

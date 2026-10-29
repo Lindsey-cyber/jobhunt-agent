@@ -203,9 +203,10 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Bracebridge: "What year did/will you complete your undergraduate degree?"
     path: "education",
-    pattern: /\byear did( ?\/? ?will)? you (complete|finish|graduate|earn) (from )?your (undergraduate|bachelor s?) (degree)?\b/,
-    resolve: (p) => {
-      const b = p.education.find((e) => /bachelor|\bb\.?[as]\b/i.test(e.degree));
+    pattern: /\byear did( ?\/? ?will)? you (complete|finish|graduate|earn) (from )?your (undergraduate|bachelor s?|masters?|graduate) (degree)?\b/,
+    resolve: (p, label) => {
+      const master = /\b(masters?|graduate) degree\b/.test(label);
+      const b = p.education.find((e) => (master ? /master|\bm\.?s\b/i : /bachelor|\bb\.?[as]\b/i).test(e.degree));
       return b ? String(b.gradYear) : undefined;
     },
   },
@@ -356,7 +357,7 @@ export const PROFILE_RULES: ProfileRule[] = [
       // A yes/no asked in a text box (Bot Auto: "Would you be able to work onsite at Houston, TX office?").
       if (!opts.length && !/^(are|would|will|can|do|is)\b|\b(are|would|will|can|do) you\b/.test(label)) return undefined;
       // Lyft: "I already reside near a Lyft office ..." / "I am willing to relocate ..." / "I am not willing ...".
-      if (!opts.some((o) => /^yes\b/i.test(o.trim()))) {
+      if (opts.length && !opts.some((o) => /^yes\b/i.test(o.trim()))) {
         // Near when the posting's place (or the office the question names) is her metro: New York for a NY address.
         const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
         const near = Boolean(metro) && normalize(`${ctx.jobLocation ?? ""} ${label}`).includes(metro) && !/\b(san francisco|seattle|boston|chicago|austin|los angeles)\b/.test(normalize(`${ctx.jobLocation ?? ""} ${label}`));

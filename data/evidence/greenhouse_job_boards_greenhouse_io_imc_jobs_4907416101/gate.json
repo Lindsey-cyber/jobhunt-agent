@@ -1,7 +1,7 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"When did you graduate from High School?\": no answer in profile or answer bank",
+    "required \"When did you graduate from High School?\": answer \"2019\" matches none of the options",
     "required \"Select your Standardized Test score type:\": no answer in profile or answer bank",
     "required \"Provide your best result on SAT:\": no answer in profile or answer bank",
     "required \"Provide your best result on ACT:\": no answer in profile or answer bank",

@@ -478,7 +478,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // "How did you hear about us?": the candidate does not mind which; the
     // agent finds postings on job lists, so the closest option says so.
     path: "howHeard",
-    pattern: /^how did you (first )?(hear|learn) about /,
+    pattern: /^how did you (first )?(hear|learn) about |^what source s? of information influenced your decision to apply\b/,
     resolve: (_p, _label, ctx) => {
       const opts = ctx.options ?? [];
       // A search box (Workday) finds "LinkedIn" as one item; job-alert emails are one of the sources.

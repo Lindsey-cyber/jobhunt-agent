@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you or any immediate family members (spouse, partner, parent, child, or sibling) have any personal, financial, or professional relationships that could be perceived as a conflict of interest with our organization or the position for which you are applying? This includes relationships with anyone who works for P&G, a retailer selling P&G products, or a competitor of P&G. ( Please refer to the following link for a list of products: https://us.pg.com/brands )\": no answer in profile or answer bank",
+    "required \"Although we encourage you to apply to all positions in which you have an interest, P&G Recruiters have the ability to consider your application for other positions to which you have not applied. Would you like to be considered for other positions for which you may be qualified?\": no answer in profile or answer bank",
+    "required \"Do you meet the minimum qualification requirements for this role as stated in the job description?\": no answer in profile or answer bank",
+    "required \"What source(s) of information influenced your decision to apply for a P&G position?\": no answer in profile or answer bank",
+    "required \"Have you either graduated within the past 6 months, or are you an active student?\": no answer in profile or answer bank",
+    "required \"I would like P&G to share my personal information with its advertising partners to show me, and others like me, news and updates about P&G careers and roles through online channels such as LinkedIn, Instagram, Meta, Facebook, Google, TikTok, and YouTube. Your decision to opt-in or opt-out will not disqualify you from participating in P&G’s recruitment process and you may opt-out at any time.\": no answer in profile or answer bank",
+    "required \"Do you or any immediate family members (spouse, partner, parent, child, or sibling) have any personal, financial, or professional relationships that could be perceived as a conflict of interest with our organization or the position for which you are applying? This includes relationships with anyone who works for P&G, a retailer selling P&G products, or a competitor of P&G. ( Please refer to the following link for a list of products: https://us.pg.com/brands )\" is empty after filling",
+    "required \"Although we encourage you to apply to all positions in which you have an interest, P&G Recruiters have the ability to consider your application for other positions to which you have not applied. Would you like to be considered for other positions for which you may be qualified?\" is empty after filling",
+    "required \"Do you meet the minimum qualification requirements for this role as stated in the job description?\" is empty after filling",
+    "required \"What source(s) of information influenced your decision to apply for a P&G position?\" is empty after filling",
+    "required \"Have you either graduated within the past 6 months, or are you an active student?\" is empty after filling",
+    "required \"I would like P&G to share my personal information with its advertising partners to show me, and others like me, news and updates about P&G careers and roles through online channels such as LinkedIn, Instagram, Meta, Facebook, Google, TikTok, and YouTube. Your decision to opt-in or opt-out will not disqualify you from participating in P&G’s recruitment process and you may opt-out at any time.\" is empty after filling"
+  ]
+}

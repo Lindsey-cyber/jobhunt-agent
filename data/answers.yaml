@@ -504,3 +504,34 @@ answers:
       - Have you previously worked for S&P Global or any of its affiliates?
     answer: "No"
     origin: human
+  # Inferred (standing permission, 2026-10-29): no relatives at employers (profile), and no ties to P&G, its retailers or competitors.
+  - id: pg-conflict-of-interest
+    question: "Do you or any immediate family members (spouse, partner, parent, child, or sibling) have any personal, financial, or professional relationships that could be perceived as a conflict of interest with our organization or the position for which you are applying? This includes relationships with anyone who works for P&G, a retailer selling P&G products, or a competitor of P&G. ( Please refer to the following link for a list of products: https://us.pg.com/brands )"
+    aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): she is applying widely and wants to be considered for other roles.
+  - id: consider-other-positions
+    question: "Although we encourage you to apply to all positions in which you have an interest, P&G Recruiters have the ability to consider your application for other positions to which you have not applied. Would you like to be considered for other positions for which you may be qualified?"
+    aliases:
+      - Would you like to be considered for other positions for which you may be qualified?
+    answer: "Yes"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): she approved this posting as a fit for her.
+  - id: meets-minimum-qualifications
+    question: Do you meet the minimum qualification requirements for this role as stated in the job description?
+    aliases: []
+    answer: "Yes"
+    origin: human
+  # From her profile: M.S. Columbia, May 2026, within six months of today (October 2026).
+  - id: graduated-within-6-months
+    question: Have you either graduated within the past 6 months, or are you an active student?
+    aliases: []
+    answer: "Yes"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): opting out of sharing data with advertisers; the form says it does not affect the application.
+  - id: pg-advertising-partners
+    question: "I would like P&G to share my personal information with its advertising partners to show me, and others like me, news and updates about P&G careers and roles through online channels such as LinkedIn, Instagram, Meta, Facebook, Google, TikTok, and YouTube. Your decision to opt-in or opt-out will not disqualify you from participating in P&G’s recruitment process and you may opt-out at any time."
+    aliases: []
+    answer: "No"
+    origin: human

@@ -378,6 +378,7 @@ describe("buildPlan", () => {
     expect(one("Phone Device Type", ["Main/Home"])).toMatchObject({ value: "Main/Home" });
     expect(one("Are you currently employed with Magna? (If you are a current Magna employee, please use the \"Jobs Hub\" in Workday to apply for this role.)", ["Yes", "No"], "Magna")).toMatchObject({ value: "No" });
     expect(one("Are you a previous Employee of PayPal or any of its subsidiaries?", ["Yes", "No"], "PayPal")).toMatchObject({ value: "No" });
+    expect(one("What source(s) of information influenced your decision to apply for a P&G position?", ["P&G Career Site (pgcareers.com)", "LinkedIn", "Job Board (Indeed, Glassdoor, etc.)", "Other"], "Procter & Gamble", "checkbox")).toMatchObject({ value: "Job Board (Indeed, Glassdoor, etc.)" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

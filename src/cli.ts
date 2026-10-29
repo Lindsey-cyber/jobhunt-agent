@@ -183,7 +183,10 @@ switch (command) {
     console.log(`${ready.length} ${auto ? "approved or matched" : "approved"} postings with an adapter are not yet applied to; trying up to ${limit}`);
     // The candidate (2026-10-29): never several applications to one company at once.
     // Interleave companies, and leave two minutes between submissions to the same one.
-    const order = interleaveByCompany(ready.slice(0, limit));
+    // Postings never tried go first; retries of held ones after them.
+    const fresh = ready.filter((j) => !sameJob(ledger, j.url));
+    const retries = ready.filter((j) => sameJob(ledger, j.url));
+    const order = [...interleaveByCompany(fresh), ...interleaveByCompany(retries)].slice(0, limit);
     const lastAt = new Map<string, number>();
     for (const j of order) {
       if (ledger.submittedOn(new Date().toISOString().slice(0, 10)) >= u.config.dailySubmitCap) break;

@@ -389,3 +389,10 @@ answers:
     answer: 3 = Neutral
     company: DoorDash USA
     origin: human
+  # Inferred (standing permission, 2026-10-29): $43-59/hour is about $89K-$123K a year, overlapping her $100K-$150K expectation.
+  - id: studycom-hourly
+    question: Are you open to an hourly rate of $43.00 - $59.00 per hour?
+    aliases: []
+    answer: "Yes"
+    company: Study.com
+    origin: human

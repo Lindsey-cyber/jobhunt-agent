@@ -1,0 +1,19 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you open to an hourly rate of $43.00 - $59.00 per hour?\": no answer in profile or answer bank",
+    "required \"Have you used AI coding agents (Claude Code, Cursor, Copilot Agent, Codex, or similar) to build functionality beyond autocomplete or boilerplate?\": no answer in profile or answer bank",
+    "required \"Will you have completed a BS or MS in Computer Science or a related field before your start date?\": no answer in profile or answer bank",
+    "required \"Describe one non-trivial feature or project you built primarily with an AI coding agent. What did you have to specify to get a usable result, and what did you end up writing or fixing yourself?\": no answer in profile or answer bank",
+    "required \"What's one thing AI coding tools are still bad at, in your experience, and where did it show up in the project you described above?\": no answer in profile or answer bank",
+    "required \"Tell us about a time an agent handed you code that looked right but wasn't. How did you catch it?\": no answer in profile or answer bank",
+    "required \"Do you have working proficiency in Java or TypeScript?\": no answer in profile or answer bank",
+    "required \"Are you open to an hourly rate of $43.00 - $59.00 per hour?\" is empty after filling",
+    "required \"Have you used AI coding agents (Claude Code, Cursor, Copilot Agent, Codex, or similar) to build functionality beyond autocomplete or boilerplate?\" is empty after filling",
+    "required \"Will you have completed a BS or MS in Computer Science or a related field before your start date?\" is empty after filling",
+    "required \"Describe one non-trivial feature or project you built primarily with an AI coding agent. What did you have to specify to get a usable result, and what did you end up writing or fixing yourself?\" is empty after filling",
+    "required \"What's one thing AI coding tools are still bad at, in your experience, and where did it show up in the project you described above?\" is empty after filling",
+    "required \"Tell us about a time an agent handed you code that looked right but wasn't. How did you catch it?\" is empty after filling",
+    "required \"Do you have working proficiency in Java or TypeScript?\" is empty after filling"
+  ]
+}

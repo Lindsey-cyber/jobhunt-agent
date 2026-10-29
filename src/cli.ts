@@ -191,7 +191,10 @@ switch (command) {
         if (r.state === "submitted" || r.state === "confirmed" || r.state === "unconfirmed") lastAt.set(j.company, Date.now());
         console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
       } catch (e) {
-        console.log(`${j.company} · ${j.title}: error ${(e as Error).message.split("\n")[0]}`);
+        const message = (e as Error).message.split("\n")[0]!;
+        console.log(`${j.company} · ${j.title}: error ${message}`);
+        // A closed posting leaves the queue for good.
+        if (/the posting is closed/.test(message)) appendLabel(u.dir, labelFrom(j, "not_fit", "posting closed", new Date().toISOString(), "bulk"));
       }
     }
     queueQuestions(ledger, new ReviewList(paths(u.dir).review));

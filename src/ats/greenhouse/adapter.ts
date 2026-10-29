@@ -39,7 +39,12 @@ async function openOptions(page: Page, id: string): Promise<{ opened: boolean; o
   const opened = await container.locator('.select__menu, [role="listbox"]').first().waitFor({ timeout: 2000 }).then(() => true, () => false);
   const options = container.locator('[role="option"]');
   if (opened) await options.first().waitFor({ timeout: 1500 }).catch(() => undefined);
-  const texts = (await options.allInnerTexts()).map(optionText);
+  let texts = (await options.allInnerTexts()).map(optionText);
+  // A menu that opened empty is often still loading (Accenture's clearance list): give it a moment more.
+  if (opened && texts.length === 0) {
+    await options.first().waitFor({ timeout: 3000 }).catch(() => undefined);
+    texts = (await options.allInnerTexts()).map(optionText);
+  }
   await page.keyboard.press("Escape");
   return { opened, options: texts };
 }

@@ -845,7 +845,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_18991831008",
         "label": "Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)",
@@ -856,7 +856,13 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",

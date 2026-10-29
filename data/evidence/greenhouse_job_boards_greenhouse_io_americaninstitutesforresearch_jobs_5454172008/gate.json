@@ -1,10 +1,8 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)\": sensitive question with no exact answer",
     "required \"Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?\": no answer in profile or answer bank",
     "required \"Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?\": no answer in profile or answer bank",
-    "required \"Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)\" is empty after filling",
     "required \"Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?\" is empty after filling",
     "required \"Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?\" is empty after filling"
   ]

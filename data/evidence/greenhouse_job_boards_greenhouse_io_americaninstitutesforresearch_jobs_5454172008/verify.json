@@ -58,6 +58,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_18991831008",
+      "label": "Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "question_18991833008",
       "label": "Do you have any non-compete or non-solicitation agreements that would prevent you from working on specific projects or with certain agencies for any period of time? (Enter “N/A” if not applicable)",
       "expected": "No",
@@ -122,7 +129,6 @@
     }
   ],
   "emptyRequired": [
-    "Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)",
     "Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?",
     "Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?"
   ],

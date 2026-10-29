@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"I CERTIFY THAT I HAVE READ, FULLY UNDERSTAND, AND ACCEPT ALL TERMS OF THE FOREGOING STATEMENT.\": legal attestations need the candidate",
+    "required \"I CERTIFY THAT I HAVE READ, FULLY UNDERSTAND, AND ACCEPT ALL TERMS OF THE FOREGOING STATEMENT.\" is empty after filling"
+  ]
+}

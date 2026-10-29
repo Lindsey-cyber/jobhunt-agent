@@ -76,15 +76,19 @@ async function promptOptions(page: Page, id: string): Promise<string[]> {
   // Chosen items elsewhere on the page (the phone code) share the automation id.
   const chosen = new Set((await page.locator('[data-automation-id="selectedItem"]').allInnerTexts().catch(() => [])).map((t) => t.trim()));
   const texts = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim()).filter((t) => t && !chosen.has(t));
-  // Escape does not close it, and an open list blocks the next menu (HPE's phone type):
-  // click the blank page margin.
+  await closePrompt(page);
+  return texts;
+}
+
+// Escape does not close a search list, and an open one covers what follows (HPE's phone
+// menu, GE Vernova's former-employee radio): click the blank page margin.
+async function closePrompt(page: Page): Promise<void> {
   await page.keyboard.press("Escape").catch(() => undefined);
   const open = page.locator('[data-automation-id="promptOption"]:not([data-automation-id="selectedItem"] *)');
   for (let t = 0; t < 3 && (await open.first().isVisible().catch(() => false)); t++) {
     await page.mouse.click(5, 400).catch(() => undefined);
     await page.waitForTimeout(500);
   }
-  return texts;
 }
 
 // Choices made inside a category, by field id (see fill and readback).
@@ -375,7 +379,7 @@ export const workday: AtsAdapter = {
             if (!(await pick())) throw new Error(`no suggestion fits "${value}" in ${field.id}`);
           }
         }
-        await page.keyboard.press("Escape").catch(() => undefined);
+        await closePrompt(page);
         return;
       }
       case "radio":

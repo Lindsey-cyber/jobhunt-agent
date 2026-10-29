@@ -1,0 +1,569 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://gevernova.wd5.myworkdayjobs.com/vernova_externalsite/job/Greenville/Data-Scientist_R5051914-3/apply/applyManually",
+    "company": "GE Vernova",
+    "jobTitle": "Data Scientist",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Campus",
+          "Career Fair/Event",
+          "Contract Worker",
+          "GE Vernova Careers Website",
+          "GE Vernova Recruiter/Sourcing",
+          "Job Board",
+          "Newspaper/Print Media",
+          "Referral",
+          "Social Referral"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Are you a former employee (including as a co-op/intern, but not as a contingent worker) of GE Vernova (including Renewable Energy, Power Portfolio, GE Digital, Gas Power), the General Electric Company, or one of either company’s affiliates or subsidiaries.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--title",
+        "label": "Prefix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Dr",
+          "Miss",
+          "Mr",
+          "Mrs",
+          "Ms",
+          "Prof"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Greenville, SC"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Campus",
+          "Career Fair/Event",
+          "Contract Worker",
+          "GE Vernova Careers Website",
+          "GE Vernova Recruiter/Sourcing",
+          "Job Board",
+          "Newspaper/Print Media",
+          "Referral",
+          "Social Referral"
+        ]
+      },
+      "value": "Job Board",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Are you a former employee (including as a co-op/intern, but not as a contingent worker) of GE Vernova (including Renewable Energy, Power Portfolio, GE Digital, Gas Power), the General Electric Company, or one of either company’s affiliates or subsidiaries.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--title",
+        "label": "Prefix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Dr",
+          "Miss",
+          "Mr",
+          "Mrs",
+          "Ms",
+          "Prof"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Apt 3BS",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line2"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

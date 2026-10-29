@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"Are you a former employee (including as a co-op/intern, but not as a contingent worker) of GE Vernova (including Renewable Energy, Power Portfolio, GE Digital, Gas Power), the General Electric Company, or one of either company’s affiliates or subsidiaries.\": expected \"No\", got \"\"",
+    "required \"Are you a former employee (including as a co-op/intern, but not as a contingent worker) of GE Vernova (including Renewable Energy, Power Portfolio, GE Digital, Gas Power), the General Electric Company, or one of either company’s affiliates or subsidiaries.\" is empty after filling"
+  ]
+}

@@ -1,9 +1,20 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Location Preference\": no answer in profile or answer bank",
-    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
-    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
-    "required \"Location Preference\" is empty after filling"
+    "readback mismatch on \"Country\": expected \"United States\", got \"\"",
+    "readback mismatch on \"Location (City)\": expected \"New York, New York, United States\", got \"\"",
+    "readback mismatch on \"Have you been employed by Upstart before?\": expected \"No\", got \"\"",
+    "readback mismatch on \"Are you authorized to work lawfully in the United States for Upstart?\": expected \"Yes\", got \"\"",
+    "readback mismatch on \"Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?\": expected \"Yes\", got \"\"",
+    "readback mismatch on \"Gender\": expected \"decline\", got \"\"",
+    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"no\", got \"\"",
+    "readback mismatch on \"Veteran Status\": expected \"no\", got \"\"",
+    "required \"Country\" is empty after filling",
+    "required \"Location (City)\" is empty after filling",
+    "required \"Have you been employed by Upstart before?\" is empty after filling",
+    "required \"Are you authorized to work lawfully in the United States for Upstart?\" is empty after filling",
+    "required \"Gender\" is empty after filling",
+    "required \"Are you Hispanic/Latino?\" is empty after filling",
+    "required \"Veteran Status\" is empty after filling"
   ]
 }

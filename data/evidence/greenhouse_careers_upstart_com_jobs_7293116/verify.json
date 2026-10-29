@@ -26,22 +26,22 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "United States",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "(978) 668-1426",
+      "actual": "9786681426",
       "pass": true
     },
     {
       "fieldId": "candidate-location",
       "label": "Location (City)",
       "expected": "New York, New York, United States",
-      "actual": "New York, New York, United States",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "resume",
@@ -68,54 +68,69 @@
       "fieldId": "question_60574414",
       "label": "Have you been employed by Upstart before?",
       "expected": "No",
-      "actual": "No",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_60574415",
       "label": "Are you authorized to work lawfully in the United States for Upstart?",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_60574416",
       "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "gender",
       "label": "Gender",
-      "expected": "Decline To Self Identify",
-      "actual": "Decline To Self Identify",
-      "pass": true
+      "expected": "decline",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "Decline To Self Identify",
+      "expected": "no",
+      "actual": "",
       "pass": false
     },
     {
       "fieldId": "veteran_status",
       "label": "Veteran Status",
-      "expected": "I am not a protected veteran",
-      "actual": "I am not a protected veteran",
-      "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
+      "expected": "no",
       "actual": "",
       "pass": false
+    },
+    {
+      "fieldId": "question_60574413[]",
+      "label": "Location Preference",
+      "expected": "New York City, NY",
+      "actual": "New York City, NY",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Location Preference"
+    "Country",
+    "Location (City)",
+    "Have you been employed by Upstart before?",
+    "Are you authorized to work lawfully in the United States for Upstart?",
+    "Gender",
+    "Are you Hispanic/Latino?",
+    "Veteran Status"
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "Location (City): the candidate-location menu did not open",
+    "Have you been employed by Upstart before?: the question_60574414 menu did not open",
+    "Are you authorized to work lawfully in the United States for Upstart?: the question_60574415 menu did not open",
+    "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?: the question_60574416 menu did not open",
+    "Gender: the gender menu did not open",
+    "Are you Hispanic/Latino?: the hispanic_ethnicity menu did not open",
+    "Veteran Status: the veteran_status menu did not open"
+  ]
 }

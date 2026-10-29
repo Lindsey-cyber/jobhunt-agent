@@ -1,0 +1,480 @@
+{
+  "form": {
+    "ats": "lever",
+    "url": "https://jobs.lever.co/artera/e69fa8b3-ecad-4f6a-b8b6-77d6542dfbe1/apply",
+    "company": "Artera",
+    "jobTitle": "Machine Learning Scientist, Computational Pathology",
+    "jobLocation": "Remote-US",
+    "fields": [
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "pronouns",
+        "label": "Pronouns",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "He/him",
+          "She/her",
+          "They/them",
+          "Xe/xem",
+          "Ze/hir",
+          "Ey/em",
+          "Hir/hir",
+          "Fae/faer",
+          "Hu/hu",
+          "Use name only"
+        ]
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "urls[Other]",
+        "label": "Other website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "cards[4ff91e55-6f2e-4b6d-af0a-22f12cc082a4][field0]",
+        "label": "Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No (Please do not apply at this time)"
+        ]
+      },
+      {
+        "id": "cards[4dfaf797-9fb3-44ce-a81f-526006d14e10][field0]",
+        "label": "Would you require any form of Sponsorship or Visa? If Yes, please elaborate below.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[81f3d566-a3e9-4a3a-b486-416ff9e50bfa][field0]",
+        "label": "Please Post a Link to Your LinkedIn Page Here:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[bfadcc2f-2f88-4b82-adce-9bdb198352e7][field0]",
+        "label": "What is your annual salary expectation?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field0]",
+        "label": "Tell us about a self-supervised or foundation model you have worked with, whether trained from scratch, pretrained, or adapted to a downstream task. What did you do with it, and how did you evaluate whether it worked well for your use case?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field1]",
+        "label": "Describe a project where your model did not generalize as well as expected across datasets, sites, devices, populations, or other conditions. How did you investigate the problem, and what did you try to improve robustness?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field2]",
+        "label": "Tell us about a machine-learning project where you had to understand or explain what the model was learning. What methods did you use, and what did you learn from them?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field3]",
+        "label": "Describe a clinical, biological, or other real-world problem you helped translate into a machine-learning problem. How did you define the prediction target and decide how to evaluate the model?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      }
+    ]
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "name",
+        "label": "Full name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "pronouns",
+        "label": "Pronouns",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "He/him",
+          "She/her",
+          "They/them",
+          "Xe/xem",
+          "Ze/hir",
+          "Ey/em",
+          "Hir/hir",
+          "Fae/faer",
+          "Hu/hu",
+          "Use name only"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Current location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "org",
+        "label": "Current company",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[LinkedIn]",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "urls[Twitter]",
+        "label": "Twitter URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[GitHub]",
+        "label": "GitHub URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[Portfolio]",
+        "label": "Portfolio URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "urls[Other]",
+        "label": "Other website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[4ff91e55-6f2e-4b6d-af0a-22f12cc082a4][field0]",
+        "label": "Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No (Please do not apply at this time)"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[4dfaf797-9fb3-44ce-a81f-526006d14e10][field0]",
+        "label": "Would you require any form of Sponsorship or Visa? If Yes, please elaborate below.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[81f3d566-a3e9-4a3a-b486-416ff9e50bfa][field0]",
+        "label": "Please Post a Link to Your LinkedIn Page Here:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "cards[bfadcc2f-2f88-4b82-adce-9bdb198352e7][field0]",
+        "label": "What is your annual salary expectation?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field0]",
+        "label": "Tell us about a self-supervised or foundation model you have worked with, whether trained from scratch, pretrained, or adapted to a downstream task. What did you do with it, and how did you evaluate whether it worked well for your use case?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field1]",
+        "label": "Describe a project where your model did not generalize as well as expected across datasets, sites, devices, populations, or other conditions. How did you investigate the problem, and what did you try to improve robustness?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field2]",
+        "label": "Tell us about a machine-learning project where you had to understand or explain what the model was learning. What methods did you use, and what did you learn from them?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "cards[f4e0cb7d-2dd2-433e-b324-4972f6070e27][field3]",
+        "label": "Describe a clinical, biological, or other real-world problem you helped translate into a machine-learning problem. How did you define the prediction target and decide how to evaluate the model?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

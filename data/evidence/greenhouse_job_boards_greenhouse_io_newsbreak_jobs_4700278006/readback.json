@@ -1,0 +1,17 @@
+{
+  "first_name": "Lanxin",
+  "last_name": "Ma",
+  "preferred_name": "Lindsey",
+  "email": "lm3879@columbia.edu",
+  "country": "United States",
+  "phone": "(978) 668-1426",
+  "cover_letter": "Accepted file types: pdf, doc, docx, txt, rtf",
+  "question_8588510006": "https://www.linkedin.com/in/lindsey-ma/",
+  "question_8588545006": "Yes",
+  "question_8588546006": "November 15, 2026",
+  "question_8588547006": "No",
+  "question_8588548006": "Yes",
+  "question_8588549006": "$100K–$150K",
+  "question_8588579006": "I’m interested in this role because it applies agentic LLM systems to a concrete optimization problem: diagnosing advertiser-account health, recommending auditable actions, and keeping automated tuning measurable before live spend. My fit is strongest where the role needs rigorous ML experimentation plus practical agent/tool building. At Arborphy AI, I built a multi-agent reasoning prototype with autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph evidence aggregation, and I also developed disjoint benchmarks and retrieval/evaluation workflows. My Columbia work strengthened my grounding in deep learning, advanced ML, and careful ablations. I’ve also integrated locally hosted language models into a robotics control workflow and built real-time asynchronous vision pipelines, so I’m comfortable connecting models to systems rather than treating them as notebooks only.",
+  "resume": "Lindsey_Ma_Resume.pdf"
+}

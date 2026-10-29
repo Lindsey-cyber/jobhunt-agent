@@ -1,0 +1,104 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "name",
+      "label": "Full name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "location",
+      "label": "Current location",
+      "expected": "New York, New York, United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "org",
+      "label": "Current company",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[GitHub]",
+      "label": "GitHub URL",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[Other]",
+      "label": "Other website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "cards[4dfaf797-9fb3-44ce-a81f-526006d14e10][field0]",
+      "label": "Would you require any form of Sponsorship or Visa? If Yes, please elaborate below.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "cards[81f3d566-a3e9-4a3a-b486-416ff9e50bfa][field0]",
+      "label": "Please Post a Link to Your LinkedIn Page Here:",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "cards[bfadcc2f-2f88-4b82-adce-9bdb198352e7][field0]",
+      "label": "What is your annual salary expectation?",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you currently located in the United States or Canada? This role requires a US or Canadian Residency.",
+    "Tell us about a self-supervised or foundation model you have worked with, whether trained from scratch, pretrained, or adapted to a downstream task. What did you do with it, and how did you evaluate whether it worked well for your use case?",
+    "Describe a project where your model did not generalize as well as expected across datasets, sites, devices, populations, or other conditions. How did you investigate the problem, and what did you try to improve robustness?",
+    "Tell us about a machine-learning project where you had to understand or explain what the model was learning. What methods did you use, and what did you learn from them?",
+    "Describe a clinical, biological, or other real-world problem you helped translate into a machine-learning problem. How did you define the prediction target and decide how to evaluate the model?"
+  ],
+  "fillErrors": []
+}

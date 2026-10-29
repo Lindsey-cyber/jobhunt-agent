@@ -1,0 +1,1529 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://analogdevices.wd1.myworkdayjobs.com/External/job/US-MA-Boston/Associate-Machine-Learning-Engineer_R266607-1/apply",
+    "company": "analogdevices",
+    "jobTitle": "Associate Machine Learning Engineer",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Are you now or have you previously been employed by Analog Devices Inc. (ADI) or Maxim Integrated as a full-time regular employee or in a contract/temporary or coop-intern capacity? If yes, please provide as much info below as you remember. Leave blank if you do not know.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "school",
+        "label": "School or University",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "General Equivalency Diploma (GED)",
+          "High School Diploma (HS)",
+          "Diploma - USA",
+          "Certificate - USA",
+          "Associate of Science (AS)",
+          "Associate of Arts (AA)",
+          "Associate - Others",
+          "Bachelor of Science (BS)",
+          "Bachelor of Arts (BA)",
+          "Bachelor - Other",
+          "Master of Arts (MA)",
+          "Master of Science (MS)",
+          "Master - Other",
+          "Master of Business Administration (MBA)",
+          "Juris Doctor (JD)",
+          "Doctorate - Others",
+          "Doctor of Philosophy (PhD)",
+          "Non-Degree Program",
+          "Unknown"
+        ]
+      },
+      {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "3593d81af34b1001aa464ed958a30001",
+        "label": "1. Are you any of the following:US Citizen,Permanent resident of the United States (Green Card), or,Protected person under 8 USC 1324b(a)(3) (including but not limited to refugees and asylees with certain restrictions)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa464f730dd00003",
+        "label": "Are you a citizen of any one of these countries: Cuba, Iran, North Korea, or Syria?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa464f730dd00007",
+        "label": "Are you a citizen of any of the following countries: Group D (Armenia, Azerbaijan, Belarus, Burma (Myanmar), Cambodia, China (PRC), Georgia, Hong Kong, Iraq, Kazakhstan, Kyrgyzstan, Laos, Libya, Macau, Moldova, Mongolia, Nicaragua, Russia, Tajikistan, Turkmenistan, Ukraine (RU Occupied regions, Donetsk, Kherson, Luhansk, Zaporizhzhia), Uzbekistan, Venezuela, Vietnam)",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa46500c99cb0002",
+        "label": "Please add your Country of Citizenship or Countries of Citizenship if dual",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "3593d81af34b1001aa46500c99cb0004",
+        "label": "2. Do you hold Legal Permanent Resident Status in a country outside the US?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa4650a679470001",
+        "label": "Are you authorized to work in the United States on a fulltime and indefinite basis? If you are hired, you will be required to present proof of your identity and authorization to work on your first day of work.Persons authorized to work in the U.S. on an indefinite basis include U.S. citizens, lawful permanent residents (“green card” holders), asylees and refugees.Persons not authorized to work in the U.S. on an indefinite basis include F-1, J-1/2, H-1B/4, L-1/2 nonimmigrants, among others.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa4650a679470004",
+        "label": "If you are not authorized to work in the United States on a fulltime and indefinite basis, please select your current status.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "DACA EAD",
+          "F-1 (CPT, OPT, or STEM)",
+          "H-1B",
+          "H-1B w/ approved I-140",
+          "H-1B w/ filed I-485",
+          "H-4 EAD",
+          "I-485 EAD",
+          "J-1",
+          "J-2",
+          "L-1",
+          "L-2",
+          "O-1",
+          "TN",
+          "TPS EAD",
+          "Other"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa465273bf170002",
+        "label": "Will you need to be sponsored for a work visa by Analog Devices – either now or in the future – to work for (or continue to work for) Analog Devices?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa465273bf170005",
+        "label": "If Yes, have you ever held a J-1 or J-2 exchange visitor visa?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa46530d632c0001",
+        "label": "Are you at least 18 years old?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa46530d632c0007",
+        "label": "* ADI has a policy addressing the employment of relatives. Do you currently have relatives working at Analog Devices?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa4653a76d730002",
+        "label": "* Do you have any commitments to another organization that might affect your employment with Analog Devices?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa4653a76d730006",
+        "label": "* Are you bound by any agreements with your current or previous employer that limit your actions after leaving their company? If yes, share the specific type of agreement and when it expires.Examples:Non-compete agreements, which prevent you from working for a competitorNon-solicitation agreements, which restrict you from soliciting clients or employees from your former employer.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa465441294b0002",
+        "label": "To support an efficient recruitment process, ADI may use artificial intelligence (AI) tools to assess how your candidate information aligns with the role requirements. These tools do not make decisions about a candidate’s status — every decision that leads ADI to select a candidate for this role involves human review or intervention. You have the right to choose whether your data is processed using AI tools: By selecting “Yes,” you consent to the use of AI tools to evaluate your candidate information. By selecting “No,” you decline consent. Your application will be manually reviewed by ADI recruiters in accordance with ADI policy. For more information about how Company processes your personal data, please review the Candidate Privacy Notice.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa465441294b0005",
+        "label": "ADI would like to consider you for additional and future job openings using AI tools that may compare your application and other relevant information to the requirements of those job openings. If a match is found, our recruiters may contact you about these opportunities. Your consent is voluntary and will not affect your current application. By selecting \"Yes,\" you consent to the use of your data for this purpose and to be contacted by our recruiters for these roles. By selecting \"No,\" you do not consent, and your data will not be used for AI-based job matching. For more information about how Company processes your personal data, please review the Candidate Privacy Notice.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa1d8f9071fe0001",
+        "label": "Are you currently enrolled in an accredited degree program?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "3593d81af34b1001aa1d90c3b9c10003",
+        "label": "What is your highest level of education earned?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Secondary / High School",
+          "Post-Secondary Certificate or Diploma",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "Doctorate or Equivalent"
+        ]
+      },
+      {
+        "id": "ethnicityMulti",
+        "label": "Race/Ethnicity",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "American Indian or Alaska Native (United States of America)",
+          "Asian (United States of America)",
+          "Black or African American (United States of America)",
+          "Hispanic or Latino (United States of America)",
+          "Native Hawaiian or Other Pacific Islander (United States of America)",
+          "Not Classified (United States of America)",
+          "Prefer not to disclose (United States of America)",
+          "Two or More Races (United States of America)",
+          "White (United States of America)"
+        ]
+      },
+      {
+        "id": "hispanicOrLatino",
+        "label": "Hispanic or Latino",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Non-Binary"
+        ]
+      },
+      {
+        "id": "veteranStatus",
+        "label": "Veterans status",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERANS LISTED ABOVE",
+          "I IDENTIFY AS A VETERAN, JUST NOT A PROTECTED VETERAN",
+          "I AM NOT A VETERAN",
+          "I DO NOT WISH TO SELF-IDENTIFY"
+        ]
+      },
+      {
+        "id": "acceptTermsAndAgreements",
+        "label": "I accept the Terms and Conditions.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "I accept the Terms and Conditions.*"
+        ]
+      },
+      {
+        "id": "disabilityForm",
+        "label": "Language",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "English",
+          "Spanish"
+        ]
+      },
+      {
+        "id": "name",
+        "label": "Self-identification form signature name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "employeeId",
+        "label": "Employee ID (if applicable)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "dateSignedOn",
+        "label": "Self-identification form signature date",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "disabilityStatus",
+        "label": "Disability status",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Yes, I have a disability, or have had one in the past",
+          "No, I do not have a disability and have not had one in the past",
+          "I do not want to answer"
+        ]
+      }
+    ]
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Are you now or have you previously been employed by Analog Devices Inc. (ADI) or Maxim Integrated as a full-time regular employee or in a contract/temporary or coop-intern capacity? If yes, please provide as much info below as you remember. Leave blank if you do not know.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "school",
+        "label": "School or University",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "General Equivalency Diploma (GED)",
+          "High School Diploma (HS)",
+          "Diploma - USA",
+          "Certificate - USA",
+          "Associate of Science (AS)",
+          "Associate of Arts (AA)",
+          "Associate - Others",
+          "Bachelor of Science (BS)",
+          "Bachelor of Arts (BA)",
+          "Bachelor - Other",
+          "Master of Arts (MA)",
+          "Master of Science (MS)",
+          "Master - Other",
+          "Master of Business Administration (MBA)",
+          "Juris Doctor (JD)",
+          "Doctorate - Others",
+          "Doctor of Philosophy (PhD)",
+          "Non-Degree Program",
+          "Unknown"
+        ]
+      },
+      "value": "Master of Science (MS)",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa464ed958a30001",
+        "label": "1. Are you any of the following:US Citizen,Permanent resident of the United States (Green Card), or,Protected person under 8 USC 1324b(a)(3) (including but not limited to refugees and asylees with certain restrictions)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa464f730dd00003",
+        "label": "Are you a citizen of any one of these countries: Cuba, Iran, North Korea, or Syria?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa464f730dd00007",
+        "label": "Are you a citizen of any of the following countries: Group D (Armenia, Azerbaijan, Belarus, Burma (Myanmar), Cambodia, China (PRC), Georgia, Hong Kong, Iraq, Kazakhstan, Kyrgyzstan, Laos, Libya, Macau, Moldova, Mongolia, Nicaragua, Russia, Tajikistan, Turkmenistan, Ukraine (RU Occupied regions, Donetsk, Kherson, Luhansk, Zaporizhzhia), Uzbekistan, Venezuela, Vietnam)",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa46500c99cb0002",
+        "label": "Please add your Country of Citizenship or Countries of Citizenship if dual",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "China",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa46500c99cb0004",
+        "label": "2. Do you hold Legal Permanent Resident Status in a country outside the US?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "pr-outside-us",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa4650a679470001",
+        "label": "Are you authorized to work in the United States on a fulltime and indefinite basis? If you are hired, you will be required to present proof of your identity and authorization to work on your first day of work.Persons authorized to work in the U.S. on an indefinite basis include U.S. citizens, lawful permanent residents (“green card” holders), asylees and refugees.Persons not authorized to work in the U.S. on an indefinite basis include F-1, J-1/2, H-1B/4, L-1/2 nonimmigrants, among others.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa4650a679470004",
+        "label": "If you are not authorized to work in the United States on a fulltime and indefinite basis, please select your current status.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "DACA EAD",
+          "F-1 (CPT, OPT, or STEM)",
+          "H-1B",
+          "H-1B w/ approved I-140",
+          "H-1B w/ filed I-485",
+          "H-4 EAD",
+          "I-485 EAD",
+          "J-1",
+          "J-2",
+          "L-1",
+          "L-2",
+          "O-1",
+          "TN",
+          "TPS EAD",
+          "Other"
+        ]
+      },
+      "value": "F-1 (CPT, OPT, or STEM)",
+      "source": {
+        "type": "bank",
+        "id": "visa-status-workday",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa465273bf170002",
+        "label": "Will you need to be sponsored for a work visa by Analog Devices – either now or in the future – to work for (or continue to work for) Analog Devices?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa465273bf170005",
+        "label": "If Yes, have you ever held a J-1 or J-2 exchange visitor visa?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "j1-j2",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa46530d632c0001",
+        "label": "Are you at least 18 years old?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "over-18",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa46530d632c0007",
+        "label": "* ADI has a policy addressing the employment of relatives. Do you currently have relatives working at Analog Devices?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "relatives-adi",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa4653a76d730002",
+        "label": "* Do you have any commitments to another organization that might affect your employment with Analog Devices?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "other-commitments",
+        "origin": "human"
+      },
+      "confidence": 0.7411764705882353,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa4653a76d730006",
+        "label": "* Are you bound by any agreements with your current or previous employer that limit your actions after leaving their company? If yes, share the specific type of agreement and when it expires.Examples:Non-compete agreements, which prevent you from working for a competitorNon-solicitation agreements, which restrict you from soliciting clients or employees from your former employer.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa465441294b0002",
+        "label": "To support an efficient recruitment process, ADI may use artificial intelligence (AI) tools to assess how your candidate information aligns with the role requirements. These tools do not make decisions about a candidate’s status — every decision that leads ADI to select a candidate for this role involves human review or intervention. You have the right to choose whether your data is processed using AI tools: By selecting “Yes,” you consent to the use of AI tools to evaluate your candidate information. By selecting “No,” you decline consent. Your application will be manually reviewed by ADI recruiters in accordance with ADI policy. For more information about how Company processes your personal data, please review the Candidate Privacy Notice.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "ai-screening-consent",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa465441294b0005",
+        "label": "ADI would like to consider you for additional and future job openings using AI tools that may compare your application and other relevant information to the requirements of those job openings. If a match is found, our recruiters may contact you about these opportunities. Your consent is voluntary and will not affect your current application. By selecting \"Yes,\" you consent to the use of your data for this purpose and to be contacted by our recruiters for these roles. By selecting \"No,\" you do not consent, and your data will not be used for AI-based job matching. For more information about how Company processes your personal data, please review the Candidate Privacy Notice.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "ai-matching-consent",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa1d8f9071fe0001",
+        "label": "Are you currently enrolled in an accredited degree program?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "education"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3593d81af34b1001aa1d90c3b9c10003",
+        "label": "What is your highest level of education earned?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Secondary / High School",
+          "Post-Secondary Certificate or Diploma",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "Doctorate or Equivalent"
+        ]
+      },
+      "value": "Master's Degree",
+      "source": {
+        "type": "profile",
+        "path": "education"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ethnicityMulti",
+        "label": "Race/Ethnicity",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "American Indian or Alaska Native (United States of America)",
+          "Asian (United States of America)",
+          "Black or African American (United States of America)",
+          "Hispanic or Latino (United States of America)",
+          "Native Hawaiian or Other Pacific Islander (United States of America)",
+          "Not Classified (United States of America)",
+          "Prefer not to disclose (United States of America)",
+          "Two or More Races (United States of America)",
+          "White (United States of America)"
+        ]
+      },
+      "value": "Prefer not to disclose (United States of America)",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "hispanicOrLatino",
+        "label": "Hispanic or Latino",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "eeo.hispanicLatino"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Non-Binary"
+        ]
+      },
+      "value": "Female",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "veteranStatus",
+        "label": "Veterans status",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERANS LISTED ABOVE",
+          "I IDENTIFY AS A VETERAN, JUST NOT A PROTECTED VETERAN",
+          "I AM NOT A VETERAN",
+          "I DO NOT WISH TO SELF-IDENTIFY"
+        ]
+      },
+      "value": "I AM NOT A VETERAN",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "acceptTermsAndAgreements",
+        "label": "I accept the Terms and Conditions.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "I accept the Terms and Conditions.*"
+        ]
+      },
+      "value": "I accept the Terms and Conditions.*",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationTerms"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "disabilityForm",
+        "label": "Language",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "English",
+          "Spanish"
+        ]
+      },
+      "value": "English",
+      "source": {
+        "type": "profile",
+        "path": "language"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "name",
+        "label": "Self-identification form signature name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "signSelfIdentificationForms"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "employeeId",
+        "label": "Employee ID (if applicable)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "dateSignedOn",
+        "label": "Self-identification form signature date",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "10/29/2026",
+      "source": {
+        "type": "profile",
+        "path": "signSelfIdentificationForms"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "disabilityStatus",
+        "label": "Disability status",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Yes, I have a disability, or have had one in the past",
+          "No, I do not have a disability and have not had one in the past",
+          "I do not want to answer"
+        ]
+      },
+      "value": "No, I do not have a disability and have not had one in the past",
+      "source": {
+        "type": "profile",
+        "path": "eeo.disability"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    }
+  ]
+}

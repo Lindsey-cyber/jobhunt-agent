@@ -1,0 +1,150 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36499753002",
+      "label": "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).",
+      "expected": "I don’t want to overstate this: my documented transformer model-level work has been evaluation and interpretability research, not a production rollout. In Columbia AI Alignment Club, I worked on Qwen3-4B and Qwen3-8B: implementing activation hooks across 28 transformer layers, linear probes, steering interventions, randomized and sham controls, grouped-bootstrap controls, and response/token-level evaluations to test whether observed logit shifts reflected reliable hallucination or refusal behavior. Separately, I have deployment-facing experience from a real-time robotics system, where I optimized inference with ONNX Runtime, quantization, asynchronous video pipelines, and integrated a locally hosted language model through Ollama into the robot control workflow. For Databricks AI FDE, I would bring the evaluation rigor from the Qwen work together with practical inference and systems integration experience.",
+      "actual": "I don’t want to overstate this: my documented transformer model-level work has been evaluation and interpretability research, not a production rollout. In Columbia AI Alignment Club, I worked on Qwen3-4B and Qwen3-8B: implementing activation hooks across 28 transformer layers, linear probes, steering interventions, randomized and sham controls, grouped-bootstrap controls, and response/token-level evaluations to test whether observed logit shifts reflected reliable hallucination or refusal behavior. Separately, I have deployment-facing experience from a real-time robotics system, where I optimized inference with ONNX Runtime, quantization, asynchronous video pipelines, and integrated a locally hosted language model through Ollama into the robot control workflow. For Databricks AI FDE, I would bring the evaluation rigor from the Qwen work together with practical inference and systems integration experience.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37586354002",
+      "label": "Describe a time you worked directly with an external enterprise customer on an ML/AI problem.",
+      "expected": "I don’t want to overstate this: I have not yet owned a direct external enterprise customer engagement on an ML/AI problem. The closest analogue is my applied ML work at Arborphy AI, where I worked through an ambiguous domain problem end to end: plant identification and botanical reasoning. I designed and evaluated vision/biological embedding architectures, built disjoint benchmarks for species identification and retrieval, created a human-review set, and developed a multi-agent botanical reasoning prototype with knowledge-graph evidence aggregation. At Columbia, I also made research code usable for non-ML wet-lab researchers through packaging, documentation, and step-by-step guides. That is the customer-facing muscle I would bring to Databricks, while being clear that enterprise client ownership would be a growth area.",
+      "actual": "I don’t want to overstate this: I have not yet owned a direct external enterprise customer engagement on an ML/AI problem. The closest analogue is my applied ML work at Arborphy AI, where I worked through an ambiguous domain problem end to end: plant identification and botanical reasoning. I designed and evaluated vision/biological embedding architectures, built disjoint benchmarks for species identification and retrieval, created a human-review set, and developed a multi-agent botanical reasoning prototype with knowledge-graph evidence aggregation. At Columbia, I also made research code usable for non-ML wet-lab researchers through packaging, documentation, and step-by-step guides. That is the customer-facing muscle I would bring to Databricks, while being clear that enterprise client ownership would be a growth area.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36493419002",
+      "label": "LinkedIn Profile URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37225418002",
+      "label": "GitHub Profile URL",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36493420002",
+      "label": "How did you hear about this job?",
+      "expected": "Job board",
+      "actual": "Job board",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36493421002",
+      "label": "Are you legally authorized to work in the country in which you are applying?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36493422002",
+      "label": "Do you now or will you in the future need sponsorship for employment visa status in the country in which you are applying?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36493425002[]",
+      "label": "Please confirm whether any of the below applies to you. Select all that apply. Note: This information will only be used to ensure compliance with U.S. sanctions and export controls.",
+      "expected": "None of the above",
+      "actual": "None of the above",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36493426002[]",
+      "label": "If you selected a response to the prior question other than “none of the above,” please confirm whether any of the following also applies to you. Select all that apply.",
+      "expected": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
+      "actual": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?",
+    "Do you currently or have you previously worked for Databricks in the past?"
+  ],
+  "fillErrors": []
+}

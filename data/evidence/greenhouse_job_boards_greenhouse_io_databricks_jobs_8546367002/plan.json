@@ -1,0 +1,1146 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=databricks&token=8546367002",
+    "company": "Databricks",
+    "jobTitle": "AI Engineer – Forward Deployed Engineering (AI FDE)",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferred_name",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Associate's Degree",
+          "Bachelor's Degree",
+          "Doctor of Medicine (M.D.)",
+          "Doctor of Philosophy (Ph.D.)",
+          "Engineer's Degree",
+          "High School",
+          "Juris Doctor (J.D.)",
+          "Master of Business Administration (M.B.A.)",
+          "Master's Degree",
+          "Other"
+        ]
+      },
+      {
+        "id": "question_36499753002",
+        "label": "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_37586354002",
+        "label": "Describe a time you worked directly with an external enterprise customer on an ML/AI problem.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_38146974002",
+        "label": "Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_36493419002",
+        "label": "LinkedIn Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_37225418002",
+        "label": "GitHub Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_36493420002",
+        "label": "How did you hear about this job?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_36493421002",
+        "label": "Are you legally authorized to work in the country in which you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_36493422002",
+        "label": "Do you now or will you in the future need sponsorship for employment visa status in the country in which you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_37465110002",
+        "label": "Do you currently or have you previously worked for Databricks in the past?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "No",
+          "Yes - I currently work at Databricks",
+          "Yes - Previous Full-Time Employee",
+          "Yes - Previous Contractor",
+          "Yes - Previous Intern"
+        ]
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline To Self Identify"
+        ]
+      },
+      {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Decline To Self Identify"
+        ]
+      },
+      {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "I am not a protected veteran",
+          "I identify as one or more of the classifications of a protected veteran",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "question_36493425002[]",
+        "label": "Please confirm whether any of the below applies to you. Select all that apply. Note: This information will only be used to ensure compliance with U.S. sanctions and export controls.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Citizen or permanent resident of Cuba, Iran, North Korea, or Syria",
+          "Ordinarily a resident of Cuba, Iran, North Korea, Syria or the Crimea, Donetsk, Luhansk, Zaporizhzhia, or Kherson regions of Ukraine",
+          "Ordinarily a resident of Russia or Belarus and not willing to relocate for a Databricks role",
+          "None of the above"
+        ]
+      },
+      {
+        "id": "question_36493426002[]",
+        "label": "If you selected a response to the prior question other than “none of the above,” please confirm whether any of the following also applies to you. Select all that apply.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "U.S. citizen",
+          "U.S. non-citizen national",
+          "U.S. permanent resident (Green Card holder)",
+          "Individual granted asylum in the U.S.",
+          "Individual granted refugee status in the U.S.",
+          "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
+          "Individual granted permanent residency in a country other than Cuba, Iran, North Korea, or Syria",
+          "None of these apply to me",
+          "Not applicable (i.e., I selected “none of the above” for the prior question)"
+        ]
+      }
+    ],
+    "jobLocation": "United States"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferred_name",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Associate's Degree",
+          "Bachelor's Degree",
+          "Doctor of Medicine (M.D.)",
+          "Doctor of Philosophy (Ph.D.)",
+          "Engineer's Degree",
+          "High School",
+          "Juris Doctor (J.D.)",
+          "Master of Business Administration (M.B.A.)",
+          "Master's Degree",
+          "Other"
+        ]
+      },
+      "value": "Master's Degree",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_36499753002",
+        "label": "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "I don’t want to overstate this: my documented transformer model-level work has been evaluation and interpretability research, not a production rollout. In Columbia AI Alignment Club, I worked on Qwen3-4B and Qwen3-8B: implementing activation hooks across 28 transformer layers, linear probes, steering interventions, randomized and sham controls, grouped-bootstrap controls, and response/token-level evaluations to test whether observed logit shifts reflected reliable hallucination or refusal behavior. Separately, I have deployment-facing experience from a real-time robotics system, where I optimized inference with ONNX Runtime, quantization, asynchronous video pipelines, and integrated a locally hosted language model through Ollama into the robot control workflow. For Databricks AI FDE, I would bring the evaluation rigor from the Qwen work together with practical inference and systems integration experience.",
+      "source": {
+        "type": "bank",
+        "id": "draft:2c2e39223b",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_37586354002",
+        "label": "Describe a time you worked directly with an external enterprise customer on an ML/AI problem.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "I don’t want to overstate this: I have not yet owned a direct external enterprise customer engagement on an ML/AI problem. The closest analogue is my applied ML work at Arborphy AI, where I worked through an ambiguous domain problem end to end: plant identification and botanical reasoning. I designed and evaluated vision/biological embedding architectures, built disjoint benchmarks for species identification and retrieval, created a human-review set, and developed a multi-agent botanical reasoning prototype with knowledge-graph evidence aggregation. At Columbia, I also made research code usable for non-ML wet-lab researchers through packaging, documentation, and step-by-step guides. That is the customer-facing muscle I would bring to Databricks, while being clear that enterprise client ownership would be a growth area.",
+      "source": {
+        "type": "bank",
+        "id": "draft:71b70affb3",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_38146974002",
+        "label": "Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_36493419002",
+        "label": "LinkedIn Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_37225418002",
+        "label": "GitHub Profile URL",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_36493420002",
+        "label": "How did you hear about this job?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Job board",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_36493421002",
+        "label": "Are you legally authorized to work in the country in which you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_36493422002",
+        "label": "Do you now or will you in the future need sponsorship for employment visa status in the country in which you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_37465110002",
+        "label": "Do you currently or have you previously worked for Databricks in the past?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "No",
+          "Yes - I currently work at Databricks",
+          "Yes - Previous Full-Time Employee",
+          "Yes - Previous Contractor",
+          "Yes - Previous Intern"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline To Self Identify"
+        ]
+      },
+      "value": "Decline To Self Identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Decline To Self Identify"
+        ]
+      },
+      "value": "Decline To Self Identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.hispanicLatino"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "I am not a protected veteran",
+          "I identify as one or more of the classifications of a protected veteran",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_36493425002[]",
+        "label": "Please confirm whether any of the below applies to you. Select all that apply. Note: This information will only be used to ensure compliance with U.S. sanctions and export controls.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Citizen or permanent resident of Cuba, Iran, North Korea, or Syria",
+          "Ordinarily a resident of Cuba, Iran, North Korea, Syria or the Crimea, Donetsk, Luhansk, Zaporizhzhia, or Kherson regions of Ukraine",
+          "Ordinarily a resident of Russia or Belarus and not willing to relocate for a Databricks role",
+          "None of the above"
+        ]
+      },
+      "value": "None of the above",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_36493426002[]",
+        "label": "If you selected a response to the prior question other than “none of the above,” please confirm whether any of the following also applies to you. Select all that apply.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "U.S. citizen",
+          "U.S. non-citizen national",
+          "U.S. permanent resident (Green Card holder)",
+          "Individual granted asylum in the U.S.",
+          "Individual granted refugee status in the U.S.",
+          "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
+          "Individual granted permanent residency in a country other than Cuba, Iran, North Korea, or Syria",
+          "None of these apply to me",
+          "Not applicable (i.e., I selected “none of the above” for the prior question)"
+        ]
+      },
+      "value": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
+      "source": {
+        "type": "bank",
+        "id": "draft:e08d9a34da",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

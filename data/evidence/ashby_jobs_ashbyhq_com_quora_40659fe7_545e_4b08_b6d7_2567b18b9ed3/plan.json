@@ -1,0 +1,657 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/quora/40659fe7-545e-4b08-b6d7-2567b18b9ed3/application",
+    "company": "Quora",
+    "jobTitle": "Machine Learning Engineer, New Grad - Quora (Remote)",
+    "jobLocation": "Remote - Multiple Locations; Canada; United States",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "communicationConsent",
+        "label": "Do you consent to receive text messages about your application?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "d496a37b-529c-497a-8dde-4d474fbe1f19",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_education_history",
+        "label": "School Name",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "394d7238-e078-4ce5-941e-adacf934896e",
+        "label": "Degree",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Associate Degree",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "Phd",
+          "Other"
+        ]
+      },
+      {
+        "id": "fc69e246-b8ff-4443-aeb9-ba66a0a380b4",
+        "label": "Discipline/Field of Study",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "79679009-d30c-4729-8f92-ad1ab82ef830",
+        "label": "Graduation Date or Anticipated Graduation Date",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "0dc923df-dd84-40c8-bf11-af2f712de39d",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "14211f1c-c2a9-4d93-976e-9e7c3d5861c1",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "6eac2cef-81c0-43ef-a17d-ac3b12c04175",
+        "label": "What is your preferred programming language for your interviews (you can change this later)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "C++",
+          "Java",
+          "Python"
+        ]
+      },
+      {
+        "id": "d333fe2a-7c5b-48f6-b61f-fee32ea13ce8",
+        "label": "Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "c9551cc9-9177-462c-b1d5-5f24f22552e9",
+        "label": "I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "b5311071-d921-44c5-b5e5-62a008c1044b",
+        "label": "In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Canada",
+          "United States",
+          "Other"
+        ]
+      },
+      {
+        "id": "180e7a91-d2e8-4bee-b2cf-18e111ef5267",
+        "label": "If you selected \"Other\", please provide additional information.",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "c494f62f-55f4-47ef-9d7c-2b8066467423",
+        "label": "Are you legally authorized to work in that country?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "a73da721-1b4e-4096-b043-97ba9205d42d",
+        "label": "Will you now or in the future require sponsorship for employment visa status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "96333498-5d1c-4c39-a9e7-f88b85a5a36a",
+        "label": "How did you find out about this opportunity?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "1aa29c64-c5c3-4430-b73e-4a33be20e179",
+        "label": "Any additional information you'd like to share?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "780dd243-f33e-4aaf-a83a-f05ad1238015",
+        "label": "How would you describe your gender identity?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Non Binary",
+          "Other",
+          "I prefer not to say"
+        ]
+      },
+      {
+        "id": "cd38d009-11ba-42b9-8087-fd5c54ce496c",
+        "label": "What race and/or ethnic identities do you identify with? (please select all that apply)",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Black of African or African-American descent",
+          "East Asian",
+          "Hispanic or Latinx",
+          "Middle Eastern or North African",
+          "Native Hawaiian or Other Pacific Islander",
+          "South Asian",
+          "Southeast Asian",
+          "White or Caucasian",
+          "My ethnicity is not listed",
+          "I prefer not to say"
+        ]
+      },
+      {
+        "id": "bc34b516-d597-4d83-bb12-b184add60dfd",
+        "label": "US candidates only: Are you a veteran/have you served in the military?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Not applicable",
+          "I prefer not to say"
+        ]
+      },
+      {
+        "id": "9ee6e34a-475c-4fad-ad7d-011013873424",
+        "label": "US candidates only: Do you live with a disability (as outlined in the Americans with Disabilities Act)?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Not applicable",
+          "I prefer not to say"
+        ]
+      }
+    ]
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "communicationConsent",
+        "label": "Do you consent to receive text messages about your application?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "sms-opt-in",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "d496a37b-529c-497a-8dde-4d474fbe1f19",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_education_history",
+        "label": "School Name",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "394d7238-e078-4ce5-941e-adacf934896e",
+        "label": "Degree",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Associate Degree",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "Phd",
+          "Other"
+        ]
+      },
+      "value": "Master's Degree",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fc69e246-b8ff-4443-aeb9-ba66a0a380b4",
+        "label": "Discipline/Field of Study",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "79679009-d30c-4729-8f92-ad1ab82ef830",
+        "label": "Graduation Date or Anticipated Graduation Date",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "0dc923df-dd84-40c8-bf11-af2f712de39d",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "14211f1c-c2a9-4d93-976e-9e7c3d5861c1",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "6eac2cef-81c0-43ef-a17d-ac3b12c04175",
+        "label": "What is your preferred programming language for your interviews (you can change this later)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "C++",
+          "Java",
+          "Python"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "d333fe2a-7c5b-48f6-b61f-fee32ea13ce8",
+        "label": "Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "c9551cc9-9177-462c-b1d5-5f24f22552e9",
+        "label": "I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "b5311071-d921-44c5-b5e5-62a008c1044b",
+        "label": "In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Canada",
+          "United States",
+          "Other"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "180e7a91-d2e8-4bee-b2cf-18e111ef5267",
+        "label": "If you selected \"Other\", please provide additional information.",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "c494f62f-55f4-47ef-9d7c-2b8066467423",
+        "label": "Are you legally authorized to work in that country?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a73da721-1b4e-4096-b043-97ba9205d42d",
+        "label": "Will you now or in the future require sponsorship for employment visa status?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "96333498-5d1c-4c39-a9e7-f88b85a5a36a",
+        "label": "How did you find out about this opportunity?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "1aa29c64-c5c3-4430-b73e-4a33be20e179",
+        "label": "Any additional information you'd like to share?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "780dd243-f33e-4aaf-a83a-f05ad1238015",
+        "label": "How would you describe your gender identity?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Non Binary",
+          "Other",
+          "I prefer not to say"
+        ]
+      },
+      "value": "I prefer not to say",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cd38d009-11ba-42b9-8087-fd5c54ce496c",
+        "label": "What race and/or ethnic identities do you identify with? (please select all that apply)",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Black of African or African-American descent",
+          "East Asian",
+          "Hispanic or Latinx",
+          "Middle Eastern or North African",
+          "Native Hawaiian or Other Pacific Islander",
+          "South Asian",
+          "Southeast Asian",
+          "White or Caucasian",
+          "My ethnicity is not listed",
+          "I prefer not to say"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "bc34b516-d597-4d83-bb12-b184add60dfd",
+        "label": "US candidates only: Are you a veteran/have you served in the military?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Not applicable",
+          "I prefer not to say"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "9ee6e34a-475c-4fad-ad7d-011013873424",
+        "label": "US candidates only: Do you live with a disability (as outlined in the Americans with Disabilities Act)?",
+        "kind": "radio",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Not applicable",
+          "I prefer not to say"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "eeo.disability"
+      },
+      "confidence": 1,
+      "sensitive": true
+    }
+  ]
+}

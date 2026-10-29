@@ -1,0 +1,315 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Are you now or have you previously been employed by Analog Devices Inc. (ADI) or Maxim Integrated as a full-time regular employee or in a contract/temporary or coop-intern capacity? If yes, please provide as much info below as you remember. Leave blank if you do not know.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "school",
+      "label": "School or University",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree",
+      "label": "Degree",
+      "expected": "Master of Science (MS)",
+      "actual": "Master of Science (MS)",
+      "pass": true
+    },
+    {
+      "fieldId": "fieldOfStudy",
+      "label": "Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa464ed958a30001",
+      "label": "1. Are you any of the following:US Citizen,Permanent resident of the United States (Green Card), or,Protected person under 8 USC 1324b(a)(3) (including but not limited to refugees and asylees with certain restrictions)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa464f730dd00003",
+      "label": "Are you a citizen of any one of these countries: Cuba, Iran, North Korea, or Syria?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa464f730dd00007",
+      "label": "Are you a citizen of any of the following countries: Group D (Armenia, Azerbaijan, Belarus, Burma (Myanmar), Cambodia, China (PRC), Georgia, Hong Kong, Iraq, Kazakhstan, Kyrgyzstan, Laos, Libya, Macau, Moldova, Mongolia, Nicaragua, Russia, Tajikistan, Turkmenistan, Ukraine (RU Occupied regions, Donetsk, Kherson, Luhansk, Zaporizhzhia), Uzbekistan, Venezuela, Vietnam)",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa46500c99cb0002",
+      "label": "Please add your Country of Citizenship or Countries of Citizenship if dual",
+      "expected": "China",
+      "actual": "China",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa46500c99cb0004",
+      "label": "2. Do you hold Legal Permanent Resident Status in a country outside the US?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa4650a679470001",
+      "label": "Are you authorized to work in the United States on a fulltime and indefinite basis? If you are hired, you will be required to present proof of your identity and authorization to work on your first day of work.Persons authorized to work in the U.S. on an indefinite basis include U.S. citizens, lawful permanent residents (“green card” holders), asylees and refugees.Persons not authorized to work in the U.S. on an indefinite basis include F-1, J-1/2, H-1B/4, L-1/2 nonimmigrants, among others.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa4650a679470004",
+      "label": "If you are not authorized to work in the United States on a fulltime and indefinite basis, please select your current status.",
+      "expected": "F-1 (CPT, OPT, or STEM)",
+      "actual": "F-1 (CPT, OPT, or STEM)",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa465273bf170002",
+      "label": "Will you need to be sponsored for a work visa by Analog Devices – either now or in the future – to work for (or continue to work for) Analog Devices?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa465273bf170005",
+      "label": "If Yes, have you ever held a J-1 or J-2 exchange visitor visa?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa46530d632c0001",
+      "label": "Are you at least 18 years old?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa46530d632c0007",
+      "label": "* ADI has a policy addressing the employment of relatives. Do you currently have relatives working at Analog Devices?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa4653a76d730002",
+      "label": "* Do you have any commitments to another organization that might affect your employment with Analog Devices?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa4653a76d730006",
+      "label": "* Are you bound by any agreements with your current or previous employer that limit your actions after leaving their company? If yes, share the specific type of agreement and when it expires.Examples:Non-compete agreements, which prevent you from working for a competitorNon-solicitation agreements, which restrict you from soliciting clients or employees from your former employer.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa465441294b0002",
+      "label": "To support an efficient recruitment process, ADI may use artificial intelligence (AI) tools to assess how your candidate information aligns with the role requirements. These tools do not make decisions about a candidate’s status — every decision that leads ADI to select a candidate for this role involves human review or intervention. You have the right to choose whether your data is processed using AI tools: By selecting “Yes,” you consent to the use of AI tools to evaluate your candidate information. By selecting “No,” you decline consent. Your application will be manually reviewed by ADI recruiters in accordance with ADI policy. For more information about how Company processes your personal data, please review the Candidate Privacy Notice.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa465441294b0005",
+      "label": "ADI would like to consider you for additional and future job openings using AI tools that may compare your application and other relevant information to the requirements of those job openings. If a match is found, our recruiters may contact you about these opportunities. Your consent is voluntary and will not affect your current application. By selecting \"Yes,\" you consent to the use of your data for this purpose and to be contacted by our recruiters for these roles. By selecting \"No,\" you do not consent, and your data will not be used for AI-based job matching. For more information about how Company processes your personal data, please review the Candidate Privacy Notice.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa1d8f9071fe0001",
+      "label": "Are you currently enrolled in an accredited degree program?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "3593d81af34b1001aa1d90c3b9c10003",
+      "label": "What is your highest level of education earned?",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "ethnicityMulti",
+      "label": "Race/Ethnicity",
+      "expected": "Prefer not to disclose (United States of America)",
+      "actual": "Prefer not to disclose (United States of America)",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanicOrLatino",
+      "label": "Hispanic or Latino",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Female",
+      "actual": "Female",
+      "pass": true
+    },
+    {
+      "fieldId": "veteranStatus",
+      "label": "Veterans status",
+      "expected": "I AM NOT A VETERAN",
+      "actual": "I AM NOT A VETERAN",
+      "pass": true
+    },
+    {
+      "fieldId": "acceptTermsAndAgreements",
+      "label": "I accept the Terms and Conditions.",
+      "expected": "I accept the Terms and Conditions.*",
+      "actual": "I accept the Terms and Conditions.*",
+      "pass": true
+    },
+    {
+      "fieldId": "disabilityForm",
+      "label": "Language",
+      "expected": "English",
+      "actual": "English",
+      "pass": true
+    },
+    {
+      "fieldId": "name",
+      "label": "Self-identification form signature name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "dateSignedOn",
+      "label": "Self-identification form signature date",
+      "expected": "10/29/2026",
+      "actual": "10/29/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "disabilityStatus",
+      "label": "Disability status",
+      "expected": "No, I do not have a disability and have not had one in the past",
+      "actual": "No, I do not have a disability and have not had one in the past",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

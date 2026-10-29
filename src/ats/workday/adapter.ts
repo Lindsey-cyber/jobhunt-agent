@@ -214,8 +214,11 @@ export const workday: AtsAdapter = {
     const date = b.locator('[data-automation-id^="dateSectionMonth"] input, input[data-automation-id^="dateSectionMonth"]');
     if ((await date.count()) > 0) {
       // "MM/YYYY" or "MM/DD/YYYY" typed into the spin boxes, which advance on their own.
-      await date.first().click();
-      await page.keyboard.type(value.replace(/\D/g, ""));
+      // The date wrapper's display layer covers the spin boxes; focus instead of clicking.
+      await date.first().scrollIntoViewIfNeeded().catch(() => undefined);
+      await date.first().focus();
+      await page.keyboard.type(value.replace(/\D/g, ""), { delay: 80 });
+      await page.keyboard.press("Tab");
       return;
     }
     switch (field.kind) {

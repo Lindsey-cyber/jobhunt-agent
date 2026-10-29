@@ -1,0 +1,126 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862295005",
+      "label": "How did you hear about Glean?",
+      "expected": "Job Board",
+      "actual": "Job Board",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862296005",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862297005",
+      "label": "Do you know anyone currently at Glean?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862298005",
+      "label": "Are you willing and able to commit to the hybrid policy if hired?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862299005",
+      "label": "Please input the total years of experience you have that are relevant for this role.",
+      "expected": "1",
+      "actual": "1",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862300005",
+      "label": "Do you require sponsorship?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862301005",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8862302005",
+      "label": "What AI tools are you currently using today and how are you using them?",
+      "expected": "Today, in my current Research Engineer Intern role at Arborphy AI, I’m using EfficientNet, BioCLIP, and DINOv3 to study plant-identification models and representation quality. I use frozen linear probes, clustering, nearest-neighbor retrieval, local PCA rotations, and centroid shrinkage to understand whether representations capture species identity, organ morphology, or photographic-scale confounding. I’m also building evaluation loops: individual- and species-disjoint benchmarks for species identification, organ classification, and cross-species retrieval, plus human-review sets for model errors. On the agent side, I’ve built a multi-agent botanical reasoning prototype with autonomous tool generation, visual-analysis agents, constrained planning, per-step information-gain evaluation, and knowledge-graph evidence aggregation. That maps closely to assistant quality work: retrieval, grounding, evaluation, and iterative improvement.",
+      "actual": "Today, in my current Research Engineer Intern role at Arborphy AI, I’m using EfficientNet, BioCLIP, and DINOv3 to study plant-identification models and representation quality. I use frozen linear probes, clustering, nearest-neighbor retrieval, local PCA rotations, and centroid shrinkage to understand whether representations capture species identity, organ morphology, or photographic-scale confounding. I’m also building evaluation loops: individual- and species-disjoint benchmarks for species identification, organ classification, and cross-species retrieval, plus human-review sets for model errors. On the agent side, I’ve built a multi-agent botanical reasoning prototype with autonomous tool generation, visual-analysis agents, constrained planning, per-step information-gain evaluation, and knowledge-graph evidence aggregation. That maps closely to assistant quality work: retrieval, grounding, evaluation, and iterative improvement.",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

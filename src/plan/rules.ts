@@ -14,12 +14,13 @@ export const COMPENSATION_VETO = VETO[0]!;
 export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target)\b/;
 export const SALARY_HISTORY = /\b(current|previous|past|prior|last|history)\b/;
 
-export const ATTESTATION_OPTION = /\b(i )?(acknowledge|agree|consent|accept|understand|certify|attest)\b/;
+export const ATTESTATION_OPTION = /\b(i )?(acknowledge|acknowledged|agree|consent|accept|accepted|understand|understood|certify|attest|declare)\b/;
 
 // A single-option "I have read the privacy policy / notice" box. Anything that
 // also certifies answers, binds interview conduct or signs is not one.
 export const PRIVACY_NOTICE = /\bprivacy (policy|notice|statement)\b/;
-export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b/;
+// GlobalFoundries: "By submitting, you declare that you have read, understood, and accepted the terms in this policy".
+export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|\baccepted the terms in this policy\b/;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
 export const SENSITIVE =
@@ -33,7 +34,7 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 
 // "the country where the job is located" names no country; the posting does.
 // Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocation s? you selected\b/;
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
@@ -48,6 +49,8 @@ export interface RuleContext {
   jobCountry?: string;
   // The hiring company, as the form names it.
   company?: string;
+  // How many earlier applications to this employer the ledger holds.
+  priorApplications?: number;
 }
 
 const STATES: Record<string, string> = { AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", DC: "District of Columbia", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming" };
@@ -172,13 +175,15 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
-    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b/,
+    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b|\bhave you previously worked as [a-z ]{1,40}? for\b/,
     resolve: (p, label, ctx) => {
       const m =
         /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ??
         /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label) ??
         // ADI: "Are you now or have you previously been employed by Analog Devices Inc. (ADI) or Maxim Integrated as a ..."
-        /\bnow or have you previously been employed by (.+?) (?:as|in) a\b/.exec(label);
+        /\bnow or have you previously been employed by (.+?) (?:as|in) a\b/.exec(label) ??
+        // GlobalFoundries: "Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, ..."
+        /\bpreviously worked as [a-z ]{1,40}? for (.+?)(?: if\b|$)/.exec(label);
       // Bare "Have you worked at DoorDash?" only when it names the hiring company.
       const bare = /^have you (?:ever )?worked (?:at|for) (.+)$/.exec(label)?.[1];
       const company = (ctx.company ?? "").toLowerCase();
@@ -284,7 +289,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, label, ctx) => {
       const opts = ctx.options ?? [];
       if (p.citizenship.includes("United States")) return undefined;
-      if (/\bheld\b|\bclearance level\b/.test(label)) return opts.find((o) => /\bnever held\b|^n ?\/? ?a\b/i.test(o.trim()));
+      if (/\bheld\b|\bclearance level\b/.test(label)) return opts.find((o) => /\bnever held\b|^n ?\/? ?a\b/i.test(o.trim())) ?? opts.find((o) => /^no$/i.test(o.trim()));
       return opts.find((o) => /^no$/i.test(o.trim()));
     },
   },
@@ -314,6 +319,26 @@ export const PROFILE_RULES: ProfileRule[] = [
       const d = ctx.today && ctx.today.length >= 10 ? ctx.today : new Date().toISOString().slice(0, 10);
       return `${d.slice(5, 7)}/${d.slice(8, 10)}/${d.slice(0, 4)}`;
     },
+  },
+  {
+    // GlobalFoundries: "Are you or have you in the past been a contingent work or contractor for X?",
+    // "Have you previously worked for X, IBM Microelectronics, or Chartered Semiconductor (...)?":
+    // No unless an employer from the resume is named.
+    path: "workHistory",
+    pattern: /\b(contingent work(er)?|contractor) for\b|^have you previously worked for\b/,
+    resolve: (p, label) => yesNo(p.workHistory.some((w) => label.includes(normalize(w.employer)))),
+  },
+  {
+    // The candidate (2026-10-28): she knows no one at any company, relatives included.
+    path: "relativesAtEmployers",
+    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b/,
+    resolve: (p) => (p.relativesAtEmployers === false ? "No" : undefined),
+  },
+  {
+    // "Have you applied to X within the past 6 months?": from the ledger.
+    path: "ledger",
+    pattern: /\bhave you applied (to|with) .{1,60} (within|in) the (past|last) .{1,20}\b/,
+    resolve: (_p, _label, ctx) => (ctx.priorApplications === undefined ? undefined : yesNo(ctx.priorApplications > 0)),
   },
   {
     // Asana: "Current Company"; the work-history entry with no end date.

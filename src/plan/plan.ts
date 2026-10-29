@@ -77,7 +77,9 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   const label = normalize(field.label);
   const sensitive = SENSITIVE.test(label);
 
-  const veto = VETO.find((v) => v.pattern.test(label));
+  // The one signature the candidate allowed: the voluntary disability self-identification form.
+  const allowedSignature = profile.signSelfIdentificationForms && /^self identification form signature (name|date)$/.test(label);
+  const veto = allowedSignature ? undefined : VETO.find((v) => v.pattern.test(label));
   const expectation = veto === COMPENSATION_VETO && profile.salaryExpectation && (field.kind === "text" || field.kind === "textarea") && SALARY_EXPECTATION.test(label) && !SALARY_HISTORY.test(label);
   if (expectation) return { status: "fill", field, value: profile.salaryExpectation!, source: { type: "profile", path: "salaryExpectation" }, confidence: 1, sensitive: false };
   if (veto) return unanswered(field, veto.reason);
@@ -103,7 +105,7 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     return unanswered(field, "no document for this upload");
   }
 
-  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, company: form.company, ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
+  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, company: form.company, ...(form.priorApplications !== undefined ? { priorApplications: form.priorApplications } : {}), ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
   if (!candidate) return unanswered(field, sensitive ? "sensitive question with no exact answer" : "no answer in profile or answer bank");
 
   // A checkbox list (Workday's race/ethnicity) is matched like a radio group.

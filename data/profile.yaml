@@ -33,6 +33,10 @@ education:
     gpa: "3.82"
 # The candidate (2026-10-28): no non-compete, non-solicitation or similar agreement.
 restrictiveAgreements: false
+# The candidate (2026-10-28): apply to the 2027 graduating class's new-grad roles too.
+newGradCohorts: [2026, 2027]
+# The candidate (2026-10-28): she knows no one at any company, relatives included.
+relativesAtEmployers: false
 # The candidate (2026-10-28): may tick "I have read the privacy policy" boxes for her.
 acknowledgePrivacyPolicies: true
 # The candidate (2026-10-29): may accept application Terms and Conditions (every Workday form requires it).
@@ -59,4 +63,5 @@ documents:
 workHistory:
   - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
   - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
-  - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - { employer: Columbia University, title: Research Assistant (ML), start: 2026-01, end: 2026-05 }
+  - { employer: Columbia Asian Faculty Association, title: Data Analyst, start: 2025-01, end: 2025-03 }

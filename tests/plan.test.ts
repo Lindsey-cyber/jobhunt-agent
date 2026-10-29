@@ -151,6 +151,7 @@ describe("buildPlan", () => {
     const dd = (q: string) => buildPlan(form([field(q, { kind: "combobox", options: ["Yes", "No"] })], "DoorDash USA"), p, user.bank).items[0]!;
     expect(dd("Have you worked at DoorDash?")).toMatchObject({ status: "fill", value: "No" });
     expect(dd("Have you worked at a startup?")).toMatchObject({ status: "blocked" });
+    expect(one(field("Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, provide additional information; if No, please continue.", { kind: "radio", options: ["Yes", "No"] }))).toMatchObject({ status: "fill", value: "No" });
     expect(one(field("Please review the linked document:", { kind: "combobox", options: ["I acknowledge that I have read and understood the terms of the Lyft Candidate Privacy Notice."] }))).toMatchObject({ status: "fill" });
   });
 
@@ -208,6 +209,8 @@ describe("buildPlan", () => {
     const f = field("I accept the Terms and Conditions.", { kind: "checkbox", options: ["I accept the Terms and Conditions.*"] });
     expect(buildPlan(form([f]), user.profile, user.bank).items[0]).toMatchObject({ status: "blocked" });
     expect(buildPlan(form([f]), { ...user.profile, acceptApplicationTerms: true }, user.bank).items[0]).toMatchObject({ status: "fill" });
+    const gf = field("By submitting, you declare that you have read, understood, and accepted the terms in this policy", { kind: "checkbox", options: ["By submitting, you declare that you have read, understood, and accepted the terms in this policy*"] });
+    expect(buildPlan(form([gf]), { ...user.profile, acceptApplicationTerms: true }, user.bank).items[0]).toMatchObject({ status: "fill" });
   });
 
   it("declines gender where the form allows it and uses the required-answer fallback otherwise", () => {
@@ -215,12 +218,36 @@ describe("buildPlan", () => {
     const one = (options: string[]) => buildPlan(form([field("Gender", { kind: "select", options })]), p, user.bank).items[0]!;
     expect(one(["Female", "Male", "I don't wish to answer"])).toMatchObject({ status: "fill", value: "I don't wish to answer" });
     expect(one(["Female", "Male", "Non-Binary"])).toMatchObject({ status: "fill", value: "Female" });
+    expect(one(["Female", "Male", "Non-Binary", "Not declared"])).toMatchObject({ status: "fill", value: "Not declared" });
   });
 
   it("answers Workday's veteran list with the plain not-a-veteran option", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, veteran: "no" } };
     const options = ["I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERANS LISTED ABOVE", "I IDENTIFY AS A VETERAN, JUST NOT A PROTECTED VETERAN", "I AM NOT A VETERAN", "I DO NOT WISH TO SELF-IDENTIFY"];
     expect(buildPlan(form([field("Veterans status", { kind: "select", options })]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "I AM NOT A VETERAN" });
+  });
+
+  it("signs only the self-identification form, and only with the candidate's permission", () => {
+    const sig = field("Self-identification form signature name");
+    expect(buildPlan(form([sig]), user.profile, user.bank).items[0]).toMatchObject({ status: "blocked" });
+    const p = { ...user.profile, signSelfIdentificationForms: true };
+    expect(buildPlan(form([sig]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: `${p.identity.firstName} ${p.identity.lastName}` });
+    expect(buildPlan(form([field("Signature")]), p, user.bank).items[0]).toMatchObject({ status: "blocked" });
+  });
+
+  // From GlobalFoundries' Workday questionnaire.
+  it("answers GlobalFoundries' contractor, relatives, re-application, clearance and history questions", () => {
+    const p = { ...user.profile, citizenship: ["China"], relativesAtEmployers: false, workHistory: [{ employer: "Arborphy AI LLC", start: "2026-05" }] };
+    const yn = { kind: "select" as const, options: ["Yes", "No"] };
+    const one = (label: string, prior?: number) => buildPlan({ ...form([field(label, yn)], "GLOBAL FOUNDRIES"), ...(prior !== undefined ? { priorApplications: prior } : {}) }, p, user.bank).items[0]!;
+    expect(one("Are you or have you in the past been a contingent work or contractor for GLOBAL FOUNDRIES?")).toMatchObject({ value: "No" });
+    expect(one("Do you have relatives employed by GLOBAL FOUNDRIES?")).toMatchObject({ value: "No" });
+    expect(one("Have you applied to GLOBAL FOUNDRIES within the past 6 months?", 0)).toMatchObject({ value: "No" });
+    expect(one("Have you applied to GLOBAL FOUNDRIES within the past 6 months?", 1)).toMatchObject({ value: "Yes" });
+    expect(one("Have you held an active U.S. security clearance within the last 2 years?")).toMatchObject({ value: "No" });
+    const located = buildPlan({ ...form([field("Are you legally authorized to work for GLOBAL FOUNDRIES in the position's country?", yn)], "GLOBAL FOUNDRIES"), jobLocation: "USA - California - Santa Clara; United States of America" }, { ...p, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } }, user.bank).items[0]!;
+    expect(located).toMatchObject({ status: "fill", value: "Yes" });
+    expect(one("Have you previously worked for GLOBAL FOUNDRIES, IBM Microelectronics, or Chartered Semiconductor (including any joint-ventures or overseas locations)?")).toMatchObject({ value: "No" });
   });
 
   it("declines transgender identity, which the candidate has not answered", () => {

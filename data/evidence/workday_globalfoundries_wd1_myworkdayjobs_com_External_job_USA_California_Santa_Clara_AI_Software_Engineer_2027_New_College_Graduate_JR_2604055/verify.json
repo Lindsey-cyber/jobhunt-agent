@@ -1,0 +1,224 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, provide additional information; if No, please continue.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "Would you like to share with us your LinkedIn URL: (optional)",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e4661a1b6f0001",
+      "label": "Are you 18 years of age or older?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e4661a1b6f0004",
+      "label": "Are you currently bound by any non-compete, non-solicit, or similar agreement(s)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e466b4f0900001",
+      "label": "Are you legally authorized to work for GLOBAL FOUNDRIES in the position's country?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e466b4f0900004",
+      "label": "Are you or have you in the past been a contingent work or contractor for GLOBAL FOUNDRIES?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e466b4f0900007",
+      "label": "Do you have relatives employed by GLOBAL FOUNDRIES?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e466b4f090000a",
+      "label": "Have you applied to GLOBAL FOUNDRIES within the past 6 months?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e466b4f090000d",
+      "label": "Have you held an active U.S. security clearance within the last 2 years?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e466b4f0900010",
+      "label": "Have you previously worked for GLOBAL FOUNDRIES, IBM Microelectronics, or Chartered Semiconductor (including any joint-ventures or overseas locations)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "51f993b53bda0105b9e466b4f0900013",
+      "label": "Will you now, or in the future, require visa sponsorship for employment at GLOBAL FOUNDRIES?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanicOrLatino",
+      "label": "Hispanic or Latino?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "ethnicity",
+      "label": "Race / Ethnicity",
+      "expected": "I do not wish to answer. (United States of America)",
+      "actual": "I do not wish to answer. (United States of America)",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Not declared",
+      "actual": "Not declared",
+      "pass": true
+    },
+    {
+      "fieldId": "veteranStatus",
+      "label": "Protected Veteran",
+      "expected": "I AM NOT A VETERAN",
+      "actual": "I AM NOT A VETERAN",
+      "pass": true
+    },
+    {
+      "fieldId": "acceptTermsAndAgreements",
+      "label": "By submitting, you declare that you have read, understood, and accepted the terms in this policy",
+      "expected": "By submitting, you declare that you have read, understood, and accepted the terms in this policy*",
+      "actual": "By submitting, you declare that you have read, understood, and accepted the terms in this policy*",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

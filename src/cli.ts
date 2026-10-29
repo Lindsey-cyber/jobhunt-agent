@@ -11,6 +11,7 @@ import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
 import { runAuditor } from "./org/auditor.ts";
 import { draftAnswers } from "./org/drafter.ts";
+import { modelTriage } from "./org/triager.ts";
 import { authUrl, fetchAlerts, finishAuth, gmailConfigured } from "./sources/gmail.ts";
 import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
@@ -40,6 +41,8 @@ const USAGE = `jh <command>
                                        score the independent auditor's blind verdicts; adjusts triage trust
   applications [--out <dir>]           page of every application: fields filled, read back, screenshot
   questions                            collect the questions holding applications into the review list, once each
+  triage-model [--limit <n>]           a model judges postings the rules left at "review" (auditor's brief);
+                                       yes → match, no → reject, unsure stays; default 300 a run
   holds                                why applications are held, grouped: needs your answer, site mechanics
                                        (for an engineering session), or held by design
   apply-approved [--limit <n>]         submit postings you approved (fit labels) that have an adapter, within the
@@ -85,9 +88,9 @@ const user = () => loadUserData();
 const ledgerOf = (dir: string) => new Ledger(join(dir, "ledger.jsonl"));
 
 const SAME_COMPANY_GAP_MS = 2 * 60_000;
-// Workday is still being finished in a cloud session (2026-10-29): the VPS skips it
-// until this is true. A session sets JH_WORKDAY=on to drive it by hand.
-const WORKDAY_READY = process.env.JH_WORKDAY === "on";
+// Workday submitted and confirmed on two employers (ADI, GlobalFoundries, 2026-10-29);
+// JH_WORKDAY=off pauses it on a machine.
+const WORKDAY_READY = process.env.JH_WORKDAY !== "off";
 // Round-robin over companies so two postings at one employer are never back to back.
 function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
   const groups = new Map<string, T[]>();
@@ -133,7 +136,9 @@ switch (command) {
   }
   case "applications": {
     const u = user();
-    console.log(await writeApplicationsPage(ledgerOf(u.dir), values.out ?? join(u.dir, "runs", "applications")));
+    // --out <dir> copies screenshots beside the page (to publish it); the default in docs/applications links to data/evidence.
+    const out = values.out ?? join(u.dir, "..", "docs", "applications");
+    console.log(await writeApplicationsPage(ledgerOf(u.dir), out, { dataDir: u.dir, copyShots: Boolean(values.out) }));
     break;
   }
   case "questions": {
@@ -146,16 +151,21 @@ switch (command) {
     const u = user();
     const ledger = ledgerOf(u.dir);
     const catalog = readCatalog(paths(u.dir).catalog);
-    const fit = [...new Map(readLabels(u.dir).map((l) => [l.key, l])).values()].filter((l) => l.label === "fit");
-    const ready = fit
-      .map((l) => catalog.get(l.key as JobKey))
+    const labels = new Map(readLabels(u.dir).map((l) => [l.key, l]));
+    const fit = [...labels.values()].filter((l) => l.label === "fit");
+    // Triage promoted to auto (by the candidate, jh trust promote triage): every
+    // current match counts as approved too, unless she labeled it not_fit.
+    const auto = readTrust(u.dir).triage.level === "auto";
+    const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match" && labels.get(j.key)?.label !== "not_fit").sort((a, b) => (b.lastSeen ?? "").localeCompare(a.lastSeen ?? "")) : [];
+    const ready = [...new Set([...fit.map((l) => l.key as JobKey), ...matched.map((j) => j.key)])]
+      .map((k) => catalog.get(k))
       .filter((j): j is NonNullable<typeof j> => Boolean(j) && (/^(greenhouse|lever|ashby):/.test(j!.key) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         return !prior || ledger.canStart(prior.key);
       });
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
-    console.log(`${ready.length} approved postings with an adapter are not yet applied to; trying up to ${limit}`);
+    console.log(`${ready.length} ${auto ? "approved or matched" : "approved"} postings with an adapter are not yet applied to; trying up to ${limit}`);
     // The candidate (2026-10-29): never several applications to one company at once.
     // Interleave companies, and leave two minutes between submissions to the same one.
     const order = interleaveByCompany(ready.slice(0, limit));
@@ -181,6 +191,11 @@ switch (command) {
     const used = out.filter((o) => o.answer && !o.problems.length);
     console.log(`${used.length} of ${out.length} questions drafted and checked; the rest stay on the review list`);
     for (const o of out) console.log(`${o.problems.length ? "HELD" : "USED"}  ${o.company} · ${o.question}${o.answer ? `\n      ${o.answer}` : ""}${o.problems.length ? `\n      ${o.problems.join("; ")}` : ""}`);
+    break;
+  }
+  case "triage-model": {
+    const r = await modelTriage(user(), { limit: Number(values.limit ?? 300), log: (s) => console.error(s) });
+    console.log(`model triage (${r.model}): judged ${r.judged}: ${r.yes} fit → match, ${r.no} not fit → reject, ${r.unsure} unsure`);
     break;
   }
   case "holds": {

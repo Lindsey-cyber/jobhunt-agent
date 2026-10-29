@@ -1,0 +1,28 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"Country\": expected \"United States\", got \"\"",
+    "readback mismatch on \"Location (City)\": expected \"New York, New York, United States\", got \"\"",
+    "readback mismatch on \"How did you hear about this opportunity?\": expected \"Job board\", got \"\"",
+    "readback mismatch on \"Work Authorization\": expected \"I require, or in the future will require, Waymo's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)\", got \"\"",
+    "readback mismatch on \"Please review and acknowledge our Candidate Privacy Policy linked below:\": expected \"I acknowledge that I have read and understood the terms of the Waymo Applicant and Candidate Privacy Policy.\", got \"\"",
+    "readback mismatch on \"Are you a current or former Alphabet employee, intern, vendor, contractor, or temp (including Google and other Alphabet subsidiaries)?\": expected \"No\", got \"\"",
+    "readback mismatch on \"To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.\": expected \"I acknowledge the above policies.\", got \"\"",
+    "readback mismatch on \"Please provide the state/region in which you currently reside.\": expected \"New York\", got \"\"",
+    "readback mismatch on \"Are you subject to any active non-compete, non-solicitation, or similar restrictive agreement with a current or former employer?\": expected \"No\", got \"\"",
+    "readback mismatch on \"Please indicate your gender\": expected \"decline\", got \"\"",
+    "readback mismatch on \"Please indicate your race / ethnic group (choose all that apply)\": expected \"decline\", got \"\"",
+    "readback mismatch on \"Please indicate if you are a veteran or active member of the United States Armed Forces.\": expected \"no\", got \"\"",
+    "required \"Country\" is empty after filling",
+    "required \"Location (City)\" is empty after filling",
+    "required \"Work Authorization\" is empty after filling",
+    "required \"Please review and acknowledge our Candidate Privacy Policy linked below:\" is empty after filling",
+    "required \"Are you a current or former Alphabet employee, intern, vendor, contractor, or temp (including Google and other Alphabet subsidiaries)?\" is empty after filling",
+    "required \"To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.\" is empty after filling",
+    "required \"Please provide the state/region in which you currently reside.\" is empty after filling",
+    "required \"Are you subject to any active non-compete, non-solicitation, or similar restrictive agreement with a current or former employer?\" is empty after filling",
+    "required \"Please indicate your gender\" is empty after filling",
+    "required \"Please indicate your race / ethnic group (choose all that apply)\" is empty after filling",
+    "required \"Please indicate if you are a veteran or active member of the United States Armed Forces.\" is empty after filling"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "name",
+      "label": "Full name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "location",
+      "label": "Current location",
+      "expected": "New York, New York, United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "org",
+      "label": "Current company",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[GitHub]",
+      "label": "GitHub URL",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "urls[Other]",
+      "label": "Other website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "cards[980d5710-67c8-46a8-be6e-4e891a2d3eb7][field1]",
+      "label": "Will you now or in the future require sponsorship for employment? If so, please explain in detail (e.g., OPT with STEM extension).",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "What is/was your GPA?",
+    "Please check all that apply:"
+  ],
+  "fillErrors": []
+}

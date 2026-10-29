@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What AI tools are you currently using today and how are you using them?\": no answer in profile or answer bank",
+    "required \"What AI tools are you currently using today and how are you using them?\" is empty after filling"
+  ]
+}

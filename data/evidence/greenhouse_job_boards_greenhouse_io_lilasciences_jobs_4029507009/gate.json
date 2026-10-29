@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you currently reside within the continental United States?\": no answer in profile or answer bank",
+    "required \"Are you able to work in the specified job location, or are you willing to relocate for this position?\": no answer in profile or answer bank",
+    "required \"Do you currently reside within the continental United States?\" is empty after filling",
+    "required \"Are you able to work in the specified job location, or are you willing to relocate for this position?\" is empty after filling"
+  ]
+}

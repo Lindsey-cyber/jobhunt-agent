@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?\": no answer in profile or answer bank",
+    "required \"Do you currently or have you previously worked for Databricks in the past?\": sensitive question with no exact answer",
+    "required \"Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?\" is empty after filling",
+    "required \"Do you currently or have you previously worked for Databricks in the past?\" is empty after filling"
+  ]
+}

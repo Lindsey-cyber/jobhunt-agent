@@ -137,3 +137,33 @@
 {"id":"draft:a90656bfee","question":"Why Applied Intuition?","aliases":[],"answer":"Applied Intuition is compelling to me because this role treats AI tooling as infrastructure for real autonomous vehicle programs, not a standalone demo. The Systems Engineering AI Tooling role’s focus on backend services, traceability, validation data, and production-grade workflows matches the kind of work I’ve enjoyed most: building reliable pipelines that connect models, data, and downstream decisions. In robotics, I developed a real-time vision pipeline for an autonomous badminton-training robot and connected natural-language commands into the robot control workflow. In ML research, I built reproducible pipelines, interactive analysis tools, and knowledge-graph-based evidence aggregation. I’m drawn to Applied because I could apply that systems mindset to tooling that helps autonomy, safety, and systems teams ship more reliable physical AI.","company":"Applied Intuition","jobTitle":"Software Engineer - Systems Engineering AI Tooling","origin":"generated","evidence":["Developed a real-time vision pipeline for an autonomous badminton-training robot, integrating YOLOv8-based player detection, pose estimation, shuttlecock tracking, and court localization, achieving 20+ FPS.","Integrated a locally hosted language model through Ollama for voice-based robot commands and natural-language interaction, connecting user instructions with the robot’s control workflow.","Built a multi-agent botanical reasoning prototype with autonomous tool generation, specialized visual-analysis agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based evidence aggregation; developed reproducible research pipelines and interactive analysis tools.","Tools: Linux, Git, Docker, FastAPI, vLLM, Neo4j"]}
 {"id":"draft:96f1ccbb84","question":"Where do you currently reside? Jerry.ai can only hire in the locations listed below. If your location is not listed, unfortunately we are unable to process your application.","aliases":[],"answer":"Flushing, NY, United States","company":"Jerry.ai","jobTitle":"Data Scientist","origin":"generated","evidence":["address:\n    line1: 140-21 32nd Ave\n    line2: Apt 3BS\n    city: Flushing\n    state: NY\n    # The candidate (2026-10-28).\n    postalCode: \"11354\"\n    country: United States"]}
 {"id":"draft:66c33ef0b1","question":"Which office hub are you closest to? Please select the office location closest to your current city of residence.","aliases":[],"answer":"New York","company":"Tubi","jobTitle":"Data Scientist","origin":"generated","evidence":["city: Flushing\n    state: NY"]}
+{"id":"draft:012ba583ee","withdrawn":true}
+{"id":"draft:fbb90ad1e5","withdrawn":true}
+{"id":"draft:03973e78b7","withdrawn":true}
+{"id":"draft:6d40cca6f5","withdrawn":true}
+{"id":"draft:2c0d476b02","withdrawn":true}
+{"id":"draft:8c84f17ca8","withdrawn":true}
+{"id":"draft:784179a74e","withdrawn":true}
+{"id":"draft:db05efa603","withdrawn":true}
+{"id":"draft:2c2e39223b","withdrawn":true}
+{"id":"draft:a7e292a8bc","withdrawn":true}
+{"id":"draft:93e3942762","withdrawn":true}
+{"id":"draft:cc71d1fa24","withdrawn":true}
+{"id":"draft:a31f49c830","withdrawn":true}
+{"id":"draft:d44ee8f9e9","withdrawn":true}
+{"id":"draft:4c4eb27c99","withdrawn":true}
+{"id":"draft:d65f612f94","withdrawn":true}
+{"id":"draft:6caaf06a28","withdrawn":true}
+{"id":"draft:c88d9f354e","withdrawn":true}
+{"id":"draft:243b82b034","withdrawn":true}
+{"id":"draft:e2d08d58db","withdrawn":true}
+{"id":"draft:6df2c26373","withdrawn":true}
+{"id":"draft:18899e66ca","withdrawn":true}
+{"id":"draft:174061ba06","withdrawn":true}
+{"id":"draft:504ea11f6d","withdrawn":true}
+{"id":"draft:4e356042bf","withdrawn":true}
+{"id":"draft:e560fd89af","withdrawn":true}
+{"id":"draft:7762bc1ea5","withdrawn":true}
+{"id":"draft:43ec6314f1","withdrawn":true}
+{"id":"draft:ca483ed9ae","withdrawn":true}
+{"id":"draft:b66d1b305d","withdrawn":true}

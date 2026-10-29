@@ -59,3 +59,12 @@
 - Next: deploy to Hetzner CAX11 (37.27.217.240, Ubuntu 24.04 ARM64) per docs/DEPLOY.md. Outbound SSH is blocked from
   the cloud session, so the candidate runs install.sh herself or attaches the VPS through Remote Control.
 - Open for the candidate: Lyft (certification, employment section), Anduril (export controls), zip code (not in profile).
+
+## State at handoff to the VPS (2026-10-29 ~06:40 UTC)
+
+- Adapters: Greenhouse, Ashby (live-verified), Workday (confirmed on ADI and GlobalFoundries; on for the VPS), Lever (fills, then hCaptcha → candidate). Multi-page flow in `apply()`; Workday accounts from `JH_ACCOUNT_SECRET` (shared by the VPS and sessions).
+- Evidence for every application is in `data/evidence/`; `docs/applications/README.md` lists them (GitHub renders it); each VPS run regenerates it and writes `docs/reports/<date>/holds.txt` (`jh holds`).
+- Funnel on 2026-10-29: 566 usable matches; 123 approved; ~25 submitted. 520 matches never attempted: Workday 178, other career sites 199 (Oracle/Taleo 32, Workable 13, iCIMS 11, 136 assorted), Ashby 62, Greenhouse 55, Lever 13, SmartRecruiters 11. 595 postings sit in triage `review`.
+- With triage promoted to auto (`jh trust promote triage`, the candidate's call), `apply-approved` takes every current match.
+- Next engineering, in order of postings unlocked: an LLM worker for triage `review` items (595), Oracle/Taleo, Workable, iCIMS and SmartRecruiters adapters, then the long tail of career sites. Each session starts from `jh holds` (site mechanics) rather than single postings.
+- Watch: Pinterest's embed form submitted twice without confirmation and without a security-code email (likely failed; on the review list); the Greenhouse embed boards (Pinterest, NewsBreak, Waymo) once timed out on every dropdown.

@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you authorized to work in the location(s) you selected in your previous response?\": sensitive question with no exact answer",
+    "required \"If this role offers the option to work from a remote location, do you plan to work remotely?\": no answer in profile or answer bank",
+    "required \"Do you opt-in to receive WhatsApp messages from Stripe Recruiting?\": no answer in profile or answer bank",
+    "required \"Are you authorized to work in the location(s) you selected in your previous response?\" is empty after filling",
+    "required \"If this role offers the option to work from a remote location, do you plan to work remotely?\" is empty after filling",
+    "required \"Do you opt-in to receive WhatsApp messages from Stripe Recruiting?\" is empty after filling"
+  ]
+}

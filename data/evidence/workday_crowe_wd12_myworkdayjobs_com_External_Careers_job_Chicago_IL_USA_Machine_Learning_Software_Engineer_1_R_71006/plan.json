@@ -533,6 +533,54 @@
         "kind": "textarea",
         "required": true,
         "options": []
+      },
+      {
+        "id": "gender",
+        "label": "Please select your gender.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Choose not to Disclose",
+          "Female",
+          "Male"
+        ]
+      },
+      {
+        "id": "ethnicity",
+        "label": "Please select the race/ethnicity which most accurately describes how you identify yourself",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "veteranStatus",
+        "label": "Please select your veteran status.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No, I am not a protected veteran",
+          "Yes, I am a protected veteran",
+          "I choose not to disclose"
+        ]
+      },
+      {
+        "id": "hispanicOrLatino",
+        "label": "Are you Hispanic or Latino?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "acceptTermsAndAgreements",
+        "label": "Confirm Consent",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Confirm Consent*"
+        ]
       }
     ],
     "priorApplications": 0,
@@ -1168,7 +1216,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "f9bb932abbe810015d8063d468240003",
         "label": "Do you currently work at a Crowe client?",
@@ -1179,7 +1227,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "employer-client",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1239,7 +1294,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "f9bb932abbe810015d8065a2067e0003",
         "label": "Do you plan to pursue a CPA?",
@@ -1250,10 +1305,17 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "cpa-plan",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "f9bb932abbe810015d80663bcedb0002",
         "label": "Do you have a valid driver's license?",
@@ -1264,7 +1326,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "drivers-license",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1302,6 +1371,92 @@
       },
       "confidence": 1,
       "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "gender",
+        "label": "Please select your gender.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Choose not to Disclose",
+          "Female",
+          "Male"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ethnicity",
+        "label": "Please select the race/ethnicity which most accurately describes how you identify yourself",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "decline",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "veteranStatus",
+        "label": "Please select your veteran status.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "No, I am not a protected veteran",
+          "Yes, I am a protected veteran",
+          "I choose not to disclose"
+        ]
+      },
+      "value": "No, I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "hispanicOrLatino",
+        "label": "Are you Hispanic or Latino?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "eeo.hispanicLatino"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "acceptTermsAndAgreements",
+        "label": "Confirm Consent",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Confirm Consent*"
+        ]
+      },
+      "reason": "acknowledgements and consents need the candidate"
     }
   ]
 }

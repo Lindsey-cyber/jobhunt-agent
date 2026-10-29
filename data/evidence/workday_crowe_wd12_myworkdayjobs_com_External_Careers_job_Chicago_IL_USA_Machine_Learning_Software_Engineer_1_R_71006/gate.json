@@ -1,11 +1,10 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Do you currently work at a Crowe client?\": no answer in profile or answer bank",
-    "required \"Do you plan to pursue a CPA?\": no answer in profile or answer bank",
-    "required \"Do you have a valid driver's license?\": no answer in profile or answer bank",
-    "required \"Do you currently work at a Crowe client?\" is empty after filling",
-    "required \"Do you plan to pursue a CPA?\" is empty after filling",
-    "required \"Do you have a valid driver's license?\" is empty after filling"
+    "required \"Please select your gender.\": sensitive question with no exact answer",
+    "required \"Confirm Consent\": acknowledgements and consents need the candidate",
+    "readback mismatch on \"Please select the race/ethnicity which most accurately describes how you identify yourself\": expected \"decline\", got \"American Indian or Alaska Native (Not Hispanic or Latino) (United States of America)\"",
+    "required \"Please select your gender.\" is empty after filling",
+    "required \"Confirm Consent\" is empty after filling"
   ]
 }

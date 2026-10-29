@@ -114,6 +114,13 @@
       "pass": true
     },
     {
+      "fieldId": "f9bb932abbe810015d8063d468240003",
+      "label": "Do you currently work at a Crowe client?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "f9bb932abbe810015d80646e57880003",
       "label": "Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?",
       "expected": "No",
@@ -135,6 +142,20 @@
       "pass": true
     },
     {
+      "fieldId": "f9bb932abbe810015d8065a2067e0003",
+      "label": "Do you plan to pursue a CPA?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "f9bb932abbe810015d80663bcedb0002",
+      "label": "Do you have a valid driver's license?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "bc610b0368b81000a481a1055d2b0000",
       "label": "<b>Just-In-Time Notice</b><br>How we review applications & your choices:</br>We use an AI‑assisted resume‑screening tool to help recruiters manage applications. Based on the job posting, the tool reads only the information you provide and may identify job‑related details (for example, experience with listed skills or stated qualifications), prepare a short automated summary to help a recruiter review more efficiently, and direct your application to the appropriate recruiter or hiring team. The tool does not approve, reject, or make any hiring decisions. Our recruiters review your full application and may override or ignore tool suggestions at any time.<br></br>Your choices: You may opt out of automated screening and request manual review at any time by contacting us at recruiting@crowe.com. Opting-out from automated screening will not impact our decision making. To request information about how this tool is used in connection with your application, please contact us at recruiting@crowe.com.",
       "expected": "Opt In",
@@ -147,12 +168,34 @@
       "expected": "Yes",
       "actual": "Yes",
       "pass": true
+    },
+    {
+      "fieldId": "ethnicity",
+      "label": "Please select the race/ethnicity which most accurately describes how you identify yourself",
+      "expected": "decline",
+      "actual": "American Indian or Alaska Native (Not Hispanic or Latino) (United States of America)",
+      "pass": false
+    },
+    {
+      "fieldId": "veteranStatus",
+      "label": "Please select your veteran status.",
+      "expected": "No, I am not a protected veteran",
+      "actual": "No, I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanicOrLatino",
+      "label": "Are you Hispanic or Latino?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Do you currently work at a Crowe client?",
-    "Do you plan to pursue a CPA?",
-    "Do you have a valid driver's license?"
+    "Please select your gender.",
+    "Confirm Consent"
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Please select the race/ethnicity which most accurately describes how you identify yourself: \"decline\" did not stick in the dropdown"
+  ]
 }

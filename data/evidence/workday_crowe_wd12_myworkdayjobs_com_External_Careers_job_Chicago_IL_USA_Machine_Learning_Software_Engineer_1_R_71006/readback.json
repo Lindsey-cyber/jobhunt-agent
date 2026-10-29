@@ -18,12 +18,17 @@
   "extension": "",
   "": "Lindsey_Ma_Resume.pdf",
   "f9bb932abbe810015d8063d468240000": "No",
-  "f9bb932abbe810015d8063d468240003": "",
+  "f9bb932abbe810015d8063d468240003": "No",
   "f9bb932abbe810015d80646e57880003": "No",
   "f9bb932abbe810015d80650828f40002": "Yes",
   "f9bb932abbe810015d80650828f40005": "Yes",
   "f9bb932abbe810015d8065a2067e0002": "Yes",
-  "f9bb932abbe810015d8065a2067e0003": "",
-  "f9bb932abbe810015d80663bcedb0002": "",
-  "bc610b0368b81000a481a1055d2b0000": "Opt In"
+  "f9bb932abbe810015d8065a2067e0003": "No",
+  "f9bb932abbe810015d80663bcedb0002": "No",
+  "bc610b0368b81000a481a1055d2b0000": "Opt In",
+  "gender": "",
+  "ethnicity": "American Indian or Alaska Native (Not Hispanic or Latino) (United States of America)",
+  "veteranStatus": "No, I am not a protected veteran",
+  "hispanicOrLatino": "No",
+  "acceptTermsAndAgreements": ""
 }

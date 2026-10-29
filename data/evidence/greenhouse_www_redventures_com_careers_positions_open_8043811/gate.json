@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"State of Residence\": no answer in profile or answer bank",
+    "required \"This role is to be based out of the location listed in the job description with hybrid in-office requirements.\": no answer in profile or answer bank",
+    "required \"Zip / Postal\": no answer in profile or answer bank",
+    "required \"I identify my ethnicity as (mark all that apply):\": sensitive question with no exact answer",
+    "required \"Do you consider yourself member of the LGBTQIA+ community?\": no answer in profile or answer bank",
+    "required \"Are you currently legally authorized to work in the United States? Please select any that apply:\": answer \"Yes\" matches none of the options",
+    "required \"State of Residence\" is empty after filling",
+    "required \"This role is to be based out of the location listed in the job description with hybrid in-office requirements.\" is empty after filling",
+    "required \"Zip / Postal\" is empty after filling",
+    "required \"I identify my ethnicity as (mark all that apply):\" is empty after filling",
+    "required \"Do you consider yourself member of the LGBTQIA+ community?\" is empty after filling",
+    "required \"Are you currently legally authorized to work in the United States? Please select any that apply:\" is empty after filling"
+  ]
+}

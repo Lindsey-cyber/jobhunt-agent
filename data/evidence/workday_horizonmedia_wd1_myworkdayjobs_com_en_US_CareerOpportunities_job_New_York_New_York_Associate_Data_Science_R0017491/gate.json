@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"County\": no answer in profile or answer bank",
+    "required \"County\" is empty after filling"
+  ]
+}

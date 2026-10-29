@@ -146,6 +146,15 @@ export const PROFILE_RULES: ProfileRule[] = [
     pattern: /^(state|state province|province)$|^state of residence$|\b(current )?address state\b|^which u ?s state are you located in$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
     resolve: (p, _label, ctx) => usStateName(p.contact.address.state, ctx.options),
   },
+  {
+    path: "contact.address.county",
+    pattern: /^(county|county of residence)$/,
+    resolve: (p, _l, ctx) => {
+      const c = p.contact.address.county;
+      if (!c || !ctx.options?.length) return c;
+      return ctx.options.find((o) => normalize(o).startsWith(normalize(c)));
+    },
+  },
   { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode|zip postal( code)?)$/, resolve: (p) => p.contact.address.postalCode },
   { path: "contact.address.country", pattern: /^country( of residence| region| territory)?$/, resolve: (p) => p.contact.address.country },
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },

@@ -12,6 +12,8 @@ contact:
     state: NY
     # The candidate (2026-10-28).
     postalCode: "11354"
+    # Flushing (ZIP 11354) is in Queens County, NY.
+    county: Queens
     country: United States
 citizenship: [China]
 links:

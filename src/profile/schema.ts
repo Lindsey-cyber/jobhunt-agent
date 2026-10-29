@@ -19,6 +19,8 @@ export const Profile = z.object({
       city: z.string().min(1),
       state: z.string().min(1),
       postalCode: z.string().optional(),
+      // e.g. "Queens" (Flushing, NY 11354 is in Queens County).
+      county: z.string().optional(),
       country: z.string().min(1),
     }),
   }),

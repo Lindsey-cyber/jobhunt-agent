@@ -435,4 +435,10 @@ describe("buildPlan", () => {
     const f = field("Are you authorized to work for any US employer without sponsorship?", { kind: "combobox", options: ["Yes", "No"] });
     expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: "No" });
   });
+
+  it("reads 'eligible to work in this location' as the posting's country", () => {
+    const p = { ...user.profile, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const f = field("Are you eligible to work in this location (without sponsorship)?", { kind: "combobox", options: ["Yes", "No"] });
+    expect(buildPlan({ ...form([f]), jobLocation: "New York, NY" }, p, user.bank).items[0]).toMatchObject({ value: "No" });
+  });
 });

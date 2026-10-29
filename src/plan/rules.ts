@@ -39,7 +39,7 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 
 // "the country where the job is located" names no country; the posting does.
 // Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b/;
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);

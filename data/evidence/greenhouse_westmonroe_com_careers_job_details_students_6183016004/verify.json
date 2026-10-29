@@ -1,0 +1,251 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Masters",
+      "actual": "Masters",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "start-month--0",
+      "label": "Start date month",
+      "expected": "January",
+      "actual": "January",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-month--0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885370004",
+      "label": "What is your legal first name?",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885371004",
+      "label": "What is your legal last name?",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885372004",
+      "label": "Address Line 1:",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885373004",
+      "label": "Address Line 2:",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885374004",
+      "label": "City:",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885375004",
+      "label": "State:",
+      "expected": "NY",
+      "actual": "NY",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885376004",
+      "label": "Postal Code:",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885377004",
+      "label": "Are you legally authorized to work in the US now and in the future for any employer without visa sponsorship?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885378004",
+      "label": "Are you currently in one of these sponsored statuses: O-1, TN, H1B1, H1B, E3?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885381004",
+      "label": "Have you previously worked at West Monroe?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885383004",
+      "label": "Are you currently subject to a non-compete, non-solicitation, employment agreement or any other obligation with another employer that could affect your ability to perform the job for which you are applying?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885386004",
+      "label": "Will you be able to meet West Monroe's hybrid location requirement? By your start date, you must live within a 50-mile radius of the office location for which you are applying (whether you already live there or relocate before your start date).",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885388004",
+      "label": "We may contact you via SMS or WhatsApp to provide updates on your application status. Please select yes if you agree. If you select no, we will contact you via the email address you provided.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885393004",
+      "label": "Linkedin Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885396004",
+      "label": "I certify that the information I have provided in this application is true, complete, and accurate to the best of my knowledge. I understand that any false statement, misrepresentation, or omission may result in West Monroe withdrawing my application from consideration, withdrawing an offer, or, if I am hired, taking disciplinary action up to and including termination of employment. These actions may be taken regardless of when the information is discovered and are subject to applicable law.",
+      "expected": "Confirmed",
+      "actual": "Confirmed",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19885397004",
+      "label": "I certify that the information I have provided in this application is true, complete, and accurate to the best of my knowledge. I understand that any false statement, misrepresentation, or omission may result in West Monroe withdrawing my application from consideration, withdrawing an offer, or, if I am hired, taking disciplinary action up to and including termination of employment. These actions may be taken regardless of when the information is discovered and are subject to applicable law.",
+      "expected": "Confirmed",
+      "actual": "Confirmed",
+      "pass": true
+    },
+    {
+      "fieldId": "4000275004",
+      "label": "Please select your ethnicity.",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000277004",
+      "label": "Please indicate whether you are a veteran.",
+      "expected": "No, I am not a veteran",
+      "actual": "No, I am not a veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "gdpr_demographic_data_consent_given",
+      "label": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+      "expected": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+      "actual": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you currently in student (F-1) or Trainee (J1) status and/or have work authorization under CPT, OPT or STEM OPT?",
+    "Are you related to a West Monroe employee?",
+    "Have you ever been employed by or had any form of professional relationship with a client of West Monroe?",
+    "Consultants are expected to work full-time (40 hours per week) and work from a West Monroe office a minimum of two days a week. Are you able to commit to a full-time, hybrid role?",
+    "This role requires travel up to 50% of the time, typically Monday through Thursday. All travel expenses are covered by West Monroe. Are you willing and able to meet this travel requirement?",
+    "What is your overall, total GPA?",
+    "Which of the following best describes your major?",
+    "Is your graduation date between December 2026 and August 2027?",
+    "How did you hear about West Monroe?",
+    "Please review our current policy regarding use of generative artificial intelligence during the application process.",
+    "With which gender identity do you identify?",
+    "Which racial categories best describe you? Select all that apply."
+  ],
+  "fillErrors": []
+}

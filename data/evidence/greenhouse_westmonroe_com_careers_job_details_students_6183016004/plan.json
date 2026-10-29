@@ -1,0 +1,2378 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=westmonroe5&token=6183016004",
+    "company": "West Monroe (Campus)",
+    "jobTitle": "2027 Software Engineering (AI Concentration) Consultant",
+    "jobLocation": "Chicago",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Aalborg University",
+          "Aalto University",
+          "Aaniiih Nakoda College",
+          "Aarhus University",
+          "Abertay University",
+          "Aberystwyth University",
+          "Abilene Christian University",
+          "Abo Akademi University",
+          "Abraham Baldwin Agricultural College",
+          "Abraham Lincoln University",
+          "Abu Dhabi University",
+          "Academy College",
+          "Academy of Art University",
+          "Acadia University",
+          "Acharya Nagarjuna University",
+          "Activate Work Inc.",
+          "Acupuncture and Integrative Medicine College - Berkeley",
+          "Acupuncture and Massage College",
+          "Adams State University",
+          "Adelphi University",
+          "Adrian College",
+          "Adventist University of Health Sciences",
+          "Agnes Scott College",
+          "AIB College of Business",
+          "Aiken Technical College",
+          "Aims Community College",
+          "AIMS Education - College of Health Sciences",
+          "Ain Shams University",
+          "Airlangga University",
+          "Ajou University",
+          "Alabama A&M University",
+          "Alabama State University",
+          "Alamance Community College",
+          "Alamo Colleges District",
+          "Alaska Bible College",
+          "Alaska Pacific University",
+          "Al Azhar University",
+          "Albany College of Pharmacy and Health Sciences",
+          "Albany State University",
+          "Albany Technical College",
+          "Albertus Magnus College",
+          "Albion College",
+          "Albizu University",
+          "Albright College",
+          "Alcorn State University",
+          "Alderson Broaddus University",
+          "Alexandria Technical & Community College",
+          "Alexandria University",
+          "Alexandru Ioan Cuza University",
+          "Alex Batchelor University",
+          "Al-Farabi Kazakh National University",
+          "Alfred University",
+          "Alice Lloyd College",
+          "Al-Imam Mohamed Ibn Saud Islamic University",
+          "Allan Hancock College",
+          "Allegany College of Maryland",
+          "Allegheny College",
+          "Allegheny Wesleyan College",
+          "Allen College",
+          "Allen County Community College",
+          "Allen University",
+          "Alliant International University",
+          "Alliant International University-San Diego",
+          "Alma College",
+          "Alpena Community College",
+          "Alpen-Adria-Universität Klagenfurt",
+          "Alvernia University",
+          "Alverno College",
+          "Alvin Community College",
+          "Amarillo College",
+          "Amberton University",
+          "Ambria College of Nursing",
+          "America Evangelical University",
+          "American Academy of Art",
+          "American Baptist College",
+          "American Business and Technology University",
+          "American College for Medical Careers",
+          "American College of Education",
+          "American College of Financial Services",
+          "American College of Healthcare Sciences",
+          "American Indian College of the Assemblies of God",
+          "American Institute of Alternative Medicine",
+          "American Institute of Medical Sciences & Education",
+          "American InterContinental University",
+          "American International College",
+          "American Islamic College",
+          "American Jewish University",
+          "American Military University",
+          "American Musical and Dramatic Academy",
+          "American National University",
+          "American Public University",
+          "American Public University System",
+          "American River College",
+          "American Samoa Community College",
+          "American Sentinel University",
+          "American University",
+          "American University in Bulgaria",
+          "American University in Cairo",
+          "American University of Beirut",
+          "American University of Beirut (AUB)"
+        ]
+      },
+      {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Accelerated Master's",
+          "Advanced Certificate",
+          "Associates",
+          "Associate's Degree",
+          "Bachelors",
+          "Bachelor's Degree",
+          "Certificate",
+          "Community / Technical College",
+          "Doctorate",
+          "Doctor of Medicine (M.D.)",
+          "Doctor of Philosophy (Ph.D.)",
+          "Engineer's Degree",
+          "High School",
+          "Juris Doctor (J.D.)",
+          "Master of Business Administration (M.B.A.)",
+          "Masters",
+          "Master's Degree",
+          "Master's of Business Administration",
+          "Non-Degree Seeking",
+          "Other",
+          "Postdoctoral Studies",
+          "Technical Diploma"
+        ]
+      },
+      {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Accounting",
+          "Actuarial/Risk Analysis",
+          "Advertising",
+          "Aerospace Engineering",
+          "African Studies",
+          "Agricultural Production Operations",
+          "Agriculture",
+          "Agriculture & Biological Engineering",
+          "Agriculture Business",
+          "Agriculture Education",
+          "Agriculture Public Services",
+          "Agronomy",
+          "American Sign Language",
+          "Animal Science",
+          "Anthropology",
+          "Applied Health Services",
+          "Architectural Engineering Technologies & Technicians",
+          "Architecture",
+          "Art",
+          "Art History",
+          "Asian Studies",
+          "Astronomy/Space Exploration",
+          "Athletic Training",
+          "Automation Engineering",
+          "Automotive Engineering",
+          "Aviation",
+          "Biochemistry",
+          "Biology",
+          "Biomedical Engineering",
+          "Biotechnology",
+          "Botany/Plant Biology",
+          "Business",
+          "Business Administration",
+          "Business Administration & Management",
+          "Business Analytics",
+          "Cartography",
+          "Cell Biology",
+          "Chemical Engineering",
+          "Chemistry",
+          "City, Urban, Regional Planning",
+          "Civil Engineering Technologies & Technicians",
+          "Civil/Environmental Engineering",
+          "Classical Languages",
+          "Classical Studies",
+          "Cognition & Neuroscience/Biopsychology",
+          "Communication Disorders Sciences & Services",
+          "Communication & Media Studies",
+          "Communications & Film",
+          "Comparative Literature",
+          "Computer Engineering",
+          "Computer Engineering Technologies & Technicians",
+          "Computer Programming",
+          "Computer Science",
+          "Computer Systems Networking & Telecommunications",
+          "Conservation",
+          "Construction Engineering",
+          "Construction Management",
+          "Construction Trades",
+          "Consulting",
+          "Cosmetology",
+          "Counseling",
+          "Creative Writing",
+          "Criminal Justice/Criminology",
+          "Culinary Arts",
+          "Cultural & Ethnic Studies",
+          "Cyber Security",
+          "Data Mining",
+          "Data Science",
+          "Dentistry",
+          "Design & Applied Arts",
+          "Developing Nations",
+          "Dietetics",
+          "Digital Communication",
+          "Discipline Unknown",
+          "Documentary/Film",
+          "Drafting/Design Engineering Technologies & Technicians",
+          "Drama & Theatre Arts",
+          "Early Childhood Education",
+          "Earth Sciences",
+          "Ecology",
+          "Economics",
+          "Education",
+          "Education Administration",
+          "Electrical/Electronics Maintenance and Repair Technologies",
+          "Electrical Engineering",
+          "Electrical Engineering Technologies & Technicians",
+          "Electromechanical Instrumentation and Maintenance Technologies & Technicians",
+          "Electronics",
+          "Elementary Education",
+          "Emergency Management/Homeland Security",
+          "Energy Engineering",
+          "Engineering",
+          "English",
+          "English Studies",
+          "Entrepreneurship",
+          "Environmental Control and Systems Technologies & Technicians",
+          "Environmental Management & Sciences",
+          "Environmental Studies",
+          "Epidemiology",
+          "European Studies"
+        ]
+      },
+      {
+        "id": "start-month--0",
+        "label": "Start date month",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      {
+        "id": "start-year--0",
+        "label": "Start date year",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "end-month--0",
+        "label": "End date month",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      {
+        "id": "end-year--0",
+        "label": "End date year",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19885370004",
+        "label": "What is your legal first name?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19885371004",
+        "label": "What is your legal last name?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19885372004",
+        "label": "Address Line 1:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19885373004",
+        "label": "Address Line 2:",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_19885374004",
+        "label": "City:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19885375004",
+        "label": "State:",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "AL",
+          "AK",
+          "AZ",
+          "AR",
+          "CA",
+          "CO",
+          "CT",
+          "DE",
+          "DC",
+          "FL",
+          "GA",
+          "HI",
+          "ID",
+          "IL",
+          "IN",
+          "IA",
+          "KS",
+          "KY",
+          "LA",
+          "ME",
+          "MD",
+          "MA",
+          "MI",
+          "MN",
+          "MS",
+          "MO",
+          "MT",
+          "NE",
+          "NV",
+          "NH",
+          "NJ",
+          "NM",
+          "NY",
+          "NC",
+          "ND",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VT",
+          "VA",
+          "WA",
+          "WV",
+          "WI",
+          "WY"
+        ]
+      },
+      {
+        "id": "question_19885376004",
+        "label": "Postal Code:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19885377004",
+        "label": "Are you legally authorized to work in the US now and in the future for any employer without visa sponsorship?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885378004",
+        "label": "Are you currently in one of these sponsored statuses: O-1, TN, H1B1, H1B, E3?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885379004",
+        "label": "Are you currently in student (F-1) or Trainee (J1) status and/or have work authorization under CPT, OPT or STEM OPT?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885380004",
+        "label": "Are you related to a West Monroe employee?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885381004",
+        "label": "Have you previously worked at West Monroe?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885382004",
+        "label": "Have you ever been employed by or had any form of professional relationship with a client of West Monroe?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885383004",
+        "label": "Are you currently subject to a non-compete, non-solicitation, employment agreement or any other obligation with another employer that could affect your ability to perform the job for which you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885384004",
+        "label": "Consultants are expected to work full-time (40 hours per week) and work from a West Monroe office a minimum of two days a week. Are you able to commit to a full-time, hybrid role?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885385004",
+        "label": "This role requires travel up to 50% of the time, typically Monday through Thursday. All travel expenses are covered by West Monroe. Are you willing and able to meet this travel requirement?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885386004",
+        "label": "Will you be able to meet West Monroe's hybrid location requirement? By your start date, you must live within a 50-mile radius of the office location for which you are applying (whether you already live there or relocate before your start date).",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885387004",
+        "label": "Please indicate any special circumstances we should be aware of regarding your practice preferences or more details on your geographic flexibility (optional).",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_19885388004",
+        "label": "We may contact you via SMS or WhatsApp to provide updates on your application status. Please select yes if you agree. If you select no, we will contact you via the email address you provided.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885389004",
+        "label": "What is your overall, total GPA?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "3.5+",
+          "3.0-3.49",
+          "2.8-2.99",
+          "2.5-2.79",
+          "2.49 or Below",
+          "No GPA"
+        ]
+      },
+      {
+        "id": "question_19885390004",
+        "label": "Which of the following best describes your major?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Computer Engineering",
+          "Computer Science (AI Concentration preferred)",
+          "Information Systems",
+          "Software Engineering",
+          "Other not listed"
+        ]
+      },
+      {
+        "id": "question_19885391004",
+        "label": "Is your graduation date between December 2026 and August 2027?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_19885392004",
+        "label": "Please upload your unofficial transcript.",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19885393004",
+        "label": "Linkedin Profile",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_19885394004",
+        "label": "How did you hear about West Monroe?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Campus Event",
+          "Campus Job Posting",
+          "LinkedIn Job Posting",
+          "LinkedIn Peer Posting",
+          "Out in Tech",
+          "Grace Hopper",
+          "JumpStart",
+          "Blacks in Tech",
+          "Prospanica",
+          "Society of Women Engineers",
+          "National Society of Black Engineers (NSBE)",
+          "Association of Latino Professionals For America (ALPFA)",
+          "Racing Towards Diversity",
+          "Forte",
+          "Referral (please specify below)",
+          "Posse Foundation",
+          "WayUp",
+          "Relish Careers",
+          "RippleMatch",
+          "Other / Unsure",
+          "Women Who Code"
+        ]
+      },
+      {
+        "id": "question_19885395004",
+        "label": "Please review our current policy regarding use of generative artificial intelligence during the application process.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Acknowledged"
+        ]
+      },
+      {
+        "id": "question_19885396004",
+        "label": "I certify that the information I have provided in this application is true, complete, and accurate to the best of my knowledge. I understand that any false statement, misrepresentation, or omission may result in West Monroe withdrawing my application from consideration, withdrawing an offer, or, if I am hired, taking disciplinary action up to and including termination of employment. These actions may be taken regardless of when the information is discovered and are subject to applicable law.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Confirmed"
+        ]
+      },
+      {
+        "id": "question_19885397004",
+        "label": "I certify that the information I have provided in this application is true, complete, and accurate to the best of my knowledge. I understand that any false statement, misrepresentation, or omission may result in West Monroe withdrawing my application from consideration, withdrawing an offer, or, if I am hired, taking disciplinary action up to and including termination of employment. These actions may be taken regardless of when the information is discovered and are subject to applicable law.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Confirmed"
+        ]
+      },
+      {
+        "id": "4000274004",
+        "label": "With which gender identity do you identify?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Man",
+          "Woman",
+          "Non-binary",
+          "Other, please specify",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "4000275004",
+        "label": "Please select your ethnicity.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Hispanic or Latino",
+          "Not Hispanic or Latino",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "4000276004",
+        "label": "Which racial categories best describe you? Select all that apply.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Native American or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "Native Hawaiian or Other Pacific Islander",
+          "White",
+          "Two or more races",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "4000277004",
+        "label": "Please indicate whether you are a veteran.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes, I am a veteran",
+          "No, I am not a veteran",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "gdpr_demographic_data_consent_given",
+        "label": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above."
+        ]
+      }
+    ],
+    "priorApplications": 1
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Aalborg University",
+          "Aalto University",
+          "Aaniiih Nakoda College",
+          "Aarhus University",
+          "Abertay University",
+          "Aberystwyth University",
+          "Abilene Christian University",
+          "Abo Akademi University",
+          "Abraham Baldwin Agricultural College",
+          "Abraham Lincoln University",
+          "Abu Dhabi University",
+          "Academy College",
+          "Academy of Art University",
+          "Acadia University",
+          "Acharya Nagarjuna University",
+          "Activate Work Inc.",
+          "Acupuncture and Integrative Medicine College - Berkeley",
+          "Acupuncture and Massage College",
+          "Adams State University",
+          "Adelphi University",
+          "Adrian College",
+          "Adventist University of Health Sciences",
+          "Agnes Scott College",
+          "AIB College of Business",
+          "Aiken Technical College",
+          "Aims Community College",
+          "AIMS Education - College of Health Sciences",
+          "Ain Shams University",
+          "Airlangga University",
+          "Ajou University",
+          "Alabama A&M University",
+          "Alabama State University",
+          "Alamance Community College",
+          "Alamo Colleges District",
+          "Alaska Bible College",
+          "Alaska Pacific University",
+          "Al Azhar University",
+          "Albany College of Pharmacy and Health Sciences",
+          "Albany State University",
+          "Albany Technical College",
+          "Albertus Magnus College",
+          "Albion College",
+          "Albizu University",
+          "Albright College",
+          "Alcorn State University",
+          "Alderson Broaddus University",
+          "Alexandria Technical & Community College",
+          "Alexandria University",
+          "Alexandru Ioan Cuza University",
+          "Alex Batchelor University",
+          "Al-Farabi Kazakh National University",
+          "Alfred University",
+          "Alice Lloyd College",
+          "Al-Imam Mohamed Ibn Saud Islamic University",
+          "Allan Hancock College",
+          "Allegany College of Maryland",
+          "Allegheny College",
+          "Allegheny Wesleyan College",
+          "Allen College",
+          "Allen County Community College",
+          "Allen University",
+          "Alliant International University",
+          "Alliant International University-San Diego",
+          "Alma College",
+          "Alpena Community College",
+          "Alpen-Adria-Universität Klagenfurt",
+          "Alvernia University",
+          "Alverno College",
+          "Alvin Community College",
+          "Amarillo College",
+          "Amberton University",
+          "Ambria College of Nursing",
+          "America Evangelical University",
+          "American Academy of Art",
+          "American Baptist College",
+          "American Business and Technology University",
+          "American College for Medical Careers",
+          "American College of Education",
+          "American College of Financial Services",
+          "American College of Healthcare Sciences",
+          "American Indian College of the Assemblies of God",
+          "American Institute of Alternative Medicine",
+          "American Institute of Medical Sciences & Education",
+          "American InterContinental University",
+          "American International College",
+          "American Islamic College",
+          "American Jewish University",
+          "American Military University",
+          "American Musical and Dramatic Academy",
+          "American National University",
+          "American Public University",
+          "American Public University System",
+          "American River College",
+          "American Samoa Community College",
+          "American Sentinel University",
+          "American University",
+          "American University in Bulgaria",
+          "American University in Cairo",
+          "American University of Beirut",
+          "American University of Beirut (AUB)"
+        ]
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Accelerated Master's",
+          "Advanced Certificate",
+          "Associates",
+          "Associate's Degree",
+          "Bachelors",
+          "Bachelor's Degree",
+          "Certificate",
+          "Community / Technical College",
+          "Doctorate",
+          "Doctor of Medicine (M.D.)",
+          "Doctor of Philosophy (Ph.D.)",
+          "Engineer's Degree",
+          "High School",
+          "Juris Doctor (J.D.)",
+          "Master of Business Administration (M.B.A.)",
+          "Masters",
+          "Master's Degree",
+          "Master's of Business Administration",
+          "Non-Degree Seeking",
+          "Other",
+          "Postdoctoral Studies",
+          "Technical Diploma"
+        ]
+      },
+      "value": "Masters",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Accounting",
+          "Actuarial/Risk Analysis",
+          "Advertising",
+          "Aerospace Engineering",
+          "African Studies",
+          "Agricultural Production Operations",
+          "Agriculture",
+          "Agriculture & Biological Engineering",
+          "Agriculture Business",
+          "Agriculture Education",
+          "Agriculture Public Services",
+          "Agronomy",
+          "American Sign Language",
+          "Animal Science",
+          "Anthropology",
+          "Applied Health Services",
+          "Architectural Engineering Technologies & Technicians",
+          "Architecture",
+          "Art",
+          "Art History",
+          "Asian Studies",
+          "Astronomy/Space Exploration",
+          "Athletic Training",
+          "Automation Engineering",
+          "Automotive Engineering",
+          "Aviation",
+          "Biochemistry",
+          "Biology",
+          "Biomedical Engineering",
+          "Biotechnology",
+          "Botany/Plant Biology",
+          "Business",
+          "Business Administration",
+          "Business Administration & Management",
+          "Business Analytics",
+          "Cartography",
+          "Cell Biology",
+          "Chemical Engineering",
+          "Chemistry",
+          "City, Urban, Regional Planning",
+          "Civil Engineering Technologies & Technicians",
+          "Civil/Environmental Engineering",
+          "Classical Languages",
+          "Classical Studies",
+          "Cognition & Neuroscience/Biopsychology",
+          "Communication Disorders Sciences & Services",
+          "Communication & Media Studies",
+          "Communications & Film",
+          "Comparative Literature",
+          "Computer Engineering",
+          "Computer Engineering Technologies & Technicians",
+          "Computer Programming",
+          "Computer Science",
+          "Computer Systems Networking & Telecommunications",
+          "Conservation",
+          "Construction Engineering",
+          "Construction Management",
+          "Construction Trades",
+          "Consulting",
+          "Cosmetology",
+          "Counseling",
+          "Creative Writing",
+          "Criminal Justice/Criminology",
+          "Culinary Arts",
+          "Cultural & Ethnic Studies",
+          "Cyber Security",
+          "Data Mining",
+          "Data Science",
+          "Dentistry",
+          "Design & Applied Arts",
+          "Developing Nations",
+          "Dietetics",
+          "Digital Communication",
+          "Discipline Unknown",
+          "Documentary/Film",
+          "Drafting/Design Engineering Technologies & Technicians",
+          "Drama & Theatre Arts",
+          "Early Childhood Education",
+          "Earth Sciences",
+          "Ecology",
+          "Economics",
+          "Education",
+          "Education Administration",
+          "Electrical/Electronics Maintenance and Repair Technologies",
+          "Electrical Engineering",
+          "Electrical Engineering Technologies & Technicians",
+          "Electromechanical Instrumentation and Maintenance Technologies & Technicians",
+          "Electronics",
+          "Elementary Education",
+          "Emergency Management/Homeland Security",
+          "Energy Engineering",
+          "Engineering",
+          "English",
+          "English Studies",
+          "Entrepreneurship",
+          "Environmental Control and Systems Technologies & Technicians",
+          "Environmental Management & Sciences",
+          "Environmental Studies",
+          "Epidemiology",
+          "European Studies"
+        ]
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "start-month--0",
+        "label": "Start date month",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      "value": "January",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "start-year--0",
+        "label": "Start date year",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "end-month--0",
+        "label": "End date month",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      "value": "May",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "end-year--0",
+        "label": "End date year",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885370004",
+        "label": "What is your legal first name?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885371004",
+        "label": "What is your legal last name?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885372004",
+        "label": "Address Line 1:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885373004",
+        "label": "Address Line 2:",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Apt 3BS",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line2"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885374004",
+        "label": "City:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885375004",
+        "label": "State:",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "AL",
+          "AK",
+          "AZ",
+          "AR",
+          "CA",
+          "CO",
+          "CT",
+          "DE",
+          "DC",
+          "FL",
+          "GA",
+          "HI",
+          "ID",
+          "IL",
+          "IN",
+          "IA",
+          "KS",
+          "KY",
+          "LA",
+          "ME",
+          "MD",
+          "MA",
+          "MI",
+          "MN",
+          "MS",
+          "MO",
+          "MT",
+          "NE",
+          "NV",
+          "NH",
+          "NJ",
+          "NM",
+          "NY",
+          "NC",
+          "ND",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VT",
+          "VA",
+          "WA",
+          "WV",
+          "WI",
+          "WY"
+        ]
+      },
+      "value": "NY",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885376004",
+        "label": "Postal Code:",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885377004",
+        "label": "Are you legally authorized to work in the US now and in the future for any employer without visa sponsorship?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885378004",
+        "label": "Are you currently in one of these sponsored statuses: O-1, TN, H1B1, H1B, E3?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885379004",
+        "label": "Are you currently in student (F-1) or Trainee (J1) status and/or have work authorization under CPT, OPT or STEM OPT?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885380004",
+        "label": "Are you related to a West Monroe employee?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885381004",
+        "label": "Have you previously worked at West Monroe?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885382004",
+        "label": "Have you ever been employed by or had any form of professional relationship with a client of West Monroe?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885383004",
+        "label": "Are you currently subject to a non-compete, non-solicitation, employment agreement or any other obligation with another employer that could affect your ability to perform the job for which you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885384004",
+        "label": "Consultants are expected to work full-time (40 hours per week) and work from a West Monroe office a minimum of two days a week. Are you able to commit to a full-time, hybrid role?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885385004",
+        "label": "This role requires travel up to 50% of the time, typically Monday through Thursday. All travel expenses are covered by West Monroe. Are you willing and able to meet this travel requirement?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885386004",
+        "label": "Will you be able to meet West Monroe's hybrid location requirement? By your start date, you must live within a 50-mile radius of the office location for which you are applying (whether you already live there or relocate before your start date).",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_19885387004",
+        "label": "Please indicate any special circumstances we should be aware of regarding your practice preferences or more details on your geographic flexibility (optional).",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885388004",
+        "label": "We may contact you via SMS or WhatsApp to provide updates on your application status. Please select yes if you agree. If you select no, we will contact you via the email address you provided.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "smsUpdates"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885389004",
+        "label": "What is your overall, total GPA?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "3.5+",
+          "3.0-3.49",
+          "2.8-2.99",
+          "2.5-2.79",
+          "2.49 or Below",
+          "No GPA"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885390004",
+        "label": "Which of the following best describes your major?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Computer Engineering",
+          "Computer Science (AI Concentration preferred)",
+          "Information Systems",
+          "Software Engineering",
+          "Other not listed"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885391004",
+        "label": "Is your graduation date between December 2026 and August 2027?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885392004",
+        "label": "Please upload your unofficial transcript.",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885393004",
+        "label": "Linkedin Profile",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885394004",
+        "label": "How did you hear about West Monroe?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Campus Event",
+          "Campus Job Posting",
+          "LinkedIn Job Posting",
+          "LinkedIn Peer Posting",
+          "Out in Tech",
+          "Grace Hopper",
+          "JumpStart",
+          "Blacks in Tech",
+          "Prospanica",
+          "Society of Women Engineers",
+          "National Society of Black Engineers (NSBE)",
+          "Association of Latino Professionals For America (ALPFA)",
+          "Racing Towards Diversity",
+          "Forte",
+          "Referral (please specify below)",
+          "Posse Foundation",
+          "WayUp",
+          "Relish Careers",
+          "RippleMatch",
+          "Other / Unsure",
+          "Women Who Code"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19885395004",
+        "label": "Please review our current policy regarding use of generative artificial intelligence during the application process.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Acknowledged"
+        ]
+      },
+      "reason": "acknowledgements and consents need the candidate"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885396004",
+        "label": "I certify that the information I have provided in this application is true, complete, and accurate to the best of my knowledge. I understand that any false statement, misrepresentation, or omission may result in West Monroe withdrawing my application from consideration, withdrawing an offer, or, if I am hired, taking disciplinary action up to and including termination of employment. These actions may be taken regardless of when the information is discovered and are subject to applicable law.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Confirmed"
+        ]
+      },
+      "value": "Confirmed",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19885397004",
+        "label": "I certify that the information I have provided in this application is true, complete, and accurate to the best of my knowledge. I understand that any false statement, misrepresentation, or omission may result in West Monroe withdrawing my application from consideration, withdrawing an offer, or, if I am hired, taking disciplinary action up to and including termination of employment. These actions may be taken regardless of when the information is discovered and are subject to applicable law.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Confirmed"
+        ]
+      },
+      "value": "Confirmed",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "4000274004",
+        "label": "With which gender identity do you identify?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Man",
+          "Woman",
+          "Non-binary",
+          "Other, please specify",
+          "I don't wish to answer"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "4000275004",
+        "label": "Please select your ethnicity.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Hispanic or Latino",
+          "Not Hispanic or Latino",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "4000276004",
+        "label": "Which racial categories best describe you? Select all that apply.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Native American or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "Native Hawaiian or Other Pacific Islander",
+          "White",
+          "Two or more races",
+          "I don't wish to answer"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "4000277004",
+        "label": "Please indicate whether you are a veteran.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes, I am a veteran",
+          "No, I am not a veteran",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "No, I am not a veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gdpr_demographic_data_consent_given",
+        "label": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above."
+        ]
+      },
+      "value": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

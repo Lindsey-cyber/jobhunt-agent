@@ -396,3 +396,12 @@ answers:
     answer: "Yes"
     company: Study.com
     origin: human
+  # Her status is F-1 OPT (visa-status).
+  - id: f1-opt-status
+    question: Are you currently in student (F-1) or Trainee (J1) status and/or have work authorization under CPT, OPT or STEM OPT?
+    aliases:
+      - Are you currently on F-1 OPT or STEM OPT?
+      - Are you currently in F-1 status?
+      - Do you have work authorization under CPT, OPT or STEM OPT?
+    answer: "Yes"
+    origin: human

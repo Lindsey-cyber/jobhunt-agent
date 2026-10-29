@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
+    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\""
+  ]
+}

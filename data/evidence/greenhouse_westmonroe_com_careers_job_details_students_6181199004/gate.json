@@ -1,0 +1,20 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you related to a West Monroe employee?\": sensitive question with no exact answer",
+    "required \"Are you currently in student (F-1) or Trainee (J1) status and/or have work authorization under CPT, OPT or STEM OPT?\": sensitive question with no exact answer",
+    "required \"What is your overall, total GPA?\": no answer in profile or answer bank",
+    "required \"Is your graduation date between December 2026 and August 2027?\": no answer in profile or answer bank",
+    "required \"Please upload your unofficial transcript.\": no document for this upload",
+    "required \"Please review our current policy regarding use of generative artificial intelligence during the application process.\": acknowledgements and consents need the candidate",
+    "required \"With which gender identity do you identify?\": sensitive question with no exact answer",
+    "required \"Which racial categories best describe you? Select all that apply.\": sensitive question with no exact answer",
+    "required \"Are you related to a West Monroe employee?\" is empty after filling",
+    "required \"Are you currently in student (F-1) or Trainee (J1) status and/or have work authorization under CPT, OPT or STEM OPT?\" is empty after filling",
+    "required \"What is your overall, total GPA?\" is empty after filling",
+    "required \"Is your graduation date between December 2026 and August 2027?\" is empty after filling",
+    "required \"Please review our current policy regarding use of generative artificial intelligence during the application process.\" is empty after filling",
+    "required \"With which gender identity do you identify?\" is empty after filling",
+    "required \"Which racial categories best describe you? Select all that apply.\" is empty after filling"
+  ]
+}

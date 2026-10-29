@@ -1,0 +1,211 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Masters",
+      "actual": "Masters",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "end-month--0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855137004",
+      "label": "What is your legal first name?",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855138004",
+      "label": "What is your legal last name?",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855139004",
+      "label": "Address Line 1:",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855140004",
+      "label": "Address Line 2:",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855141004",
+      "label": "City:",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855142004",
+      "label": "State:",
+      "expected": "NY",
+      "actual": "NY",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855143004",
+      "label": "Postal Code:",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855145004",
+      "label": "Are you legally authorized to work in the US now and in the future for any employer without visa sponsorship?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855146004",
+      "label": "Are you currently in one of these sponsored statuses: O-1, TN, H1B1, H1B, E3?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855148004",
+      "label": "Are you currently subject to a non-compete, non-solicitation, employment agreement or any other obligation with another employer that could affect your ability to perform the job for which you are applying?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855152004",
+      "label": "We would like to contact you via SMS or WhatsApp to provide updates on your application status. Please select yes if you agree. If you select no, we will contact you via the email address you provided.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19855153004",
+      "label": "Have you previously worked at West Monroe?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19861660004",
+      "label": "I certify that the information I have provided in this application is true, complete, and accurate to the best of my knowledge. I understand that any false statement, misrepresentation, or omission may result in West Monroe withdrawing my application from consideration, withdrawing an offer, or, if I am hired, taking disciplinary action up to and including termination of employment. These actions may be taken regardless of when the information is discovered and are subject to applicable law.",
+      "expected": "Confirmed",
+      "actual": "Confirmed",
+      "pass": true
+    },
+    {
+      "fieldId": "4000275004",
+      "label": "Please select your ethnicity.",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000277004",
+      "label": "Please indicate whether you are a veteran.",
+      "expected": "No, I am not a veteran",
+      "actual": "No, I am not a veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "gdpr_demographic_data_consent_given",
+      "label": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+      "expected": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+      "actual": "By checking this box, I consent to West Monroe (Campus) collecting, storing, and processing my responses to the demographic data surveys above.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you related to a West Monroe employee?",
+    "Are you currently in student (F-1) or Trainee (J1) status and/or have work authorization under CPT, OPT or STEM OPT?",
+    "What is your overall, total GPA?",
+    "Is your graduation date between December 2026 and August 2027?",
+    "Please review our current policy regarding use of generative artificial intelligence during the application process.",
+    "With which gender identity do you identify?",
+    "Which racial categories best describe you? Select all that apply."
+  ],
+  "fillErrors": []
+}

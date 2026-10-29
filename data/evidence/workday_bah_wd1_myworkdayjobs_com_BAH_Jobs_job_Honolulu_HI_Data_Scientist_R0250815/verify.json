@@ -1,0 +1,189 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Have you previously been employed by Booz Allen?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "jobTitle",
+      "label": "Job Title",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
+      "pass": true
+    },
+    {
+      "fieldId": "companyName",
+      "label": "Company",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "startDate",
+      "label": "From",
+      "expected": "01/2026",
+      "actual": "01/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "endDate",
+      "label": "To",
+      "expected": "05/2026",
+      "actual": "05/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "schoolName",
+      "label": "School or University",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "fieldOfStudy",
+      "label": "Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "065d9d3c238710011a2e488a54f90001",
+      "label": "1. Have you entered into any agreement in connection with your current employment or any former employment that ended within the last three years that relates to your ability to work for another employer or the roles or duties you may perform in your employment, including, but not limited to, any non-compete agreements and/or non-solicitation agreements (to include those agreements that you electronically acknowledged/entered)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "065d9d3c238710011a2e492408b00003",
+      "label": "2. Will your acceptance of employment from Booz Allen Hamilton or your performance of any job duties required for this role breach or violate any non-compete agreement, any non-solicitation agreement, or any other contract or agreement?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "065d9d3c238710011a2e49bee80a0001",
+      "label": "3. Are you currently legally authorized to work for Booz Allen Hamilton on a full-time basis for an indefinite period of time in the country where this role is based?If this role is located in the United States, answer ‘Yes/No’ based on your authorization to work in the United States.If this role is not located in the United States, answer ‘Yes/No’ based on your authorization to work in the country where the role is based.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "065d9d3c238710011a2e49bee80a0004",
+      "label": "4. Will you now, or in the future, require sponsorship by your employer to legally work in the country where this role is located? (i.e., Visa, SOFA, DOCPER)If this role is located in the United States, answer ‘Yes/No’ based on your need for sponsorship to work in the United States.If this role is not located in the United States, answer ‘Yes/No’ based on your need for sponsorship in the country where the role is located.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "5. U.S. Federal Government EmploymentVarious federal laws restrict the post-government employment (PGE) activities of FORMER federal government employees. These laws also place conditions on CURRENT federal government employees who engage in discussions regarding PGE and may include an obligation to disqualify from continued participation in certain matters that may directly impact the financial interests of a prospective employer.Please check with your agency ethics official for advice if you are participating in any government matters or a procurement related to Booz Allen Hamilton or if you are uncertain if your position is considered federal employment subject to these restrictions.Please select your employment status with the United States (U.S.) Federal Government (civilian, military, reserves, or National Guard serving on Title 10 orders).",
+    "6. State, Local, & Non-U.S. Government Employment A variety of state and local laws restrict the post-government employment (PGE) activities of FORMER state/local government employees. These laws may also place conditions on CURRENT state/local government employees who engage in discussions regarding PGE and may include an obligation to disqualify from continued participation in certain matters that may directly impact the financial interests of a prospective employer.State/local government restrictions vary from state to state but may include contracting, procurement, regulatory or legislative roles, or other public employment within state, city, or municipal government. In some cases, these restrictions apply to other full and part-time employment at a state public institutions and entities to include schools, school districts, universities or similar types of other public institutions. These restrictions may also extend full- and part-time internships, and teaching or graduate assistantships, at any of these types of public institutions/entities. National Guard service on M-Day status or exclusively under Title 32 status are generally considered to be state government employees. If you are uncertain whether you are subject to restrictions, please check with your state/local government entity ethics office.Please select your state, local, non-U.S. government or other public entity (‘Government Entity’) or political party, a member of a royal family, or a candidate for political office employment status?",
+    "7. To the best of your knowledge, are you a current or former employee of an organization (‘Client’) that you believe is or may soon become (1) a Booz Allen Hamilton client other than a U.S. Federal Government or a state, local or non-U.S. government client, (2) a prime contractor that has hired Booz Allen Hamilton, or (3) a Booz Allen Hamilton partner?",
+    "8. To the best of your knowledge, is any member of your family or household a current Booz Allen Hamilton employee or member of the Board of Directors?Examples include any child, stepchild, parent, stepparent, spouse, sibling, mother-in-law, father-in-law, son-in-law, daughter-in-law, brother-in-law, or sister-in-law, and any person sharing a household other than a tenant or employee.",
+    "9. To the best of your knowledge, is any member of your immediate family (including spouse, parents, siblings, and children), member of your household, or person with whom you have a similarly close personal relationship a current employee of the U.S. Federal Government, a state, local or non-U.S. government or political party, a member of a royal family, or a candidate for political office?",
+    "10. To the best of your knowledge, is any member of your immediate family (including spouse, parents, siblings, and children), member of your household, or person with whom you have a similarly close personal relationship a current employee of an organization that you believe is or may soon become (1) a Booz Allen Hamilton client other than a U.S. Federal Government or a state, local or non-U.S. government client (2) a prime contractor that has hired Booz Allen Hamilton, or (3) a Booz Allen Hamilton partner?"
+  ],
+  "fillErrors": []
+}

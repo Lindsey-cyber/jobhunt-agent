@@ -1,0 +1,1026 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Honolulu-HI/Data-Scientist_R0250815/apply/applyManually",
+    "company": "Booz Allen Hamilton",
+    "jobTitle": "Data Scientist",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously been employed by Booz Allen?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "schoolName",
+        "label": "School or University",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Degree in Progress (no degree awarded)",
+          "High School Diploma/GED",
+          "Attendance (No Degree Awarded)",
+          "Other",
+          "Non-Degree Program",
+          "Associate's Degree",
+          "Technical Diploma",
+          "Higher Degree",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "M.B.A.",
+          "Doctorate Degree",
+          "M.D.",
+          "J.D."
+        ]
+      },
+      {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "065d9d3c238710011a2e488a54f90001",
+        "label": "1. Have you entered into any agreement in connection with your current employment or any former employment that ended within the last three years that relates to your ability to work for another employer or the roles or duties you may perform in your employment, including, but not limited to, any non-compete agreements and/or non-solicitation agreements (to include those agreements that you electronically acknowledged/entered)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "065d9d3c238710011a2e492408b00003",
+        "label": "2. Will your acceptance of employment from Booz Allen Hamilton or your performance of any job duties required for this role breach or violate any non-compete agreement, any non-solicitation agreement, or any other contract or agreement?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "065d9d3c238710011a2e49bee80a0001",
+        "label": "3. Are you currently legally authorized to work for Booz Allen Hamilton on a full-time basis for an indefinite period of time in the country where this role is based?If this role is located in the United States, answer ‘Yes/No’ based on your authorization to work in the United States.If this role is not located in the United States, answer ‘Yes/No’ based on your authorization to work in the country where the role is based.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "065d9d3c238710011a2e49bee80a0004",
+        "label": "4. Will you now, or in the future, require sponsorship by your employer to legally work in the country where this role is located? (i.e., Visa, SOFA, DOCPER)If this role is located in the United States, answer ‘Yes/No’ based on your need for sponsorship to work in the United States.If this role is not located in the United States, answer ‘Yes/No’ based on your need for sponsorship in the country where the role is located.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "065d9d3c238710011a2e49bee80a0007",
+        "label": "5. U.S. Federal Government EmploymentVarious federal laws restrict the post-government employment (PGE) activities of FORMER federal government employees. These laws also place conditions on CURRENT federal government employees who engage in discussions regarding PGE and may include an obligation to disqualify from continued participation in certain matters that may directly impact the financial interests of a prospective employer.Please check with your agency ethics official for advice if you are participating in any government matters or a procurement related to Booz Allen Hamilton or if you are uncertain if your position is considered federal employment subject to these restrictions.Please select your employment status with the United States (U.S.) Federal Government (civilian, military, reserves, or National Guard serving on Title 10 orders).",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I have never been employed by the U.S. Federal Government.",
+          "I am currently employed by the U.S. Federal Government.",
+          "I am a former employee of U.S. Federal Government that left service in the last 2 years.",
+          "I am a former employee of U.S. Federal Government that left service more than 2 years ago."
+        ]
+      },
+      {
+        "id": "065d9d3c238710011a2e4fc565f90006",
+        "label": "6. State, Local, & Non-U.S. Government Employment A variety of state and local laws restrict the post-government employment (PGE) activities of FORMER state/local government employees. These laws may also place conditions on CURRENT state/local government employees who engage in discussions regarding PGE and may include an obligation to disqualify from continued participation in certain matters that may directly impact the financial interests of a prospective employer.State/local government restrictions vary from state to state but may include contracting, procurement, regulatory or legislative roles, or other public employment within state, city, or municipal government. In some cases, these restrictions apply to other full and part-time employment at a state public institutions and entities to include schools, school districts, universities or similar types of other public institutions. These restrictions may also extend full- and part-time internships, and teaching or graduate assistantships, at any of these types of public institutions/entities. National Guard service on M-Day status or exclusively under Title 32 status are generally considered to be state government employees. If you are uncertain whether you are subject to restrictions, please check with your state/local government entity ethics office.Please select your state, local, non-U.S. government or other public entity (‘Government Entity’) or political party, a member of a royal family, or a candidate for political office employment status?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I have never been employed by a ‘Government Entity’, or political party, a member of a royal family, or a candidate for political office.",
+          "I am currently employed by a ‘Government Entity’.",
+          "I am currently employed by a political party, a member of a royal family, or a candidate for political office.",
+          "I am a former employee of a ‘Government Entity’, or political party, member of a royal family or candidate for political office that left service in the last 5 years.",
+          "I am a former employee of a ‘Government Entity’ that left service more than 5 years ago.",
+          "I am a former employee of a political party, a member of a royal family, or a candidate for political office that left service more than 5 years ago."
+        ]
+      },
+      {
+        "id": "065d9d3c238710011a2e50fa32c50004",
+        "label": "7. To the best of your knowledge, are you a current or former employee of an organization (‘Client’) that you believe is or may soon become (1) a Booz Allen Hamilton client other than a U.S. Federal Government or a state, local or non-U.S. government client, (2) a prime contractor that has hired Booz Allen Hamilton, or (3) a Booz Allen Hamilton partner?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "Not to my knowledge"
+        ]
+      },
+      {
+        "id": "065d9d3c238710011a2e51949c180006",
+        "label": "8. To the best of your knowledge, is any member of your family or household a current Booz Allen Hamilton employee or member of the Board of Directors?Examples include any child, stepchild, parent, stepparent, spouse, sibling, mother-in-law, father-in-law, son-in-law, daughter-in-law, brother-in-law, or sister-in-law, and any person sharing a household other than a tenant or employee.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "065d9d3c238710011a2e522f02420002",
+        "label": "9. To the best of your knowledge, is any member of your immediate family (including spouse, parents, siblings, and children), member of your household, or person with whom you have a similarly close personal relationship a current employee of the U.S. Federal Government, a state, local or non-U.S. government or political party, a member of a royal family, or a candidate for political office?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "Not to my knowledge"
+        ]
+      },
+      {
+        "id": "065d9d3c238710011a2e522f02420005",
+        "label": "10. To the best of your knowledge, is any member of your immediate family (including spouse, parents, siblings, and children), member of your household, or person with whom you have a similarly close personal relationship a current employee of an organization that you believe is or may soon become (1) a Booz Allen Hamilton client other than a U.S. Federal Government or a state, local or non-U.S. government client (2) a prime contractor that has hired Booz Allen Hamilton, or (3) a Booz Allen Hamilton partner?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "Not to my knowledge"
+        ]
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Honolulu, HI / Washington, DC +2"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously been employed by Booz Allen?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Research Assistant (ML)",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "01/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "schoolName",
+        "label": "School or University",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Degree in Progress (no degree awarded)",
+          "High School Diploma/GED",
+          "Attendance (No Degree Awarded)",
+          "Other",
+          "Non-Degree Program",
+          "Associate's Degree",
+          "Technical Diploma",
+          "Higher Degree",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "M.B.A.",
+          "Doctorate Degree",
+          "M.D.",
+          "J.D."
+        ]
+      },
+      "value": "Master's Degree",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "065d9d3c238710011a2e488a54f90001",
+        "label": "1. Have you entered into any agreement in connection with your current employment or any former employment that ended within the last three years that relates to your ability to work for another employer or the roles or duties you may perform in your employment, including, but not limited to, any non-compete agreements and/or non-solicitation agreements (to include those agreements that you electronically acknowledged/entered)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "065d9d3c238710011a2e492408b00003",
+        "label": "2. Will your acceptance of employment from Booz Allen Hamilton or your performance of any job duties required for this role breach or violate any non-compete agreement, any non-solicitation agreement, or any other contract or agreement?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "065d9d3c238710011a2e49bee80a0001",
+        "label": "3. Are you currently legally authorized to work for Booz Allen Hamilton on a full-time basis for an indefinite period of time in the country where this role is based?If this role is located in the United States, answer ‘Yes/No’ based on your authorization to work in the United States.If this role is not located in the United States, answer ‘Yes/No’ based on your authorization to work in the country where the role is based.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "065d9d3c238710011a2e49bee80a0004",
+        "label": "4. Will you now, or in the future, require sponsorship by your employer to legally work in the country where this role is located? (i.e., Visa, SOFA, DOCPER)If this role is located in the United States, answer ‘Yes/No’ based on your need for sponsorship to work in the United States.If this role is not located in the United States, answer ‘Yes/No’ based on your need for sponsorship in the country where the role is located.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "065d9d3c238710011a2e49bee80a0007",
+        "label": "5. U.S. Federal Government EmploymentVarious federal laws restrict the post-government employment (PGE) activities of FORMER federal government employees. These laws also place conditions on CURRENT federal government employees who engage in discussions regarding PGE and may include an obligation to disqualify from continued participation in certain matters that may directly impact the financial interests of a prospective employer.Please check with your agency ethics official for advice if you are participating in any government matters or a procurement related to Booz Allen Hamilton or if you are uncertain if your position is considered federal employment subject to these restrictions.Please select your employment status with the United States (U.S.) Federal Government (civilian, military, reserves, or National Guard serving on Title 10 orders).",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I have never been employed by the U.S. Federal Government.",
+          "I am currently employed by the U.S. Federal Government.",
+          "I am a former employee of U.S. Federal Government that left service in the last 2 years.",
+          "I am a former employee of U.S. Federal Government that left service more than 2 years ago."
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "065d9d3c238710011a2e4fc565f90006",
+        "label": "6. State, Local, & Non-U.S. Government Employment A variety of state and local laws restrict the post-government employment (PGE) activities of FORMER state/local government employees. These laws may also place conditions on CURRENT state/local government employees who engage in discussions regarding PGE and may include an obligation to disqualify from continued participation in certain matters that may directly impact the financial interests of a prospective employer.State/local government restrictions vary from state to state but may include contracting, procurement, regulatory or legislative roles, or other public employment within state, city, or municipal government. In some cases, these restrictions apply to other full and part-time employment at a state public institutions and entities to include schools, school districts, universities or similar types of other public institutions. These restrictions may also extend full- and part-time internships, and teaching or graduate assistantships, at any of these types of public institutions/entities. National Guard service on M-Day status or exclusively under Title 32 status are generally considered to be state government employees. If you are uncertain whether you are subject to restrictions, please check with your state/local government entity ethics office.Please select your state, local, non-U.S. government or other public entity (‘Government Entity’) or political party, a member of a royal family, or a candidate for political office employment status?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I have never been employed by a ‘Government Entity’, or political party, a member of a royal family, or a candidate for political office.",
+          "I am currently employed by a ‘Government Entity’.",
+          "I am currently employed by a political party, a member of a royal family, or a candidate for political office.",
+          "I am a former employee of a ‘Government Entity’, or political party, member of a royal family or candidate for political office that left service in the last 5 years.",
+          "I am a former employee of a ‘Government Entity’ that left service more than 5 years ago.",
+          "I am a former employee of a political party, a member of a royal family, or a candidate for political office that left service more than 5 years ago."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "065d9d3c238710011a2e50fa32c50004",
+        "label": "7. To the best of your knowledge, are you a current or former employee of an organization (‘Client’) that you believe is or may soon become (1) a Booz Allen Hamilton client other than a U.S. Federal Government or a state, local or non-U.S. government client, (2) a prime contractor that has hired Booz Allen Hamilton, or (3) a Booz Allen Hamilton partner?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "Not to my knowledge"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "065d9d3c238710011a2e51949c180006",
+        "label": "8. To the best of your knowledge, is any member of your family or household a current Booz Allen Hamilton employee or member of the Board of Directors?Examples include any child, stepchild, parent, stepparent, spouse, sibling, mother-in-law, father-in-law, son-in-law, daughter-in-law, brother-in-law, or sister-in-law, and any person sharing a household other than a tenant or employee.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "065d9d3c238710011a2e522f02420002",
+        "label": "9. To the best of your knowledge, is any member of your immediate family (including spouse, parents, siblings, and children), member of your household, or person with whom you have a similarly close personal relationship a current employee of the U.S. Federal Government, a state, local or non-U.S. government or political party, a member of a royal family, or a candidate for political office?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "Not to my knowledge"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "065d9d3c238710011a2e522f02420005",
+        "label": "10. To the best of your knowledge, is any member of your immediate family (including spouse, parents, siblings, and children), member of your household, or person with whom you have a similarly close personal relationship a current employee of an organization that you believe is or may soon become (1) a Booz Allen Hamilton client other than a U.S. Federal Government or a state, local or non-U.S. government client (2) a prime contractor that has hired Booz Allen Hamilton, or (3) a Booz Allen Hamilton partner?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "Not to my knowledge"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

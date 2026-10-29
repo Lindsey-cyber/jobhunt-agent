@@ -353,7 +353,7 @@
       "reason": "sensitive question with no exact answer"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "country",
         "label": "Country/Region",
@@ -363,7 +363,13 @@
           "United States of America"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -547,7 +553,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "countryPhoneCode",
         "label": "Country/Region Phone Code",
@@ -555,7 +561,13 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
     },
     {
       "status": "fill",

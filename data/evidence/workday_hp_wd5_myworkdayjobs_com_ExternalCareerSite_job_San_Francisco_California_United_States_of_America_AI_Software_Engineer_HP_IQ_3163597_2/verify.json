@@ -9,6 +9,13 @@
       "pass": true
     },
     {
+      "fieldId": "country",
+      "label": "Country/Region",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
       "fieldId": "legalName--firstName",
       "label": "First Name",
       "expected": "Lanxin",
@@ -56,6 +63,13 @@
       "expected": "Mobile",
       "actual": "Main",
       "pass": false
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country/Region Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
     },
     {
       "fieldId": "phoneNumber",

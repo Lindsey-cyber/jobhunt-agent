@@ -1,7 +1,7 @@
 {
   "form": {
     "ats": "workday",
-    "url": "https://crowe.wd12.myworkdayjobs.com/External_Careers/job/Chicago-IL-USA/Machine-Learning-Software-Engineer-1_R-71006/apply/applyManually",
+    "url": "https://crowe.wd12.myworkdayjobs.com/External_Careers/job/Chicago-IL-USA/Machine-Learning-Software-Engineer-1_R-71006/apply",
     "company": "Crowe",
     "jobTitle": "Machine Learning Software Engineer 1",
     "fields": [
@@ -304,6 +304,27 @@
         ]
       },
       {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
         "id": "addressLine1",
         "label": "Address Line 1",
         "kind": "text",
@@ -395,9 +416,11 @@
       {
         "id": "phoneType",
         "label": "Phone Device Type",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "Mobile"
+        ]
       },
       {
         "id": "countryPhoneCode",
@@ -418,27 +441,6 @@
         "label": "Phone Extension",
         "kind": "text",
         "required": false,
-        "options": []
-      },
-      {
-        "id": "preferredName--firstName",
-        "label": "Preferred First Name",
-        "kind": "text",
-        "required": true,
-        "options": []
-      },
-      {
-        "id": "preferredName--middleName",
-        "label": "Preferred Middle Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      {
-        "id": "preferredName--lastName",
-        "label": "Preferred Last Name",
-        "kind": "text",
-        "required": true,
         "options": []
       },
       {
@@ -892,6 +894,51 @@
     {
       "status": "fill",
       "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
         "id": "addressLine1",
         "label": "Address Line 1",
         "kind": "text",
@@ -1024,16 +1071,18 @@
       "field": {
         "id": "phoneType",
         "label": "Phone Device Type",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "Mobile"
+        ]
       },
       "value": "Mobile",
       "source": {
         "type": "profile",
         "path": "contact.phoneType"
       },
-      "confidence": 0.8,
+      "confidence": 1,
       "sensitive": false
     },
     {
@@ -1080,51 +1129,6 @@
         "options": []
       },
       "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "preferredName--firstName",
-        "label": "Preferred First Name",
-        "kind": "text",
-        "required": true,
-        "options": []
-      },
-      "value": "Lindsey",
-      "source": {
-        "type": "profile",
-        "path": "identity.preferredName"
-      },
-      "confidence": 1,
-      "sensitive": false
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "preferredName--middleName",
-        "label": "Preferred Middle Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "preferredName--lastName",
-        "label": "Preferred Last Name",
-        "kind": "text",
-        "required": true,
-        "options": []
-      },
-      "value": "Ma",
-      "source": {
-        "type": "profile",
-        "path": "identity.lastName"
-      },
-      "confidence": 1,
-      "sensitive": false
     },
     {
       "status": "fill",
@@ -1178,7 +1182,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "f9bb932abbe810015d80646e57880003",
         "label": "Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?",
@@ -1189,7 +1193,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "relativesAtEmployers"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1257,7 +1267,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "bc610b0368b81000a481a1055d2b0000",
         "label": "<b>Just-In-Time Notice</b><br>How we review applications & your choices:</br>We use an AI‑assisted resume‑screening tool to help recruiters manage applications. Based on the job posting, the tool reads only the information you provide and may identify job‑related details (for example, experience with listed skills or stated qualifications), prepare a short automated summary to help a recruiter review more efficiently, and direct your application to the appropriate recruiter or hiring team. The tool does not approve, reject, or make any hiring decisions. Our recruiters review your full application and may override or ignore tool suggestions at any time.<br></br>Your choices: You may opt out of automated screening and request manual review at any time by contacting us at recruiting@crowe.com. Opting-out from automated screening will not impact our decision making. To request information about how this tool is used in connection with your application, please contact us at recruiting@crowe.com.",
@@ -1268,7 +1278,13 @@
           "Opt Out"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Opt In",
+      "source": {
+        "type": "profile",
+        "path": "consentAiScreening"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

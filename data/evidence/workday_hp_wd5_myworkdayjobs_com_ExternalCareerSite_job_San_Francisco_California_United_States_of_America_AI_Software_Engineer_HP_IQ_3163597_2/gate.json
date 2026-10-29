@@ -2,8 +2,6 @@
   "decision": "hold",
   "reasons": [
     "required \"Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.\": sensitive question with no exact answer",
-    "required \"Country/Region\": no answer in profile or answer bank",
-    "required \"Country/Region Phone Code\": no answer in profile or answer bank",
     "readback mismatch on \"Phone Device Type\": expected \"Mobile\", got \"Main\"",
     "required \"Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.\" is empty after filling"
   ]

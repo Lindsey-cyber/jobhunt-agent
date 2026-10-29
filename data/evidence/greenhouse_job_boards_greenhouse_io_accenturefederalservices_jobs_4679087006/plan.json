@@ -11,21 +11,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -284,7 +287,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "candidate-location",
@@ -770,7 +774,8 @@
         "label": "If yes, please list the full name of the employee(s) and your relationship to them.",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8431293006",
@@ -840,7 +845,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -857,7 +863,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -874,7 +881,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -1153,7 +1161,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -1836,7 +1845,8 @@
         "label": "If yes, please list the full name of the employee(s) and your relationship to them.",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1923,7 +1933,7 @@
       "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "skip",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -1939,13 +1949,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
-      "sensitive": true
+      "reason": "declined through the Hispanic/Latino question, which hides race"
     }
   ]
 }

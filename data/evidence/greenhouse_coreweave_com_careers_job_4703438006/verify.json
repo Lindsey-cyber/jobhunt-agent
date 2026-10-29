@@ -65,6 +65,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_8613455006",
+      "label": "Do you have the right to work in the country you are applying to?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8613456006",
+      "label": "Where are you currently located? (city, state)",
+      "expected": "New York, NY",
+      "actual": "New York, NY",
+      "pass": true
+    },
+    {
       "fieldId": "question_8613457006",
       "label": "Current Company",
       "expected": "Arborphy AI LLC",
@@ -115,8 +129,6 @@
     }
   ],
   "emptyRequired": [
-    "Do you have the right to work in the country you are applying to?",
-    "Where are you currently located? (city, state)",
     "Some roles at CoreWeave require a live paired coding exercise in Python or Go. Which programming language(s) do you prefer to use?",
     "Select the metropolitan area to closest to your city of residence.",
     "Legal Address",

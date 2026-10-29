@@ -411,7 +411,8 @@ describe("buildPlan", () => {
     const h = { ...field("Are you Hispanic/Latino?", { kind: "combobox", options: opts }), id: "hispanic_ethnicity" };
     const r = (required: boolean) => ({ ...field("Please identify your race", { kind: "combobox", options: ["Asian", "Decline To Self Identify"] }), id: "race", required });
     const plan = (required: boolean) => buildPlan({ ...form([h, r(required)]), ats: "greenhouse" }, p, user.bank).items;
-    expect(plan(true).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["Decline To Self Identify", "skip"]);
+    // Some boards (Accenture Federal Services) keep a required race question visible: decline both.
+    expect(plan(true).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["Decline To Self Identify", "Decline To Self Identify"]);
     expect(plan(false).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["No", "skip"]);
   });
 

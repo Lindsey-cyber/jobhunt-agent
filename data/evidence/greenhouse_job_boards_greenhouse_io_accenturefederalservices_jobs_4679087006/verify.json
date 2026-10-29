@@ -180,8 +180,8 @@
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
       "expected": "No",
-      "actual": "Decline To Self Identify",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -189,15 +189,10 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
-      "actual": "",
-      "pass": false
     }
   ],
-  "emptyRequired": [],
+  "emptyRequired": [
+    "Please identify your race"
+  ],
   "fillErrors": []
 }

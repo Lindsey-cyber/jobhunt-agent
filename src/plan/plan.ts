@@ -120,8 +120,8 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
 
   // Greenhouse's EEO block: declining race resets "Are you Hispanic/Latino?" to
   // decline and hides the race question. A voluntary race question left blank declines it.
-  if (form.ats === "greenhouse" && field.id === "race" && profile.eeo.race === "decline") {
-    return { status: "skip", field, reason: field.required ? "declined through the Hispanic/Latino question, which hides race" : "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)" };
+  if (form.ats === "greenhouse" && field.id === "race" && profile.eeo.race === "decline" && !field.required) {
+    return { status: "skip", field, reason: "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)" };
   }
   // When the board requires race, declining it is only possible as a whole: answer the
   // Hispanic/Latino question with its decline option, which hides the race question.

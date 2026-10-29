@@ -57,6 +57,8 @@ export interface RuleContext {
   company?: string;
   // Where the posting is, as the form or catalog gives it.
   jobLocation?: string;
+  // The page's own id for the field, for labels too bare to read alone (Workday's "From"/"To").
+  fieldId?: string;
   // How many earlier applications to this employer the ledger holds.
   priorApplications?: number;
 }
@@ -506,6 +508,23 @@ export const PROFILE_RULES: ProfileRule[] = [
       if (p.citizenship.includes("United States")) return undefined;
       if (/\bheld\b|\bclearance level\b/.test(label)) return opts.find((o) => /\bnever held\b|^n ?\/? ?a\b/i.test(o.trim())) ?? opts.find((o) => /^no$/i.test(o.trim()));
       return opts.find((o) => /^(no|none)$/i.test(o.trim()));
+    },
+  },
+  {
+    // Workday's work-experience block: "From"/"To" (MM/YYYY) of the role filled above (the most recent finished one).
+    path: "workHistory",
+    pattern: /^(from|to)$/,
+    resolve: (p, label, ctx) => {
+      const id = ctx.fieldId?.split("-").pop() ?? "";
+      // The education block's "From"/"To" are years attended of the most recent degree.
+      if (/^(firstYearAttended|lastYearAttended)$/.test(id)) {
+        const e = firstEdu(p);
+        return id === "firstYearAttended" ? e.start?.slice(0, 4) : String(e.gradYear);
+      }
+      if (!/^(startDate|endDate)$/.test(id)) return undefined;
+      const w = p.workHistory.filter((x) => x.start && x.end).sort((a, b) => b.end!.localeCompare(a.end!))[0];
+      const d = w && (label === "from" ? w.start : w.end);
+      return d ? `${d.slice(5, 7)}/${d.slice(0, 4)}` : undefined;
     },
   },
   {

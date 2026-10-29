@@ -141,7 +141,7 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     return unanswered(field, "no document for this upload");
   }
 
-  const ctx = { options: field.options, company: form.company, ...(form.jobLocation ? { jobLocation: form.jobLocation } : {}), ...(form.priorApplications !== undefined ? { priorApplications: form.priorApplications } : {}), ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) };
+  const ctx = { options: field.options, company: form.company, fieldId: field.id, ...(form.jobLocation ? { jobLocation: form.jobLocation } : {}), ...(form.priorApplications !== undefined ? { priorApplications: form.priorApplications } : {}), ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) };
   const banked = fromBank(label, bank, form.company, sensitive);
   // A bank answer in free-text words ("2 weeks") that none of the choices spell gives way to a profile rule that maps it ("1 Month").
   const bankFits = !banked || field.options.length === 0 || field.kind === "text" || field.kind === "textarea" || Boolean(matchOption(field.options, banked.value, sensitive));

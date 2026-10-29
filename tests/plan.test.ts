@@ -461,4 +461,11 @@ describe("buildPlan", () => {
     const f = { ...field("Please select the race/ethnicity which most accurately describes how you identify yourself", { kind: "checkbox", options: [] }), required: true };
     expect(buildPlan(form([f]), { ...user.profile, eeo: { ...user.profile.eeo, race: "decline" } }, user.bank).items[0]).toMatchObject({ status: "blocked" });
   });
+
+  it("reads Workday's bare From/To by field id: work dates as MM/YYYY, education as years", () => {
+    const p = { ...user.profile, workHistory: [{ employer: "Columbia University", title: "Research Assistant (ML)", start: "2026-01", end: "2026-05" }], education: [{ school: "Columbia University", degree: "Master of Science", major: "Statistics", start: "2024-09", gradMonth: 5, gradYear: 2026 }] };
+    const f = (id: string, label: string) => ({ ...field(label), id });
+    const items = buildPlan(form([f("startDate", "From"), f("endDate", "To"), f("firstYearAttended", "From"), f("lastYearAttended", "To"), f("other", "From")]), p, user.bank).items;
+    expect(items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["01/2026", "05/2026", "2024", "2026", "blocked"]);
+  });
 });

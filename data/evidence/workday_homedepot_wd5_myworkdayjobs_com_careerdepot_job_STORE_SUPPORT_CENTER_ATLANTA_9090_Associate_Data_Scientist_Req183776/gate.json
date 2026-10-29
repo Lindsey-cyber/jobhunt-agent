@@ -1,0 +1,14 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently, or have you previously been employed by The Home Depot, or any of our subsidiaries? For a complete listing of subsidiaries, please click here. This does not apply if you are an active contractor, former contractor, or Military Fellow.\": answer \"No\" matches none of the options",
+    "required \"Are you willing to take a drug test if the position requires?\": no answer in profile or answer bank",
+    "required \"Based on the job description, do you have the required amount of directly relevant work experience?\": no answer in profile or answer bank",
+    "required \"Do you meet the educational requirement as specified in the job description?\": no answer in profile or answer bank",
+    "readback mismatch on \"Desired Total Annual Compensation\": expected \"$100K–$150K\", got \"100150\"",
+    "required \"Are you currently, or have you previously been employed by The Home Depot, or any of our subsidiaries? For a complete listing of subsidiaries, please click here. This does not apply if you are an active contractor, former contractor, or Military Fellow.\" is empty after filling",
+    "required \"Are you willing to take a drug test if the position requires?\" is empty after filling",
+    "required \"Based on the job description, do you have the required amount of directly relevant work experience?\" is empty after filling",
+    "required \"Do you meet the educational requirement as specified in the job description?\" is empty after filling"
+  ]
+}

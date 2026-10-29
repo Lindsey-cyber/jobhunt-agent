@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"Have you ever been previously employed by Teledyne or FLIR?\": expected \"No\", got \"\"",
+    "required \"Have you ever been previously employed by Teledyne or FLIR?\" is empty after filling"
+  ]
+}

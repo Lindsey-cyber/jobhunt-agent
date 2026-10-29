@@ -84,10 +84,12 @@ async function promptOptions(page: Page, id: string): Promise<string[]> {
 // menu, GE Vernova's former-employee radio): click the blank page margin.
 async function closePrompt(page: Page): Promise<void> {
   await page.keyboard.press("Escape").catch(() => undefined);
-  const open = page.locator('[data-automation-id="promptOption"]:not([data-automation-id="selectedItem"] *)');
-  for (let t = 0; t < 3 && (await open.first().isVisible().catch(() => false)); t++) {
-    await page.mouse.click(5, 400).catch(() => undefined);
-    await page.waitForTimeout(500);
+  // Any visible option outside a chip means the list is still open (it can lag under load).
+  const open = page.locator('[data-automation-id="promptOption"]:not([data-automation-id="selectedItem"] *):visible');
+  for (let t = 0; t < 6; t++) {
+    await page.waitForTimeout(300 + 200 * t);
+    if ((await open.count().catch(() => 0)) === 0) return;
+    await page.mouse.click(5, 300 + 100 * (t % 3)).catch(() => undefined);
   }
 }
 

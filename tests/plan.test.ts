@@ -151,6 +151,7 @@ describe("buildPlan", () => {
     const dd = (q: string) => buildPlan(form([field(q, { kind: "combobox", options: ["Yes", "No"] })], "DoorDash USA"), p, user.bank).items[0]!;
     expect(dd("Have you worked at DoorDash?")).toMatchObject({ status: "fill", value: "No" });
     expect(dd("Have you worked at a startup?")).toMatchObject({ status: "blocked" });
+    expect(one(field("Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, provide additional information; if No, please continue.", { kind: "radio", options: ["Yes", "No"] }))).toMatchObject({ status: "fill", value: "No" });
     expect(one(field("Please review the linked document:", { kind: "combobox", options: ["I acknowledge that I have read and understood the terms of the Lyft Candidate Privacy Notice."] }))).toMatchObject({ status: "fill" });
   });
 

@@ -172,13 +172,15 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
-    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b/,
+    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b|\bhave you previously worked as [a-z ]{1,40}? for\b/,
     resolve: (p, label, ctx) => {
       const m =
         /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ??
         /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label) ??
         // ADI: "Are you now or have you previously been employed by Analog Devices Inc. (ADI) or Maxim Integrated as a ..."
-        /\bnow or have you previously been employed by (.+?) (?:as|in) a\b/.exec(label);
+        /\bnow or have you previously been employed by (.+?) (?:as|in) a\b/.exec(label) ??
+        // GlobalFoundries: "Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, ..."
+        /\bpreviously worked as [a-z ]{1,40}? for (.+?)(?: if\b|$)/.exec(label);
       // Bare "Have you worked at DoorDash?" only when it names the hiring company.
       const bare = /^have you (?:ever )?worked (?:at|for) (.+)$/.exec(label)?.[1];
       const company = (ctx.company ?? "").toLowerCase();

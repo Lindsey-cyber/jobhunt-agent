@@ -276,7 +276,7 @@ export const PROFILE_RULES: ProfileRule[] = [
         // AEP: "Are you a former employee of AEP or any of AEP's subsidiary companies?"
         /\bformer (?:employee|intern|contractor) of (.+?)(?: or any\b| or its\b| or a\b|$)/.exec(label) ??
         // HP: "Have you previously been employed by HP? If you are currently employed by HP, ..."
-        /\bpreviously been employed by (.+?)(?: if\b| as\b| in\b|$)/.exec(label) ??
+        /\bpreviously been employed (?:by|at|with) (.+?)(?: if\b| as\b| in\b| for any\b|$)/.exec(label) ??
         // Atlas Air: "Are you a current or former contractor or vendor representative of Atlas Air?"
         /\bcurrent or former (?:employee|contractor|consultant|intern|vendor)[a-z ]{0,40}? (?:of|at|for) (.+)$/.exec(label) ??
         /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label) ??

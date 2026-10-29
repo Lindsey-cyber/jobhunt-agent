@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you previously been employed at Hebrew SeniorLife?\": sensitive question with no exact answer",
+    "required \"Have you previously been employed at Hebrew SeniorLife?\" is empty after filling"
+  ]
+}

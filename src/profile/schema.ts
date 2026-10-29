@@ -88,6 +88,9 @@ export const Profile = z.object({
     .default({ gender: "decline", hispanicLatino: "decline", race: "decline", veteran: "decline", disability: "decline" }),
   documents: z.object({
     resume: z.string().min(1),
+    // Filled by the loader from data/cover-letters/<company>.pdf: one letter per employer,
+    // used only where a form requires a cover letter.
+    coverLetters: z.record(z.string(), z.string()).default({}),
   }),
 });
 export type Profile = z.infer<typeof Profile>;

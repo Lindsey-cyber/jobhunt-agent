@@ -343,4 +343,12 @@ describe("buildPlan", () => {
     expect(one("Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?", { kind: "combobox", options: ["Yes, I do work/have worked for a U.S. government entity.", "No, I have never."] }, "New York, NY")).toMatchObject({ value: "No, I have never." });
     expect(one("If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'", { kind: "text" }, "New York, NY")).toMatchObject({ value: "N/A" });
   });
+
+  it("uploads a cover letter written for the employer, and only where the form requires one", () => {
+    const p = { ...user.profile, documents: { ...user.profile.documents, coverLetters: { "acme-robotics": "/letters/acme-robotics.pdf" } } };
+    const f = (required: boolean) => ({ ...field("Cover Letter", { kind: "file" }), required });
+    expect(buildPlan(form([f(true)]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "/letters/acme-robotics.pdf" });
+    expect(buildPlan(form([f(false)]), p, user.bank).items[0]).toMatchObject({ status: "skip" });
+    expect(buildPlan(form([f(true)], "Other Co"), p, user.bank).items[0]).toMatchObject({ status: "blocked" });
+  });
 });

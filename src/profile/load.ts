@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
 import { readAnswerLog } from "../store/answerlog.ts";
@@ -27,6 +27,9 @@ export function loadUserData(dir = process.env.JH_DATA_DIR ?? "data"): UserData 
   if (!existsSync(profile.documents.resume)) {
     throw new Error(`Resume not found at ${profile.documents.resume}`);
   }
+  // Cover letters, one per employer: data/cover-letters/<company slug>.pdf.
+  const letters = join(root, "cover-letters");
+  if (existsSync(letters)) for (const f of readdirSync(letters).filter((x) => x.endsWith(".pdf"))) profile.documents.coverLetters[f.slice(0, -4)] = join(letters, f);
   const answersPath = join(root, "answers.yaml");
   const configPath = join(root, "config.yaml");
   const searchPath = join(root, "search.yaml");

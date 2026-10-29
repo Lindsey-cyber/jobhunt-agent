@@ -69,6 +69,9 @@ function fromProfile(label: string, field: FormField, profile: Profile, ctx: Rul
   return undefined;
 }
 
+// "Cleveland Guardians - Baseball Operations" -> "cleveland-guardians-baseball-operations".
+export const companySlug = (company: string) => normalize(company).replace(/ /g, "-");
+
 function unanswered(field: FormField, reason: string): PlanItem {
   return field.required ? { status: "blocked", field, reason } : { status: "skip", field, reason };
 }
@@ -114,6 +117,9 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     if (RESUME.test(label)) {
       return { status: "fill", field, value: profile.documents.resume, source: { type: "file", path: "documents.resume" }, confidence: 1, sensitive: false };
     }
+    // A cover letter written for this employer, only where the form requires one.
+    const letter = /\bcover letter\b/.test(label) && field.required ? profile.documents.coverLetters[companySlug(form.company)] : undefined;
+    if (letter) return { status: "fill", field, value: letter, source: { type: "file", path: "documents.coverLetters" }, confidence: 1, sensitive: false };
     return unanswered(field, "no document for this upload");
   }
 

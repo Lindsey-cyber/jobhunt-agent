@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you have two years or more of Python development experience?\": no answer in profile or answer bank",
+    "required \"Anthropic Certifications?\": no answer in profile or answer bank",
+    "required \"Do you currently reside in the UK?\": no answer in profile or answer bank",
+    "required \"Do you have two years or more of Python development experience?\" is empty after filling",
+    "required \"Anthropic Certifications?\" is empty after filling",
+    "required \"Do you currently reside in the UK?\" is empty after filling"
+  ]
+}

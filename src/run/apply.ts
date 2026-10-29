@@ -79,7 +79,9 @@ export async function apply(opts: ApplyOptions): Promise<ApplyResult> {
 export function sameJob(ledger: Ledger, url: string): { key: ApplicationKey; state: AppState } | undefined {
   const id = jobKey(url);
   if (id.startsWith("url:")) return undefined;
-  const hit = ledger.latest().find((e) => jobKey(`https://${e.key.slice(e.key.indexOf(":") + 1)}`) === id);
+  // Employer-hosted Greenhouse postings are keyed by page path plus the job id ("…/current-vacancies/8006961003").
+  const ghId = id.startsWith("greenhouse:") ? id.slice("greenhouse:".length) : undefined;
+  const hit = ledger.latest().find((e) => jobKey(`https://${e.key.slice(e.key.indexOf(":") + 1)}`) === id || (ghId !== undefined && e.key.startsWith("greenhouse:") && e.key.endsWith(`/${ghId}`)));
   return hit && { key: hit.key, state: hit.state };
 }
 

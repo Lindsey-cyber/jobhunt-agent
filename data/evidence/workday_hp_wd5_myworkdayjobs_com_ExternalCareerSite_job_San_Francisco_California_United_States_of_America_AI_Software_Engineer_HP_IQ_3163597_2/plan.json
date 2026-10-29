@@ -339,7 +339,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "candidateIsPreviousWorker",
         "label": "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.",
@@ -350,7 +350,13 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",

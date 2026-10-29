@@ -9,6 +9,13 @@
       "pass": true
     },
     {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "country",
       "label": "Country/Region",
       "expected": "United States of America",
@@ -79,9 +86,7 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role."
-  ],
+  "emptyRequired": [],
   "fillErrors": [
     "Phone Device Type: \"Mobile\" did not stick in the dropdown"
   ]

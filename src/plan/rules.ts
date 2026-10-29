@@ -207,6 +207,19 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // "What is your highest level of education earned?": the highest completed degree, in the form's wording.
+    path: "education",
+    pattern: /\bhighest (level of )?(education|degree)\b/,
+    resolve: (p, _label, ctx) => {
+      const today = ctx.today ?? new Date().toISOString().slice(0, 7);
+      const rank = (d: string) => (/doctor|ph\.?d/i.test(d) ? 3 : /master|m\.?s\b|mba/i.test(d) ? 2 : /bachelor|b\.?a\b|b\.?s\b/i.test(d) ? 1 : 0);
+      const earned = p.education.filter((e) => `${e.gradYear}-${String(e.gradMonth).padStart(2, "0")}` <= today).sort((a, b) => rank(b.degree) - rank(a.degree))[0];
+      if (!earned) return undefined;
+      const want = ["", "bachelor", "master", "doctor"][rank(earned.degree)] ?? "";
+      return (want && (ctx.options ?? []).find((o) => normalize(o).startsWith(want))) || earned.degree;
+    },
+  },
+  {
     // ADI: "Are you currently enrolled in an accredited degree program?": any degree ending after today.
     path: "education",
     pattern: /^are you (currently )?(enrolled in|pursuing) an? (accredited )?(degree|university|college) program$|^are you currently a student$/,

@@ -19,6 +19,7 @@ import { serve } from "./run/serve.ts";
 import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { readCatalog } from "./store/catalog.ts";
+import { tallyHolds } from "./verify/holds.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
 import { appendLabel, paths, readBaseline, readLabels, readLatest, readTrust, writeBaseline, writeTrust } from "./store/state.ts";
@@ -39,6 +40,8 @@ const USAGE = `jh <command>
                                        score the independent auditor's blind verdicts; adjusts triage trust
   applications [--out <dir>]           page of every application: fields filled, read back, screenshot
   questions                            collect the questions holding applications into the review list, once each
+  holds                                why applications are held, grouped: needs your answer, site mechanics
+                                       (for an engineering session), or held by design
   apply-approved [--limit <n>]         submit postings you approved (fit labels) that have an adapter, within the
                                        daily cap; skips excluded employers and anything already applied to
   draft                                draft answers to postings' own questions (why this role, have you built X)
@@ -175,6 +178,30 @@ switch (command) {
     const used = out.filter((o) => o.answer && !o.problems.length);
     console.log(`${used.length} of ${out.length} questions drafted and checked; the rest stay on the review list`);
     for (const o of out) console.log(`${o.problems.length ? "HELD" : "USED"}  ${o.company} · ${o.question}${o.answer ? `\n      ${o.answer}` : ""}${o.problems.length ? `\n      ${o.problems.join("; ")}` : ""}`);
+    break;
+  }
+  case "holds": {
+    const u = user();
+    const held = ledgerOf(u.dir).latest().filter((e) => e.state === "held");
+    const entries = held.map((e) => {
+      const verify = (() => {
+        try {
+          return JSON.parse(readFileSync(join(e.runDir, "verify.json"), "utf8")) as { fillErrors?: string[] };
+        } catch {
+          return {};
+        }
+      })();
+      const reasons = [...((e.detail as { reasons?: string[] } | undefined)?.reasons ?? []), ...(verify.fillErrors ?? []).map((f) => `fill error: ${f.split("\n")[0]}`)];
+      return { key: e.key, reasons };
+    });
+    const tally = tallyHolds(entries);
+    for (const cause of ["mechanic", "answer", "by_design"] as const) {
+      const rows = tally.filter((t) => t.cause === cause);
+      if (!rows.length) continue;
+      console.log(`\n${{ mechanic: "Site mechanics (engineering)", answer: "Needs your answer (jh pending)", by_design: "Held by design (yours to finish)" }[cause]}`);
+      for (const t of rows) console.log(`  ${String(t.count).padStart(3)}  ${t.reason}\n       e.g. ${t.examples.join(", ")}`);
+    }
+    console.log(`\n${held.length} held applications`);
     break;
   }
   case "status": {

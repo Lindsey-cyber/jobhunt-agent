@@ -199,6 +199,8 @@ describe("buildPlan", () => {
     const f = field("Are you currently enrolled in an accredited degree program?", { kind: "select", options: ["Yes", "No"] });
     const done = { ...user.profile, education: [{ ...user.profile.education[0]!, gradYear: 2026, gradMonth: 5 }] };
     expect(buildPlan(form([f]), done, user.bank).items[0]).toMatchObject({ status: "fill", value: "No" });
+    const h = field("What is your highest level of education earned?", { kind: "select", options: ["Secondary / High School", "Bachelor's Degree", "Master's Degree", "Doctorate or Equivalent"] });
+    expect(buildPlan(form([h]), done, user.bank).items[0]).toMatchObject({ status: "fill", value: "Master's Degree" });
   });
 
   it("answers transgender identity from the gender choice", () => {

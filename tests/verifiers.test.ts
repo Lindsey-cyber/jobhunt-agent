@@ -141,3 +141,16 @@ describe("catalog rules", () => {
     }
   });
 });
+
+describe("hold tally", () => {
+  it("separates missing answers, site mechanics and deliberate holds, grouping by shape", async () => {
+    const { tallyHolds } = await import("../src/verify/holds.ts");
+    const t = tallyHolds([
+      { key: "a", reasons: ['required "Degree": no answer in profile or answer bank', 'fill error: Country: no option fits "New York"'] },
+      { key: "b", reasons: ['fill error: City: no option fits "Austin"', "Lever submits through hCaptcha: review the filled form and press Submit yourself"] },
+    ]);
+    expect(t.find((x) => x.cause === "mechanic")).toMatchObject({ count: 2 });
+    expect(t.filter((x) => x.cause === "answer")).toHaveLength(1);
+    expect(t.filter((x) => x.cause === "by_design")).toHaveLength(1);
+  });
+});

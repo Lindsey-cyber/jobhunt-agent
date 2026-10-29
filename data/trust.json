@@ -2,7 +2,7 @@
   "triage": {
     "level": "confirm",
     "since": "2026-10-28T09:36:50.756Z",
-    "reason": "audit 2026-10-28T14:00:03.011Z: false-match 5.9%, miss 0.0%, within the 10% limit; 0 of 3 clean (≤5%) audits in a row toward proposing auto",
+    "reason": "audit 2026-10-29T00:10:51.863Z: false-match 10.0%, miss 0.0%, within the 10% limit; 0 of 3 clean (≤5%) audits in a row toward proposing auto",
     "audits": [
       {
         "at": "2026-10-28T09:36:50.755Z",
@@ -31,6 +31,13 @@
         "missRate": 0,
         "matchJudged": 34,
         "rejectJudged": 20
+      },
+      {
+        "at": "2026-10-29T00:10:51.863Z",
+        "falseMatchRate": 0.1,
+        "missRate": 0,
+        "matchJudged": 40,
+        "rejectJudged": 19
       }
     ]
   },

@@ -952,7 +952,8 @@ answers:
     origin: human
   # The candidate (2026-10-28): willing to travel.
   - id: travel
-    question: Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?
+    question: Are you willing and able to travel to customer sites approximately
+      once every 4–8 weeks, as business needs require?
     aliases:
       - Are you willing to travel?
       - Are you able to travel as required?
@@ -962,14 +963,20 @@ answers:
     origin: human
   # Defaults (2026-10-28): messaging opt-ins declined (email only); she is open to on-site work.
   - id: sms-opt-in
-    question: Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.
+    question: Would you like to receive communications via SMS and/or WhatsApp to
+      the number provided [above or during the application process] about your
+      application process? Message & data rates may apply and message frequency
+      may vary. If you select no, we will only communicate with you via email
+      and/or telephone calls. If you select yes and change your mind, you can
+      always reply STOP to opt out.
     aliases:
       - Do you opt-in to receive WhatsApp messages from {company} Recruiting?
       - Do you consent to receive text messages about your application?
     answer: "No"
     origin: generated
   - id: plan-remote
-    question: If this role offers the option to work from a remote location, do you plan to work remotely?
+    question: If this role offers the option to work from a remote location, do you
+      plan to work remotely?
     answer: "No"
     origin: generated
   - id: air-temp
@@ -977,3 +984,288 @@ answers:
     company: American Institutes for Research
     answer: "No"
     origin: human
+  - id: draft:18899e66ca
+    question: Have you ever been employed full-time at Block or its subsidiaries?
+    answer: No
+    company: Block
+    jobTitle: Data Scientist, Payments
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+      - >-
+        Software Developer - Real-Time Vision for
+        Robotics                                          May 2025 – Dec 2025
+
+        InnoX Academy Incubator Robotics Lab
+      - >-
+        Research Assistant - Self-Supervised Learning for Neural
+        Imaging                            Jan 2026 – May 2026
+
+        Center for Theoretical Neuroscience, Columbia Zuckerman Institute
+  - id: draft:174061ba06
+    question: Have you ever provided any contract work for Block, Inc. or any of its
+      subsidiaries or affiliates (whether in the U.S. or internationally)?
+    answer: No
+    company: Block
+    jobTitle: Data Scientist, Payments
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:32883d9888
+    question: What is your Legal First Name?
+    answer: Lanxin
+    company: Block
+    jobTitle: Data Scientist, Payments
+    origin: generated
+    evidence:
+      - "firstName: Lanxin"
+  - id: draft:d8893b946f
+    question: Do you have a master's or doctoral degree in a quantitative field
+      (e.g., statistics, economics, data science, quantitative psychology,
+      computational social science, or a related discipline)?
+    answer: Yes
+    company: American Institutes for Research
+    jobTitle: Data Scientist, Project Success and Innovation
+    origin: generated
+    evidence:
+      - Columbia University, M.S. in Statistics, GPA
+        3.71                                     Sep 2024 – May 2026
+      - |-
+        Columbia University
+            degree: Master of Science
+            major: Statistics
+            gradMonth: 5
+            gradYear: 2026
+  - id: draft:504ea11f6d
+    question: Do you have hands-on experience conducting advanced quantitative
+      analyses using R or Python, including statistical modeling and causal
+      inference methods (e.g., experimental or quasi-experimental designs)?
+    answer: No
+    company: American Institutes for Research
+    jobTitle: Data Scientist, Project Success and Innovation
+    origin: generated
+    evidence:
+      - "Fluent in: Python, SQL, R ML: PyTorch, Hugging Face, scikit-learn"
+      - Implemented Bayesian stochastic block models with class-dependent and
+        spatially informed connectivity likelihoods to infer latent neuronal
+        types and class-dependent wiring patterns from FlyWire connectomes.
+      - Applied Bayesian connectivity models to FlyWire chemical-synapse
+        networks, constructing thresholded adjacency matrices and evaluating
+        cell-type recovery across brain regions; identified limitations of
+        distance- dependent assumptions in heterogeneous neural circuits.
+  - id: draft:4e356042bf
+    question: Do you have professional experience working with complex research data
+      (e.g., survey, administrative, longitudinal, or linked datasets) and
+      applying quantitative methods to education, health, or social policy
+      research?
+    answer: Yes
+    company: American Institutes for Research
+    jobTitle: Data Scientist, Project Success and Innovation
+    origin: generated
+    evidence:
+      - Columbia Asian Faculty Association - Data
+        Analyst                                        Jan 2025 – Mar 2025
+      - Analyzed faculty survey data on workload, well-being, and institutional
+        support under faculty supervision; presented findings in a formal report
+        to board members for decision-making.
+  - id: draft:b9d6af93c8
+    question: What is/was your GPA?
+    answer: My M.S. GPA at Columbia University was 3.71; my undergraduate GPA at
+      Renmin University of China was 3.82.
+    company: Hive
+    jobTitle: Machine Learning Engineer
+    origin: generated
+    evidence:
+      - Columbia University, M.S. in Statistics, GPA
+        3.71                                     Sep 2024 – May 2026
+      - Renmin University of China, B.A. in Economics, GPA
+        3.82                                      Sep 2019 – Jun 2023
+  - id: draft:e560fd89af
+    question: Tell us about a self-supervised or foundation model you have worked
+      with, whether trained from scratch, pretrained, or adapted to a downstream
+      task. What did you do with it, and how did you evaluate whether it worked
+      well for your use case?
+    answer: "At Arborphy AI, I worked with pretrained BioCLIP and DINOv3
+      representations for plant identification, treating them as
+      foundation-model features rather than assuming they would transfer
+      cleanly. I designed an EfficientNet–BioCLIP dual-encoder with
+      bidirectional spatial cross-attention, auxiliary organ supervision, and
+      BioCLIP-anchored gated residuals to test whether local visual features and
+      BioCLIP semantics were complementary. I evaluated this with controlled
+      fusion experiments: single encoders, concatenation, and uni- versus
+      bidirectional attention; individual-disjoint, species-disjoint,
+      multi-seed, and grouped held-out benchmarks; frozen linear probes;
+      clustering; nearest-neighbor retrieval; and human review of hard cases.
+      The main result was useful but humbling: fusion macro-F1 improved across
+      iterations from 0.808 to 0.832, but under stricter evaluations I found no
+      reliable species-recognition advantage over BioCLIP alone. That kind of
+      evaluation discipline is what I would bring to Artera’s pathology
+      foundation-model work."
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using
+           frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
+           shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding.
+      - >-
+        Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional
+           versus bidirectional cross-attention; conducted individual-disjoint, multi-seed, and grouped held-out
+           evaluations, finding no reliable species-recognition advantage over BioCLIP alone.
+      - >-
+        Developed individual- and species-disjoint benchmarks for species
+        identification, organ classification, and
+           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
+           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
+           spanning 85 species.
+  - id: draft:7762bc1ea5
+    question: Describe a project where your model did not generalize as well as
+      expected across datasets, sites, devices, populations, or other
+      conditions. How did you investigate the problem, and what did you try to
+      improve robustness?
+    answer: In my current Arborphy AI work on plant identification, I expected an
+      EfficientNet–BioCLIP fusion model to generalize better than BioCLIP alone,
+      but grouped held-out and individual-disjoint evaluations showed no
+      reliable species-recognition advantage. I treated that as a domain-shift
+      question rather than just a tuning problem. I compared single encoders,
+      concatenation, and uni- versus bidirectional cross-attention, then used
+      frozen probes, clustering, nearest-neighbor retrieval, local PCA
+      rotations, and centroid shrinkage to separate species signal from organ
+      morphology and photographic-scale confounding. To improve robustness, I
+      tried auxiliary organ supervision, BioCLIP-anchored gated residuals,
+      individual- and species-disjoint benchmarks, and cross-model error review.
+      That experience maps closely to Artera’s need for pathology models that
+      hold up on messy real-world data.
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using
+           frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
+           shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding.
+      - >-
+        Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional
+           versus bidirectional cross-attention; conducted individual-disjoint, multi-seed, and grouped held-out
+           evaluations, finding no reliable species-recognition advantage over BioCLIP alone.
+      - >-
+        Developed individual- and species-disjoint benchmarks for species
+        identification, organ classification, and
+           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
+           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
+           spanning 85 species.
+  - id: draft:43ec6314f1
+    question: Tell us about a machine-learning project where you had to understand
+      or explain what the model was learning. What methods did you use, and what
+      did you learn from them?
+    answer: "At Arborphy, I worked on a plant-identification model where the main
+      question was not just whether fusion improved accuracy, but what each
+      representation was actually encoding. I compared BioCLIP, DINOv3, and
+      EfficientNet features using frozen linear probes, multi-seed clustering,
+      nearest-neighbor retrieval, local PCA rotations, centroid shrinkage, and
+      cross-model error review. I also ran controlled fusion experiments across
+      single encoders, concatenation, and uni- versus bidirectional
+      cross-attention, with individual-disjoint, multi-seed, and grouped
+      held-out evaluation. The key lesson was that model behavior was partly
+      semantic and partly geometric: DINOv3 carried strong organ-morphology
+      signal, while BioCLIP remained the most reliable for species recognition,
+      and added fusion did not produce a dependable species-recognition gain.
+      That changed how I evaluated “better” architectures: interpretability and
+      robust held-out behavior mattered more than architecture complexity."
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi- rectional spatial cross-attention,
+        auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+        investigate feature complementarity and mitigate negative transfer;
+        improved fusion macro-F1 from 0.808 to 0.832 across architecture
+        iterations.
+      - Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using frozen linear probes, multi-seed
+        clustering, nearest-neighbor retrieval, local PCA rotations, and
+        centroid shrinkage to distinguish species identity, organ morphology,
+        and photographic-scale confounding.
+      - Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional versus bidirectional
+        cross-attention; conducted individual-disjoint, multi-seed, and grouped
+        held-out evaluations, finding no reliable species-recognition advantage
+        over BioCLIP alone.
+      - Developed individual- and species-disjoint benchmarks for species
+        identification, organ classification, and cross-species retrieval;
+        frozen DINOv3 features achieved 87.3% organ classification accuracy and
+        84.3% cross-species retrieval P@1. Analyzed cross-model errors and
+        developed a 100-image human-review set spanning 85 species.
+  - id: draft:ca483ed9ae
+    question: Describe a clinical, biological, or other real-world problem you
+      helped translate into a machine-learning problem. How did you define the
+      prediction target and decide how to evaluate the model?
+    answer: "At Arborphy AI, I worked on translating botanical identification into a
+      supervised representation-learning problem: given plant images, predict
+      species identity while separating signal from organ morphology and
+      photographic-scale confounding. I defined the main target as species
+      identification, with auxiliary organ classification to test whether
+      leaf/flower/fruit cues were helping or causing negative transfer. Because
+      the real risk was a model that memorized individuals or scales rather than
+      biological identity, I emphasized individual-disjoint, species-disjoint,
+      multi-seed, and grouped held-out evaluation, plus cross-species retrieval
+      and human review of hard cases. That is the same kind of rigor I would
+      bring to Artera’s setting: defining clinically meaningful targets from
+      slides and clinical data, then testing whether performance holds under
+      realistic distribution shifts."
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using
+           frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
+           shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding.
+      - >-
+        Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional
+           versus bidirectional cross-attention; conducted individual-disjoint, multi-seed, and grouped held-out
+           evaluations, finding no reliable species-recognition advantage over BioCLIP alone.
+      - >-
+        Developed individual- and species-disjoint benchmarks for species
+        identification, organ classification, and
+           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
+           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
+           spanning 85 species.

@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-29T00:10:51.863Z",
+  "auditor": "gpt-5.5 via the OpenAI API, blind, brief + postings only",
+  "sampleSize": 110,
+  "missing": [],
+  "score": {
+    "judged": 107,
+    "unsure": 3,
+    "falseMatchRate": 0.1,
+    "matchJudged": 40,
+    "missRate": 0,
+    "rejectJudged": 19,
+    "nearMissRate": 0.1,
+    "nearJudged": 30,
+    "reviewFit": 14,
+    "reviewNotFit": 4,
+    "byRule": {
+      "match": {
+        "judged": 40,
+        "disagree": 4
+      },
+      "auth.citizenship": {
+        "judged": 3,
+        "disagree": 1
+      },
+      "role.out_of_scope": {
+        "judged": 19,
+        "disagree": 0
+      },
+      "level.senior": {
+        "judged": 18,
+        "disagree": 2
+      },
+      "role.non_engineering": {
+        "judged": 3,
+        "disagree": 0
+      },
+      "experience.too_senior": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "location.non_us": {
+        "judged": 4,
+        "disagree": 0
+      },
+      "type.internship": {
+        "judged": 1,
+        "disagree": 0
+      }
+    },
+    "disagreements": [
+      {
+        "id": "a002",
+        "key": "greenhouse:8808184002",
+        "stratum": "reject_near",
+        "verdict": "reject",
+        "rule": "auth.citizenship",
+        "fit": "yes",
+        "reason": "The title “Network Engineer, AI Infrastructure” with work on “AI clusters” and only “1+ year” required experience fits an entry-level AI/data-infrastructure opening in Redmond, WA."
+      },
+      {
+        "id": "a038",
+        "key": "linkedin:4474243590",
+        "stratum": "reject_near",
+        "verdict": "reject",
+        "rule": "level.senior",
+        "fit": "yes",
+        "reason": "The US-based title \"Founding ML Engineer, Computer Vision (Object Detection)\" is directly in the target ML area, with no explicit 3+ year requirement or sponsorship bar provided."
+      },
+      {
+        "id": "a060",
+        "key": "url:https://careers-peraton.icims.com/jobs/170925/junior-data-engineer---active-secret/job",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "The title says \"Junior Data Engineer / Active Secret,\" indicating an active Secret clearance requirement incompatible with the candidate’s China citizenship."
+      },
+      {
+        "id": "a067",
+        "key": "lever:5cde0d09-ba2d-408d-947e-4a42028cd4f7",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "The role requires an \"expected graduation date between December 2026 and June 2027,\" while the candidate graduates in May 2026."
+      },
+      {
+        "id": "a069",
+        "key": "ashby:ce5f6b51-0258-4956-87cf-c630a08323c7",
+        "stratum": "reject_near",
+        "verdict": "reject",
+        "rule": "level.senior",
+        "fit": "yes",
+        "reason": "Although the title says \"Senior,\" the full-time Palo Alto posting says it is \"looking for exceptional new grads\" for \"AI infrastructure,\" so it matches."
+      },
+      {
+        "id": "a085",
+        "key": "url:https://axtriainc.applytojob.com/apply/WvWFVnBuU0/Campus-2027-AI-Data-Analyst",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "The opening is labeled \"Campus 2027,\" which does not match the candidate's 2026 graduation."
+      },
+      {
+        "id": "a102",
+        "key": "ashby:c1788246-305f-4e4f-8b03-8444c76a466e",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "No: it is a '2027 New Grad' role with 'Eligibility: Completing a bachelor’s degree in Spring 2027,' while the candidate graduates in 2026."
+      }
+    ]
+  }
+}

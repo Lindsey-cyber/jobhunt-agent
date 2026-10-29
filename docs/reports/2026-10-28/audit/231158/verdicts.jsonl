@@ -1,0 +1,110 @@
+{"id":"a001","fit":"yes","reason":"The title is “Data Scientist” in “Greenville, SC” and it is “listed on a new-grad GitHub list,” matching an entry-level U.S. data role."}
+{"id":"a002","fit":"yes","reason":"The title “Network Engineer, AI Infrastructure” with work on “AI clusters” and only “1+ year” required experience fits an entry-level AI/data-infrastructure opening in Redmond, WA."}
+{"id":"a003","fit":"no","reason":"Although “early-career,” it is an “Associate Customer Technical Program Manager” role focused on “release scope tracking, defect and blocker management,” not an AI/ML/data technical role."}
+{"id":"a004","fit":"yes","reason":"The title “Software Engineer AI Agent Infrastructure” in “San Jose, CA” and source note “listed on a new-grad GitHub list” make it a fitting entry-level AI infrastructure software role."}
+{"id":"a005","fit":"no","reason":"The posting is categorized as “Quant” for a “Quantitative Researcher Graduate,” not an AI/ML/data/analyst or ML/data infrastructure role targeted by the candidate."}
+{"id":"a006","fit":"no","reason":"It explicitly requires “5+ years of software or security engineering experience,” exceeding the allowed experience level."}
+{"id":"a007","fit":"yes","reason":"The title includes “AI Growth Intelligence Engineer (New Grad)” and the role sits at the “intersection of backend engineering, ML infrastructure,” matching a new-grad AI/ML-data role."}
+{"id":"a008","fit":"no","reason":"This is a “Commodity Sourcing Manager” role owning “sourcing strategy, supplier negotiations,” which is supply-chain/procurement rather than the candidate’s AI/ML/data technical targets."}
+{"id":"a009","fit":"no","reason":"With no description, the only substantive role evidence is “Technical Support Specialist,” which is support rather than an AI/ML/data technical or analyst role."}
+{"id":"a010","fit":"no","reason":"Despite being data infrastructure, the title is “Staff Data Infrastructure Engineer” and asks for someone “setting direction,” not an entry-level/new-grad role."}
+{"id":"a011","fit":"yes","reason":"The posting is a U.S.-area target role, titled \"Machine Learning Researcher\" in the \"New York City Metropolitan Area,\" with no stated disqualifying requirement."}
+{"id":"a012","fit":"no","reason":"This is an accounting/finance leadership role, seeking a \"Controller\" to \"lead our accounting operations,\" not an AI/ML/data role."}
+{"id":"a013","fit":"no","reason":"Although it is a data platform role, it explicitly requires \"3+ years of experience in software engineering or data engineering,\" which exceeds the candidate's entry-level target."}
+{"id":"a014","fit":"yes","reason":"This is a fitting new-grad AI role: \"Applied AI Engineer... (New Grad)\" with \"No professional work experience required\" in Mountain View, California."}
+{"id":"a015","fit":"yes","reason":"The U.S. role title \"AI Prompt Engineer\" is an AI-focused opening, with no stated disqualifying experience or sponsorship restriction."}
+{"id":"a016","fit":"yes","reason":"The U.S. remote role title \"Cybersecurity Software Engineer II - ML & AI\" includes the target \"ML & AI\" focus and has no stated 3+ year requirement."}
+{"id":"a017","fit":"no","reason":"It is not a full-time U.S. new-grad role because the title says \"Summer Analyst - London.\""}
+{"id":"a018","fit":"yes","reason":"This is a target \"Data Scientist\" role where candidates \"may work remotely within the United States\" and the description includes machine learning/AI work."}
+{"id":"a019","fit":"no","reason":"The role requires a security clearance—\"TS/SCI level clearance or higher required\"—which is not fitting for a China citizen needing visa sponsorship."}
+{"id":"a020","fit":"yes","reason":"The Chicago role \"AI Inference Platform Engineer\" focuses on serving \"large language, vision, multimodal, and embedding models\" and states no disqualifying 3+ year requirement."}
+{"id":"a021","fit":"yes","reason":"It is a US “Full time” “Machine Learning Engineer, AI Safety” role requiring a “Master’s or PhD ... or related field” and only “2+ years” of experience."}
+{"id":"a022","fit":"no","reason":"The opening is for a senior non-target “Technology Product Manager - Director” who would “own the product vision, strategy, roadmap” rather than an entry-level AI/ML/data technical role."}
+{"id":"a023","fit":"no","reason":"It requires a “Minimum of 10 years of experience in data architecture, data engineering, or related areas,” exceeding the allowed experience level."}
+{"id":"a024","fit":"no","reason":"Despite accepting a “Masters or PhD,” it requires “3+ years of experience with modern deep learning frameworks,” which is a disqualifying minimum."}
+{"id":"a025","fit":"no","reason":"The location is outside the United States, listed as “Remote, India.”"}
+{"id":"a026","fit":"yes","reason":"The US title “AI Engineer - Data Science” is a target AI/data role and the source says it was “listed on a new-grad GitHub list.”"}
+{"id":"a027","fit":"yes","reason":"The Seattle role is “Engineer 1: Agentic AI” and is “listed on a new-grad GitHub list,” matching an entry-level AI engineering target."}
+{"id":"a028","fit":"no","reason":"The location is outside the United States, listed as “Dublin or London.”"}
+{"id":"a029","fit":"no","reason":"The role is explicitly “Senior Software Engineer - Data Access” and asks the hire to “Lead end-to-end technical execution,” which is not a new-grad or entry-level opening."}
+{"id":"a030","fit":"yes","reason":"The US title “AI Engineer” is a target AI role and the source says it was “listed on a new-grad GitHub list.”"}
+{"id":"a031","fit":"yes","reason":"The role is a U.S.-based target opening with the title \"Machine Learning Engineer\" in \"San Diego, CA\" and no stated disqualifying experience or sponsorship bar."}
+{"id":"a032","fit":"no","reason":"It explicitly says \"AT&T will not hire any applicants for this position who require employer sponsorship now or in the future,\" while the candidate needs sponsorship."}
+{"id":"a033","fit":"no","reason":"This is a senior product role requiring \"8+ years of product management or equivalent experience,\" which exceeds the candidate’s entry-level/up-to-2-years target."}
+{"id":"a034","fit":"no","reason":"The posting is for \"Electric Propulsion Engineer, Avionics\" working on \"spacecraft electric propulsion avionics,\" not an AI/ML/data role."}
+{"id":"a035","fit":"yes","reason":"This is a full-time AI early-career role, stating \"Software Engineer, Early Career (AI)\" and \"less than two years of engineering experience.\"},{"}
+{"id":"a036","fit":"yes","reason":"This is a US AI engineering role titled \"Software Engineer - Customer Facing Applied AI\" where the candidate would \"Build AI-powered agents and tools,\" and the stated \"2+ years\" requirement is not disqualifying."}
+{"id":"a037","fit":"no","reason":"Although it is an AI research role, it asks for \"4+ years of experience in AI/ML engineering, research, or AI safety,\" which exceeds the allowed entry-level/up-to-2-years range."}
+{"id":"a038","fit":"yes","reason":"The US-based title \"Founding ML Engineer, Computer Vision (Object Detection)\" is directly in the target ML area, with no explicit 3+ year requirement or sponsorship bar provided."}
+{"id":"a039","fit":"no","reason":"This is a sales leadership role, \"Manager, Account Development,\" with \"3+ years sales experience,\" not an AI/ML/data role for an entry-level candidate."}
+{"id":"a040","fit":"yes","reason":"This is a US \"Time type: Full time\" role titled \"Machine Learning Software Engineer 1\" involving \"machine learning projects\" and production ML tooling, with no disqualifying experience minimum stated."}
+{"id":"a041","fit":"no","reason":"It is outside the United States, with location quoted as \"Ho Chi Minh, Vietnam; Vietnam,\" and also requires \"3+ years of experience.\""}
+{"id":"a042","fit":"yes","reason":"The U.S. posting is for a target AI role, \"Applied Scientist - Perception (SLAM/VIO),\" in \"New York, NY,\" with no disqualifying requirement shown."}
+{"id":"a043","fit":"no","reason":"It is outside the United States at \"Abu Dhabi; United Arab Emirates\" and requires \"5+ years building large-scale backend or infra systems.\""}
+{"id":"a044","fit":"no","reason":"This is a senior/leadership opening, described as an \"AI Tech Lead\" and \"hands-on technical leader\" expected to lead \"a small team as an engineering manager,\" not an entry-level role."}
+{"id":"a045","fit":"yes","reason":"It is a full-time U.S. AI/ML role, \"Research Engineer, Machine Learning Systems,\" for a \"Machine Learning Engineer\" working at the intersection of \"machine learning, data infrastructure, and internal tooling.\""}
+{"id":"a046","fit":"unsure","reason":"With no description beyond \"Software Development Engineer - Robotics\" and \"List category: Software,\" the text does not show whether this robotics SDE role is an AI/ML or data-focused fit."}
+{"id":"a047","fit":"yes","reason":"The posting is in the \"United States\" for an entry-level-sounding target role, \"Data Scientist Associate,\" in \"AI/ML/Data.\""}
+{"id":"a048","fit":"no","reason":"This is a contingent contract/grant proposal arrangement, with \"Pre-Funding\" compensation for a \"1-hour alignment call\" and post-grant work \"contracted\" as \"Full-time / Milestone-contract,\" not a regular full-time U.S. role."}
+{"id":"a049","fit":"no","reason":"This is a senior management role, titled \"Sr. Engineering Manager\" and responsible to \"build and lead a team\" including \"hiring, training and growing your team,\" not an entry-level opening."}
+{"id":"a050","fit":"yes","reason":"The U.S. posting is a target AI/ML engineering role, \"Artificial Intelligence / Machine Learning Verification and Validation Engineer,\" located in \"State College, PA; Reston, VA.\""}
+{"id":"a051","fit":"yes","reason":"The title is \"Software Engineering/ML/Data Scientist New Grad\" in \"Laurel, MD,\" matching a U.S. new-grad AI/ML/data role."}
+{"id":"a052","fit":"yes","reason":"It is a U.S. role based in \"New York City\" conducting \"research in machine learning and AI\" and accepting \"a Master’s or PhD\" in a related field."}
+{"id":"a053","fit":"no","reason":"The basic qualifications require a degree and \"5+ years of professional experience\" plus \"5+ year of experience with Kubernetes,\" exceeding the candidate’s entry-level target."}
+{"id":"a054","fit":"yes","reason":"It is \"FullTime\" in \"Sunnyvale; United States\" for a \"Research Engineer - Reinforcement Learning\" and says it is \"open to all years of experience.\""}
+{"id":"a055","fit":"no","reason":"The role is \"Nanoelectronics & Device-Physics Engineer\" requiring an MS/PhD in \"electrical engineering, applied physics, materials science,\" not the candidate’s statistics/AI/data target."}
+{"id":"a056","fit":"unsure","reason":"The description is empty and the title \"Full Stack Engineer - AI Trainer\" alone does not show whether it is a full-time AI/ML/data fit."}
+{"id":"a057","fit":"no","reason":"The location is \"Amsterdam; Netherlands,\" which is outside the United States."}
+{"id":"a058","fit":"yes","reason":"The posting is a U.S. \"Data Engineer\" role in \"Huntsville, AL\" listed under \"AI/ML/Data\" on a new-grad list."}
+{"id":"a059","fit":"no","reason":"The minimum requirement is \"MS with 6+ years\" or \"PhD with 4+ years,\" an explicit 3+ year experience minimum."}
+{"id":"a060","fit":"no","reason":"The title says \"Junior Data Engineer / Active Secret,\" indicating an active Secret clearance requirement incompatible with the candidate’s China citizenship."}
+{"id":"a061","fit":"yes","reason":"The US role is titled \"Software Engineer Graduate - AI Infrastructure Compute,\" matching a new-grad AI infrastructure opening in \"San Jose, CA.\""}
+{"id":"a062","fit":"yes","reason":"The posting is a US \"Data Engineer\" role in \"Arlington, VA\" and is \"listed on a new-grad GitHub list,\" matching the data-engineering target."}
+{"id":"a063","fit":"yes","reason":"The US role is \"Machine Learning Engineer II (Underwriting ML)\" and asks for only \"2+ years of experience\" or a \"PhD,\" which is not a disqualifying 3+ year minimum."}
+{"id":"a064","fit":"yes","reason":"The US posting is titled \"Machine Learning Engineer Graduate - E-Commerce Risk Control\" in the \"AI/ML/Data\" category, matching a graduate ML role."}
+{"id":"a065","fit":"yes","reason":"The US title \"Forward Deployed Engineer, AI Agentic Delivery\" indicates an AI engineering role in \"McLean, VA\" with no disqualifying requirement stated."}
+{"id":"a066","fit":"no","reason":"This is a \"Network Engineer\" role requiring \"1+ year of networking experience\" and \"Layer-1 experience,\" so it is network engineering rather than a fitting ML/data role."}
+{"id":"a067","fit":"no","reason":"The role requires an \"expected graduation date between December 2026 and June 2027,\" while the candidate graduates in May 2026."}
+{"id":"a068","fit":"no","reason":"The posting is outside the United States at \"London; United Kingdom,\" which is outside the candidate's target location."}
+{"id":"a069","fit":"yes","reason":"Although the title says \"Senior,\" the full-time Palo Alto posting says it is \"looking for exceptional new grads\" for \"AI infrastructure,\" so it matches."}
+{"id":"a070","fit":"yes","reason":"The US posting is a \"Research Scientist\" role in the \"AI/ML/Data\" category and is \"listed on a new-grad GitHub list,\" with no PhD requirement stated."}
+{"id":"a071","fit":"yes","reason":"The role is a U.S. AI opening, with the title \"AI Engineer 1\" in \"Palo Alto, CA\" and source notes saying it is \"listed on a new-grad GitHub list.\""}
+{"id":"a072","fit":"no","reason":"It explicitly requires far too much experience: \"12+ years of relevant professional experience.\""}
+{"id":"a073","fit":"yes","reason":"This is a U.S. full-time target role: \"Employment type: FullTime\" for a \"Data & AI Engineer\" building \"AI, data, and agentic solutions.\""}
+{"id":"a074","fit":"no","reason":"The role is not an AI/ML/data role for the candidate, but a \"Program Manager, Supply Chain & Warehouse Training\" position focused on \"training programs for warehousing and materials operations.\""}
+{"id":"a075","fit":"no","reason":"The posting has an explicit export-control restriction: \"ITAR REQUIREMENTS\" state the \"applicant must be a (i) U.S. citizen or national,\" which does not fit a China citizen needing sponsorship."}
+{"id":"a076","fit":"yes","reason":"The title is a target U.S. role, \"Machine Learning Engineer – Agentic AI,\" located in \"San Diego, California.\""}
+{"id":"a077","fit":"no","reason":"It is a senior sales role requiring \"10-15+ years of experience\" and \"5+ years managing\" a sales team."}
+{"id":"a078","fit":"yes","reason":"This is a U.S. full-time AI/data infrastructure role, \"Software Engineer (AI-Native), Database Engineering,\" accepting a \"Bachelor’s degree in Computer Science, Engineering, Statistics, or a related field.\""}
+{"id":"a079","fit":"unsure","reason":"With only the ambiguous title \"Research Scientist\" and an empty \"description,\" the text does not show whether it is an AI/ML/data role accepting the candidate’s background."}
+{"id":"a080","fit":"no","reason":"It is not a full-time role because the posting states \"Employment type: Intern\" and the title is \"Research Intern.\""}
+{"id":"a081","fit":"yes","reason":"The target title is \"Data Scientist\" and it is \"listed on a new-grad GitHub list,\" with no disqualifying requirement stated."}
+{"id":"a082","fit":"no","reason":"The role is explicitly leveled as \"Staff Applied AI Engineer,\" not a new-grad or entry-level opening."}
+{"id":"a083","fit":"no","reason":"The location is \"Bengaluru, India,\" which is outside the United States."}
+{"id":"a084","fit":"yes","reason":"The target title is \"Data Scientist\" in \"Woodburn, IN\" and categorized as \"AI/ML/Data,\" with no disqualifying requirement stated."}
+{"id":"a085","fit":"no","reason":"The opening is labeled \"Campus 2027,\" which does not match the candidate's 2026 graduation."}
+{"id":"a086","fit":"yes","reason":"The title \"AI Systems Engineer, Hardware Architecture\" is an AI-engineering role in \"New York, NY\" with no disqualifying requirement provided."}
+{"id":"a087","fit":"no","reason":"The role is \"Product Operations Technical Specialist\" focused on \"debugging and resolving complex electromechanical issues,\" not an AI/ML/data role."}
+{"id":"a088","fit":"no","reason":"This role requires \"8+ years of combined experience\" and \"3-5+ years of product management experience,\" exceeding the candidate's entry-level target."}
+{"id":"a089","fit":"yes","reason":"The posting is \"Software Engineer, AI Platform - New Grad\" and accepts candidates \"graduating before or in June 2027.\"},{"}
+{"id":"a090","fit":"yes","reason":"The role is in the target AI/ML area with title \"AI Research Scientist, Ads Ranking\" and is located in the U.S. at \"New York, NY,\" with no stated disqualifying PhD or 3+ year requirement."}
+{"id":"a091","fit":"no","reason":"It requires “4+ years of experience in claims processing” and “4+ years experience in medical coding,” exceeding the candidate’s entry-level/up-to-2-years target."}
+{"id":"a092","fit":"yes","reason":"The U.S.-based “Data and Artificial Intelligence Analyst” posting is categorized as “AI/ML/Data” and is “listed on a new-grad GitHub list.”"}
+{"id":"a093","fit":"no","reason":"The posting seeks “highly experienced Lead Electrical Architects” to own “electrical architecture,” not an entry-level AI/ML/data role."}
+{"id":"a094","fit":"yes","reason":"The U.S. “Data Scientist / Technical Analyst” posting is categorized as “AI/ML/Data” and is listed on a new-grad GitHub list."}
+{"id":"a095","fit":"yes","reason":"It is a U.S. “Research Scientist” role working on “AI models and systems,” and the experience language appears under “Ideally you’d have” with encouragement to apply even if experience does not perfectly align."}
+{"id":"a096","fit":"yes","reason":"The U.S. associate-level title “Forward Deployed Engineer Associate - AI Capability Center” indicates a target AI engineering opening with no disqualifying requirement shown."}
+{"id":"a097","fit":"no","reason":"The senior “Staff AI Engineer” role involves “Set the technical direction for enterprise-wide AI architecture” and “mentorship,” which is not an entry-level opening."}
+{"id":"a098","fit":"no","reason":"The location is outside the United States: “SGP - Woodlands; Singapore.”"}
+{"id":"a099","fit":"yes","reason":"The U.S. title “R&D Engineer - Data Science” is a target data science opening with no disqualifying requirement shown."}
+{"id":"a100","fit":"no","reason":"It explicitly requires “12+ years of experience,” far above the candidate’s entry-level/up-to-2-years target."}
+{"id":"a101","fit":"no","reason":"No: the role is an 'Internal Fleet Driver' requiring 'professional commercial driving experience' and a 'Valid CDL Class A license,' not an AI/ML/data opening."}
+{"id":"a102","fit":"no","reason":"No: it is a '2027 New Grad' role with 'Eligibility: Completing a bachelor’s degree in Spring 2027,' while the candidate graduates in 2026."}
+{"id":"a103","fit":"yes","reason":"Yes: the title is 'ML Engineer' and the location is 'New York,' with no disqualifying requirement shown."}
+{"id":"a104","fit":"no","reason":"No: the posting is outside the United States, requiring work 'on-site at our office in London five days a week.'"}
+{"id":"a105","fit":"yes","reason":"Yes: the title is 'Machine Learning Engineer - AI Trainer' in 'Lowell, AR,' with no disqualifying requirement shown."}
+{"id":"a106","fit":"no","reason":"No: the role is a 'Bank Fraud Investigator' focused on 'investigating suspected fraudulent activities,' not an AI/ML/data role."}
+{"id":"a107","fit":"no","reason":"No: it is a 'Founding Engineer, Forward Deployed (full-stack)' role to 'take new features from spec to production' using 'TypeScript/React, Python, Postgres, AWS,' not a specifically AI/ML/data opening."}
+{"id":"a108","fit":"yes","reason":"Yes: the role is 'Machine Learning Engineer, Radar' in 'Seattle' and its '2+ years of experience' minimum is not disqualifying under the criteria."}
+{"id":"a109","fit":"yes","reason":"Yes: the title is 'Data Scientist - Data & Analytics' in 'Charlotte, NC,' matching the candidate’s data-science target."}
+{"id":"a110","fit":"yes","reason":"Yes: the role is 'Machine Learning Engineer' in 'San Francisco, CA' to 'Build and improve ML and LLM-powered systems,' matching the candidate’s AI/ML target."}

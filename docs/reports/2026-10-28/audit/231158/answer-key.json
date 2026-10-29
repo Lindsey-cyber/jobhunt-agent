@@ -1,0 +1,772 @@
+[
+  {
+    "id": "a001",
+    "key": "workday:gevernova:r5051914-3",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a002",
+    "key": "greenhouse:8808184002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "auth.citizenship"
+  },
+  {
+    "id": "a003",
+    "key": "ashby:cd8e8c4e-134c-4627-83d3-20c98b0751ce",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a004",
+    "key": "url:https://jobs.bytedance.com/en/position/7667976924430633269/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a005",
+    "key": "greenhouse:8451764002",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.adjacent"
+  },
+  {
+    "id": "a006",
+    "key": "greenhouse:5427855008",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a007",
+    "key": "greenhouse:4694899006",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a008",
+    "key": "ashby:f349200b-3a76-4721-9b16-2b469ee5d5f5",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a009",
+    "key": "greenhouse:6209953004",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a010",
+    "key": "greenhouse:8806617002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a011",
+    "key": "linkedin:4484024676",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a012",
+    "key": "ashby:40002ae2-2c05-4a30-aaad-24480a36ee06",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a013",
+    "key": "greenhouse:4826897101",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "experience.too_senior"
+  },
+  {
+    "id": "a014",
+    "key": "greenhouse:4700278006",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a015",
+    "key": "workday:caci:334136",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a016",
+    "key": "workday:homedepot:req193044",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a017",
+    "key": "workday:blackstone:43819",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a018",
+    "key": "greenhouse:5454172008",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a019",
+    "key": "greenhouse:4719784006",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a020",
+    "key": "greenhouse:8230509",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a021",
+    "key": "workday:nvidia:jr2021784-1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a022",
+    "key": "workday:blackrock:r266949",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a023",
+    "key": "greenhouse:4721026006",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a024",
+    "key": "greenhouse:8222098",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a025",
+    "key": "greenhouse:8887401002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a026",
+    "key": "lever:6f317af6-4362-4dea-accc-e86ec1d102a5",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a027",
+    "key": "workday:nordstrom:r-889191",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a028",
+    "key": "greenhouse:8271661",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a029",
+    "key": "greenhouse:7437922",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a030",
+    "key": "url:https://apply.workable.com/teserac-inc/j/01F1C3E218/apply",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a031",
+    "key": "url:https://qualcomm.eightfold.ai/careers/job/446717859953",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a032",
+    "key": "workday:att:r-124510-1",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a033",
+    "key": "greenhouse:8129885",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a034",
+    "key": "greenhouse:8828206002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a035",
+    "key": "ashby:85947779-6b87-466a-98bc-30a640448c28",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a036",
+    "key": "greenhouse:8879308002",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a037",
+    "key": "ashby:aa6c2bf9-cba1-47f7-b268-bcbba41080c0",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a038",
+    "key": "linkedin:4474243590",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a039",
+    "key": "greenhouse:8072065",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a040",
+    "key": "workday:crowe:r-71006",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a041",
+    "key": "workday:motorolasolutions:r68248",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a042",
+    "key": "linkedin:4462093637",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a043",
+    "key": "ashby:5a600fc4-fe72-4d22-8cd9-e3b2e9325611",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a044",
+    "key": "workday:crowe:r-52491",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a045",
+    "key": "ashby:9a030b32-d671-43e0-a221-4653bb73ba29",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a046",
+    "key": "url:https://amazon.jobs/en/jobs/10567489/software-development-engineer-robotics-early-career-2027",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a047",
+    "key": "url:https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/15323",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a048",
+    "key": "url:https://news.ycombinator.com/item?id=49934114",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "lead.unresolved"
+  },
+  {
+    "id": "a049",
+    "key": "workday:crowdstrike:r30331",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a050",
+    "key": "workday:psu:0000080734-1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a051",
+    "key": "url:https://careers.jhuapl.edu/jobs/59654?icims=1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a052",
+    "key": "lever:9e3bdb48-67eb-49d9-ae0b-a337ba69a05f",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a053",
+    "key": "greenhouse:8807844002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a054",
+    "key": "ashby:36a49d01-e60f-4c01-8c8c-5a7f79347f51",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a055",
+    "key": "ashby:4ec16c9a-7a4e-4fd9-bebf-8a92ab35ac3f",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a056",
+    "key": "glassdoor:1010301622952",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a057",
+    "key": "workday:ebay:r0073584",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a058",
+    "key": "workday:bah:r0248336",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a059",
+    "key": "workday:nvidia:jr2024785",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a060",
+    "key": "url:https://careers-peraton.icims.com/jobs/170925/junior-data-engineer---active-secret/job",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a061",
+    "key": "url:https://jobs.bytedance.com/en/position/7667334059728341253/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a062",
+    "key": "url:https://apply.workable.com/avalore/j/B542E4DD72",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a063",
+    "key": "greenhouse:7822387003",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a064",
+    "key": "url:https://jobs.bytedance.com/en/position/7675477660855781637/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a065",
+    "key": "glassdoor:1010302842969",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a066",
+    "key": "greenhouse:8808182002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "auth.citizenship"
+  },
+  {
+    "id": "a067",
+    "key": "lever:5cde0d09-ba2d-408d-947e-4a42028cd4f7",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a068",
+    "key": "ashby:e4777627-ff8f-4257-8612-3a016bb58592",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a069",
+    "key": "ashby:ce5f6b51-0258-4956-87cf-c630a08323c7",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a070",
+    "key": "url:https://jobs.bytedance.com/en/position/7698902624003229957/detail",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a071",
+    "key": "url:https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013253",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a072",
+    "key": "workday:nvidia:jr2010863",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a073",
+    "key": "ashby:5f246f2b-8cd1-41ec-916c-9ed37a6b07a5",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a074",
+    "key": "greenhouse:5241828007",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a075",
+    "key": "greenhouse:8642529002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "auth.citizenship"
+  },
+  {
+    "id": "a076",
+    "key": "url:https://careers.qualcomm.com/careers/job/446721159438",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a077",
+    "key": "ashby:675b6dab-6f04-4d9e-a6bd-c001f2784c0b",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a078",
+    "key": "ashby:073c91f2-0758-4544-9297-3f48a81fb04d",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a079",
+    "key": "workday:kla:2640190-1",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "role.research_unclear"
+  },
+  {
+    "id": "a080",
+    "key": "ashby:edc2528d-6e6c-4a67-b871-bfe7d9c890b4",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "type.internship"
+  },
+  {
+    "id": "a081",
+    "key": "workday:premierinc:r0008457",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "location.unknown"
+  },
+  {
+    "id": "a082",
+    "key": "greenhouse:6204368004",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a083",
+    "key": "greenhouse:8223817",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a084",
+    "key": "workday:michelinhr:r-2026029871-1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a085",
+    "key": "url:https://axtriainc.applytojob.com/apply/WvWFVnBuU0/Campus-2027-AI-Data-Analyst",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a086",
+    "key": "linkedin:4481044689",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a087",
+    "key": "greenhouse:5210350007",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a088",
+    "key": "greenhouse:8847080002",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a089",
+    "key": "greenhouse:7351066",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a090",
+    "key": "linkedin:4474077457",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a091",
+    "key": "greenhouse:8306738",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a092",
+    "key": "url:https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210773954",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a093",
+    "key": "greenhouse:4650972007",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "role.non_engineering"
+  },
+  {
+    "id": "a094",
+    "key": "workday:cat:r0000392872",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a095",
+    "key": "greenhouse:4677657005",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a096",
+    "key": "workday:huron:jr-0016510-1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a097",
+    "key": "workday:capitalone:r1002807-1",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "level.senior"
+  },
+  {
+    "id": "a098",
+    "key": "workday:globalfoundries:jr-2603773",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a099",
+    "key": "workday:smithnephew:r90815",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a100",
+    "key": "greenhouse:5226679007",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a101",
+    "key": "greenhouse:8801460002",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a102",
+    "key": "ashby:c1788246-305f-4e4f-8b03-8444c76a466e",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a103",
+    "key": "linkedin:4398683222",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a104",
+    "key": "greenhouse:5199940007",
+    "stratum": "reject_near",
+    "verdict": "reject",
+    "rule": "location.non_us"
+  },
+  {
+    "id": "a105",
+    "key": "glassdoor:1010304892644",
+    "stratum": "review",
+    "verdict": "review",
+    "rule": "level.unclear"
+  },
+  {
+    "id": "a106",
+    "key": "greenhouse:8214553",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a107",
+    "key": "url:https://news.ycombinator.com/item?id=49961408",
+    "stratum": "reject_any",
+    "verdict": "reject",
+    "rule": "role.out_of_scope"
+  },
+  {
+    "id": "a108",
+    "key": "greenhouse:8243617",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a109",
+    "key": "workday:vanguard:180093-1",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  },
+  {
+    "id": "a110",
+    "key": "greenhouse:4711484005",
+    "stratum": "match",
+    "verdict": "match",
+    "rule": "match"
+  }
+]

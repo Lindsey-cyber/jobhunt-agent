@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you a previous Employee of PayPal or any of its subsidiaries?\": no answer in profile or answer bank",
+    "readback mismatch on \"How Did You Hear About Us?\": expected \"Job Board\", got \"\"",
+    "required \"How Did You Hear About Us?\" is empty after filling",
+    "required \"Are you a previous Employee of PayPal or any of its subsidiaries?\" is empty after filling"
+  ]
+}

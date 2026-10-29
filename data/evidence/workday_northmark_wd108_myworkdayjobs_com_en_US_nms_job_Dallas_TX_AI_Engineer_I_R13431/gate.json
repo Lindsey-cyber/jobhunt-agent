@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Please select the ethnicity which most accurately describes how you identify yourself.\": sensitive question with no exact answer",
+    "required \"Yes, I have read and consent to the terms and conditions.\": acknowledgements and consents need the candidate",
+    "required \"Please select the ethnicity which most accurately describes how you identify yourself.\" is empty after filling",
+    "required \"Yes, I have read and consent to the terms and conditions.\" is empty after filling"
+  ]
+}

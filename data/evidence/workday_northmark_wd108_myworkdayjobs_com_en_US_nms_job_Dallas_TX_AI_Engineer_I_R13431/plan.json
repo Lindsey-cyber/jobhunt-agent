@@ -1,0 +1,786 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://northmark.wd108.myworkdayjobs.com/en-US/nms/job/Dallas-TX/AI-Engineer-I_R13431/apply/applyManually",
+    "company": "NorthMark Strategies",
+    "jobTitle": "AI Engineer I",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Career Fair",
+          "Coding Event",
+          "Conference",
+          "Employee Referral",
+          "External Recruiting Agency",
+          "Glassdoor",
+          "Indeed",
+          "Internal Recruiter",
+          "LinkedIn Company Page",
+          "Monster",
+          "Other",
+          "Saw on personal Facebook feed",
+          "Saw on personal LinkedIn feed",
+          "Social Media",
+          "University Job Posting"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously worked for this organization? If No, please continue to the next page. If Yes, please enter the information you recall below. It will be helpful to our Recruitment team to assist linking your application with your previous employee record.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "f8317c17a08a100029e9547bbbe00000",
+        "label": "Are you 18 years of age or older?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f8317c17a08a100029e955af2e600000",
+        "label": "Will you, now or in the future, require Visa/Sponsorship within the country for which you are applying?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f8317c17a08a100029e9564921380000",
+        "label": "Are you under any type of employment agreement (such as a non-compete, non-tamper, or non-solicitation agreement) by a current or past employer?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "gender",
+        "label": "Please select your gender.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Not declared"
+        ]
+      },
+      {
+        "id": "ethnicity",
+        "label": "Please select the ethnicity which most accurately describes how you identify yourself.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "veteranStatus",
+        "label": "Please select your veteran status.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I identify as one or more of the classifications of protected veterans listed above",
+          "I identify as a veteran, just not a protected veteran",
+          "I am not a veteran",
+          "I do not wish to self-identify"
+        ]
+      },
+      {
+        "id": "acceptTermsAndAgreements",
+        "label": "Yes, I have read and consent to the terms and conditions.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Yes, I have read and consent to the terms and conditions.*"
+        ]
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Dallas, TX"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Career Fair",
+          "Coding Event",
+          "Conference",
+          "Employee Referral",
+          "External Recruiting Agency",
+          "Glassdoor",
+          "Indeed",
+          "Internal Recruiter",
+          "LinkedIn Company Page",
+          "Monster",
+          "Other",
+          "Saw on personal Facebook feed",
+          "Saw on personal LinkedIn feed",
+          "Social Media",
+          "University Job Posting"
+        ]
+      },
+      "value": "Other",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously worked for this organization? If No, please continue to the next page. If Yes, please enter the information you recall below. It will be helpful to our Recruitment team to assist linking your application with your previous employee record.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f8317c17a08a100029e9547bbbe00000",
+        "label": "Are you 18 years of age or older?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "over-18",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f8317c17a08a100029e955af2e600000",
+        "label": "Will you, now or in the future, require Visa/Sponsorship within the country for which you are applying?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f8317c17a08a100029e9564921380000",
+        "label": "Are you under any type of employment agreement (such as a non-compete, non-tamper, or non-solicitation agreement) by a current or past employer?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gender",
+        "label": "Please select your gender.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Not declared"
+        ]
+      },
+      "value": "Not declared",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "ethnicity",
+        "label": "Please select the ethnicity which most accurately describes how you identify yourself.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "veteranStatus",
+        "label": "Please select your veteran status.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I identify as one or more of the classifications of protected veterans listed above",
+          "I identify as a veteran, just not a protected veteran",
+          "I am not a veteran",
+          "I do not wish to self-identify"
+        ]
+      },
+      "value": "I am not a veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "acceptTermsAndAgreements",
+        "label": "Yes, I have read and consent to the terms and conditions.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Yes, I have read and consent to the terms and conditions.*"
+        ]
+      },
+      "reason": "acknowledgements and consents need the candidate"
+    }
+  ]
+}

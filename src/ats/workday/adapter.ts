@@ -66,7 +66,13 @@ async function promptOptions(page: Page, id: string): Promise<string[]> {
   const input = b.locator("input").first();
   if (!(await input.click({ force: true, timeout: 5000 }).then(() => true, () => false))) return [];
   const prompt = page.locator('[data-automation-id="promptOption"]');
-  await page.waitForTimeout(1500);
+  // HPE's list takes over two seconds; wait until it stops growing.
+  for (let n = -1, t = 0; t < 10; t++) {
+    await page.waitForTimeout(800);
+    const c = await prompt.count();
+    if (c === n && t >= 2) break;
+    n = c;
+  }
   // Chosen items elsewhere on the page (the phone code) share the automation id.
   const chosen = new Set((await page.locator('[data-automation-id="selectedItem"]').allInnerTexts().catch(() => [])).map((t) => t.trim()));
   const texts = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim()).filter((t) => t && !chosen.has(t));
@@ -313,16 +319,37 @@ export const workday: AtsAdapter = {
           if (i < 0) i = texts.findIndex((t) => searchMatch(value, t));
           if (i < 0) return false;
           await prompt.nth(i).click({ force: true });
-          await page.waitForTimeout(1200);
+          // A category's own list loads after the click; wait until it stops growing.
+          for (let n = -1, t = 0; t < 6; t++) {
+            await page.waitForTimeout(700);
+            const c = await prompt.count();
+            if (c === n) break;
+            n = c;
+          }
           // A category ("LinkedIn" at Draper) opens its own list instead of being chosen:
           // take the child that names the answer, or its only child.
           if ((await pills.count()) === 0 && (await prompt.count()) > 0) {
             // Chosen items elsewhere (the phone code) share the automation id.
             const chosen = new Set((await page.locator('[data-automation-id="selectedItem"]').allInnerTexts().catch(() => [])).map((t) => t.trim()));
-            const all = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim());
-            const kids = all.map((t, j) => ({ t, j })).filter(({ t }) => !chosen.has(t));
-            let k = kids.find(({ t }) => searchMatch(value, t))?.j ?? -1;
-            if (k < 0 && kids.length === 1) k = kids[0]!.j;
+            // Inside "Job Board" (GE Vernova), the board her postings come from, else "Other".
+            // (HPE's children repeat the category: "Job Board 51 Jobs", "Job Board - Linkedin".)
+            const choose = (all: string[]) => {
+              const kids = all.map((t, j) => ({ t, j })).filter(({ t }) => !chosen.has(t));
+              const k = kids.find(({ t }) => /\blinkedin\b/i.test(t))?.j ?? kids.find(({ t }) => normalize(t) === normalize(value))?.j ?? kids.find(({ t }) => /(^|\W)other$/i.test(t))?.j ?? -1;
+              return { k: k < 0 && kids.length === 1 ? kids[0]!.j : k, more: kids.length > 1 };
+            };
+            let all = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim());
+            let { k, more } = choose(all);
+            // HPE's list renders a screenful at a time: scroll for the rest.
+            for (let t = 0; k < 0 && more && t < 15; t++) {
+              const last = all[all.length - 1];
+              await prompt.last().scrollIntoViewIfNeeded().catch(() => undefined);
+              await page.mouse.wheel(0, 400).catch(() => undefined);
+              await page.waitForTimeout(600);
+              all = (await prompt.allInnerTexts().catch(() => [])).map((x) => x.trim());
+              if (all[all.length - 1] === last) break;
+              ({ k } = choose(all));
+            }
             if (k >= 0) {
               await prompt.nth(k).click({ force: true });
               // The chip shows only the child ("Other"); the readback reports the category too.

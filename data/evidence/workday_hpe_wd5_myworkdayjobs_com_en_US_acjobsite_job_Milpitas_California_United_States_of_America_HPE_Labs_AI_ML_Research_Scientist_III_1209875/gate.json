@@ -1,0 +1,6 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"How Did You Hear About Us?\": expected \"LinkedIn\", got \"External career fair or conference\""
+  ]
+}

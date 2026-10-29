@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you aware of any legal restrictions on your ability to accept and perform this job, such as an agreement with your current or former employer?\": no answer in profile or answer bank",
+    "required \"Are you aware of any legal restrictions on your ability to accept and perform this job, such as an agreement with your current or former employer?\" is empty after filling"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Internet Job Board /  Job Search",
+      "actual": "Internet Job Board /  Job Search › Other",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Are you currently working or have you previously worked as an employee, Intern, contractor, consultant, supplier for General Motors or any of its associated subsidiaries*, joint ventures*, or Dealers? (**Examples of past and current GM subsidiaries and joint ventures include but are not limited to: OnStar, Cruise, GM Financial, GM Components Holdings, GM Subsystems Manufacturing, Rochester Products Division, ACDelco, Opel, Vauxhall Motors, GM Defense, DMAX, TEI and Ultium.)",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country / Territory",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine2",
+      "label": "Address Line 2",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country / Territory Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "45330f21a4a31001c7d76f09ed6d0000",
+      "label": "Are you currently eligible to work in the United States of America?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "45330f21a4a31001c7d76fa384f50000",
+      "label": "Will you require future sponsorship to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "45330f21a4a31001c7d76fa384f50003",
+      "label": "Are you (or your spouse) a Current Government Employee?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "45330f21a4a31001c7d7703d33a90000",
+      "label": "Are you a Current or Former Government Employee?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "45330f21a4a31001c7d7703d33a90002",
+      "label": "General Motors will need to contact you throughout the recruitment process, this may include SMS/text messaging from GM and/or GM’s third party partners (message and data rates may apply.) Do you agree to communications via text message/SMS?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you aware of any legal restrictions on your ability to accept and perform this job, such as an agreement with your current or former employer?"
+  ],
+  "fillErrors": []
+}

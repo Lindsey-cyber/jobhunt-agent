@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you previously been considered for a role with S&N (permanent, fixed-term, interim, contractor, internship)?\": no answer in profile or answer bank",
+    "required \"Do you have a family member who is a Health Care Professional or government official?\": no answer in profile or answer bank",
+    "required \"Do you know, or are you connected in any way, to a HealthCare Professional that uses S&N products or services?\": no answer in profile or answer bank",
+    "required \"Are you related by blood, adoption, or marriage to a current employee?\": no answer in profile or answer bank",
+    "required \"Have you previously been considered for a role with S&N (permanent, fixed-term, interim, contractor, internship)?\" is empty after filling",
+    "required \"Do you have a family member who is a Health Care Professional or government official?\" is empty after filling",
+    "required \"Do you know, or are you connected in any way, to a HealthCare Professional that uses S&N products or services?\" is empty after filling",
+    "required \"Are you related by blood, adoption, or marriage to a current employee?\" is empty after filling"
+  ]
+}

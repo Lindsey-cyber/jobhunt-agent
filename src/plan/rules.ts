@@ -339,7 +339,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Any other "have you worked for / been employed by / contracted with <this company>?":
     // the hiring company must be named, and her resume's employers decide.
     path: "workHistory",
-    pattern: /\b(worked|been (previously )?employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bare you currently employed (with|at|by)\b|\bare you an? (previous|former|prior) [a-z ]{0,40}\bemployee\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
+    pattern: /\b(worked|been (previously )?employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bare you currently an? (associate|employee|team member) (at|of)\b|\bare you currently employed (with|at|by)\b|\bare you an? (previous|former|prior) [a-z ]{0,40}\bemployee\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       if (/\b(relative|family|familial|client|customer|government|partner|competitor)\b/.test(label)) return undefined;
@@ -495,7 +495,9 @@ export const PROFILE_RULES: ProfileRule[] = [
       const opts = ctx.options ?? [];
       // A search box (Workday) finds "LinkedIn" as one item; job-alert emails are one of the sources.
       if (!opts.length) return "LinkedIn";
-      for (const want of [/^job ?boards?$/i, /\b(job|recruiting) boards?\b/i, /^github$/i, /^linkedin$/i, /careers? (site|page)|website/i, /^other$/i]) {
+      // On Workday the category that holds LinkedIn comes first ("Social Network" at RELX, whose
+      // "Job Board" has no LinkedIn); the adapter chooses LinkedIn inside it.
+      for (const want of [/^social (network|media)s?$/i, /^job ?boards?$/i, /\b(job|recruiting) boards?\b/i, /^github$/i, /^linkedin$/i, /careers? (site|page)|website/i, /^other$/i]) {
         const hit = opts.find((o) => want.test(o.trim()));
         if (hit) return hit;
       }
@@ -659,7 +661,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): she knows no one at any company, relatives included.
     path: "relativesAtEmployers",
-    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b|\bfamily members?\b.{0,80}\bwho work (for|at)\b|\bare you related to an? .{1,60}\b(employee|staff|team member)s?\b|\brelatives? who (are|is) (currently )?(employed|working)\b|\b(closely related to|close personal relationship with) anyone who (currently )?works (at|for)\b/,
+    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b|\bfamily members?\b.{0,80}\bwho work (for|at)\b|\bare you related to an? .{1,60}\b(employee|staff|team member)s?\b|\brelatives? who (are|is) (currently )?(employed|working)\b|\b(closely related to|close personal relationship with) anyone who (currently )?works (at|for)\b|\bare you related by blood\b.{0,40}\bto an? (current )?employee\b/,
     resolve: (p) => (p.relativesAtEmployers === false ? "No" : undefined),
   },
   {

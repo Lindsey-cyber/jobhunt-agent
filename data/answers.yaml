@@ -535,3 +535,21 @@ answers:
     aliases: []
     answer: "No"
     origin: human
+  # Inferred (standing permission, 2026-10-29): the ledger has no earlier Smith+Nephew application.
+  - id: sn-previously-considered
+    question: Have you previously been considered for a role with S&N (permanent, fixed-term, interim, contractor, internship)?
+    aliases: []
+    answer: "No"
+    origin: human
+  # From her profile: she lives in Flushing, Queens, NY.
+  - id: snap-finance-reside
+    question: Do you currently reside in any of the following locations? (Salt Lake City - Metropolitan Area, Phoenix, Dallas, North Carolina)
+    aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): she is willing to relocate for an on-site role (profile workArrangement.relocate).
+  - id: snap-finance-preferred-location
+    question: Is your preferred location within 200 miles from our SLC office?
+    aliases: []
+    answer: "Yes"
+    origin: human

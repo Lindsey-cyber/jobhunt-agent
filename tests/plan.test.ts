@@ -379,9 +379,12 @@ describe("buildPlan", () => {
     expect(one("Are you currently employed with Magna? (If you are a current Magna employee, please use the \"Jobs Hub\" in Workday to apply for this role.)", ["Yes", "No"], "Magna")).toMatchObject({ value: "No" });
     expect(one("Are you a previous Employee of PayPal or any of its subsidiaries?", ["Yes", "No"], "PayPal")).toMatchObject({ value: "No" });
     expect(one("What source(s) of information influenced your decision to apply for a P&G position?", ["P&G Career Site (pgcareers.com)", "LinkedIn", "Job Board (Indeed, Glassdoor, etc.)", "Other"], "Procter & Gamble", "checkbox")).toMatchObject({ value: "Job Board (Indeed, Glassdoor, etc.)" });
+    expect(one("How Did You Hear About Us?", ["Career Fair", "Direct Sourcing", "Job Board", "Other", "Our Web Site", "Social Network"], "RELX")).toMatchObject({ value: "Social Network" });
     expect(one("Have you ever been an employee of any Government (civil service or military) (https://careers.gevernova.com/global/en/definition-of-government)?", ["Yes", "No"], "GE Vernova")).toMatchObject({ value: "No" });
     expect(one("Are you currently serving or have you ever served as part of the military?", ["Yes", "No"], "Procter & Gamble")).toMatchObject({ value: "No" });
     expect(one("How Did You Hear About Us?", ["Recruiting Boards", "Recruiting Event", "Social"], "R1 RCM")).toMatchObject({ value: "Recruiting Boards" });
+    expect(one("Are you currently an associate of Simmons Bank? IMPORTANT! Current Simmons associates need to apply using their internal Workday account.", ["No, I’m not an associate of Simmons Bank.", "Yes, I’m currently employed by Simmons Bank."], "Simmons Bank")).toMatchObject({ value: "No, I’m not an associate of Simmons Bank." });
+    expect(one("Are you related by blood, adoption, or marriage to a current employee?", ["Yes", "No"], "Smith+Nephew")).toMatchObject({ value: "No" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

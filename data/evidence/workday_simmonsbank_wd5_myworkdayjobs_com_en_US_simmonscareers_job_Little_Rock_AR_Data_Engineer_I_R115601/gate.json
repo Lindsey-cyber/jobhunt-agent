@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently an associate of Simmons Bank? IMPORTANT! Current Simmons associates need to apply using their internal Workday account. In Workday, go to the Jobs Hub via the Menu and select Browse Jobs.\": no answer in profile or answer bank",
+    "required \"Are you currently an associate of Simmons Bank? IMPORTANT! Current Simmons associates need to apply using their internal Workday account. In Workday, go to the Jobs Hub via the Menu and select Browse Jobs.\" is empty after filling"
+  ]
+}

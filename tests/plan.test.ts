@@ -195,6 +195,12 @@ describe("buildPlan", () => {
     expect(one("Are you a citizen of any of the following countries: Group D (Armenia, Belarus, China (PRC), Hong Kong, Vietnam)")).toMatchObject({ status: "fill", value: "Yes" });
   });
 
+  it("answers current enrollment from degree end dates", () => {
+    const f = field("Are you currently enrolled in an accredited degree program?", { kind: "select", options: ["Yes", "No"] });
+    const done = { ...user.profile, education: [{ ...user.profile.education[0]!, gradYear: 2026, gradMonth: 5 }] };
+    expect(buildPlan(form([f]), done, user.bank).items[0]).toMatchObject({ status: "fill", value: "No" });
+  });
+
   it("answers transgender identity from the gender choice", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline" as const } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });

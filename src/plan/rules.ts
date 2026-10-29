@@ -207,6 +207,15 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // ADI: "Are you currently enrolled in an accredited degree program?": any degree ending after today.
+    path: "education",
+    pattern: /^are you (currently )?(enrolled in|pursuing) an? (accredited )?(degree|university|college) program$|^are you currently a student$/,
+    resolve: (p, _label, ctx) => {
+      const today = ctx.today ?? new Date().toISOString().slice(0, 7);
+      return yesNo(p.education.some((e) => `${e.gradYear}-${String(e.gradMonth).padStart(2, "0")}` > today));
+    },
+  },
+  {
     // ADI: "Please add your Country of Citizenship or Countries of Citizenship if dual".
     path: "citizenship",
     pattern: /\bcountr(y|ies) of citizenship\b/,

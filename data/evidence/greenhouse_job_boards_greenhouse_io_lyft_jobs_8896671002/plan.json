@@ -738,8 +738,33 @@
           "I identify as one or more of the classifications of a protected veteran",
           "I don't wish to answer"
         ]
+      },
+      {
+        "id": "current-role-0",
+        "label": "Current role",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "Current role"
+        ]
+      },
+      {
+        "id": "race",
+        "label": "Please identify your race",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "White",
+          "Native Hawaiian or Other Pacific Islander",
+          "Two or More Races",
+          "Decline To Self Identify"
+        ]
       }
     ],
+    "priorApplications": 0,
     "jobLocation": "San Francisco, CA"
   },
   "items": [
@@ -1134,7 +1159,7 @@
         "required": true,
         "options": []
       },
-      "value": "Research Assistant",
+      "value": "Research Assistant (ML)",
       "source": {
         "type": "profile",
         "path": "workHistory"
@@ -1505,7 +1530,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_38857427002",
         "label": "May we contact your current employer?",
@@ -1516,7 +1541,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "contact-current-employer",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1532,9 +1564,8 @@
       },
       "value": "Yes",
       "source": {
-        "type": "bank",
-        "id": "draft:93e3942762",
-        "origin": "generated"
+        "type": "profile",
+        "path": "eeo.disability"
       },
       "confidence": 1,
       "sensitive": false
@@ -1649,9 +1680,8 @@
       },
       "value": "No",
       "source": {
-        "type": "bank",
-        "id": "draft:cc71d1fa24",
-        "origin": "generated"
+        "type": "profile",
+        "path": "workHistory"
       },
       "confidence": 1,
       "sensitive": false
@@ -1675,7 +1705,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_38857436002",
         "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in San Francisco, or are you open to relocating?",
@@ -1687,7 +1717,13 @@
           "I already reside near a Lyft office and I am able to work at a Lyft On-site Office."
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "I am willing to relocate before starting employment.",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -1734,7 +1770,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
+      "value": "No",
       "source": {
         "type": "profile",
         "path": "eeo.hispanicLatino"
@@ -1761,6 +1797,50 @@
         "path": "eeo.veteran"
       },
       "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "current-role-0",
+        "label": "Current role",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "Current role"
+        ]
+      },
+      "value": "Research Engineer Intern",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "race",
+        "label": "Please identify your race",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "White",
+          "Native Hawaiian or Other Pacific Islander",
+          "Two or More Races",
+          "Decline To Self Identify"
+        ]
+      },
+      "value": "Decline To Self Identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
       "sensitive": true
     }
   ]

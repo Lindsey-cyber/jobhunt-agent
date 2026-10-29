@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
+import { readAnswerLog } from "../store/answerlog.ts";
 import { AnswerBank, Config, Profile, SearchPrefs } from "./schema.ts";
 
 export interface UserData {
@@ -32,7 +33,13 @@ export function loadUserData(dir = process.env.JH_DATA_DIR ?? "data"): UserData 
   return {
     dir: root,
     profile,
-    bank: AnswerBank.parse(existsSync(answersPath) ? readYaml(answersPath) : {}),
+    // Hand-kept answers.yaml, then what the agent recorded (jh answer, drafts); the log wins on an id.
+    bank: (() => {
+      const kept = AnswerBank.parse(existsSync(answersPath) ? readYaml(answersPath) : {});
+      const logged = readAnswerLog(root);
+      const ids = new Set(logged.map((a) => a.id));
+      return { answers: [...kept.answers.filter((a) => !ids.has(a.id)), ...logged] };
+    })(),
     config: Config.parse(existsSync(configPath) ? readYaml(configPath) : {}),
     search: SearchPrefs.parse(existsSync(searchPath) ? readYaml(searchPath) : {}),
   };

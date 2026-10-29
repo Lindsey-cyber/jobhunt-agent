@@ -154,3 +154,19 @@ describe("hold tally", () => {
     expect(t.filter((x) => x.cause === "by_design")).toHaveLength(1);
   });
 });
+
+describe("answer log", () => {
+  it("adds the agent's answers to the bank, last line per id winning, withdrawals removing", async () => {
+    const { mkdtempSync, writeFileSync } = await import("node:fs");
+    const { tmpdir } = await import("node:os");
+    const { join } = await import("node:path");
+    const { appendAnswer, readAnswerLog } = await import("../src/store/answerlog.ts");
+    const dir = mkdtempSync(join(tmpdir(), "jh-log-"));
+    writeFileSync(join(dir, "answers.jsonl"), "");
+    appendAnswer(dir, { id: "d1", question: "Why us?", aliases: [], answer: "first", origin: "generated" });
+    appendAnswer(dir, { id: "d1", question: "Why us?", aliases: [], answer: "hers", origin: "human" });
+    appendAnswer(dir, { id: "d2", question: "Why now?", aliases: [], answer: "x", origin: "generated" });
+    appendAnswer(dir, { id: "d2", withdrawn: true });
+    expect(readAnswerLog(dir)).toEqual([{ id: "d1", question: "Why us?", aliases: [], answer: "hers", origin: "human" }]);
+  });
+});

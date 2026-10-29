@@ -7,9 +7,8 @@
 // marked generated, and listed for her end-of-day review.
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { parseDocument, type YAMLSeq } from "yaml";
 import { jobKey } from "../discover/identity.ts";
 import type { JobKey } from "../domain/job.ts";
 import type { FillPlan } from "../plan/plan.ts";
@@ -17,6 +16,7 @@ import { normalize } from "../plan/text.ts";
 import type { UserData } from "../profile/load.ts";
 import type { Ledger } from "../store/ledger.ts";
 import { readCatalog } from "../store/catalog.ts";
+import { appendAnswer } from "../store/answerlog.ts";
 import { ReviewList } from "../store/review.ts";
 import { paths } from "../store/state.ts";
 import { checkDraft, type Draft } from "../verify/grounding.ts";
@@ -118,7 +118,6 @@ export async function draftAnswers(user: UserData, ledger: Ledger, log: (s: stri
   const profile = readFileSync(join(user.dir, "profile.yaml"), "utf8");
   const catalog = readCatalog(paths(user.dir).catalog);
   const review = new ReviewList(paths(user.dir).review);
-  const bankPath = join(user.dir, "answers.yaml");
   const outcomes: DraftOutcome[] = [];
 
   const seen = new Set<string>();
@@ -153,10 +152,9 @@ export async function draftAnswers(user: UserData, ledger: Ledger, log: (s: stri
       log(`rejected draft for ${company} · ${q.label}: ${check.problems.join("; ")}`);
       continue;
     }
-    const doc = parseDocument(readFileSync(bankPath, "utf8"));
-    (doc.get("answers") as YAMLSeq).add(doc.createNode({ id, question: q.label, answer: draft.answer, company, jobTitle, origin: "generated", evidence: draft.evidence }));
-    writeFileSync(bankPath, doc.toString());
-    user.bank.answers.push({ id, question: q.label, aliases: [], answer: draft.answer, company, jobTitle, origin: "generated", evidence: draft.evidence });
+    const entry = { id, question: q.label, aliases: [], answer: draft.answer, company, jobTitle, origin: "generated" as const, evidence: draft.evidence };
+    appendAnswer(user.dir, entry);
+    user.bank.answers.push(entry);
     const item = {
       id: `answer:${id}`,
       kind: "drafted_answer" as const,

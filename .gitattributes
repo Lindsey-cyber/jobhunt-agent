@@ -1,4 +1,4 @@
 # Append-only records written by both the VPS and a cloud session: a merge keeps both sides' lines.
+# (answers.yaml is hand-kept and merged normally; the agent's answers go to data/answers.jsonl.)
 data/*.jsonl merge=union
 data/labels/*.jsonl merge=union
-data/answers.yaml merge=union

@@ -1,6 +1,5 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { parseDocument, type YAMLMap, type YAMLSeq } from "yaml";
 import { queueQuestions } from "./store/questions.ts";
 import { parseArgs } from "node:util";
 import { chromium } from "playwright";
@@ -18,6 +17,7 @@ import { candidateFacts, discover } from "./run/discover.ts";
 import { serve } from "./run/serve.ts";
 import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
+import { appendAnswer } from "./store/answerlog.ts";
 import { readCatalog } from "./store/catalog.ts";
 import { tallyHolds } from "./verify/holds.ts";
 import { Ledger } from "./store/ledger.ts";
@@ -300,24 +300,15 @@ switch (command) {
     const review = new ReviewList(paths(u.dir).review);
     const item = review.get(url);
     if (item?.status !== "open") throw new Error(`no open review item ${url}`);
-    // A form question: the answer goes into the answer bank, reused on every form.
-    if (url.startsWith("question:form:")) {
-      const bankPath = join(u.dir, "answers.yaml");
-      const doc = parseDocument(readFileSync(bankPath, "utf8"));
-      const list = doc.get("answers") as YAMLSeq;
-      list.add(doc.createNode({ id: url.slice("question:".length), question: item.subject, answer: arg2, origin: "human" }));
-      writeFileSync(bankPath, doc.toString());
-    }
+    // A form question: the answer goes into the answer log, reused on every form.
+    if (url.startsWith("question:form:")) appendAnswer(u.dir, { id: url.slice("question:".length), question: item.subject, aliases: [], answer: arg2, origin: "human" });
     // A drafted answer the candidate rewrites: her text replaces the draft.
     if (url.startsWith("answer:draft:")) {
-      const bankPath = join(u.dir, "answers.yaml");
-      const doc = parseDocument(readFileSync(bankPath, "utf8"));
-      const entry = (doc.get("answers") as YAMLSeq<YAMLMap>).items.find((a) => a.get("id") === url.slice("answer:".length));
-      if (!entry) throw new Error(`no drafted answer ${url.slice("answer:".length)} in answers.yaml`);
-      entry.set("answer", arg2);
-      entry.set("origin", "human");
-      entry.delete("evidence");
-      writeFileSync(bankPath, doc.toString());
+      const id = url.slice("answer:".length);
+      const draft = u.bank.answers.find((a) => a.id === id);
+      if (!draft) throw new Error(`no drafted answer ${id}`);
+      const { evidence: _, ...rest } = draft;
+      appendAnswer(u.dir, { ...rest, answer: arg2, origin: "human" });
     }
     review.resolve(url, arg2);
     console.log(`answered ${url}`);

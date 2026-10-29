@@ -289,7 +289,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Asana: "Do you currently work for or have you ever worked for a U.S. government entity ...?" and its
     // "If you answered Yes, list the entity; if not applicable, type N/A": from the resume's employers.
     path: "workHistory",
-    pattern: /\b(work(ed)? for|employed by) (a |an |any )?(u s |us |federal |state )?government\b|\bgovernment entity you worked for\b|\bemployee of (the )?(u s |us )?government\b/,
+    pattern: /\b(work(ed)? for|employed by) (a |an |any |the )?(u s |us |federal |state )?government\b|\bgovernment entity you worked for\b|\bemployee of (the )?(u s |us )?government\b/,
     resolve: (p, label, ctx) => {
       if (p.workHistory.some((w) => /\b(government|federal|department of|agency|u\.?s\.? army|navy|air force)\b/i.test(w.employer))) return undefined;
       if (/\bif you answered\b.*\bn ?a\b/.test(label)) return "N/A";

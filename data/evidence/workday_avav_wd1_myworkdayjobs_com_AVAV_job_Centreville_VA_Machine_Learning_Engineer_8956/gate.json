@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Were you ever previously employed by, or are you currently employed by the U.S. Government? If you have had no employment with the U.S. Government, please select no.\": sensitive question with no exact answer",
+    "required \"Were you ever previously employed by, or are you currently employed by the U.S. Government? If you have had no employment with the U.S. Government, please select no.\" is empty after filling"
+  ]
+}

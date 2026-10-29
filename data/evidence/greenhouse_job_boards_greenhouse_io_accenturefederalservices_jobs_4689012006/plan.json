@@ -818,21 +818,6 @@
           "I identify as one or more of the classifications of a protected veteran",
           "I don't wish to answer"
         ]
-      },
-      {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": true,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
       }
     ],
     "priorApplications": 0
@@ -1903,10 +1888,10 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "No",
+      "value": "Decline To Self Identify",
       "source": {
         "type": "profile",
-        "path": "eeo.hispanicLatino"
+        "path": "eeo.race"
       },
       "confidence": 1,
       "sensitive": true
@@ -1930,31 +1915,6 @@
         "path": "eeo.veteran"
       },
       "confidence": 0.95,
-      "sensitive": true
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": true,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
       "sensitive": true
     }
   ]

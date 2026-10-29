@@ -300,6 +300,66 @@
         "kind": "text",
         "required": false,
         "options": []
+      },
+      {
+        "id": "305a1163be7301083ded7092b201bf8a",
+        "label": "Are you of legal age to work in the country in which this position will be based?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "305a1163be7301dceb027192b201c28a",
+        "label": "Have you ever worked at Adobe in the following capacity:",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Employee",
+          "Intern",
+          "Temporary Agency or Vendor",
+          "Other",
+          "I have not worked for Adobe in the past."
+        ]
+      },
+      {
+        "id": "305a1163be7301b985577192b201c88a",
+        "label": "Are you willing to submit a background check during the hiring process?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "305a1163be7301c9e1697192b201cb8a",
+        "label": "If you are offered employment by Adobe, can you provide documentation establishing your identity and right to work in the country where this position will be based?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "305a1163be73017aae7b7192b201ce8a",
+        "label": "Are you able to work on a daily basis in the work location listed for this position? If not, are you willing to relocate at your own expense to accept a position with Adobe?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "305a1163be7301787b8d7192b201d18a",
+        "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status, spouse visa, etc)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
       }
     ],
     "priorApplications": 0,
@@ -691,7 +751,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "startDate",
         "label": "From",
@@ -699,10 +759,16 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "01/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "endDate",
         "label": "To",
@@ -710,7 +776,13 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "skip",
@@ -783,7 +855,7 @@
       "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
         "id": "gradeAverage",
         "label": "Overall Result (GPA)",
@@ -791,10 +863,16 @@
         "required": false,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "3.71",
+      "source": {
+        "type": "profile",
+        "path": "education[0].gpa"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
         "id": "firstYearAttended",
         "label": "From",
@@ -802,7 +880,13 @@
         "required": false,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "2024",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "skip",
@@ -859,6 +943,102 @@
       },
       "confidence": 1,
       "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "305a1163be7301083ded7092b201bf8a",
+        "label": "Are you of legal age to work in the country in which this position will be based?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "305a1163be7301dceb027192b201c28a",
+        "label": "Have you ever worked at Adobe in the following capacity:",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Employee",
+          "Intern",
+          "Temporary Agency or Vendor",
+          "Other",
+          "I have not worked for Adobe in the past."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "305a1163be7301b985577192b201c88a",
+        "label": "Are you willing to submit a background check during the hiring process?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "305a1163be7301c9e1697192b201cb8a",
+        "label": "If you are offered employment by Adobe, can you provide documentation establishing your identity and right to work in the country where this position will be based?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "305a1163be73017aae7b7192b201ce8a",
+        "label": "Are you able to work on a daily basis in the work location listed for this position? If not, are you willing to relocate at your own expense to accept a position with Adobe?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "305a1163be7301787b8d7192b201d18a",
+        "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status, spouse visa, etc)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.8,
+      "sensitive": true
     }
   ]
 }

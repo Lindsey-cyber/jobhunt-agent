@@ -121,6 +121,20 @@
       "pass": true
     },
     {
+      "fieldId": "startDate",
+      "label": "From",
+      "expected": "01/2026",
+      "actual": "01/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "endDate",
+      "label": "To",
+      "expected": "05/2026",
+      "actual": "05/2026",
+      "pass": true
+    },
+    {
       "fieldId": "schoolName",
       "label": "School or University",
       "expected": "Columbia University",
@@ -142,6 +156,20 @@
       "pass": true
     },
     {
+      "fieldId": "gradeAverage",
+      "label": "Overall Result (GPA)",
+      "expected": "3.71",
+      "actual": "3.71",
+      "pass": true
+    },
+    {
+      "fieldId": "firstYearAttended",
+      "label": "From",
+      "expected": "2024",
+      "actual": "2024",
+      "pass": true
+    },
+    {
       "fieldId": "",
       "label": "Resume/CV",
       "expected": "Lindsey_Ma_Resume.pdf",
@@ -154,11 +182,27 @@
       "expected": "https://www.linkedin.com/in/lindsey-ma/",
       "actual": "https://www.linkedin.com/in/lindsey-ma/",
       "pass": true
+    },
+    {
+      "fieldId": "305a1163be73017aae7b7192b201ce8a",
+      "label": "Are you able to work on a daily basis in the work location listed for this position? If not, are you willing to relocate at your own expense to accept a position with Adobe?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "305a1163be7301787b8d7192b201d18a",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status, spouse visa, etc)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "From",
-    "To"
+    "Are you of legal age to work in the country in which this position will be based?",
+    "Have you ever worked at Adobe in the following capacity:",
+    "Are you willing to submit a background check during the hiring process?",
+    "If you are offered employment by Adobe, can you provide documentation establishing your identity and right to work in the country where this position will be based?"
   ],
   "fillErrors": []
 }

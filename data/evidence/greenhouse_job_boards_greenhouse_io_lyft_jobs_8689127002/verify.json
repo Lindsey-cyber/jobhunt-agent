@@ -186,9 +186,9 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
+      "expected": "Decline To Self Identify",
       "actual": "Decline To Self Identify",
-      "pass": false
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -201,13 +201,6 @@
       "fieldId": "current-role-0",
       "label": "Current role",
       "expected": "Research Engineer Intern",
-      "actual": "",
-      "pass": false
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
       "actual": "",
       "pass": false
     }

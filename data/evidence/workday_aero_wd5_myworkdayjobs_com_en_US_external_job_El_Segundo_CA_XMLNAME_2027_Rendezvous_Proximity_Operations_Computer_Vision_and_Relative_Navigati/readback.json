@@ -1,6 +1,6 @@
 {
   "source": "LinkedIn.com",
-  "candidateIsPreviousWorker": "",
+  "candidateIsPreviousWorker": "No",
   "country": "United States of America",
   "legalName--firstName": "Lanxin",
   "legalName--middleName": "",
@@ -16,5 +16,18 @@
   "phoneType": "Mobile",
   "countryPhoneCode": "United States of America (+1)",
   "phoneNumber": "9786681426",
-  "extension": ""
+  "extension": "",
+  "jobTitle": "Research Assistant (ML)",
+  "companyName": "Columbia University",
+  "location": "New York, New York, United States",
+  "currentlyWorkHere": "",
+  "startDate": "01/2026",
+  "endDate": "05/2026",
+  "roleDescription": "",
+  "schoolName": "Columbia University",
+  "degree": "",
+  "fieldOfStudy": "Statistics",
+  "gradeAverage": "3.71",
+  "skills": "",
+  "": "Lindsey_Ma_Resume.pdf"
 }

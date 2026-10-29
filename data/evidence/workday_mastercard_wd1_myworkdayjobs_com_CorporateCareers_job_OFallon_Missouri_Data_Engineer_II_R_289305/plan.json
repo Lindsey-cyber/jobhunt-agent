@@ -201,9 +201,11 @@
       {
         "id": "802e7dac252910014df41e9811360003",
         "label": "Have you entered into any restrictive covenant, non-compete agreement, or non-disclosure agreement which could restrict you from performing any duties of any of the position(s) for which you intend to apply?",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "No"
+        ]
       },
       {
         "id": "802e7dac252910014df41e9811360006",
@@ -277,6 +279,64 @@
         "options": [
           "Yes",
           "No"
+        ]
+      },
+      {
+        "id": "gender",
+        "label": "What is your Gender?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Prefer Not To Self-Identify"
+        ]
+      },
+      {
+        "id": "hispanicOrLatino",
+        "label": "Are you Hispanic or Latino?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "ethnicityMulti",
+        "label": "What is your ethnicity?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "American Indian or Alaska Native (Not Hispanic or Latino) (United States of America)",
+          "Asian (Not Hispanic or Latino) (United States of America)",
+          "Black or African American (Not Hispanic or Latino) (United States of America)",
+          "Hispanic or Latino (United States of America)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino) (United States of America)",
+          "Prefer Not To Self Identify (United States of America)",
+          "Two or More Races (Not Hispanic or Latino) (United States of America)",
+          "White (Not Hispanic or Latino) (United States of America)"
+        ]
+      },
+      {
+        "id": "veteranStatus",
+        "label": "Have you ever served in the military?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERANS LISTED ABOVE",
+          "I IDENTIFY AS A VETERAN, JUST NOT A PROTECTED VETERAN",
+          "I AM NOT A VETERAN",
+          "I DO NOT WISH TO SELF-IDENTIFY"
+        ]
+      },
+      {
+        "id": "acceptTermsAndAgreements",
+        "label": "Except where consent is not required by applicable privacy law, I consent to the above terms*.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Except where consent is not required by applicable privacy law, I consent to the above terms*.*"
         ]
       }
     ],
@@ -641,16 +701,18 @@
       "field": {
         "id": "802e7dac252910014df41e9811360003",
         "label": "Have you entered into any restrictive covenant, non-compete agreement, or non-disclosure agreement which could restrict you from performing any duties of any of the position(s) for which you intend to apply?",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "No"
+        ]
       },
       "value": "No",
       "source": {
         "type": "profile",
         "path": "restrictiveAgreements"
       },
-      "confidence": 0.8,
+      "confidence": 1,
       "sensitive": false
     },
     {
@@ -691,7 +753,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "8131e020187d1000ba7c2a2644e90000",
         "label": "In your current role, do you engage with Mastercard employees to negotiate, influence and/or sign commercial contracts or government contracts?",
@@ -702,10 +764,17 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "mastercard-contracts",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "8131e020187d1000ba7c2ac0afd50002",
         "label": "Are you related to anyone who has the authority to influence and/or sign commercial contracts or government contracts with Mastercard?",
@@ -716,10 +785,17 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "mastercard-contracts",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "8131e020187d1000ba7c2b5a80ea0002",
         "label": "Are you or were you recently (in the last six months) an employee of a government office or agency that has oversight over Mastercard?",
@@ -727,10 +803,17 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "mastercard-contracts",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "8131e020187d1000ba7c2b5a80ea0005",
         "label": "Are you related to anyone who is an employee of a government office or agency that has oversight over Mastercard?",
@@ -741,7 +824,14 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "mastercard-contracts",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -764,7 +854,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "8131e020187d1000ba7c2c8ecbed0000",
         "label": "Are you currently engaged in any outside employment or activity that you would like to continue if you are hired by Mastercard? [Examples of outside employment/activities include paid employment or other lawful money-making (cash or cash equivalent) activity that will not be part of your official role at Mastercard; service on the board of directors or an advisory board of any entity (including non-profit), even if the position is unpaid; and service (paid or unpaid) in any national, state, provincial, regional, or local government, including any government department, ministry, agency, authority, commission, legislature, council, other public body (such as the World Bank or other public international organization), or state-owned enterprise.]",
@@ -775,7 +865,104 @@
           "No"
         ]
       },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "outside-employment",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "gender",
+        "label": "What is your Gender?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Prefer Not To Self-Identify"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "hispanicOrLatino",
+        "label": "Are you Hispanic or Latino?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "eeo.hispanicLatino"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ethnicityMulti",
+        "label": "What is your ethnicity?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "American Indian or Alaska Native (Not Hispanic or Latino) (United States of America)",
+          "Asian (Not Hispanic or Latino) (United States of America)",
+          "Black or African American (Not Hispanic or Latino) (United States of America)",
+          "Hispanic or Latino (United States of America)",
+          "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino) (United States of America)",
+          "Prefer Not To Self Identify (United States of America)",
+          "Two or More Races (Not Hispanic or Latino) (United States of America)",
+          "White (Not Hispanic or Latino) (United States of America)"
+        ]
+      },
+      "value": "Prefer Not To Self Identify (United States of America)",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "veteranStatus",
+        "label": "Have you ever served in the military?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERANS LISTED ABOVE",
+          "I IDENTIFY AS A VETERAN, JUST NOT A PROTECTED VETERAN",
+          "I AM NOT A VETERAN",
+          "I DO NOT WISH TO SELF-IDENTIFY"
+        ]
+      },
       "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "acceptTermsAndAgreements",
+        "label": "Except where consent is not required by applicable privacy law, I consent to the above terms*.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Except where consent is not required by applicable privacy law, I consent to the above terms*.*"
+        ]
+      },
+      "reason": "acknowledgements and consents need the candidate"
     }
   ]
 }

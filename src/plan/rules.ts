@@ -309,7 +309,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Any other "have you worked for / been employed by / contracted with <this company>?":
     // the hiring company must be named, and her resume's employers decide.
     path: "workHistory",
-    pattern: /\b(worked|been employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b/,
+    pattern: /\b(worked|been employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       if (/\b(relative|family|familial|client|customer|government|vendor|partner|competitor)\b/.test(label)) return undefined;

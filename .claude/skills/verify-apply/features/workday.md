@@ -23,7 +23,7 @@ A candidate opens `https://<tenant>.wdN.myworkdayjobs.com/<site>/job/<location>/
 
 ## Gotchas
 
-- Submitted and confirmed live (ADI, 2026-10-29, run `data/runs/workday_analogdevices_…/2026-10-29T04-59-27-086Z`): account creation and activation, My Information, My Experience, Application Questions 1–2 (export-control follow-ups revealed one by one), Voluntary Disclosures, Self Identify (CC-305, signed with her permission), Review, Submit; 44 fields read back; confirmation "Application Submitted". Only one tenant so far.
+- Submitted and confirmed live (ADI, 2026-10-29, run `data/runs/workday_analogdevices_…/2026-10-29T04-59-27-086Z`): account creation and activation, My Information, My Experience, Application Questions 1–2 (export-control follow-ups revealed one by one), Voluntary Disclosures, Self Identify (CC-305, signed with her permission), Review, Submit; 44 fields read back; confirmation "Application Submitted". Second tenant: GlobalFoundries (2026-10-29, run `…/2026-10-29T05-42-08-202Z`), confirmed after rules for its questionnaire (contractor, relatives, re-application from the ledger, clearance, prior employers, "position's country") and its terms wording.
 - Menus: Escape does not close them; closed menus stay in the DOM hidden; a choice can land on the previous menu, so each choice is confirmed on the button and retried by keyboard.
 - Saving a page can take 10+ seconds; `advance` polls the progress bar for 30 seconds.
 - Work-authorization questions can ask for indefinite authorization; a candidate who needs sponsorship answers No (tests/plan.test.ts).

@@ -85,9 +85,9 @@ const user = () => loadUserData();
 const ledgerOf = (dir: string) => new Ledger(join(dir, "ledger.jsonl"));
 
 const SAME_COMPANY_GAP_MS = 2 * 60_000;
-// Workday is still being finished in a cloud session (2026-10-29): the VPS skips it
-// until this is true. A session sets JH_WORKDAY=on to drive it by hand.
-const WORKDAY_READY = process.env.JH_WORKDAY === "on";
+// Workday submitted and confirmed on two employers (ADI, GlobalFoundries, 2026-10-29);
+// JH_WORKDAY=off pauses it on a machine.
+const WORKDAY_READY = process.env.JH_WORKDAY !== "off";
 // Round-robin over companies so two postings at one employer are never back to back.
 function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
   const groups = new Map<string, T[]>();

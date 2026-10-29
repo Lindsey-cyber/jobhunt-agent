@@ -151,5 +151,7 @@ Candidate: ${degrees}.${phd ? "" : " No PhD."} Looking for a first full-time rol
 
 For each posting answer "yes" if the candidate should see it as a fitting opening to apply to, "no" if not, "unsure" only when the evidence given truly cannot decide it (for example no description and an ambiguous title). Judge only from the text given. Missing information about sponsorship is NOT a reason to say no; an explicit statement that the employer will not sponsor is. Requirements stated as preferred are not disqualifying. Only an explicitly required minimum of 3 or more years of experience disqualifies; "2+ years" or "experienced" without a number does not. A posting outside ${auth} is a no.
 
+${p.newGradCohorts.length ? `New-grad postings for the graduating classes of ${p.newGradCohorts.join(" or ")} count as fitting even when the candidate's own graduation date falls outside the stated window; she applies to them on purpose. ` : ""}A required degree "in Computer Science or a related field" (or in a quantitative or technical field) includes her degrees; only an explicit requirement she does not meet (a PhD, a specific engineering degree with no "related field") disqualifies. An explicit statement that the role does not sponsor visas, requires U.S. citizenship or a security clearance, is contract-only, or is not open to new graduates is a no.
+
 Give a one-sentence reason quoting the decisive words.`;
 }

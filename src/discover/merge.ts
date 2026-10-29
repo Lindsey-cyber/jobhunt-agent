@@ -3,6 +3,7 @@
 // source that ever reported it, with the first and last time each one did.
 import type { Job, JobKey, Sighting, SourceRecord } from "../domain/job.ts";
 import { applyExclusions } from "./exclude.ts";
+import { applyModelVerdict, type ModelVerdict } from "./modeltriage.ts";
 import { triage, type CandidateFacts } from "./triage.ts";
 
 const sourceId = (s: { channel: string; source: string }) => `${s.channel}|${s.source}`;
@@ -13,7 +14,7 @@ function representative(ss: Sighting[]): Sighting {
   return [...ss].sort((a, b) => Number(b.official) - Number(a.official) || b.description.length - a.description.length)[0]!;
 }
 
-export function mergeRun(prior: Map<JobKey, Job>, sightings: Sighting[], me: CandidateFacts, exclude: readonly string[] = []): Map<JobKey, Job> {
+export function mergeRun(prior: Map<JobKey, Job>, sightings: Sighting[], me: CandidateFacts, exclude: readonly string[] = [], verdicts: ReadonlyMap<string, ModelVerdict> = new Map()): Map<JobKey, Job> {
   const byKey = new Map<JobKey, Sighting[]>();
   for (const s of sightings) byKey.set(s.key, [...(byKey.get(s.key) ?? []), s]);
   const out = new Map(prior);
@@ -69,6 +70,7 @@ export function mergeRun(prior: Map<JobKey, Job>, sightings: Sighting[], me: Can
       ...(old?.link ? { link: old.link } : {}),
     };
     job.triage = triage(job, me);
+    job.triage = applyModelVerdict(job, verdicts.get(key));
     job.triage = applyExclusions(job, exclude);
     out.set(key, job);
   }
@@ -76,10 +78,11 @@ export function mergeRun(prior: Map<JobKey, Job>, sightings: Sighting[], me: Can
 }
 
 // Re-run triage over the whole catalog, e.g. after a rule change.
-export function retriage(jobs: Iterable<Job>, me: CandidateFacts, exclude: readonly string[] = []): Job[] {
+export function retriage(jobs: Iterable<Job>, me: CandidateFacts, exclude: readonly string[] = [], verdicts: ReadonlyMap<string, ModelVerdict> = new Map()): Job[] {
   return [...jobs].map((j) => {
     const t = { ...j, triage: triage(j, me) };
-    return { ...t, triage: applyExclusions(t, exclude) };
+    const m = { ...t, triage: applyModelVerdict(t, verdicts.get(j.key)) };
+    return { ...m, triage: applyExclusions(m, exclude) };
   });
 }
 

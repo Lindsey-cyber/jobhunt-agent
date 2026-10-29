@@ -300,3 +300,20 @@ describe("excluded employers", () => {
     expect(triage(j, me).verdict).toBe("match");
   });
 });
+
+describe("model triage", () => {
+  it("turns a review posting into a match or reject only for the text it judged", async () => {
+    const { applyModelVerdict, basisOf, needsModel } = await import("../src/discover/modeltriage.ts");
+    const j = { key: "greenhouse:1", title: "Machine Learning Engineer", location: "New York, NY", description: "Build models.", hints: {}, triage: { verdict: "review" as const, rule: "level.unclear", reason: "" } } as never as Parameters<typeof applyModelVerdict>[0];
+    const v = { key: "greenhouse:1", fit: "yes" as const, reason: "entry level", basis: basisOf(j), model: "m", at: "t" };
+    expect(needsModel(j, undefined)).toBe(true);
+    expect(needsModel(j, v)).toBe(false);
+    expect(applyModelVerdict(j, v)).toMatchObject({ verdict: "match", rule: "model.fit" });
+    expect(applyModelVerdict(j, { ...v, fit: "no" })).toMatchObject({ verdict: "reject", rule: "model.not_fit" });
+    expect(applyModelVerdict(j, { ...v, fit: "unsure" })).toBe(j.triage);
+    // The posting changed: the old verdict no longer counts.
+    const changed = { ...j, description: "Build models. 5+ years required." };
+    expect(applyModelVerdict(changed, v)).toBe(changed.triage);
+    expect(needsModel(changed, v)).toBe(true);
+  });
+});

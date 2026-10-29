@@ -12,6 +12,7 @@ import { triage, type CandidateFacts } from "../discover/triage.ts";
 import type { Profile } from "../profile/schema.ts";
 import { probe, pool } from "../sources/http.ts";
 import { fetchBoard, fetchGithub, fetchHn, fetchWorkday, type BoardKind, type Fetched, type SourceOutcome, type Watchlist } from "../sources/fetch.ts";
+import { readModelVerdicts } from "../store/modelverdicts.ts";
 import { readCatalog, writeCatalog } from "../store/catalog.ts";
 
 export function candidateFacts(p: Profile): CandidateFacts {
@@ -138,7 +139,7 @@ export async function discover(opts: DiscoverOptions): Promise<DiscoverResult> {
   if (leads.size > expansion.length) log(`expansion capped: ${leads.size - expansion.length} boards not fetched`);
 
   const catalogPath = join(opts.dataDir, "discovery", "catalog.jsonl");
-  const merged = mergeRun(readCatalog(catalogPath), sightings, opts.facts, opts.exclude ?? []);
+  const merged = mergeRun(readCatalog(catalogPath), sightings, opts.facts, opts.exclude ?? [], readModelVerdicts(opts.dataDir));
 
   // Size band per job from the board that listed it, else from the watchlist by company name.
   const sizeBySource = new Map(outcomes.filter((o) => o.size).map((o) => [o.url, o.size!]));

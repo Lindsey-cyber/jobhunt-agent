@@ -33,6 +33,8 @@ education:
     gpa: "3.82"
 # The candidate (2026-10-28): no non-compete, non-solicitation or similar agreement.
 restrictiveAgreements: false
+# The candidate (2026-10-28): apply to the 2027 graduating class's new-grad roles too.
+newGradCohorts: [2026, 2027]
 # The candidate (2026-10-28): she knows no one at any company, relatives included.
 relativesAtEmployers: false
 # The candidate (2026-10-28): may tick "I have read the privacy policy" boxes for her.

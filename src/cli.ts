@@ -11,6 +11,7 @@ import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
 import { runAuditor } from "./org/auditor.ts";
 import { draftAnswers } from "./org/drafter.ts";
+import { modelTriage } from "./org/triager.ts";
 import { authUrl, fetchAlerts, finishAuth, gmailConfigured } from "./sources/gmail.ts";
 import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
@@ -40,6 +41,8 @@ const USAGE = `jh <command>
                                        score the independent auditor's blind verdicts; adjusts triage trust
   applications [--out <dir>]           page of every application: fields filled, read back, screenshot
   questions                            collect the questions holding applications into the review list, once each
+  triage-model [--limit <n>]           a model judges postings the rules left at "review" (auditor's brief);
+                                       yes → match, no → reject, unsure stays; default 300 a run
   holds                                why applications are held, grouped: needs your answer, site mechanics
                                        (for an engineering session), or held by design
   apply-approved [--limit <n>]         submit postings you approved (fit labels) that have an adapter, within the
@@ -188,6 +191,11 @@ switch (command) {
     const used = out.filter((o) => o.answer && !o.problems.length);
     console.log(`${used.length} of ${out.length} questions drafted and checked; the rest stay on the review list`);
     for (const o of out) console.log(`${o.problems.length ? "HELD" : "USED"}  ${o.company} · ${o.question}${o.answer ? `\n      ${o.answer}` : ""}${o.problems.length ? `\n      ${o.problems.join("; ")}` : ""}`);
+    break;
+  }
+  case "triage-model": {
+    const r = await modelTriage(user(), { limit: Number(values.limit ?? 300), log: (s) => console.error(s) });
+    console.log(`model triage (${r.model}): judged ${r.judged}: ${r.yes} fit → match, ${r.no} not fit → reject, ${r.unsure} unsure`);
     break;
   }
   case "holds": {

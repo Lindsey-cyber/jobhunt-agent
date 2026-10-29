@@ -33,7 +33,7 @@ export interface AuditRunResult {
   refused: string[];
 }
 
-type Batch = { verdicts: AuditVerdict[]; refused: boolean };
+export type Batch = { verdicts: AuditVerdict[]; refused: boolean };
 
 const USER_PROMPT = (todo: BlindItem[]) =>
   `Judge each posting below. Return one verdict per id, using exactly these ids: ${todo.map((b) => b.id).join(", ")}.\n\n${todo.map((b) => JSON.stringify(b)).join("\n")}`;
@@ -95,6 +95,13 @@ async function judgeOpenAI(model: string, brief: string, todo: BlindItem[]): Pro
   if (!msg || msg.refusal || !msg.content) return { verdicts: [], refused: Boolean(msg?.refusal) };
   const parsed = Verdicts.safeParse(JSON.parse(msg.content));
   return { verdicts: parsed.success ? parsed.data.verdicts : [], refused: false };
+}
+
+// One batch judged by the chosen provider; shared with the model triage worker.
+// A slow answer can outlast the HTTP client's header timeout: retry once.
+export async function judgeItems(provider: AuditProvider, model: string, brief: string, items: BlindItem[], client?: Anthropic): Promise<Batch> {
+  const once = () => (provider === "anthropic" ? judgeAnthropic(client ?? new Anthropic(), model, brief, items) : judgeOpenAI(model, brief, items));
+  return once().catch(once);
 }
 
 export async function runAuditor(auditDir: string, model?: string, log: (s: string) => void = () => {}, provider: AuditProvider = auditProvider()): Promise<AuditRunResult & { provider: AuditProvider; model: string }> {

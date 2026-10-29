@@ -44,6 +44,8 @@ export const Profile = z.object({
     .min(1),
   // The candidate (2026-10-28): bound by no non-compete, non-solicitation or similar agreement.
   restrictiveAgreements: z.boolean().optional(),
+  // New-grad cohorts she applies to (2026-10-28: "2027年的也投"), even though she graduated in 2026.
+  newGradCohorts: z.array(z.number().int()).default([]),
   // The candidate (2026-10-28): no relatives at any employer she applies to.
   relativesAtEmployers: z.boolean().optional(),
   // The candidate lets the agent tick "I have read the privacy policy" boxes.

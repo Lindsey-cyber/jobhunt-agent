@@ -8,7 +8,7 @@ jh() { npm run -s jh -- "$@"; }
 status=0
 
 # What the agent writes; everything else in the repo is code or hand-kept.
-OUTPUTS="docs/reports docs/applications data/evidence data/discovery/catalog.jsonl.gz data/discovery/latest.json data/review.jsonl data/trust.json data/labels data/answers.jsonl data/ledger.jsonl"
+OUTPUTS="docs/reports docs/applications data/evidence data/discovery/catalog.jsonl.gz data/discovery/latest.json data/review.jsonl data/trust.json data/labels data/answers.jsonl data/model-triage.jsonl data/ledger.jsonl"
 
 # The ledger, review list, labels and answer log are append-only; merge them line by line
 # (also in .gitattributes, set here so it holds before the first pull that brings it).
@@ -39,6 +39,10 @@ if ! npm run -s check > /tmp/jobhunt-check.log 2>&1; then
 fi
 
 jh daily || status=1
+# Postings the rules left at "review": a model judges them with the auditor's brief.
+if [ -n "${ANTHROPIC_API_KEY:-}${OPENAI_API_KEY:-}" ]; then
+  jh triage-model --limit 300 || status=1
+fi
 sync "Discovery" || status=1
 
 # Apply manager: submit what the candidate approved (and, with triage on auto, every match), within the daily cap.

@@ -39,7 +39,7 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 
 // "the country where the job is located" names no country; the posting does.
 // Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry (for which|where) you are applying\b/;
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry you are applying (to|for|in)\b|\bcountry (for which|where) you are applying\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
@@ -213,7 +213,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",
-    pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|eligible to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
+    pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|eligible to work|right to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
     resolve: (p, label, ctx) => {
       // "... in the country you currently reside in": hers, not the job's.
       const country = /\bcountry you (currently )?(reside|live) in\b/.test(label) ? p.contact.address.country : countryIn(label, ctx);

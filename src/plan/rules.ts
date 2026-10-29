@@ -430,7 +430,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Can you perform the essential functions of the job with or without reasonable accommodation?": she reports no disability.
     path: "eeo.disability",
-    pattern: /\bperform (the|these) (essential|requisite) (functions|duties)\b|\bability to perform the requisite duties\b/,
+    pattern: /\bperform (the|these) (essential|requisite) (functions|duties)\b|\bperform the (tasks|duties)( or functions)? (published|listed|described) in the job description\b|\bability to perform the requisite duties\b/,
     kinds: ["select", "radio", "combobox"],
     resolve: (p) => (p.eeo.disability === "no" ? "Yes" : undefined),
   },

@@ -1,0 +1,10 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Can you perform the tasks or functions published in the job description with or without accommodation?\": no answer in profile or answer bank",
+    "required \"Do you have a relative who works for Varsity Brands or any of its Divisions (BSN SPORTS, Varsity Spirit, or any other affiliated companies)?\": sensitive question with no exact answer",
+    "readback mismatch on \"What is your desired start date?\": expected \"November 15, 2026\", got \"12/20/2026\"",
+    "required \"Can you perform the tasks or functions published in the job description with or without accommodation?\" is empty after filling",
+    "required \"Do you have a relative who works for Varsity Brands or any of its Divisions (BSN SPORTS, Varsity Spirit, or any other affiliated companies)?\" is empty after filling"
+  ]
+}

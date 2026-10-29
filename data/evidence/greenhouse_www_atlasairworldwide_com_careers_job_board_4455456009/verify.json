@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -107,6 +107,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_8034288009",
+      "label": "Are you a current or former contractor or vendor representative of Atlas Air?",
+      "expected": "No, I have NEVER BEEN a contractor/vendor rep",
+      "actual": "No, I have NEVER BEEN a contractor/vendor rep",
+      "pass": true
+    },
+    {
       "fieldId": "question_8034290009",
       "label": "Minimum Desired Salary",
       "expected": "$100K–$150K",
@@ -163,8 +170,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Are you a current or former contractor or vendor representative of Atlas Air?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

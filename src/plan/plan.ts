@@ -123,10 +123,10 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   if (form.ats === "greenhouse" && field.id === "race" && profile.eeo.race === "decline" && !field.required) {
     return { status: "skip", field, reason: "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)" };
   }
-  // When the board requires race, declining it is only possible as a whole: answer the
-  // Hispanic/Latino question with its decline option, which hides the race question.
-  const raceRequired = form.fields.some((f) => f.id === "race" && f.required);
-  if (form.ats === "greenhouse" && field.id === "hispanic_ethnicity" && raceRequired && profile.eeo.race === "decline") {
+  // Declining race on a Greenhouse board declines the whole question pair: the board resets
+  // Hispanic/Latino to decline (and the race question may appear only after "No", required,
+  // as on Accenture Federal Services). Answer the pair as declined from the start.
+  if (form.ats === "greenhouse" && field.id === "hispanic_ethnicity" && profile.eeo.race === "decline") {
     const decline = field.options.find((o) => DECLINE.test(normalize(o)));
     if (decline) return { status: "fill", field, value: decline, source: { type: "profile", path: "eeo.race" }, confidence: 1, sensitive: true };
   }

@@ -26,22 +26,22 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "",
-      "pass": false
+      "actual": "United States",
+      "pass": true
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "9786681426",
+      "actual": "(978) 668-1426",
       "pass": true
     },
     {
       "fieldId": "candidate-location",
       "label": "Location (City)",
       "expected": "New York, New York, United States",
-      "actual": "",
-      "pass": false
+      "actual": "New York, New York, United States",
+      "pass": true
     },
     {
       "fieldId": "resume",
@@ -54,173 +54,150 @@
       "fieldId": "school--0",
       "label": "School",
       "expected": "Columbia University",
-      "actual": "",
-      "pass": false
+      "actual": "Columbia University",
+      "pass": true
     },
     {
       "fieldId": "degree--0",
       "label": "Degree",
-      "expected": "Master of Science",
-      "actual": "",
-      "pass": false
+      "expected": "Master’s Degree",
+      "actual": "Master’s Degree",
+      "pass": true
     },
     {
       "fieldId": "discipline--0",
       "label": "Discipline",
       "expected": "Statistics",
-      "actual": "",
-      "pass": false
+      "actual": "Statistics",
+      "pass": true
     },
     {
       "fieldId": "question_8506350006",
       "label": "State",
       "expected": "New York",
-      "actual": "",
-      "pass": false
+      "actual": "New York",
+      "pass": true
     },
     {
       "fieldId": "question_8506351006",
       "label": "Are you at least 18 years of age?",
       "expected": "Yes",
-      "actual": "",
-      "pass": false
+      "actual": "Yes",
+      "pass": true
     },
     {
       "fieldId": "question_8506352006",
       "label": "Are you legally authorized to work in the United States?",
       "expected": "Yes",
-      "actual": "",
-      "pass": false
+      "actual": "Yes",
+      "pass": true
     },
     {
       "fieldId": "question_8506353006",
       "label": "Will you now or in the future require sponsorship for employment visa status (for example, H-1B visa status)?",
       "expected": "Yes",
-      "actual": "",
-      "pass": false
+      "actual": "Yes",
+      "pass": true
     },
     {
       "fieldId": "question_8506354006",
       "label": "Have you entered into a non-disclosure or non-compete agreement or understanding of any kind?",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8506355006",
       "label": "Have you worked at Accenture in the past?",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8506356006",
       "label": "How did you hear about us?",
       "expected": "LinkedIn",
-      "actual": "",
-      "pass": false
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506357006",
+      "label": "Do you hold a security clearance?",
+      "expected": "None",
+      "actual": "None",
+      "pass": true
     },
     {
       "fieldId": "question_8506358006",
       "label": "At your current employer, are you currently working on a project with Accenture or have you worked on a project with Accenture in the past 24 months?",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8506359006",
       "label": "Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8506360006",
       "label": "Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8506361006",
       "label": "Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8506362006",
       "label": "Do you have any family members or people you have close relationships with who work for Accenture Federal Services?",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506364006",
+      "label": "Affirmation",
+      "expected": "I agree",
+      "actual": "I agree",
+      "pass": true
     },
     {
       "fieldId": "gender",
       "label": "Gender",
-      "expected": "decline",
-      "actual": "",
-      "pass": false
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
     },
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "no",
-      "actual": "",
+      "expected": "No",
+      "actual": "Decline To Self Identify",
       "pass": false
     },
     {
       "fieldId": "veteran_status",
       "label": "Veteran Status",
-      "expected": "no",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "race",
+      "label": "Please identify your race",
+      "expected": "Decline To Self Identify",
       "actual": "",
       "pass": false
     }
   ],
-  "emptyRequired": [
-    "Country",
-    "Location (City)",
-    "School",
-    "Degree",
-    "Discipline",
-    "State",
-    "Are you at least 18 years of age?",
-    "Are you legally authorized to work in the United States?",
-    "Will you now or in the future require sponsorship for employment visa status (for example, H-1B visa status)?",
-    "Have you entered into a non-disclosure or non-compete agreement or understanding of any kind?",
-    "Have you worked at Accenture in the past?",
-    "How did you hear about us?",
-    "Do you hold a security clearance?",
-    "At your current employer, are you currently working on a project with Accenture or have you worked on a project with Accenture in the past 24 months?",
-    "Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.",
-    "Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?",
-    "Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).",
-    "Do you have any family members or people you have close relationships with who work for Accenture Federal Services?",
-    "Affirmation",
-    "Gender",
-    "Are you Hispanic/Latino?",
-    "Veteran Status"
-  ],
-  "fillErrors": [
-    "Country: the country menu did not open",
-    "Location (City): the candidate-location menu did not open",
-    "School: the school--0 menu did not open",
-    "Degree: the degree--0 menu did not open",
-    "Discipline: the discipline--0 menu did not open",
-    "State: the question_8506350006 menu did not open",
-    "Are you at least 18 years of age?: the question_8506351006 menu did not open",
-    "Are you legally authorized to work in the United States?: the question_8506352006 menu did not open",
-    "Will you now or in the future require sponsorship for employment visa status (for example, H-1B visa status)?: the question_8506353006 menu did not open",
-    "Have you entered into a non-disclosure or non-compete agreement or understanding of any kind?: the question_8506354006 menu did not open",
-    "Have you worked at Accenture in the past?: the question_8506355006 menu did not open",
-    "How did you hear about us?: the question_8506356006 menu did not open",
-    "At your current employer, are you currently working on a project with Accenture or have you worked on a project with Accenture in the past 24 months?: the question_8506358006 menu did not open",
-    "Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.: the question_8506359006 menu did not open",
-    "Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?: the question_8506360006 menu did not open",
-    "Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).: the question_8506361006 menu did not open",
-    "Do you have any family members or people you have close relationships with who work for Accenture Federal Services?: the question_8506362006 menu did not open",
-    "Gender: the gender menu did not open",
-    "Are you Hispanic/Latino?: the hispanic_ethnicity menu did not open",
-    "Veteran Status: the veteran_status menu did not open"
-  ]
+  "emptyRequired": [],
+  "fillErrors": []
 }

@@ -264,7 +264,7 @@ describe("buildPlan", () => {
   });
 
   // Held on the VPS (2026-10-29): Ashby's composite education block, Affirm's employment and how-heard wording, Greenhouse's race reset.
-  it("answers Ashby's education history, Affirm's wording, and leaves Greenhouse's declined race blank", () => {
+  it("answers Ashby's education history, Affirm's wording, and leaves Greenhouse's optional declined race blank", () => {
     const p = { ...user.profile, education: [{ school: "Columbia University", degree: "Master of Science", major: "Statistics", start: "2024-09", gradMonth: 5, gradYear: 2026 }], workHistory: [{ employer: "Arborphy AI LLC" }], eeo: { ...user.profile.eeo, race: "decline" } };
     const one = (f: ReturnType<typeof field>, ats = "ashby") => buildPlan({ ...form([f], "Affirm"), ats: ats as "ashby" }, p, user.bank).items[0]!;
     expect(one(field("Education History"))).toMatchObject({ status: "fill", value: "Columbia University | Master of Science | Statistics | 09/2024 | 05/2026" });
@@ -413,7 +413,7 @@ describe("buildPlan", () => {
     const plan = (required: boolean) => buildPlan({ ...form([h, r(required)]), ats: "greenhouse" }, p, user.bank).items;
     // Some boards (Accenture Federal Services) keep a required race question visible: decline both.
     expect(plan(true).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["Decline To Self Identify", "Decline To Self Identify"]);
-    expect(plan(false).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["No", "skip"]);
+    expect(plan(false).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["Decline To Self Identify", "skip"]);
   });
 
   it("keeps the whole sentences that fit a box's character limit", () => {

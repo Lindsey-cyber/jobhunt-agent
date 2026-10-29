@@ -26,14 +26,14 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "United States",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "(978) 668-1426",
+      "actual": "9786681426",
       "pass": true
     },
     {
@@ -47,29 +47,29 @@
       "fieldId": "school--0",
       "label": "School",
       "expected": "Columbia University",
-      "actual": "Columbia University",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "degree--0",
       "label": "Degree",
-      "expected": "Master's Degree",
-      "actual": "Master's Degree",
-      "pass": true
+      "expected": "Master of Science",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "discipline--0",
       "label": "Discipline",
-      "expected": "Statistics & Decision Theory",
-      "actual": "Statistics & Decision Theory",
-      "pass": true
+      "expected": "Statistics",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "end-month--0",
       "label": "End date month",
       "expected": "May",
-      "actual": "May",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "end-year--0",
@@ -117,46 +117,61 @@
       "fieldId": "question_18727668008",
       "label": "Are you currently eligible to work in the US?",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_18741296008",
       "label": "Do you currently live in the San Francisco Bay area?",
       "expected": "No",
-      "actual": "No",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_18727670008",
       "label": "We work in a hybrid model, Mon, Wed & Thurs. in office. Tues & Fridays work from home. Are you able to adhere to this work schedule?",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_18741297008",
+      "label": "Are you open to an hourly rate of $43.00 - $59.00 per hour?",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "gender",
       "label": "Gender",
-      "expected": "Decline To Self Identify",
-      "actual": "Decline To Self Identify",
-      "pass": true
+      "expected": "decline",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
-      "pass": true
+      "expected": "no",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "veteran_status",
       "label": "Veteran Status",
-      "expected": "I am not a protected veteran",
-      "actual": "I am not a protected veteran",
-      "pass": true
+      "expected": "no",
+      "actual": "",
+      "pass": false
     }
   ],
   "emptyRequired": [
+    "Country",
+    "School",
+    "Degree",
+    "Discipline",
+    "End date month",
+    "Are you currently eligible to work in the US?",
+    "Do you currently live in the San Francisco Bay area?",
+    "We work in a hybrid model, Mon, Wed & Thurs. in office. Tues & Fridays work from home. Are you able to adhere to this work schedule?",
     "Are you open to an hourly rate of $43.00 - $59.00 per hour?",
     "Have you used AI coding agents (Claude Code, Cursor, Copilot Agent, Codex, or similar) to build functionality beyond autocomplete or boilerplate?",
     "Will you have completed a BS or MS in Computer Science or a related field before your start date?",
@@ -165,5 +180,18 @@
     "Tell us about a time an agent handed you code that looked right but wasn't. How did you catch it?",
     "Do you have working proficiency in Java or TypeScript?"
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "School: the school--0 menu did not open",
+    "Degree: the degree--0 menu did not open",
+    "Discipline: the discipline--0 menu did not open",
+    "End date month: the end-month--0 menu did not open",
+    "Are you currently eligible to work in the US?: the question_18727668008 menu did not open",
+    "Do you currently live in the San Francisco Bay area?: the question_18741296008 menu did not open",
+    "We work in a hybrid model, Mon, Wed & Thurs. in office. Tues & Fridays work from home. Are you able to adhere to this work schedule?: the question_18727670008 menu did not open",
+    "Are you open to an hourly rate of $43.00 - $59.00 per hour?: the question_18741297008 menu did not open",
+    "Gender: the gender menu did not open",
+    "Are you Hispanic/Latino?: the hispanic_ethnicity menu did not open",
+    "Veteran Status: the veteran_status menu did not open"
+  ]
 }

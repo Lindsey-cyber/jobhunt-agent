@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What are your base compensation expectations for this role? (Please provide your expectations only. We are not requesting information about your current or past compensation. Base compensation does not include bonus, commission, and other monetary incentives.) Please specify the amount and currency.\": compensation is never filled automatically",
+    "required \"Do you need to provide a notice period to your current employer?\": no answer in profile or answer bank",
+    "required \"What are your base compensation expectations for this role? (Please provide your expectations only. We are not requesting information about your current or past compensation. Base compensation does not include bonus, commission, and other monetary incentives.) Please specify the amount and currency.\" is empty after filling",
+    "required \"Do you need to provide a notice period to your current employer?\" is empty after filling"
+  ]
+}

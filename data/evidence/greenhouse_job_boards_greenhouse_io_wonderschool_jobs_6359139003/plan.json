@@ -1,0 +1,2166 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=wonderschool&token=6359139003",
+    "company": "Wonderschool",
+    "jobTitle": "Early Career Software Engineer – Applied AI",
+    "jobLocation": "San Francisco",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Aalborg University",
+          "Aalto University",
+          "Aarhus University",
+          "Abertay University",
+          "Aberystwyth University",
+          "Abilene Christian University",
+          "Abo Akademi University",
+          "Abraham Baldwin Agricultural College",
+          "Abu Dhabi University",
+          "Academy of Art University",
+          "Acadia University",
+          "Acharya Nagarjuna University",
+          "Acupuncture and Integrative Medicine College - Berkeley",
+          "Adams State University",
+          "Adelphi University",
+          "Adrian College",
+          "Adventist University of Health Sciences",
+          "Agnes Scott College",
+          "AIB College of Business",
+          "Ain Shams University",
+          "Airlangga University",
+          "Ajou University",
+          "Alabama A&M University",
+          "Alabama State University",
+          "Alaska Pacific University",
+          "Al Azhar University",
+          "Albany College of Pharmacy and Health Sciences",
+          "Albany State University",
+          "Albertus Magnus College",
+          "Albion College",
+          "Albright College",
+          "Alcorn State University",
+          "Alderson Broaddus University",
+          "Alexandria University",
+          "Alexandru Ioan Cuza University",
+          "Al-Farabi Kazakh National University",
+          "Alfred University",
+          "Alice Lloyd College",
+          "Al-Imam Mohamed Ibn Saud Islamic University",
+          "Allegheny College",
+          "Allen College",
+          "Allen University",
+          "Alliant International University",
+          "Alma College",
+          "Alpen-Adria-Universität Klagenfurt",
+          "Alvernia University",
+          "Alverno College",
+          "Amberton University",
+          "American Academy of Art",
+          "American Indian College of the Assemblies of God",
+          "American InterContinental University",
+          "American International College",
+          "American Jewish University",
+          "American Public University System",
+          "American University",
+          "American University in Bulgaria",
+          "American University in Cairo",
+          "American University of Beirut",
+          "American University of Beirut (AUB)",
+          "American University of Paris",
+          "American University of Puerto Rico",
+          "American University of Sharjah (AUS)",
+          "Amherst College",
+          "Amridge University",
+          "Anderson University",
+          "Andrews University",
+          "Angelo State University",
+          "Anna Maria College",
+          "Antioch University",
+          "Aoyama Gakuin University",
+          "Appalachian Bible College",
+          "Appalachian State University",
+          "Aquinas College",
+          "Arcadia University",
+          "Argosy University",
+          "Aristotle University of Thessaloniki",
+          "Arizona Christian University",
+          "Arizona State University",
+          "Arizona State University - West",
+          "Arkansas Baptist College",
+          "Arkansas State University",
+          "Arkansas Tech University",
+          "Armstrong Atlantic State University",
+          "Art Academy of Cincinnati",
+          "Art Center College of Design",
+          "Art Institute of Atlanta",
+          "Art Institute of Colorado",
+          "Art Institute of Houston",
+          "Art Institute of Pittsburgh",
+          "Art Institute of Portland",
+          "Art Institute of Seattle",
+          "Asbury University",
+          "Ashford University",
+          "Ashland University",
+          "Assumption College",
+          "Aston University",
+          "Ateneo de Manila University",
+          "Athens State University",
+          "Athens University of Economy And Business",
+          "Atlanta College of Arts"
+        ]
+      },
+      {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Associate's Degree",
+          "Bachelor's Degree",
+          "Doctor of Medicine (M.D.)",
+          "Doctor of Philosophy (Ph.D.)",
+          "Engineer's Degree",
+          "High School",
+          "Juris Doctor (J.D.)",
+          "Master of Business Administration (M.B.A.)",
+          "Master's Degree",
+          "Other"
+        ]
+      },
+      {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Accounting",
+          "African Studies",
+          "Agriculture",
+          "Anthropology",
+          "Applied Health Services",
+          "Architecture",
+          "Art",
+          "Asian Studies",
+          "Biology",
+          "Business",
+          "Business Administration",
+          "Chemistry",
+          "Classical Languages",
+          "Communications & Film",
+          "Computer Science",
+          "Dentistry",
+          "Developing Nations",
+          "Discipline Unknown",
+          "Earth Sciences",
+          "Economics",
+          "Education",
+          "Electronics",
+          "Engineering",
+          "English Studies",
+          "Environmental Studies",
+          "European Studies",
+          "Fashion",
+          "Finance",
+          "Fine Arts",
+          "General Studies",
+          "Health Services",
+          "History",
+          "Humanities",
+          "Human Resources Management",
+          "Industrial Arts & Carpentry",
+          "Information Systems",
+          "International Relations",
+          "Journalism",
+          "Languages",
+          "Latin American Studies",
+          "Law",
+          "Linguistics",
+          "Manufacturing & Mechanics",
+          "Mathematics",
+          "Medicine",
+          "Middle Eastern Studies",
+          "Naval Science",
+          "North American Studies",
+          "Nuclear Technics",
+          "Operations Research & Strategy",
+          "Organizational Theory",
+          "Other",
+          "Philosophy",
+          "Physical Education",
+          "Physical Sciences",
+          "Physics",
+          "Political Science",
+          "Psychology",
+          "Public Policy",
+          "Public Service",
+          "Religious Studies",
+          "Russian & Soviet Studies",
+          "Scandinavian Studies",
+          "Science",
+          "Slavic Studies",
+          "Social Science",
+          "Social Sciences",
+          "Sociology",
+          "Speech",
+          "Statistics & Decision Theory",
+          "Urban Studies",
+          "Veterinary Medicine"
+        ]
+      },
+      {
+        "id": "start-month--0",
+        "label": "Start date month",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      {
+        "id": "start-year--0",
+        "label": "Start date year",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "end-month--0",
+        "label": "End date month",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      {
+        "id": "end-year--0",
+        "label": "End date year",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_19373952003",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19373953003",
+        "label": "Github or Website",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_29257726003",
+        "label": "What is your current position?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_29257737003",
+        "label": "What is your current company?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_29257749003",
+        "label": "Are you currently authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_29257760003",
+        "label": "Do you now, or will you in the future, require sponsorship to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_30541499003",
+        "label": "Are you able to work in our Rincon Hill, San Francisco office 5-6 days a week?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_30541500003",
+        "label": "Are you willing to spend a significant portion of your time (up to 50%) working directly with customers through support tickets and calls to inform the AI systems you build, and can you share specific examples where you’ve worked outside traditional engineering responsibilities or why this type of work appeals to you?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_30541501003",
+        "label": "What experience do you have using tools like Claude Code, OpenClaw, or similar AI-assisted development environments?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_30541502003",
+        "label": "Where did you attend undergad?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_30541503003",
+        "label": "What did you get your undergrad degree in?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_30541504003",
+        "label": "What startup or founder experience do you have?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_30541505003",
+        "label": "Describe a system you've built, either online or offline. Or even a video game.",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_33173943003",
+        "label": "How many employees did the smallest company you worked at have while you were there?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173944003",
+        "label": "Smallest-company headcount — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173945003",
+        "label": "What was that company's name?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173946003",
+        "label": "How long did you work there, in months?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173947003",
+        "label": "Tenure length — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173948003",
+        "label": "In 1–2 sentences, what makes you a fit for this role?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_33173949003",
+        "label": "What is your current location?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "SF",
+          "Oakland",
+          "Berkeley",
+          "Upper Peninsula",
+          "Lower Peninsula",
+          "Greater East Bay",
+          "Marin",
+          "San Jose",
+          "Greater Bay Area",
+          "outside Bay Area not willing to relocate",
+          "outside Bay Area willing to relocate"
+        ]
+      },
+      {
+        "id": "question_33173950003",
+        "label": "Current location — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173951003",
+        "label": "Where did you attend and graduate from your undergraduate studies?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173952003",
+        "label": "What was your undergraduate major?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173953003",
+        "label": "Did you attend graduate school? If so, where?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173954003",
+        "label": "What was your graduate major?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173956003",
+        "label": "Fields worked in — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173957003",
+        "label": "What was the main reason for a short tenure in a prior role?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Reduction in force",
+          "Fit",
+          "Other",
+          "N/A"
+        ]
+      },
+      {
+        "id": "question_33173958003",
+        "label": "Short tenure — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173959003",
+        "label": "What did you build or try to build, and what happened?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173960003",
+        "label": "Has software you built or helped build generated more than $100 in sales?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "Not sure",
+          "Have not built or helped build software."
+        ]
+      },
+      {
+        "id": "question_33173961003",
+        "label": "Software sales — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173962003",
+        "label": "Can you work Monday–Friday in our San Francisco office, often on Saturdays, and be available Sundays when needed for child care customer events? This is a highly collaborative, in-person role.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "Under certain circumstances",
+          "I’d like to learn more before deciding",
+          "No"
+        ]
+      },
+      {
+        "id": "question_33173963003",
+        "label": "SF office schedule — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_33173964003",
+        "label": "Can you generally work 9am–7pm, including occasional late customer meetings or deadlines and work lunches or dinners? Wonderschool covers travel home when you work late.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "Under certain circumstances",
+          "I’d like to learn more before deciding",
+          "No"
+        ]
+      },
+      {
+        "id": "question_33173965003",
+        "label": "Work hours — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline To Self Identify"
+        ]
+      },
+      {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Decline To Self Identify"
+        ]
+      },
+      {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "I am not a protected veteran",
+          "I identify as one or more of the classifications of a protected veteran",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "question_33173942003[]",
+        "label": "What types of early childhood experience do you have?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Direct teaching or care for ages 0–5",
+          "Owned or operated a child care program",
+          "Supported child care providers or their businesses",
+          "Built or sold child care software or services",
+          "Child care licensing, subsidy, policy, or government work",
+          "Other",
+          "None"
+        ]
+      },
+      {
+        "id": "question_33173955003[]",
+        "label": "Which of these fields have you worked in?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Private equity",
+          "Investment banking",
+          "Consulting",
+          "None"
+        ]
+      },
+      {
+        "id": "race",
+        "label": "Please identify your race",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "White",
+          "Native Hawaiian or Other Pacific Islander",
+          "Two or More Races",
+          "Decline To Self Identify"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Aalborg University",
+          "Aalto University",
+          "Aarhus University",
+          "Abertay University",
+          "Aberystwyth University",
+          "Abilene Christian University",
+          "Abo Akademi University",
+          "Abraham Baldwin Agricultural College",
+          "Abu Dhabi University",
+          "Academy of Art University",
+          "Acadia University",
+          "Acharya Nagarjuna University",
+          "Acupuncture and Integrative Medicine College - Berkeley",
+          "Adams State University",
+          "Adelphi University",
+          "Adrian College",
+          "Adventist University of Health Sciences",
+          "Agnes Scott College",
+          "AIB College of Business",
+          "Ain Shams University",
+          "Airlangga University",
+          "Ajou University",
+          "Alabama A&M University",
+          "Alabama State University",
+          "Alaska Pacific University",
+          "Al Azhar University",
+          "Albany College of Pharmacy and Health Sciences",
+          "Albany State University",
+          "Albertus Magnus College",
+          "Albion College",
+          "Albright College",
+          "Alcorn State University",
+          "Alderson Broaddus University",
+          "Alexandria University",
+          "Alexandru Ioan Cuza University",
+          "Al-Farabi Kazakh National University",
+          "Alfred University",
+          "Alice Lloyd College",
+          "Al-Imam Mohamed Ibn Saud Islamic University",
+          "Allegheny College",
+          "Allen College",
+          "Allen University",
+          "Alliant International University",
+          "Alma College",
+          "Alpen-Adria-Universität Klagenfurt",
+          "Alvernia University",
+          "Alverno College",
+          "Amberton University",
+          "American Academy of Art",
+          "American Indian College of the Assemblies of God",
+          "American InterContinental University",
+          "American International College",
+          "American Jewish University",
+          "American Public University System",
+          "American University",
+          "American University in Bulgaria",
+          "American University in Cairo",
+          "American University of Beirut",
+          "American University of Beirut (AUB)",
+          "American University of Paris",
+          "American University of Puerto Rico",
+          "American University of Sharjah (AUS)",
+          "Amherst College",
+          "Amridge University",
+          "Anderson University",
+          "Andrews University",
+          "Angelo State University",
+          "Anna Maria College",
+          "Antioch University",
+          "Aoyama Gakuin University",
+          "Appalachian Bible College",
+          "Appalachian State University",
+          "Aquinas College",
+          "Arcadia University",
+          "Argosy University",
+          "Aristotle University of Thessaloniki",
+          "Arizona Christian University",
+          "Arizona State University",
+          "Arizona State University - West",
+          "Arkansas Baptist College",
+          "Arkansas State University",
+          "Arkansas Tech University",
+          "Armstrong Atlantic State University",
+          "Art Academy of Cincinnati",
+          "Art Center College of Design",
+          "Art Institute of Atlanta",
+          "Art Institute of Colorado",
+          "Art Institute of Houston",
+          "Art Institute of Pittsburgh",
+          "Art Institute of Portland",
+          "Art Institute of Seattle",
+          "Asbury University",
+          "Ashford University",
+          "Ashland University",
+          "Assumption College",
+          "Aston University",
+          "Ateneo de Manila University",
+          "Athens State University",
+          "Athens University of Economy And Business",
+          "Atlanta College of Arts"
+        ]
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Associate's Degree",
+          "Bachelor's Degree",
+          "Doctor of Medicine (M.D.)",
+          "Doctor of Philosophy (Ph.D.)",
+          "Engineer's Degree",
+          "High School",
+          "Juris Doctor (J.D.)",
+          "Master of Business Administration (M.B.A.)",
+          "Master's Degree",
+          "Other"
+        ]
+      },
+      "value": "Master's Degree",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Accounting",
+          "African Studies",
+          "Agriculture",
+          "Anthropology",
+          "Applied Health Services",
+          "Architecture",
+          "Art",
+          "Asian Studies",
+          "Biology",
+          "Business",
+          "Business Administration",
+          "Chemistry",
+          "Classical Languages",
+          "Communications & Film",
+          "Computer Science",
+          "Dentistry",
+          "Developing Nations",
+          "Discipline Unknown",
+          "Earth Sciences",
+          "Economics",
+          "Education",
+          "Electronics",
+          "Engineering",
+          "English Studies",
+          "Environmental Studies",
+          "European Studies",
+          "Fashion",
+          "Finance",
+          "Fine Arts",
+          "General Studies",
+          "Health Services",
+          "History",
+          "Humanities",
+          "Human Resources Management",
+          "Industrial Arts & Carpentry",
+          "Information Systems",
+          "International Relations",
+          "Journalism",
+          "Languages",
+          "Latin American Studies",
+          "Law",
+          "Linguistics",
+          "Manufacturing & Mechanics",
+          "Mathematics",
+          "Medicine",
+          "Middle Eastern Studies",
+          "Naval Science",
+          "North American Studies",
+          "Nuclear Technics",
+          "Operations Research & Strategy",
+          "Organizational Theory",
+          "Other",
+          "Philosophy",
+          "Physical Education",
+          "Physical Sciences",
+          "Physics",
+          "Political Science",
+          "Psychology",
+          "Public Policy",
+          "Public Service",
+          "Religious Studies",
+          "Russian & Soviet Studies",
+          "Scandinavian Studies",
+          "Science",
+          "Slavic Studies",
+          "Social Science",
+          "Social Sciences",
+          "Sociology",
+          "Speech",
+          "Statistics & Decision Theory",
+          "Urban Studies",
+          "Veterinary Medicine"
+        ]
+      },
+      "value": "Statistics & Decision Theory",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "start-month--0",
+        "label": "Start date month",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      "value": "January",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "start-year--0",
+        "label": "Start date year",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "end-month--0",
+        "label": "End date month",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      "value": "May",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "end-year--0",
+        "label": "End date year",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19373952003",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19373953003",
+        "label": "Github or Website",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_29257726003",
+        "label": "What is your current position?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_29257737003",
+        "label": "What is your current company?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_29257749003",
+        "label": "Are you currently authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_29257760003",
+        "label": "Do you now, or will you in the future, require sponsorship to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_30541499003",
+        "label": "Are you able to work in our Rincon Hill, San Francisco office 5-6 days a week?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_30541500003",
+        "label": "Are you willing to spend a significant portion of your time (up to 50%) working directly with customers through support tickets and calls to inform the AI systems you build, and can you share specific examples where you’ve worked outside traditional engineering responsibilities or why this type of work appeals to you?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_30541501003",
+        "label": "What experience do you have using tools like Claude Code, OpenClaw, or similar AI-assisted development environments?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_30541502003",
+        "label": "Where did you attend undergad?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_30541503003",
+        "label": "What did you get your undergrad degree in?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_30541504003",
+        "label": "What startup or founder experience do you have?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_30541505003",
+        "label": "Describe a system you've built, either online or offline. Or even a video game.",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173943003",
+        "label": "How many employees did the smallest company you worked at have while you were there?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173944003",
+        "label": "Smallest-company headcount — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173945003",
+        "label": "What was that company's name?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173946003",
+        "label": "How long did you work there, in months?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173947003",
+        "label": "Tenure length — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_33173948003",
+        "label": "In 1–2 sentences, what makes you a fit for this role?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_33173949003",
+        "label": "What is your current location?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "SF",
+          "Oakland",
+          "Berkeley",
+          "Upper Peninsula",
+          "Lower Peninsula",
+          "Greater East Bay",
+          "Marin",
+          "San Jose",
+          "Greater Bay Area",
+          "outside Bay Area not willing to relocate",
+          "outside Bay Area willing to relocate"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173950003",
+        "label": "Current location — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173951003",
+        "label": "Where did you attend and graduate from your undergraduate studies?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173952003",
+        "label": "What was your undergraduate major?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173953003",
+        "label": "Did you attend graduate school? If so, where?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173954003",
+        "label": "What was your graduate major?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173956003",
+        "label": "Fields worked in — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_33173957003",
+        "label": "What was the main reason for a short tenure in a prior role?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Reduction in force",
+          "Fit",
+          "Other",
+          "N/A"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173958003",
+        "label": "Short tenure — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173959003",
+        "label": "What did you build or try to build, and what happened?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_33173960003",
+        "label": "Has software you built or helped build generated more than $100 in sales?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "Not sure",
+          "Have not built or helped build software."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173961003",
+        "label": "Software sales — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_33173962003",
+        "label": "Can you work Monday–Friday in our San Francisco office, often on Saturdays, and be available Sundays when needed for child care customer events? This is a highly collaborative, in-person role.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "Under certain circumstances",
+          "I’d like to learn more before deciding",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173963003",
+        "label": "SF office schedule — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_33173964003",
+        "label": "Can you generally work 9am–7pm, including occasional late customer meetings or deadlines and work lunches or dinners? Wonderschool covers travel home when you work late.",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "Under certain circumstances",
+          "I’d like to learn more before deciding",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_33173965003",
+        "label": "Work hours — anything else to add?",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Male",
+          "Female",
+          "Decline To Self Identify"
+        ]
+      },
+      "value": "Decline To Self Identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "Yes",
+          "No",
+          "Decline To Self Identify"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "eeo.hispanicLatino"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "I am not a protected veteran",
+          "I identify as one or more of the classifications of a protected veteran",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "I am not a protected veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_33173942003[]",
+        "label": "What types of early childhood experience do you have?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Direct teaching or care for ages 0–5",
+          "Owned or operated a child care program",
+          "Supported child care providers or their businesses",
+          "Built or sold child care software or services",
+          "Child care licensing, subsidy, policy, or government work",
+          "Other",
+          "None"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_33173955003[]",
+        "label": "Which of these fields have you worked in?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Private equity",
+          "Investment banking",
+          "Consulting",
+          "None"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "race",
+        "label": "Please identify your race",
+        "kind": "combobox",
+        "required": false,
+        "options": [
+          "American Indian or Alaskan Native",
+          "Asian",
+          "Black or African American",
+          "White",
+          "Native Hawaiian or Other Pacific Islander",
+          "Two or More Races",
+          "Decline To Self Identify"
+        ]
+      },
+      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
+    }
+  ]
+}

@@ -515,7 +515,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): she knows no one at any company, relatives included.
     path: "relativesAtEmployers",
-    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b|\bfamily members?\b.{0,80}\bwho work (for|at)\b/,
+    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b|\bfamily members?\b.{0,80}\bwho work (for|at)\b|\bare you related to an? .{1,60}\b(employee|staff|team member)s?\b/,
     resolve: (p) => (p.relativesAtEmployers === false ? "No" : undefined),
   },
   {

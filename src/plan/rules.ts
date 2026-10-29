@@ -305,8 +305,8 @@ export const PROFILE_RULES: ProfileRule[] = [
       const named = m?.[1]?.trim() ?? (bare && company && company.split(/\s+/)[0] === bare.split(" ")[0] ? bare : undefined) ?? whole;
       if (!named) return undefined;
       const worked = p.workHistory.some((w) => w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase()));
-      // Waymo: "Never worked at Alphabet" among current/former options.
-      const never = (ctx.options ?? []).filter((o) => /^(never|i have never|i have not|no\b)/i.test(o.trim()));
+      // Waymo: "Never worked at Alphabet" among current/former options; Home Depot: "Not Applicable".
+      const never = (ctx.options ?? []).filter((o) => /^(never|i have never|i have not|no\b|not applicable$)/i.test(o.trim()));
       if (!worked && never.length === 1) return never[0];
       return yesNo(worked);
     },

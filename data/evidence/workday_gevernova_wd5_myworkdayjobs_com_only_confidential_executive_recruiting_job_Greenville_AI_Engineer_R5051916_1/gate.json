@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"How Did You Hear About Us?\": no answer in profile or answer bank",
+    "required \"Country / Territory Phone Code\": no answer in profile or answer bank",
+    "required \"How Did You Hear About Us?\" is empty after filling"
+  ]
+}

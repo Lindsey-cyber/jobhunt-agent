@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you a current or former US government employee OR are you serving or have served in the US Military?\": no answer in profile or answer bank",
+    "required \"Are you a current or former US government employee OR are you serving or have served in the US Military?\" is empty after filling"
+  ]
+}

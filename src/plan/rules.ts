@@ -180,7 +180,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   {
     path: "education[0].gpa",
-    pattern: /^(what is your )?(cumulative |overall )?gpa$/,
+    pattern: /^(what is your )?(cumulative |overall )?gpa$|^overall result( gpa)?$/,
     // Klaviyo: ranges ("3.5 - 3.74", "4+", "Below 2").
     resolve: (p, _l, ctx) => {
       const gpa = firstEdu(p).gpa;

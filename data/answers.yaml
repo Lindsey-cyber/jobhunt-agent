@@ -274,3 +274,12 @@ answers:
       - Please select your current immigration status.
     answer: F-1 (CPT, OPT, or STEM)
     origin: human
+  # The candidate (2026-10-29): no active immigration case (no H-1B petition, extension or green card in process).
+  - id: active-immigration-case
+    question: Do you currently have an active immigration case (ex H-1B extension, green card)?
+    aliases:
+      - Do you currently have an active immigration case?
+      - Do you have a pending immigration petition or application?
+      - Do you currently have an immigration case in process (e.g. H-1B extension, green card)?
+    answer: "No"
+    origin: human

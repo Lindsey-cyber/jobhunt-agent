@@ -174,7 +174,10 @@ switch (command) {
         // Held only on something the candidate must sign: a rerun cannot change it.
         const last = ledger.history(prior.key).at(-1);
         const reasons = ((last?.detail as { reasons?: string[] } | undefined)?.reasons ?? []).filter((r) => !/trust level|autoSubmitAts|low confidence|generated answer/.test(r));
-        return !(last?.state === "held" && reasons.length > 0 && reasons.every((r) => /legal attestations need the candidate/.test(r)));
+        // (The signed field is also reported empty after filling; that is the same hold.)
+        const signed = reasons.filter((r) => /legal attestations need the candidate/.test(r)).map((r) => /^required "(.+?)":/.exec(r)?.[1]);
+        const rest = reasons.filter((r) => !/legal attestations need the candidate/.test(r) && !signed.some((l) => l && r === `required "${l}" is empty after filling`));
+        return !(last?.state === "held" && signed.length > 0 && rest.length === 0);
       });
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
     console.log(`${ready.length} ${auto ? "approved or matched" : "approved"} postings with an adapter are not yet applied to; trying up to ${limit}`);

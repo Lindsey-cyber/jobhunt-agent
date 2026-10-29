@@ -6,7 +6,7 @@
   "phone": "(978) 668-1426",
   "candidate-location": "New York, New York, United States",
   "company-name-0": "Columbia University",
-  "title-0": "Research Assistant",
+  "title-0": "Research Assistant (ML)",
   "start-date-month-0": "January",
   "start-date-year-0": "2026",
   "end-date-month-0": "May",
@@ -15,7 +15,7 @@
   "degree--0": "Master's Degree",
   "discipline--0": "Statistics & Decision Theory",
   "question_37674378002": "Thank you",
-  "question_37674379002": "",
+  "question_37674379002": "Yes",
   "question_37674380002": "Yes",
   "question_37674381002": "",
   "question_37674382002": "I require/will require Lyft's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)",
@@ -24,10 +24,12 @@
   "question_37674385002": "https://www.linkedin.com/in/lindsey-ma/",
   "question_37674386002": "No",
   "question_37674387002": "11354",
-  "question_37674388002": "",
+  "question_37674388002": "I am willing to relocate before starting employment.",
   "question_37674389002": "",
   "gender": "Decline To Self Identify",
   "hispanic_ethnicity": "Decline To Self Identify",
   "veteran_status": "I am not a protected veteran",
-  "resume": "Lindsey_Ma_Resume.pdf"
+  "current-role-0": "",
+  "resume": "Lindsey_Ma_Resume.pdf",
+  "race": ""
 }

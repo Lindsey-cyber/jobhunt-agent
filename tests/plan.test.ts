@@ -374,4 +374,14 @@ describe("buildPlan", () => {
     expect(one("Are you a current employee of the U.S. Government (including U.S. Congress or military)?", ["Yes", "No"])).toMatchObject({ value: "No" });
     expect(one("Are you able to work in the specified job location, or are you willing to relocate for this position?", ["Yes", "No"], "Lila Sciences", "checkbox", "Cambridge, MA USA; San Francisco, CA USA")).toMatchObject({ value: "Yes" });
   });
+
+  it("keys employer-page Greenhouse postings by job id, and reads Billtrust's and Bracebridge's wording", async () => {
+    const { applicationKey } = await import("../src/domain/form.ts");
+    expect(applicationKey("greenhouse", "https://www.billtrust.com/careers/job-openings?gh_jid=7790504003")).toBe("greenhouse:www.billtrust.com/careers/job-openings/7790504003");
+    expect(applicationKey("greenhouse", "https://job-boards.greenhouse.io/pinterest/jobs/8140219")).toBe("greenhouse:job-boards.greenhouse.io/pinterest/jobs/8140219");
+    const p = { ...user.profile, workHistory: [{ employer: "Arborphy AI LLC", start: "2026-05" }], education: [{ school: "Columbia University", degree: "Master of Science", major: "Statistics", gradMonth: 5, gradYear: 2026 }, { school: "Renmin University of China", degree: "Bachelor of Arts", major: "Economics", gradMonth: 6, gradYear: 2023 }] };
+    const one = (label: string) => buildPlan(form([field(label)]), p, user.bank).items[0]!;
+    expect(one("Current or most recent employer")).toMatchObject({ value: "Arborphy AI LLC" });
+    expect(one("What year did/will you complete your undergraduate degree?")).toMatchObject({ value: "2023" });
+  });
 });

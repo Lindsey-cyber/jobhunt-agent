@@ -1,0 +1,174 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics & Decision Theory",
+      "actual": "Statistics & Decision Theory",
+      "pass": true
+    },
+    {
+      "fieldId": "start-month--0",
+      "label": "Start date month",
+      "expected": "January",
+      "actual": "January",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-month--0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9176538101",
+      "label": "What is your GPA?",
+      "expected": "3.71 - 3.8",
+      "actual": "3.71 - 3.8",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9176539101",
+      "label": "Will you require immigration sponsorship to begin working for IMC? Examples of sponsorship would include (but is not limited to) F-1 OPT, H-1B, H-4 EAD, L-1, L-2, TN, O-1, J-1, E-1/E-2, and E-3.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9176540101",
+      "label": "Will you require immigration sponsorship in the future to continue working for IMC? Examples of sponsorship would include (but is not limited to) F-1 OPT, H-1B, H-4 EAD, L-1, L-2, TN, O-1, J-1, E-1/E-2, and E-3.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9492136101",
+      "label": "Is there any other context you’d like to share about your U.S. Immigration sponsorship needs?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9176541101",
+      "label": "Have you applied to this role or another role @IMC within the last 12-18 months? As a reminder, if you have already applied for this position during the current recruitment season and were not selected, you may reapply when the next recruitment season begins in 2027.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9176547101",
+      "label": "Privacy Statement",
+      "expected": "I Agree",
+      "actual": "I Agree",
+      "pass": true
+    },
+    {
+      "fieldId": "4005629101",
+      "label": "What is your Race/Ethnicity?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "gdpr_demographic_data_consent_given",
+      "label": "By checking this box, I consent to IMC collecting, storing, and processing my responses to the demographic data surveys above.",
+      "expected": "By checking this box, I consent to IMC collecting, storing, and processing my responses to the demographic data surveys above.",
+      "actual": "By checking this box, I consent to IMC collecting, storing, and processing my responses to the demographic data surveys above.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "When did you graduate from High School?",
+    "Select your Standardized Test score type:",
+    "Provide your best result on SAT:",
+    "Provide your best result on ACT:",
+    "When is your anticipated graduation date - please select a Graduation Date range:",
+    "Do you currently have any offers?",
+    "Please provide your university email address.",
+    "Please select the location of your current university.",
+    "What is your preferred work location?",
+    "Interview Code of Conduct",
+    "Please indicate which of the following machine learning libraries you are proficient with (select all that apply):",
+    "From the cities above, are there any other IMC locations you'd consider? Select up to 2."
+  ],
+  "fillErrors": []
+}

@@ -26,5 +26,7 @@ export type ApplicationKey = string & { readonly __brand: "ApplicationKey" };
 
 export function applicationKey(ats: AtsName, url: string): ApplicationKey {
   const u = new URL(url);
-  return `${ats}:${u.hostname}${u.pathname.replace(/\/+$/, "")}` as ApplicationKey;
+  // An employer careers page lists every posting at one path; the Greenhouse job id tells them apart.
+  const ghJid = u.searchParams.get("gh_jid");
+  return `${ats}:${u.hostname}${u.pathname.replace(/\/+$/, "")}${ghJid ? `/${ghJid}` : ""}` as ApplicationKey;
 }

@@ -200,6 +200,15 @@ export const PROFILE_RULES: ProfileRule[] = [
     kinds: ["text", "textarea"],
     resolve: (p) => p.education.find((e) => /bachelor|\bb\.?[as]\b/i.test(e.degree))?.school,
   },
+  {
+    // Bracebridge: "What year did/will you complete your undergraduate degree?"
+    path: "education",
+    pattern: /\byear did( ?\/? ?will)? you (complete|finish|graduate|earn) (from )?your (undergraduate|bachelor s?) (degree)?\b/,
+    resolve: (p) => {
+      const b = p.education.find((e) => /bachelor|\bb\.?[as]\b/i.test(e.degree));
+      return b ? String(b.gradYear) : undefined;
+    },
+  },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",
@@ -328,10 +337,12 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Yes/no only, and only for a posting located in the US.
     path: "workArrangement",
     pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location)\b/,
-    kinds: ["select", "radio", "combobox", "checkbox"],
+    kinds: ["select", "radio", "combobox", "checkbox", "text"],
     resolve: (p, label, ctx) => {
       if (ctx.jobCountry !== "United States") return undefined;
       const opts = ctx.options ?? [];
+      // A yes/no asked in a text box (Bot Auto: "Would you be able to work onsite at Houston, TX office?").
+      if (!opts.length && !/^(are|would|will|can|do|is)\b|\b(are|would|will|can|do) you\b/.test(label)) return undefined;
       // Lyft: "I already reside near a Lyft office ..." / "I am willing to relocate ..." / "I am not willing ...".
       if (!opts.some((o) => /^yes\b/i.test(o.trim()))) {
         // Near when the posting's place (or the office the question names) is her metro: New York for a NY address.
@@ -500,12 +511,12 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Asana: "Current Company"; the work-history entry with no end date.
     path: "workHistory",
-    pattern: /^(current|most recent) (company|employer)( name)?$/,
+    pattern: /^(current|most recent|current or most recent) (company|employer)( name)?$/,
     resolve: (p) => p.workHistory.find((w) => !w.end)?.employer,
   },
   {
     path: "workHistory",
-    pattern: /^(current|most recent) (job )?(title|position|role)$/,
+    pattern: /^(current|most recent|current or most recent) (job )?(title|position|role)$/,
     resolve: (p) => p.workHistory.find((w) => !w.end)?.title,
   },
   {
@@ -547,7 +558,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",
-    pattern: /^(gender|sex)$|\b(indicate|select|describe|identify) your (gender|sex)\b|^gender identity$/,
+    pattern: /^(gender|sex)$|\b(indicate|select|describe|identify) your (gender|sex)\b|^gender identity$|\bidentify my gender\b/,
     resolve: (p, _label, ctx) => {
       const opts = ctx.options ?? [];
       if (p.eeo.gender !== "decline" || !opts.length || opts.some((o) => DECLINE.test(normalize(o)))) return p.eeo.gender;

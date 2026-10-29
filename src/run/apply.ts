@@ -92,6 +92,8 @@ export function formUrl(url: string): string {
   if (id.startsWith("greenhouse:") && u.hostname.endsWith("greenhouse.io") && board && board !== "embed") {
     return `https://job-boards.greenhouse.io/embed/job_app?for=${board}&token=${id.slice("greenhouse:".length)}`;
   }
+  // An employer careers page framing a Greenhouse board (?gh_jid=...): the token-only embed redirects to the board's form.
+  if (id.startsWith("greenhouse:") && !u.hostname.endsWith("greenhouse.io") && u.searchParams.get("gh_jid")) return `https://boards.greenhouse.io/embed/job_app?token=${id.slice("greenhouse:".length)}`;
   // Workday: the posting's /apply/applyManually starts the form without the resume-parsing autofill.
   if (/\.myworkdayjobs\.com$/.test(u.hostname) && /\/job\//.test(u.pathname) && !/\/apply(\/|$)/.test(u.pathname)) return `${u.origin}${u.pathname.replace(/\/$/, "")}/apply/applyManually`;
   // Ashby's posting page links to its form at /application.

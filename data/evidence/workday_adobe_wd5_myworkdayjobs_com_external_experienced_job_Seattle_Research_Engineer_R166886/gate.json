@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Please select your ethnicity.\": answer \"decline\" matches none of the options",
+    "required \"Check this box to confirm the statement above.\": no answer in profile or answer bank",
+    "required \"Please select your ethnicity.\" is empty after filling",
+    "required \"Check this box to confirm the statement above.\" is empty after filling"
+  ]
+}

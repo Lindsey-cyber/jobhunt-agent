@@ -292,6 +292,15 @@ export const workday: AtsAdapter = {
           if (i < 0) i = texts.findIndex((t) => searchMatch(value, t));
           if (i < 0) return false;
           await prompt.nth(i).click({ force: true });
+          await page.waitForTimeout(1200);
+          // A category ("LinkedIn" at Draper) opens its own list instead of being chosen:
+          // take the child that names the answer, or its only child.
+          if ((await pills.count()) === 0 && (await prompt.count()) > 0) {
+            const kids = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim());
+            let k = kids.findIndex((t) => searchMatch(value, t));
+            if (k < 0 && kids.length === 1) k = 0;
+            if (k >= 0) await prompt.nth(k).click({ force: true });
+          }
           return true;
         };
         await page.waitForTimeout(1500);

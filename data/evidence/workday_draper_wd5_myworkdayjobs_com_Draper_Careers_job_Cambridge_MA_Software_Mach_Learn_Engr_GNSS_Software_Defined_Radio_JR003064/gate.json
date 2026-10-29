@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"How Did You Hear About Us?\": expected \"LinkedIn\", got \"\"",
+    "readback mismatch on \"Are you a former employee? -- Note: if you are a current employee, please apply internally through Jobs Hub. -- If you are a current student, please continue your application here.\": expected \"No\", got \"\"",
+    "required \"How Did You Hear About Us?\" is empty after filling",
+    "required \"Are you a former employee? -- Note: if you are a current employee, please apply internally through Jobs Hub. -- If you are a current student, please continue your application here.\" is empty after filling"
+  ]
+}

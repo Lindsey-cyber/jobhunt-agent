@@ -103,7 +103,8 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, company: form.company, ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
   if (!candidate) return unanswered(field, sensitive ? "sensitive question with no exact answer" : "no answer in profile or answer bank");
 
-  const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0);
+  // A checkbox list (Workday's race/ethnicity) is matched like a radio group.
+  const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0) || (field.kind === "checkbox" && field.options.length > 1);
   if (!hasOptions) {
     const confidence = field.kind === "combobox" ? Math.min(candidate.confidence, 0.8) : candidate.confidence;
     return { status: "fill", field, value: candidate.value, source: candidate.source, confidence, sensitive };

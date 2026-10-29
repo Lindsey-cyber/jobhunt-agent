@@ -348,7 +348,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b/, resolve: (p) => p.eeo.gender },
   { path: "eeo.gender", pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/, resolve: (p) => p.eeo.gender },
   { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|\byour race\b|\brace ?\/? ?ethnic|\bethnic group\b/, resolve: (p) => p.eeo.race },
-  { path: "eeo.veteran", pattern: /\bveteran\b/, resolve: (p) => p.eeo.veteran },
+  { path: "eeo.veteran", pattern: /\bveterans?\b/, resolve: (p) => p.eeo.veteran },
   { path: "eeo.disability", pattern: /\bdisability\b/, resolve: (p) => p.eeo.disability },
 ];
 

@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next page. Note: If your previous badge number began with 77 or 88, select \"No\" and continue.\": sensitive question with no exact answer",
+    "required \"Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next page. Note: If your previous badge number began with 77 or 88, select \"No\" and continue.\" is empty after filling"
+  ]
+}

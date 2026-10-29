@@ -309,7 +309,9 @@ export const PROFILE_RULES: ProfileRule[] = [
       // "American Institutes for Research" is also "AIR".
       const initials = (ctx.company ?? "").split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]!.toLowerCase()).join("");
       const names = [first, initials.length >= 3 ? initials : ""].filter((x): x is string => Boolean(x && x.length >= 2));
-      if (!names.some((n) => new RegExp(`\\b${n}\\b`).test(label))) return undefined;
+      // Aerospace: "Have you previously worked for this organization?" names the hiring company too.
+      const thisOne = /\bthis (organization|company|employer|firm)\b/.test(label);
+      if (!thisOne && !names.some((n) => new RegExp(`\\b${n}\\b`).test(label))) return undefined;
       if (p.workHistory.some((w) => normalize(w.employer).split(" ")[0] === first)) return undefined;
       const opts = ctx.options ?? [];
       const no = opts.filter((o) => /^(no\b|never\b|i have never\b|i have not\b|i am not\b|not\b)/i.test(o.trim()));

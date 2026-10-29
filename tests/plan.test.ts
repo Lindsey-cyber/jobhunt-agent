@@ -209,6 +209,8 @@ describe("buildPlan", () => {
     const f = field("I accept the Terms and Conditions.", { kind: "checkbox", options: ["I accept the Terms and Conditions.*"] });
     expect(buildPlan(form([f]), user.profile, user.bank).items[0]).toMatchObject({ status: "blocked" });
     expect(buildPlan(form([f]), { ...user.profile, acceptApplicationTerms: true }, user.bank).items[0]).toMatchObject({ status: "fill" });
+    const gf = field("By submitting, you declare that you have read, understood, and accepted the terms in this policy", { kind: "checkbox", options: ["By submitting, you declare that you have read, understood, and accepted the terms in this policy*"] });
+    expect(buildPlan(form([gf]), { ...user.profile, acceptApplicationTerms: true }, user.bank).items[0]).toMatchObject({ status: "fill" });
   });
 
   it("declines gender where the form allows it and uses the required-answer fallback otherwise", () => {
@@ -216,6 +218,7 @@ describe("buildPlan", () => {
     const one = (options: string[]) => buildPlan(form([field("Gender", { kind: "select", options })]), p, user.bank).items[0]!;
     expect(one(["Female", "Male", "I don't wish to answer"])).toMatchObject({ status: "fill", value: "I don't wish to answer" });
     expect(one(["Female", "Male", "Non-Binary"])).toMatchObject({ status: "fill", value: "Female" });
+    expect(one(["Female", "Male", "Non-Binary", "Not declared"])).toMatchObject({ status: "fill", value: "Not declared" });
   });
 
   it("answers Workday's veteran list with the plain not-a-veteran option", () => {

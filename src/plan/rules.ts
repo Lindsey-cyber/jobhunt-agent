@@ -14,12 +14,13 @@ export const COMPENSATION_VETO = VETO[0]!;
 export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target)\b/;
 export const SALARY_HISTORY = /\b(current|previous|past|prior|last|history)\b/;
 
-export const ATTESTATION_OPTION = /\b(i )?(acknowledge|agree|consent|accept|understand|certify|attest)\b/;
+export const ATTESTATION_OPTION = /\b(i )?(acknowledge|acknowledged|agree|consent|accept|accepted|understand|understood|certify|attest|declare)\b/;
 
 // A single-option "I have read the privacy policy / notice" box. Anything that
 // also certifies answers, binds interview conduct or signs is not one.
 export const PRIVACY_NOTICE = /\bprivacy (policy|notice|statement)\b/;
-export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b/;
+// GlobalFoundries: "By submitting, you declare that you have read, understood, and accepted the terms in this policy".
+export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|\baccepted the terms in this policy\b/;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
 export const SENSITIVE =

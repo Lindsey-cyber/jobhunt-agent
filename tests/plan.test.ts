@@ -441,4 +441,11 @@ describe("buildPlan", () => {
     const f = field("Are you eligible to work in this location (without sponsorship)?", { kind: "combobox", options: ["Yes", "No"] });
     expect(buildPlan({ ...form([f]), jobLocation: "New York, NY" }, p, user.bank).items[0]).toMatchObject({ value: "No" });
   });
+
+  it("answers Relativity's export compliance and Roku's lawful-work wording", () => {
+    const p = { ...user.profile, citizenship: ["China"], workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const one = (label: string, options: string[]) => buildPlan({ ...form([field(label, { kind: "combobox", options })]), jobLocation: "San Jose, CA" }, p, user.bank).items[0]!;
+    expect(one("EXPORT COMPLIANCE", ["I am currently a “U.S. Person”", "I am not a “U.S. Person\""])).toMatchObject({ value: "I am not a “U.S. Person\"" });
+    expect(one("Are you authorized to lawfully work for Roku in the country to which you are applying?", ["Yes", "No"])).toMatchObject({ value: "Yes" });
+  });
 });

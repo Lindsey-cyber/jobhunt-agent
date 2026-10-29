@@ -326,7 +326,10 @@ export const PROFILE_RULES: ProfileRule[] = [
       const names = [first, initials.length >= 3 ? initials : ""].filter((x): x is string => Boolean(x && x.length >= 2));
       // Aerospace: "Have you previously worked for this organization?" names the hiring company too.
       const thisOne = /\bthis (organization|company|employer|firm)\b/.test(label);
-      if (!thisOne && !names.some((n) => new RegExp(`\\b${n}\\b`).test(label))) return undefined;
+      // "Hebrewseniorlife" in the catalog is "Hebrew SeniorLife" on the form.
+      const squashed = normalize(ctx.company ?? "").replace(/ /g, "");
+      const spaced = squashed.length >= 5 && label.replace(/ /g, "").includes(squashed);
+      if (!thisOne && !spaced && !names.some((n) => new RegExp(`\\b${n}\\b`).test(label))) return undefined;
       if (p.workHistory.some((w) => normalize(w.employer).split(" ")[0] === first)) return undefined;
       const opts = ctx.options ?? [];
       const no = opts.filter((o) => /^(no\b|never\b|i have never\b|i have not\b|i am not\b|not\b)/i.test(o.trim()));

@@ -27,9 +27,9 @@
   "question_38857486002": "I already reside near a Lyft office and I am able to work at a Lyft On-site Office.",
   "question_38857487002": "",
   "gender": "Decline To Self Identify",
-  "hispanic_ethnicity": "Decline To Self Identify",
+  "hispanic_ethnicity": "No",
+  "race": "",
   "veteran_status": "I am not a protected veteran",
   "current-role-0": "",
-  "resume": "Lindsey_Ma_Resume.pdf",
-  "race": ""
+  "resume": "Lindsey_Ma_Resume.pdf"
 }

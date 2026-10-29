@@ -1086,7 +1086,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_6255854009",
         "label": "Are you at years 18 years of age?",
@@ -1097,7 +1097,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "over-18",
+        "origin": "human"
+      },
+      "confidence": 0.7875,
+      "sensitive": false
     },
     {
       "status": "fill",

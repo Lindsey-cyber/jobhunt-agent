@@ -65,6 +65,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_6255854009",
+      "label": "Are you at years 18 years of age?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_6255855009",
       "label": "Are you legally authorized to work in the US?",
       "expected": "Yes",
@@ -114,7 +121,6 @@
     "What is your expected hourly rate?",
     "Which US state are you located in?",
     "What is your English proficiency level?",
-    "Are you at years 18 years of age?",
     "Are you proficient in any other languages?"
   ],
   "fillErrors": []

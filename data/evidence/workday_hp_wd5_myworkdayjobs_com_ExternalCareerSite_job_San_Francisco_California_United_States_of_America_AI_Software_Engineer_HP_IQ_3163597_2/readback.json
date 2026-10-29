@@ -1,14 +1,15 @@
 {
   "source": "Job Board - 104",
   "candidateIsPreviousWorker": "",
-  "country": "Finland",
-  "legalName--firstName": "",
+  "country": "United States of America",
+  "legalName--firstName": "Lanxin",
   "legalName--lastName": "Ma",
   "addressLine1": "140-21 32nd Ave",
-  "citySubdivision1": "",
+  "city": "New York",
+  "countryRegion": "New York",
   "postalCode": "11354",
-  "phoneType": "Pers Mobile",
-  "countryPhoneCode": "Finland (+358)",
+  "phoneType": "Main",
+  "countryPhoneCode": "United States of America (+1)",
   "phoneNumber": "9786681426",
   "extension": ""
 }

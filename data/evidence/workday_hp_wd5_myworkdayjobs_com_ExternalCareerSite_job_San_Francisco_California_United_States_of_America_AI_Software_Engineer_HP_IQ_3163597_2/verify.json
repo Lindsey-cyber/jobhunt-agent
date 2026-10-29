@@ -9,8 +9,15 @@
       "pass": true
     },
     {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
       "fieldId": "legalName--lastName",
-      "label": "Family Name",
+      "label": "Last Name",
       "expected": "Ma",
       "actual": "Ma",
       "pass": true
@@ -23,6 +30,20 @@
       "pass": true
     },
     {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
       "fieldId": "postalCode",
       "label": "Postal Code",
       "expected": "11354",
@@ -32,9 +53,9 @@
     {
       "fieldId": "phoneType",
       "label": "Phone Device Type",
-      "expected": "Pers Mobile",
-      "actual": "Pers Mobile",
-      "pass": true
+      "expected": "Mobile",
+      "actual": "Main",
+      "pass": false
     },
     {
       "fieldId": "phoneNumber",
@@ -45,8 +66,9 @@
     }
   ],
   "emptyRequired": [
-    "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role.",
-    "Given Name(s)"
+    "Have you previously been employed by HP? If you are currently employed by HP, please use the internal Job Searcher site to apply for this role."
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Phone Device Type: \"Mobile\" did not stick in the dropdown"
+  ]
 }

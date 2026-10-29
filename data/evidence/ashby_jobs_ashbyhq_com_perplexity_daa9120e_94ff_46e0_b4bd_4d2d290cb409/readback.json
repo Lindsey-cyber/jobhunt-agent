@@ -1,11 +1,11 @@
 {
-  "_systemfield_name": "",
+  "_systemfield_name": "Lanxin Ma",
   "_systemfield_email": "lm3879@columbia.edu",
   "245e538f-1153-422f-b58e-32e1371f5ed3": "9786681426",
   "_systemfield_resume": "Lindsey_Ma_Resume.pdf",
   "_systemfield_location": "New York, United States",
   "791b5b1d-0019-4a54-80fd-aa15dbc174c8": "Yes",
-  "af5808ac-50b3-40d3-b059-50ace899f1ee": "",
+  "af5808ac-50b3-40d3-b059-50ace899f1ee": "Yes",
   "babff616-a249-4975-bff9-554ce3773044": "I graduated (or dropped out) from a degree program within the last 10 months.",
   "ba984ea0-24c7-4b71-b6fd-e891f82ce061": "The most interesting part of Perplexity to me is the way Search, Comet, and Computer connect model reasoning to real user action, not just answers. I’m especially drawn to the end-to-end product ownership in this role: shaping the interface, the application logic, and the search/model calls together, then using usage data and evals to decide what survives. That matches how I like to build. In my recent work I’ve built multi-agent reasoning prototypes with tool generation and evidence aggregation, integrated local LLMs into robot command workflows, and developed reproducible ML systems. I’d be excited to work on agentic AI surfaces where reliability, latency, and product judgment matter together.",
   "5233a981-7f96-43ff-9b45-9c530366169a": "In my current research engineering work, I use AI as an experimental collaborator and as a system component rather than as a black-box answer machine. At Arborphy, that means comparing visual encoders like BioCLIP, DINOv3, and EfficientNet, building a multi-agent botanical reasoning prototype with tool generation and evidence aggregation, and using reproducible evals to decide what actually improves recognition. My favorite tools are local and inspectable ones: Ollama for embedding a language model into a robot workflow, and Hugging Face/TransformerLens-style workflows for inspecting model behavior. The underappreciated benefit is faster iteration when the model is close to the data and the evaluation loop is explicit. The pain point is that models can look persuasive while adding no measurable value: I have seen fusion fail to beat BioCLIP alone, and hallucination-circuit work break down because behavior was unstable and first-token evidence was too weak.",

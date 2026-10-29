@@ -1,11 +1,11 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "_systemfield_name",
-      "label": "Name",
-      "expected": "Lindsey Ma",
-      "actual": "Lindsey Ma",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
       "pass": true
     },
     {
@@ -44,10 +44,24 @@
       "pass": true
     },
     {
+      "fieldId": "_systemfield_education_history",
+      "label": "Education History",
+      "expected": "Columbia University | Master of Science | Statistics | 09/2024 | 05/2026",
+      "actual": "Columbia University | Master of Science | Statistics | 09/2024 | 05/2026",
+      "pass": true
+    },
+    {
       "fieldId": "ed26ea04-cc9c-4743-a932-d6a9faa76998",
       "label": "Current Company",
       "expected": "Arborphy AI LLC",
       "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "784ca35d-2aab-4923-92ce-81dfb19ff9d6",
+      "label": "Are you open to being in-office 5 days a week in Sunnyvale?",
+      "expected": "Yes",
+      "actual": "Yes",
       "pass": true
     },
     {
@@ -79,6 +93,13 @@
       "pass": true
     },
     {
+      "fieldId": "7d2607de-f31b-4b75-980d-cf088a70d847",
+      "label": "Do you currently have an active immigration case (ex H-1B extension, green card)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "_systemfield_eeoc_gender",
       "label": "Gender",
       "expected": "Decline to self-identify",
@@ -100,10 +121,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Education History",
-    "Are you open to being in-office 5 days a week in Sunnyvale?",
-    "Do you currently have an active immigration case (ex H-1B extension, green card)?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

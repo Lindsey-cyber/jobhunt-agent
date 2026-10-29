@@ -4,6 +4,7 @@
     "required \"Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.\": no answer in profile or answer bank",
     "required \"I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).\": no answer in profile or answer bank",
     "required \"Are you legally authorized to work in that country?\": sensitive question with no exact answer",
+    "readback mismatch on \"Education History\": expected \"Columbia University | Master of Science | Statistics | 09/2024 | 05/2026\", got \"Columbia University |  |  |  | \"",
     "required \"Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.\" is empty after filling",
     "required \"I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).\" is empty after filling",
     "required \"Are you legally authorized to work in that country?\" is empty after filling"

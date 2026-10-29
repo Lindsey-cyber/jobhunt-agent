@@ -275,14 +275,21 @@
       },
       {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
         "options": []
       },
       {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -298,81 +305,7 @@
       },
       {
         "id": "addressLine1",
-        "label": "Street Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      {
-        "id": "postalCode",
-        "label": "Postal Code",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      {
-        "id": "phoneType",
-        "label": "Phone Device Type",
-        "kind": "select",
-        "required": true,
-        "options": [
-          "Fax",
-          "Mobile",
-          "Telephone"
-        ]
-      },
-      {
-        "id": "countryPhoneCode",
-        "label": "Country Phone Code",
-        "kind": "combobox",
-        "required": true,
-        "options": []
-      },
-      {
-        "id": "phoneNumber",
-        "label": "Phone Number",
-        "kind": "text",
-        "required": true,
-        "options": []
-      },
-      {
-        "id": "extension",
-        "label": "Phone Extension",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      {
-        "id": "legalName--middleName",
-        "label": "Middle Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      {
-        "id": "preferredName--firstName",
-        "label": "Preferred First Name",
-        "kind": "text",
-        "required": true,
-        "options": []
-      },
-      {
-        "id": "preferredName--middleName",
-        "label": "Preferred Middle Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      {
-        "id": "preferredName--lastName",
-        "label": "Preferred Last Name",
+        "label": "Address Line 1",
         "kind": "text",
         "required": true,
         "options": []
@@ -451,6 +384,153 @@
           "Wisconsin",
           "Wyoming"
         ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "f9bb932abbe810015d8063d468240000",
+        "label": "Have you ever worked at Crowe before?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f9bb932abbe810015d8063d468240003",
+        "label": "Do you currently work at a Crowe client?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f9bb932abbe810015d80646e57880003",
+        "label": "Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f9bb932abbe810015d80650828f40002",
+        "label": "Are you currently authorized to work lawfully in the U.S.?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "f9bb932abbe810015d80650828f40005",
+        "label": "Do you now, or will you in the future, need sponsorship from an employer in order to obtain, extend or renew your authorization to work in the United States? e.g., H-1B, F-1 OPT STEM extension, etc. DISCLAIMER: Any untruthful information with respect to your present or future need for visa sponsorship will be grounds for termination.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f9bb932abbe810015d8065a2067e0003",
+        "label": "Do you plan to pursue a CPA?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f9bb932abbe810015d80663bcedb0002",
+        "label": "Do you have a valid driver's license?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "bc610b0368b81000a481a1055d2b0000",
+        "label": "<b>Just-In-Time Notice</b><br>How we review applications & your choices:</br>We use an AI‑assisted resume‑screening tool to help recruiters manage applications. Based on the job posting, the tool reads only the information you provide and may identify job‑related details (for example, experience with listed skills or stated qualifications), prepare a short automated summary to help a recruiter review more efficiently, and direct your application to the appropriate recruiter or hiring team. The tool does not approve, reject, or make any hiring decisions. Our recruiters review your full application and may override or ignore tool suggestions at any time.<br></br>Your choices: You may opt out of automated screening and request manual review at any time by contacting us at recruiting@crowe.com. Opting-out from automated screening will not impact our decision making. To request information about how this tool is used in connection with your application, please contact us at recruiting@crowe.com.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Opt In",
+          "Opt Out"
+        ]
+      },
+      {
+        "id": "f9bb932abbe810015d8065a2067e0002",
+        "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
       }
     ],
     "priorApplications": 0,
@@ -746,12 +826,29 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
         "options": []
       },
       "reason": "no answer in profile or answer bank"
@@ -760,7 +857,7 @@
       "status": "fill",
       "field": {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -793,162 +890,18 @@
       "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
         "id": "addressLine1",
-        "label": "Street Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "postalCode",
-        "label": "Postal Code",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      "value": "11354",
-      "source": {
-        "type": "profile",
-        "path": "contact.address.postalCode"
-      },
-      "confidence": 1,
-      "sensitive": false
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "phoneType",
-        "label": "Phone Device Type",
-        "kind": "select",
-        "required": true,
-        "options": [
-          "Fax",
-          "Mobile",
-          "Telephone"
-        ]
-      },
-      "value": "Mobile",
-      "source": {
-        "type": "profile",
-        "path": "contact.phoneType"
-      },
-      "confidence": 1,
-      "sensitive": false
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "countryPhoneCode",
-        "label": "Country Phone Code",
-        "kind": "combobox",
-        "required": true,
-        "options": []
-      },
-      "value": "United States of America (+1)",
-      "source": {
-        "type": "profile",
-        "path": "contact.address.country"
-      },
-      "confidence": 0.8,
-      "sensitive": false
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "phoneNumber",
-        "label": "Phone Number",
+        "label": "Address Line 1",
         "kind": "text",
         "required": true,
         "options": []
       },
-      "value": "9786681426",
+      "value": "140-21 32nd Ave",
       "source": {
         "type": "profile",
-        "path": "contact.phone"
-      },
-      "confidence": 1,
-      "sensitive": false
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "extension",
-        "label": "Phone Extension",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "legalName--middleName",
-        "label": "Middle Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "preferredName--firstName",
-        "label": "Preferred First Name",
-        "kind": "text",
-        "required": true,
-        "options": []
-      },
-      "value": "Lindsey",
-      "source": {
-        "type": "profile",
-        "path": "identity.preferredName"
-      },
-      "confidence": 1,
-      "sensitive": false
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "preferredName--middleName",
-        "label": "Preferred Middle Name",
-        "kind": "text",
-        "required": false,
-        "options": []
-      },
-      "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "preferredName--lastName",
-        "label": "Preferred Last Name",
-        "kind": "text",
-        "required": true,
-        "options": []
-      },
-      "value": "Ma",
-      "source": {
-        "type": "profile",
-        "path": "identity.lastName"
+        "path": "contact.address.line1"
       },
       "confidence": 1,
       "sensitive": false
@@ -1048,6 +1001,291 @@
       },
       "confidence": 1,
       "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f9bb932abbe810015d8063d468240000",
+        "label": "Have you ever worked at Crowe before?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "f9bb932abbe810015d8063d468240003",
+        "label": "Do you currently work at a Crowe client?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "f9bb932abbe810015d80646e57880003",
+        "label": "Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f9bb932abbe810015d80650828f40002",
+        "label": "Are you currently authorized to work lawfully in the U.S.?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f9bb932abbe810015d80650828f40005",
+        "label": "Do you now, or will you in the future, need sponsorship from an employer in order to obtain, extend or renew your authorization to work in the United States? e.g., H-1B, F-1 OPT STEM extension, etc. DISCLAIMER: Any untruthful information with respect to your present or future need for visa sponsorship will be grounds for termination.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "f9bb932abbe810015d8065a2067e0003",
+        "label": "Do you plan to pursue a CPA?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "f9bb932abbe810015d80663bcedb0002",
+        "label": "Do you have a valid driver's license?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "bc610b0368b81000a481a1055d2b0000",
+        "label": "<b>Just-In-Time Notice</b><br>How we review applications & your choices:</br>We use an AI‑assisted resume‑screening tool to help recruiters manage applications. Based on the job posting, the tool reads only the information you provide and may identify job‑related details (for example, experience with listed skills or stated qualifications), prepare a short automated summary to help a recruiter review more efficiently, and direct your application to the appropriate recruiter or hiring team. The tool does not approve, reject, or make any hiring decisions. Our recruiters review your full application and may override or ignore tool suggestions at any time.<br></br>Your choices: You may opt out of automated screening and request manual review at any time by contacting us at recruiting@crowe.com. Opting-out from automated screening will not impact our decision making. To request information about how this tool is used in connection with your application, please contact us at recruiting@crowe.com.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Opt In",
+          "Opt Out"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f9bb932abbe810015d8065a2067e0002",
+        "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
     }
   ]
 }

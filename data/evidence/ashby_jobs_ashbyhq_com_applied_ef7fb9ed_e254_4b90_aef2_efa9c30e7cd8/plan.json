@@ -8,7 +8,7 @@
     "fields": [
       {
         "id": "_systemfield_name",
-        "label": "Name",
+        "label": "Full Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -51,11 +51,9 @@
       {
         "id": "_systemfield_education_history",
         "label": "Education History",
-        "kind": "checkbox",
+        "kind": "text",
         "required": true,
-        "options": [
-          "Still Student?"
-        ]
+        "options": []
       },
       {
         "id": "ed26ea04-cc9c-4743-a932-d6a9faa76998",
@@ -168,16 +166,15 @@
       "status": "fill",
       "field": {
         "id": "_systemfield_name",
-        "label": "Name",
+        "label": "Full Name",
         "kind": "text",
         "required": true,
         "options": []
       },
-      "value": "Lindsey Ma",
+      "value": "Lanxin Ma",
       "source": {
-        "type": "bank",
-        "id": "draft:a1b28318c3",
-        "origin": "generated"
+        "type": "profile",
+        "path": "identity.fullName"
       },
       "confidence": 1,
       "sensitive": false
@@ -225,7 +222,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -268,17 +265,21 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "_systemfield_education_history",
         "label": "Education History",
-        "kind": "checkbox",
+        "kind": "text",
         "required": true,
-        "options": [
-          "Still Student?"
-        ]
+        "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Columbia University | Master of Science | Statistics | 09/2024 | 05/2026",
+      "source": {
+        "type": "profile",
+        "path": "education[0]"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -298,7 +299,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "784ca35d-2aab-4923-92ce-81dfb19ff9d6",
         "label": "Are you open to being in-office 5 days a week in Sunnyvale?",
@@ -309,7 +310,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -396,7 +403,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "7d2607de-f31b-4b75-980d-cf088a70d847",
         "label": "Do you currently have an active immigration case (ex H-1B extension, green card)?",
@@ -407,7 +414,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "active-immigration-case",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

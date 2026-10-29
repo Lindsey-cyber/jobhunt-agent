@@ -1,8 +1,15 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Given Name(s)\": no answer in profile or answer bank",
-    "required \"First Name\" is empty after filling",
-    "required \"Address Line 1\" is empty after filling"
+    "required \"Do you currently work at a Crowe client?\": no answer in profile or answer bank",
+    "required \"Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?\": no answer in profile or answer bank",
+    "required \"Do you plan to pursue a CPA?\": no answer in profile or answer bank",
+    "required \"Do you have a valid driver's license?\": no answer in profile or answer bank",
+    "required \"<b>Just-In-Time Notice</b><br>How we review applications & your choices:</br>We use an AI‑assisted resume‑screening tool to help recruiters manage applications. Based on the job posting, the tool reads only the information you provide and may identify job‑related details (for example, experience with listed skills or stated qualifications), prepare a short automated summary to help a recruiter review more efficiently, and direct your application to the appropriate recruiter or hiring team. The tool does not approve, reject, or make any hiring decisions. Our recruiters review your full application and may override or ignore tool suggestions at any time.<br></br>Your choices: You may opt out of automated screening and request manual review at any time by contacting us at recruiting@crowe.com. Opting-out from automated screening will not impact our decision making. To request information about how this tool is used in connection with your application, please contact us at recruiting@crowe.com.\": no answer in profile or answer bank",
+    "required \"Do you currently work at a Crowe client?\" is empty after filling",
+    "required \"Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?\" is empty after filling",
+    "required \"Do you plan to pursue a CPA?\" is empty after filling",
+    "required \"Do you have a valid driver's license?\" is empty after filling",
+    "required \"<b>Just-In-Time Notice</b><br>How we review applications & your choices:</br>We use an AI‑assisted resume‑screening tool to help recruiters manage applications. Based on the job posting, the tool reads only the information you provide and may identify job‑related details (for example, experience with listed skills or stated qualifications), prepare a short automated summary to help a recruiter review more efficiently, and direct your application to the appropriate recruiter or hiring team. The tool does not approve, reject, or make any hiring decisions. Our recruiters review your full application and may override or ignore tool suggestions at any time.<br></br>Your choices: You may opt out of automated screening and request manual review at any time by contacting us at recruiting@crowe.com. Opting-out from automated screening will not impact our decision making. To request information about how this tool is used in connection with your application, please contact us at recruiting@crowe.com.\" is empty after filling"
   ]
 }

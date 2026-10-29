@@ -8,7 +8,7 @@
     "fields": [
       {
         "id": "_systemfield_name",
-        "label": "Name",
+        "label": "Full Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -108,15 +108,21 @@
   },
   "items": [
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "_systemfield_name",
-        "label": "Name",
+        "label": "Full Name",
         "kind": "text",
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -161,7 +167,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -208,7 +214,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "af5808ac-50b3-40d3-b059-50ace899f1ee",
         "label": "Are you able to come into the office four days per week?",
@@ -219,7 +225,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

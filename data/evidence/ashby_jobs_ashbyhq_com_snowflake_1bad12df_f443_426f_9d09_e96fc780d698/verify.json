@@ -51,6 +51,13 @@
       "pass": true
     },
     {
+      "fieldId": "4c8e248b-f134-416f-9fa5-38c9e679f7b1",
+      "label": "In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?",
+      "expected": "Yes",
+      "actual": "YES",
+      "pass": true
+    },
+    {
       "fieldId": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
       "label": "Where have you most recently worked?",
       "expected": "Most recently, I worked as a Research Engineer Intern at Arborphy AI LLC in New York, focused on applied machine learning for plant identification. In that role, I designed and evaluated deep visual representation and fusion approaches, including an EfficientNet–BioCLIP dual-encoder architecture, and ran controlled experiments across encoders, clustering, retrieval, and held-out evaluations. I also built a multi-agent botanical reasoning prototype with autonomous tool generation, specialized visual-analysis agents, iterative planning, and knowledge-graph-based evidence aggregation, which is especially relevant to Snowflake’s focus on agentic frameworks and autonomous research agents.",
@@ -101,7 +108,6 @@
     }
   ],
   "emptyRequired": [
-    "In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?",
     "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?",
     "A “U.S. person” is a citizen, legal permanent resident, or legal temporary resident (i.e., a refugee or asylee) of the United States. Which of the following best describes your “U.S. person” status?",
     "Due to SEC auditor independence requirements, please let us know whether you have previously worked at, or if currently working at PricewaterhouseCoopers (PwC), who is our independent auditor.",

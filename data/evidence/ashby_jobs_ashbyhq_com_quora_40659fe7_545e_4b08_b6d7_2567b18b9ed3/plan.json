@@ -46,8 +46,8 @@
       },
       {
         "id": "_systemfield_education_history",
-        "label": "School Name",
-        "kind": "combobox",
+        "label": "Education History",
+        "kind": "text",
         "required": true,
         "options": []
       },
@@ -333,17 +333,17 @@
       "status": "fill",
       "field": {
         "id": "_systemfield_education_history",
-        "label": "School Name",
-        "kind": "combobox",
+        "label": "Education History",
+        "kind": "text",
         "required": true,
         "options": []
       },
-      "value": "Columbia University",
+      "value": "Columbia University | Master of Science | Statistics | 09/2024 | 05/2026",
       "source": {
         "type": "profile",
-        "path": "education[0].school"
+        "path": "education[0]"
       },
-      "confidence": 0.8,
+      "confidence": 1,
       "sensitive": false
     },
     {
@@ -429,7 +429,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"

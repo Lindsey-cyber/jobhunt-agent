@@ -16,8 +16,15 @@
       "pass": true
     },
     {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
       "fieldId": "legalName--lastName",
-      "label": "Family Name",
+      "label": "Last Name",
       "expected": "Ma",
       "actual": "Ma",
       "pass": true
@@ -27,6 +34,27 @@
       "label": "I have a preferred name",
       "expected": "I have a preferred name",
       "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
       "pass": true
     },
     {
@@ -72,23 +100,47 @@
       "pass": true
     },
     {
-      "fieldId": "city",
-      "label": "City",
-      "expected": "New York",
-      "actual": "New York",
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
       "pass": true
     },
     {
-      "fieldId": "countryRegion",
-      "label": "State",
-      "expected": "New York",
-      "actual": "New York",
+      "fieldId": "f9bb932abbe810015d8063d468240000",
+      "label": "Have you ever worked at Crowe before?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "f9bb932abbe810015d80650828f40002",
+      "label": "Are you currently authorized to work lawfully in the U.S.?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "f9bb932abbe810015d80650828f40005",
+      "label": "Do you now, or will you in the future, need sponsorship from an employer in order to obtain, extend or renew your authorization to work in the United States? e.g., H-1B, F-1 OPT STEM extension, etc. DISCLAIMER: Any untruthful information with respect to your present or future need for visa sponsorship will be grounds for termination.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "f9bb932abbe810015d8065a2067e0002",
+      "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
+      "expected": "Yes",
+      "actual": "Yes",
       "pass": true
     }
   ],
   "emptyRequired": [
-    "First Name",
-    "Address Line 1"
+    "Do you currently work at a Crowe client?",
+    "Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?",
+    "Do you plan to pursue a CPA?",
+    "Do you have a valid driver's license?",
+    "<b>Just-In-Time Notice</b><br>How we review applications & your choices:</br>We use an AI‑assisted resume‑screening tool to help recruiters manage applications. Based on the job posting, the tool reads only the information you provide and may identify job‑related details (for example, experience with listed skills or stated qualifications), prepare a short automated summary to help a recruiter review more efficiently, and direct your application to the appropriate recruiter or hiring team. The tool does not approve, reject, or make any hiring decisions. Our recruiters review your full application and may override or ignore tool suggestions at any time.<br></br>Your choices: You may opt out of automated screening and request manual review at any time by contacting us at recruiting@crowe.com. Opting-out from automated screening will not impact our decision making. To request information about how this tool is used in connection with your application, please contact us at recruiting@crowe.com."
   ],
   "fillErrors": []
 }

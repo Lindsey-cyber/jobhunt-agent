@@ -253,7 +253,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -317,7 +317,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "4c8e248b-f134-416f-9fa5-38c9e679f7b1",
         "label": "In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?",
@@ -328,7 +328,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "skip",

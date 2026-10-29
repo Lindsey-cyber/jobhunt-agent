@@ -6,7 +6,7 @@
   "_systemfield_location": "New York, United States",
   "586e52ac-fc39-495f-821d-1cd0cce9aa2e": "https://www.linkedin.com/in/lindsey-ma/",
   "c773adde-72b8-494f-8f4f-bb9b84608c29": "YES",
-  "4c8e248b-f134-416f-9fa5-38c9e679f7b1": "",
+  "4c8e248b-f134-416f-9fa5-38c9e679f7b1": "YES",
   "b1890667-a914-4163-b3c1-c5b694fd412c": "",
   "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7": "Most recently, I worked as a Research Engineer Intern at Arborphy AI LLC in New York, focused on applied machine learning for plant identification. In that role, I designed and evaluated deep visual representation and fusion approaches, including an EfficientNet–BioCLIP dual-encoder architecture, and ran controlled experiments across encoders, clustering, retrieval, and held-out evaluations. I also built a multi-agent botanical reasoning prototype with autonomous tool generation, specialized visual-analysis agents, iterative planning, and knowledge-graph-based evidence aggregation, which is especially relevant to Snowflake’s focus on agentic frameworks and autonomous research agents.",
   "962f2552-c3ca-4d6c-a7d8-b7b1340558ae": "NO",

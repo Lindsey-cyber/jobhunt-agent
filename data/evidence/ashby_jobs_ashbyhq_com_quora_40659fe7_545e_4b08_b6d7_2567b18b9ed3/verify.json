@@ -38,10 +38,10 @@
     },
     {
       "fieldId": "_systemfield_education_history",
-      "label": "School Name",
-      "expected": "Columbia University",
-      "actual": "Columbia University",
-      "pass": true
+      "label": "Education History",
+      "expected": "Columbia University | Master of Science | Statistics | 09/2024 | 05/2026",
+      "actual": "Columbia University |  |  |  | ",
+      "pass": false
     },
     {
       "fieldId": "394d7238-e078-4ce5-941e-adacf934896e",
@@ -126,5 +126,7 @@
     "I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).",
     "Are you legally authorized to work in that country?"
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Education History: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-field-path=\"_systemfield_education_history\"]').first().locator('[id=\"_systemfield_education_history-degree\"]')\u001b[22m\n"
+  ]
 }

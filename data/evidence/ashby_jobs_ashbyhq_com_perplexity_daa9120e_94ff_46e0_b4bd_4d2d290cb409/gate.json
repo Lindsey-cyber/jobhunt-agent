@@ -1,11 +1,7 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Name\": no answer in profile or answer bank",
-    "required \"Are you able to come into the office four days per week?\": no answer in profile or answer bank",
     "required \"Exercise Submission (Shared URL)\": no answer in profile or answer bank",
-    "required \"Name\" is empty after filling",
-    "required \"Are you able to come into the office four days per week?\" is empty after filling",
     "required \"Exercise Submission (Shared URL)\" is empty after filling"
   ]
 }

@@ -35,7 +35,8 @@ async function pageError(page: Page): Promise<string> {
 
 // Listbox options load when the menu opens.
 // The open menu; selectedItemList lists are the chosen items of search boxes.
-const MENU_OPTION = 'ul[role="listbox"]:not([data-automation-id="selectedItemList"]) [role="option"]';
+// Closed menus can stay in the page hidden; only a visible one is the open menu.
+const MENU_OPTION = 'ul[role="listbox"]:not([data-automation-id="selectedItemList"]) [role="option"]:visible';
 
 async function listboxOptions(page: Page, button: Locator): Promise<string[]> {
   for (let attempt = 0; attempt < 3; attempt++) {
@@ -57,7 +58,7 @@ async function listboxOptions(page: Page, button: Locator): Promise<string[]> {
 }
 
 async function clickOption(page: Page, value: string, match: (want: string, got: string) => boolean): Promise<void> {
-  const opts = page.locator(`${MENU_OPTION}, [data-automation-id="promptOption"]`);
+  const opts = page.locator(`${MENU_OPTION}, [data-automation-id="promptOption"]:visible`);
   await opts.first().waitFor({ timeout: 8000 });
   const texts = (await opts.allInnerTexts()).map((t) => t.trim());
   let i = texts.findIndex((t) => normalize(t) === normalize(value));
@@ -65,6 +66,33 @@ async function clickOption(page: Page, value: string, match: (want: string, got:
   if (i < 0) throw new Error(`no option fits "${value}" (saw ${texts.slice(0, 6).join(" / ")})`);
   // The chosen-items strip and the page footer overlap open menus.
   await opts.nth(i).click({ force: true });
+}
+
+// Choose in a listbox dropdown and confirm the button now shows it; a click can
+// land on the previous menu while it closes, so retry.
+async function chooseInListbox(page: Page, b: Locator, value: string): Promise<void> {
+  const button = b.locator('button[aria-haspopup="listbox"]').first();
+  const shows = async () => normalize((await button.innerText().catch(() => "")).trim()).startsWith(normalize(value));
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (await shows()) return;
+    await page.locator(MENU_OPTION).first().waitFor({ state: "detached", timeout: 3000 }).catch(() => undefined);
+    await page.waitForTimeout(500 + 700 * attempt);
+    await button.scrollIntoViewIfNeeded().catch(() => undefined);
+    if (attempt === 0) {
+      await button.click({ force: true });
+      await clickOption(page, value, (w, g) => normalize(g).startsWith(normalize(w))).catch(() => undefined);
+    } else {
+      // Keyboard: open, type-ahead to the option, Enter.
+      await button.focus();
+      await page.keyboard.press("Enter");
+      await page.waitForTimeout(500);
+      await page.keyboard.type(value, { delay: 60 });
+      await page.waitForTimeout(400);
+      await page.keyboard.press("Enter");
+    }
+    await page.waitForTimeout(600);
+  }
+  if (!(await shows())) throw new Error(`"${value}" did not stick in the dropdown`);
 }
 
 export const workday: AtsAdapter = {
@@ -158,6 +186,9 @@ export const workday: AtsAdapter = {
   async extract(page) {
     await page.locator(ROOT).first().waitFor({ timeout: 30000 });
     await waitSettled(page);
+    // Question pages render their questions after the page itself (Review has none).
+    await page.locator(`${ROOT} [data-automation-id^="formField-"]`).first().waitFor({ timeout: 15000 }).catch(() => undefined);
+    await page.waitForTimeout(1000);
     const raw = (await page.evaluate(`(${EXTRACT})(document)`)) as (Omit<FormField, "kind"> & { kind: FieldKind | "listbox" | "date" })[];
     const fields: FormField[] = [];
     for (const f of raw) {
@@ -197,24 +228,10 @@ export const workday: AtsAdapter = {
         await b.locator('input[type="file"]').first().setInputFiles(value);
         await page.waitForTimeout(3000);
         return;
-      case "select": {
-        const shown = (await b.locator('button[aria-haspopup="listbox"]').first().innerText().catch(() => "")).trim();
-        if (normalize(shown) === normalize(value)) return;
-        await page.locator(MENU_OPTION).first().waitFor({ state: "detached", timeout: 3000 }).catch(() => undefined);
-        await b.locator('button[aria-haspopup="listbox"]').first().click();
-        await clickOption(page, value, (w, g) => normalize(g).startsWith(normalize(w)));
-        await page.locator(MENU_OPTION).first().waitFor({ state: "detached", timeout: 3000 }).catch(() => page.keyboard.press("Escape"));
-        return;
-      }
+      case "select":
+        return chooseInListbox(page, b, value);
       case "combobox": {
-        if ((await b.locator('button[aria-haspopup="listbox"]').count()) > 0) {
-          const shown = (await b.locator('button[aria-haspopup="listbox"]').first().innerText().catch(() => "")).trim();
-          if (normalize(shown) === normalize(value)) return;
-          await page.locator(MENU_OPTION).first().waitFor({ state: "detached", timeout: 3000 }).catch(() => undefined);
-          await b.locator('button[aria-haspopup="listbox"]').first().click({ force: true });
-          await clickOption(page, value, (w, g) => normalize(g).startsWith(normalize(w)));
-          return;
-        }
+        if ((await b.locator('button[aria-haspopup="listbox"]').count()) > 0) return chooseInListbox(page, b, value);
         // Often pre-filled (country phone code); leave a right answer alone,
         // and clear a wrong one (an earlier attempt's pick).
         const pills = b.locator('[data-automation-id="selectedItem"]');

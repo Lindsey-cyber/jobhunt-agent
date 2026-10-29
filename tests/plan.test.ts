@@ -192,6 +192,7 @@ describe("buildPlan", () => {
     expect(one("Are you authorized to work in the United States on a fulltime and indefinite basis? If you are hired, you will be required to present documentation.")).toMatchObject({ status: "fill", value: "No" });
     expect(one("Are you legally authorized to work in the United States?")).toMatchObject({ status: "fill", value: "Yes" });
     expect(one("Are you a citizen of any one of these countries: Cuba, Iran, North Korea, or Syria?")).toMatchObject({ status: "fill", value: "No" });
+    expect(one("Are you a citizen of any of the following countries: Group D (Armenia, Belarus, China (PRC), Hong Kong, Vietnam)")).toMatchObject({ status: "fill", value: "Yes" });
   });
 
   it("answers transgender identity from the gender choice", () => {

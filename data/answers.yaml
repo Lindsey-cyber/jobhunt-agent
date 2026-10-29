@@ -261,58 +261,6 @@ answers:
           - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
           - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
           - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
-  - id: draft:0cf3880a0e
-    question: Why are you interested in this role, and what makes you a good fit for
-      this position?
-    answer: "I’m interested in this role because it applies agentic LLM systems to a
-      concrete optimization problem: diagnosing advertiser-account health,
-      recommending auditable actions, and keeping automated tuning measurable
-      before live spend. My fit is strongest where the role needs rigorous ML
-      experimentation plus practical agent/tool building. At Arborphy AI, I
-      built a multi-agent reasoning prototype with autonomous tool generation,
-      constrained iterative planning, per-step information-gain evaluation, and
-      knowledge-graph evidence aggregation, and I also developed disjoint
-      benchmarks and retrieval/evaluation workflows. My Columbia work
-      strengthened my grounding in deep learning, advanced ML, and careful
-      ablations. I’ve also integrated locally hosted language models into a
-      robotics control workflow and built real-time asynchronous vision
-      pipelines, so I’m comfortable connecting models to systems rather than
-      treating them as notebooks only."
-    company: NewsBreak
-    jobTitle: Applied AI Engineer, Advertising Agents (New Grad)
-    origin: generated
-    evidence:
-      - Columbia University, M.S. in Statistics, GPA
-        3.71                                     Sep 2024 – May 2026
-      - "Coursework: Deep Learning, Advanced Machine Learning, Statistical
-        Analysis of Neural Data, Robot Learning"
-      - |-
-        Research Engineer Intern - Applied ML for Plant Identification                                May 2026 – Present
-        Arborphy AI LLC                                                                                       New York
-      - >-
-        Built a multi-agent botanical reasoning prototype with autonomous tool
-        generation, specialized visual-analysis
-           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
-           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
-      - >-
-        Developed individual- and species-disjoint benchmarks for species
-        identification, organ classification, and
-           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
-           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
-           spanning 85 species.
-      - >-
-        Developed and evaluated denoising configurations using ResNet, U-Net,
-        and lightweight convolutional
-           networks; conducted ablations of receptive fields, normalization, training settings, loss functions, and
-           spatial-component selection.
-      - >-
-        Implemented stereo 3D shuttlecock tracking and landing-point prediction;
-        optimized Raspberry Pi inference
-           with ONNX Runtime, quantization, and asynchronous video pipelines.
-      - >-
-        Integrated a locally hosted language model through Ollama for
-        voice-based robot commands and natural-
-           language interaction, connecting user instructions with the robot’s control workflow.
   - id: draft:784179a74e
     question: Why are you interested in NewsBreak?
     answer: "NewsBreak interests me because this role connects applied AI with a
@@ -468,49 +416,6 @@ answers:
       - Integrated a locally hosted language model through Ollama for
         voice-based robot commands and natural-language interaction, connecting
         user instructions with the robot’s control workflow.
-  - id: draft:71b70affb3
-    question: Describe a time you worked directly with an external enterprise
-      customer on an ML/AI problem.
-    answer: "I don’t want to overstate this: I have not yet owned a direct external
-      enterprise customer engagement on an ML/AI problem. The closest analogue
-      is my applied ML work at Arborphy AI, where I worked through an ambiguous
-      domain problem end to end: plant identification and botanical reasoning. I
-      designed and evaluated vision/biological embedding architectures, built
-      disjoint benchmarks for species identification and retrieval, created a
-      human-review set, and developed a multi-agent botanical reasoning
-      prototype with knowledge-graph evidence aggregation. At Columbia, I also
-      made research code usable for non-ML wet-lab researchers through
-      packaging, documentation, and step-by-step guides. That is the
-      customer-facing muscle I would bring to Databricks, while being clear that
-      enterprise client ownership would be a growth area."
-    company: Databricks
-    jobTitle: ""
-    origin: generated
-    evidence:
-      - |-
-        Research Engineer Intern - Applied ML for Plant Identification                                May 2026 – Present
-        Arborphy AI LLC                                                                                       New York
-      - >-
-        Independently designed and implemented an EfficientNet–BioCLIP
-        dual-encoder architecture with bidi-
-           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
-           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
-           0.832 across architecture iterations.
-      - >-
-        Developed individual- and species-disjoint benchmarks for species
-        identification, organ classification, and
-           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
-           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
-           spanning 85 species.
-      - >-
-        Built a multi-agent botanical reasoning prototype with autonomous tool
-        generation, specialized visual-analysis
-           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
-           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
-      - >-
-        Organized laboratory research code into a downloadable software package
-        and developed public documen-
-           tation and step-by-step guides for wet-lab researchers.
   - id: draft:e08d9a34da
     question: If you selected a response to the prior question other than “none of
       the above,” please confirm whether any of the following also applies to
@@ -792,53 +697,6 @@ answers:
           gender: decline
           hispanicLatino: decline
           race: decline
-  - id: draft:abf0cbe503
-    question: What AI tools are you currently using today and how are you using them?
-    answer: "Today, in my current Research Engineer Intern role at Arborphy AI, I’m
-      using EfficientNet, BioCLIP, and DINOv3 to study plant-identification
-      models and representation quality. I use frozen linear probes, clustering,
-      nearest-neighbor retrieval, local PCA rotations, and centroid shrinkage to
-      understand whether representations capture species identity, organ
-      morphology, or photographic-scale confounding. I’m also building
-      evaluation loops: individual- and species-disjoint benchmarks for species
-      identification, organ classification, and cross-species retrieval, plus
-      human-review sets for model errors. On the agent side, I’ve built a
-      multi-agent botanical reasoning prototype with autonomous tool generation,
-      visual-analysis agents, constrained planning, per-step information-gain
-      evaluation, and knowledge-graph evidence aggregation. That maps closely to
-      assistant quality work: retrieval, grounding, evaluation, and iterative
-      improvement."
-    company: Glean
-    jobTitle: Machine Learning Engineer, Assistant Quality
-    origin: generated
-    evidence:
-      - >-
-        Research Engineer Intern - Applied ML for Plant
-        Identification                                May 2026 – Present
-
-        Arborphy AI LLC
-      - >-
-        Independently designed and implemented an EfficientNet–BioCLIP
-        dual-encoder architecture with bidi-
-           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
-           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
-           0.832 across architecture iterations.
-      - >-
-        Investigated semantic and geometric properties of BioCLIP, DINOv3, and
-        EfficientNet representations using
-           frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
-           shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding.
-      - >-
-        Developed individual- and species-disjoint benchmarks for species
-        identification, organ classification, and
-           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
-           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
-           spanning 85 species.
-      - >-
-        Built a multi-agent botanical reasoning prototype with autonomous tool
-        generation, specialized visual-analysis
-           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
-           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
   - id: draft:a6d0e3af7b
     question: EXPORT CONTROLS - This position requires access to information and
       technology that is subject to U.S. export controls. Your responses to the
@@ -890,58 +748,6 @@ answers:
         workAuthorization:
           authorizedCountries: [United States]
           needsSponsorship: true
-  - id: draft:7fdc622609
-    question: Why Lila, why this role, and why at this moment in your life?
-    answer: "Lila is compelling to me because the role is about making AI part of
-      the scientific method, not just building models around it. The posting’s
-      emphasis on agentic AI, workflow/code generation, and
-      evaluation/reliability matches the work I have been gravitating toward:
-      scientific ML systems with benchmarks, tool use, and careful error
-      analysis. At Arborphy, I have been building plant-identification models,
-      disjoint evaluation benchmarks, and a multi-agent botanical reasoning
-      prototype; at Columbia, I worked on self-supervised denoising for neural
-      imaging and packaging research code for wet-lab researchers. This moment
-      is right because I finished my M.S. in Statistics in May 2026 and now want
-      to move from research projects into a team building reliable AI systems
-      that can interface with real scientific workflows."
-    company: Lila Sciences
-    jobTitle: Senior / Engineer II, AI Lab Research Engineer
-    origin: generated
-    evidence:
-      - Columbia University, M.S. in Statistics, GPA
-        3.71                                     Sep 2024 – May 2026
-      - "Coursework: Deep Learning, Advanced Machine Learning, Statistical
-        Analysis of Neural Data, Robot Learning"
-      - Research Engineer Intern - Applied ML for Plant
-        Identification                                May 2026 – Present
-      - >-
-        Independently designed and implemented an EfficientNet–BioCLIP
-        dual-encoder architecture with bidi-
-           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
-           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
-           0.832 across architecture iterations.
-      - >-
-        Developed individual- and species-disjoint benchmarks for species
-        identification, organ classification, and
-           cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
-           cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
-           spanning 85 species.
-      - >-
-        Built a multi-agent botanical reasoning prototype with autonomous tool
-        generation, specialized visual-analysis
-           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
-           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
-      - Research Assistant - Self-Supervised Learning for Neural
-        Imaging                            Jan 2026 – May 2026
-      - >-
-        Designed and implemented a four-direction spatial masking strategy for
-        self-supervised denoising of
-           two-photon calcium-imaging data, integrating it with PMD spatial-component selection and achieving up to
-           20% reduction in residual energy on an individual dataset.
-      - >-
-        Organized laboratory research code into a downloadable software package
-        and developed public documen-
-           tation and step-by-step guides for wet-lab researchers.
   # The candidate (2026-10-28): employers may contact her current employer.
   - id: contact-current-employer
     question: May we contact your current employer?
@@ -952,7 +758,8 @@ answers:
     origin: human
   # The candidate (2026-10-28): willing to travel.
   - id: travel
-    question: Are you willing and able to travel to customer sites approximately once every 4–8 weeks, as business needs require?
+    question: Are you willing and able to travel to customer sites approximately
+      once every 4–8 weeks, as business needs require?
     aliases:
       - Are you willing to travel?
       - Are you able to travel as required?
@@ -962,14 +769,20 @@ answers:
     origin: human
   # Defaults (2026-10-28): messaging opt-ins declined (email only); she is open to on-site work.
   - id: sms-opt-in
-    question: Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.
+    question: Would you like to receive communications via SMS and/or WhatsApp to
+      the number provided [above or during the application process] about your
+      application process? Message & data rates may apply and message frequency
+      may vary. If you select no, we will only communicate with you via email
+      and/or telephone calls. If you select yes and change your mind, you can
+      always reply STOP to opt out.
     aliases:
       - Do you opt-in to receive WhatsApp messages from {company} Recruiting?
       - Do you consent to receive text messages about your application?
     answer: "No"
     origin: generated
   - id: plan-remote
-    question: If this role offers the option to work from a remote location, do you plan to work remotely?
+    question: If this role offers the option to work from a remote location, do you
+      plan to work remotely?
     answer: "No"
     origin: generated
   - id: air-temp
@@ -979,7 +792,8 @@ answers:
     origin: human
   # Quora (2026-10-28): the options are C++, Java, Python; her resume lists Python.
   - id: interview-language
-    question: What is your preferred programming language for your interviews (you can change this later)?
+    question: What is your preferred programming language for your interviews (you
+      can change this later)?
     aliases:
       - What is your preferred programming language for interviews?
       - Preferred coding language for interviews
@@ -995,7 +809,8 @@ answers:
     origin: human
   # The candidate (2026-10-28): she knows no one at any company, relatives included.
   - id: relatives-adi
-    question: "* ADI has a policy addressing the employment of relatives. Do you currently have relatives working at Analog Devices?"
+    question: "* ADI has a policy addressing the employment of relatives. Do you
+      currently have relatives working at Analog Devices?"
     answer: "No"
     origin: human
   - id: relatives-generic
@@ -1007,8 +822,450 @@ answers:
     origin: human
   # The candidate (2026-10-28): no non-compete or similar commitment.
   - id: other-commitments
-    question: "* Do you have any commitments to another organization that might affect your employment with {company}?"
+    question: "* Do you have any commitments to another organization that might
+      affect your employment with {company}?"
     aliases:
-      - Do you have any commitments to another organization that might affect your employment?
+      - Do you have any commitments to another organization that might affect
+        your employment?
     answer: "No"
+    origin: human
+  - id: draft:6df2c26373
+    question: What AI tools are you currently using today and how are you using them?
+    answer: "Today, I’m using AI tools mainly in a research-engineering workflow:
+      BioCLIP, DINOv3, and EfficientNet as visual foundation and encoder models,
+      plus retrieval, clustering, linear-probe, and cross-attention experiments
+      to understand model behavior and improve plant-identification quality. At
+      Arborphy AI, I’ve been comparing single encoders, feature concatenation,
+      and cross-attention fusion, then validating changes with
+      individual-disjoint, multi-seed, and grouped held-out evaluations. I’m
+      also building a multi-agent botanical reasoning prototype with autonomous
+      tool generation, specialized visual-analysis agents, constrained planning,
+      and knowledge-graph evidence aggregation. That maps closely to Glean’s
+      search-quality focus: I care about representation quality, retrieval
+      behavior, evaluation design, and whether model additions actually improve
+      outcomes rather than just look sophisticated."
+    company: Glean
+    jobTitle: Machine Learning Engineer, Search Quality
+    origin: generated
+    evidence:
+      - >-
+        Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+
+        Arborphy AI LLC
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using
+           frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
+           shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding.
+      - >-
+        Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional
+           versus bidirectional cross-attention; conducted individual-disjoint, multi-seed, and grouped held-out
+           evaluations, finding no reliable species-recognition advantage over BioCLIP alone.
+      - >-
+        Built a multi-agent botanical reasoning prototype with autonomous tool
+        generation, specialized visual-analysis
+           agents, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph-based
+           evidence aggregation; developed reproducible research pipelines and interactive analysis tools.
+  - id: draft:18899e66ca
+    question: Have you ever been employed full-time at Block or its subsidiaries?
+    answer: No
+    company: Block
+    jobTitle: Data Scientist, Payments
+    origin: generated
+    evidence:
+      - >-
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:174061ba06
+    question: Have you ever provided any contract work for Block, Inc. or any of its
+      subsidiaries or affiliates (whether in the U.S. or internationally)?
+    answer: No
+    company: Block
+    jobTitle: Data Scientist, Payments
+    origin: generated
+    evidence:
+      - >-
+        # From the resume (2026-10-28), for "have you worked for X before?"
+        questions.
+
+        workHistory:
+          - { employer: Arborphy AI LLC, title: Research Engineer Intern, start: 2026-05 }
+          - { employer: InnoX Academy, title: Software Developer, start: 2025-05, end: 2025-12 }
+          - { employer: Columbia University, title: Research Assistant, start: 2026-01, end: 2026-05 }
+  - id: draft:32883d9888
+    question: What is your Legal First Name?
+    answer: Lanxin
+    company: Block
+    jobTitle: Data Scientist, Payments
+    origin: generated
+    evidence:
+      - |-
+        identity:
+          firstName: Lanxin
+  - id: draft:d8893b946f
+    question: Do you have a master's or doctoral degree in a quantitative field
+      (e.g., statistics, economics, data science, quantitative psychology,
+      computational social science, or a related discipline)?
+    answer: Yes
+    company: American Institutes for Research
+    jobTitle: Data Scientist, Project Success and Innovation
+    origin: generated
+    evidence:
+      - Columbia University, M.S. in Statistics, GPA
+        3.71                                     Sep 2024 – May 2026
+      - |-
+        degree: Master of Science
+            major: Statistics
+            gradMonth: 5
+            gradYear: 2026
+  - id: draft:504ea11f6d
+    question: Do you have hands-on experience conducting advanced quantitative
+      analyses using R or Python, including statistical modeling and causal
+      inference methods (e.g., experimental or quasi-experimental designs)?
+    answer: No
+    company: American Institutes for Research
+    jobTitle: Data Scientist, Project Success and Innovation
+    origin: generated
+    evidence:
+      - "Fluent in: Python, SQL, R ML: PyTorch, Hugging Face, scikit-learn"
+      - Implemented Bayesian stochastic block models with class-dependent and
+        spatially informed connectivity likelihoods to infer latent neuronal
+        types and class-dependent wiring patterns from FlyWire connectomes.
+      - Applied Bayesian connectivity models to FlyWire chemical-synapse
+        networks, constructing thresholded adjacency matrices and evaluating
+        cell-type recovery across brain regions; identified limitations of
+        distance-dependent assumptions in heterogeneous neural circuits.
+  - id: draft:4e356042bf
+    question: Do you have professional experience working with complex research data
+      (e.g., survey, administrative, longitudinal, or linked datasets) and
+      applying quantitative methods to education, health, or social policy
+      research?
+    answer: Yes
+    company: American Institutes for Research
+    jobTitle: Data Scientist, Project Success and Innovation
+    origin: generated
+    evidence:
+      - Research Assistant - Self-Supervised Learning for Neural
+        Imaging                            Jan 2026 – May 2026
+      - Designed and implemented a four-direction spatial masking strategy for
+        self-supervised denoising of two-photon calcium-imaging data,
+        integrating it with PMD spatial-component selection and achieving up to
+        20% reduction in residual energy on an individual dataset.
+      - Analyzed denoising at the spatial-component and reconstructed-video
+        levels, comparing spatial, temporal, and combined denoising approaches,
+        characterizing trade-offs in signal retention, temporal correlation,
+        reconstruction fidelity, and rank selection.
+      - Columbia Asian Faculty Association - Data
+        Analyst                                        Jan 2025 – Mar 2025
+      - Analyzed faculty survey data on workload, well-being, and institutional
+        support under faculty supervision; presented findings in a formal report
+        to board members for decision-making.
+  - id: draft:44187248f1
+    question: Do you currently reside within the continental United States?
+    answer: Yes
+    company: Lila Sciences
+    jobTitle: Senior / Engineer II, AI Lab Research Engineer
+    origin: generated
+    evidence:
+      - |-
+        address:
+            line1: 140-21 32nd Ave
+            line2: Apt 3BS
+            city: Flushing
+            state: NY
+            # The candidate (2026-10-28).
+            postalCode: "11354"
+            country: United States
+  - id: draft:b9d6af93c8
+    question: What is/was your GPA?
+    answer: My M.S. GPA at Columbia University was 3.71, and my B.A. GPA at Renmin
+      University of China was 3.82.
+    company: Hive
+    jobTitle: Machine Learning Engineer
+    origin: generated
+    evidence:
+      - Columbia University, M.S. in Statistics, GPA
+        3.71                                     Sep 2024 – May 2026
+      - Renmin University of China, B.A. in Economics, GPA
+        3.82                                      Sep 2019 – Jun 2023
+  - id: draft:e560fd89af
+    question: Tell us about a self-supervised or foundation model you have worked
+      with, whether trained from scratch, pretrained, or adapted to a downstream
+      task. What did you do with it, and how did you evaluate whether it worked
+      well for your use case?
+    answer: I worked with frozen BioCLIP and DINOv3 visual representations for plant
+      identification at Arborphy AI. I adapted BioCLIP into an
+      EfficientNet–BioCLIP dual-encoder with bidirectional spatial
+      cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated
+      residuals to test whether biological semantic features and CNN image
+      features were complementary. I evaluated it with controlled fusion
+      experiments against single encoders, concatenation, and one-way versus
+      two-way cross-attention, using individual-disjoint, multi-seed, and
+      grouped held-out evaluations. The fusion macro-F1 improved from 0.808 to
+      0.832 across iterations, but the more important finding was that the gains
+      were not reliable over BioCLIP alone. I also used frozen linear probes,
+      clustering, nearest-neighbor retrieval, and cross-species retrieval
+      benchmarks to separate species identity, organ morphology, and
+      photographic-scale confounding. That kind of rigorous downstream
+      evaluation maps well to Artera’s whole-slide outcome and molecular-trait
+      modeling.
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-   rectional spatial
+        cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated
+        residuals to   investigate feature complementarity and mitigate negative
+        transfer; improved fusion macro-F1 from 0.808 to   0.832 across
+        architecture iterations.
+      - Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using   frozen linear probes, multi-seed
+        clustering, nearest-neighbor retrieval, local PCA rotations, and
+        centroid   shrinkage to distinguish species identity, organ morphology,
+        and photographic-scale confounding.
+      - Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional   versus bidirectional
+        cross-attention; conducted individual-disjoint, multi-seed, and grouped
+        held-out   evaluations, finding no reliable species-recognition
+        advantage over BioCLIP alone.
+      - Evaluated species and organ information in frozen visual representations
+        using individual-disjoint classifica-   tion and cross-species retrieval
+        benchmarks; DINOv3 features achieved 87.3% organ classification
+        accuracy   and 84.3% cross-species retrieval P@1.
+  - id: draft:7762bc1ea5
+    question: Describe a project where your model did not generalize as well as
+      expected across datasets, sites, devices, populations, or other
+      conditions. How did you investigate the problem, and what did you try to
+      improve robustness?
+    answer: "In my plant-identification work at Arborphy, I built an
+      EfficientNet–BioCLIP dual-encoder fusion model that initially looked
+      stronger through architecture iterations, but did not generalize into a
+      reliable species-recognition improvement over BioCLIP alone under stricter
+      evaluation. I investigated it by separating representation questions from
+      model-capacity questions: frozen linear probes, multi-seed clustering,
+      nearest-neighbor retrieval, local PCA rotations, and centroid shrinkage
+      helped me distinguish species identity from organ morphology and
+      photographic-scale confounding. I also ran controlled comparisons of
+      single encoders, concatenation, and uni- versus bidirectional
+      cross-attention with individual-disjoint, multi-seed, and grouped held-out
+      evaluations. To improve robustness, I tried bidirectional spatial
+      cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated
+      residuals to reduce negative transfer. The main lesson I would bring to
+      Artera is not to trust a better aggregate score until it survives grouped,
+      disjoint evaluation."
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - Research Engineer Intern - Applied ML for Plant Identification
+      - Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi- rectional spatial cross-attention,
+        auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+        investigate feature complementarity and mitigate negative transfer;
+        improved fusion macro-F1 from 0.808 to 0.832 across architecture
+        iterations.
+      - Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using frozen linear probes, multi-seed
+        clustering, nearest-neighbor retrieval, local PCA rotations, and
+        centroid shrinkage to distinguish species identity, organ morphology,
+        and photographic-scale confounding.
+      - Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional versus bidirectional
+        cross-attention; conducted individual-disjoint, multi-seed, and grouped
+        held-out evaluations, finding no reliable species-recognition advantage
+        over BioCLIP alone.
+  - id: draft:43ec6314f1
+    question: Tell us about a machine-learning project where you had to understand
+      or explain what the model was learning. What methods did you use, and what
+      did you learn from them?
+    answer: "At Arborphy, I worked on a plant-identification model where the key
+      question was whether fusing EfficientNet with BioCLIP was actually
+      learning complementary biological signals or just adding complexity. To
+      understand the representations, I used frozen linear probes, multi-seed
+      clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
+      shrinkage to separate species identity, organ morphology, and
+      photographic-scale confounding. I also ran controlled fusion experiments
+      comparing single encoders, concatenation, and one-way versus bidirectional
+      cross-attention, with individual-disjoint, multi-seed, and grouped
+      held-out evaluations. The main lesson was that more complex fusion did not
+      reliably improve species recognition over BioCLIP alone, while DINOv3
+      carried strong organ-level information. That changed how I interpreted
+      “model improvement”: not just higher scores, but knowing which visual and
+      biological factors the model was actually using."
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - Research Engineer Intern - Applied ML for Plant
+        Identification                                May 2026 – Present
+      - >-
+        Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi-
+           rectional spatial cross-attention, auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+           investigate feature complementarity and mitigate negative transfer; improved fusion macro-F1 from 0.808 to
+           0.832 across architecture iterations.
+      - >-
+        Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using
+           frozen linear probes, multi-seed clustering, nearest-neighbor retrieval, local PCA rotations, and centroid
+           shrinkage to distinguish species identity, organ morphology, and photographic-scale confounding.
+      - >-
+        Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional
+           versus bidirectional cross-attention; conducted individual-disjoint, multi-seed, and grouped held-out
+           evaluations, finding no reliable species-recognition advantage over BioCLIP alone.
+      - >-
+        Evaluated species and organ information in frozen visual representations
+        using individual-disjoint classifica-
+           tion and cross-species retrieval benchmarks; DINOv3 features achieved 87.3% organ classification accuracy
+           and 84.3% cross-species retrieval P@1.
+  - id: draft:ca483ed9ae
+    question: Describe a clinical, biological, or other real-world problem you
+      helped translate into a machine-learning problem. How did you define the
+      prediction target and decide how to evaluate the model?
+    answer: "At Arborphy, I worked on plant identification as a biological
+      recognition problem: given plant imagery, could a model distinguish
+      species identity without simply learning organ type, individual plant
+      appearance, or photographic scale. I defined the main prediction target as
+      species recognition, and used organ information as auxiliary supervision
+      to test whether morphology helped or caused negative transfer. For
+      evaluation, I focused on whether the model held up under stricter splits,
+      not just whether a fused architecture looked better once. I compared
+      single encoders, concatenation, and uni- versus bidirectional
+      cross-attention, then used individual-disjoint, multi-seed, and grouped
+      held-out evaluations. That changed the conclusion: although fusion
+      macro-F1 improved across iterations, the controlled evaluations found no
+      reliable species-recognition advantage over BioCLIP alone. That is the
+      kind of target/evaluation discipline I would bring to patient-outcome or
+      molecular-trait modeling at Artera."
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - Independently designed and implemented an EfficientNet–BioCLIP
+        dual-encoder architecture with bidi- rectional spatial cross-attention,
+        auxiliary organ supervision, and BioCLIP-anchored gated residuals to
+        investigate feature complementarity and mitigate negative transfer;
+        improved fusion macro-F1 from 0.808 to 0.832 across architecture
+        iterations.
+      - Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using frozen linear probes, multi-seed
+        clustering, nearest-neighbor retrieval, local PCA rotations, and
+        centroid shrinkage to distinguish species identity, organ morphology,
+        and photographic-scale confounding.
+      - Designed controlled fusion experiments comparing single encoders,
+        feature concatenation, and unidirectional versus bidirectional
+        cross-attention; conducted individual-disjoint, multi-seed, and grouped
+        held-out evaluations, finding no reliable species-recognition advantage
+        over BioCLIP alone.
+      - Evaluated species and organ information in frozen visual representations
+        using individual-disjoint classifica- tion and cross-species retrieval
+        benchmarks; DINOv3 features achieved 87.3% organ classification accuracy
+        and 84.3% cross-species retrieval P@1.
+  - id: draft:b66d1b305d
+    question: Describe the most interesting thing you’ve built with an LLM. What
+      does it do, and why did you build it? What was the hardest part to get
+      working? How did you know it was working? Add a link (repo, paper, or
+      demo) if you have one.
+    answer: "The most interesting LLM system I’ve built is a multi-agent botanical
+      reasoning prototype at Arborphy AI. It uses specialized visual-analysis
+      agents, autonomous tool generation, constrained iterative planning,
+      per-step information-gain evaluation, and knowledge-graph-based evidence
+      aggregation to reason over plant-identification evidence. I built it
+      because my broader research was testing how visual representations such as
+      BioCLIP, DINOv3, and EfficientNet capture species identity, organ
+      morphology, and confounding factors, and I wanted a more structured way to
+      turn model observations into inspectable evidence. The hardest part was
+      keeping the agent workflow constrained and evaluable rather than merely
+      conversational. I knew it was working by using per-step information-gain
+      evaluation and interactive analysis tools to inspect whether each step
+      added useful evidence. This is close to what interests me about Quora’s
+      LLM-powered moderation agents: building systems that can be evaluated,
+      debugged, and improved."
+    company: Quora
+    jobTitle: Machine Learning Engineer, New Grad - Quora (Remote)
+    origin: generated
+    evidence:
+      - Built a multi-agent botanical reasoning prototype with autonomous tool
+        generation, specialized visual-analysis agents, constrained iterative
+        planning, per-step information-gain evaluation, and
+        knowledge-graph-based evidence aggregation; developed reproducible
+        research pipelines and interactive analysis tools.
+      - Investigated semantic and geometric properties of BioCLIP, DINOv3, and
+        EfficientNet representations using frozen linear probes, multi-seed
+        clustering, nearest-neighbor retrieval, local PCA rotations, and
+        centroid shrinkage to distinguish species identity, organ morphology,
+        and photographic-scale confounding.
+  - id: draft:5e09fac49a
+    question: In which of the following employment eligible countries
+      (https://www.careers.quora.com/eligible-countries) are you seeking to
+      work, if hired?
+    answer: United States
+    company: Quora
+    jobTitle: Machine Learning Engineer, New Grad - Quora (Remote)
+    origin: generated
+    evidence:
+      - "authorizedCountries: [United States]"
+      - "country: United States"
+  # The candidate (2026-10-29): no PR outside the US, never a J-1/J-2, consents to AI screening and AI job matching.
+  - id: pr-outside-us
+    question: 2. Do you hold Legal Permanent Resident Status in a country outside the US?
+    aliases:
+      - Do you hold permanent residency in any country other than the United
+        States?
+    answer: No
+    origin: human
+  - id: j1-j2
+    question: If Yes, have you ever held a J-1 or J-2 exchange visitor visa?
+    aliases:
+      - Have you ever held a J-1 or J-2 exchange visitor visa?
+    answer: No
+    origin: human
+  - id: ai-screening-consent
+    question: "To support an efficient recruitment process, ADI may use artificial
+      intelligence (AI) tools to assess how your candidate information aligns
+      with the role requirements. These tools do not make decisions about a
+      candidate’s status — every decision that leads ADI to select a candidate
+      for this role involves human review or intervention. You have the right to
+      choose whether your data is processed using AI tools: By selecting “Yes,”
+      you consent to the use of AI tools to evaluate your candidate information.
+      By selecting “No,” you decline consent. Your application will be manually
+      reviewed by ADI recruiters in accordance with ADI policy. For more
+      information about how Company processes your personal data, please review
+      the Candidate Privacy Notice."
+    aliases: []
+    answer: Yes
+    origin: human
+  - id: ai-matching-consent
+    question: ADI would like to consider you for additional and future job openings
+      using AI tools that may compare your application and other relevant
+      information to the requirements of those job openings. If a match is
+      found, our recruiters may contact you about these opportunities. Your
+      consent is voluntary and will not affect your current application. By
+      selecting "Yes," you consent to the use of your data for this purpose and
+      to be contacted by our recruiters for these roles. By selecting "No," you
+      do not consent, and your data will not be used for AI-based job matching.
+      For more information about how Company processes your personal data,
+      please review the Candidate Privacy Notice.
+    aliases: []
+    answer: Yes
+    origin: human
+  # Her visa status (F-1 OPT) in Workday's wording.
+  - id: visa-status-workday
+    question: If you are not authorized to work in the United States on a fulltime and indefinite basis, please select your current status.
+    aliases:
+      - Please select your current status.
+      - Please select your current immigration status.
+    answer: F-1 (CPT, OPT, or STEM)
     origin: human

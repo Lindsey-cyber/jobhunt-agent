@@ -1,3 +1,4 @@
+import { normalize } from "./text.ts";
 import type { FormField } from "../domain/form.ts";
 import type { Profile } from "../profile/schema.ts";
 import { usLocation } from "../discover/triage.ts";
@@ -156,7 +157,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "citizenship",
     // Sanctioned-country lists (Cuba, Iran, ...) have their own rule below.
-    pattern: /^(?!.*\bcuba\b).*\b(citizen of|citizenship)\b/,
+    pattern: /^(?!.*\bcuba\b)(?!.*\bany (one )?of (the following|these) countries\b)(?!.*\bcountr(y|ies) of citizenship\b).*\b(citizen of|citizenship)\b/,
     resolve: (p, label, ctx) => {
       const country = countryIn(label, ctx);
       return country ? yesNo(p.citizenship.includes(country)) : undefined;
@@ -206,6 +207,23 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // ADI: "Please add your Country of Citizenship or Countries of Citizenship if dual".
+    path: "citizenship",
+    pattern: /\bcountr(y|ies) of citizenship\b/,
+    resolve: (p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      if (!opts.length) return p.citizenship.join(", ") || undefined;
+      const hits = p.citizenship.map((c) => opts.find((o) => normalize(o) === normalize(c)) ?? opts.find((o) => normalize(o).startsWith(`${normalize(c)} `)));
+      return hits.length === 1 ? hits[0] : undefined;
+    },
+  },
+  {
+    // ADI export control: "Are you a citizen of any of the following countries: Group D (Armenia, ..., China (PRC), ...)".
+    path: "citizenship",
+    pattern: /\bcitizen of any (one )?of (the following|these) countries\b/,
+    resolve: (p, label) => yesNo(p.citizenship.some((c) => new RegExp(`\\b${normalize(c)}\\b`).test(label))),
+  },
+  {
     // ADI: "Are you any of the following: US Citizen, Permanent resident of the United States
     // (Green Card), or Protected person under 8 USC 1324b(a)(3)?" Needing sponsorship rules all three out.
     path: "workAuthorization.needsSponsorship",
@@ -215,7 +233,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Asana: "Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?"
     path: "citizenship",
-    pattern: /\bcitizen or (legal )?permanent resident of cuba\b|\bcitizen of any (one )?of these countries cuba\b/,
+    pattern: /\bcitizen or (legal )?permanent resident of cuba\b/,
     resolve: (p) => yesNo(p.citizenship.some((c) => /cuba|iran|north korea|syria|ukraine/i.test(c))),
   },
   {

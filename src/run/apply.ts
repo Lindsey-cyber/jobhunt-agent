@@ -228,15 +228,24 @@ async function fillPage(adapter: AtsAdapter, page: Page, form: FormSnapshot, use
   };
   await fillAll(plan.items);
   let fieldsNow = (await adapter.extract(page)).fields;
-  // Answers can reveal questions (a ticked "I have a preferred name"): plan and fill those once.
-  const known = new Set(plan.items.map((i) => i.field.id));
-  const revealed = fieldsNow.filter((f) => !known.has(f.id));
-  if (revealed.length) {
+  // Answers can reveal questions (a ticked "I have a preferred name", ADI's
+  // export-control follow-ups, each revealing the next): plan and fill them, a few rounds.
+  for (let round = 0; round < 3; round++) {
+    const known = new Set(plan.items.map((i) => i.field.id));
+    const revealed = fieldsNow.filter((f) => !known.has(f.id));
+    if (!revealed.length) break;
     const more = buildPlan({ ...form, fields: revealed }, user.profile, user.bank).items;
     plan.items.push(...more);
     plan.form = { ...plan.form, fields: [...plan.form.fields, ...revealed] };
     await fillAll(more);
     fieldsNow = (await adapter.extract(page)).fields;
+  }
+  // A later answer can re-render the page and drop an earlier one: re-fill what no longer reads back.
+  {
+    const ids = new Set(fieldsNow.map((f) => f.id));
+    const rb = await adapter.readback(page, fieldsNow);
+    const lost = plan.items.filter((i) => i.status === "fill" && ids.has(i.field.id) && i.field.kind !== "file" && !(rb[i.field.id] ?? "").trim());
+    if (lost.length) await fillAll(lost);
   }
   // Read back every planned field, including ones the page re-rendered away
   // (an upload input replaced by the uploaded file's name).

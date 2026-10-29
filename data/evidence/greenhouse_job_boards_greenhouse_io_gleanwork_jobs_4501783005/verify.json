@@ -1,0 +1,130 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7104851005",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7104852005",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7104853005",
+      "label": "Do you know anyone currently at Glean?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7104855005",
+      "label": "Are you willing and able to commit to the hybrid policy if hired?",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_7125186005",
+      "label": "How did you hear about Glean?",
+      "expected": "LinkedIn",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8505006005",
+      "label": "Please input the total years of experience you have that are relevant for this role.",
+      "expected": "1",
+      "actual": "1",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8595613005",
+      "label": "What AI tools are you currently using today and how are you using them?",
+      "expected": "I use ChatGPT and OpenAI's Codex day to day. ChatGPT helps me think through problems, check my understanding and draft writing; Codex helps me write, refactor and review code, and I verify what it produces with tests and my own review.",
+      "actual": "I use ChatGPT and OpenAI's Codex day to day. ChatGPT helps me think through problems, check my understanding and draft writing; Codex helps me write, refactor and review code, and I verify what it produces with tests and my own review.",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "decline",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "no",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "no",
+      "actual": "",
+      "pass": false
+    }
+  ],
+  "emptyRequired": [
+    "Country",
+    "Are you willing and able to commit to the hybrid policy if hired?",
+    "How did you hear about Glean?"
+  ],
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "Are you willing and able to commit to the hybrid policy if hired?: the question_7104855005 menu did not open",
+    "How did you hear about Glean?: the question_7125186005 menu did not open",
+    "Gender: the gender menu did not open",
+    "Are you Hispanic/Latino?: the hispanic_ethnicity menu did not open",
+    "Veteran Status: the veteran_status menu did not open"
+  ]
+}

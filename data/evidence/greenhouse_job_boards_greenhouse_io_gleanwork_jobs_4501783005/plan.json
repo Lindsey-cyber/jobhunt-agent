@@ -1,0 +1,420 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=gleanwork&token=4501783005",
+    "company": "Glean",
+    "jobTitle": "Software Engineer, AI/ML Infrastructure",
+    "jobLocation": "Mountain View, CA",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_7104851005",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7104852005",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_7104853005",
+        "label": "Do you know anyone currently at Glean?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7104855005",
+        "label": "Are you willing and able to commit to the hybrid policy if hired?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7125186005",
+        "label": "How did you hear about Glean?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8505006005",
+        "label": "Please input the total years of experience you have that are relevant for this role.",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8595613005",
+        "label": "What AI tools are you currently using today and how are you using them?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 1
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7104851005",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7104852005",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7104853005",
+        "label": "Do you know anyone currently at Glean?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "know-anyone",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7104855005",
+        "label": "Are you willing and able to commit to the hybrid policy if hired?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "hybrid-ok",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7125186005",
+        "label": "How did you hear about Glean?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8505006005",
+        "label": "Please input the total years of experience you have that are relevant for this role.",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "1",
+      "source": {
+        "type": "bank",
+        "id": "years-experience",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8595613005",
+        "label": "What AI tools are you currently using today and how are you using them?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "I use ChatGPT and OpenAI's Codex day to day. ChatGPT helps me think through problems, check my understanding and draft writing; Codex helps me write, refactor and review code, and I verify what it produces with tests and my own review.",
+      "source": {
+        "type": "bank",
+        "id": "ai-tools",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "decline",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "no",
+      "source": {
+        "type": "profile",
+        "path": "eeo.hispanicLatino"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "no",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    }
+  ]
+}

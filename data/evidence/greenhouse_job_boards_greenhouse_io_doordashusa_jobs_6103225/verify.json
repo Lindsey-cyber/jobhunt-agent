@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -72,10 +72,24 @@
       "pass": true
     },
     {
+      "fieldId": "question_49189737",
+      "label": "Do you have a location preference?",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
       "fieldId": "question_49189738",
       "label": "Are you legally authorized to work in the United States?",
       "expected": "Yes",
       "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_49189739",
+      "label": "How much did content from the DoorDash Eng blog influence your decision to apply for a role at DoorDash?",
+      "expected": "3 = Neutral",
+      "actual": "3 = Neutral",
       "pass": true
     },
     {
@@ -191,9 +205,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Do you have a location preference?",
-    "How much did content from the DoorDash Eng blog influence your decision to apply for a role at DoorDash?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

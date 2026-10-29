@@ -11,21 +11,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -284,7 +287,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "candidate-location",
@@ -438,7 +442,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_49189737",
@@ -666,7 +671,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -683,7 +689,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -700,7 +707,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -979,7 +987,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -1188,7 +1197,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -1199,7 +1209,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_49189737",
         "label": "Do you have a location preference?",
@@ -1215,7 +1225,13 @@
           "No preference"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.city"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1238,7 +1254,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_49189739",
         "label": "How much did content from the DoorDash Eng blog influence your decision to apply for a role at DoorDash?",
@@ -1252,7 +1268,14 @@
           "1 = None"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "3 = Neutral",
+      "source": {
+        "type": "bank",
+        "id": "doordash-blog",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

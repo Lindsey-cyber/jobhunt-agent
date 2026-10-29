@@ -1,0 +1,168 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Social Media",
+      "actual": "Social Media › LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Do you currently work, or have you ever worked for or with Vanguard in any of the following ways: - as a Crew Member - through a Staffing Agency - through any other type of third party vendor",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "regionSubdivision1",
+      "label": "County",
+      "expected": "Queens",
+      "actual": "Queens",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "1b2264de5a9410018ab39395f95d0001",
+      "label": "Will you now or in the future require sponsorship for employment visa status?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1b2264de5a9410018ab394c9d29a0003",
+      "label": "Do you have any post-employment obligations to any current or former employer (i.e., non-compete, non-solicitation, etc.) that may prohibit or restrict your employment for a position?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "1b2264de5a9410018ab3969749a70006",
+      "label": "Under the Employment policy of Vanguard or any of its subsidiaries, relatives may not work in the same area of responsibility or within the same transactional audit trail. A relative is defined as aunt/uncle, child/stepchild, cousin, daughter-in-law/son-in-law, grandchild, grandparent, guardian, niece/nephew, parent-in-law, parent/stepparent, sister-in-law/brother-in-law, sister/brother, and spouse/domestic partner. To help us ensure compliance with this policy, do you have any relatives employed at Vanguard or any of its subsidiaries?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "1b2264de5a9410018ab397caa6a90003",
+      "label": "Are you related to, by birth, adoption or marriage, or a close associate of a current or former director, officer or senior employee of a Vanguard client who has authority to award or materially influence any decision to award Vanguard business?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you a U.S. citizen, lawful permanent resident, refugee, or person granted asylum?",
+    "Have you, or do you currently work for, or with Vanguard?",
+    "Have you ever performed temporary work for Vanguard or any of its subsidiaries?",
+    "Has a search agency submitted your application for consideration within the last 12 months?",
+    "Have you ever interviewed for a position at Vanguard or any of its subsidiaries?",
+    "Have you ever taken a FINRA or any other self-regulatory organization licensing exam? (Select all that apply) (required)",
+    "Do you currently hold either one of the these certifications?",
+    "Do you have Central Registration Depository (CRD) number?",
+    "Securities industry regulations require investment advisory firms to collect data on political contributions made within the last 2 years. This information is used to ensure we are following regulatory requirements. Have you made a political contribution(s) to any political official, candidate, party, or organization (e.g. Political Action Committee) within the last 2 years?",
+    "Are you a current or former Government Official? Definition of a “Government Official” is:Any officer or employee of a government or any department, agency or instrumentality of a government; Any officer or employee of a public international organization (e.g., Red Cross, United Nations Inter-American Development Bank, International Monetary Fund, or World Bank); Any individual acting in an official capacity on behalf of a government entity or agency or public international organization; or Any individual of a company owned or controlled by a government entity; or Any close family members (e.g., brother, sister, mother, father, husband, wife or child) of a government official; and Any former government officials that may maintain some quasi-government status or be able to assert influence over certain government processes and authorizations.",
+    "Are you related to, by birth, adoption or marriage, or a close associate of a current or former Government Official at an entity that interacts or may interact with Vanguard in a business or regulatory context?",
+    "To the best of your knowledge, did either of the following refer or recommend you for this or any other position with Vanguard? A Government Official A director, officer or senior employee of a Vanguard client who has authority to award or materially influence any decision to award Vanguard business.",
+    "Vanguard would like to consider you for additional and future job openings at Vanguard using tools that rely on machine learning (also referred to as Artificial Intelligence or AI). These tools compare your application responses, qualification responses, and resume information against additional and future job requisition qualifications. When there are matches, Vanguard recruiters may reach out to you to apply for a requisition.By selecting Yes, you consent to the use of your data in this way.By selecting No, you do not consent to the use of your data in this way.Opting into this process is voluntary, and selecting No will not disadvantage consideration of your current application."
+  ],
+  "fillErrors": []
+}

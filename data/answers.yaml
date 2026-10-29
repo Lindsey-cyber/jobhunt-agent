@@ -572,3 +572,81 @@ answers:
     aliases: []
     answer: "Yes"
     origin: human
+  # From her profile: F-1 OPT, citizen of China.
+  - id: vanguard-1
+    question: "Are you a U.S. citizen, lawful permanent resident, refugee, or person granted asylum?"
+    aliases: []
+    answer: "No"
+    origin: human
+  # From her resume: she has never worked for Vanguard.
+  - id: vanguard-2
+    question: "Have you, or do you currently work for, or with Vanguard?"
+    aliases: []
+    answer: "No, I have never worked for Vanguard as a crew member"
+    origin: human
+  # From her resume: no work for Vanguard of any kind.
+  - id: vanguard-3
+    question: "Have you ever performed temporary work for Vanguard or any of its subsidiaries?"
+    aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): she applies directly; no agency represents her.
+  - id: vanguard-4
+    question: "Has a search agency submitted your application for consideration within the last 12 months?"
+    aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): the ledger has no earlier Vanguard application.
+  - id: vanguard-5
+    question: "Have you ever interviewed for a position at Vanguard or any of its subsidiaries?"
+    aliases: []
+    answer: "No"
+    origin: human
+  # From her resume: no securities licenses or exams.
+  - id: vanguard-6
+    question: "Have you ever taken a FINRA or any other self-regulatory organization licensing exam? (Select all that apply) (required)"
+    aliases: []
+    answer: "No"
+    origin: human
+  # From her resume: no CFA or CFP.
+  - id: vanguard-7
+    question: "Do you currently hold either one of the these certifications?"
+    aliases: []
+    answer: "None"
+    origin: human
+  # From her resume: never registered in the securities industry.
+  - id: vanguard-8
+    question: "Do you have Central Registration Depository (CRD) number?"
+    aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): as an F-1 holder she cannot contribute to U.S. political campaigns, and has not.
+  - id: vanguard-9
+    question: "Securities industry regulations require investment advisory firms to collect data on political contributions made within the last 2 years. This information is used to ensure we are following regulatory requirements. Have you made a political contribution(s) to any political official, candidate, party, or organization (e.g. Political Action Committee) within the last 2 years?"
+    aliases: []
+    answer: "No"
+    origin: human
+  # From her resume: she has never worked for a government or public international organization.
+  - id: vanguard-10
+    question: "Are you a current or former Government Official? Definition of a “Government Official” is:Any officer or employee of a government or any department, agency or instrumentality of a government; Any officer or employee of a public international organization (e.g., Red Cross, United Nations Inter-American Development Bank, International Monetary Fund, or World Bank); Any individual acting in an official capacity on behalf of a government entity or agency or public international organization; or Any individual of a company owned or controlled by a government entity; or Any close family members (e.g., brother, sister, mother, father, husband, wife or child) of a government official; and Any former government officials that may maintain some quasi-government status or be able to assert influence over certain government processes and authorizations."
+    aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): no relatives at employers (profile) and no ties to government officials.
+  - id: vanguard-11
+    question: "Are you related to, by birth, adoption or marriage, or a close associate of a current or former Government Official at an entity that interacts or may interact with Vanguard in a business or regulatory context?"
+    aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): nobody referred her; she applies directly.
+  - id: vanguard-12
+    question: "To the best of your knowledge, did either of the following refer or recommend you for this or any other position with Vanguard? A Government Official A director, officer or senior employee of a Vanguard client who has authority to award or materially influence any decision to award Vanguard business."
+    aliases: []
+    answer: "No"
+    origin: human
+  # From her profile: consentAiScreening (she allows AI screening).
+  - id: vanguard-13
+    question: "Vanguard would like to consider you for additional and future job openings at Vanguard using tools that rely on machine learning (also referred to as Artificial Intelligence or AI). These tools compare your application responses, qualification responses, and resume information against additional and future job requisition qualifications. When there are matches, Vanguard recruiters may reach out to you to apply for a requisition.By selecting Yes, you consent to the use of your data in this way.By selecting No, you do not consent to the use of your data in this way.Opting into this process is voluntary, and selecting No will not disadvantage consideration of your current application."
+    aliases: []
+    answer: "Yes"
+    origin: human

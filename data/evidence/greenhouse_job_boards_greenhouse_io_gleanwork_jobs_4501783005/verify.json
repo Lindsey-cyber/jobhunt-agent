@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -26,14 +26,14 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "",
-      "pass": false
+      "actual": "United States",
+      "pass": true
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "9786681426",
+      "actual": "(978) 668-1426",
       "pass": true
     },
     {
@@ -68,15 +68,15 @@
       "fieldId": "question_7104855005",
       "label": "Are you willing and able to commit to the hybrid policy if hired?",
       "expected": "Yes",
-      "actual": "",
-      "pass": false
+      "actual": "Yes",
+      "pass": true
     },
     {
       "fieldId": "question_7125186005",
       "label": "How did you hear about Glean?",
-      "expected": "LinkedIn",
-      "actual": "",
-      "pass": false
+      "expected": "Job Board",
+      "actual": "Job Board",
+      "pass": true
     },
     {
       "fieldId": "question_8505006005",
@@ -95,36 +95,25 @@
     {
       "fieldId": "gender",
       "label": "Gender",
-      "expected": "decline",
-      "actual": "",
-      "pass": false
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
     },
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "no",
-      "actual": "",
-      "pass": false
+      "expected": "No",
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
       "label": "Veteran Status",
-      "expected": "no",
-      "actual": "",
-      "pass": false
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
     }
   ],
-  "emptyRequired": [
-    "Country",
-    "Are you willing and able to commit to the hybrid policy if hired?",
-    "How did you hear about Glean?"
-  ],
-  "fillErrors": [
-    "Country: the country menu did not open",
-    "Are you willing and able to commit to the hybrid policy if hired?: the question_7104855005 menu did not open",
-    "How did you hear about Glean?: the question_7125186005 menu did not open",
-    "Gender: the gender menu did not open",
-    "Are you Hispanic/Latino?: the hispanic_ethnicity menu did not open",
-    "Veteran Status: the veteran_status menu did not open"
-  ]
+  "emptyRequired": [],
+  "fillErrors": []
 }

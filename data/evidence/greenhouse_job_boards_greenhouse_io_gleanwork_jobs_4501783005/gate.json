@@ -1,14 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "readback mismatch on \"Country\": expected \"United States\", got \"\"",
-    "readback mismatch on \"Are you willing and able to commit to the hybrid policy if hired?\": expected \"Yes\", got \"\"",
-    "readback mismatch on \"How did you hear about Glean?\": expected \"LinkedIn\", got \"\"",
-    "readback mismatch on \"Gender\": expected \"decline\", got \"\"",
-    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"no\", got \"\"",
-    "readback mismatch on \"Veteran Status\": expected \"no\", got \"\"",
-    "required \"Country\" is empty after filling",
-    "required \"Are you willing and able to commit to the hybrid policy if hired?\" is empty after filling",
-    "required \"How did you hear about Glean?\" is empty after filling"
-  ]
+  "decision": "submit"
 }

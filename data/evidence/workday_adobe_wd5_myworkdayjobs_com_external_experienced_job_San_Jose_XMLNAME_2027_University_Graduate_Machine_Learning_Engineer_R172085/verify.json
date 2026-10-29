@@ -184,6 +184,13 @@
       "pass": true
     },
     {
+      "fieldId": "305a1163be7301083ded7092b201bf8a",
+      "label": "Are you of legal age to work in the country in which this position will be based?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "305a1163be73017aae7b7192b201ce8a",
       "label": "Are you able to work on a daily basis in the work location listed for this position? If not, are you willing to relocate at your own expense to accept a position with Adobe?",
       "expected": "Yes",
@@ -199,7 +206,6 @@
     }
   ],
   "emptyRequired": [
-    "Are you of legal age to work in the country in which this position will be based?",
     "Have you ever worked at Adobe in the following capacity:",
     "Are you willing to submit a background check during the hiring process?",
     "If you are offered employment by Adobe, can you provide documentation establishing your identity and right to work in the country where this position will be based?"

@@ -945,7 +945,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "305a1163be7301083ded7092b201bf8a",
         "label": "Are you of legal age to work in the country in which this position will be based?",
@@ -956,7 +956,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "over-18",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",

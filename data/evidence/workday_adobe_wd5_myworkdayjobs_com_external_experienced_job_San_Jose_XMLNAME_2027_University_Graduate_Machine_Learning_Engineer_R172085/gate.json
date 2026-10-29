@@ -1,11 +1,9 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Are you of legal age to work in the country in which this position will be based?\": no answer in profile or answer bank",
     "required \"Have you ever worked at Adobe in the following capacity:\": no answer in profile or answer bank",
     "required \"Are you willing to submit a background check during the hiring process?\": sensitive question with no exact answer",
     "required \"If you are offered employment by Adobe, can you provide documentation establishing your identity and right to work in the country where this position will be based?\": no answer in profile or answer bank",
-    "required \"Are you of legal age to work in the country in which this position will be based?\" is empty after filling",
     "required \"Have you ever worked at Adobe in the following capacity:\" is empty after filling",
     "required \"Are you willing to submit a background check during the hiring process?\" is empty after filling",
     "required \"If you are offered employment by Adobe, can you provide documentation establishing your identity and right to work in the country where this position will be based?\" is empty after filling"

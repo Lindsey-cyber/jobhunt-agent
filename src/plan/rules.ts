@@ -309,7 +309,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // the hiring company must be named, and her resume's employers decide.
     path: "workHistory",
     pattern: /\b(worked|been employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b/,
-    kinds: ["select", "radio", "combobox"],
+    kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       if (/\b(relative|family|familial|client|customer|government|vendor|partner|competitor)\b/.test(label)) return undefined;
       const first = normalize(ctx.company ?? "").split(" ")[0];

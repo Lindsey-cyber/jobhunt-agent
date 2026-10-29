@@ -456,3 +456,20 @@ answers:
       - Will you be able to provide references?
     answer: "Yes"
     origin: human
+  # The candidate (2026-10-28: "你可以说 yes 呀，就是我接受检查呀"): she accepts background checks.
+  - id: background-check
+    question: Are you willing to submit a background check during the hiring process?
+    aliases:
+      - Are you willing to undergo a background check?
+      - Will you consent to a background check?
+      - Are you willing to complete a background check?
+    answer: "Yes"
+    origin: human
+  # Her F-1 OPT work authorization comes with documents establishing identity and right to work (EAD).
+  - id: right-to-work-documents
+    question: If you are offered employment by Adobe, can you provide documentation establishing your identity and right to work in the country where this position will be based?
+    aliases:
+      - Can you provide documentation establishing your identity and right to work?
+      - If hired, can you provide proof of identity and eligibility to work in the United States?
+    answer: "Yes"
+    origin: human

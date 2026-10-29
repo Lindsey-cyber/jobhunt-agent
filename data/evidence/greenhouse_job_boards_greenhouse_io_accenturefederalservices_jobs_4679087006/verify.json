@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -179,8 +179,8 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
       "pass": true
     },
     {
@@ -191,8 +191,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Please identify your race"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

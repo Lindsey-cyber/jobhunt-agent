@@ -8,6 +8,7 @@ import { jobKey } from "../discover/identity.ts";
 import { gmailConfigured, waitForEmailLink, waitForSecurityCode } from "../sources/gmail.ts";
 import type { FormSnapshot } from "../domain/form.ts";
 import { accountFor } from "./accounts.ts";
+import { draftable, draftSources, resolveQuestion, UNANSWERED } from "../org/drafter.ts";
 import { archiveEvidence } from "./evidence.ts";
 import { readCatalog } from "../store/catalog.ts";
 import { paths } from "../store/state.ts";
@@ -28,7 +29,10 @@ export interface ApplyOptions {
   headed?: boolean;
   confirmTimeoutMs?: number;
   // The catalog's names for the posting, for embed pages that show neither.
-  job?: { company: string; title: string; location?: string };
+  job?: { company: string; title: string; location?: string; description?: string };
+  // Answer what the rules and the bank cannot from her documents, during the run
+  // (default: on when OPENAI_API_KEY is set and JH_RESOLVE is not "off").
+  resolve?: boolean;
 }
 
 export type ApplyResult =
@@ -97,7 +101,7 @@ export function formUrl(url: string): string {
   return url;
 }
 
-async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000, job: given }: ApplyOptions): Promise<ApplyResult> {
+async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000, job: given, resolve = Boolean(process.env.OPENAI_API_KEY) && process.env.JH_RESOLVE !== "off" }: ApplyOptions): Promise<ApplyResult> {
   let job = given;
   const earlier = sameJob(ledger, url);
   if (earlier && !ledger.canStart(earlier.key)) return { outcome: "skipped", key: earlier.key, state: earlier.state };
@@ -130,10 +134,11 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   }
 
   // A posting run by hand (jh apply) is named from the catalog when the page is not.
-  if (!job) {
+  if (!job || (resolve && job.description === undefined)) {
     const hit = readCatalog(paths(user.dir).catalog).get(jobKey(url) as JobKey);
-    if (hit) job = { company: hit.company, title: hit.title, location: hit.location };
+    if (hit) job = { company: job?.company ?? hit.company, title: job?.title ?? hit.title, location: job?.location ?? hit.location, description: hit.description };
   }
+  const resolver = resolve ? makeResolver(user, url, job?.description) : undefined;
   // Earlier applications to the same employer site (Workday tenants, boards).
   const host = new URL(page.url()).hostname;
   const board = new URL(url).pathname.split("/").filter(Boolean)[0];
@@ -153,7 +158,7 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   const pages: PageResult[] = [];
   let form = first;
   for (let n = 1; ; n++) {
-    const r = await fillPage(adapter, page, form, user);
+    const r = await fillPage(adapter, page, form, user, resolver);
     pages.push(r);
     if (adapter.advance) {
       writeFileSync(join(runDir, `page-${n}.html`), await page.content());
@@ -236,8 +241,28 @@ interface PageResult {
   fillErrors: string[];
 }
 
-async function fillPage(adapter: AtsAdapter, page: Page, form: FormSnapshot, user: UserData): Promise<PageResult> {
+type Resolver = (form: FormSnapshot, items: FillPlan["items"]) => Promise<FillPlan["items"]>;
+
+// Questions the rules and the bank leave blocked go to the drafter, which answers
+// only from her documents; each answer it records is planned again like any other.
+function makeResolver(user: UserData, url: string, posting: string | undefined): Resolver {
+  let sources: string[] | undefined;
+  return async (form, items) => {
+    const open = items.filter((i) => i.status === "blocked" && UNANSWERED.includes(i.reason) && draftable(i.field.label, i.field.kind));
+    if (!open.length) return items;
+    sources ??= draftSources(user);
+    let answered = false;
+    for (const i of open) {
+      const r = await resolveQuestion(user, { url, company: form.company, jobTitle: form.jobTitle, label: i.field.label, options: i.field.options, posting: posting ?? "" }, sources, { log: (s) => console.error(s) });
+      answered ||= r.problems.length === 0;
+    }
+    return answered ? buildPlan({ ...form, fields: items.map((i) => i.field) }, user.profile, user.bank).items : items;
+  };
+}
+
+async function fillPage(adapter: AtsAdapter, page: Page, form: FormSnapshot, user: UserData, resolve?: Resolver): Promise<PageResult> {
   const plan = buildPlan(form, user.profile, user.bank);
+  if (resolve) plan.items = await resolve(form, plan.items);
   const fillErrors: string[] = [];
   const failed = new Set<string>();
   const fillAll = async (items: FillPlan["items"]) => {
@@ -257,7 +282,8 @@ async function fillPage(adapter: AtsAdapter, page: Page, form: FormSnapshot, use
     const known = new Set(plan.items.map((i) => i.field.id));
     const revealed = fieldsNow.filter((f) => !known.has(f.id));
     if (!revealed.length) break;
-    const more = buildPlan({ ...form, fields: revealed }, user.profile, user.bank).items;
+    let more = buildPlan({ ...form, fields: revealed }, user.profile, user.bank).items;
+    if (resolve) more = await resolve(form, more);
     plan.items.push(...more);
     plan.form = { ...plan.form, fields: [...plan.form.fields, ...revealed] };
     await fillAll(more);

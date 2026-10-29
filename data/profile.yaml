@@ -22,12 +22,14 @@ education:
   - school: Columbia University
     degree: Master of Science
     major: Statistics
+    start: 2024-09
     gradMonth: 5
     gradYear: 2026
     gpa: "3.71"
   - school: Renmin University of China
     degree: Bachelor of Arts
     major: Economics
+    start: 2019-09
     gradMonth: 6
     gradYear: 2023
     gpa: "3.82"
@@ -35,6 +37,10 @@ education:
 restrictiveAgreements: false
 # The candidate (2026-10-28): apply to the 2027 graduating class's new-grad roles too.
 newGradCohorts: [2026, 2027]
+# The candidate (2026-10-28): any US location; on-site 5 days or hybrid all work; willing to relocate.
+workArrangement:
+  onsite: true
+  relocate: true
 # The candidate (2026-10-28): she knows no one at any company, relatives included.
 relativesAtEmployers: false
 # The candidate (2026-10-28): may tick "I have read the privacy policy" boxes for her.

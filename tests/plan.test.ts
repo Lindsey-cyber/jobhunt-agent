@@ -262,4 +262,27 @@ describe("buildPlan", () => {
     expect(buildPlan(form([f]), user.profile, { answers: [why] }).items[0]).toMatchObject({ status: "fill", value: "Because of the robots." });
     expect(buildPlan({ ...form([f]), jobTitle: "Staff Engineer" }, user.profile, { answers: [why] }).items[0]).toMatchObject({ status: "blocked" });
   });
+
+  // Held on the VPS (2026-10-29): Ashby's composite education block, Affirm's employment and how-heard wording, Greenhouse's race reset.
+  it("answers Ashby's education history, Affirm's wording, and leaves Greenhouse's declined race blank", () => {
+    const p = { ...user.profile, education: [{ school: "Columbia University", degree: "Master of Science", major: "Statistics", start: "2024-09", gradMonth: 5, gradYear: 2026 }], workHistory: [{ employer: "Arborphy AI LLC" }], eeo: { ...user.profile.eeo, race: "decline" } };
+    const one = (f: ReturnType<typeof field>, ats = "ashby") => buildPlan({ ...form([f], "Affirm"), ats: ats as "ashby" }, p, user.bank).items[0]!;
+    expect(one(field("Education History"))).toMatchObject({ status: "fill", value: "Columbia University | Master of Science | Statistics | 09/2024 | 05/2026" });
+    expect(one(field("Have you previously been employed at Affirm for any length of time?", { kind: "select", options: ["Yes", "No"] }))).toMatchObject({ value: "No" });
+    expect(one(field("How did you first learn about Affirm as an employer?"))).toMatchObject({ status: "fill", value: "LinkedIn" });
+    const race = { ...field("Please identify your race", { kind: "combobox", options: ["Asian", "Decline To Self Identify"] }), id: "race", required: false };
+    expect(one(race, "greenhouse")).toMatchObject({ status: "skip" });
+  });
+
+  it("answers on-site and relocation questions for US postings from her stated arrangement, and pronouns by declining", () => {
+    const p = { ...user.profile, workArrangement: { onsite: true, relocate: true } };
+    const yn = { kind: "radio" as const, options: ["Yes", "No"] };
+    const at = (label: string, loc: string, over: Partial<ReturnType<typeof field>> = yn) => buildPlan({ ...form([field(label, over)]), jobLocation: loc }, p, user.bank).items[0]!;
+    expect(at("Are you open to being in-office 5 days a week in Sunnyvale?", "Sunnyvale, CA")).toMatchObject({ status: "fill", value: "Yes" });
+    expect(at("Are you willing to relocate for this position if required?", "New York, NY", { kind: "radio", options: ["Yes", "No", "I'm already located where the position is based"] })).toMatchObject({ value: "Yes" });
+    expect(at("Are you open to being in-office 5 days a week in London?", "London, UK")).toMatchObject({ status: "blocked" });
+    expect(at("Will you require relocation support?", "New York, NY")).toMatchObject({ status: "blocked" });
+    expect(at("Pronouns", "New York, NY", { kind: "combobox", options: ["She/her/hers", "I prefer not to say"] })).toMatchObject({ value: "I prefer not to say" });
+    expect(at("Have you previously been employed at Acme Robotics for any length of time?", "New York, NY", { kind: "combobox", options: ["I have not previously been employed at Acme Robotics", "I have been employed at Acme Robotics as an intern"] })).toMatchObject({ value: "I have not previously been employed at Acme Robotics" });
+  });
 });

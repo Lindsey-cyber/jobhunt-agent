@@ -98,6 +98,12 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     return unanswered(field, "acknowledgements and consents need the candidate");
   }
 
+  // Greenhouse's EEO block: declining race resets "Are you Hispanic/Latino?" to
+  // decline and hides the race question. A voluntary race question left blank declines it.
+  if (form.ats === "greenhouse" && field.id === "race" && !field.required && profile.eeo.race === "decline") {
+    return { status: "skip", field, reason: "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)" };
+  }
+
   if (field.kind === "file") {
     if (RESUME.test(label)) {
       return { status: "fill", field, value: profile.documents.resume, source: { type: "file", path: "documents.resume" }, confidence: 1, sensitive: false };

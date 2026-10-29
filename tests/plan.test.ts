@@ -184,6 +184,16 @@ describe("buildPlan", () => {
     expect(one("Do you currently reside within the continental United States?")).toMatchObject({ status: "fill" });
   });
 
+  // From ADI's Workday form: OPT is authorization, but not indefinite authorization.
+  it("answers No to indefinite or unrestricted authorization for a candidate who needs sponsorship", () => {
+    const p = { ...user.profile, citizenship: ["China"], workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const yn = { kind: "select" as const, options: ["Yes", "No"] };
+    const one = (label: string) => buildPlan(form([field(label, yn)]), p, user.bank).items[0]!;
+    expect(one("Are you authorized to work in the United States on a fulltime and indefinite basis? If you are hired, you will be required to present documentation.")).toMatchObject({ status: "fill", value: "No" });
+    expect(one("Are you legally authorized to work in the United States?")).toMatchObject({ status: "fill", value: "Yes" });
+    expect(one("Are you a citizen of any one of these countries: Cuba, Iran, North Korea, or Syria?")).toMatchObject({ status: "fill", value: "No" });
+  });
+
   it("answers transgender identity from the gender choice", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline" as const } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });

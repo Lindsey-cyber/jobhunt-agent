@@ -93,7 +93,7 @@ export type TrustLevel = z.infer<typeof TrustLevel>;
 
 export const Config = z.object({
   trust: TrustLevel.default("draft"),
-  autoSubmitAts: z.array(z.enum(["greenhouse", "lever", "ashby"])).default([]),
+  autoSubmitAts: z.array(z.enum(["greenhouse", "lever", "ashby", "workday"])).default([]),
   allowGeneratedAnswers: z.boolean().default(false),
   dailySubmitCap: z.number().int().min(0).default(10),
 });

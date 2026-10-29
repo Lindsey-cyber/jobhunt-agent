@@ -81,6 +81,16 @@ const [command, url, arg2] = positionals;
 const user = () => loadUserData();
 const ledgerOf = (dir: string) => new Ledger(join(dir, "ledger.jsonl"));
 
+const SAME_COMPANY_GAP_MS = 2 * 60_000;
+// Round-robin over companies so two postings at one employer are never back to back.
+function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
+  const groups = new Map<string, T[]>();
+  for (const j of jobs) groups.set(j.company, [...(groups.get(j.company) ?? []), j]);
+  const out: T[] = [];
+  while (out.length < jobs.length) for (const g of groups.values()) if (g.length) out.push(g.shift()!);
+  return out;
+}
+
 switch (command) {
   case "apply": {
     if (!url) throw new Error("usage: jh apply <url>");
@@ -133,17 +143,24 @@ switch (command) {
     const fit = [...new Map(readLabels(u.dir).map((l) => [l.key, l])).values()].filter((l) => l.label === "fit");
     const ready = fit
       .map((l) => catalog.get(l.key as JobKey))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever|ashby):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever|ashby|workday):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         return !prior || ledger.canStart(prior.key);
       });
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
     console.log(`${ready.length} approved postings with an adapter are not yet applied to; trying up to ${limit}`);
-    for (const j of ready.slice(0, limit)) {
+    // The candidate (2026-10-29): never several applications to one company at once.
+    // Interleave companies, and leave two minutes between submissions to the same one.
+    const order = interleaveByCompany(ready.slice(0, limit));
+    const lastAt = new Map<string, number>();
+    for (const j of order) {
       if (ledger.submittedOn(new Date().toISOString().slice(0, 10)) >= u.config.dailySubmitCap) break;
+      const wait = (lastAt.get(j.company) ?? 0) + SAME_COMPANY_GAP_MS - Date.now();
+      if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       try {
         const r = await apply({ url: j.url, user: u, ledger, approved: true, job: { company: j.company, title: j.title, location: j.location } });
+        if (r.state === "submitted" || r.state === "confirmed" || r.state === "unconfirmed") lastAt.set(j.company, Date.now());
         console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
       } catch (e) {
         console.log(`${j.company} · ${j.title}: error ${(e as Error).message.split("\n")[0]}`);

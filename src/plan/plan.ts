@@ -115,6 +115,11 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   if (!option && field.kind === "combobox" && field.options.length >= TRUNCATED && !sensitive) {
     return { status: "fill", field, value: candidate.value, source: candidate.source, confidence: Math.min(candidate.confidence, 0.8), sensitive };
   }
+  // Workday: "United States" is listed as "United States of America".
+  const extended = !option && !sensitive ? field.options.filter((o) => normalize(o).startsWith(`${normalize(candidate.value)} `)) : [];
+  // Several ("… of America", "… Minor Outlying Islands"): the shortest is the place itself.
+  const shortest = [...extended].sort((a, b) => a.length - b.length)[0];
+  if (shortest) return { status: "fill", field, value: shortest, source: candidate.source, confidence: Math.min(candidate.confidence, 0.9), sensitive };
   if (!option) return unanswered(field, `answer "${candidate.value}" matches none of the options`);
   return {
     status: "fill",

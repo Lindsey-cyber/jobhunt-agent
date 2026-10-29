@@ -977,3 +977,38 @@ answers:
     company: American Institutes for Research
     answer: "No"
     origin: human
+  # Quora (2026-10-28): the options are C++, Java, Python; her resume lists Python.
+  - id: interview-language
+    question: What is your preferred programming language for your interviews (you can change this later)?
+    aliases:
+      - What is your preferred programming language for interviews?
+      - Preferred coding language for interviews
+    answer: Python
+    origin: human
+  # Derived (2026-10-29): her B.A. ran 2019-2023, so she is over 18.
+  - id: over-18
+    question: Are you at least 18 years old?
+    aliases:
+      - Are you 18 years of age or older?
+      - Are you over 18?
+    answer: "Yes"
+    origin: human
+  # The candidate (2026-10-28): she knows no one at any company, relatives included.
+  - id: relatives-adi
+    question: "* ADI has a policy addressing the employment of relatives. Do you currently have relatives working at Analog Devices?"
+    answer: "No"
+    origin: human
+  - id: relatives-generic
+    question: Do you currently have relatives working at {company}?
+    aliases:
+      - Do you have any relatives working at {company}?
+      - Are you related to anyone who works at {company}?
+    answer: "No"
+    origin: human
+  # The candidate (2026-10-28): no non-compete or similar commitment.
+  - id: other-commitments
+    question: "* Do you have any commitments to another organization that might affect your employment with {company}?"
+    aliases:
+      - Do you have any commitments to another organization that might affect your employment?
+    answer: "No"
+    origin: human

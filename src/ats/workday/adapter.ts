@@ -39,14 +39,15 @@ async function pageError(page: Page): Promise<string> {
 const MENU_OPTION = 'ul[role="listbox"]:not([data-automation-id="selectedItemList"]) [role="option"]:visible';
 
 async function listboxOptions(page: Page, button: Locator): Promise<string[]> {
-  for (let attempt = 0; attempt < 3; attempt++) {
+  // Some menus (Crowe's race list) open only on the third or fourth try.
+  for (let attempt = 0; attempt < 5; attempt++) {
     // Wait for the previous menu to close, or its options are read as this one's.
     await page.locator(MENU_OPTION).first().waitFor({ state: "detached", timeout: 3000 }).catch(() => undefined);
     await page.waitForTimeout(400 + 800 * attempt);
     await button.scrollIntoViewIfNeeded().catch(() => undefined);
     if (!(await button.click({ force: true, timeout: 5000 }).then(() => true, () => false))) return [];
     const opts = page.locator(MENU_OPTION);
-    const opened = await opts.first().waitFor({ state: "visible", timeout: 4000 }).then(() => true, () => false);
+    const opened = await opts.first().waitFor({ state: "visible", timeout: 4000 + 1000 * attempt }).then(() => true, () => false);
     const texts = opened ? (await opts.allInnerTexts()).map((t) => t.trim()).filter((t) => t && !/^select one$/i.test(t)) : [];
     // Escape does not close Workday menus; a second click on the button does.
     if (opened) await button.click({ force: true, timeout: 3000 }).catch(() => undefined);

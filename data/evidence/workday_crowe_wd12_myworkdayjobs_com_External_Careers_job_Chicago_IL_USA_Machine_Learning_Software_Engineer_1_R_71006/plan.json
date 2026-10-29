@@ -1396,7 +1396,7 @@
       "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "blocked",
       "field": {
         "id": "ethnicity",
         "label": "Please select the race/ethnicity which most accurately describes how you identify yourself",
@@ -1404,13 +1404,7 @@
         "required": true,
         "options": []
       },
-      "value": "decline",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 0.8,
-      "sensitive": true
+      "reason": "the field's choices did not load"
     },
     {
       "status": "fill",

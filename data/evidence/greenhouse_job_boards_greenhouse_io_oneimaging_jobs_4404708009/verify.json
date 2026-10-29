@@ -1,0 +1,135 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7573572009",
+      "label": "Are you currently attending or a recent graduate of the University of Florida?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_7573574009",
+      "label": "Who did you meet at the career fair?",
+      "expected": "N/A",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_7573575009",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7573576009",
+      "label": "Desired Salary",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7573577009",
+      "label": "Are you legally authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_7573578009",
+      "label": "Will you now or in the future require sponsorship for employment?",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "decline",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "no",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "no",
+      "actual": "",
+      "pass": false
+    }
+  ],
+  "emptyRequired": [
+    "Country",
+    "Are you currently attending or a recent graduate of the University of Florida?",
+    "Are you interested in working out of our Miami HQ?",
+    "Who did you meet at the career fair?",
+    "Are you legally authorized to work in the United States?",
+    "Will you now or in the future require sponsorship for employment?"
+  ],
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "Are you currently attending or a recent graduate of the University of Florida?: the question_7573572009 menu did not open",
+    "Who did you meet at the career fair?: the question_7573574009 menu did not open",
+    "Are you legally authorized to work in the United States?: the question_7573577009 menu did not open",
+    "Will you now or in the future require sponsorship for employment?: the question_7573578009 menu did not open",
+    "Gender: the gender menu did not open",
+    "Are you Hispanic/Latino?: the hispanic_ethnicity menu did not open",
+    "Veteran Status: the veteran_status menu did not open"
+  ]
+}

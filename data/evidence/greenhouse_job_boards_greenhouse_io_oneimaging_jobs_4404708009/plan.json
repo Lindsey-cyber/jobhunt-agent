@@ -1,0 +1,436 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=oneimaging&token=4404708009",
+    "company": "OneImaging",
+    "jobTitle": "Associate Data Engineer (UF Only)",
+    "jobLocation": "Miami",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferred_name",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_7573572009",
+        "label": "Are you currently attending or a recent graduate of the University of Florida?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7573573009",
+        "label": "Are you interested in working out of our Miami HQ?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7573574009",
+        "label": "Who did you meet at the career fair?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7573575009",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7573576009",
+        "label": "Desired Salary",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7573577009",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_7573578009",
+        "label": "Will you now or in the future require sponsorship for employment?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 1
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferred_name",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7573572009",
+        "label": "Are you currently attending or a recent graduate of the University of Florida?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "draft:da91f767fa",
+        "origin": "generated"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_7573573009",
+        "label": "Are you interested in working out of our Miami HQ?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7573574009",
+        "label": "Who did you meet at the career fair?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "N/A",
+      "source": {
+        "type": "bank",
+        "id": "draft:9f51119d76",
+        "origin": "generated"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7573575009",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7573576009",
+        "label": "Desired Salary",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7573577009",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_7573578009",
+        "label": "Will you now or in the future require sponsorship for employment?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "decline",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "no",
+      "source": {
+        "type": "profile",
+        "path": "eeo.hispanicLatino"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "no",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    }
+  ]
+}

@@ -169,7 +169,12 @@ switch (command) {
       .filter((j): j is NonNullable<typeof j> => Boolean(j) && (j!.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j!.key)) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
-        return !prior || ledger.canStart(prior.key);
+        if (!prior) return true;
+        if (!ledger.canStart(prior.key)) return false;
+        // Held only on something the candidate must sign: a rerun cannot change it.
+        const last = ledger.history(prior.key).at(-1);
+        const reasons = ((last?.detail as { reasons?: string[] } | undefined)?.reasons ?? []).filter((r) => !/trust level|autoSubmitAts|low confidence|generated answer/.test(r));
+        return !(last?.state === "held" && reasons.length > 0 && reasons.every((r) => /legal attestations need the candidate/.test(r)));
       });
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
     console.log(`${ready.length} ${auto ? "approved or matched" : "approved"} postings with an adapter are not yet applied to; trying up to ${limit}`);

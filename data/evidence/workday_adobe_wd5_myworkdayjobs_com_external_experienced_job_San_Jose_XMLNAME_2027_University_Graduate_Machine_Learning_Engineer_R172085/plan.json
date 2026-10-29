@@ -643,7 +643,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "companyName",
         "label": "Company",
@@ -651,7 +651,13 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

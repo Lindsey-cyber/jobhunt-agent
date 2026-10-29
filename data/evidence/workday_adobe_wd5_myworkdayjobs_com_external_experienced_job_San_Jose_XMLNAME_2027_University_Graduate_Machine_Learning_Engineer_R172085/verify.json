@@ -107,6 +107,13 @@
       "pass": true
     },
     {
+      "fieldId": "companyName",
+      "label": "Company",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
       "fieldId": "location",
       "label": "Location",
       "expected": "New York, New York, United States",
@@ -150,7 +157,6 @@
     }
   ],
   "emptyRequired": [
-    "Company",
     "From",
     "To"
   ],

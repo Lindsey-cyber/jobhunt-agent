@@ -5,8 +5,7 @@
   "email": "lm3879@columbia.edu",
   "country": "United States",
   "phone": "(978) 668-1426",
-  "cover_letter": "Accepted file types: pdf, doc, docx, txt, rtf",
-  "question_38264021002": "",
+  "question_38264021002": "At the InnoX Academy robotics lab I built the real-time vision pipeline for an autonomous badminton-training robot. The robot had to see the court, the player and the shuttlecock, and react in time to be useful. I integrated YOLOv8 player detection, pose estimation, shuttlecock tracking and court localization into one pipeline running at 20+ FPS, then added stereo 3D shuttlecock tracking and landing-point prediction so the robot could anticipate where the shuttle would come down. The hardware was a Raspberry Pi, so speed was a constraint throughout: I deployed the models with ONNX Runtime and quantization and moved video handling to an asynchronous pipeline, which reduced inference latency by 8%. I also integrated a locally hosted language model (Ollama) to map voice commands to robot control actions. The problem-solving pattern I would bring to baseball R&D is the same: turn raw tracking data and video into a model that predicts what happens next, test it against what actually happened, and package it so the people who make decisions can use it. More of my work is on GitHub: github.com/Lindsey-cyber",
   "question_38111114002": "Accepted file types: pdf, doc, docx, txt, rtf",
   "question_38111112002": "https://www.linkedin.com/in/lindsey-ma/",
   "question_38111113002": "https://www.lindseyma.com/",
@@ -17,5 +16,6 @@
   "hispanic_ethnicity": "No",
   "race": "",
   "veteran_status": "I am not a protected veteran",
-  "resume": "Lindsey_Ma_Resume.pdf"
+  "resume": "Lindsey_Ma_Resume.pdf",
+  "cover_letter": "cleveland-guardians-baseball-operations.pdf"
 }

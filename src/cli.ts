@@ -12,7 +12,8 @@ import { triage } from "./discover/triage.ts";
 import { runAuditor } from "./org/auditor.ts";
 import { draftAnswers } from "./org/drafter.ts";
 import { modelTriage } from "./org/triager.ts";
-import { authUrl, fetchAlerts, finishAuth, gmailConfigured } from "./sources/gmail.ts";
+import { authUrl, fetchAlerts, finishAuth, gmailConfigured, recentHeaders } from "./sources/gmail.ts";
+import { receiptFor } from "./verify/reconcile.ts";
 import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
 import { serve } from "./run/serve.ts";
@@ -45,6 +46,7 @@ const USAGE = `jh <command>
                                        yes → match, no → reject, unsure stays; default 300 a run
   holds                                why applications are held, grouped: needs your answer, site mechanics
                                        (for an engineering session), or held by design
+  reconcile                            mark unconfirmed applications confirmed when the employer's receipt email arrived
   apply-approved [--limit <n>]         submit postings you approved (fit labels) that have an adapter, within the
                                        daily cap; skips excluded employers and anything already applied to
   draft                                draft answers to postings' own questions (why this role, have you built X)
@@ -201,6 +203,36 @@ switch (command) {
   case "triage-model": {
     const r = await modelTriage(user(), { limit: Number(values.limit ?? 300), log: (s) => console.error(s) });
     console.log(`model triage (${r.model}): judged ${r.judged}: ${r.yes} fit → match, ${r.no} not fit → reject, ${r.unsure} unsure`);
+    break;
+  }
+  case "reconcile": {
+    // Applications left unconfirmed whose employer has since emailed a receipt become confirmed.
+    const u = user();
+    const ledger = ledgerOf(u.dir);
+    const open = ledger.latest().filter((e) => e.state === "unconfirmed");
+    if (!open.length || !gmailConfigured()) {
+      console.log(open.length ? "Gmail is not authorized; nothing checked" : "no unconfirmed applications");
+      break;
+    }
+    const mail = await recentHeaders("newer_than:30d -in:sent (subject:application OR subject:applying OR subject:applied)", 400);
+    for (const e of open) {
+      const submitted = ledger.history(e.key).findLast((x) => x.state === "submitted")?.at ?? e.at;
+      const plan = (() => {
+        try {
+          return JSON.parse(readFileSync(join(e.runDir, "plan.json"), "utf8")) as { form?: { company?: string } };
+        } catch {
+          return {};
+        }
+      })();
+      const company = plan.form?.company ?? "";
+      const hit = company ? receiptFor(company, submitted, mail) : undefined;
+      if (!hit) {
+        console.log(`still unconfirmed: ${e.key}${company ? ` (${company})` : ""}`);
+        continue;
+      }
+      ledger.transition(e.key, "confirmed", e.runDir, { email: hit });
+      console.log(`confirmed by email: ${company}: "${hit.subject}" (${hit.date})`);
+    }
     break;
   }
   case "holds": {

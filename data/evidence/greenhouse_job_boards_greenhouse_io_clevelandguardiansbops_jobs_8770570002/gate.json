@@ -1,8 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Cover Letter\": no document for this upload",
-    "required \"Please describe a past project you've worked on that is representative of your problem solving and technical skillset. If you have documentation of this project (GitHub repository, blog post, PDF of a writeup, etc.), please link to it or attach it below. This project could be related to baseball, but does not need to be. (100-300 words)\": sensitive question with no exact answer",
-    "required \"Please describe a past project you've worked on that is representative of your problem solving and technical skillset. If you have documentation of this project (GitHub repository, blog post, PDF of a writeup, etc.), please link to it or attach it below. This project could be related to baseball, but does not need to be. (100-300 words)\" is empty after filling"
-  ]
+  "decision": "submit"
 }

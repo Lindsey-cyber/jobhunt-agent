@@ -935,7 +935,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_38372188002",
         "label": "What is your current notice period?",
@@ -949,7 +949,13 @@
           "3+ Months"
         ]
       },
-      "reason": "answer \"2 weeks\" matches none of the options"
+      "value": "1 Month",
+      "source": {
+        "type": "profile",
+        "path": "noticePeriodWeeks"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

@@ -212,3 +212,22 @@ export async function waitForEmailLink(host: string, since: Date, timeoutMs = 18
   }
   return undefined;
 }
+
+// Subjects, senders and dates of recent messages matching a query. Read-only.
+export async function recentHeaders(query: string, max = 200): Promise<{ subject: string; sender: string; date: string }[]> {
+  const token = await accessToken();
+  const get = async <T>(url: string) => (await (await fetch(url, { headers: { authorization: `Bearer ${token}` } })).json()) as T;
+  const out = [];
+  let page: string | undefined;
+  do {
+    const q = new URLSearchParams({ q: query, maxResults: "100", ...(page ? { pageToken: page } : {}) });
+    const list = await get<{ messages?: { id: string }[]; nextPageToken?: string }>(`${API}/messages?${q}`);
+    for (const { id } of list.messages ?? []) {
+      const m = await get<GmailMessage>(`${API}/messages/${id}?format=metadata&metadataHeaders=Subject&metadataHeaders=From`);
+      const a = toAlert(m);
+      out.push({ subject: a.subject, sender: a.sender, date: a.date });
+    }
+    page = list.nextPageToken;
+  } while (page && out.length < max);
+  return out;
+}

@@ -782,7 +782,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "cover_letter",
         "label": "Cover Letter",
@@ -790,10 +790,16 @@
         "required": true,
         "options": []
       },
-      "reason": "no document for this upload"
+      "value": "/home/user/jobhunt-agent/data/cover-letters/cleveland-guardians-baseball-operations.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.coverLetters"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_38264021002",
         "label": "Please describe a past project you've worked on that is representative of your problem solving and technical skillset. If you have documentation of this project (GitHub repository, blog post, PDF of a writeup, etc.), please link to it or attach it below. This project could be related to baseball, but does not need to be. (100-300 words)",
@@ -801,7 +807,14 @@
         "required": true,
         "options": []
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "At the InnoX Academy robotics lab I built the real-time vision pipeline for an autonomous badminton-training robot. The robot had to see the court, the player and the shuttlecock, and react in time to be useful. I integrated YOLOv8 player detection, pose estimation, shuttlecock tracking and court localization into one pipeline running at 20+ FPS, then added stereo 3D shuttlecock tracking and landing-point prediction so the robot could anticipate where the shuttle would come down. The hardware was a Raspberry Pi, so speed was a constraint throughout: I deployed the models with ONNX Runtime and quantization and moved video handling to an asynchronous pipeline, which reduced inference latency by 8%. I also integrated a locally hosted language model (Ollama) to map voice commands to robot control actions. The problem-solving pattern I would bring to baseball R&D is the same: turn raw tracking data and video into a model that predicts what happens next, test it against what actually happened, and package it so the people who make decisions can use it. More of my work is on GitHub: github.com/Lindsey-cyber",
+      "source": {
+        "type": "bank",
+        "id": "guardians-project",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "skip",

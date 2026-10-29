@@ -47,6 +47,8 @@ sync "Discovery" || status=1
 
 # Apply manager: submit what the candidate approved (and, with triage on auto, every match), within the daily cap.
 jh apply-approved || status=1
+# Receipts that arrived by email for applications whose confirmation page never showed.
+jh reconcile || status=1
 sync "Applications" || status=1
 # Postings' own questions: draft from the resume, then retry what they held.
 if [ -n "${OPENAI_API_KEY:-}" ]; then

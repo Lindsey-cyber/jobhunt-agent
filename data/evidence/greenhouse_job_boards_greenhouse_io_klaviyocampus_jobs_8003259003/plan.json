@@ -1607,7 +1607,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_32891361003",
         "label": "What is your anticipated graduation month/year?",
@@ -1628,10 +1628,16 @@
           "Other"
         ]
       },
-      "reason": "answer \"05/2026\" matches none of the options"
+      "value": "May 2026",
+      "source": {
+        "type": "profile",
+        "path": "education[0].gradYear"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_32891362003",
         "label": "What is your GPA?",
@@ -1650,7 +1656,13 @@
           "4+"
         ]
       },
-      "reason": "answer \"3.71\" matches none of the options"
+      "value": "3.5 - 3.74",
+      "source": {
+        "type": "profile",
+        "path": "education[0].gpa"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

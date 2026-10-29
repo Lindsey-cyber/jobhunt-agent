@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -149,6 +149,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_32891361003",
+      "label": "What is your anticipated graduation month/year?",
+      "expected": "May 2026",
+      "actual": "May 2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32891362003",
+      "label": "What is your GPA?",
+      "expected": "3.5 - 3.74",
+      "actual": "3.5 - 3.74",
+      "pass": true
+    },
+    {
       "fieldId": "question_32891363003",
       "label": "How many prior internship(s) and/or co-op(s) have you completed in software engineering, AI, machine learning or related fields?",
       "expected": "None",
@@ -191,9 +205,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "What is your anticipated graduation month/year?",
-    "What is your GPA?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

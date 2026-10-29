@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -107,6 +107,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_38372188002",
+      "label": "What is your current notice period?",
+      "expected": "1 Month",
+      "actual": "1 Month",
+      "pass": true
+    },
+    {
       "fieldId": "question_38372189002",
       "label": "If needed, are you willing to relocate for this opportunity?",
       "expected": "Yes",
@@ -114,8 +121,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "What is your current notice period?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

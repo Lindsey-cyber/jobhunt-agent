@@ -37,6 +37,8 @@ restrictiveAgreements: false
 acknowledgePrivacyPolicies: true
 # The candidate (2026-10-29): may accept application Terms and Conditions (every Workday form requires it).
 acceptApplicationTerms: true
+# The candidate (2026-10-29): may type her name and the date on the voluntary disability self-identification form.
+signSelfIdentificationForms: true
 # The candidate (2026-10-28): salary expectation for "expected salary" questions.
 salaryExpectation: $100K–$150K
 workAuthorization:

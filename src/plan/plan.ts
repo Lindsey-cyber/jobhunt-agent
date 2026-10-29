@@ -151,6 +151,11 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   // A checkbox list (Workday's race/ethnicity) is matched like a radio group.
   const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0) || (field.kind === "checkbox" && field.options.length > 1);
   if (!hasOptions) {
+    // "decline" (and the EEO yes/no tokens) are choices, not text: typed into a search box
+    // whose options never loaded they select whatever comes first (Crowe's race list).
+    if (field.kind !== "text" && field.kind !== "textarea" && candidate.source.type === "profile" && candidate.source.path.startsWith("eeo.")) {
+      return unanswered(field, "the field's choices did not load");
+    }
     const confidence = field.kind === "combobox" ? Math.min(candidate.confidence, 0.8) : candidate.confidence;
     // A box with a character limit keeps the whole sentences that fit; a value that cannot be cut so is held.
     if (field.maxLength && candidate.value.length > field.maxLength) {

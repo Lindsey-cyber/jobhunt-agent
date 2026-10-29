@@ -483,9 +483,11 @@
       {
         "id": "f9bb932abbe810015d80650828f40002",
         "label": "Are you currently authorized to work lawfully in the U.S.?",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "Yes"
+        ]
       },
       {
         "id": "f9bb932abbe810015d80650828f40005",
@@ -496,6 +498,13 @@
           "Yes",
           "No"
         ]
+      },
+      {
+        "id": "f9bb932abbe810015d8065a2067e0002",
+        "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
       },
       {
         "id": "f9bb932abbe810015d8065a2067e0003",
@@ -513,7 +522,6 @@
         "kind": "select",
         "required": true,
         "options": [
-          "Yes",
           "No"
         ]
       },
@@ -526,13 +534,6 @@
           "Opt In",
           "Opt Out"
         ]
-      },
-      {
-        "id": "f9bb932abbe810015d8065a2067e0002",
-        "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
-        "kind": "textarea",
-        "required": true,
-        "options": []
       },
       {
         "id": "gender",
@@ -1261,16 +1262,18 @@
       "field": {
         "id": "f9bb932abbe810015d80650828f40002",
         "label": "Are you currently authorized to work lawfully in the U.S.?",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "Yes"
+        ]
       },
       "value": "Yes",
       "source": {
         "type": "profile",
         "path": "workAuthorization.authorizedCountries"
       },
-      "confidence": 0.8,
+      "confidence": 1,
       "sensitive": true
     },
     {
@@ -1284,6 +1287,23 @@
           "Yes",
           "No"
         ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f9bb932abbe810015d8065a2067e0002",
+        "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
       },
       "value": "Yes",
       "source": {
@@ -1322,7 +1342,6 @@
         "kind": "select",
         "required": true,
         "options": [
-          "Yes",
           "No"
         ]
       },
@@ -1358,23 +1377,6 @@
     {
       "status": "fill",
       "field": {
-        "id": "f9bb932abbe810015d8065a2067e0002",
-        "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
-        "kind": "textarea",
-        "required": true,
-        "options": []
-      },
-      "value": "Yes",
-      "source": {
-        "type": "profile",
-        "path": "workAuthorization.needsSponsorship"
-      },
-      "confidence": 1,
-      "sensitive": true
-    },
-    {
-      "status": "blocked",
-      "field": {
         "id": "gender",
         "label": "Please select your gender.",
         "kind": "select",
@@ -1385,7 +1387,13 @@
           "Male"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "Choose not to Disclose",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -1446,7 +1454,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "acceptTermsAndAgreements",
         "label": "Confirm Consent",
@@ -1456,7 +1464,13 @@
           "Confirm Consent*"
         ]
       },
-      "reason": "acknowledgements and consents need the candidate"
+      "value": "Confirm Consent*",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

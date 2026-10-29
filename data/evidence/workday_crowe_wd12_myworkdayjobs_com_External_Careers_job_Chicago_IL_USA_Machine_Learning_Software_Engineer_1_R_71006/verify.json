@@ -142,6 +142,13 @@
       "pass": true
     },
     {
+      "fieldId": "f9bb932abbe810015d8065a2067e0002",
+      "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "f9bb932abbe810015d8065a2067e0003",
       "label": "Do you plan to pursue a CPA?",
       "expected": "No",
@@ -163,10 +170,10 @@
       "pass": true
     },
     {
-      "fieldId": "f9bb932abbe810015d8065a2067e0002",
-      "label": "If you believe you will require sponsorship of any kind in the future, please provide a detailed explanation about your current status and what type of sponsorship you would need.",
-      "expected": "Yes",
-      "actual": "Yes",
+      "fieldId": "gender",
+      "label": "Please select your gender.",
+      "expected": "Choose not to Disclose",
+      "actual": "Choose not to Disclose",
       "pass": true
     },
     {
@@ -189,12 +196,16 @@
       "expected": "No",
       "actual": "No",
       "pass": true
+    },
+    {
+      "fieldId": "acceptTermsAndAgreements",
+      "label": "Confirm Consent",
+      "expected": "Confirm Consent*",
+      "actual": "Confirm Consent*",
+      "pass": true
     }
   ],
-  "emptyRequired": [
-    "Please select your gender.",
-    "Confirm Consent"
-  ],
+  "emptyRequired": [],
   "fillErrors": [
     "Please select the race/ethnicity which most accurately describes how you identify yourself: \"decline\" did not stick in the dropdown"
   ]

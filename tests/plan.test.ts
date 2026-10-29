@@ -456,4 +456,9 @@ describe("buildPlan", () => {
     const f = field("Are you currently legally authorized to work in the United States? Please select any that apply:", { kind: "checkbox", options: opts });
     expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: opts[1] });
   });
+
+  it("never types an EEO choice into a list whose options did not load", () => {
+    const f = { ...field("Please select the race/ethnicity which most accurately describes how you identify yourself", { kind: "checkbox", options: [] }), required: true };
+    expect(buildPlan(form([f]), { ...user.profile, eeo: { ...user.profile.eeo, race: "decline" } }, user.bank).items[0]).toMatchObject({ status: "blocked" });
+  });
 });

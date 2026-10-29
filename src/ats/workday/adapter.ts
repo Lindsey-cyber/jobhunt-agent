@@ -102,6 +102,10 @@ export const workday: AtsAdapter = {
 
   async prepare(page, account, helpers) {
     await waitSettled(page);
+    // A removed posting (AT&T): "The page you are looking for doesn't exist."
+    if (await page.getByText(/page you are looking for doesn.t exist|this job (posting )?is no longer available|job you are looking for is no longer/i).first().isVisible().catch(() => false)) {
+      throw new Error("the posting is closed (Workday says the page does not exist)");
+    }
     const accept = auto(page, "legalNoticeAcceptButton");
     if (await accept.isVisible().catch(() => false)) await accept.click();
 

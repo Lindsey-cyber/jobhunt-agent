@@ -28,36 +28,111 @@
         "kind": "select",
         "required": true,
         "options": [
-          "Finland"
+          "United States of America"
         ]
       },
       {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
         "options": []
       },
       {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
       },
       {
         "id": "addressLine1",
-        "label": "Street Name",
+        "label": "Address Line 1",
         "kind": "text",
         "required": false,
         "options": []
       },
       {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
+        "id": "addressLine2",
+        "label": "Address Line 2",
         "kind": "text",
         "required": false,
         "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
       },
       {
         "id": "postalCode",
@@ -100,6 +175,128 @@
       {
         "id": "extension",
         "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "schoolName",
+        "label": "School or University",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "GED",
+          "High School",
+          "Associates",
+          "Bachelors",
+          "Masters",
+          "Doctorate",
+          "JD"
+        ]
+      },
+      {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "gradeAverage",
+        "label": "Overall Result (GPA)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "firstYearAttended",
+        "label": "From",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "lastYearAttended",
+        "label": "To (Actual or Expected)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "linkedInAccount",
+        "label": "Share your LinkedIn Profile site",
         "kind": "text",
         "required": false,
         "options": []
@@ -147,34 +344,46 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "country",
         "label": "Country",
         "kind": "select",
         "required": true,
         "options": [
-          "Finland"
+          "United States of America"
         ]
       },
-      "reason": "answer \"United States\" matches none of the options"
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
       "field": {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -188,26 +397,134 @@
       "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
         "id": "addressLine1",
-        "label": "Street Name",
+        "label": "Address Line 1",
         "kind": "text",
         "required": false,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
+        "id": "addressLine2",
+        "label": "Address Line 2",
         "kind": "text",
         "required": false,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Apt 3BS",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line2"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -307,6 +624,235 @@
         "options": []
       },
       "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Research Assistant (ML)",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "schoolName",
+        "label": "School or University",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "GED",
+          "High School",
+          "Associates",
+          "Bachelors",
+          "Masters",
+          "Doctorate",
+          "JD"
+        ]
+      },
+      "value": "Masters",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "gradeAverage",
+        "label": "Overall Result (GPA)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "firstYearAttended",
+        "label": "From",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "lastYearAttended",
+        "label": "To (Actual or Expected)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "linkedInAccount",
+        "label": "Share your LinkedIn Profile site",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

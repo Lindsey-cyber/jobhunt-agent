@@ -1843,7 +1843,7 @@
       "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -1859,7 +1859,13 @@
           "Decline To Self Identify"
         ]
       },
-      "reason": "declined through the Hispanic/Latino question, which hides race"
+      "value": "Decline To Self Identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
     }
   ]
 }

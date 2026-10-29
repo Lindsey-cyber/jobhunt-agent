@@ -16,10 +16,52 @@
       "pass": true
     },
     {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
       "fieldId": "legalName--lastName",
-      "label": "Family Name",
+      "label": "Last Name",
       "expected": "Ma",
       "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine2",
+      "label": "Address Line 2",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
       "pass": true
     },
     {
@@ -56,10 +98,61 @@
       "expected": "9786681426",
       "actual": "9786681426",
       "pass": true
+    },
+    {
+      "fieldId": "jobTitle",
+      "label": "Job Title",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
+      "pass": true
+    },
+    {
+      "fieldId": "location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "schoolName",
+      "label": "School or University",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree",
+      "label": "Degree",
+      "expected": "Masters",
+      "actual": "Masters",
+      "pass": true
+    },
+    {
+      "fieldId": "fieldOfStudy",
+      "label": "Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "Share your LinkedIn Profile site",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Given Name(s)"
+    "Company",
+    "From",
+    "To"
   ],
   "fillErrors": []
 }

@@ -95,6 +95,10 @@ async function chooseInListbox(page: Page, b: Locator, value: string): Promise<v
   if (!(await shows())) throw new Error(`"${value}" did not stick in the dropdown`);
 }
 
+// The account form's button: named for its action, or a plain "Submit" (NVIDIA).
+const formButton = (page: Page, name: string) =>
+  page.locator(`[data-automation-id="click_filter"][aria-label*="${name}" i]`).or(page.locator('[data-automation-id="click_filter"][aria-label="Submit"]')).first();
+
 export const workday: AtsAdapter = {
   name: "workday",
 
@@ -121,11 +125,22 @@ export const workday: AtsAdapter = {
     };
     if (await onForm()) return;
 
+    // NVIDIA opens on a chooser (Google / LinkedIn / email): the email form is behind its button.
+    const emailChooser = async () => {
+      await page.waitForTimeout(1000);
+      const byEmail = page.getByRole("button", { name: /sign in with email/i }).first();
+      if (!(await auto(page, "email").first().isVisible().catch(() => false)) && (await byEmail.isVisible().catch(() => false))) {
+        await byEmail.click();
+        await waitSettled(page);
+      }
+    };
+
     const signIn = async () => {
       if (await auto(page, "signInLink").isVisible().catch(() => false)) await auto(page, "signInLink").click();
+      await emailChooser();
       await auto(page, "email").first().fill(account.email);
       await auto(page, "password").first().fill(account.password);
-      await page.locator('[data-automation-id="click_filter"][aria-label*="Sign In" i]').first().click();
+      await formButton(page, "Sign In").click();
       await waitSettled(page);
     };
 
@@ -136,7 +151,7 @@ export const workday: AtsAdapter = {
       await auto(page, "verifyPassword").first().fill(account.password);
       const agree = auto(page, "createAccountCheckbox");
       if (await agree.isVisible().catch(() => false)) await agree.check();
-      await page.locator('[data-automation-id="click_filter"][aria-label*="Create Account" i]').first().click();
+      await formButton(page, "Create Account").click();
       await waitSettled(page);
       const said = `${await pageError(page)} ${await page.locator("body").innerText()}`;
       if (/already exists|already in use|already registered/i.test(said)) return signIn();
@@ -154,6 +169,7 @@ export const workday: AtsAdapter = {
       if (!(await onForm())) await signIn();
     };
 
+    await emailChooser();
     // The page opens on either Create Account or Sign In. Known account: sign in.
     // Otherwise create it (Workday has one account per employer site).
     await auto(page, "email").first().waitFor({ timeout: 30000 });

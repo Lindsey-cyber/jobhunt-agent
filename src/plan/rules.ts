@@ -511,7 +511,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Lyft's employment section: the most recent finished role on the resume.
     path: "workHistory",
-    pattern: /^(company name|employer name|title|job title|(start|end) date (month|year))$/,
+    pattern: /^(company|company name|employer name|title|job title|(start|end) date (month|year))$/,
     resolve: (p, label, ctx) => {
       const w = p.workHistory.filter((x) => x.start && x.end).sort((a, b) => b.end!.localeCompare(a.end!))[0];
       if (!w) return undefined;

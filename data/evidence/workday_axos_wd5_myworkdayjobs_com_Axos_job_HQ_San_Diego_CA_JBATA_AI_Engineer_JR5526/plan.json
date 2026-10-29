@@ -1,0 +1,936 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://axos.wd5.myworkdayjobs.com/Axos/job/HQ---San-Diego-CA/JBATA---AI-Engineer_JR5526/apply/applyManually",
+    "company": "Axos Bank",
+    "jobTitle": "JBATA - AI Engineer",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you worked for any Axos company, including without limitation Axos Bank (formerly known as BofI Federal Bank), Axos Clearing LLC (formerly known as COR Clearing LLC), or Axos Invest, Inc. (formerly known as WiseBanyan, Inc.)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr."
+        ]
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--social",
+        "label": "Preferred Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr."
+        ]
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "linkedInAccount",
+        "label": "Please provide your LinkedIn URL (Optional):",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "a7d9db5828251001b579a1020cb70000",
+        "label": "Are you legally permitted to work in the country where this job is located? (Are you legally authorized to work in the United States for all employers?)",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "a7d9db5828251001b579a2d0a15b0000",
+        "label": "Will you now or in the future require sponsorship for employment visa status? This includes, but is not limited to, candidates who currently have temporary work authorization, such as F-1 OPT or STEM OPT, and who may require employer sponsorship in the future.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "a7d9db5828251001b579a2d0a15b0003",
+        "label": "Do you have any relatives working for any Axos company, including without limitation Axos Bank, Axos Clearing LLC or Axos Invest, Inc.?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "a7d9db5828251001b579a2d0a15b0007",
+        "label": "What is your desired annual salary?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "a7d9db5828251001b579a36ae7b50000",
+        "label": "What is your desired total compensation?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "a7d9db5828251001b579a36ae7b50001",
+        "label": "Are you able to provide 2-3 professional references?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "a7d9db5828251001b579a36ae7b50004",
+        "label": "Have you ever been convicted of, plead guilty or no contest to, or entered into a pretrial diversion or similar program concerning, any criminal offense (e.g., a misdemeanor or a felony) involving a crime of dishonesty, breach of trust, money laundering, violence, or a violation of laws pertaining to the illegal manufacture, distribution, or possession of controlled substances? For purposes of this Application, \"dishonesty\" means directly or indirectly to cheat or defraud, to cheat or defraud for monetary gain or its equivalent, or to wrongfully take property belonging to another in violation of any criminal statute. Dishonesty includes acts involving want of integrity, lack of probity, or a disposition to distort, cheat, or act deceitfully or fraudulently, and may include crimes which federal, state, or local laws define as dishonest such as robbery, embezzlement, forgery, perjury, tax evasion, and shoplifting. \"Breach of trust\" means a wrongful act, use, misappropriation, or omission with respect to any property or funds committed to a person in a fiduciary or official capacity, or the misuse of one's official or fiduciary position to engage in a wrongful act, use, misappropriation, or omission. In answering this question, you must disclose any and all charges, irrespective of whether an appeal is pending, or a pardon granted, with regard to which (1) you were convicted with or without trial, (2) you entered a plea of guilty or nolo contendere, or (3) you accepted a plea bargain or pretrial diversion program. Do not include minor traffic violations or any convictions or pretrial diversion or similar programs that have been expunged or sealed by a court or by operation of law. As used herein, for a conviction to be considered expunged, no one, including law enforcement, can be permitted access to the record, even by court order, under the state or federal law that was the basis of the expungement. If you answered ”Yes” to this question, please note that, subject to applicable law, a criminal conviction may not automatically disqualify you from employment by Axos Bank, Axos Clearing LLC, or Axos Invest, Inc. As appropriate, factors such as the date, nature, job relatedness, and seriousness of the offense will be considered. However, you should be aware that the Federal Deposit Insurance Act provides that “. . . any person who has been convicted of any criminal offense involving dishonesty or a breach of trust, or money laundering, or has agreed to enter into a pretrial diversion or similar program in connection with a prosecution of such offense, may not... otherwise participate, directly or indirectly, in the conduct of the affairs of any insured depository institution....” You should also be aware that federal and state securities regulators and self-regulatory organizations may likewise impose certain statutory or other disqualifications from registration with regulated firms like Axos Clearing LLC and Axos Invest, Inc. based on these or similar convictions or acts.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "a7d9db5828251001b579a36ae7b50008",
+        "label": "Do you know of any reason(s) why you may not be bondable?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "a7d9db5828251001b579a4052a2f0003",
+        "label": "Have you provided true and accurate information in this application, including the information on your resume?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "San Diego, CA"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you worked for any Axos company, including without limitation Axos Bank (formerly known as BofI Federal Bank), Axos Clearing LLC (formerly known as COR Clearing LLC), or Axos Invest, Inc. (formerly known as WiseBanyan, Inc.)?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--social",
+        "label": "Preferred Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "linkedInAccount",
+        "label": "Please provide your LinkedIn URL (Optional):",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d9db5828251001b579a1020cb70000",
+        "label": "Are you legally permitted to work in the country where this job is located? (Are you legally authorized to work in the United States for all employers?)",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d9db5828251001b579a2d0a15b0000",
+        "label": "Will you now or in the future require sponsorship for employment visa status? This includes, but is not limited to, candidates who currently have temporary work authorization, such as F-1 OPT or STEM OPT, and who may require employer sponsorship in the future.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d9db5828251001b579a2d0a15b0003",
+        "label": "Do you have any relatives working for any Axos company, including without limitation Axos Bank, Axos Clearing LLC or Axos Invest, Inc.?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "relativesAtEmployers"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d9db5828251001b579a2d0a15b0007",
+        "label": "What is your desired annual salary?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d9db5828251001b579a36ae7b50000",
+        "label": "What is your desired total compensation?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d9db5828251001b579a36ae7b50001",
+        "label": "Are you able to provide 2-3 professional references?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "can-provide-references",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "a7d9db5828251001b579a36ae7b50004",
+        "label": "Have you ever been convicted of, plead guilty or no contest to, or entered into a pretrial diversion or similar program concerning, any criminal offense (e.g., a misdemeanor or a felony) involving a crime of dishonesty, breach of trust, money laundering, violence, or a violation of laws pertaining to the illegal manufacture, distribution, or possession of controlled substances? For purposes of this Application, \"dishonesty\" means directly or indirectly to cheat or defraud, to cheat or defraud for monetary gain or its equivalent, or to wrongfully take property belonging to another in violation of any criminal statute. Dishonesty includes acts involving want of integrity, lack of probity, or a disposition to distort, cheat, or act deceitfully or fraudulently, and may include crimes which federal, state, or local laws define as dishonest such as robbery, embezzlement, forgery, perjury, tax evasion, and shoplifting. \"Breach of trust\" means a wrongful act, use, misappropriation, or omission with respect to any property or funds committed to a person in a fiduciary or official capacity, or the misuse of one's official or fiduciary position to engage in a wrongful act, use, misappropriation, or omission. In answering this question, you must disclose any and all charges, irrespective of whether an appeal is pending, or a pardon granted, with regard to which (1) you were convicted with or without trial, (2) you entered a plea of guilty or nolo contendere, or (3) you accepted a plea bargain or pretrial diversion program. Do not include minor traffic violations or any convictions or pretrial diversion or similar programs that have been expunged or sealed by a court or by operation of law. As used herein, for a conviction to be considered expunged, no one, including law enforcement, can be permitted access to the record, even by court order, under the state or federal law that was the basis of the expungement. If you answered ”Yes” to this question, please note that, subject to applicable law, a criminal conviction may not automatically disqualify you from employment by Axos Bank, Axos Clearing LLC, or Axos Invest, Inc. As appropriate, factors such as the date, nature, job relatedness, and seriousness of the offense will be considered. However, you should be aware that the Federal Deposit Insurance Act provides that “. . . any person who has been convicted of any criminal offense involving dishonesty or a breach of trust, or money laundering, or has agreed to enter into a pretrial diversion or similar program in connection with a prosecution of such offense, may not... otherwise participate, directly or indirectly, in the conduct of the affairs of any insured depository institution....” You should also be aware that federal and state securities regulators and self-regulatory organizations may likewise impose certain statutory or other disqualifications from registration with regulated firms like Axos Clearing LLC and Axos Invest, Inc. based on these or similar convictions or acts.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "a7d9db5828251001b579a36ae7b50008",
+        "label": "Do you know of any reason(s) why you may not be bondable?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a7d9db5828251001b579a4052a2f0003",
+        "label": "Have you provided true and accurate information in this application, including the information on your resume?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

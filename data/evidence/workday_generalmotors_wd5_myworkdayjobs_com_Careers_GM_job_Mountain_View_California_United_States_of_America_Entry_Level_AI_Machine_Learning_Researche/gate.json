@@ -1,0 +1,10 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently working or have you previously worked as an employee, Intern, contractor, consultant, supplier for General Motors or any of its associated subsidiaries*, joint ventures*, or Dealers? (**Examples of past and current GM subsidiaries and joint ventures include but are not limited to: OnStar, Cruise, GM Financial, GM Components Holdings, GM Subsystems Manufacturing, Rochester Products Division, ACDelco, Opel, Vauxhall Motors, GM Defense, DMAX, TEI and Ultium.)\": sensitive question with no exact answer",
+    "required \"Country / Territory Phone Code\": no answer in profile or answer bank",
+    "readback mismatch on \"How Did You Hear About Us?\": expected \"LinkedIn\", got \"\"",
+    "required \"How Did You Hear About Us?\" is empty after filling",
+    "required \"Are you currently working or have you previously worked as an employee, Intern, contractor, consultant, supplier for General Motors or any of its associated subsidiaries*, joint ventures*, or Dealers? (**Examples of past and current GM subsidiaries and joint ventures include but are not limited to: OnStar, Cruise, GM Financial, GM Components Holdings, GM Subsystems Manufacturing, Rochester Products Division, ACDelco, Opel, Vauxhall Motors, GM Defense, DMAX, TEI and Ultium.)\" is empty after filling"
+  ]
+}

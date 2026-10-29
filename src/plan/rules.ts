@@ -289,7 +289,9 @@ export const PROFILE_RULES: ProfileRule[] = [
       // Bare "Have you worked at DoorDash?" only when it names the hiring company.
       const bare = /^have you (?:ever )?worked (?:at|for) (.+)$/.exec(label)?.[1];
       const company = (ctx.company ?? "").toLowerCase();
-      const named = m?.[1]?.trim() ?? (bare && company && company.split(/\s+/)[0] === bare.split(" ")[0] ? bare : undefined);
+      // Otherwise the hiring company named anywhere in the question (GM: "... worked as an employee, Intern, contractor ... for General Motors or ...").
+      const whole = company && new RegExp(`\\b${normalize(company)}\\b`).test(label) ? normalize(company) : undefined;
+      const named = m?.[1]?.trim() ?? (bare && company && company.split(/\s+/)[0] === bare.split(" ")[0] ? bare : undefined) ?? whole;
       if (!named) return undefined;
       const worked = p.workHistory.some((w) => w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase()));
       // Waymo: "Never worked at Alphabet" among current/former options.

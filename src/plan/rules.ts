@@ -368,6 +368,13 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // The candidate (2026-10-28): no other commitments; no outside work or business she would keep.
+    path: "otherCommitments",
+    pattern: /\b(outside employment|outside (professional|business) activit(y|ies)|engage in any outside)\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^no$/i.test(o.trim())),
+  },
+  {
     // "Can you perform the essential functions of the job with or without reasonable accommodation?": she reports no disability.
     path: "eeo.disability",
     pattern: /\bperform (the|these) (essential|requisite) (functions|duties)\b|\bability to perform the requisite duties\b/,

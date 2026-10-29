@@ -1,0 +1,888 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers/job/USA---Remote/Data-Scientist--Remote-_R29082-1/apply/applyManually",
+    "company": "CrowdStrike",
+    "jobTitle": "AI Research Scientist, Agentic Systems (Remote)",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Do you now or have you previously worked for CrowdStrike, Inc. or any of its subsidiaries?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "linkedInAccount",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "facebookAccount",
+        "label": "Facebook",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "twitterAccount",
+        "label": "Twitter",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "932ff5fbe6fa1001a49d69becb4e0001",
+        "label": "Why are you interested in working for CrowdStrike?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "932ff5fbe6fa1001a49d69becb4e0002",
+        "label": "Are you eligible to work in the country in which this position is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "932ff5fbe6fa1001a49d69becb4e0005",
+        "label": "Will you now or in the future require work authorization sponsorship?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "932ff5fbe6fa1001a49d6a586b870002",
+        "label": "Conflict of InterestIf hired, do you expect that you will engage in any outside employment, consulting,freelance or advisory work, board service, trade or industry group, teaching role, personallyowned business, financial interest, or other outside professional or business activity that couldreasonably conflict with CrowdStrike’s business or interfere with the responsibilities of theposition for which you are applying (excluding non-competing personal hobbies, passiveinvestments, or uncompensated civic activities that do not impact your work)?This may include an activity or interest that overlaps with your role or expected duties atCrowdStrike; overlaps with CrowdStrike’s business or offerings; creates a significant competingtime or loyalty commitment; or could involve CrowdStrike confidential information, resources, orbusiness opportunities. You do not need to disclose an activity that will end before your startdate and will leave no continuing interest, obligation, or restriction relevant to cybersecurity oryour work at CrowdStrike.A “Yes” response will not automatically disqualify you from consideration. It will allowCrowdStrike to determine whether a potential conflict exists and, if so, whether it can be avoidedor appropriately managed. This question applies only to the extent permitted by applicable law.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "932ff5fbe6fa1001a49d6a586b870005",
+        "label": "AcknowledgmentAs an AI-native company, CrowdStrike embraces the thoughtful use of AI tools in our work. During our interview process, some assessments may expressly permit the use of AI and other tools — we will make this clear upfront when that is the case.I acknowledge that unless explicitly told otherwise by my interviewer(s), I will complete all interviews and assessments through my own independent work, without assistance from generative AI, automated tools, or other external resources. Where AI use is permitted, I understand that my interviewer(s) will specify which tools are authorized and how they may be used.I understand that using unauthorized tools or resources during any stage of the interview process may result in my disqualification from consideration.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "USA - Remote; United States of America"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Do you now or have you previously worked for CrowdStrike, Inc. or any of its subsidiaries?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Research Assistant (ML)",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "01/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "linkedInAccount",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "facebookAccount",
+        "label": "Facebook",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "twitterAccount",
+        "label": "Twitter",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "932ff5fbe6fa1001a49d69becb4e0001",
+        "label": "Why are you interested in working for CrowdStrike?",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "932ff5fbe6fa1001a49d69becb4e0002",
+        "label": "Are you eligible to work in the country in which this position is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "932ff5fbe6fa1001a49d69becb4e0005",
+        "label": "Will you now or in the future require work authorization sponsorship?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "932ff5fbe6fa1001a49d6a586b870002",
+        "label": "Conflict of InterestIf hired, do you expect that you will engage in any outside employment, consulting,freelance or advisory work, board service, trade or industry group, teaching role, personallyowned business, financial interest, or other outside professional or business activity that couldreasonably conflict with CrowdStrike’s business or interfere with the responsibilities of theposition for which you are applying (excluding non-competing personal hobbies, passiveinvestments, or uncompensated civic activities that do not impact your work)?This may include an activity or interest that overlaps with your role or expected duties atCrowdStrike; overlaps with CrowdStrike’s business or offerings; creates a significant competingtime or loyalty commitment; or could involve CrowdStrike confidential information, resources, orbusiness opportunities. You do not need to disclose an activity that will end before your startdate and will leave no continuing interest, obligation, or restriction relevant to cybersecurity oryour work at CrowdStrike.A “Yes” response will not automatically disqualify you from consideration. It will allowCrowdStrike to determine whether a potential conflict exists and, if so, whether it can be avoidedor appropriately managed. This question applies only to the extent permitted by applicable law.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "932ff5fbe6fa1001a49d6a586b870005",
+        "label": "AcknowledgmentAs an AI-native company, CrowdStrike embraces the thoughtful use of AI tools in our work. During our interview process, some assessments may expressly permit the use of AI and other tools — we will make this clear upfront when that is the case.I acknowledge that unless explicitly told otherwise by my interviewer(s), I will complete all interviews and assessments through my own independent work, without assistance from generative AI, automated tools, or other external resources. Where AI use is permitted, I understand that my interviewer(s) will specify which tools are authorized and how they may be used.I understand that using unauthorized tools or resources during any stage of the interview process may result in my disqualification from consideration.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "sensitive question with no exact answer"
+    }
+  ]
+}

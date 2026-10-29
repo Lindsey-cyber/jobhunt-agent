@@ -10,21 +10,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -283,7 +286,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "candidate-location",
@@ -517,14 +521,16 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_15960941008",
         "label": "Additional profiles (e.g. GitHub, Stack Overflow)",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_15960942008",
@@ -575,7 +581,8 @@
         "label": "If you answered \"Yes\" to the question above, please enter your dates of employment. Note that your performance history may be reviewed as part of the application process.",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_15960948008",
@@ -592,28 +599,32 @@
         "label": "If you answered \"Yes\" to the question above, please enter your dates of contract engagement or work through agency.",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_15960951008",
         "label": "I certify that all of the information I have provided is correct and complete and realize that falsification or misrepresentation, including omission, on this or any other personnel record, or in the hiring process, may be grounds for refusal of employment, or if hired, may lead to disciplinary action, up to and including termination. By signing this Electronic Signature Acknowledgment Online Form, I agree that my electronic signature is the legally binding equivalent to my handwritten signature. Whenever I execute an electronic signature, it has the same validity and meaning as my handwritten signature. I will not, at any time in the future, repudiate the meaning of my electronic signature or claim that my electronic signature is not legally binding. Please sign by typing your Full Legal First, Middle Initial, and Last Name.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_15960952008",
         "label": "What is your Legal First Name?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_15960953008",
         "label": "What is your Legal Last Name?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_15960954008",
@@ -708,7 +719,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -725,7 +737,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -742,7 +755,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -1021,7 +1035,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -1320,7 +1335,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -1337,7 +1353,8 @@
         "label": "Additional profiles (e.g. GitHub, Stack Overflow)",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://github.com/Lindsey-cyber",
       "source": {
@@ -1436,7 +1453,8 @@
         "label": "If you answered \"Yes\" to the question above, please enter your dates of employment. Note that your performance history may be reviewed as part of the application process.",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1467,7 +1485,8 @@
         "label": "If you answered \"Yes\" to the question above, please enter your dates of contract engagement or work through agency.",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1478,7 +1497,8 @@
         "label": "I certify that all of the information I have provided is correct and complete and realize that falsification or misrepresentation, including omission, on this or any other personnel record, or in the hiring process, may be grounds for refusal of employment, or if hired, may lead to disciplinary action, up to and including termination. By signing this Electronic Signature Acknowledgment Online Form, I agree that my electronic signature is the legally binding equivalent to my handwritten signature. Whenever I execute an electronic signature, it has the same validity and meaning as my handwritten signature. I will not, at any time in the future, repudiate the meaning of my electronic signature or claim that my electronic signature is not legally binding. Please sign by typing your Full Legal First, Middle Initial, and Last Name.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "legal attestations need the candidate"
     },
@@ -1489,7 +1509,8 @@
         "label": "What is your Legal First Name?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -1507,7 +1528,8 @@
         "label": "What is your Legal Last Name?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {

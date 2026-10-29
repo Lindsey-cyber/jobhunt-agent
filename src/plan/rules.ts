@@ -260,6 +260,8 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, label, ctx) => {
       const m =
         /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ??
+        // HP: "Have you previously been employed by HP? If you are currently employed by HP, ..."
+        /\bpreviously been employed by (.+?)(?: if\b| as\b| in\b|$)/.exec(label) ??
         // Atlas Air: "Are you a current or former contractor or vendor representative of Atlas Air?"
         /\bcurrent or former (?:employee|contractor|consultant|intern|vendor)[a-z ]{0,40}? (?:of|at|for) (.+)$/.exec(label) ??
         /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label) ??

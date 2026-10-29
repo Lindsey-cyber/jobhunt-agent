@@ -19,6 +19,7 @@ import { serve } from "./run/serve.ts";
 import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { readCatalog } from "./store/catalog.ts";
+import { tallyHolds } from "./verify/holds.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
 import { appendLabel, paths, readBaseline, readLabels, readLatest, readTrust, writeBaseline, writeTrust } from "./store/state.ts";
@@ -39,6 +40,8 @@ const USAGE = `jh <command>
                                        score the independent auditor's blind verdicts; adjusts triage trust
   applications [--out <dir>]           page of every application: fields filled, read back, screenshot
   questions                            collect the questions holding applications into the review list, once each
+  holds                                why applications are held, grouped: needs your answer, site mechanics
+                                       (for an engineering session), or held by design
   apply-approved [--limit <n>]         submit postings you approved (fit labels) that have an adapter, within the
                                        daily cap; skips excluded employers and anything already applied to
   draft                                draft answers to postings' own questions (why this role, have you built X)
@@ -80,6 +83,16 @@ const [command, url, arg2] = positionals;
 
 const user = () => loadUserData();
 const ledgerOf = (dir: string) => new Ledger(join(dir, "ledger.jsonl"));
+
+const SAME_COMPANY_GAP_MS = 2 * 60_000;
+// Round-robin over companies so two postings at one employer are never back to back.
+function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
+  const groups = new Map<string, T[]>();
+  for (const j of jobs) groups.set(j.company, [...(groups.get(j.company) ?? []), j]);
+  const out: T[] = [];
+  while (out.length < jobs.length) for (const g of groups.values()) if (g.length) out.push(g.shift()!);
+  return out;
+}
 
 switch (command) {
   case "apply": {
@@ -133,17 +146,24 @@ switch (command) {
     const fit = [...new Map(readLabels(u.dir).map((l) => [l.key, l])).values()].filter((l) => l.label === "fit");
     const ready = fit
       .map((l) => catalog.get(l.key as JobKey))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      .filter((j): j is NonNullable<typeof j> => Boolean(j) && /^(greenhouse|lever|ashby|workday):/.test(j!.key) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         return !prior || ledger.canStart(prior.key);
       });
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
     console.log(`${ready.length} approved postings with an adapter are not yet applied to; trying up to ${limit}`);
-    for (const j of ready.slice(0, limit)) {
+    // The candidate (2026-10-29): never several applications to one company at once.
+    // Interleave companies, and leave two minutes between submissions to the same one.
+    const order = interleaveByCompany(ready.slice(0, limit));
+    const lastAt = new Map<string, number>();
+    for (const j of order) {
       if (ledger.submittedOn(new Date().toISOString().slice(0, 10)) >= u.config.dailySubmitCap) break;
+      const wait = (lastAt.get(j.company) ?? 0) + SAME_COMPANY_GAP_MS - Date.now();
+      if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       try {
         const r = await apply({ url: j.url, user: u, ledger, approved: true, job: { company: j.company, title: j.title, location: j.location } });
+        if (r.state === "submitted" || r.state === "confirmed" || r.state === "unconfirmed") lastAt.set(j.company, Date.now());
         console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
       } catch (e) {
         console.log(`${j.company} · ${j.title}: error ${(e as Error).message.split("\n")[0]}`);
@@ -158,6 +178,30 @@ switch (command) {
     const used = out.filter((o) => o.answer && !o.problems.length);
     console.log(`${used.length} of ${out.length} questions drafted and checked; the rest stay on the review list`);
     for (const o of out) console.log(`${o.problems.length ? "HELD" : "USED"}  ${o.company} · ${o.question}${o.answer ? `\n      ${o.answer}` : ""}${o.problems.length ? `\n      ${o.problems.join("; ")}` : ""}`);
+    break;
+  }
+  case "holds": {
+    const u = user();
+    const held = ledgerOf(u.dir).latest().filter((e) => e.state === "held");
+    const entries = held.map((e) => {
+      const verify = (() => {
+        try {
+          return JSON.parse(readFileSync(join(e.runDir, "verify.json"), "utf8")) as { fillErrors?: string[] };
+        } catch {
+          return {};
+        }
+      })();
+      const reasons = [...((e.detail as { reasons?: string[] } | undefined)?.reasons ?? []), ...(verify.fillErrors ?? []).map((f) => `fill error: ${f.split("\n")[0]}`)];
+      return { key: e.key, reasons };
+    });
+    const tally = tallyHolds(entries);
+    for (const cause of ["mechanic", "answer", "by_design"] as const) {
+      const rows = tally.filter((t) => t.cause === cause);
+      if (!rows.length) continue;
+      console.log(`\n${{ mechanic: "Site mechanics (engineering)", answer: "Needs your answer (jh pending)", by_design: "Held by design (yours to finish)" }[cause]}`);
+      for (const t of rows) console.log(`  ${String(t.count).padStart(3)}  ${t.reason}\n       e.g. ${t.examples.join(", ")}`);
+    }
+    console.log(`\n${held.length} held applications`);
     break;
   }
   case "status": {

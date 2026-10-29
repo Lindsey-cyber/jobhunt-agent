@@ -6,6 +6,7 @@ import { createHash, randomBytes } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join } from "node:path";
+import { unwrap } from "../discover/identity.ts";
 import type { AlertMessage } from "../discover/parse.ts";
 import { pool } from "./http.ts";
 
@@ -173,6 +174,39 @@ export async function waitForSecurityCode(company: string, since: Date, timeoutM
       if (company && !a.subject.toLowerCase().includes(company.toLowerCase())) continue;
       const code = parseSecurityCode(a.body || a.html || "");
       if (code) return code;
+    }
+    await new Promise((r) => setTimeout(r, 5000));
+  }
+  return undefined;
+}
+
+// Account-verification links (Workday): the newest email after `since` with a
+// link on `host` that verifies or activates. Read-only.
+export function verificationLink(html: string, host: string): string | undefined {
+  // Columbia's mail wraps links in urldefense.com; unwrap to the real address.
+  const links = [...html.matchAll(/href\s*=\s*"([^"]+)"/gi)].map((m) => decodeURIComponent(unwrap(m[1]!.replace(/&amp;/g, "&"))));
+  return links.find((u) => {
+    try {
+      const h = new URL(u).hostname;
+      return (h === host || h.endsWith(".myworkdayjobs.com") || h.endsWith(".myworkday.com")) && /verif|activat|confirm/i.test(u);
+    } catch {
+      return false;
+    }
+  });
+}
+
+export async function waitForEmailLink(host: string, since: Date, timeoutMs = 180_000): Promise<string | undefined> {
+  const deadline = Date.now() + timeoutMs;
+  const q = new URLSearchParams({ q: "newer_than:1d (verify OR verification OR activate OR confirm)", maxResults: "10" });
+  while (Date.now() < deadline) {
+    const token = await accessToken();
+    const get = async <T>(url: string) => (await (await fetch(url, { headers: { authorization: `Bearer ${token}` } })).json()) as T;
+    const list = await get<{ messages?: { id: string }[] }>(`${API}/messages?${q}`);
+    for (const { id } of list.messages ?? []) {
+      const a = toAlert(await get<GmailMessage>(`${API}/messages/${id}?format=full`));
+      if (Date.parse(a.date) < since.getTime() - 5000) continue;
+      const link = verificationLink(`${a.html ?? ""} ${a.body.replace(/(https?:\/\/\S+)/g, 'href="$1"')}`, host);
+      if (link) return link;
     }
     await new Promise((r) => setTimeout(r, 5000));
   }

@@ -1,3 +1,4 @@
+import { DECLINE, normalize } from "./text.ts";
 import type { FormField } from "../domain/form.ts";
 import type { Profile } from "../profile/schema.ts";
 import { usLocation } from "../discover/triage.ts";
@@ -18,10 +19,11 @@ export const ATTESTATION_OPTION = /\b(i )?(acknowledge|agree|consent|accept|unde
 // A single-option "I have read the privacy policy / notice" box. Anything that
 // also certifies answers, binds interview conduct or signs is not one.
 export const PRIVACY_NOTICE = /\bprivacy (policy|notice|statement)\b/;
+export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b/;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
 export const SENSITIVE =
-  /\b(authori[sz]ed|authori[sz]ation|eligible to work|sponsor|sponsorship|visa|citizen|citizenship|criminal|convicted|conviction|background check|disability|disabled|veteran|gender|sex|race|racial|ethnicity|hispanic|latino|previously (been )?employed|previously worked|worked (here|for) before|relatives?|related to|export control)\b/;
+  /\b(authori[sz]ed|authori[sz]ation|eligible to work|sponsor|sponsored|sponsorship|visa|citizen|citizenship|criminal|convicted|conviction|background check|disability|disabled|veteran|gender|sex|race|racial|ethnicity|hispanic|latino|previously (been )?employed|previously worked|worked (here|for) before|relatives?|related to|export control)\b/;
 
 const COUNTRIES: { name: string; pattern: RegExp }[] = [
   { name: "Canada", pattern: /\bcanada\b/ },
@@ -76,7 +78,9 @@ const firstEdu = (p: Profile) => p.education[0]!;
 
 // Ordered: the first rule whose pattern matches the normalized label wins.
 export const PROFILE_RULES: ProfileRule[] = [
-  { path: "identity.preferredName", pattern: /\bpreferred (first )?name\b/, resolve: (p) => p.identity.preferredName },
+  // Workday: an "I have a preferred name" box, ticked when the profile has one.
+  { path: "identity.preferredName", pattern: /^i have a preferred name$/, kinds: ["checkbox"], resolve: (p, label, ctx) => (p.identity.preferredName ? ctx.options?.[0] : undefined) },
+  { path: "identity.preferredName", pattern: /\bpreferred (first )?name\b/, kinds: ["text"], resolve: (p) => p.identity.preferredName },
   // "Full name" only: a bare "Name" is often an attestation signature (Lever's EEO block).
   { path: "identity.fullName", pattern: /^full (legal )?name$|\bfull legal name\b|\blegal name as it appears\b/, resolve: (p) => `${p.identity.firstName} ${p.identity.lastName}` },
   { path: "identity.lastName", pattern: /^preferred last name$/, resolve: (p) => p.identity.lastName },
@@ -100,6 +104,9 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "identity.lastName", pattern: /^(legal )?last name$|^family name$|^surname$/, resolve: (p) => p.identity.lastName },
   { path: "contact.email", pattern: /^e ?mail( address)?$/, resolve: (p) => p.contact.email },
   { path: "contact.phone", pattern: /^(phone|mobile|phone number|mobile number)$/, resolve: (p) => p.contact.phone },
+  // Workday's phone block: her number is a mobile in the US.
+  { path: "contact.phoneType", pattern: /^phone device type$/, resolve: () => "Mobile" },
+  { path: "contact.address.country", pattern: /^country phone code$/, resolve: (p) => (p.contact.address.country === "United States" ? "United States of America (+1)" : undefined) },
   { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
   { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
   { path: "contact.address.city", pattern: /^city$/, resolve: (p) => p.contact.address.city },
@@ -113,7 +120,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
   { path: "links.website", kinds: ["text"], pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },
-  { path: "education[0].school", pattern: /^(school|university|college)( name)?$/, resolve: (p) => firstEdu(p).school },
+  { path: "education[0].school", pattern: /^(school|university|college)( name)?$|^school or university$/, resolve: (p) => firstEdu(p).school },
   {
     path: "education[0].degree",
     pattern: /^degree$/,
@@ -125,19 +132,33 @@ export const PROFILE_RULES: ProfileRule[] = [
       return generic ?? degree;
     },
   },
-  { path: "education[0].major", pattern: /^(discipline|major|field of study)$/, resolve: (p) => firstEdu(p).major },
+  { path: "education[0].major", pattern: /^(discipline|major|field of study|discipline field of study|major field of study)$/, resolve: (p) => firstEdu(p).major },
+  // Ashby/Workday date pickers: the most recent degree's month and year, "05/2026".
+  {
+    path: "education[0].gradYear",
+    pattern: /^(expected |anticipated )?graduation date( or anticipated graduation date)?$/,
+    resolve: (p) => {
+      const e = firstEdu(p);
+      return e.gradMonth ? `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}` : undefined;
+    },
+  },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",
     pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b|^(u s|us|united states) work authori[sz]ation$/,
     resolve: (p, label, ctx) => {
       const country = countryIn(label, ctx);
-      return country ? yesNo(p.workAuthorization.authorizedCountries.includes(country)) : undefined;
+      if (!country) return undefined;
+      const authorized = p.workAuthorization.authorizedCountries.includes(country);
+      // ADI: "authorized to work ... on a fulltime and indefinite basis": OPT is not indefinite.
+      if (/\b(indefinite|indefinitely|permanent basis|permanently|without (any )?(restriction|sponsorship|limitation)|unrestricted)\b/.test(label)) return yesNo(authorized && !p.workAuthorization.needsSponsorship);
+      return yesNo(authorized);
     },
   },
   {
     path: "citizenship",
-    pattern: /\b(citizen of|citizenship)\b/,
+    // Sanctioned-country lists (Cuba, Iran, ...) have their own rule below.
+    pattern: /^(?!.*\bcuba\b)(?!.*\bany (one )?of (the following|these) countries\b)(?!.*\bcountr(y|ies) of citizenship\b).*\b(citizen of|citizenship)\b/,
     resolve: (p, label, ctx) => {
       const country = countryIn(label, ctx);
       return country ? yesNo(p.citizenship.includes(country)) : undefined;
@@ -151,11 +172,13 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
-    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$/,
+    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b/,
     resolve: (p, label, ctx) => {
       const m =
         /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ??
-        /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label);
+        /\b(?:worked (?:for|at)|been employed by) (.+?) (?:before|in the past|or a subsidiary|or any subsidiary)\b/.exec(label) ??
+        // ADI: "Are you now or have you previously been employed by Analog Devices Inc. (ADI) or Maxim Integrated as a ..."
+        /\bnow or have you previously been employed by (.+?) (?:as|in) a\b/.exec(label);
       // Bare "Have you worked at DoorDash?" only when it names the hiring company.
       const bare = /^have you (?:ever )?worked (?:at|for) (.+)$/.exec(label)?.[1];
       const company = (ctx.company ?? "").toLowerCase();
@@ -175,13 +198,60 @@ export const PROFILE_RULES: ProfileRule[] = [
     pattern: /^how did you (hear|learn) about /,
     resolve: (_p, _label, ctx) => {
       const opts = ctx.options ?? [];
-      if (!opts.length) return "Job board";
+      // A search box (Workday) finds "LinkedIn" as one item; job-alert emails are one of the sources.
+      if (!opts.length) return "LinkedIn";
       for (const want of [/^job ?boards?$/i, /\bjob board\b/i, /^github$/i, /^linkedin$/i, /careers? (site|page)|website/i, /^other$/i]) {
         const hit = opts.find((o) => want.test(o.trim()));
         if (hit) return hit;
       }
       return undefined;
     },
+  },
+  {
+    // "What is your highest level of education earned?": the highest completed degree, in the form's wording.
+    path: "education",
+    pattern: /\bhighest (level of )?(education|degree)\b/,
+    resolve: (p, _label, ctx) => {
+      const today = ctx.today ?? new Date().toISOString().slice(0, 7);
+      const rank = (d: string) => (/doctor|ph\.?d/i.test(d) ? 3 : /master|m\.?s\b|mba/i.test(d) ? 2 : /bachelor|b\.?a\b|b\.?s\b/i.test(d) ? 1 : 0);
+      const earned = p.education.filter((e) => `${e.gradYear}-${String(e.gradMonth).padStart(2, "0")}` <= today).sort((a, b) => rank(b.degree) - rank(a.degree))[0];
+      if (!earned) return undefined;
+      const want = ["", "bachelor", "master", "doctor"][rank(earned.degree)] ?? "";
+      return (want && (ctx.options ?? []).find((o) => normalize(o).startsWith(want))) || earned.degree;
+    },
+  },
+  {
+    // ADI: "Are you currently enrolled in an accredited degree program?": any degree ending after today.
+    path: "education",
+    pattern: /^are you (currently )?(enrolled in|pursuing) an? (accredited )?(degree|university|college) program$|^are you currently a student$/,
+    resolve: (p, _label, ctx) => {
+      const today = ctx.today ?? new Date().toISOString().slice(0, 7);
+      return yesNo(p.education.some((e) => `${e.gradYear}-${String(e.gradMonth).padStart(2, "0")}` > today));
+    },
+  },
+  {
+    // ADI: "Please add your Country of Citizenship or Countries of Citizenship if dual".
+    path: "citizenship",
+    pattern: /\bcountr(y|ies) of citizenship\b/,
+    resolve: (p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      if (!opts.length) return p.citizenship.join(", ") || undefined;
+      const hits = p.citizenship.map((c) => opts.find((o) => normalize(o) === normalize(c)) ?? opts.find((o) => normalize(o).startsWith(`${normalize(c)} `)));
+      return hits.length === 1 ? hits[0] : undefined;
+    },
+  },
+  {
+    // ADI export control: "Are you a citizen of any of the following countries: Group D (Armenia, ..., China (PRC), ...)".
+    path: "citizenship",
+    pattern: /\bcitizen of any (one )?of (the following|these) countries\b/,
+    resolve: (p, label) => yesNo(p.citizenship.some((c) => new RegExp(`\\b${normalize(c)}\\b`).test(label))),
+  },
+  {
+    // ADI: "Are you any of the following: US Citizen, Permanent resident of the United States
+    // (Green Card), or Protected person under 8 USC 1324b(a)(3)?" Needing sponsorship rules all three out.
+    path: "workAuthorization.needsSponsorship",
+    pattern: /\bus citizen\b.*\bpermanent resident\b.*\bprotected person\b/,
+    resolve: (p) => (p.citizenship.includes("United States") ? "Yes" : p.workAuthorization.needsSponsorship ? "No" : undefined),
   },
   {
     // Asana: "Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?"
@@ -258,7 +328,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "workAuthorization.needsSponsorship",
     // Pinterest: "Will you require our assistance with work authorization now or in the future?"
-    pattern: /\b(sponsorship|sponsor)\b|\bassistance with work authori[sz]ation\b/,
+    pattern: /\b(sponsorship|sponsor|sponsored)\b|\bassistance with work authori[sz]ation\b/,
     // Options that split "now" from "in the future": authorized today and
     // needing sponsorship means the future one.
     resolve: (p, _label, ctx) => {
@@ -276,10 +346,20 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   { path: "eeo.hispanicLatino", pattern: /\b(hispanic|latino)\b/, resolve: (p) => p.eeo.hispanicLatino },
   // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
-  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b/, resolve: (p) => p.eeo.gender },
-  { path: "eeo.gender", pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/, resolve: (p) => p.eeo.gender },
+  // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
+  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b/, resolve: () => "decline" },
+  // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
+  {
+    path: "eeo.gender",
+    pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/,
+    resolve: (p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      if (p.eeo.gender !== "decline" || !opts.length || opts.some((o) => DECLINE.test(normalize(o)))) return p.eeo.gender;
+      return p.eeo.genderIfRequired ?? p.eeo.gender;
+    },
+  },
   { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|\byour race\b|\brace ?\/? ?ethnic|\bethnic group\b/, resolve: (p) => p.eeo.race },
-  { path: "eeo.veteran", pattern: /\bveteran\b/, resolve: (p) => p.eeo.veteran },
+  { path: "eeo.veteran", pattern: /\bveterans?\b/, resolve: (p) => p.eeo.veteran },
   { path: "eeo.disability", pattern: /\bdisability\b/, resolve: (p) => p.eeo.disability },
 ];
 

@@ -47,6 +47,8 @@ export const Profile = z.object({
   // The candidate lets the agent tick "I have read the privacy policy" boxes.
   // Other acknowledgements (interview rules, accuracy certifications) still need her.
   acknowledgePrivacyPolicies: z.boolean().default(false),
+  // The candidate lets the agent tick an application's "I accept the Terms and Conditions".
+  acceptApplicationTerms: z.boolean().default(false),
   // The candidate's own range for "salary expectations" text questions. Current
   // or past pay and range dropdowns still go to her.
   salaryExpectation: z.string().min(1).optional(),
@@ -59,6 +61,8 @@ export const Profile = z.object({
   eeo: z
     .object({
       gender: EeoChoice,
+      // Used when a form requires a gender and offers no way to decline.
+      genderIfRequired: z.string().optional(),
       hispanicLatino: EeoChoice,
       race: EeoChoice,
       veteran: EeoChoice,
@@ -93,7 +97,7 @@ export type TrustLevel = z.infer<typeof TrustLevel>;
 
 export const Config = z.object({
   trust: TrustLevel.default("draft"),
-  autoSubmitAts: z.array(z.enum(["greenhouse", "lever", "ashby"])).default([]),
+  autoSubmitAts: z.array(z.enum(["greenhouse", "lever", "ashby", "workday"])).default([]),
   allowGeneratedAnswers: z.boolean().default(false),
   dailySubmitCap: z.number().int().min(0).default(10),
 });

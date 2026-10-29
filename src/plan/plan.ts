@@ -1,6 +1,6 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
-import { ATTESTATION_OPTION, COMPENSATION_VETO, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
+import { ATTESTATION_OPTION, COMPENSATION_VETO, TERMS_NOTICE, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
 import { jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
@@ -90,6 +90,9 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     if (profile.acknowledgePrivacyPolicies && field.options.length === 1 && PRIVACY_NOTICE.test(text) && !PRIVACY_EXCEPT.test(text)) {
       return { status: "fill", field, value: field.options[0]!, source: { type: "profile", path: "acknowledgePrivacyPolicies" }, confidence: 1, sensitive: false };
     }
+    if (profile.acceptApplicationTerms && field.options.length === 1 && TERMS_NOTICE.test(text) && !/\b(certify|accurate|signature|arbitration|non compete)\b/.test(text)) {
+      return { status: "fill", field, value: field.options[0]!, source: { type: "profile", path: "acceptApplicationTerms" }, confidence: 1, sensitive: false };
+    }
     return unanswered(field, "acknowledgements and consents need the candidate");
   }
 
@@ -103,7 +106,8 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, company: form.company, ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
   if (!candidate) return unanswered(field, sensitive ? "sensitive question with no exact answer" : "no answer in profile or answer bank");
 
-  const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0);
+  // A checkbox list (Workday's race/ethnicity) is matched like a radio group.
+  const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0) || (field.kind === "checkbox" && field.options.length > 1);
   if (!hasOptions) {
     const confidence = field.kind === "combobox" ? Math.min(candidate.confidence, 0.8) : candidate.confidence;
     return { status: "fill", field, value: candidate.value, source: candidate.source, confidence, sensitive };
@@ -115,6 +119,11 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   if (!option && field.kind === "combobox" && field.options.length >= TRUNCATED && !sensitive) {
     return { status: "fill", field, value: candidate.value, source: candidate.source, confidence: Math.min(candidate.confidence, 0.8), sensitive };
   }
+  // Workday: "United States" is listed as "United States of America".
+  const extended = !option && !sensitive ? field.options.filter((o) => normalize(o).startsWith(`${normalize(candidate.value)} `)) : [];
+  // Several ("… of America", "… Minor Outlying Islands"): the shortest is the place itself.
+  const shortest = [...extended].sort((a, b) => a.length - b.length)[0];
+  if (shortest) return { status: "fill", field, value: shortest, source: candidate.source, confidence: Math.min(candidate.confidence, 0.9), sensitive };
   if (!option) return unanswered(field, `answer "${candidate.value}" matches none of the options`);
   return {
     status: "fill",

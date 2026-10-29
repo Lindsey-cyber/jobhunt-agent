@@ -19,8 +19,20 @@ export interface VerifyReport {
 
 export type Readback = Record<string, string>;
 
+// A search box (location, school) offers the service's own wording: "New York,
+// NY, United States" for "New York, New York, United States". An option fits
+// when it is the value, extends it, or names the same first place.
+export function searchMatch(expected: string, option: string): boolean {
+  const e = normalize(expected);
+  const o = normalize(option);
+  if (!e || !o) return false;
+  if (o === e || o.startsWith(`${e} `)) return true;
+  return normalize(expected.split(",")[0]!) === normalize(option.split(",")[0]!);
+}
+
 function same(field: FormField, expected: string, actual: string, isPhone: boolean): boolean {
   if (field.kind === "file") return actual === basename(expected);
+  if (field.kind === "combobox" && field.options.length === 0) return searchMatch(expected, actual);
   if (isPhone) return expected.replace(/\D/g, "").endsWith(actual.replace(/\D/g, "")) && actual.replace(/\D/g, "").length >= 7;
   return normalize(actual) === normalize(expected);
 }

@@ -29,3 +29,11 @@ describe("Gmail API messages", () => {
     expect(parseSecurityCode("Your application was received.")).toBeUndefined();
   });
 });
+
+describe("account verification links", () => {
+  it("finds a Workday activation link behind Columbia's urldefense wrapper", async () => {
+    const { verificationLink } = await import("../src/sources/gmail.ts");
+    const html = `<a href="https://urldefense.com/v3/__https://analogdevices.wd1.myworkdayjobs.com/External/activate/abc123/?redirect=*2FExternal*2Fjob*2Fx__;JSUl!!BDUf$">link</a>`;
+    expect(verificationLink(html, "analogdevices.wd1.myworkdayjobs.com")).toBe("https://analogdevices.wd1.myworkdayjobs.com/External/activate/abc123/?redirect=/External/job/x");
+  });
+});

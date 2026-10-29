@@ -30,6 +30,9 @@ export function startFixtureServer(port = 0): Promise<FixtureServer> {
       // Lever captures: /lever/<case>/apply serves fixtures/lever/<case>.html.
       const lv = /^\/lever\/([\w-]+)\/apply$/.exec(path);
       if (lv) return send(200, "text/html", readFileSync(join(ROOT, "lever", `${lv[1]}.html`), "utf8"));
+      // Ashby captures: /ashby/<case>/application serves fixtures/ashby/<case>.html.
+      const ab = /^\/ashby\/([\w-]+)\/application$/.exec(path);
+      if (ab) return send(200, "text/html", readFileSync(join(ROOT, "ashby", `${ab[1]}.html`), "utf8"));
       const m = /^\/[\w-]+\/jobs\/([\w-]+)(\/submit|\/confirmation)?$/.exec(path);
       if (!m) return send(404, "text/plain", "not found");
       const [, name, tail] = m;

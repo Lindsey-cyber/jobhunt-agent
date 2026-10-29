@@ -35,14 +35,19 @@ education:
 restrictiveAgreements: false
 # The candidate (2026-10-28): may tick "I have read the privacy policy" boxes for her.
 acknowledgePrivacyPolicies: true
+# The candidate (2026-10-29): may accept application Terms and Conditions (every Workday form requires it).
+acceptApplicationTerms: true
 # The candidate (2026-10-28): salary expectation for "expected salary" questions.
 salaryExpectation: $100K–$150K
 workAuthorization:
   authorizedCountries: [United States]
   needsSponsorship: true
+# The candidate (2026-10-29): gender undisclosed when a form allows it, Female when it
+# requires an answer; not Hispanic or Latino; race undisclosed.
 eeo:
   gender: decline
-  hispanicLatino: decline
+  genderIfRequired: Female
+  hispanicLatino: "no"
   race: decline
   veteran: "no"
   disability: "no"

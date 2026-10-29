@@ -26,7 +26,7 @@ export function jaccard(a: string, b: string): number {
   return shared / (ta.size + tb.size - shared);
 }
 
-const DECLINE = /\b(decline|prefer not|not wish|dont wish|do not wish|choose not|not to disclose|do not disclose)\b/;
+export const DECLINE = /\b(decline|prefer not|not wish|dont wish|do not wish|choose not|not to disclose|do not disclose)\b/;
 const NOT_VETERAN = /\b(not a (protected )?veteran|am not a veteran|not a protected)\b/;
 
 export interface OptionMatch {
@@ -52,6 +52,9 @@ export function matchOption(options: string[], answer: string, sensitive: boolea
     if (want === "no" && hits.length === 0) {
       const vet = norm.flatMap((o, i) => (NOT_VETERAN.test(o) ? [i] : []));
       if (vet.length === 1) return { option: options[vet[0]!]!, confidence: 0.95 };
+      // Workday: "I identify as a veteran, just not a protected veteran" is a veteran; "I am not a veteran" is the no.
+      const plain = vet.filter((i) => /\bam not a veteran\b/.test(norm[i]!) && !/\bidentify as a veteran\b/.test(norm[i]!));
+      if (plain.length === 1) return { option: options[plain[0]!]!, confidence: 0.95 };
     }
     return null;
   }

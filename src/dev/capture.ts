@@ -1,6 +1,7 @@
 // Saves a live application form as a fixture: the DOM after it rendered, with
 // scripts, tracking and anti-forgery tokens removed so tests never call out.
 // Usage: npx tsx src/dev/capture.ts <url> <fixtures/ats/case.html> [click-selector]
+// CAPTURE_WAIT_FOR=<selector> waits for slow single-page apps (Workday) to render.
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { chromium } from "playwright";
@@ -14,6 +15,7 @@ if (click) {
   await page.locator(click).first().click();
   await page.waitForLoadState("networkidle").catch(() => undefined);
 }
+if (process.env.CAPTURE_WAIT_FOR) await page.locator(process.env.CAPTURE_WAIT_FOR).first().waitFor({ timeout: 45000 }).catch(() => console.error("wait-for selector never appeared"));
 await page.waitForTimeout(1500);
 const html = await page.evaluate(() => {
   const doc = document.documentElement.cloneNode(true) as HTMLElement;

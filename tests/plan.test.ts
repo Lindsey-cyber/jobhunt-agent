@@ -184,8 +184,47 @@ describe("buildPlan", () => {
     expect(one("Do you currently reside within the continental United States?")).toMatchObject({ status: "fill" });
   });
 
-  it("answers transgender identity from the gender choice", () => {
-    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline" as const } };
+  // From ADI's Workday form: OPT is authorization, but not indefinite authorization.
+  it("answers No to indefinite or unrestricted authorization for a candidate who needs sponsorship", () => {
+    const p = { ...user.profile, citizenship: ["China"], workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const yn = { kind: "select" as const, options: ["Yes", "No"] };
+    const one = (label: string) => buildPlan(form([field(label, yn)]), p, user.bank).items[0]!;
+    expect(one("Are you authorized to work in the United States on a fulltime and indefinite basis? If you are hired, you will be required to present documentation.")).toMatchObject({ status: "fill", value: "No" });
+    expect(one("Are you legally authorized to work in the United States?")).toMatchObject({ status: "fill", value: "Yes" });
+    expect(one("Are you a citizen of any one of these countries: Cuba, Iran, North Korea, or Syria?")).toMatchObject({ status: "fill", value: "No" });
+    expect(one("Are you a citizen of any of the following countries: Group D (Armenia, Belarus, China (PRC), Hong Kong, Vietnam)")).toMatchObject({ status: "fill", value: "Yes" });
+  });
+
+  it("answers current enrollment from degree end dates", () => {
+    const f = field("Are you currently enrolled in an accredited degree program?", { kind: "select", options: ["Yes", "No"] });
+    const done = { ...user.profile, education: [{ ...user.profile.education[0]!, gradYear: 2026, gradMonth: 5 }] };
+    expect(buildPlan(form([f]), done, user.bank).items[0]).toMatchObject({ status: "fill", value: "No" });
+    const h = field("What is your highest level of education earned?", { kind: "select", options: ["Secondary / High School", "Bachelor's Degree", "Master's Degree", "Doctorate or Equivalent"] });
+    expect(buildPlan(form([h]), done, user.bank).items[0]).toMatchObject({ status: "fill", value: "Master's Degree" });
+  });
+
+  // From ADI's Workday form: the one required box before Review.
+  it("accepts an application's Terms and Conditions only when the candidate allowed it", () => {
+    const f = field("I accept the Terms and Conditions.", { kind: "checkbox", options: ["I accept the Terms and Conditions.*"] });
+    expect(buildPlan(form([f]), user.profile, user.bank).items[0]).toMatchObject({ status: "blocked" });
+    expect(buildPlan(form([f]), { ...user.profile, acceptApplicationTerms: true }, user.bank).items[0]).toMatchObject({ status: "fill" });
+  });
+
+  it("declines gender where the form allows it and uses the required-answer fallback otherwise", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline", genderIfRequired: "Female" } };
+    const one = (options: string[]) => buildPlan(form([field("Gender", { kind: "select", options })]), p, user.bank).items[0]!;
+    expect(one(["Female", "Male", "I don't wish to answer"])).toMatchObject({ status: "fill", value: "I don't wish to answer" });
+    expect(one(["Female", "Male", "Non-Binary"])).toMatchObject({ status: "fill", value: "Female" });
+  });
+
+  it("answers Workday's veteran list with the plain not-a-veteran option", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, veteran: "no" } };
+    const options = ["I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERANS LISTED ABOVE", "I IDENTIFY AS A VETERAN, JUST NOT A PROTECTED VETERAN", "I AM NOT A VETERAN", "I DO NOT WISH TO SELF-IDENTIFY"];
+    expect(buildPlan(form([field("Veterans status", { kind: "select", options })]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "I AM NOT A VETERAN" });
+  });
+
+  it("declines transgender identity, which the candidate has not answered", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "Female" } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });
     expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "I don't wish to answer" });
   });

@@ -1,0 +1,234 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Social Media",
+      "actual": "Social Media › LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Have you previously worked for Toyota? If Yes, please respond to the questions below. If No, please continue to the next page.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "Given Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine2",
+      "label": "Address Line 2",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "regionSubdivision1",
+      "label": "County",
+      "expected": "Queens",
+      "actual": "Queens",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred Given Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "jobTitle",
+      "label": "Job Title",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
+      "pass": true
+    },
+    {
+      "fieldId": "companyName",
+      "label": "Company",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "startDate",
+      "label": "From",
+      "expected": "01/2026",
+      "actual": "01/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "endDate",
+      "label": "To",
+      "expected": "05/2026",
+      "actual": "05/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "schoolName",
+      "label": "School or University",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree",
+      "label": "Degree",
+      "expected": "Masters",
+      "actual": "Masters",
+      "pass": true
+    },
+    {
+      "fieldId": "fieldOfStudy",
+      "label": "Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "Please provide your LinkedIn profile URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "34e783e8840b1000c7fc2d80965b0000",
+      "label": "Are you 18 years old or older?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "34e783e8840b1000c7fc2e1a37660001",
+      "label": "Are you now, or have you ever been employed by, or at, any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "d4518b0c0a021000c9ee3c1ad9460000",
+      "label": "Are you legally authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "34e783e8840b1000c7fc311a97eb0002",
+      "label": "For purposes of the following question “support or sponsorship for an immigration-related employment benefit” means an H-1B visa petition, an O-1 visa petition, an E-3 visa petition, a F-1 STEM OPT, F-1 OPT, F-1 CPT, TN status and ‘job flexibility benefits’ (also known as I-140 portability or Adjustment of Status portability) for long-delayed adjustment of status applications that have been pending for 180 days or longer.Please ask us if you are uncertain whether you may need immigration sponsorship or desire clarification.Will you now or in the future require support or sponsorship for an immigration-related employment benefit?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "34e783e8840b1000c7fc31b4482e0000",
+      "label": "Are you required to be authorized by the Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS), Student and Exchange Visitor Information System (SEVIS), or your Designated School Official (DSO) prior to starting work with Toyota?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "d4518b0c0a021000c9ee3cb47b150000",
+      "label": "Are you a U.S. Citizen, U.S. National, Lawful Permanent Resident (i.e., Green Card Holder), Asylee, or Refugee?Please note that people in the classification of U.S. Citizen, U.S. National, Lawful Permanent Resident (i.e., Green Card Holder), Asylee, or Refugee are legally authorized to work permanently in the U.S. and have unrestricted U.S. work authorization. They do not need employment support or sponsorship.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you related to (including in-laws), are or were in a relationship with, or live with anyone who is employed by any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?",
+    "Are you under an agreement with a current or former employer that prohibits or impacts your ability to work for another employer?"
+  ],
+  "fillErrors": []
+}

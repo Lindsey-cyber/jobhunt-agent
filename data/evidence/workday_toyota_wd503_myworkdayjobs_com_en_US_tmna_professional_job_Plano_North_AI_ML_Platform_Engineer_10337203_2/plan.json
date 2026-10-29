@@ -1,0 +1,1176 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://toyota.wd503.myworkdayjobs.com/en-US/tmna_professional/job/Plano-North/AI-ML-Platform-Engineer_10337203-2/apply/applyManually",
+    "company": "Toyota",
+    "jobTitle": "AI/ML Platform Engineer",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Colleges & Universities",
+          "Company Website",
+          "Co-Op",
+          "Job Board",
+          "Job Fair",
+          "Professional Associations",
+          "Referral",
+          "Social Media",
+          "Staffing Agency",
+          "Website"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously worked for Toyota? If Yes, please respond to the questions below. If No, please continue to the next page.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "Given Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "regionSubdivision1",
+        "label": "County",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred Given Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "schoolName",
+        "label": "School or University",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "CEGEP",
+          "Diploma",
+          "GED",
+          "High School",
+          "Trade School",
+          "Associate of Science",
+          "Associate of Engineering",
+          "Associate of Business Admin",
+          "Associate of Applied Science",
+          "Associate of Arts",
+          "Associates",
+          "Bachelor of Commerce",
+          "Bachelor of Math",
+          "Bachelor of Theology",
+          "Bachelor of Science - Law",
+          "Bachelor of Science",
+          "Bachelor of Fine Arts",
+          "Bachelor of Engineering",
+          "Bachelor of Business Admin",
+          "Bachelor of Arts",
+          "Bachelors",
+          "Master of Theology",
+          "Master of Science - Law",
+          "Master of Science",
+          "Master of Mechanical Enginrg",
+          "Master of Fine Arts",
+          "Master of Electrical Enginrg",
+          "Master of Education",
+          "Master of Engineering",
+          "Master of Divinity",
+          "Master of Business Admin",
+          "Master of Arts",
+          "Masters",
+          "Doctor of Science",
+          "Doctor of Philosophy",
+          "Doctor of Medicine",
+          "Juris Doctor",
+          "Doctor of Education",
+          "Doctor of Business Admin",
+          "Doctorate"
+        ]
+      },
+      {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "linkedInAccount",
+        "label": "Please provide your LinkedIn profile URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "34e783e8840b1000c7fc2d80965b0000",
+        "label": "Are you 18 years old or older?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "34e783e8840b1000c7fc2e1a37660001",
+        "label": "Are you now, or have you ever been employed by, or at, any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "34e783e8840b1000c7fc2eb3e6900001",
+        "label": "Are you related to (including in-laws), are or were in a relationship with, or live with anyone who is employed by any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "34e783e8840b1000c7fc2f4d93cc0000",
+        "label": "Are you under an agreement with a current or former employer that prohibits or impacts your ability to work for another employer?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "d4518b0c0a021000c9ee3c1ad9460000",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "34e783e8840b1000c7fc311a97eb0002",
+        "label": "For purposes of the following question “support or sponsorship for an immigration-related employment benefit” means an H-1B visa petition, an O-1 visa petition, an E-3 visa petition, a F-1 STEM OPT, F-1 OPT, F-1 CPT, TN status and ‘job flexibility benefits’ (also known as I-140 portability or Adjustment of Status portability) for long-delayed adjustment of status applications that have been pending for 180 days or longer.Please ask us if you are uncertain whether you may need immigration sponsorship or desire clarification.Will you now or in the future require support or sponsorship for an immigration-related employment benefit?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "34e783e8840b1000c7fc31b4482e0000",
+        "label": "Are you required to be authorized by the Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS), Student and Exchange Visitor Information System (SEVIS), or your Designated School Official (DSO) prior to starting work with Toyota?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "d4518b0c0a021000c9ee3cb47b150000",
+        "label": "Are you a U.S. Citizen, U.S. National, Lawful Permanent Resident (i.e., Green Card Holder), Asylee, or Refugee?Please note that people in the classification of U.S. Citizen, U.S. National, Lawful Permanent Resident (i.e., Green Card Holder), Asylee, or Refugee are legally authorized to work permanently in the U.S. and have unrestricted U.S. work authorization. They do not need employment support or sponsorship.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Plano, TX"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Colleges & Universities",
+          "Company Website",
+          "Co-Op",
+          "Job Board",
+          "Job Fair",
+          "Professional Associations",
+          "Referral",
+          "Social Media",
+          "Staffing Agency",
+          "Website"
+        ]
+      },
+      "value": "Social Media",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Have you previously worked for Toyota? If Yes, please respond to the questions below. If No, please continue to the next page.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "Given Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Apt 3BS",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line2"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "regionSubdivision1",
+        "label": "County",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Queens",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.county"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred Given Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Research Assistant (ML)",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "01/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "schoolName",
+        "label": "School or University",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "CEGEP",
+          "Diploma",
+          "GED",
+          "High School",
+          "Trade School",
+          "Associate of Science",
+          "Associate of Engineering",
+          "Associate of Business Admin",
+          "Associate of Applied Science",
+          "Associate of Arts",
+          "Associates",
+          "Bachelor of Commerce",
+          "Bachelor of Math",
+          "Bachelor of Theology",
+          "Bachelor of Science - Law",
+          "Bachelor of Science",
+          "Bachelor of Fine Arts",
+          "Bachelor of Engineering",
+          "Bachelor of Business Admin",
+          "Bachelor of Arts",
+          "Bachelors",
+          "Master of Theology",
+          "Master of Science - Law",
+          "Master of Science",
+          "Master of Mechanical Enginrg",
+          "Master of Fine Arts",
+          "Master of Electrical Enginrg",
+          "Master of Education",
+          "Master of Engineering",
+          "Master of Divinity",
+          "Master of Business Admin",
+          "Master of Arts",
+          "Masters",
+          "Doctor of Science",
+          "Doctor of Philosophy",
+          "Doctor of Medicine",
+          "Juris Doctor",
+          "Doctor of Education",
+          "Doctor of Business Admin",
+          "Doctorate"
+        ]
+      },
+      "value": "Masters",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "linkedInAccount",
+        "label": "Please provide your LinkedIn profile URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "34e783e8840b1000c7fc2d80965b0000",
+        "label": "Are you 18 years old or older?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "over-18",
+        "origin": "human"
+      },
+      "confidence": 0.7714285714285714,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "34e783e8840b1000c7fc2e1a37660001",
+        "label": "Are you now, or have you ever been employed by, or at, any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "34e783e8840b1000c7fc2eb3e6900001",
+        "label": "Are you related to (including in-laws), are or were in a relationship with, or live with anyone who is employed by any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "34e783e8840b1000c7fc2f4d93cc0000",
+        "label": "Are you under an agreement with a current or former employer that prohibits or impacts your ability to work for another employer?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "d4518b0c0a021000c9ee3c1ad9460000",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "34e783e8840b1000c7fc311a97eb0002",
+        "label": "For purposes of the following question “support or sponsorship for an immigration-related employment benefit” means an H-1B visa petition, an O-1 visa petition, an E-3 visa petition, a F-1 STEM OPT, F-1 OPT, F-1 CPT, TN status and ‘job flexibility benefits’ (also known as I-140 portability or Adjustment of Status portability) for long-delayed adjustment of status applications that have been pending for 180 days or longer.Please ask us if you are uncertain whether you may need immigration sponsorship or desire clarification.Will you now or in the future require support or sponsorship for an immigration-related employment benefit?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "34e783e8840b1000c7fc31b4482e0000",
+        "label": "Are you required to be authorized by the Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS), Student and Exchange Visitor Information System (SEVIS), or your Designated School Official (DSO) prior to starting work with Toyota?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "d4518b0c0a021000c9ee3cb47b150000",
+        "label": "Are you a U.S. Citizen, U.S. National, Lawful Permanent Resident (i.e., Green Card Holder), Asylee, or Refugee?Please note that people in the classification of U.S. Citizen, U.S. National, Lawful Permanent Resident (i.e., Green Card Holder), Asylee, or Refugee are legally authorized to work permanently in the U.S. and have unrestricted U.S. work authorization. They do not need employment support or sponsorship.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    }
+  ]
+}

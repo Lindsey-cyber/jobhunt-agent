@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you related to (including in-laws), are or were in a relationship with, or live with anyone who is employed by any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?\": sensitive question with no exact answer",
+    "required \"Are you under an agreement with a current or former employer that prohibits or impacts your ability to work for another employer?\": no answer in profile or answer bank",
+    "required \"Are you related to (including in-laws), are or were in a relationship with, or live with anyone who is employed by any Toyota entity, affiliate or subsidiary, or any dealer of Toyota or Lexus products?\" is empty after filling",
+    "required \"Are you under an agreement with a current or former employer that prohibits or impacts your ability to work for another employer?\" is empty after filling"
+  ]
+}

@@ -6,7 +6,8 @@ import { usLocation } from "../discover/triage.ts";
 export const VETO: { pattern: RegExp; reason: string }[] = [
   { pattern: /\b(salary|compensation|pay expectation|desired pay|expected pay)\b/, reason: "compensation is never filled automatically" },
   { pattern: /\bemergency contact\b/, reason: "emergency contacts are someone else's data" },
-  { pattern: /\breferences?\b/, reason: "references are someone else's data" },
+  // Names and contacts of references are someone else's; "Are you able to provide references?" is hers (yes/no).
+  { pattern: /^(?!.*\b(are you able|can you|will you be able|willing) to provide\b).*\breferences?\b/, reason: "references are someone else's data" },
   { pattern: /\b(signature|attest|certify)\b/, reason: "legal attestations need the candidate" },
 ];
 

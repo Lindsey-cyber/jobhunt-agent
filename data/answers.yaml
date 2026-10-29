@@ -445,3 +445,12 @@ answers:
       - "Are you currently engaged in any outside employment or activity that you would like to continue if you are hired by Mastercard? [Examples of outside employment/activities include paid employment or other lawful money-making (cash or cash equivalent) activity that will not be part of your official role at Mastercard; service on the board of directors or an advisory board of any entity (including non-profit), even if the position is unpaid; and service (paid or unpaid) in any national, state, provincial, regional, or local government, including any government department, ministry, agency, authority, commission, legislature, council, other public body (such as the World Bank or other public international organization), or state-owned enterprise.]"
     answer: "No"
     origin: human
+  # Inferred (standing permission, 2026-10-29): she can name references (her research supervisors and managers).
+  - id: can-provide-references
+    question: Are you able to provide 2-3 professional references?
+    aliases:
+      - Are you able to provide professional references?
+      - Can you provide references upon request?
+      - Will you be able to provide references?
+    answer: "Yes"
+    origin: human

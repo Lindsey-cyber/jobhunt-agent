@@ -427,3 +427,21 @@ answers:
     answer: "0"
     company: SambaNova Systems
     origin: human
+  # Inferred (standing permission, 2026-10-29): Mastercard's conflict-of-interest questions. Her roles are research and
+  # engineering, she knows no one at any company, and has no government role or outside activity to keep.
+  - id: mastercard-contracts
+    question: In your current role, do you engage with Mastercard employees to negotiate, influence and/or sign commercial contracts or government contracts?
+    aliases:
+      - Are you related to anyone who has the authority to influence and/or sign commercial contracts or government contracts with Mastercard?
+      - Are you or were you recently (in the last six months) an employee of a government office or agency that has oversight over Mastercard?
+      - Are you related to anyone who is an employee of a government office or agency that has oversight over Mastercard?
+    answer: "No"
+    company: Mastercard
+    origin: human
+  - id: outside-employment
+    question: Are you currently engaged in any outside employment or activity that you would like to continue if you are hired by Mastercard?
+    aliases:
+      - Are you currently engaged in any outside employment or activity that you would like to continue if hired?
+      - "Are you currently engaged in any outside employment or activity that you would like to continue if you are hired by Mastercard? [Examples of outside employment/activities include paid employment or other lawful money-making (cash or cash equivalent) activity that will not be part of your official role at Mastercard; service on the board of directors or an advisory board of any entity (including non-profit), even if the position is unpaid; and service (paid or unpaid) in any national, state, provincial, regional, or local government, including any government department, ministry, agency, authority, commission, legislature, council, other public body (such as the World Bank or other public international organization), or state-owned enterprise.]"
+    answer: "No"
+    origin: human

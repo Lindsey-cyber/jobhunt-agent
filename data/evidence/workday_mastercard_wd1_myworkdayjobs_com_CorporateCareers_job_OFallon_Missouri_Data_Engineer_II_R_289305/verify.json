@@ -93,6 +93,13 @@
       "pass": true
     },
     {
+      "fieldId": "802e7dac252910014df41dfe15110000",
+      "label": "Are you NOW legally authorized to work in the country where the position you are applying for is located?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "802e7dac252910014df41e9811360000",
       "label": "Do you now, or will you in the future, require sponsorship for an employment visa in the country where the position you are applying for is located?",
       "expected": "Yes",
@@ -119,10 +126,21 @@
       "expected": "$100K–$150K",
       "actual": "$100K–$150K",
       "pass": true
+    },
+    {
+      "fieldId": "8131e020187d1000ba7c2bf4e1cc0002",
+      "label": "Do you have a close personal relationship with a current Mastercard employee? [Examples of close personal relationships include relatives (parent, grandparent, child, sibling, spouse, significant other, domestic partner, common law spouse, aunt/uncle, niece/nephew, cousin, in-law, and step/half relative); current or previous romantic or dating partners (no matter how casual); and any other relationship that is likely to or creates an actual or perceived conflict of interest or appearance of favoritism (for example, roommates and close friends). Close personal relationships would generally not include any former co-workers or managers with whom you do not regularly socialize outside of work.]",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Are you NOW legally authorized to work in the country where the position you are applying for is located?"
+    "In your current role, do you engage with Mastercard employees to negotiate, influence and/or sign commercial contracts or government contracts?",
+    "Are you related to anyone who has the authority to influence and/or sign commercial contracts or government contracts with Mastercard?",
+    "Are you or were you recently (in the last six months) an employee of a government office or agency that has oversight over Mastercard?",
+    "Are you related to anyone who is an employee of a government office or agency that has oversight over Mastercard?",
+    "Are you currently engaged in any outside employment or activity that you would like to continue if you are hired by Mastercard? [Examples of outside employment/activities include paid employment or other lawful money-making (cash or cash equivalent) activity that will not be part of your official role at Mastercard; service on the board of directors or an advisory board of any entity (including non-profit), even if the position is unpaid; and service (paid or unpaid) in any national, state, provincial, regional, or local government, including any government department, ministry, agency, authority, commission, legislature, council, other public body (such as the World Bank or other public international organization), or state-owned enterprise.]"
   ],
   "fillErrors": []
 }

@@ -1,7 +1,15 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Are you NOW legally authorized to work in the country where the position you are applying for is located?\": sensitive question with no exact answer",
-    "required \"Are you NOW legally authorized to work in the country where the position you are applying for is located?\" is empty after filling"
+    "required \"In your current role, do you engage with Mastercard employees to negotiate, influence and/or sign commercial contracts or government contracts?\": no answer in profile or answer bank",
+    "required \"Are you related to anyone who has the authority to influence and/or sign commercial contracts or government contracts with Mastercard?\": sensitive question with no exact answer",
+    "required \"Are you or were you recently (in the last six months) an employee of a government office or agency that has oversight over Mastercard?\": no answer in profile or answer bank",
+    "required \"Are you related to anyone who is an employee of a government office or agency that has oversight over Mastercard?\": sensitive question with no exact answer",
+    "required \"Are you currently engaged in any outside employment or activity that you would like to continue if you are hired by Mastercard? [Examples of outside employment/activities include paid employment or other lawful money-making (cash or cash equivalent) activity that will not be part of your official role at Mastercard; service on the board of directors or an advisory board of any entity (including non-profit), even if the position is unpaid; and service (paid or unpaid) in any national, state, provincial, regional, or local government, including any government department, ministry, agency, authority, commission, legislature, council, other public body (such as the World Bank or other public international organization), or state-owned enterprise.]\": no answer in profile or answer bank",
+    "required \"In your current role, do you engage with Mastercard employees to negotiate, influence and/or sign commercial contracts or government contracts?\" is empty after filling",
+    "required \"Are you related to anyone who has the authority to influence and/or sign commercial contracts or government contracts with Mastercard?\" is empty after filling",
+    "required \"Are you or were you recently (in the last six months) an employee of a government office or agency that has oversight over Mastercard?\" is empty after filling",
+    "required \"Are you related to anyone who is an employee of a government office or agency that has oversight over Mastercard?\" is empty after filling",
+    "required \"Are you currently engaged in any outside employment or activity that you would like to continue if you are hired by Mastercard? [Examples of outside employment/activities include paid employment or other lawful money-making (cash or cash equivalent) activity that will not be part of your official role at Mastercard; service on the board of directors or an advisory board of any entity (including non-profit), even if the position is unpaid; and service (paid or unpaid) in any national, state, provincial, regional, or local government, including any government department, ministry, agency, authority, commission, legislature, council, other public body (such as the World Bank or other public international organization), or state-owned enterprise.]\" is empty after filling"
   ]
 }

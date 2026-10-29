@@ -43,6 +43,12 @@ answers:
     origin: human
   - id: form:b07f5f48d7
     question: What's your earliest start date?
+    aliases:
+      - When can you start a new role?
+      - When are you available to start?
+      - What is your earliest available start date?
+      - When would you be able to start?
+      - Earliest start date
     answer: November 15, 2026
     origin: human
   - id: form:69b81d02b5
@@ -341,5 +347,30 @@ answers:
   - id: production-ml-18-months
     question: Do you have at least 18 months of experience designing, developing, or operating machine learning–powered services deployed in production within a startup environment?
     aliases: []
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): her B.A. at Renmin University started Sep 2019, so high school ended in 2019.
+  - id: high-school-graduation
+    question: When did you graduate from High School?
+    aliases:
+      - What year did you graduate from high school?
+      - High school graduation year
+    answer: "2019"
+    origin: human
+  # The candidate lives in New York (Flushing, Queens); forms should say New York.
+  - id: current-city-state
+    question: Where do you currently reside? (City/State)?
+    aliases:
+      - Where do you currently reside?
+      - What city and state do you live in?
+      - Current location (City, State)
+    answer: New York, NY
+    origin: human
+  # Inferred (standing permission, 2026-10-29): on F-1 status; not a service member.
+  - id: transitioning-service-member
+    question: Are you a transitioning service member?
+    aliases:
+      - Are you a current or transitioning service member?
+      - Are you a military spouse?
     answer: "No"
     origin: human

@@ -24,7 +24,7 @@ export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|
 // What acceptApplicationAttestations covers, and the agreeing option to pick.
 // Narrow on purpose: "certify" only next to accuracy, recording only of an interview, AI only in
 // interview rules (a bare "Do you use AI tools?" or "criminal record" never matches).
-export const ATTESTATION_ALLOWED = /^affirmation$|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
+export const ATTESTATION_ALLOWED = /^affirmation$|\bai note ?taker\b|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
 export const AGREEING_OPTION = /^(yes|i agree|agree|i accept|accept|accepted|i acknowledge|acknowledge|i consent|consent|i certify|i understand)\b/i;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
@@ -131,7 +131,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
   { path: "links.website", kinds: ["text"], pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },
-  { path: "education[0].school", pattern: /^(school|university|college)( name)?$|^school or university$/, resolve: (p) => firstEdu(p).school },
+  { path: "education[0].school", pattern: /^(school|university|college)( name)?$|^school or university$|^what (college|university|school)( ?\/? ?(college|university|school))? did you attend$/, resolve: (p) => firstEdu(p).school },
   {
     path: "education[0].degree",
     pattern: /^degree$/,
@@ -212,9 +212,10 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",
-    pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b/,
+    pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
     resolve: (p, label, ctx) => {
-      const country = countryIn(label, ctx);
+      // "... in the country you currently reside in": hers, not the job's.
+      const country = /\bcountry you (currently )?(reside|live) in\b/.test(label) ? p.contact.address.country : countryIn(label, ctx);
       if (!country) return undefined;
       const authorized = p.workAuthorization.authorizedCountries.includes(country);
       // ADI: "authorized to work ... on a fulltime and indefinite basis": OPT is not indefinite.
@@ -314,7 +315,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Can you perform the essential functions of the job with or without reasonable accommodation?": she reports no disability.
     path: "eeo.disability",
-    pattern: /\bperform (the|these) essential functions\b/,
+    pattern: /\bperform (the|these) (essential|requisite) (functions|duties)\b|\bability to perform the requisite duties\b/,
     kinds: ["select", "radio", "combobox"],
     resolve: (p) => (p.eeo.disability === "no" ? "Yes" : undefined),
   },
@@ -336,10 +337,10 @@ export const PROFILE_RULES: ProfileRule[] = [
     // The candidate (2026-10-28): any US location; on-site five days, hybrid and relocation all work.
     // Yes/no only, and only for a posting located in the US.
     path: "workArrangement",
-    pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location)\b/,
+    pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location|(able|willing) to work (from|in|out of) [a-z ]{3,30}|fully in person)\b/,
     kinds: ["select", "radio", "combobox", "checkbox", "text"],
     resolve: (p, label, ctx) => {
-      if (ctx.jobCountry !== "United States") return undefined;
+      if (ctx.jobCountry !== "United States" || /\b(legally|lawfully|authori[sz]|eligible|sponsor|visa)/.test(label)) return undefined;
       const opts = ctx.options ?? [];
       // A yes/no asked in a text box (Bot Auto: "Would you be able to work onsite at Houston, TX office?").
       if (!opts.length && !/^(are|would|will|can|do|is)\b|\b(are|would|will|can|do) you\b/.test(label)) return undefined;
@@ -511,7 +512,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Asana: "Current Company"; the work-history entry with no end date.
     path: "workHistory",
-    pattern: /^(current|most recent|current or most recent) (company|employer)( name)?$/,
+    pattern: /^(current|most recent|current or most recent) (company|employer)( name)?$|^where have you most recently worked$/,
     resolve: (p) => p.workHistory.find((w) => !w.end)?.employer,
   },
   {
@@ -534,7 +535,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "workAuthorization.needsSponsorship",
     // Pinterest: "Will you require our assistance with work authorization now or in the future?"
-    pattern: /\b(sponsorship|sponsor|sponsored)\b|\bassistance with work authori[sz]ation\b/,
+    pattern: /\b(sponsorship|sponorship|sponsor|sponsored)\b|\bassistance with work authori[sz]ation\b/,
     // Options that split "now" from "in the future": authorized today and
     // needing sponsorship means the future one.
     resolve: (p, _label, ctx) => {

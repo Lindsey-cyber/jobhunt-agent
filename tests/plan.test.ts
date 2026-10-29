@@ -384,4 +384,18 @@ describe("buildPlan", () => {
     expect(one("Current or most recent employer")).toMatchObject({ value: "Arborphy AI LLC" });
     expect(one("What year did/will you complete your undergraduate degree?")).toMatchObject({ value: "2023" });
   });
+
+  it("reads the Ashby and Lever wordings: unrestricted authorization, residence country, school, requisite duties, AI notetaker", () => {
+    const p = { ...user.profile, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true }, acceptApplicationAttestations: true, eeo: { ...user.profile.eeo, disability: "no" }, workArrangement: { onsite: true, relocate: true } };
+    const yn = { kind: "radio" as const, options: ["Yes", "No"] };
+    const one = (label: string, over: Partial<ReturnType<typeof field>> = yn, loc = "San Francisco, CA") => buildPlan({ ...form([field(label, over)]), jobLocation: loc }, p, user.bank).items[0]!;
+    expect(one("Do you currently have unrestricted work authorization in the United States?")).toMatchObject({ value: "No" });
+    expect(one("Are you authorized to work in the country you currently reside in?", yn, "London, UK")).toMatchObject({ value: "Yes" });
+    expect(one("Do you, now or in the future, require sponorship to work in the country you currently reside in?")).toMatchObject({ value: "Yes" });
+    expect(one("What college/university did you attend?", { kind: "text" })).toMatchObject({ value: p.education[0]!.school });
+    expect(one("Confirm the ability to perform the requisite duties of the role with or without reasonable accommodations")).toMatchObject({ value: "Yes" });
+    expect(one("Are you comfortable with an AI notetaker during your interviews?")).toMatchObject({ value: "Yes" });
+    expect(one("Are you able to work from San Francisco, CA?")).toMatchObject({ value: "Yes" });
+    expect(one("Are you legally able to work in the United States without sponsorship?")).not.toMatchObject({ value: "Yes" });
+  });
 });

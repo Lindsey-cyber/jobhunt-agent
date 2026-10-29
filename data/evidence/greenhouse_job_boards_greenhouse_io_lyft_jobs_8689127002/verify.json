@@ -170,6 +170,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_37676325002",
+      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in New York City or are you open to relocating?",
+      "expected": "I already reside near a Lyft office and I am able to work at a Lyft On-site Office.",
+      "actual": "I already reside near a Lyft office and I am able to work at a Lyft On-site Office.",
+      "pass": true
+    },
+    {
       "fieldId": "gender",
       "label": "Gender",
       "expected": "Decline To Self Identify",
@@ -191,6 +198,13 @@
       "pass": true
     },
     {
+      "fieldId": "current-role-0",
+      "label": "Current role",
+      "expected": "Research Engineer Intern",
+      "actual": "",
+      "pass": false
+    },
+    {
       "fieldId": "race",
       "label": "Please identify your race",
       "expected": "Decline To Self Identify",
@@ -199,8 +213,9 @@
     }
   ],
   "emptyRequired": [
-    "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in New York City or are you open to relocating?",
     "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references."
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Current role: no option \"Research Engineer Intern\" in current-role-0"
+  ]
 }

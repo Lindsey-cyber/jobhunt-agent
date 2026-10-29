@@ -740,6 +740,15 @@
         ]
       },
       {
+        "id": "current-role-0",
+        "label": "Current role",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "Current role"
+        ]
+      },
+      {
         "id": "race",
         "label": "Please identify your race",
         "kind": "combobox",
@@ -1696,7 +1705,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_37676325002",
         "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in New York City or are you open to relocating?",
@@ -1708,7 +1717,13 @@
           "I already reside near a Lyft office and I am able to work at a Lyft On-site Office."
         ]
       },
-      "reason": "answer \"Yes\" matches none of the options"
+      "value": "I already reside near a Lyft office and I am able to work at a Lyft On-site Office.",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -1783,6 +1798,25 @@
       },
       "confidence": 0.95,
       "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "current-role-0",
+        "label": "Current role",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "Current role"
+        ]
+      },
+      "value": "Research Engineer Intern",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

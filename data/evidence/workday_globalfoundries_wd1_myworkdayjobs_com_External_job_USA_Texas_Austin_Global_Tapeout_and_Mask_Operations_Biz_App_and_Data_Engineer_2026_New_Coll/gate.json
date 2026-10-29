@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"How Did You Hear About Us?\": expected \"LinkedIn\", got \"Jobs.bg\"",
+    "readback mismatch on \"Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, provide additional information; if No, please continue.\": expected \"No\", got \"\"",
+    "required \"Have you previously worked as Employee or Intern for GlobalFoundries? If Yes, provide additional information; if No, please continue.\" is empty after filling"
+  ]
+}

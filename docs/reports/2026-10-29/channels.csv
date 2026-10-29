@@ -1,10 +1,10 @@
 channel,sightings,postings,exclusive,shared,duplicateRate,matches,exclusiveMatches,published7d,published30d,matchesPublished7d,matchesPublished30d,unknownPublished
-github_newgrad,4150,3558,3096,462,0.14265060240963856,521,408,28,121,7,35,3114
+github_newgrad,4152,3561,3099,462,0.1423410404624278,521,408,28,121,7,35,3117
 gmail_glassdoor,161,118,118,0,0.26708074534161486,1,1,0,0,0,0,118
 gmail_handshake,22,22,22,0,0,0,0,0,0,0,0,22
-gmail_linkedin,418,321,321,0,0.23205741626794263,1,1,0,0,0,0,321
+gmail_linkedin,422,321,321,0,0.23933649289099523,1,1,0,0,0,0,321
 hn_hiring,319,319,311,8,0,0,0,0,0,0,0,311
-official_ashby,6072,6072,5949,123,0,65,19,666,2363,6,22,0
-official_greenhouse,19491,19491,19241,250,0,73,30,1752,6291,3,15,11
-official_lever,2390,2390,2312,78,0,17,0,124,658,0,7,0
-official_workday,766,766,747,19,0,12,5,0,0,0,0,766
+official_ashby,6076,6076,5953,123,0,65,19,670,2358,6,22,0
+official_greenhouse,19500,19500,19250,250,0,73,30,1753,6296,3,15,11
+official_lever,2385,2385,2307,78,0,17,0,125,649,0,7,0
+official_workday,767,767,748,19,0,12,5,0,0,0,0,767

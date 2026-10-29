@@ -26,7 +26,7 @@ export function jaccard(a: string, b: string): number {
   return shared / (ta.size + tb.size - shared);
 }
 
-const DECLINE = /\b(decline|prefer not|not wish|dont wish|do not wish|choose not|not to disclose|do not disclose)\b/;
+export const DECLINE = /\b(decline|prefer not|not wish|dont wish|do not wish|choose not|not to disclose|do not disclose)\b/;
 const NOT_VETERAN = /\b(not a (protected )?veteran|am not a veteran|not a protected)\b/;
 
 export interface OptionMatch {

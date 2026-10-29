@@ -61,6 +61,8 @@ export const Profile = z.object({
   eeo: z
     .object({
       gender: EeoChoice,
+      // Used when a form requires a gender and offers no way to decline.
+      genderIfRequired: z.string().optional(),
       hispanicLatino: EeoChoice,
       race: EeoChoice,
       veteran: EeoChoice,

@@ -42,9 +42,11 @@ salaryExpectation: $100K–$150K
 workAuthorization:
   authorizedCountries: [United States]
   needsSponsorship: true
-# The candidate (2026-10-29): Female; not Hispanic or Latino. Race stays undisclosed.
+# The candidate (2026-10-29): gender undisclosed when a form allows it, Female when it
+# requires an answer; not Hispanic or Latino; race undisclosed.
 eeo:
-  gender: Female
+  gender: decline
+  genderIfRequired: Female
   hispanicLatino: "no"
   race: decline
   veteran: "no"

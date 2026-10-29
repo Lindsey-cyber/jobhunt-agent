@@ -1,4 +1,4 @@
-import { normalize } from "./text.ts";
+import { DECLINE, normalize } from "./text.ts";
 import type { FormField } from "../domain/form.ts";
 import type { Profile } from "../profile/schema.ts";
 import { usLocation } from "../discover/triage.ts";
@@ -348,7 +348,16 @@ export const PROFILE_RULES: ProfileRule[] = [
   // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
   // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
   { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b/, resolve: () => "decline" },
-  { path: "eeo.gender", pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/, resolve: (p) => p.eeo.gender },
+  // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
+  {
+    path: "eeo.gender",
+    pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/,
+    resolve: (p, _label, ctx) => {
+      const opts = ctx.options ?? [];
+      if (p.eeo.gender !== "decline" || !opts.length || opts.some((o) => DECLINE.test(normalize(o)))) return p.eeo.gender;
+      return p.eeo.genderIfRequired ?? p.eeo.gender;
+    },
+  },
   { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|\byour race\b|\brace ?\/? ?ethnic|\bethnic group\b/, resolve: (p) => p.eeo.race },
   { path: "eeo.veteran", pattern: /\bveterans?\b/, resolve: (p) => p.eeo.veteran },
   { path: "eeo.disability", pattern: /\bdisability\b/, resolve: (p) => p.eeo.disability },

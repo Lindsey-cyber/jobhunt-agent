@@ -210,6 +210,13 @@ describe("buildPlan", () => {
     expect(buildPlan(form([f]), { ...user.profile, acceptApplicationTerms: true }, user.bank).items[0]).toMatchObject({ status: "fill" });
   });
 
+  it("declines gender where the form allows it and uses the required-answer fallback otherwise", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline", genderIfRequired: "Female" } };
+    const one = (options: string[]) => buildPlan(form([field("Gender", { kind: "select", options })]), p, user.bank).items[0]!;
+    expect(one(["Female", "Male", "I don't wish to answer"])).toMatchObject({ status: "fill", value: "I don't wish to answer" });
+    expect(one(["Female", "Male", "Non-Binary"])).toMatchObject({ status: "fill", value: "Female" });
+  });
+
   it("declines transgender identity, which the candidate has not answered", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "Female" } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });

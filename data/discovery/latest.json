@@ -1,9 +1,9 @@
 {
-  "runDir": "/opt/jobhunt-agent/data/runs/discovery/2026-10-28T23-11-58-232Z",
-  "reportDir": "docs/reports/2026-10-28",
-  "auditDir": "docs/reports/2026-10-28/audit/231158",
-  "startedAt": "2026-10-28T23:11:58.232Z",
-  "finishedAt": "2026-10-28T23:14:59.895Z",
-  "inboxMessages": 157,
-  "auditSeed": 80272152
+  "runDir": "/opt/jobhunt-agent/data/runs/discovery/2026-10-29T04-04-40-774Z",
+  "reportDir": "docs/reports/2026-10-29",
+  "auditDir": "docs/reports/2026-10-29/audit/040440",
+  "startedAt": "2026-10-29T04:04:40.774Z",
+  "finishedAt": "2026-10-29T04:08:36.528Z",
+  "inboxMessages": 160,
+  "auditSeed": 97834694
 }

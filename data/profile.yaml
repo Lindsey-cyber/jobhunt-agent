@@ -61,6 +61,7 @@ salaryExpectation: $100K–$150K
 workAuthorization:
   authorizedCountries: [United States]
   needsSponsorship: true
+  status: F-1 OPT
 # The candidate (2026-10-29): gender undisclosed when a form allows it, Female when it
 # requires an answer; not Hispanic or Latino; race undisclosed.
 eeo:

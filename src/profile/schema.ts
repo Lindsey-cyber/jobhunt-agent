@@ -76,6 +76,8 @@ export const Profile = z.object({
   workAuthorization: z.object({
     authorizedCountries: z.array(z.string().min(1)),
     needsSponsorship: z.boolean(),
+    // Her current status in the forms' words, e.g. "F-1 OPT".
+    status: z.string().optional(),
   }),
   eeo: z
     .object({

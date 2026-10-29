@@ -136,7 +136,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     pattern: /^(state|state province|province)$|^state of residence$|^which u ?s state are you located in$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
     resolve: (p, _label, ctx) => usStateName(p.contact.address.state, ctx.options),
   },
-  { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode)$/, resolve: (p) => p.contact.address.postalCode },
+  { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode|zip postal( code)?)$/, resolve: (p) => p.contact.address.postalCode },
   { path: "contact.address.country", pattern: /^country( of residence| region)?$/, resolve: (p) => p.contact.address.country },
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
@@ -229,6 +229,10 @@ export const PROFILE_RULES: ProfileRule[] = [
       const country = /\bcountry you (currently )?(reside|live) in\b/.test(label) ? p.contact.address.country : countryIn(label, ctx);
       if (!country) return undefined;
       const authorized = p.workAuthorization.authorizedCountries.includes(country);
+      // Red Ventures: "Yes, and I am currently in F-1 status (if you currently have OPT ...)" among several Yes options.
+      const status = p.workAuthorization.status ?? "";
+      const f1 = /\bF-?1\b/i.test(status) ? (ctx.options ?? []).filter((o) => /\bF-?1 status\b/i.test(o)) : [];
+      if (authorized && f1.length === 1) return f1[0];
       // ADI: "authorized to work ... on a fulltime and indefinite basis": OPT is not indefinite.
       if (/\b(indefinite|indefinitely|permanent basis|permanently|without (any )?(restriction|sponsorship|limitation)|unrestricted)\b/.test(label)) return yesNo(authorized && !p.workAuthorization.needsSponsorship);
       return yesNo(authorized);
@@ -373,7 +377,7 @@ export const PROFILE_RULES: ProfileRule[] = [
         // Near when the posting's place (or the office the question names) is her metro: New York for a NY address.
         const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
         const near = Boolean(metro) && normalize(`${ctx.jobLocation ?? ""} ${label}`).includes(metro) && !/\b(san francisco|seattle|boston|chicago|austin|los angeles)\b/.test(normalize(`${ctx.jobLocation ?? ""} ${label}`));
-        const pick = near ? opts.filter((o) => /\balready (reside|live)\b/i.test(o)) : p.workArrangement?.relocate ? opts.filter((o) => /\bwilling to relocate\b/i.test(o) && !/\bnot willing\b/i.test(o)) : [];
+        const pick = near ? opts.filter((o) => /\balready (reside|live)\b|\bable to commute\b/i.test(o)) : p.workArrangement?.relocate ? opts.filter((o) => /\b(willing|able) to relocate\b/i.test(o) && !/\bnot (willing|able)\b/i.test(o)) : [];
         return pick.length === 1 ? pick[0] : undefined;
       }
       // "Will you require relocation assistance?" is not a willingness question; a note that none is offered is.
@@ -583,7 +587,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
   // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
   // Pronouns follow her gender choice: undisclosed where the list lets her decline.
-  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b|^(your )?pronouns?$|^what are your (preferred )?(personal )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
+  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation|lgbtq?i?a?)\b|^(your )?pronouns?$|^what are your (preferred )?(personal )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
   // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",
@@ -594,7 +598,7 @@ export const PROFILE_RULES: ProfileRule[] = [
       return p.eeo.genderIfRequired ?? p.eeo.gender;
     },
   },
-  { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|^race\b|\byour (race|ethnicity)\b|\brace ?\/? ?ethnic|\bethnic group\b|\bracial ethnic background\b/, resolve: (p) => p.eeo.race },
+  { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|^race\b|\byour (race|ethnicity)\b|\brace ?\/? ?ethnic|\bethnic group\b|\bracial ethnic background\b|\bidentify my ethnicity\b/, resolve: (p) => p.eeo.race },
   { path: "eeo.veteran", pattern: /\bveterans?\b/, resolve: (p) => p.eeo.veteran },
   { path: "eeo.disability", pattern: /\bdisability\b/, resolve: (p) => p.eeo.disability },
 ];

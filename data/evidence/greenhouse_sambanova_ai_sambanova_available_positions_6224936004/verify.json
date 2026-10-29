@@ -26,22 +26,22 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "",
-      "pass": false
+      "actual": "United States",
+      "pass": true
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "9786681426",
+      "actual": "(978) 668-1426",
       "pass": true
     },
     {
       "fieldId": "candidate-location",
       "label": "Location (City)",
       "expected": "New York, New York, United States",
-      "actual": "",
-      "pass": false
+      "actual": "New York, New York, United States",
+      "pass": true
     },
     {
       "fieldId": "resume",
@@ -56,18 +56,25 @@
       "expected": "https://www.linkedin.com/in/lindsey-ma/",
       "actual": "https://www.linkedin.com/in/lindsey-ma/",
       "pass": true
+    },
+    {
+      "fieldId": "question_20291832004",
+      "label": "Are you able to work on-site at our office 3-5 days per week?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_20291834004",
+      "label": "Now or in the future will you need immigration assistance?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Country",
-    "Location (City)",
-    "Are you able to work on-site at our office 3-5 days per week?",
-    "Now or in the future will you need immigration assistance?",
     "Years of AI performance engineering",
     "Preferred office?"
   ],
-  "fillErrors": [
-    "Country: the country menu did not open",
-    "Location (City): the candidate-location menu did not open"
-  ]
+  "fillErrors": []
 }

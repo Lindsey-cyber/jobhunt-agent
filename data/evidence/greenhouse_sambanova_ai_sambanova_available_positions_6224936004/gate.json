@@ -1,16 +1,8 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Are you able to work on-site at our office 3-5 days per week?\": no answer in profile or answer bank",
-    "required \"Now or in the future will you need immigration assistance?\": no answer in profile or answer bank",
     "required \"Years of AI performance engineering\": no answer in profile or answer bank",
     "required \"Preferred office?\": no answer in profile or answer bank",
-    "readback mismatch on \"Country\": expected \"United States\", got \"\"",
-    "readback mismatch on \"Location (City)\": expected \"New York, New York, United States\", got \"\"",
-    "required \"Country\" is empty after filling",
-    "required \"Location (City)\" is empty after filling",
-    "required \"Are you able to work on-site at our office 3-5 days per week?\" is empty after filling",
-    "required \"Now or in the future will you need immigration assistance?\" is empty after filling",
     "required \"Years of AI performance engineering\" is empty after filling",
     "required \"Preferred office?\" is empty after filling"
   ]

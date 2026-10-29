@@ -1,10 +1,8 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"In 2-3 sentences, provide an example of something meaningful that you have done in line with your values.\": no answer in profile or answer bank",
     "required \"Who is your current or most recent employer?\": no answer in profile or answer bank",
     "required \"What is your current or more recent job title?\": no answer in profile or answer bank",
-    "required \"In 2-3 sentences, provide an example of something meaningful that you have done in line with your values.\" is empty after filling",
     "required \"Who is your current or most recent employer?\" is empty after filling",
     "required \"What is your current or more recent job title?\" is empty after filling"
   ]

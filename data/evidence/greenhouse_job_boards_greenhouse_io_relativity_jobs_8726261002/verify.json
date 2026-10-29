@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -55,6 +55,13 @@
       "label": "Resume/CV",
       "expected": "Lindsey_Ma_Resume.pdf",
       "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37859190002",
+      "label": "EXPORT COMPLIANCE",
+      "expected": "I am not a “U.S. Person\"",
+      "actual": "I am not a “U.S. Person\"",
       "pass": true
     },
     {
@@ -114,8 +121,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "EXPORT COMPLIANCE"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

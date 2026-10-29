@@ -65,6 +65,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_8378665005",
+      "label": "In 2-3 sentences, provide an example of something meaningful that you have done in line with your values.",
+      "expected": "I value results that hold up and work other people can build on.",
+      "actual": "I value results that hold up and work other people can build on.",
+      "pass": true
+    },
+    {
       "fieldId": "question_8378666005",
       "label": "Are you open to working in person in our San Francisco or New York office 3 times a week?",
       "expected": "Yes",
@@ -115,7 +122,6 @@
     }
   ],
   "emptyRequired": [
-    "In 2-3 sentences, provide an example of something meaningful that you have done in line with your values.",
     "Who is your current or most recent employer?",
     "What is your current or more recent job title?"
   ],

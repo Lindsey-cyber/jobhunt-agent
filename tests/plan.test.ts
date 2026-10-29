@@ -448,4 +448,11 @@ describe("buildPlan", () => {
     expect(one("EXPORT COMPLIANCE", ["I am currently a “U.S. Person”", "I am not a “U.S. Person\""])).toMatchObject({ value: "I am not a “U.S. Person\"" });
     expect(one("Are you authorized to lawfully work for Roku in the country to which you are applying?", ["Yes", "No"])).toMatchObject({ value: "Yes" });
   });
+
+  it("picks the F-1 status option among several Yes answers to authorization", () => {
+    const p = { ...user.profile, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true, status: "F-1 OPT" } };
+    const opts = ["Yes, and I will not require employer support for employment visa status now or in the future for continued employment.", "Yes, and I am currently in F-1 status (if you currently have OPT or STEM-EXT OPT or CPT, you will select this answer.)", "No, and I will require employer support."];
+    const f = field("Are you currently legally authorized to work in the United States? Please select any that apply:", { kind: "checkbox", options: opts });
+    expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: opts[1] });
+  });
 });

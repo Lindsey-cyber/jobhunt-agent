@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Read\": no answer in profile or answer bank",
+    "required \"Speak\": no answer in profile or answer bank",
+    "required \"Write\": no answer in profile or answer bank",
+    "required \"Read\" is empty after filling",
+    "required \"Speak\" is empty after filling",
+    "required \"Write\" is empty after filling"
+  ]
+}

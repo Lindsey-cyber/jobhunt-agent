@@ -591,6 +591,12 @@ export const PROFILE_RULES: ProfileRule[] = [
   // Workday's disability self-identification form: its language, and (only with her
   // permission) the typed name and date that sign it.
   { path: "language", pattern: /^language$/, resolve: (_p, _l, ctx) => ((ctx.options ?? []).includes("English") ? "English" : undefined) },
+  // Workday's language block (English, filled above): read, speak and write proficiency. She studied and works in English.
+  {
+    path: "language",
+    pattern: /^(read|speak|write|reading|speaking|writing)$/,
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^(fluent|native|advanced|proficient)\b/i.test(o.trim())) ?? (ctx.options?.length ? undefined : "Fluent"),
+  },
   {
     path: "signSelfIdentificationForms",
     pattern: /^self identification form signature (name|date)$/,

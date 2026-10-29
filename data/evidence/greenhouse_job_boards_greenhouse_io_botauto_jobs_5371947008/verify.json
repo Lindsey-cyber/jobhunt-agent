@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -41,6 +41,13 @@
       "label": "Resume/CV",
       "expected": "Lindsey_Ma_Resume.pdf",
       "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_18092783008",
+      "label": "Our primary office location for this role is Houston, TX. Would you be able to work onsite at Houston, TX office?",
+      "expected": "Yes",
+      "actual": "Yes",
       "pass": true
     },
     {
@@ -142,8 +149,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Our primary office location for this role is Houston, TX. Would you be able to work onsite at Houston, TX office?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

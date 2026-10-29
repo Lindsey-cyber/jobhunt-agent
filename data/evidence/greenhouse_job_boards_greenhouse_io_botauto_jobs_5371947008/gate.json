@@ -1,7 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Our primary office location for this role is Houston, TX. Would you be able to work onsite at Houston, TX office?\": no answer in profile or answer bank",
-    "required \"Our primary office location for this role is Houston, TX. Would you be able to work onsite at Houston, TX office?\" is empty after filling"
-  ]
+  "decision": "submit"
 }

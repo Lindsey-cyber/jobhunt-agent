@@ -11,28 +11,32 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "preferred_name",
         "label": "Preferred First Name",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -291,7 +295,8 @@
         "label": "Phone",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "resume",
@@ -312,14 +317,16 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_6844176009",
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_6844177009",
@@ -346,7 +353,8 @@
         "label": "Does your experience include working with speech recognition, NLP, or large language models (LLMs) in a production AI system? Please describe.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "gender",
@@ -407,7 +415,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -424,7 +433,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -441,7 +451,8 @@
         "label": "Preferred First Name",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lindsey",
       "source": {
@@ -458,7 +469,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -737,7 +749,8 @@
         "label": "Phone",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -782,7 +795,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -799,7 +813,8 @@
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.lindseyma.com/",
       "source": {
@@ -857,9 +872,10 @@
         "label": "Does your experience include working with speech recognition, NLP, or large language models (LLMs) in a production AI system? Please describe.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
-      "value": "Not in a production system yet; my language-model work has been in research and prototypes. In robotics I integrated a locally hosted language model (Ollama) to map voice commands to robot control actions. In interpretability research I reproduced a circuit-tracing analysis of hallucination on Qwen3-4B and built tooling across all 28 transformer layers of Qwen3-8B (activation hooks, linear probes, steering). At Arborphy AI I built a hierarchical multi-agent reasoning prototype that delegates to specialized agents and generates new tools on demand.",
+      "value": "Not in a production system yet; my language-model work has been in research and prototypes. In robotics I integrated a locally hosted language model (Ollama) to map voice commands to robot control actions.",
       "source": {
         "type": "bank",
         "id": "llm-production",

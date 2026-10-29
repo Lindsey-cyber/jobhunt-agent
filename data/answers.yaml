@@ -408,7 +408,7 @@ answers:
       - Do you have work authorization under CPT, OPT or STEM OPT?
     answer: "Yes"
     origin: human
-  # Inferred (standing permission, 2026-10-29): no dedicated AI performance-engineering role yet; she will relocate anywhere in the US.
+  # Inferred (standing permission, 2026-10-29): no dedicated AI performance-engineering or ML-infrastructure role yet; she will relocate anywhere in the US.
   - id: sambanova-perf-years
     question: Years of AI performance engineering
     aliases: []
@@ -419,5 +419,11 @@ answers:
     question: Preferred office?
     aliases: []
     answer: San Jose, CA
+    company: SambaNova Systems
+    origin: human
+  - id: sambanova-mlinfra-years
+    question: Years of ML Infrastructure experience
+    aliases: []
+    answer: "0"
     company: SambaNova Systems
     origin: human

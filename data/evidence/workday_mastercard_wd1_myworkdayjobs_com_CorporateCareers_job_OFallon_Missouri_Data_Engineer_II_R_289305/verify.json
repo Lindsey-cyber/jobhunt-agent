@@ -170,6 +170,13 @@
       "pass": true
     },
     {
+      "fieldId": "gender",
+      "label": "What is your Gender?",
+      "expected": "Prefer Not To Self-Identify",
+      "actual": "Prefer Not To Self-Identify",
+      "pass": true
+    },
+    {
       "fieldId": "hispanicOrLatino",
       "label": "Are you Hispanic or Latino?",
       "expected": "No",
@@ -180,17 +187,13 @@
       "fieldId": "ethnicityMulti",
       "label": "What is your ethnicity?",
       "expected": "Prefer Not To Self Identify (United States of America)",
-      "actual": "",
-      "pass": false
+      "actual": "Prefer Not To Self Identify (United States of America)",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "What is your Gender?",
-    "What is your ethnicity?",
     "Have you ever served in the military?",
     "Except where consent is not required by applicable privacy law, I consent to the above terms*."
   ],
-  "fillErrors": [
-    "What is your ethnicity?: locator.check: Clicking the checkbox did not change its state\nCall log:\n\u001b[2m  - waiting for locator('[data-automation-id=\"formField-ethnicityMulti\"]').first().locator('input[type=\"checkbox\"]').nth(5)\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"checkbox\" class=\"css-1rmmx2s\" aria-checked=\"false\" aria-required=\"true\" id=\"866c0ed135ff106f0f0c284de630cd7f-ethnicityMulti\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - forcing action\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n\u001b[2m    - navigations have finished\u001b[22m\n"
-  ]
+  "fillErrors": []
 }

@@ -473,3 +473,12 @@ answers:
       - If hired, can you provide proof of identity and eligibility to work in the United States?
     answer: "Yes"
     origin: human
+  # Inferred (standing permission, 2026-10-29): never served in any military (veteran: no; studied in China and the US).
+  - id: military-service
+    question: Have you ever served in the military?
+    aliases:
+      - Have you served in the military?
+      - Have you ever served in the armed forces?
+      - Are you a current or former member of the military?
+    answer: "No"
+    origin: human

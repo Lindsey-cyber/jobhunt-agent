@@ -1,12 +1,8 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"What is your Gender?\": sensitive question with no exact answer",
     "required \"Have you ever served in the military?\": no answer in profile or answer bank",
     "required \"Except where consent is not required by applicable privacy law, I consent to the above terms*.\": acknowledgements and consents need the candidate",
-    "readback mismatch on \"What is your ethnicity?\": expected \"Prefer Not To Self Identify (United States of America)\", got \"\"",
-    "required \"What is your Gender?\" is empty after filling",
-    "required \"What is your ethnicity?\" is empty after filling",
     "required \"Have you ever served in the military?\" is empty after filling",
     "required \"Except where consent is not required by applicable privacy law, I consent to the above terms*.\" is empty after filling"
   ]

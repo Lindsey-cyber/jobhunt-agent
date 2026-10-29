@@ -247,9 +247,11 @@
       {
         "id": "8131e020187d1000ba7c2b5a80ea0002",
         "label": "Are you or were you recently (in the last six months) an employee of a government office or agency that has oversight over Mastercard?",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "No"
+        ]
       },
       {
         "id": "8131e020187d1000ba7c2b5a80ea0005",
@@ -799,9 +801,11 @@
       "field": {
         "id": "8131e020187d1000ba7c2b5a80ea0002",
         "label": "Are you or were you recently (in the last six months) an employee of a government office or agency that has oversight over Mastercard?",
-        "kind": "combobox",
+        "kind": "select",
         "required": true,
-        "options": []
+        "options": [
+          "No"
+        ]
       },
       "value": "No",
       "source": {
@@ -809,7 +813,7 @@
         "id": "mastercard-contracts",
         "origin": "human"
       },
-      "confidence": 0.8,
+      "confidence": 1,
       "sensitive": false
     },
     {
@@ -875,7 +879,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "gender",
         "label": "What is your Gender?",
@@ -887,7 +891,13 @@
           "Prefer Not To Self-Identify"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "Prefer Not To Self-Identify",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",

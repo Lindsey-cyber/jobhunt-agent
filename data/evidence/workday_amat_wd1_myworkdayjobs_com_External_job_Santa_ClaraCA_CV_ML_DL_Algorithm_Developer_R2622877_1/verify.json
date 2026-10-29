@@ -1,0 +1,149 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Have you ever worked at Applied Materials as a regular employee, contingent worker, intern, etc.?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "c5106acde94910020dda35de84ba0000",
+      "label": "Are you legally authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "c5106acde94910020dda35de84ba0001",
+      "label": "Will you now or in the future, require sponsorship for employment status?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "c5106acde94910020dda3678c4c30000",
+      "label": "Solely for the purpose of determining if an export control license is needed, please indicate “Yes” if you are currently a citizen of any of the following countries: Iran, Syria, N. Korea, Cuba, Ukraine, People’s Republic of China, Hong Kong (China), Macau (China) or Russia.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "veteranStatus",
+      "label": "Protected Veteran:",
+      "expected": "I AM NOT A VETERAN",
+      "actual": "I AM NOT A VETERAN",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": [
+    "continue: Workday did not move past \"Voluntary Disclosures\": no error shown"
+  ]
+}

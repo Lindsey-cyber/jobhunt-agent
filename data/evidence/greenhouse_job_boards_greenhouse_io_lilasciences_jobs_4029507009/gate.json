@@ -1,7 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Are you able to work in the specified job location, or are you willing to relocate for this position?\": no answer in profile or answer bank",
-    "required \"Are you able to work in the specified job location, or are you willing to relocate for this position?\" is empty after filling"
-  ]
+  "decision": "submit"
 }

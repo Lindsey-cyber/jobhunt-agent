@@ -836,7 +836,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_4180238009[]",
         "label": "Are you able to work in the specified job location, or are you willing to relocate for this position?",
@@ -847,7 +847,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

@@ -154,7 +154,10 @@ export const PROFILE_RULES: ProfileRule[] = [
       const degree = firstEdu(p).degree;
       const level = /^(master|bachelor|doctor)/i.exec(degree)?.[1]?.toLowerCase();
       const generic = level && (ctx.options ?? []).find((o) => new RegExp(`^${level}s( degree)?$`).test(normalize(o)));
-      return generic ?? degree;
+      // Aerospace lists abbreviations ("MS", "BA").
+      const abbr = { "master of science": "MS", "master of arts": "MA", "bachelor of science": "BS", "bachelor of arts": "BA" }[degree.toLowerCase()];
+      const short = abbr && (ctx.options ?? []).find((o) => o.trim() === abbr);
+      return generic ?? short ?? degree;
     },
   },
   { path: "education[0].major", pattern: /^(discipline|major|field of study|discipline field of study|major field of study)$/, resolve: (p) => firstEdu(p).major },
@@ -630,7 +633,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",
-    pattern: /^(gender|sex)$|^your (gender|sex)$|\b(indicate|select|describe|identify) your (gender|sex)\b|^gender identity$|\bidentify my gender\b/,
+    pattern: /^(gender|sex)$|^your (gender|sex)$|\b(indicate|select|describe|identify) your (gender|sex)\b|^gender identity$|\bidentify my gender\b|^what is your (gender|sex)$/,
     resolve: (p, _label, ctx) => {
       const opts = ctx.options ?? [];
       if (p.eeo.gender !== "decline" || !opts.length || opts.some((o) => DECLINE.test(normalize(o)))) return p.eeo.gender;

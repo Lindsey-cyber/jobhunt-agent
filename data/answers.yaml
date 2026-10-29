@@ -212,6 +212,8 @@ answers:
       - Are you 18 years of age or older?
       - Are you over 18?
       - Are you at least 18 years of age?
+      - Are you of legal age to work in the country in which this position will be based?
+      - Are you of legal working age?
       - Are you 18 years or older?
     answer: "Yes"
     origin: human

@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you have two years or more of Python development experience?\": no answer in profile or answer bank",
+    "required \"Anthropic Certifications?\": no answer in profile or answer bank",
+    "required \"Are you a US Citizen or Permanent Resident?\": sensitive question with no exact answer",
+    "required \"Do you have two years or more of Python development experience?\" is empty after filling",
+    "required \"Anthropic Certifications?\" is empty after filling",
+    "required \"Are you a US Citizen or Permanent Resident?\" is empty after filling"
+  ]
+}

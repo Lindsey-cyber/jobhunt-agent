@@ -550,7 +550,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "workAuthorization.needsSponsorship",
     // Pinterest: "Will you require our assistance with work authorization now or in the future?"
-    pattern: /\b(sponsorship|sponorship|sponsor|sponsored)\b|\bassistance with work authori[sz]ation\b/,
+    pattern: /\b(sponsorship|sponorship|sponsor|sponsored)\b|\bassistance with work authori[sz]ation\b|\bimmigration (assistance|support)\b/,
     // Options that split "now" from "in the future": authorized today and
     // needing sponsorship means the future one.
     resolve: (p, _label, ctx) => {

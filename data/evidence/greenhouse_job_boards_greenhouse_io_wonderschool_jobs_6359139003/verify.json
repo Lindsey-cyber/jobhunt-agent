@@ -121,6 +121,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_30541499003",
+      "label": "Are you able to work in our Rincon Hill, San Francisco office 5-6 days a week?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_33173962003",
       "label": "Can you work Monday–Friday in our San Francisco office, often on Saturdays, and be available Sundays when needed for child care customer events? This is a highly collaborative, in-person role.",
       "expected": "Yes",
@@ -152,7 +159,6 @@
   "emptyRequired": [
     "What is your current position?",
     "What is your current company?",
-    "Are you able to work in our Rincon Hill, San Francisco office 5-6 days a week?",
     "Are you willing to spend a significant portion of your time (up to 50%) working directly with customers through support tickets and calls to inform the AI systems you build, and can you share specific examples where you’ve worked outside traditional engineering responsibilities or why this type of work appeals to you?",
     "What experience do you have using tools like Claude Code, OpenClaw, or similar AI-assisted development environments?",
     "Where did you attend undergad?",

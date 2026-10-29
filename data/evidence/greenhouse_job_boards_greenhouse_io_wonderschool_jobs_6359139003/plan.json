@@ -11,21 +11,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -284,7 +287,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "resume",
@@ -558,28 +562,32 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_19373953003",
         "label": "Github or Website",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_29257726003",
         "label": "What is your current position?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_29257737003",
         "label": "What is your current company?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_29257749003",
@@ -606,7 +614,8 @@
         "label": "Are you able to work in our Rincon Hill, San Francisco office 5-6 days a week?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_30541500003",
@@ -620,70 +629,80 @@
         "label": "What experience do you have using tools like Claude Code, OpenClaw, or similar AI-assisted development environments?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_30541502003",
         "label": "Where did you attend undergad?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_30541503003",
         "label": "What did you get your undergrad degree in?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_30541504003",
         "label": "What startup or founder experience do you have?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_30541505003",
         "label": "Describe a system you've built, either online or offline. Or even a video game.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173943003",
         "label": "How many employees did the smallest company you worked at have while you were there?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173944003",
         "label": "Smallest-company headcount — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173945003",
         "label": "What was that company's name?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173946003",
         "label": "How long did you work there, in months?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173947003",
         "label": "Tenure length — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173948003",
@@ -716,42 +735,48 @@
         "label": "Current location — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173951003",
         "label": "Where did you attend and graduate from your undergraduate studies?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173952003",
         "label": "What was your undergraduate major?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173953003",
         "label": "Did you attend graduate school? If so, where?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173954003",
         "label": "What was your graduate major?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173956003",
         "label": "Fields worked in — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173957003",
@@ -770,7 +795,8 @@
         "label": "Short tenure — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173959003",
@@ -796,7 +822,8 @@
         "label": "Software sales — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173962003",
@@ -815,7 +842,8 @@
         "label": "SF office schedule — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_33173964003",
@@ -834,7 +862,8 @@
         "label": "Work hours — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "gender",
@@ -922,7 +951,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -939,7 +969,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -956,7 +987,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -1235,7 +1267,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -1599,7 +1632,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -1616,7 +1650,8 @@
         "label": "Github or Website",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://github.com/Lindsey-cyber",
       "source": {
@@ -1633,7 +1668,8 @@
         "label": "What is your current position?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1644,7 +1680,8 @@
         "label": "What is your current company?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1689,15 +1726,22 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_30541499003",
         "label": "Are you able to work in our Rincon Hill, San Francisco office 5-6 days a week?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -1717,7 +1761,8 @@
         "label": "What experience do you have using tools like Claude Code, OpenClaw, or similar AI-assisted development environments?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1728,7 +1773,8 @@
         "label": "Where did you attend undergad?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1739,7 +1785,8 @@
         "label": "What did you get your undergrad degree in?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1750,7 +1797,8 @@
         "label": "What startup or founder experience do you have?",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1761,7 +1809,8 @@
         "label": "Describe a system you've built, either online or offline. Or even a video game.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1772,7 +1821,8 @@
         "label": "How many employees did the smallest company you worked at have while you were there?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1783,7 +1833,8 @@
         "label": "Smallest-company headcount — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1794,7 +1845,8 @@
         "label": "What was that company's name?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1805,7 +1857,8 @@
         "label": "How long did you work there, in months?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1816,7 +1869,8 @@
         "label": "Tenure length — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1852,7 +1906,7 @@
           "outside Bay Area willing to relocate"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "reason": "answer \"New York, NY\" matches none of the options"
     },
     {
       "status": "skip",
@@ -1861,7 +1915,8 @@
         "label": "Current location — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1872,7 +1927,8 @@
         "label": "Where did you attend and graduate from your undergraduate studies?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1883,7 +1939,8 @@
         "label": "What was your undergraduate major?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1894,7 +1951,8 @@
         "label": "Did you attend graduate school? If so, where?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1905,7 +1963,8 @@
         "label": "What was your graduate major?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1916,7 +1975,8 @@
         "label": "Fields worked in — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1943,7 +2003,8 @@
         "label": "Short tenure — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1981,7 +2042,8 @@
         "label": "Software sales — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -2014,7 +2076,8 @@
         "label": "SF office schedule — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -2041,7 +2104,8 @@
         "label": "Work hours — anything else to add?",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },

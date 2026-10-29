@@ -549,7 +549,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   {
     path: "workHistory",
-    pattern: /^(current|most recent|current or most recent) (job )?(title|position|role)$/,
+    pattern: /^(current|most recent|current or most recent) (job )?(title|position|role)$|^what is your (current|most recent) (job )?(title|position|role)$/,
     resolve: (p) => p.workHistory.find((w) => !w.end)?.title,
   },
   {

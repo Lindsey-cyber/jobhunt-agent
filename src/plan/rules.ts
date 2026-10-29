@@ -258,7 +258,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
-    pattern: /\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b|\bhave you previously worked as [a-z ]{1,40}? for\b|\bhave you (ever )?(previously )?been employed (at|by) .{1,60} for any length of time\b/,
+    // (Government-employment questions have their own rule below.)
+    pattern: /^(?!.*\bgovernment\b).*\b(current or former|previously (been )?employed|previously worked|worked (for|at) .{1,40} before|former) .{0,40}\b(employee|intern|contractor|employed|worked)\b|\bhave you (ever )?(worked for|been employed by) .{1,80}\b(in the past|before)\b|^have you (ever )?worked (at|for) [^ ]+( [^ ]+)?$|\bnow or have you previously been employed by\b|\bhave you previously worked as [a-z ]{1,40}? for\b|\bhave you (ever )?(previously )?been employed (at|by) .{1,60} for any length of time\b/,
     resolve: (p, label, ctx) => {
       const m =
         /\b(?:current or former|former) (.+?) (?:employee|intern)\b/.exec(label) ??

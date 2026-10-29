@@ -2,7 +2,7 @@
 
 These sites show a captcha to automated submissions, so these applications need your own click on Submit. Every answer below comes from your profile, answer bank or resume; ⚠️ marks the questions the agent could not answer. Ashby's "Autofill from resume" fills name, email, phone and links; upload Lindsey_Ma_Resume.pdf.
 
-98 postings recorded; 34 have every answer ready. After you submit one, tell Claude its company and title so the ledger records it.
+98 postings recorded; 42 have every answer ready. After you submit one, tell Claude its company and title so the ledger records it.
 
 ### AHEAD · Associate Data Engineer
 
@@ -68,7 +68,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Applied Intuition · Research Scientist (Research)
 
-[Open the form](https://jobs.ashbyhq.com/applied/39846b2a-1f0e-4f97-b463-75fd37f217ce) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/applied/39846b2a-1f0e-4f97-b463-75fd37f217ce) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -80,7 +80,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Current Company**: Arborphy AI LLC
 - **Are you open to being in-office 5 days a week in Sunnyvale?**: Yes
 - **How did you hear about us?**: LinkedIn
-- ⚠️ **Why Applied Intuition?**: _no answer in profile or answer bank_
+- **Why Applied Intuition?**: Applied Intuition builds intelligence for machines that move in the real world, and that is the work I have been pulled toward. At the InnoX Academy robotics lab I built a real-time vision pipeline for an autonomous badminton-training robot, with YOLOv8 detection, pose estimation, stereo 3D shuttlecock tracking and landing-point prediction, deployed on a Raspberry Pi. My Columbia coursework included Robot Learning and Deep Learning. I want to keep building physical AI where models have to work on real hardware.
 - **What is your preferred programming language for interviews?**: Python
 - **Will you need sponsorship to work in the U.S. now or anytime in the future?**: Yes
 - **Do you currently have an active immigration case (ex H-1B extension, green card)?**: No
@@ -90,7 +90,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Applied Intuition · Research Scientist - Reinforcement Learning, Robotics
 
-[Open the form](https://jobs.ashbyhq.com/applied/52a070cf-4e1b-4fcc-bf73-727da8fb6d46) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/applied/52a070cf-4e1b-4fcc-bf73-727da8fb6d46) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -102,7 +102,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Current Company**: Arborphy AI LLC
 - **Are you open to being in-office 5 days a week in Sunnyvale?**: Yes
 - **How did you hear about us?**: LinkedIn
-- ⚠️ **Why Applied Intuition?**: _no answer in profile or answer bank_
+- **Why Applied Intuition?**: Applied Intuition builds intelligence for machines that move in the real world, and that is the work I have been pulled toward. At the InnoX Academy robotics lab I built a real-time vision pipeline for an autonomous badminton-training robot, with YOLOv8 detection, pose estimation, stereo 3D shuttlecock tracking and landing-point prediction, deployed on a Raspberry Pi. My Columbia coursework included Robot Learning and Deep Learning. I want to keep building physical AI where models have to work on real hardware.
 - **What is your preferred programming language for interviews?**: Python
 - **Will you need sponsorship to work in the U.S. now or anytime in the future?**: Yes
 - **Do you currently have an active immigration case (ex H-1B extension, green card)?**: No
@@ -112,7 +112,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Applied Intuition · Research Scientist - World-Action Foundation Model, Robotics
 
-[Open the form](https://jobs.ashbyhq.com/applied/a6c99f37-545a-46f2-8222-02ad43c1e2c3) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/applied/a6c99f37-545a-46f2-8222-02ad43c1e2c3) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -124,7 +124,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Current Company**: Arborphy AI LLC
 - **Are you open to being in-office 5 days a week in Sunnyvale?**: Yes
 - **How did you hear about us?**: LinkedIn
-- ⚠️ **Why Applied Intuition?**: _no answer in profile or answer bank_
+- **Why Applied Intuition?**: Applied Intuition builds intelligence for machines that move in the real world, and that is the work I have been pulled toward. At the InnoX Academy robotics lab I built a real-time vision pipeline for an autonomous badminton-training robot, with YOLOv8 detection, pose estimation, stereo 3D shuttlecock tracking and landing-point prediction, deployed on a Raspberry Pi. My Columbia coursework included Robot Learning and Deep Learning. I want to keep building physical AI where models have to work on real hardware.
 - **What is your preferred programming language for interviews?**: Python
 - **Will you need sponsorship to work in the U.S. now or anytime in the future?**: Yes
 - **Do you currently have an active immigration case (ex H-1B extension, green card)?**: No
@@ -144,12 +144,12 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Astera Institute · Machine Learning Researcher - Springtail
 
-[Open the form](https://jobs.ashbyhq.com/astera/62476521-abff-42eb-9b23-61d5a5fd0aed) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/astera/62476521-abff-42eb-9b23-61d5a5fd0aed) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
 - **Resume**: upload Lindsey_Ma_Resume.pdf
-- ⚠️ **Why you are interested in working at Astera? Why are you interested in working on the Springtail project?**: _no answer in profile or answer bank_
+- **Why you are interested in working at Astera? Why are you interested in working on the Springtail project?**: Astera backs ambitious science with in-house research programs, and I want to do research where the methods serve a real scientific question. My background is statistics applied to neuroscience and biology: self-supervised denoising for two-photon calcium imaging at Columbia's Center for Theoretical Neuroscience, Bayesian stochastic block models of the FlyWire connectome, and evaluation-heavy model work at Arborphy AI. I am excited by Springtail as a place to apply that combination of machine learning and careful statistics.
 - **Are you legally authorized to work in the US?**: Yes
 - **Will you require sponsorship in the future?**: Yes
 
@@ -252,7 +252,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Baseten · Software Engineer - Dedicated Inference
 
-[Open the form](https://jobs.ashbyhq.com/baseten/fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde) · ashby · **2 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/baseten/fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde) · ashby · **1 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Phone Number**: 9786681426
@@ -262,7 +262,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Current Company**: Arborphy AI LLC
 - **Are you legally authorized to work in the United States?**: Yes
 - **Will you now, or in the future, require employment-based visa sponsorship?**: Yes
-- ⚠️ **What about Baseten and this role interests you?**: _no answer in profile or answer bank_
+- **What about Baseten and this role interests you?**: Inference is where models meet users, and I enjoy the work of making models fast and dependable. I deployed models on a Raspberry Pi with ONNX Runtime, quantization and an asynchronous video pipeline, reducing inference latency by 8%, and I have verified numerical consistency between Hugging Face and TransformerLens for Qwen3-8B FP32 inference. Dedicated inference for frontier AI companies is that same problem at a much larger scale.
 - ⚠️ **Have you built developer-facing products such as APIs, SDKs, or CLI tools?** (options: Yes / No): _no answer in profile or answer bank_
 - **Gender**: Decline to self-identify
 - **Race**: Decline to self-identify
@@ -646,7 +646,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Goaly · Applied AI Engineer — Early Career
 
-[Open the form](https://jobs.ashbyhq.com/goaly/ff6ec280-f5c6-4151-8bfd-e75ff8004c89) · ashby · **2 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/goaly/ff6ec280-f5c6-4151-8bfd-e75ff8004c89) · ashby · **1 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -654,7 +654,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **LinkedIn Profile**: https://www.linkedin.com/in/lindsey-ma/
 - ⚠️ **When is the earliest you would want to start working with us?**: _no answer in profile or answer bank_
 - **Are you willing to relocate to the Bay Area?**: Yes
-- ⚠️ **Why Goaly**: _no answer in profile or answer bank_
+- **Why Goaly**: Lowering the cost of building proprietary AI is a systems problem I want to work on, and an early team with real ownership is where I learn fastest. I have built AI systems end to end: a multi-agent service with audit-driven trust levels deployed on a VPS, interpretability tooling across all 28 layers of a transformer, and models deployed with quantization on edge hardware. I want to work on the foundational pieces that make each generation of models cheaper to build.
 - **Do you need visa sponsorship?**: Yes
 - **Github**: https://github.com/Lindsey-cyber
 
@@ -782,13 +782,13 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### LiveFlow · Graduate Engineer - AI Agents
 
-[Open the form](https://jobs.ashbyhq.com/liveflow/93a4d132-b68c-42d7-ace0-7975661130ba) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/liveflow/93a4d132-b68c-42d7-ace0-7975661130ba) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
 - **Resume**: upload Lindsey_Ma_Resume.pdf
 - **LinkedIn URL**: https://www.linkedin.com/in/lindsey-ma/
-- ⚠️ **Why do you want to join LiveFlow?**: _no answer in profile or answer bank_
+- **Why do you want to join LiveFlow?**: I want to build AI agents that do real work, and finance teams are a demanding place to do it because numbers have to be right. I have built multi-agent systems: a coordinator–manager–worker hierarchy with verifier agents and per-stage trust levels, deployed as a daily service, where every audit disagreement became a rule or a regression test. Shipping real product features from day one with that kind of reliability is what draws me to LiveFlow.
 - **Do you require visa sponsorship to work in your country of residence, now or in the future?**: Yes
 
 ### Mach9 · ML Engineer, Research
@@ -805,7 +805,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Mariana Minerals · Machine Learning Engineer
 
-[Open the form](https://jobs.ashbyhq.com/marianaminerals/44c92dd6-55f2-4e44-9360-bf4676466dac) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/marianaminerals/44c92dd6-55f2-4e44-9360-bf4676466dac) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email Address**: lm3879@columbia.edu
@@ -814,7 +814,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Location**: New York, New York, United States
 - **LinkedIn Profile**: https://www.linkedin.com/in/lindsey-ma/
 - **Do you now, or in the future, require visa sponsorship?**: Yes
-- ⚠️ **Why are you interested in working for Mariana Minerals?**: _no answer in profile or answer bank_
+- **Why are you interested in working for Mariana Minerals?**: A mining company that builds its own software and wants its operations to run autonomously is a rare place where machine learning changes physical outcomes directly. I have built models that had to run on real hardware, including a real-time vision pipeline deployed on a Raspberry Pi, and I am careful about whether a model's gains are real: at Arborphy AI I designed a leakage-aware evaluation protocol with multi-seed runs. I would like to bring that to critical-mineral operations.
 - **Does the listed location work for you or are you open to relocation to the location listed in the job posting?**: Yes
 - **Gender**: Decline to self-identify
 - **Race**: Decline to self-identify
@@ -885,7 +885,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Oligo Space · AI Space Systems Software Engineer
 
-[Open the form](https://jobs.ashbyhq.com/oligo/1eda6c7f-694c-497e-a648-f9f388130cbc) · ashby · **4 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/oligo/1eda6c7f-694c-497e-a648-f9f388130cbc) · ashby · **3 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Last Name**: Ma
@@ -895,7 +895,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **LinkedIn URL**: https://www.linkedin.com/in/lindsey-ma/
 - **Personal Website**: https://www.lindseyma.com/
 - ⚠️ **References**: _references are someone else's data_
-- ⚠️ **What stood out about Oligo Space that led you to apply to this specific position?**: _no answer in profile or answer bank_
+- **What stood out about Oligo Space that led you to apply to this specific position?**: A foundation model with manufacturing in the loop, aimed at designing and building spacecraft in weeks. I like work where models meet physical constraints: I built a real-time vision pipeline for an autonomous robot and deployed it on a Raspberry Pi, and at Arborphy AI I built a multi-agent reasoning prototype in which agents plan iteratively and generate new tools on demand. Combining generative design with real manufacturing feedback is the kind of problem I want to work on.
 - ⚠️ **Are you willing to relocate to the South Bay (Los Angeles) Area or live within a commutable distance?** (options: Yes / No): _no answer in profile or answer bank_
 - ⚠️ **Tell us about yourself!**: _no answer in profile or answer bank_
 - **Are you currently authorized to work in the United States without the need for visa sponsorship now or in the future?**: Yes
@@ -966,13 +966,13 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Periodic Labs · Research Scientist/Research Engineer, Midtraining
 
-[Open the form](https://jobs.ashbyhq.com/periodic-labs/168dbf20-2230-49a0-9f00-f2ff58dad5c8) · ashby · **4 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/periodic-labs/168dbf20-2230-49a0-9f00-f2ff58dad5c8) · ashby · **3 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
 - **Resume**: upload Lindsey_Ma_Resume.pdf
 - **Social Media profile (LinkedIn, X, etc.)**: https://www.linkedin.com/in/lindsey-ma/
-- ⚠️ **What excites you most about Periodic Labs?**: _no answer in profile or answer bank_
+- **What excites you most about Periodic Labs?**: Using AI to accelerate discovery in the physical sciences. Most of my research has been on scientific data: self-supervised denoising for two-photon calcium imaging at Columbia's Center for Theoretical Neuroscience, Bayesian models of the FlyWire connectome, and plant-species models at Arborphy AI. Across them I have learned that the evaluation decides what you can claim, which is why the focus on building scientific evals and data stands out to me.
 - ⚠️ **How did you learn about Periodic Labs?** (options: Social Media / News Article / Friends / At Work / Podcast): _no answer in profile or answer bank_
 - ⚠️ **Please name 1-3 examples of outstanding work you’ve done.**: _no answer in profile or answer bank_
 - ⚠️ **Can you work out of our office in Menlo Park, CA weekly? (We pay for your rideshare daily, and offer relocation assistance.)** (options: Yes / No): _no answer in profile or answer bank_
@@ -980,13 +980,13 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Periodic Labs · Research Scientist, Data
 
-[Open the form](https://jobs.ashbyhq.com/periodic-labs/d039ec58-a97d-47e1-b1e5-db003d772f77) · ashby · **7 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/periodic-labs/d039ec58-a97d-47e1-b1e5-db003d772f77) · ashby · **6 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
 - **Resume**: upload Lindsey_Ma_Resume.pdf
 - **Social Media profile (LinkedIn, X, etc.)**: https://www.linkedin.com/in/lindsey-ma/
-- ⚠️ **What excites you most about Periodic Labs?**: _no answer in profile or answer bank_
+- **What excites you most about Periodic Labs?**: Using AI to accelerate discovery in the physical sciences. Most of my research has been on scientific data: self-supervised denoising for two-photon calcium imaging at Columbia's Center for Theoretical Neuroscience, Bayesian models of the FlyWire connectome, and plant-species models at Arborphy AI. Across them I have learned that the evaluation decides what you can claim, which is why the focus on building scientific evals and data stands out to me.
 - ⚠️ **How did you learn about Periodic Labs?** (options: Social Media / News Article / Friends / At Work / Podcast): _no answer in profile or answer bank_
 - ⚠️ **Please name 1-3 examples of outstanding work you’ve done.**: _no answer in profile or answer bank_
 - ⚠️ **Tell us about a project you've worked on using LLMs or other AI tools.**: _no answer in profile or answer bank_
@@ -997,7 +997,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Petra Security · Quantitative Researcher
 
-[Open the form](https://jobs.ashbyhq.com/petra-security/0cdef9cc-124c-4317-9df3-8423dfe33b30) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/petra-security/0cdef9cc-124c-4317-9df3-8423dfe33b30) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -1005,7 +1005,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **LinkedIn**: https://www.linkedin.com/in/lindsey-ma/
 - **Are you legally authorized to work in the United States?**: Yes
 - **Will you now or in the future require visa sponsorship?**: Yes
-- ⚠️ **Why Petra?**: _no answer in profile or answer bank_
+- **Why Petra?**: AI has made account compromise easier, with LLM-written phishing getting past email filters, and I like that Petra is building for that world instead of patching an older one. My work centers on telling a real signal from noise and on evaluations that hold up: I designed a leakage-aware protocol that showed an apparent model gain did not reliably beat a simpler baseline, and I have studied how language models behave from the inside. I want to apply that rigor to catching attacks early.
 
 ### Ramp · Applied AI Engineer, Fullstack
 
@@ -1219,7 +1219,7 @@ These sites show a captcha to automated submissions, so these applications need 
 
 ### Solace Health · Associate Data Scientist (College Grad 2027)
 
-[Open the form](https://jobs.ashbyhq.com/solace/77ca492c-4142-4931-beeb-e85d9d0ac443) · ashby · **3 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/solace/77ca492c-4142-4931-beeb-e85d9d0ac443) · ashby · **2 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -1228,14 +1228,14 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Are you authorized to work in the United States?**: Yes
 - **Will you require Solace to sponsor you for a work permit, either now or in the future, to work in the United States?**: Yes
 - **Education History**: Columbia University | Master of Science | Statistics | 09/2024 | 05/2026
-- ⚠️ **Why does Solace's mission resonate with you?**: _no answer in profile or answer bank_
+- **Why does Solace's mission resonate with you?**: Healthcare is hard to navigate even for people with time and training, and an advocate who explains the options changes outcomes. I like that Solace pairs people with expert help and uses data to make it better. As a statistician I care about decisions resting on evidence that holds up; at Arborphy AI I designed a leakage-aware evaluation protocol that showed an apparent gain was not reliable. I would like that rigor to help patients get better care.
 - ⚠️ **Describe a personal project where you applied skills relevant to this role. What did you build and what was your approach?**: _no answer in profile or answer bank_
 - ⚠️ **Record a video describing why you're the best person for this position. Keep the length under one minute and include a link in your answer below.**: _no answer in profile or answer bank_
 - **How did you hear about us?**: LinkedIn
 
 ### Solace Health · Data Scientist
 
-[Open the form](https://jobs.ashbyhq.com/solace/9dc2497a-d836-4331-9040-3d9108be8563) · ashby · **2 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/solace/9dc2497a-d836-4331-9040-3d9108be8563) · ashby · **1 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -1243,12 +1243,12 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Resume**: upload Lindsey_Ma_Resume.pdf
 - **Are you authorized to work in the United States?**: Yes
 - **Will you now or in the future require visa sponsorship to work in the U.S.?**: Yes
-- ⚠️ **Why does Solace's mission resonate with you?**: _no answer in profile or answer bank_
+- **Why does Solace's mission resonate with you?**: Healthcare is hard to navigate even for people with time and training, and an advocate who explains the options changes outcomes. I like that Solace pairs people with expert help and uses data to make it better. As a statistician I care about decisions resting on evidence that holds up; at Arborphy AI I designed a leakage-aware evaluation protocol that showed an apparent gain was not reliable. I would like that rigor to help patients get better care.
 - ⚠️ **Record a video describing why you're the best person for this position. Keep the length under one minute and include a link in your answer below.**: _no answer in profile or answer bank_
 
 ### Suno · Software Engineer, AI Operations
 
-[Open the form](https://jobs.ashbyhq.com/suno/f19de1aa-0965-43db-acbe-b6917e268ff0) · ashby · **4 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/suno/f19de1aa-0965-43db-acbe-b6917e268ff0) · ashby · **3 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Preferred Name**: Lindsey
@@ -1259,14 +1259,14 @@ These sites show a captcha to automated submissions, so these applications need 
 - ⚠️ **Which office are you willing to work out of?** (options: Boston (Cambridge) / New York City (Chelsea) / Los Angeles (Venice) / San Francisco): _no answer in profile or answer bank_
 - **Are you legally authorized to work in the United States?**: Yes
 - **Do you, now or in the future, require visa sponsorship to work in the United States?**: Yes
-- ⚠️ **Why are you interested in working at Suno?**: _no answer in profile or answer bank_
+- **Why are you interested in working at Suno?**: Suno is making a new creative medium, and I like work where people feel the result directly. I have built real-time systems end to end, including a vision pipeline running at 20+ FPS on a Raspberry Pi, and I have integrated a locally hosted language model to turn voice commands into actions. Helping keep a fast-moving AI product reliable for millions of people making music is the kind of ownership I want.
 - ⚠️ **Tell us about a production system you were responsible for. How did you know whether it was healthy? 3-5 sentences is all we’re looking for!**: _no answer in profile or answer bank_
 - ⚠️ **When you review a teammate's code, what are you looking for beyond correctness? Share an example of feedback you gave (or received) that meaningfully improved the code or the team's practices. 3-5 sen**: _no answer in profile or answer bank_
 - **Suno fosters an in-office culture with reasonable flexibility. We expect teammates to work from one of our offices Monday through Friday because we believe freq**: Yes
 
 ### Surge AI · Research Scientist
 
-[Open the form](https://jobs.ashbyhq.com/surge-ai/55673c49-9b7b-4080-b925-1e4b8a5011a3) · ashby · **1 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/surge-ai/55673c49-9b7b-4080-b925-1e4b8a5011a3) · ashby · all answers ready
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -1274,11 +1274,11 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Resume**: upload Lindsey_Ma_Resume.pdf
 - **Do you have a LinkedIn profile? If so, please add that here.**: https://www.linkedin.com/in/lindsey-ma/
 - **For the country in which this position is based, do you now or will you in the future require employer sponsorship for a work visa or employment authorization?**: Yes
-- ⚠️ **Please provide 2-3 sentences describing your interest in Surge. We love personal projects and writings too!**: _no answer in profile or answer bank_
+- **Please provide 2-3 sentences describing your interest in Surge. We love personal projects and writings too!**: I am interested in how the data and oversight that shape a model show up in its behavior. I reproduced Anthropic's circuit-tracing analysis of hallucination on Qwen3-4B, and separately built a multi-agent system in which a verifier on a different model blind-audits sampled outputs and every disagreement becomes a rule or a regression test. Surge's work on human expertise and scalable oversight is where I want to keep going.
 
 ### Surge AI · AI Operations Engineer
 
-[Open the form](https://jobs.ashbyhq.com/surge-ai/73c5fe8d-0cb6-40e1-a634-d46928702f85) · ashby · **2 question(s) need you**
+[Open the form](https://jobs.ashbyhq.com/surge-ai/73c5fe8d-0cb6-40e1-a634-d46928702f85) · ashby · **1 question(s) need you**
 
 - **Full Name**: Lanxin Ma
 - **Email**: lm3879@columbia.edu
@@ -1286,7 +1286,7 @@ These sites show a captcha to automated submissions, so these applications need 
 - **Resume**: upload Lindsey_Ma_Resume.pdf
 - **Do you have a LinkedIn profile? If so, please add that here.**: https://www.linkedin.com/in/lindsey-ma/
 - **For the country in which this position is based, do you now or will you in the future require employer sponsorship for a work visa or employment authorization?**: Yes
-- ⚠️ **Please provide 2-3 sentences describing your interest in Surge. We love personal projects and writings too!**: _no answer in profile or answer bank_
+- **Please provide 2-3 sentences describing your interest in Surge. We love personal projects and writings too!**: I am interested in how the data and oversight that shape a model show up in its behavior. I reproduced Anthropic's circuit-tracing analysis of hallucination on Qwen3-4B, and separately built a multi-agent system in which a verifier on a different model blind-audits sampled outputs and every disagreement becomes a rule or a regression test. Surge's work on human expertise and scalable oversight is where I want to keep going.
 
 ### Uncountable · Scientific Data Engineer
 

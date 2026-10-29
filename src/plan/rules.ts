@@ -353,6 +353,13 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^python\b/i.test(o.trim())),
   },
   {
+    // Age 18+: her B.A. ran 2019-2023 (answers.yaml over-18), in any wording.
+    path: "age",
+    pattern: /\b(over|at least|older than) (the age of )?18\b|\b18 (years|yrs) (of age )?(or older|and older|of age)\b|\blegal (working )?age\b/,
+    kinds: ["select", "radio", "combobox", "checkbox"],
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^yes\b/i.test(o.trim())),
+  },
+  {
     // Notice period as choices ("Immediately Available", "1 Month", ...): the shortest option that covers hers.
     path: "noticePeriodWeeks",
     pattern: /\bnotice period\b/,

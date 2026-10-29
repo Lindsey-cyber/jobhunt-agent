@@ -497,3 +497,10 @@ answers:
       - Have you interviewed with {company} before?
     answer: "No"
     origin: human
+  # From her work history: she has never worked for S&P Global (Kensho's parent) or its affiliates.
+  - id: sp-global-prior-employment
+    question: "Have you previously worked for S&P Global or any of it's affiliates? Current Employees, please exit this site and apply via the internal Workday careers worklet."
+    aliases:
+      - Have you previously worked for S&P Global or any of its affiliates?
+    answer: "No"
+    origin: human

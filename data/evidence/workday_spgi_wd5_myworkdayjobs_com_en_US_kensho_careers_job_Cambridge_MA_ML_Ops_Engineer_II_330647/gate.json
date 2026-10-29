@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you previously worked for S&P Global or any of it's affiliates? Current Employees, please exit this site and apply via the internal Workday careers worklet.\": sensitive question with no exact answer",
+    "required \"Have you previously worked for S&P Global or any of it's affiliates? Current Employees, please exit this site and apply via the internal Workday careers worklet.\" is empty after filling"
+  ]
+}

@@ -377,6 +377,7 @@ describe("buildPlan", () => {
     expect(one("Have you been previously employed with us?", ["Yes", "No"], "KSB")).toMatchObject({ value: "No" });
     expect(one("Phone Device Type", ["Main/Home"])).toMatchObject({ value: "Main/Home" });
     expect(one("Are you currently employed with Magna? (If you are a current Magna employee, please use the \"Jobs Hub\" in Workday to apply for this role.)", ["Yes", "No"], "Magna")).toMatchObject({ value: "No" });
+    expect(one("Are you a previous Employee of PayPal or any of its subsidiaries?", ["Yes", "No"], "PayPal")).toMatchObject({ value: "No" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

@@ -1,7 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).\": no answer in profile or answer bank",
-    "required \"Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).\" is empty after filling"
-  ]
+  "decision": "submit"
 }

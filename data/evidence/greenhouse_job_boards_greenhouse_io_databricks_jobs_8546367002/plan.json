@@ -888,7 +888,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_36499753002",
         "label": "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).",
@@ -896,7 +896,14 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "At Arborphy AI I do model-level work on transformer-based vision models for plant species identification. I built a plant species classifier on about 9,000 images spanning 200+ species, designing an EfficientNet–BioCLIP dual-encoder with bidirectional spatial cross-attention and BioCLIP-anchored gated residuals, and improved fusion macro-F1 from 0.808 to 0.832 across architecture iterations. I designed a leakage-aware evaluation protocol (individual-disjoint splits, multi-seed runs, grouped held-out sets) and benchmarked frozen BioCLIP, DINOv3 and EfficientNet embeddings with linear probes and cross-species retrieval; DINOv3 reached 87.3% organ-classification accuracy. This is applied work in an early-stage product rather than a large-scale production deployment.",
+      "source": {
+        "type": "bank",
+        "id": "databricks-transformer-system",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

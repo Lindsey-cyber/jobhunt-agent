@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -135,6 +135,13 @@
       "pass": true
     },
     {
+      "fieldId": "4010568009",
+      "label": "How would you describe your racial/ethnic background?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
       "fieldId": "4010569009",
       "label": "How would you describe your sexual orientation?",
       "expected": "I don't wish to answer",
@@ -173,8 +180,8 @@
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
       "expected": "No",
-      "actual": "Decline To Self Identify",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -182,13 +189,6 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
-      "actual": "",
-      "pass": false
     }
   ],
   "emptyRequired": [],

@@ -9,15 +9,15 @@
   "question_18991831008": "",
   "question_18991833008": "No",
   "question_18991834008": "Yes",
-  "question_18991835008": "",
-  "question_18991839008": "",
-  "question_18991832008": "",
+  "question_18991835008": "No",
+  "question_18991839008": "Acknowledge and Confirm",
+  "question_18991832008": "Masters Degree",
   "question_19008304008": "Yes",
   "question_19008305008": "",
   "question_19008306008": "",
   "gender": "Decline To Self Identify",
-  "hispanic_ethnicity": "Decline To Self Identify",
+  "hispanic_ethnicity": "No",
+  "race": "",
   "veteran_status": "I am not a protected veteran",
-  "resume": "Lindsey_Ma_Resume.pdf",
-  "race": ""
+  "resume": "Lindsey_Ma_Resume.pdf"
 }

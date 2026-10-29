@@ -105,11 +105,17 @@
       "expected": "$100K–$150K",
       "actual": "$100K–$150K",
       "pass": true
+    },
+    {
+      "fieldId": "question_38372189002",
+      "label": "If needed, are you willing to relocate for this opportunity?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "What is your current notice period?",
-    "If needed, are you willing to relocate for this opportunity?"
+    "What is your current notice period?"
   ],
   "fillErrors": []
 }

@@ -754,7 +754,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -774,7 +774,7 @@
       "reason": "no document for this upload"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_32983460003",
         "label": "What are your salary requirements?",
@@ -782,7 +782,13 @@
         "required": true,
         "options": []
       },
-      "reason": "compensation is never filled automatically"
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -922,7 +928,7 @@
       "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "skip",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -938,13 +944,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
-      "sensitive": true
+      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

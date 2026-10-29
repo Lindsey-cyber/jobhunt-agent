@@ -781,7 +781,7 @@
         "required": false,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -822,7 +822,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_7743889009",
         "label": "Are you interested in working out of our Miami HQ?",
@@ -833,7 +833,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -996,7 +1002,7 @@
       "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "skip",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -1012,13 +1018,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
-      "sensitive": true
+      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

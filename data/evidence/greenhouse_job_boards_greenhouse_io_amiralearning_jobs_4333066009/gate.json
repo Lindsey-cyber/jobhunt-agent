@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you have at least 18 months of experience designing, developing, or operating machine learning–powered services deployed in production within a startup environment?\": no answer in profile or answer bank",
+    "required \"Does your experience include working with speech recognition, NLP, or large language models (LLMs) in a production AI system? Please describe.\": no answer in profile or answer bank",
+    "required \"Do you have at least 18 months of experience designing, developing, or operating machine learning–powered services deployed in production within a startup environment?\" is empty after filling",
+    "required \"Does your experience include working with speech recognition, NLP, or large language models (LLMs) in a production AI system? Please describe.\" is empty after filling"
+  ]
+}

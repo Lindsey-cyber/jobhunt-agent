@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -65,6 +65,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_31599993003",
+      "label": "Pronouns",
+      "expected": "I prefer not to say",
+      "actual": "I prefer not to say",
+      "pass": true
+    },
+    {
       "fieldId": "question_31599994003",
       "label": "Do you require immigration sponsorship to work for Affirm in the United States?",
       "expected": "Yes",
@@ -86,6 +93,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_31599997003",
+      "label": "How did you first learn about Affirm as an employer?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
       "fieldId": "question_31599998003",
       "label": "GitHub",
       "expected": "https://github.com/Lindsey-cyber",
@@ -97,6 +111,13 @@
       "label": "Portfolio",
       "expected": "https://www.lindseyma.com/",
       "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31600002003",
+      "label": "Have you previously been employed at Affirm for any length of time?",
+      "expected": "I have not previously been employed at Affirm",
+      "actual": "I have not previously been employed at Affirm",
       "pass": true
     },
     {
@@ -117,8 +138,8 @@
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
       "expected": "No",
-      "actual": "Decline To Self Identify",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -126,19 +147,8 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
-      "actual": "",
-      "pass": false
     }
   ],
-  "emptyRequired": [
-    "Pronouns",
-    "How did you first learn about Affirm as an employer?",
-    "Have you previously been employed at Affirm for any length of time?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

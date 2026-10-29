@@ -1,17 +1,9 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Would you be willing to relocate if the role requires it?\": no answer in profile or answer bank",
-    "required \"This role is located out of our Boston headquarters (located at 125 Summer St., Boston, MA 02111). Are you willing and able to work out out of our Boston office 5 days per week?\": no answer in profile or answer bank",
-    "required \"Do you currently have legal work authorization in the country where this position is based?\": sensitive question with no exact answer",
-    "required \"What is your anticipated graduation month/year?\": no answer in profile or answer bank",
-    "required \"What is your GPA?\": no answer in profile or answer bank",
-    "required \"Pronoun\": no answer in profile or answer bank",
-    "required \"Would you be willing to relocate if the role requires it?\" is empty after filling",
-    "required \"This role is located out of our Boston headquarters (located at 125 Summer St., Boston, MA 02111). Are you willing and able to work out out of our Boston office 5 days per week?\" is empty after filling",
-    "required \"Do you currently have legal work authorization in the country where this position is based?\" is empty after filling",
+    "required \"What is your anticipated graduation month/year?\": answer \"05/2026\" matches none of the options",
+    "required \"What is your GPA?\": answer \"3.71\" matches none of the options",
     "required \"What is your anticipated graduation month/year?\" is empty after filling",
-    "required \"What is your GPA?\" is empty after filling",
-    "required \"Pronoun\" is empty after filling"
+    "required \"What is your GPA?\" is empty after filling"
   ]
 }

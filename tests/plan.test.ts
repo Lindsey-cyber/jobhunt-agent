@@ -351,4 +351,27 @@ describe("buildPlan", () => {
     expect(buildPlan(form([f(false)]), p, user.bank).items[0]).toMatchObject({ status: "skip" });
     expect(buildPlan(form([f(true)], "Other Co"), p, user.bank).items[0]).toMatchObject({ status: "blocked" });
   });
+
+  it("maps her answers onto choice lists: graduation, GPA ranges, notice period, degree, clearance, acronyms", () => {
+    const p = {
+      ...user.profile,
+      education: [{ school: "Columbia University", degree: "Master of Science", major: "Statistics", gpa: "3.71", gradMonth: 5, gradYear: 2026 }],
+      noticePeriodWeeks: 2,
+      citizenship: ["China"],
+      workHistory: [{ employer: "Arborphy AI LLC" }],
+      relativesAtEmployers: false,
+      workArrangement: { onsite: true, relocate: true },
+    };
+    const bank = { answers: [{ id: "notice", question: "What is your current notice period?", aliases: [], answer: "2 weeks", origin: "human" as const }] };
+    const one = (label: string, options: string[], company = "Acme Robotics", kind: "combobox" | "checkbox" = "combobox", loc = "Boston, MA") => buildPlan({ ...form([field(label, { kind, options })], company), jobLocation: loc }, p, bank).items[0]!;
+    expect(one("What is your anticipated graduation month/year?", ["December 2025", "May 2026", "Other"])).toMatchObject({ value: "May 2026" });
+    expect(one("What is your GPA?", ["3.25 - 3.49", "3.5 - 3.74", "3.75 - 4", "4+"])).toMatchObject({ value: "3.5 - 3.74" });
+    expect(one("What is your current notice period?", ["Immediately Available", "1 Month", "2 Months", "3+ Months"])).toMatchObject({ value: "1 Month" });
+    expect(one("Degree", ["Bachelor's Degree", "Master’s Degree", "Other"])).toMatchObject({ value: "Master’s Degree" });
+    expect(one("Do you hold a security clearance?", ["None", "Secret", "Top Secret"])).toMatchObject({ value: "None" });
+    expect(one("Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)", ["Yes", "No"], "American Institutes for Research")).toMatchObject({ value: "No" });
+    expect(one("Do you have any family members or people you have close relationships with who work for Accenture Federal Services?", ["Yes", "No"], "Accenture Federal Services")).toMatchObject({ value: "No" });
+    expect(one("Are you a current employee of the U.S. Government (including U.S. Congress or military)?", ["Yes", "No"])).toMatchObject({ value: "No" });
+    expect(one("Are you able to work in the specified job location, or are you willing to relocate for this position?", ["Yes", "No"], "Lila Sciences", "checkbox", "Cambridge, MA USA; San Francisco, CA USA")).toMatchObject({ value: "Yes" });
+  });
 });

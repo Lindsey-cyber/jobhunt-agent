@@ -121,6 +121,27 @@
       "pass": true
     },
     {
+      "fieldId": "question_32888014003",
+      "label": "Would you be willing to relocate if the role requires it?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32891358003",
+      "label": "This role is located out of our Boston headquarters (located at 125 Summer St., Boston, MA 02111). Are you willing and able to work out out of our Boston office 5 days per week?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32888015003",
+      "label": "Do you currently have legal work authorization in the country where this position is based?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_32888016003",
       "label": "Would you, now or in the future, require immigration sponsorship* for work authorization?",
       "expected": "Yes",
@@ -156,6 +177,13 @@
       "pass": true
     },
     {
+      "fieldId": "4000981003",
+      "label": "Pronoun",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
       "fieldId": "4000982003",
       "label": "Sexual Orientation",
       "expected": "I don't wish to answer",
@@ -164,12 +192,8 @@
     }
   ],
   "emptyRequired": [
-    "Would you be willing to relocate if the role requires it?",
-    "This role is located out of our Boston headquarters (located at 125 Summer St., Boston, MA 02111). Are you willing and able to work out out of our Boston office 5 days per week?",
-    "Do you currently have legal work authorization in the country where this position is based?",
     "What is your anticipated graduation month/year?",
-    "What is your GPA?",
-    "Pronoun"
+    "What is your GPA?"
   ],
   "fillErrors": []
 }

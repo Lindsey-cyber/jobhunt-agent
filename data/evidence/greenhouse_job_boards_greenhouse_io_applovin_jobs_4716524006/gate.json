@@ -1,9 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"I consent to my interview being recorded via BrightHire, Inc. (United States) to assist in our recruiting efforts.\": no answer in profile or answer bank",
-    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
-    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
-    "required \"I consent to my interview being recorded via BrightHire, Inc. (United States) to assist in our recruiting efforts.\" is empty after filling"
-  ]
+  "decision": "submit"
 }

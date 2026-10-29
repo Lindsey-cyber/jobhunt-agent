@@ -773,7 +773,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -972,7 +972,7 @@
       "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "skip",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -988,13 +988,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
-      "sensitive": true
+      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

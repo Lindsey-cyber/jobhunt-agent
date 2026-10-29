@@ -37,6 +37,8 @@ education:
 restrictiveAgreements: false
 # The candidate (2026-10-28): apply to the 2027 graduating class's new-grad roles too.
 newGradCohorts: [2026, 2027]
+# The candidate (2026-10-29): two weeks' notice.
+noticePeriodWeeks: 2
 # The candidate (2026-10-29): consents to AI resume screening and AI job matching (ADI's questions).
 consentAiScreening: true
 # The candidate (2026-10-28): any US location; on-site 5 days or hybrid all work; willing to relocate.

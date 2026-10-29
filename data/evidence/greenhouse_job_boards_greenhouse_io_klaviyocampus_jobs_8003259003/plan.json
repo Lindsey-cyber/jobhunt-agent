@@ -1142,7 +1142,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1527,7 +1527,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_32888014003",
         "label": "Would you be willing to relocate if the role requires it?",
@@ -1538,10 +1538,16 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_32891358003",
         "label": "This role is located out of our Boston headquarters (located at 125 Summer St., Boston, MA 02111). Are you willing and able to work out out of our Boston office 5 days per week?",
@@ -1552,10 +1558,16 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_32888015003",
         "label": "Do you currently have legal work authorization in the country where this position is based?",
@@ -1566,7 +1578,13 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -1610,7 +1628,7 @@
           "Other"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "reason": "answer \"05/2026\" matches none of the options"
     },
     {
       "status": "blocked",
@@ -1632,7 +1650,7 @@
           "4+"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "reason": "answer \"3.71\" matches none of the options"
     },
     {
       "status": "fill",
@@ -1747,7 +1765,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "4000981003",
         "label": "Pronoun",
@@ -1764,7 +1782,13 @@
           "I don't wish to answer"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

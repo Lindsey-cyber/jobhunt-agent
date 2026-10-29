@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -79,6 +79,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_8714470006",
+      "label": "Have you worked at AppLovin or any of its affiliates before?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "question_8714471006",
       "label": "Are you legally authorized to work in the country in which you are applying?",
       "expected": "Yes",
@@ -88,6 +95,13 @@
     {
       "fieldId": "question_8714472006",
       "label": "Do you now or will you in the future need sponsorship for employment visa status in the country in which you are applying?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8714473006",
+      "label": "I consent to my interview being recorded via BrightHire, Inc. (United States) to assist in our recruiting efforts.",
       "expected": "Yes",
       "actual": "Yes",
       "pass": true
@@ -103,8 +117,8 @@
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
       "expected": "No",
-      "actual": "Decline To Self Identify",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -112,17 +126,8 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
-      "actual": "",
-      "pass": false
     }
   ],
-  "emptyRequired": [
-    "I consent to my interview being recorded via BrightHire, Inc. (United States) to assist in our recruiting efforts."
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

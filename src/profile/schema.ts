@@ -48,6 +48,8 @@ export const Profile = z.object({
   restrictiveAgreements: z.boolean().optional(),
   // New-grad cohorts she applies to (2026-10-28: "2027年的也投"), even though she graduated in 2026.
   newGradCohorts: z.array(z.number().int()).default([]),
+  // The candidate (2026-10-29): two weeks' notice at her current job.
+  noticePeriodWeeks: z.number().min(0).optional(),
   // The candidate (2026-10-29): consents to AI resume screening and AI job matching.
   consentAiScreening: z.boolean().optional(),
   // The candidate (2026-10-28): on-site (five days or hybrid) and relocation anywhere in the US.

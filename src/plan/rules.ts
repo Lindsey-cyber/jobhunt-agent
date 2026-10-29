@@ -24,7 +24,7 @@ export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|
 // What acceptApplicationAttestations covers, and the agreeing option to pick.
 // Narrow on purpose: "certify" only next to accuracy, recording only of an interview, AI only in
 // interview rules (a bare "Do you use AI tools?" or "criminal record" never matches).
-export const ATTESTATION_ALLOWED = /\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
+export const ATTESTATION_ALLOWED = /^affirmation$|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
 export const AGREEING_OPTION = /^(yes|i agree|agree|i accept|accept|accepted|i acknowledge|acknowledge|i consent|consent|i certify|i understand)\b/i;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
@@ -139,7 +139,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, _label, ctx) => {
       const degree = firstEdu(p).degree;
       const level = /^(master|bachelor|doctor)/i.exec(degree)?.[1]?.toLowerCase();
-      const generic = level && (ctx.options ?? []).find((o) => new RegExp(`^${level}'?s( degree)?$`, "i").test(o.trim()));
+      const generic = level && (ctx.options ?? []).find((o) => new RegExp(`^${level}s( degree)?$`).test(normalize(o)));
       return generic ?? degree;
     },
   },
@@ -164,12 +164,32 @@ export const PROFILE_RULES: ProfileRule[] = [
       return [e.school, e.degree, e.major, start, `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}`].join(" | ");
     },
   },
-  { path: "education[0].gpa", pattern: /^(what is your )?(cumulative |overall )?gpa$/, resolve: (p) => firstEdu(p).gpa },
+  {
+    path: "education[0].gpa",
+    pattern: /^(what is your )?(cumulative |overall )?gpa$/,
+    // Klaviyo: ranges ("3.5 - 3.74", "4+", "Below 2").
+    resolve: (p, _l, ctx) => {
+      const gpa = firstEdu(p).gpa;
+      const opts = ctx.options ?? [];
+      if (!gpa || !opts.length) return gpa;
+      const g = Number(gpa);
+      const hit = opts.filter((o) => {
+        const r = /^(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)$/.exec(o.trim());
+        if (r) return g >= Number(r[1]) && g <= Number(r[2]) + 0.005;
+        const plus = /^(\d+(?:\.\d+)?)\s*\+$/.exec(o.trim());
+        return plus ? g >= Number(plus[1]) : false;
+      });
+      return hit.length === 1 ? hit[0] : undefined;
+    },
+  },
   {
     path: "education[0].gradYear",
     pattern: /^what is your (anticipated |expected )?graduation (month )?(and )?(year|month year|date)$/,
-    resolve: (p) => {
+    resolve: (p, _l, ctx) => {
       const e = firstEdu(p);
+      // Klaviyo: "May 2026" among choices.
+      const named = `${new Date(Date.UTC(2000, e.gradMonth - 1, 1)).toLocaleString("en-US", { month: "long", timeZone: "UTC" })} ${e.gradYear}`;
+      if (ctx.options?.length) return ctx.options.find((o) => normalize(o) === normalize(named));
       return `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}`;
     },
   },
@@ -237,7 +257,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Asana: "Do you currently work for or have you ever worked for a U.S. government entity ...?" and its
     // "If you answered Yes, list the entity; if not applicable, type N/A": from the resume's employers.
     path: "workHistory",
-    pattern: /\b(work(ed)? for|employed by) (a |an |any )?(u s |us |federal |state )?government\b|\bgovernment entity you worked for\b/,
+    pattern: /\b(work(ed)? for|employed by) (a |an |any )?(u s |us |federal |state )?government\b|\bgovernment entity you worked for\b|\bemployee of (the )?(u s |us )?government\b/,
     resolve: (p, label, ctx) => {
       if (p.workHistory.some((w) => /\b(government|federal|department of|agency|u\.?s\.? army|navy|air force)\b/i.test(w.employer))) return undefined;
       if (/\bif you answered\b.*\bn ?a\b/.test(label)) return "N/A";
@@ -254,12 +274,32 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, label, ctx) => {
       if (/\b(relative|family|familial|client|customer|government|vendor|partner|competitor)\b/.test(label)) return undefined;
       const first = normalize(ctx.company ?? "").split(" ")[0];
-      if (!first || first.length < 2 || !new RegExp(`\\b${first}\\b`).test(label)) return undefined;
+      // "American Institutes for Research" is also "AIR".
+      const initials = (ctx.company ?? "").split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]!.toLowerCase()).join("");
+      const names = [first, initials.length >= 3 ? initials : ""].filter((x): x is string => Boolean(x && x.length >= 2));
+      if (!names.some((n) => new RegExp(`\\b${n}\\b`).test(label))) return undefined;
       if (p.workHistory.some((w) => normalize(w.employer).split(" ")[0] === first)) return undefined;
       const opts = ctx.options ?? [];
       const no = opts.filter((o) => /^(no\b|never\b|i have never\b|i have not\b|i am not\b|not\b)/i.test(o.trim()));
       if (opts.length && no.length !== 1) return undefined;
       return opts.length ? no[0] : "No";
+    },
+  },
+  {
+    // Notice period as choices ("Immediately Available", "1 Month", ...): the shortest option that covers hers.
+    path: "noticePeriodWeeks",
+    pattern: /\bnotice period\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, _l, ctx) => {
+      if (p.noticePeriodWeeks === undefined) return undefined;
+      const weeks = (o: string) => {
+        const t = normalize(o);
+        if (/\bimmediate/.test(t)) return 0;
+        const m = /(\d+)\s*(week|month)/.exec(t);
+        return m ? Number(m[1]) * (m[2] === "month" ? 4.3 : 1) : undefined;
+      };
+      const fits = (ctx.options ?? []).map((o) => ({ o, w: weeks(o) })).filter((x) => x.w !== undefined && x.w >= p.noticePeriodWeeks! && !/\+/.test(x.o)).sort((a, b) => a.w! - b.w!);
+      return fits[0]?.o;
     },
   },
   {
@@ -288,7 +328,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Yes/no only, and only for a posting located in the US.
     path: "workArrangement",
     pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location)\b/,
-    kinds: ["select", "radio", "combobox"],
+    kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       if (ctx.jobCountry !== "United States") return undefined;
       const opts = ctx.options ?? [];
@@ -407,7 +447,7 @@ export const PROFILE_RULES: ProfileRule[] = [
       const opts = ctx.options ?? [];
       if (p.citizenship.includes("United States")) return undefined;
       if (/\bheld\b|\bclearance level\b/.test(label)) return opts.find((o) => /\bnever held\b|^n ?\/? ?a\b/i.test(o.trim())) ?? opts.find((o) => /^no$/i.test(o.trim()));
-      return opts.find((o) => /^no$/i.test(o.trim()));
+      return opts.find((o) => /^(no|none)$/i.test(o.trim()));
     },
   },
   {
@@ -448,7 +488,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): she knows no one at any company, relatives included.
     path: "relativesAtEmployers",
-    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b/,
+    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b|\bfamily members?\b.{0,80}\bwho work (for|at)\b/,
     resolve: (p) => (p.relativesAtEmployers === false ? "No" : undefined),
   },
   {

@@ -1,9 +1,7 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"What is your current notice period?\": no answer in profile or answer bank",
-    "required \"If needed, are you willing to relocate for this opportunity?\": no answer in profile or answer bank",
-    "required \"What is your current notice period?\" is empty after filling",
-    "required \"If needed, are you willing to relocate for this opportunity?\" is empty after filling"
+    "required \"What is your current notice period?\": answer \"2 weeks\" matches none of the options",
+    "required \"What is your current notice period?\" is empty after filling"
   ]
 }

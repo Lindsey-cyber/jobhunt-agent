@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -58,6 +58,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_7743889009",
+      "label": "Are you interested in working out of our Miami HQ?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_7743890009",
       "label": "Who did you meet at the career fair?",
       "expected": "N/A",
@@ -103,8 +110,8 @@
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
       "expected": "No",
-      "actual": "Decline To Self Identify",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -112,17 +119,8 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
-      "actual": "",
-      "pass": false
     }
   ],
-  "emptyRequired": [
-    "Are you interested in working out of our Miami HQ?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

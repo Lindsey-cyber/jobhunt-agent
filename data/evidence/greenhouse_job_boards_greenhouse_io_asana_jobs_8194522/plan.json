@@ -473,6 +473,15 @@
           "I am a veteran and I do NOT belong to a classification of protected veterans",
           "I don't wish to answer"
         ]
+      },
+      {
+        "id": "gdpr_demographic_data_consent_given",
+        "label": "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above."
+        ]
       }
     ],
     "priorApplications": 0,
@@ -1041,7 +1050,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69119895",
         "label": "Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?",
@@ -1052,10 +1061,16 @@
           "No, I have never."
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No, I have never.",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69119896",
         "label": "If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'",
@@ -1063,7 +1078,13 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "N/A",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1174,6 +1195,25 @@
       },
       "confidence": 0.95,
       "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "gdpr_demographic_data_consent_given",
+        "label": "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above.",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above."
+        ]
+      },
+      "value": "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above.",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

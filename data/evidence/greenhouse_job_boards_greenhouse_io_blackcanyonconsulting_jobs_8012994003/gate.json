@@ -1,10 +1,6 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Cover Letter\": no document for this upload",
-    "required \"What are your salary requirements?\": compensation is never filled automatically",
-    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
-    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
-    "required \"What are your salary requirements?\" is empty after filling"
+    "required \"Cover Letter\": no document for this upload"
   ]
 }

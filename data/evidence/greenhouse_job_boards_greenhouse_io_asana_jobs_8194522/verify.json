@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -107,6 +107,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_69119895",
+      "label": "Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?",
+      "expected": "No, I have never.",
+      "actual": "No, I have never.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69119896",
+      "label": "If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'",
+      "expected": "N/A",
+      "actual": "N/A",
+      "pass": true
+    },
+    {
       "fieldId": "question_69119897",
       "label": "By agreeing here: (1) I certify that the information I provided to Asana in connection with my application for employment is accurate and truthful; and (2) I acknowledge and agree that I have carefully read the mutual Applicant Arbitration Agreement set out below and agree to be bound by it",
       "expected": "Yes",
@@ -140,11 +154,15 @@
       "expected": "I am not a veteran (I did not serve in the military)",
       "actual": "I am not a veteran (I did not serve in the military)",
       "pass": true
+    },
+    {
+      "fieldId": "gdpr_demographic_data_consent_given",
+      "label": "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above.",
+      "expected": "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above.",
+      "actual": "By checking this box, I consent to Asana collecting, storing, and processing my responses to the demographic data surveys above.",
+      "pass": true
     }
   ],
-  "emptyRequired": [
-    "Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?",
-    "If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

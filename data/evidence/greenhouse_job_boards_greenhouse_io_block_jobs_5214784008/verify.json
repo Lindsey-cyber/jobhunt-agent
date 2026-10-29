@@ -26,22 +26,22 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "United States",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "(978) 668-1426",
+      "actual": "9786681426",
       "pass": true
     },
     {
       "fieldId": "candidate-location",
       "label": "Location (City)",
       "expected": "New York, New York, United States",
-      "actual": "New York, New York, United States",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "resume",
@@ -54,22 +54,22 @@
       "fieldId": "school--0",
       "label": "School",
       "expected": "Columbia University",
-      "actual": "Columbia University",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "degree--0",
       "label": "Degree",
-      "expected": "Master's Degree",
-      "actual": "Master's Degree",
-      "pass": true
+      "expected": "Master of Science",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "discipline--0",
       "label": "Discipline",
-      "expected": "Statistics & Decision Theory",
-      "actual": "Statistics & Decision Theory",
-      "pass": true
+      "expected": "Statistics",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_15960940008",
@@ -89,15 +89,29 @@
       "fieldId": "question_15960944008",
       "label": "Will you now or in the future require sponsorship for work authorization? (This information will not be used in assessing your qualifications for any position.)",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_15960945008",
       "label": "Are you authorized to work lawfully in the location posted for this position?",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_15960946008",
+      "label": "Have you ever been employed full-time at Block or its subsidiaries?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_15960948008",
+      "label": "Have you ever provided any contract work for Block, Inc. or any of its subsidiaries or affiliates (whether in the U.S. or internationally)?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_15960952008",
@@ -107,29 +121,67 @@
       "pass": true
     },
     {
+      "fieldId": "question_15960953008",
+      "label": "What is your Legal Last Name?",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
       "fieldId": "4004524008",
       "label": "Gender",
-      "expected": "I don't wish to answer",
-      "actual": "I don't wish to answer",
-      "pass": true
+      "expected": "decline",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "4006448008",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "expected": "decline",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "4006452008",
       "label": "Are you a veteran or active member of the United States Armed Forces?",
-      "expected": "No, I am not a veteran or active member",
-      "actual": "No, I am not a veteran or active member",
+      "expected": "no",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_15960950008[]",
+      "label": "By clicking “accept,” you agree that any disputes related to your application, including those related to Block’s selection process, hiring decision, and your background check, shall be submitted to binding arbitration with the Judicial Arbitration and Mediation Services, Inc. (JAMS) on an individual basis only in San Francisco, before a single arbitrator according to the applicable JAMS Rules then in effect, with Block bearing all costs unique to arbitration. To the extent permitted by law, you and Block each waive the right to initiate or participate in any class, collective, or representative action against the other in any forum (including court and arbitration). If any provision of this agreement is deemed unenforceable, the remainder shall remain in effect, except that, notwithstanding the above, under no circumstances shall class or collective, or representative proceedings be permitted in arbitration.",
+      "expected": "Accept",
+      "actual": "Accept",
       "pass": true
     }
   ],
   "emptyRequired": [
+    "Country",
+    "Location (City)",
+    "Will you now or in the future require sponsorship for work authorization? (This information will not be used in assessing your qualifications for any position.)",
+    "Are you authorized to work lawfully in the location posted for this position?",
     "Have you ever been employed full-time at Block or its subsidiaries?",
     "Have you ever provided any contract work for Block, Inc. or any of its subsidiaries or affiliates (whether in the U.S. or internationally)?",
     "I certify that all of the information I have provided is correct and complete and realize that falsification or misrepresentation, including omission, on this or any other personnel record, or in the hiring process, may be grounds for refusal of employment, or if hired, may lead to disciplinary action, up to and including termination. By signing this Electronic Signature Acknowledgment Online Form, I agree that my electronic signature is the legally binding equivalent to my handwritten signature. Whenever I execute an electronic signature, it has the same validity and meaning as my handwritten signature. I will not, at any time in the future, repudiate the meaning of my electronic signature or claim that my electronic signature is not legally binding. Please sign by typing your Full Legal First, Middle Initial, and Last Name.",
-    "What is your Legal Last Name?",
     "How we interview: Our hiring process prioritizes authenticity and fairness, and we ask all candidates to adhere to a few key expectations. Acceptable use of AI may differ depending on the role, so we encourage you to confirm with your recruiter what is or isn’t permitted during the process. Recording any part of the interview without consent is prohibited. However, if you need recording as an accommodation, please notify your recruiter before your scheduled interview. During virtual interviews, keep your video on to foster meaningful engagement; if you require accommodations, please inform our team in advance. Lastly, maintain confidentiality by refraining from sharing any proprietary or trade secret information from previous employers or other sources throughout the interview process.",
     "With your permission, we may use AI transcription software to transcribe and summarize your interview to help us capture accurate notes. Participation is entirely voluntary, and your decision will not affect the outcome of your application. You can withdraw consent at any time. Do you consent to us using AI to transcribe and summarize your interview?",
+    "Gender",
     "How would you describe your racial/ethnic background? (mark all that apply)",
-    "By clicking “accept,” you agree that any disputes related to your application, including those related to Block’s selection process, hiring decision, and your background check, shall be submitted to binding arbitration with the Judicial Arbitration and Mediation Services, Inc. (JAMS) on an individual basis only in San Francisco, before a single arbitrator according to the applicable JAMS Rules then in effect, with Block bearing all costs unique to arbitration. To the extent permitted by law, you and Block each waive the right to initiate or participate in any class, collective, or representative action against the other in any forum (including court and arbitration). If any provision of this agreement is deemed unenforceable, the remainder shall remain in effect, except that, notwithstanding the above, under no circumstances shall class or collective, or representative proceedings be permitted in arbitration."
+    "Are you a veteran or active member of the United States Armed Forces?"
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "Location (City): the candidate-location menu did not open",
+    "School: the school--0 menu did not open",
+    "Degree: the degree--0 menu did not open",
+    "Discipline: the discipline--0 menu did not open",
+    "Will you now or in the future require sponsorship for work authorization? (This information will not be used in assessing your qualifications for any position.): the question_15960944008 menu did not open",
+    "Are you authorized to work lawfully in the location posted for this position?: the question_15960945008 menu did not open",
+    "Have you ever been employed full-time at Block or its subsidiaries?: the question_15960946008 menu did not open",
+    "Have you ever provided any contract work for Block, Inc. or any of its subsidiaries or affiliates (whether in the U.S. or internationally)?: the question_15960948008 menu did not open",
+    "Gender: the 4004524008 menu did not open",
+    "How would you describe your racial/ethnic background? (mark all that apply): the 4006448008 menu did not open",
+    "Are you a veteran or active member of the United States Armed Forces?: the 4006452008 menu did not open"
+  ]
 }

@@ -1,13 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Pronouns\": no answer in profile or answer bank",
-    "required \"How did you first learn about Affirm as an employer?\": no answer in profile or answer bank",
-    "required \"Have you previously been employed at Affirm for any length of time?\": sensitive question with no exact answer",
-    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
-    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
-    "required \"Pronouns\" is empty after filling",
-    "required \"How did you first learn about Affirm as an employer?\" is empty after filling",
-    "required \"Have you previously been employed at Affirm for any length of time?\" is empty after filling"
-  ]
+  "decision": "submit"
 }

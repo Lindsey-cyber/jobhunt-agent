@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -107,6 +107,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_69092399",
+      "label": "Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "864",
       "label": "Gender",
       "expected": "I don't wish to answer",
@@ -123,6 +130,13 @@
     {
       "fieldId": "1332",
       "label": "Are you Hispanic or Latinx?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "1333",
+      "label": "Race (*Please select one option that best describes how you identify*)",
       "expected": "I don't wish to answer",
       "actual": "I don't wish to answer",
       "pass": true
@@ -142,9 +156,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.",
-    "Race (*Please select one option that best describes how you identify*)"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -51,6 +51,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_32983460003",
+      "label": "What are your salary requirements?",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
       "fieldId": "question_32983466003",
       "label": "Will you now, or in the future, require visa sponsorship? This includes if you are on a STEM OPT, J-1, F-1 visa currently.",
       "expected": "Yes",
@@ -89,8 +96,8 @@
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
       "expected": "No",
-      "actual": "Decline To Self Identify",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -98,17 +105,8 @@
       "expected": "I am not a protected veteran",
       "actual": "I am not a protected veteran",
       "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
-      "actual": "",
-      "pass": false
     }
   ],
-  "emptyRequired": [
-    "What are your salary requirements?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

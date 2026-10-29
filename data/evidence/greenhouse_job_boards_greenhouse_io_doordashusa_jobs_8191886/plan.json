@@ -577,7 +577,8 @@
           "I don't wish to answer"
         ]
       }
-    ]
+    ],
+    "priorApplications": 1
   },
   "items": [
     {
@@ -1198,9 +1199,8 @@
       },
       "value": "I have not worked at DoorDash",
       "source": {
-        "type": "bank",
-        "id": "draft:6caaf06a28",
-        "origin": "generated"
+        "type": "profile",
+        "path": "workHistory"
       },
       "confidence": 1,
       "sensitive": false
@@ -1227,7 +1227,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69092399",
         "label": "Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.",
@@ -1238,7 +1238,14 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "sms-opt-in",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1277,9 +1284,8 @@
       },
       "value": "I don't wish to answer",
       "source": {
-        "type": "bank",
-        "id": "draft:c88d9f354e",
-        "origin": "generated"
+        "type": "profile",
+        "path": "eeo.gender"
       },
       "confidence": 1,
       "sensitive": false
@@ -1297,7 +1303,7 @@
           "I don't wish to answer"
         ]
       },
-      "value": "I don't wish to answer",
+      "value": "No",
       "source": {
         "type": "profile",
         "path": "eeo.hispanicLatino"
@@ -1306,7 +1312,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "1333",
         "label": "Race (*Please select one option that best describes how you identify*)",
@@ -1323,7 +1329,13 @@
           "I don't wish to answer"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",

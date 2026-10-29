@@ -926,7 +926,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1008,7 +1008,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_31599993003",
         "label": "Pronouns",
@@ -1023,7 +1023,13 @@
           "I prefer to self describe"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "I prefer not to say",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1145,7 +1151,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_31599997003",
         "label": "How did you first learn about Affirm as an employer?",
@@ -1176,7 +1182,13 @@
           "Other"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1235,7 +1247,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_31600002003",
         "label": "Have you previously been employed at Affirm for any length of time?",
@@ -1249,7 +1261,13 @@
           "I have been employed at Affirm as a contractor"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "I have not previously been employed at Affirm",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "skip",
@@ -1362,7 +1380,7 @@
       "sensitive": true
     },
     {
-      "status": "fill",
+      "status": "skip",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -1378,13 +1396,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
-      "sensitive": true
+      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

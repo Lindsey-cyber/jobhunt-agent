@@ -2,15 +2,9 @@
   "decision": "hold",
   "reasons": [
     "required \"Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)\": sensitive question with no exact answer",
-    "required \"Acknowledgement of GDPR Notice (shown below)\": acknowledgements and consents need the candidate",
-    "required \"Current Level of Education\": no answer in profile or answer bank",
     "required \"Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?\": no answer in profile or answer bank",
     "required \"Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?\": no answer in profile or answer bank",
-    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
-    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
     "required \"Are you currently or have you ever previously been employed by AIR, IMPAQ, or Kimetrica? (not in a temp or contractor capacity)\" is empty after filling",
-    "required \"Acknowledgement of GDPR Notice (shown below)\" is empty after filling",
-    "required \"Current Level of Education\" is empty after filling",
     "required \"Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?\" is empty after filling",
     "required \"Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?\" is empty after filling"
   ]

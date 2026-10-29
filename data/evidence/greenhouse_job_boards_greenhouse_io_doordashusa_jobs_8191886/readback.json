@@ -1,8 +1,8 @@
 {
   "864": "I don't wish to answer",
   "1328": "I don't wish to answer",
-  "1332": "I don't wish to answer",
-  "1333": "",
+  "1332": "No",
+  "1333": "I don't wish to answer",
   "1336": "I am not a protected veteran",
   "1337": "No, I don’t have a disability",
   "first_name": "Lanxin",
@@ -20,6 +20,6 @@
   "question_69092396": "Yes",
   "question_69092397": "I have not worked at DoorDash",
   "question_69092398": "Yes",
-  "question_69092399": "",
+  "question_69092399": "No",
   "resume": "Lindsey_Ma_Resume.pdf"
 }

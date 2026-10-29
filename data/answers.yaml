@@ -198,6 +198,8 @@ answers:
     aliases:
       - Are you 18 years of age or older?
       - Are you over 18?
+      - Are you at least 18 years of age?
+      - Are you 18 years or older?
     answer: "Yes"
     origin: human
   # The candidate (2026-10-28): she knows no one at any company, relatives included.
@@ -327,3 +329,17 @@ answers:
     origin: human
   # Standing permission (2026-10-29: "这些不重要的问题你就都按常理推测就行，不用每次等我来给一个确认的答案"):
   # minor, low-stakes questions may be answered by common sense in a session; each such entry says "Inferred".
+  # Inferred (standing permission, 2026-10-29): she is on F-1 status, so not serving in the Reserves or National Guard.
+  - id: reserves-guard
+    question: Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?
+    aliases:
+      - Are you currently serving in the Reserves or National Guard?
+      - Will you be serving in the Reserves or National Guard?
+    answer: "No"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): her ML work is research, internships and prototypes, none run as a production service for 18 months.
+  - id: production-ml-18-months
+    question: Do you have at least 18 months of experience designing, developing, or operating machine learning–powered services deployed in production within a startup environment?
+    aliases: []
+    answer: "No"
+    origin: human

@@ -100,13 +100,6 @@
       "pass": true
     },
     {
-      "fieldId": "",
-      "label": "Resume/CV",
-      "expected": "Lindsey_Ma_Resume.pdf",
-      "actual": "Lindsey_Ma_Resume.pdf",
-      "pass": true
-    },
-    {
       "fieldId": "f9bb932abbe810015d8063d468240000",
       "label": "Have you ever worked at Crowe before?",
       "expected": "No",

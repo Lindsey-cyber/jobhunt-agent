@@ -468,4 +468,13 @@ describe("buildPlan", () => {
     const items = buildPlan(form([f("startDate", "From"), f("endDate", "To"), f("firstYearAttended", "From"), f("lastYearAttended", "To"), f("other", "From")]), p, user.bank).items;
     expect(items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["01/2026", "05/2026", "2024", "2026", "blocked"]);
   });
+
+  it("lets Workday decline through a menu it could not read, and the readback accept only a decline option", async () => {
+    const { compareReadback } = await import("../src/verify/compare.ts");
+    const f = { ...field("Please select the race/ethnicity which most accurately describes how you identify yourself", { kind: "combobox", options: [] }), required: true };
+    const plan = buildPlan({ ...form([f]), ats: "workday" }, { ...user.profile, eeo: { ...user.profile.eeo, race: "decline" } }, user.bank);
+    expect(plan.items[0]).toMatchObject({ status: "fill", value: "decline" });
+    expect(compareReadback(plan, [f], { [f.id]: "I do not wish to self-identify" }).ok).toBe(true);
+    expect(compareReadback(plan, [f], { [f.id]: "American Indian or Alaska Native" }).ok).toBe(false);
+  });
 });

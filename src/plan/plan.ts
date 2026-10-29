@@ -153,7 +153,9 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   if (!hasOptions) {
     // "decline" (and the EEO yes/no tokens) are choices, not text: typed into a search box
     // whose options never loaded they select whatever comes first (Crowe's race list).
-    if (field.kind !== "text" && field.kind !== "textarea" && candidate.source.type === "profile" && candidate.source.path.startsWith("eeo.")) {
+    // (Workday's menus are clicked, not typed: its adapter picks the menu's own decline option.)
+    const workdayDecline = form.ats === "workday" && candidate.value === "decline";
+    if (!workdayDecline && field.kind !== "text" && field.kind !== "textarea" && candidate.source.type === "profile" && candidate.source.path.startsWith("eeo.")) {
       return unanswered(field, "the field's choices did not load");
     }
     const confidence = field.kind === "combobox" ? Math.min(candidate.confidence, 0.8) : candidate.confidence;

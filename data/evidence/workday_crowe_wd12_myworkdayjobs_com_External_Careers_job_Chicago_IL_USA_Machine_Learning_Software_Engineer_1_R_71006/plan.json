@@ -444,13 +444,6 @@
         "options": []
       },
       {
-        "id": "",
-        "label": "Resume/CV",
-        "kind": "file",
-        "required": true,
-        "options": []
-      },
-      {
         "id": "f9bb932abbe810015d8063d468240000",
         "label": "Have you ever worked at Crowe before?",
         "kind": "select",
@@ -1178,23 +1171,6 @@
         "options": []
       },
       "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "fill",
-      "field": {
-        "id": "",
-        "label": "Resume/CV",
-        "kind": "file",
-        "required": true,
-        "options": []
-      },
-      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
-      "source": {
-        "type": "file",
-        "path": "documents.resume"
-      },
-      "confidence": 1,
-      "sensitive": false
     },
     {
       "status": "fill",

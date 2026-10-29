@@ -1,7 +1,7 @@
 import { basename } from "node:path";
 import type { FormField } from "../domain/form.ts";
 import type { FillPlan } from "../plan/plan.ts";
-import { normalize } from "../plan/text.ts";
+import { DECLINE, normalize } from "../plan/text.ts";
 
 export interface FieldCheck {
   fieldId: string;
@@ -32,6 +32,8 @@ export function searchMatch(expected: string, option: string): boolean {
 
 function same(field: FormField, expected: string, actual: string, isPhone: boolean): boolean {
   if (field.kind === "file") return actual === basename(expected);
+  // A planned "decline" on a menu read only at fill time: any decline option is it, nothing else.
+  if (expected === "decline") return DECLINE.test(normalize(actual));
   if (field.kind === "combobox" && field.options.length === 0) return searchMatch(expected, actual);
   if (isPhone) return expected.replace(/\D/g, "").endsWith(actual.replace(/\D/g, "")) && actual.replace(/\D/g, "").length >= 7;
   return normalize(actual) === normalize(expected);

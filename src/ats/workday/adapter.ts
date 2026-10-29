@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Locator, Page } from "playwright";
 import type { FieldKind, FormField } from "../../domain/form.ts";
-import { normalize } from "../../plan/text.ts";
+import { DECLINE, normalize } from "../../plan/text.ts";
 import { searchMatch } from "../../verify/compare.ts";
 import type { AtsAdapter } from "../adapter.ts";
 
@@ -73,6 +73,26 @@ async function clickOption(page: Page, value: string, match: (want: string, got:
 // land on the previous menu while it closes, so retry.
 async function chooseInListbox(page: Page, b: Locator, value: string): Promise<void> {
   const button = b.locator('button[aria-haspopup="listbox"]').first();
+  // "decline" from the plan (a menu whose options could not be read beforehand): click the
+  // menu's own decline option, never type it (type-ahead picks the first entry).
+  if (value === "decline") {
+    const declined = async () => DECLINE.test(normalize((await button.innerText().catch(() => "")).trim()));
+    for (let attempt = 0; attempt < 5 && !(await declined()); attempt++) {
+      await page.locator(MENU_OPTION).first().waitFor({ state: "detached", timeout: 3000 }).catch(() => undefined);
+      await page.waitForTimeout(500 + 700 * attempt);
+      await button.scrollIntoViewIfNeeded().catch(() => undefined);
+      await button.click({ force: true });
+      const opts = page.locator(MENU_OPTION);
+      if (!(await opts.first().waitFor({ state: "visible", timeout: 4000 + 1000 * attempt }).then(() => true, () => false))) continue;
+      const texts = (await opts.allInnerTexts()).map((t) => t.trim());
+      const i = texts.findIndex((t) => DECLINE.test(normalize(t)));
+      if (i < 0) throw new Error(`no decline option (saw ${texts.slice(0, 6).join(" / ")})`);
+      await opts.nth(i).click({ force: true });
+      await page.waitForTimeout(600);
+    }
+    if (!(await declined())) throw new Error("the decline option did not stick in the dropdown");
+    return;
+  }
   const shows = async () => normalize((await button.innerText().catch(() => "")).trim()).startsWith(normalize(value));
   for (let attempt = 0; attempt < 3; attempt++) {
     if (await shows()) return;

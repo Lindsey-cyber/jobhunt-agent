@@ -1,7 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Have you worked directly with non-technical stakeholders?\": no answer in profile or answer bank",
-    "required \"Have you worked directly with non-technical stakeholders?\" is empty after filling"
-  ]
+  "decision": "submit"
 }

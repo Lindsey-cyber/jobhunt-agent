@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -100,6 +100,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_4630736009",
+      "label": "Have you worked directly with non-technical stakeholders?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_4630737009",
       "label": "Are you legally authorized to work in the United States?",
       "expected": "Yes",
@@ -191,8 +198,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Have you worked directly with non-technical stakeholders?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

@@ -1,0 +1,6 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"Phone Device Type\": expected \"Mobile\", got \"Main\""
+  ]
+}

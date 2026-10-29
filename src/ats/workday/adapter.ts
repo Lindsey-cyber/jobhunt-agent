@@ -76,8 +76,14 @@ async function promptOptions(page: Page, id: string): Promise<string[]> {
   // Chosen items elsewhere on the page (the phone code) share the automation id.
   const chosen = new Set((await page.locator('[data-automation-id="selectedItem"]').allInnerTexts().catch(() => [])).map((t) => t.trim()));
   const texts = (await prompt.allInnerTexts().catch(() => [])).map((t) => t.trim()).filter((t) => t && !chosen.has(t));
+  // Escape does not close it, and an open list blocks the next menu (HPE's phone type):
+  // click the blank page margin.
   await page.keyboard.press("Escape").catch(() => undefined);
-  await page.waitForTimeout(400);
+  const open = page.locator('[data-automation-id="promptOption"]:not([data-automation-id="selectedItem"] *)');
+  for (let t = 0; t < 3 && (await open.first().isVisible().catch(() => false)); t++) {
+    await page.mouse.click(5, 400).catch(() => undefined);
+    await page.waitForTimeout(500);
+  }
   return texts;
 }
 

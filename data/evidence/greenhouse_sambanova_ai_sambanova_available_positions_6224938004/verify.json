@@ -63,10 +63,16 @@
       "expected": "Yes",
       "actual": "Yes",
       "pass": true
+    },
+    {
+      "fieldId": "question_20291846004",
+      "label": "Now or in the future will you need immigration assistance?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Now or in the future will you need immigration assistance?",
     "Years of ML Infrastructure experience",
     "Preferred office?"
   ],

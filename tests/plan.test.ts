@@ -285,4 +285,37 @@ describe("buildPlan", () => {
     expect(at("Pronouns", "New York, NY", { kind: "combobox", options: ["She/her/hers", "I prefer not to say"] })).toMatchObject({ value: "I prefer not to say" });
     expect(at("Have you previously been employed at Acme Robotics for any length of time?", "New York, NY", { kind: "combobox", options: ["I have not previously been employed at Acme Robotics", "I have been employed at Acme Robotics as an intern"] })).toMatchObject({ value: "I have not previously been employed at Acme Robotics" });
   });
+
+  // Held on 2026-10-29 (jh holds): the recurring questions behind most Greenhouse and Workday holds.
+  it("answers the recurring held questions from the profile", () => {
+    const p = {
+      ...user.profile,
+      education: [
+        { school: "Columbia University", degree: "Master of Science", major: "Statistics", gpa: "3.71", gradMonth: 5, gradYear: 2026 },
+        { school: "Renmin University of China", degree: "Bachelor of Arts", major: "Economics", gpa: "3.82", gradMonth: 6, gradYear: 2023 },
+      ],
+      workHistory: [{ employer: "Arborphy AI LLC" }],
+      relativesAtEmployers: false,
+      consentAiScreening: true,
+      workArrangement: { onsite: true, relocate: true },
+      eeo: { ...user.profile.eeo, disability: "no" },
+    };
+    const yn = { kind: "select" as const, options: ["Yes", "No"] };
+    const one = (label: string, company: string, over: Partial<ReturnType<typeof field>> = {}, loc = "New York, NY") => buildPlan({ ...form([field(label, over)], company), jobLocation: loc }, p, user.bank).items[0]!;
+    expect(one("Given Name(s)", "Adobe")).toMatchObject({ value: p.identity.firstName });
+    expect(one("What is your Legal Last Name?", "Block")).toMatchObject({ value: p.identity.lastName });
+    expect(one("What is your GPA?", "Klaviyo")).toMatchObject({ value: "3.71" });
+    expect(one("What is your anticipated graduation month/year?", "Klaviyo")).toMatchObject({ value: "05/2026" });
+    expect(one("Where did you complete your undergraduate degree?", "Bertram")).toMatchObject({ value: "Renmin University of China" });
+    expect(one('Have you been employed, or otherwise engaged, by an Asana entity in the past? (Previous independent contractors, select "Yes.")', "Asana", yn)).toMatchObject({ value: "No" });
+    expect(one("Have you ever provided any contract work for Block, Inc. or any of its subsidiaries or affiliates?", "Block", yn)).toMatchObject({ value: "No" });
+    expect(one("Have you worked at DoorDash?", "DoorDash", { kind: "select", options: ["Yes, as an employee", "Yes, as a contractor", "No"] })).toMatchObject({ value: "No" });
+    expect(one("Do you currently work at a Crowe client?", "Crowe", yn)).toMatchObject({ status: "blocked" });
+    expect(one("Do you have a familial (by blood or marriage), romantic, or close personal relationship with a Crowe employee or applicant?", "Crowe", yn)).toMatchObject({ value: "No" });
+    expect(one("Can you perform these essential functions of the job with reasonable accommodation?", "Lyft", yn)).toMatchObject({ value: "Yes" });
+    expect(one("This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in San Francisco or are you open to relocating?", "Lyft", { kind: "select", options: ["Yes, I live within commuting distance", "Yes, I am open to relocating", "No"] }, "San Francisco, CA")).toMatchObject({ value: "Yes, I am open to relocating" });
+    expect(one("Are you interested in working out of our Miami HQ?", "OneImaging", yn, "Miami, FL")).toMatchObject({ value: "Yes" });
+    expect(one("Just-In-Time Notice: We use an AI-assisted resume-screening tool to help recruiters manage applications.", "Crowe", { kind: "select", options: ["Opt In", "Opt Out"] })).toMatchObject({ value: "Opt In" });
+    expect(one("We would like to contact you via SMS or WhatsApp to provide updates on your progress. Mark yes if you agree.", "DoorDash", yn)).toMatchObject({ value: "No" });
+  });
 });

@@ -91,6 +91,11 @@ const SAME_COMPANY_GAP_MS = 2 * 60_000;
 // Workday submitted and confirmed on two employers (ADI, GlobalFoundries, 2026-10-29);
 // JH_WORKDAY=off pauses it on a machine.
 const WORKDAY_READY = process.env.JH_WORKDAY !== "off";
+// Ashby answers automated submits with an image captcha (0 of 5 went through on
+// 2026-10-29) and Lever always runs hCaptcha: a click there only leaves an
+// unconfirmed application that can never be retried. They wait for the candidate
+// unless JH_CAPTCHA_ATS=on (e.g. a run from her own browser).
+const CAPTCHA_ATS = process.env.JH_CAPTCHA_ATS === "on";
 // Round-robin over companies so two postings at one employer are never back to back.
 function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
   const groups = new Map<string, T[]>();
@@ -159,7 +164,7 @@ switch (command) {
     const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match" && labels.get(j.key)?.label !== "not_fit").sort((a, b) => (b.lastSeen ?? "").localeCompare(a.lastSeen ?? "")) : [];
     const ready = [...new Set([...fit.map((l) => l.key as JobKey), ...matched.map((j) => j.key)])]
       .map((k) => catalog.get(k))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j) && (/^(greenhouse|lever|ashby):/.test(j!.key) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      .filter((j): j is NonNullable<typeof j> => Boolean(j) && (j!.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j!.key)) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         return !prior || ledger.canStart(prior.key);

@@ -11,14 +11,14 @@ export const VETO: { pattern: RegExp; reason: string }[] = [
 ];
 
 export const COMPENSATION_VETO = VETO[0]!;
-export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target)\b/;
+export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target|requirements?)\b/;
 export const SALARY_HISTORY = /\b(current|previous|past|prior|last|history)\b/;
 
 export const ATTESTATION_OPTION = /\b(i )?(acknowledge|acknowledged|agree|consent|accept|accepted|understand|understood|certify|attest|declare)\b/;
 
 // A single-option "I have read the privacy policy / notice" box. Anything that
 // also certifies answers, binds interview conduct or signs is not one.
-export const PRIVACY_NOTICE = /\bprivacy (policy|notice|statement)\b/;
+export const PRIVACY_NOTICE = /\bprivacy (policy|notice|statement)\b|\bgdpr notice\b/;
 // GlobalFoundries: "By submitting, you declare that you have read, understood, and accepted the terms in this policy".
 export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|\baccepted the terms in this policy\b/;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
@@ -103,13 +103,13 @@ export const PROFILE_RULES: ProfileRule[] = [
       return ms ? yesNo(`${ms.gradYear}-${String(ms.gradMonth).padStart(2, "0")}` > today) : undefined;
     },
   },
-  { path: "identity.firstName", pattern: /^(legal )?first name$|^given name$/, resolve: (p) => p.identity.firstName },
-  { path: "identity.lastName", pattern: /^(legal )?last name$|^family name$|^surname$/, resolve: (p) => p.identity.lastName },
+  { path: "identity.firstName", pattern: /^(legal )?first name$|^given names?( s)?$|^what is your legal first name$/, resolve: (p) => p.identity.firstName },
+  { path: "identity.lastName", pattern: /^(legal )?last name$|^family name$|^surname$|^what is your legal last name$/, resolve: (p) => p.identity.lastName },
   { path: "contact.email", pattern: /^e ?mail( address)?$/, resolve: (p) => p.contact.email },
   { path: "contact.phone", pattern: /^(phone|mobile|phone number|mobile number)$/, resolve: (p) => p.contact.phone },
   // Workday's phone block: her number is a mobile in the US.
   { path: "contact.phoneType", pattern: /^phone device type$/, resolve: () => "Mobile" },
-  { path: "contact.address.country", pattern: /^country phone code$/, resolve: (p) => (p.contact.address.country === "United States" ? "United States of America (+1)" : undefined) },
+  { path: "contact.address.country", pattern: /^country( region)? phone code$/, resolve: (p) => (p.contact.address.country === "United States" ? "United States of America (+1)" : undefined) },
   { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
   { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
   { path: "contact.address.city", pattern: /^city$/, resolve: (p) => p.contact.address.city },
@@ -119,7 +119,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, _label, ctx) => usStateName(p.contact.address.state, ctx.options),
   },
   { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode)$/, resolve: (p) => p.contact.address.postalCode },
-  { path: "contact.address.country", pattern: /^country( of residence)?$/, resolve: (p) => p.contact.address.country },
+  { path: "contact.address.country", pattern: /^country( of residence| region)?$/, resolve: (p) => p.contact.address.country },
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
   { path: "links.website", kinds: ["text"], pattern: /\b(website|portfolio|personal site)\b/, resolve: (p) => p.links.website },
@@ -156,10 +156,26 @@ export const PROFILE_RULES: ProfileRule[] = [
       return [e.school, e.degree, e.major, start, `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}`].join(" | ");
     },
   },
+  { path: "education[0].gpa", pattern: /^(what is your )?(cumulative |overall )?gpa$/, resolve: (p) => firstEdu(p).gpa },
+  {
+    path: "education[0].gradYear",
+    pattern: /^what is your (anticipated |expected )?graduation (month )?(and )?(year|month year|date)$/,
+    resolve: (p) => {
+      const e = firstEdu(p);
+      return `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}`;
+    },
+  },
+  {
+    // "Where did you complete your undergraduate degree?": the bachelor's school.
+    path: "education",
+    pattern: /\b(where did you (complete|earn|receive) your undergraduate|undergraduate (school|university|institution))\b/,
+    kinds: ["text", "textarea"],
+    resolve: (p) => p.education.find((e) => /bachelor|\bb\.?[as]\b/i.test(e.degree))?.school,
+  },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
     path: "workAuthorization.authorizedCountries",
-    pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b|^(u s|us|united states) work authori[sz]ation$/,
+    pattern: /\b(legally authori[sz]ed|authori[sz]ed to work|eligible to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b/,
     resolve: (p, label, ctx) => {
       const country = countryIn(label, ctx);
       if (!country) return undefined;
@@ -210,16 +226,62 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // Any other "have you worked for / been employed by / contracted with <this company>?":
+    // the hiring company must be named, and her resume's employers decide.
+    path: "workHistory",
+    pattern: /\b(worked|been employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, label, ctx) => {
+      if (/\b(relative|family|familial|client|customer|government|vendor|partner|competitor)\b/.test(label)) return undefined;
+      const first = normalize(ctx.company ?? "").split(" ")[0];
+      if (!first || first.length < 2 || !new RegExp(`\\b${first}\\b`).test(label)) return undefined;
+      if (p.workHistory.some((w) => normalize(w.employer).split(" ")[0] === first)) return undefined;
+      const opts = ctx.options ?? [];
+      const no = opts.filter((o) => /^(no\b|never\b|i have never\b|i have not\b|i am not\b|not\b)/i.test(o.trim()));
+      if (opts.length && no.length !== 1) return undefined;
+      return opts.length ? no[0] : "No";
+    },
+  },
+  {
+    // "Can you perform the essential functions of the job with or without reasonable accommodation?": she reports no disability.
+    path: "eeo.disability",
+    pattern: /\bperform (the|these) essential functions\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p) => (p.eeo.disability === "no" ? "Yes" : undefined),
+  },
+  {
+    // The candidate (2026-10-29) consented to AI resume screening and AI matching.
+    path: "consentAiScreening",
+    pattern: /\bai ?(assisted )?(resume )?screening\b|\bai assisted resume screening\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, _l, ctx) => (p.consentAiScreening ? (ctx.options ?? []).find((o) => /^(opt in|yes|i consent|i agree)\b/i.test(o.trim())) : undefined),
+  },
+  {
+    // Text-message updates: the forms offer email instead; she has not opted in.
+    path: "smsUpdates",
+    pattern: /\b(sms|whatsapp|text messages?)\b/,
+    kinds: ["select", "radio", "combobox", "checkbox"],
+    resolve: (_p, _l, ctx) => ((ctx.options ?? []).filter((o) => /^no\b/i.test(o.trim())).length === 1 ? (ctx.options ?? []).find((o) => /^no\b/i.test(o.trim())) : undefined),
+  },
+  {
     // The candidate (2026-10-28): any US location; on-site five days, hybrid and relocation all work.
     // Yes/no only, and only for a posting located in the US.
     path: "workArrangement",
-    pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion)|commute)\b/,
+    pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location)\b/,
     kinds: ["select", "radio", "combobox"],
     resolve: (p, label, ctx) => {
       if (ctx.jobCountry !== "United States" || !(ctx.options ?? []).some((o) => /^yes\b/i.test(o.trim()))) return undefined;
       if (/\b(support|assistance|package|stipend|reimburse)/.test(label)) return undefined;
-      const ok = /\brelocat/.test(label) ? p.workArrangement?.relocate : p.workArrangement?.onsite;
-      return ok === undefined ? undefined : yesNo(ok);
+      const relocation = /\brelocat/.test(label);
+      const ok = relocation ? p.workArrangement?.relocate : p.workArrangement?.onsite;
+      if (ok === undefined) return undefined;
+      // Lyft: "Yes, I live nearby" / "Yes, I'm open to relocating": her willingness is the relocation one.
+      const yes = (ctx.options ?? []).filter((o) => /^yes\b/i.test(o.trim()));
+      if (ok && yes.length > 1) {
+        const pick = yes.filter((o) => (relocation ? /relocat/i : /\b(on ?site|office|in person)\b/i).test(o));
+        return pick.length === 1 ? pick[0] : undefined;
+      }
+      return yesNo(ok);
     },
   },
   {
@@ -241,7 +303,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "What is your highest level of education earned?": the highest completed degree, in the form's wording.
     path: "education",
-    pattern: /\bhighest (level of )?(education|degree)\b/,
+    pattern: /\bhighest (level of )?(education|degree)\b|^current level of education$/,
     resolve: (p, _label, ctx) => {
       const today = ctx.today ?? new Date().toISOString().slice(0, 7);
       const rank = (d: string) => (/doctor|ph\.?d/i.test(d) ? 3 : /master|m\.?s\b|mba/i.test(d) ? 2 : /bachelor|b\.?a\b|b\.?s\b/i.test(d) ? 1 : 0);
@@ -357,7 +419,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): she knows no one at any company, relatives included.
     path: "relativesAtEmployers",
-    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b/,
+    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b/,
     resolve: (p) => (p.relativesAtEmployers === false ? "No" : undefined),
   },
   {
@@ -412,18 +474,18 @@ export const PROFILE_RULES: ProfileRule[] = [
   // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
   // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
   // Pronouns follow her gender choice: undisclosed where the list lets her decline.
-  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b|^(your )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
+  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b|^(your )?pronouns?$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
   // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",
-    pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/,
+    pattern: /^(gender|sex)$|\b(indicate|select|describe|identify) your (gender|sex)\b|^gender identity$/,
     resolve: (p, _label, ctx) => {
       const opts = ctx.options ?? [];
       if (p.eeo.gender !== "decline" || !opts.length || opts.some((o) => DECLINE.test(normalize(o)))) return p.eeo.gender;
       return p.eeo.genderIfRequired ?? p.eeo.gender;
     },
   },
-  { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|\byour race\b|\brace ?\/? ?ethnic|\bethnic group\b/, resolve: (p) => p.eeo.race },
+  { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|^race\b|\byour (race|ethnicity)\b|\brace ?\/? ?ethnic|\bethnic group\b|\bracial ethnic background\b/, resolve: (p) => p.eeo.race },
   { path: "eeo.veteran", pattern: /\bveterans?\b/, resolve: (p) => p.eeo.veteran },
   { path: "eeo.disability", pattern: /\bdisability\b/, resolve: (p) => p.eeo.disability },
 ];

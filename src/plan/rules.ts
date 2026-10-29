@@ -19,6 +19,7 @@ export const ATTESTATION_OPTION = /\b(i )?(acknowledge|agree|consent|accept|unde
 // A single-option "I have read the privacy policy / notice" box. Anything that
 // also certifies answers, binds interview conduct or signs is not one.
 export const PRIVACY_NOTICE = /\bprivacy (policy|notice|statement)\b/;
+export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b/;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
 export const SENSITIVE =
@@ -345,7 +346,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   { path: "eeo.hispanicLatino", pattern: /\b(hispanic|latino)\b/, resolve: (p) => p.eeo.hispanicLatino },
   // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
-  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b/, resolve: (p) => p.eeo.gender },
+  // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
+  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b/, resolve: () => "decline" },
   { path: "eeo.gender", pattern: /^(gender|sex)$|\b(indicate|select|describe) your gender\b|^gender identity$/, resolve: (p) => p.eeo.gender },
   { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|\byour race\b|\brace ?\/? ?ethnic|\bethnic group\b/, resolve: (p) => p.eeo.race },
   { path: "eeo.veteran", pattern: /\bveterans?\b/, resolve: (p) => p.eeo.veteran },

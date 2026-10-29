@@ -203,8 +203,15 @@ describe("buildPlan", () => {
     expect(buildPlan(form([h]), done, user.bank).items[0]).toMatchObject({ status: "fill", value: "Master's Degree" });
   });
 
-  it("answers transgender identity from the gender choice", () => {
-    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline" as const } };
+  // From ADI's Workday form: the one required box before Review.
+  it("accepts an application's Terms and Conditions only when the candidate allowed it", () => {
+    const f = field("I accept the Terms and Conditions.", { kind: "checkbox", options: ["I accept the Terms and Conditions.*"] });
+    expect(buildPlan(form([f]), user.profile, user.bank).items[0]).toMatchObject({ status: "blocked" });
+    expect(buildPlan(form([f]), { ...user.profile, acceptApplicationTerms: true }, user.bank).items[0]).toMatchObject({ status: "fill" });
+  });
+
+  it("declines transgender identity, which the candidate has not answered", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "Female" } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });
     expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "I don't wish to answer" });
   });

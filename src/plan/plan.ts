@@ -1,6 +1,6 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
-import { ATTESTATION_OPTION, COMPENSATION_VETO, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
+import { ATTESTATION_OPTION, COMPENSATION_VETO, TERMS_NOTICE, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
 import { jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
@@ -89,6 +89,9 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     const text = normalize([field.label, ...field.options].join(" "));
     if (profile.acknowledgePrivacyPolicies && field.options.length === 1 && PRIVACY_NOTICE.test(text) && !PRIVACY_EXCEPT.test(text)) {
       return { status: "fill", field, value: field.options[0]!, source: { type: "profile", path: "acknowledgePrivacyPolicies" }, confidence: 1, sensitive: false };
+    }
+    if (profile.acceptApplicationTerms && field.options.length === 1 && TERMS_NOTICE.test(text) && !/\b(certify|accurate|signature|arbitration|non compete)\b/.test(text)) {
+      return { status: "fill", field, value: field.options[0]!, source: { type: "profile", path: "acceptApplicationTerms" }, confidence: 1, sensitive: false };
     }
     return unanswered(field, "acknowledgements and consents need the candidate");
   }

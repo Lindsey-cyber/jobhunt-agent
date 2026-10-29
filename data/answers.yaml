@@ -1269,3 +1269,18 @@ answers:
            cross-species retrieval; frozen DINOv3 features achieved 87.3% organ classification accuracy and 84.3%
            cross-species retrieval P@1. Analyzed cross-model errors and developed a 100-image human-review set
            spanning 85 species.
+  - id: draft:4d13937daf
+    question: Are you currently located in the United States or Canada? This role
+      requires a US or Canadian Residency.
+    answer: Yes
+    company: Artera
+    jobTitle: Machine Learning Scientist, Computational Pathology
+    origin: generated
+    evidence:
+      - |-
+        # The candidate (2026-10-28).
+            postalCode: "11354"
+            country: United States
+      - |-
+        city: Flushing
+            state: NY

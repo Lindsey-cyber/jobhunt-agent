@@ -1,0 +1,1112 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://pg.wd5.myworkdayjobs.com/1000/job/CINCINNATI-GENERAL-OFFICES/Data-Science--Master-s-degree---2027-Grads-_R000157919/apply/applyManually",
+    "company": "Procter & Gamble",
+    "jobTitle": "Data Science (Master’s degree) (2027 Grads)",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Career/Job Fair",
+          "Job Board (Indeed, Glassdoor, etc.)",
+          "LinkedIn",
+          "On-campus Activity",
+          "Other",
+          "P&G Career Site (pgcareers.com)",
+          "P&G Newsletter or Job Alert",
+          "Personal Engagement with a P&G Recruiter",
+          "Print Advertisement",
+          "Referred by friend/family member/professor/other",
+          "Social Network Site (Facebook, WeChat, Twitter, etc.)"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Do you currently work or have previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next page.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "school",
+        "label": "School or University",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "High School Diploma or Equivalency",
+          "Technical Diploma",
+          "Associate Degree/College Diploma",
+          "Non Degree Program",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "Doctorate Degree",
+          "Higher Degree",
+          "Other"
+        ]
+      },
+      {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "lastYearAttended",
+        "label": "To (Actual or Expected)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "linkedInAccount",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "7b7ad1cf80ce1001aa18f37c78740000",
+        "label": "Are you currently legally authorized to work in the country where this role is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "7b7ad1cf80ce1001aa18f37c78740003",
+        "label": "Do you or any immediate family members (spouse, partner, parent, child, or sibling) have any personal, financial, or professional relationships that could be perceived as a conflict of interest with our organization or the position for which you are applying? This includes relationships with anyone who works for P&G, a retailer selling P&G products, or a competitor of P&G. ( Please refer to the following link for a list of products: https://us.pg.com/brands )",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "7b7ad1cf80ce1001aa18f4163a130000",
+        "label": "Although we encourage you to apply to all positions in which you have an interest, P&G Recruiters have the ability to consider your application for other positions to which you have not applied. Would you like to be considered for other positions for which you may be qualified?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "7b7ad1cf80ce1001aa18f4163a130003",
+        "label": "Do you meet the minimum qualification requirements for this role as stated in the job description?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "7b7ad1cf80ce1001aa18f4163a130006",
+        "label": "What source(s) of information influenced your decision to apply for a P&G position?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "P&G Career Site (pgcareers.com)",
+          "Social Network Site (Facebook, WeChat, Twitter, etc.)",
+          "LinkedIn",
+          "Job Board (Indeed, Glassdoor, etc.)",
+          "On-campus Activity",
+          "Career/Job Fair",
+          "Personal Engagement with a P&G Recruiter",
+          "P&G Newsletter or Job Alert",
+          "Referred by friend/family member/professor/other",
+          "Print Advertisement",
+          "Recruitment Agency",
+          "Other"
+        ]
+      },
+      {
+        "id": "40d8b318e1421001aa2d28c1578e0000",
+        "label": "Our thorough and purposeful hiring process ensures that we recruit top talent to join us at P&G – talent with a complete understanding of who we are, what we do and what we expect from you. In line with our Purpose, Values, and Principles (PVP), we value fairness, objectivity and ethical practices in our talent assessment and interview processes. As an applicant to a role within P&G, you are expected to adhere to the following guidelines to ensure a fair and equitable experience for everyone:• Use the same profile/account throughout the application process, and contact technical support if you have any issues with an existing profile• Complete all stages of the selection process (e.g., assessment, interview) independently and without any help – from others or the use of Artificial Intelligence• Provide answers and information throughout the application, assessment and interview process that accurately describes you, your experiences and interests• Respect the integrity of the P&G selection process and do not copy or share the assessment content or materials in any capacity (e.g., screenshots, recordings)• Avoid sharing any highly confidential/proprietary information received throughout the application and interview processI acknowledge I will adhere to these expectations throughout the application process.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "40d8b318e1421001aa2d28c1578e0003",
+        "label": "Have you either graduated within the past 6 months, or are you an active student?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "7b7ad1cf80ce1001aa18f54a2bfb0005",
+        "label": "I would like P&G to share my personal information with its advertising partners to show me, and others like me, news and updates about P&G careers and roles through online channels such as LinkedIn, Instagram, Meta, Facebook, Google, TikTok, and YouTube. Your decision to opt-in or opt-out will not disqualify you from participating in P&G’s recruitment process and you may opt-out at any time.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "90b1c0017040101595de8a9865960000",
+        "label": "Are you authorized to work in the US?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No, I am not authorized to work in the US currently and would need school approval or employer-supported USCIS approval to begin work."
+        ]
+      },
+      {
+        "id": "90b1c0017040101595b79d1b66d50002",
+        "label": "If hired, when would you be available to start?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "90b1c0017040101595b79d1b66d50003",
+        "label": "Are you currently serving or have you ever served as part of the military?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "Prefer not to answer"
+        ]
+      },
+      {
+        "id": "68190508ab711016326bbac3736b0000",
+        "label": "Please select the statement that best applies to you.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes, I have work authorization that has no restrictions (applicable to US citizens or nationals, lawful permanent residents, asylees and refugees).",
+          "Yes, but my work authorization requires either school approval (CPT or OPT) or employer-supported USCIS approval (meaning TN, H-1B, H-1B1, E-3, OPT, STEM OPT, among others).",
+          "Yes, I have current work authorization that does not require employer sponsorship, but my authorization is subject to renewal or extension (e.g., DACA, TPS, DED, VAWA, U or T visa, etc.). This selection does not apply if you have OPT or STEM OPT."
+        ]
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Cincinnati, OH"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Career/Job Fair",
+          "Job Board (Indeed, Glassdoor, etc.)",
+          "LinkedIn",
+          "On-campus Activity",
+          "Other",
+          "P&G Career Site (pgcareers.com)",
+          "P&G Newsletter or Job Alert",
+          "Personal Engagement with a P&G Recruiter",
+          "Print Advertisement",
+          "Referred by friend/family member/professor/other",
+          "Social Network Site (Facebook, WeChat, Twitter, etc.)"
+        ]
+      },
+      "value": "Job Board (Indeed, Glassdoor, etc.)",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Do you currently work or have previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next page.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "school",
+        "label": "School or University",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "High School Diploma or Equivalency",
+          "Technical Diploma",
+          "Associate Degree/College Diploma",
+          "Non Degree Program",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "Doctorate Degree",
+          "Higher Degree",
+          "Other"
+        ]
+      },
+      "value": "Master's Degree",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "lastYearAttended",
+        "label": "To (Actual or Expected)",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "linkedInAccount",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7b7ad1cf80ce1001aa18f37c78740000",
+        "label": "Are you currently legally authorized to work in the country where this role is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7b7ad1cf80ce1001aa18f37c78740003",
+        "label": "Do you or any immediate family members (spouse, partner, parent, child, or sibling) have any personal, financial, or professional relationships that could be perceived as a conflict of interest with our organization or the position for which you are applying? This includes relationships with anyone who works for P&G, a retailer selling P&G products, or a competitor of P&G. ( Please refer to the following link for a list of products: https://us.pg.com/brands )",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "pg-conflict-of-interest",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7b7ad1cf80ce1001aa18f4163a130000",
+        "label": "Although we encourage you to apply to all positions in which you have an interest, P&G Recruiters have the ability to consider your application for other positions to which you have not applied. Would you like to be considered for other positions for which you may be qualified?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "consider-other-positions",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7b7ad1cf80ce1001aa18f4163a130003",
+        "label": "Do you meet the minimum qualification requirements for this role as stated in the job description?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "meets-minimum-qualifications",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7b7ad1cf80ce1001aa18f4163a130006",
+        "label": "What source(s) of information influenced your decision to apply for a P&G position?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "P&G Career Site (pgcareers.com)",
+          "Social Network Site (Facebook, WeChat, Twitter, etc.)",
+          "LinkedIn",
+          "Job Board (Indeed, Glassdoor, etc.)",
+          "On-campus Activity",
+          "Career/Job Fair",
+          "Personal Engagement with a P&G Recruiter",
+          "P&G Newsletter or Job Alert",
+          "Referred by friend/family member/professor/other",
+          "Print Advertisement",
+          "Recruitment Agency",
+          "Other"
+        ]
+      },
+      "value": "Job Board (Indeed, Glassdoor, etc.)",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "40d8b318e1421001aa2d28c1578e0000",
+        "label": "Our thorough and purposeful hiring process ensures that we recruit top talent to join us at P&G – talent with a complete understanding of who we are, what we do and what we expect from you. In line with our Purpose, Values, and Principles (PVP), we value fairness, objectivity and ethical practices in our talent assessment and interview processes. As an applicant to a role within P&G, you are expected to adhere to the following guidelines to ensure a fair and equitable experience for everyone:• Use the same profile/account throughout the application process, and contact technical support if you have any issues with an existing profile• Complete all stages of the selection process (e.g., assessment, interview) independently and without any help – from others or the use of Artificial Intelligence• Provide answers and information throughout the application, assessment and interview process that accurately describes you, your experiences and interests• Respect the integrity of the P&G selection process and do not copy or share the assessment content or materials in any capacity (e.g., screenshots, recordings)• Avoid sharing any highly confidential/proprietary information received throughout the application and interview processI acknowledge I will adhere to these expectations throughout the application process.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "40d8b318e1421001aa2d28c1578e0003",
+        "label": "Have you either graduated within the past 6 months, or are you an active student?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "graduated-within-6-months",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7b7ad1cf80ce1001aa18f54a2bfb0005",
+        "label": "I would like P&G to share my personal information with its advertising partners to show me, and others like me, news and updates about P&G careers and roles through online channels such as LinkedIn, Instagram, Meta, Facebook, Google, TikTok, and YouTube. Your decision to opt-in or opt-out will not disqualify you from participating in P&G’s recruitment process and you may opt-out at any time.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "pg-advertising-partners",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "90b1c0017040101595de8a9865960000",
+        "label": "Are you authorized to work in the US?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No, I am not authorized to work in the US currently and would need school approval or employer-supported USCIS approval to begin work."
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "90b1c0017040101595b79d1b66d50002",
+        "label": "If hired, when would you be available to start?",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "November 15, 2026",
+      "source": {
+        "type": "profile",
+        "path": "availableFrom"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "90b1c0017040101595b79d1b66d50003",
+        "label": "Are you currently serving or have you ever served as part of the military?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "Prefer not to answer"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "68190508ab711016326bbac3736b0000",
+        "label": "Please select the statement that best applies to you.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes, I have work authorization that has no restrictions (applicable to US citizens or nationals, lawful permanent residents, asylees and refugees).",
+          "Yes, but my work authorization requires either school approval (CPT or OPT) or employer-supported USCIS approval (meaning TN, H-1B, H-1B1, E-3, OPT, STEM OPT, among others).",
+          "Yes, I have current work authorization that does not require employer sponsorship, but my authorization is subject to renewal or extension (e.g., DACA, TPS, DED, VAWA, U or T visa, etc.). This selection does not apply if you have OPT or STEM OPT."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently serving or have you ever served as part of the military?\": no answer in profile or answer bank",
+    "required \"Please select the statement that best applies to you.\": no answer in profile or answer bank",
+    "readback mismatch on \"If hired, when would you be available to start?\": expected \"November 15, 2026\", got \"12/20/2026\"",
+    "required \"Please select the statement that best applies to you.\" is empty after filling",
+    "required \"Are you currently serving or have you ever served as part of the military?\" is empty after filling"
+  ]
+}

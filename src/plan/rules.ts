@@ -312,6 +312,18 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // "Are you currently serving or have you ever served as part of the military?" (P&G): she is on
+    // F-1 status and her resume has no military service.
+    path: "workHistory",
+    pattern: /\b(serv(e|ed|ing)|service) (as part of|in|with) (the |any )?(u s |us )?(military|armed forces)\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, _l, ctx) => {
+      if (p.workHistory.some((w) => /\b(army|navy|air force|marine|military|national guard)\b/i.test(w.employer))) return undefined;
+      const no = (ctx.options ?? []).filter((o) => /^no\b/i.test(o.trim()));
+      return ctx.options?.length ? (no.length === 1 ? no[0] : undefined) : "No";
+    },
+  },
+  {
     // Asana: "Do you currently work for or have you ever worked for a U.S. government entity ...?" and its
     // "If you answered Yes, list the entity; if not applicable, type N/A": from the resume's employers.
     path: "workHistory",

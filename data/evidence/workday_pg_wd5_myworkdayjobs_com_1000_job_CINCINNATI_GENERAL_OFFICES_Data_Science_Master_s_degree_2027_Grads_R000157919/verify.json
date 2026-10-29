@@ -1,0 +1,220 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Job Board (Indeed, Glassdoor, etc.)",
+      "actual": "Job Board (Indeed, Glassdoor, etc.)",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Do you currently work or have previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next page.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country / Territory",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country / Territory Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "school",
+      "label": "School or University",
+      "expected": "Columbia University",
+      "actual": "Columbia University in the City of New York",
+      "pass": true
+    },
+    {
+      "fieldId": "degree",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "fieldOfStudy",
+      "label": "Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "LinkedIn",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "7b7ad1cf80ce1001aa18f37c78740000",
+      "label": "Are you currently legally authorized to work in the country where this role is located?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "7b7ad1cf80ce1001aa18f37c78740003",
+      "label": "Do you or any immediate family members (spouse, partner, parent, child, or sibling) have any personal, financial, or professional relationships that could be perceived as a conflict of interest with our organization or the position for which you are applying? This includes relationships with anyone who works for P&G, a retailer selling P&G products, or a competitor of P&G. ( Please refer to the following link for a list of products: https://us.pg.com/brands )",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "7b7ad1cf80ce1001aa18f4163a130000",
+      "label": "Although we encourage you to apply to all positions in which you have an interest, P&G Recruiters have the ability to consider your application for other positions to which you have not applied. Would you like to be considered for other positions for which you may be qualified?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "7b7ad1cf80ce1001aa18f4163a130003",
+      "label": "Do you meet the minimum qualification requirements for this role as stated in the job description?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "7b7ad1cf80ce1001aa18f4163a130006",
+      "label": "What source(s) of information influenced your decision to apply for a P&G position?",
+      "expected": "Job Board (Indeed, Glassdoor, etc.)",
+      "actual": "Job Board (Indeed, Glassdoor, etc.)",
+      "pass": true
+    },
+    {
+      "fieldId": "40d8b318e1421001aa2d28c1578e0000",
+      "label": "Our thorough and purposeful hiring process ensures that we recruit top talent to join us at P&G – talent with a complete understanding of who we are, what we do and what we expect from you. In line with our Purpose, Values, and Principles (PVP), we value fairness, objectivity and ethical practices in our talent assessment and interview processes. As an applicant to a role within P&G, you are expected to adhere to the following guidelines to ensure a fair and equitable experience for everyone:• Use the same profile/account throughout the application process, and contact technical support if you have any issues with an existing profile• Complete all stages of the selection process (e.g., assessment, interview) independently and without any help – from others or the use of Artificial Intelligence• Provide answers and information throughout the application, assessment and interview process that accurately describes you, your experiences and interests• Respect the integrity of the P&G selection process and do not copy or share the assessment content or materials in any capacity (e.g., screenshots, recordings)• Avoid sharing any highly confidential/proprietary information received throughout the application and interview processI acknowledge I will adhere to these expectations throughout the application process.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "40d8b318e1421001aa2d28c1578e0003",
+      "label": "Have you either graduated within the past 6 months, or are you an active student?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "7b7ad1cf80ce1001aa18f54a2bfb0005",
+      "label": "I would like P&G to share my personal information with its advertising partners to show me, and others like me, news and updates about P&G careers and roles through online channels such as LinkedIn, Instagram, Meta, Facebook, Google, TikTok, and YouTube. Your decision to opt-in or opt-out will not disqualify you from participating in P&G’s recruitment process and you may opt-out at any time.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "90b1c0017040101595de8a9865960000",
+      "label": "Are you authorized to work in the US?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "90b1c0017040101595b79d1b66d50002",
+      "label": "If hired, when would you be available to start?",
+      "expected": "November 15, 2026",
+      "actual": "12/20/2026",
+      "pass": false
+    }
+  ],
+  "emptyRequired": [
+    "Please select the statement that best applies to you.",
+    "Are you currently serving or have you ever served as part of the military?"
+  ],
+  "fillErrors": []
+}

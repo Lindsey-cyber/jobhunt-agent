@@ -1,0 +1,20 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Did you graduate?\": no answer in profile or answer bank",
+    "required \"What are your base salary expectations?\": compensation is never filled automatically",
+    "required \"What are your total compensation expectations?\": compensation is never filled automatically",
+    "required \"Have you previously interviewed for employment at Church & Dwight Co., Inc.?\": no answer in profile or answer bank",
+    "required \"Do you have any relatives who are currently employed by Church & Dwight?\": sensitive question with no exact answer",
+    "required \"Are you being represented by a Recruiting Agency?\": no answer in profile or answer bank",
+    "readback mismatch on \"What is your highest level of education (grade completed)?\": expected \"Master of Science\", got \"\"",
+    "readback mismatch on \"When are you available to start?\": expected \"November 15, 2026\", got \"12/20/2026\"",
+    "required \"What is your highest level of education (grade completed)?\" is empty after filling",
+    "required \"Did you graduate?\" is empty after filling",
+    "required \"What are your base salary expectations?\" is empty after filling",
+    "required \"What are your total compensation expectations?\" is empty after filling",
+    "required \"Have you previously interviewed for employment at Church & Dwight Co., Inc.?\" is empty after filling",
+    "required \"Do you have any relatives who are currently employed by Church & Dwight?\" is empty after filling",
+    "required \"Are you being represented by a Recruiting Agency?\" is empty after filling"
+  ]
+}

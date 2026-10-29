@@ -482,3 +482,18 @@ answers:
       - Are you a current or former member of the military?
     answer: "No"
     origin: human
+  # Inferred (standing permission, 2026-10-29): she applies directly, without agencies, and has not interviewed at these companies.
+  - id: recruiting-agency
+    question: Are you being represented by a Recruiting Agency?
+    aliases:
+      - Are you working with a recruiting agency?
+      - Were you referred by a staffing agency?
+    answer: "No"
+    origin: human
+  - id: previously-interviewed
+    question: Have you previously interviewed for employment at {company}?
+    aliases:
+      - Have you previously interviewed with {company}?
+      - Have you interviewed with {company} before?
+    answer: "No"
+    origin: human

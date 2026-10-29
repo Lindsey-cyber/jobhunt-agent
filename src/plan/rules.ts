@@ -448,6 +448,16 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // "Did you graduate?": her most recent degree's end date has passed.
+    path: "education",
+    pattern: /^(did you graduate|have you graduated)$/,
+    resolve: (p, _label, ctx) => {
+      const today = ctx.today ?? new Date().toISOString().slice(0, 7);
+      const e = firstEdu(p);
+      return yesNo(`${e.gradYear}-${String(e.gradMonth).padStart(2, "0")}` <= today);
+    },
+  },
+  {
     // ADI: "Are you currently enrolled in an accredited degree program?": any degree ending after today.
     path: "education",
     pattern: /^are you (currently )?(enrolled in|pursuing) an? (accredited )?(degree|university|college) program$|^are you currently a student$/,
@@ -575,7 +585,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): she knows no one at any company, relatives included.
     path: "relativesAtEmployers",
-    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b|\bfamily members?\b.{0,80}\bwho work (for|at)\b|\bare you related to an? .{1,60}\b(employee|staff|team member)s?\b/,
+    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b|\b(familial|romantic|close personal) .{0,40}relationship with an? .{1,40}\b(employee|applicant)\b|\bfamily members?\b.{0,80}\bwho work (for|at)\b|\bare you related to an? .{1,60}\b(employee|staff|team member)s?\b|\brelatives? who (are|is) (currently )?(employed|working)\b/,
     resolve: (p) => (p.relativesAtEmployers === false ? "No" : undefined),
   },
   {

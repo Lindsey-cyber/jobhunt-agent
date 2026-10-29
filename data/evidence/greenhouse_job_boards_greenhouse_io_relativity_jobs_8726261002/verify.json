@@ -1,0 +1,121 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37859191002",
+      "label": "Will you now or in the future require employment visa sponsorship (e.g., H-1B, TN, etc.)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37859193002",
+      "label": "Are you willing to work onsite 5 days a week in Long Beach CA for this role?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37859194002",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "disability_status",
+      "label": "Disability Status",
+      "expected": "No, I do not have a disability and have not had one in the past",
+      "actual": "No, I do not have a disability and have not had one in the past",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37859196002[]",
+      "label": "How did you hear about us?",
+      "expected": "Website",
+      "actual": "Website",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "EXPORT COMPLIANCE"
+  ],
+  "fillErrors": []
+}

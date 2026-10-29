@@ -1,0 +1,108 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69063887",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69063888",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69063889",
+      "label": "How did you hear about us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69063891",
+      "label": "Do you now, or will you in the future, require employment visa sponsorship or support (e.g., H-1B, O-1, TN, etc. in the US or relevant work visa outside of the US, including renewals and transfers) to work lawfully for Roku in the country to which you are applying?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you authorized to lawfully work for Roku in the country to which you are applying?",
+    "The Mutual Arbitration Agreement (\"Arbitration Agreement\") is legally binding on you and the company and waives your right to bring covered claims as a class, in court, or before a jury. By selecting \"I Have Read and Agree to the Mutual Arbitration Agreement\" and clicking \"Submit,\" I confirm I accessed and reviewed the Arbitration Agreement at the link below, and I knowingly and voluntarily accept its terms and that this is my electronic signature. Please copy and paste the following link into a separate browser and read the Arbitration Agreement carefully before accepting: https://www.weareroku.com/roku-mutual-arbitration-agreement"
+  ],
+  "fillErrors": []
+}

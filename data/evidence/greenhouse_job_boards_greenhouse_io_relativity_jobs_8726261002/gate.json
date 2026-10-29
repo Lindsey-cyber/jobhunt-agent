@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"EXPORT COMPLIANCE\": no answer in profile or answer bank",
+    "required \"EXPORT COMPLIANCE\" is empty after filling"
+  ]
+}

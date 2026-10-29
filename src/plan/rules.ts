@@ -123,7 +123,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "contact.address.city", pattern: /^city$/, resolve: (p) => p.contact.address.city },
   {
     path: "contact.address.state",
-    pattern: /^(state|state province|province)$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
+    pattern: /^(state|state province|province)$|^state of residence$|^which u ?s state are you located in$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
     resolve: (p, _label, ctx) => usStateName(p.contact.address.state, ctx.options),
   },
   { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode)$/, resolve: (p) => p.contact.address.postalCode },

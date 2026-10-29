@@ -34,7 +34,7 @@ export const SENSITIVE =
 const COUNTRIES: { name: string; pattern: RegExp }[] = [
   { name: "Canada", pattern: /\bcanada\b/ },
   { name: "United Kingdom", pattern: /\b(united kingdom|uk|u k)\b/ },
-  { name: "United States", pattern: /\b(united states|usa|u s a|u s|(in|within) the us)\b/ },
+  { name: "United States", pattern: /\b(united states|usa|u s a|u s|(in|within) the us|us (based )?(employer|company|companies))\b/ },
 ];
 
 // "the country where the job is located" names no country; the posting does.

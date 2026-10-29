@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you authorized to work for any US employer without sponsorship?\": sensitive question with no exact answer",
+    "required \"If you are not located in the Bay Area, CA, are you open and willing to relocate to that area on your first day of employment? Please note: iTradeNetwork does not currently provide relocation assistance.\": no answer in profile or answer bank",
+    "required \"Are you authorized to work for any US employer without sponsorship?\" is empty after filling",
+    "required \"If you are not located in the Bay Area, CA, are you open and willing to relocate to that area on your first day of employment? Please note: iTradeNetwork does not currently provide relocation assistance.\" is empty after filling"
+  ]
+}

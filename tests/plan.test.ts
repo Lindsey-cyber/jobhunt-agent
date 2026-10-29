@@ -429,4 +429,10 @@ describe("buildPlan", () => {
     expect(one("Our primary office location for this role is Houston, TX. Would you be able to work onsite at Houston, TX office?")).toMatchObject({ value: "Yes" });
     expect(one("If applicable, what year did/will you complete your Master’s degree?")).toMatchObject({ value: "2026" });
   });
+
+  it("answers authorization for any US employer without sponsorship from her need for sponsorship", () => {
+    const p = { ...user.profile, workAuthorization: { authorizedCountries: ["United States"], needsSponsorship: true } };
+    const f = field("Are you authorized to work for any US employer without sponsorship?", { kind: "combobox", options: ["Yes", "No"] });
+    expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: "No" });
+  });
 });

@@ -1,0 +1,289 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=sambanovasystems&token=6224936004",
+    "company": "SambaNova",
+    "jobTitle": "AI Performance Engineer - New Grad",
+    "jobLocation": "Austin, Texas, United States; San Jose, California, United States",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_20291831004",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_20291832004",
+        "label": "Are you able to work on-site at our office 3-5 days per week?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_20291834004",
+        "label": "Now or in the future will you need immigration assistance?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_20291835004",
+        "label": "Years of AI performance engineering",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_20291833004[]",
+        "label": "Preferred office?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "San Jose, CA",
+          "Austin, TX",
+          "Remote - US",
+          "N/A"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_20291831004",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_20291832004",
+        "label": "Are you able to work on-site at our office 3-5 days per week?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_20291834004",
+        "label": "Now or in the future will you need immigration assistance?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_20291835004",
+        "label": "Years of AI performance engineering",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_20291833004[]",
+        "label": "Preferred office?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "San Jose, CA",
+          "Austin, TX",
+          "Remote - US",
+          "N/A"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

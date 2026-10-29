@@ -232,6 +232,19 @@ describe("buildPlan", () => {
     expect(buildPlan(form([field("Signature")]), p, user.bank).items[0]).toMatchObject({ status: "blocked" });
   });
 
+  // From GlobalFoundries' Workday questionnaire.
+  it("answers GlobalFoundries' contractor, relatives, re-application, clearance and history questions", () => {
+    const p = { ...user.profile, citizenship: ["China"], relativesAtEmployers: false, workHistory: [{ employer: "Arborphy AI LLC", start: "2026-05" }] };
+    const yn = { kind: "select" as const, options: ["Yes", "No"] };
+    const one = (label: string, prior?: number) => buildPlan({ ...form([field(label, yn)], "GLOBAL FOUNDRIES"), ...(prior !== undefined ? { priorApplications: prior } : {}) }, p, user.bank).items[0]!;
+    expect(one("Are you or have you in the past been a contingent work or contractor for GLOBAL FOUNDRIES?")).toMatchObject({ value: "No" });
+    expect(one("Do you have relatives employed by GLOBAL FOUNDRIES?")).toMatchObject({ value: "No" });
+    expect(one("Have you applied to GLOBAL FOUNDRIES within the past 6 months?", 0)).toMatchObject({ value: "No" });
+    expect(one("Have you applied to GLOBAL FOUNDRIES within the past 6 months?", 1)).toMatchObject({ value: "Yes" });
+    expect(one("Have you held an active U.S. security clearance within the last 2 years?")).toMatchObject({ value: "No" });
+    expect(one("Have you previously worked for GLOBAL FOUNDRIES, IBM Microelectronics, or Chartered Semiconductor (including any joint-ventures or overseas locations)?")).toMatchObject({ value: "No" });
+  });
+
   it("declines transgender identity, which the candidate has not answered", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "Female" } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });

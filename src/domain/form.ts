@@ -17,6 +17,8 @@ export interface FormSnapshot {
   jobTitle: string;
   // Where the posting says the job is, as the page shows it.
   jobLocation?: string;
+  // Earlier applications to this employer in the ledger (set by apply()).
+  priorApplications?: number;
   fields: FormField[];
 }
 

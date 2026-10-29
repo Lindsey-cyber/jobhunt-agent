@@ -33,7 +33,7 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 
 // "the country where the job is located" names no country; the posting does.
 // Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocation s? you selected\b/;
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocation s? you selected\b|\bpositions? s? country\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
@@ -48,6 +48,8 @@ export interface RuleContext {
   jobCountry?: string;
   // The hiring company, as the form names it.
   company?: string;
+  // How many earlier applications to this employer the ledger holds.
+  priorApplications?: number;
 }
 
 const STATES: Record<string, string> = { AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", DC: "District of Columbia", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming" };
@@ -286,7 +288,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p, label, ctx) => {
       const opts = ctx.options ?? [];
       if (p.citizenship.includes("United States")) return undefined;
-      if (/\bheld\b|\bclearance level\b/.test(label)) return opts.find((o) => /\bnever held\b|^n ?\/? ?a\b/i.test(o.trim()));
+      if (/\bheld\b|\bclearance level\b/.test(label)) return opts.find((o) => /\bnever held\b|^n ?\/? ?a\b/i.test(o.trim())) ?? opts.find((o) => /^no$/i.test(o.trim()));
       return opts.find((o) => /^no$/i.test(o.trim()));
     },
   },
@@ -316,6 +318,26 @@ export const PROFILE_RULES: ProfileRule[] = [
       const d = ctx.today && ctx.today.length >= 10 ? ctx.today : new Date().toISOString().slice(0, 10);
       return `${d.slice(5, 7)}/${d.slice(8, 10)}/${d.slice(0, 4)}`;
     },
+  },
+  {
+    // GlobalFoundries: "Are you or have you in the past been a contingent work or contractor for X?",
+    // "Have you previously worked for X, IBM Microelectronics, or Chartered Semiconductor (...)?":
+    // No unless an employer from the resume is named.
+    path: "workHistory",
+    pattern: /\b(contingent work(er)?|contractor) for\b|^have you previously worked for\b/,
+    resolve: (p, label) => yesNo(p.workHistory.some((w) => label.includes(normalize(w.employer)))),
+  },
+  {
+    // The candidate (2026-10-28): she knows no one at any company, relatives included.
+    path: "relativesAtEmployers",
+    pattern: /\b(do you have|have any) relatives? (employed|working) (by|at|for)\b|\brelatives? (employed|working) (by|at|for)\b/,
+    resolve: (p) => (p.relativesAtEmployers === false ? "No" : undefined),
+  },
+  {
+    // "Have you applied to X within the past 6 months?": from the ledger.
+    path: "ledger",
+    pattern: /\bhave you applied (to|with) .{1,60} (within|in) the (past|last) .{1,20}\b/,
+    resolve: (_p, _label, ctx) => (ctx.priorApplications === undefined ? undefined : yesNo(ctx.priorApplications > 0)),
   },
   {
     // Asana: "Current Company"; the work-history entry with no end date.

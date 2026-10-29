@@ -8,6 +8,9 @@ import { jobKey } from "../discover/identity.ts";
 import { gmailConfigured, waitForEmailLink, waitForSecurityCode } from "../sources/gmail.ts";
 import type { FormSnapshot } from "../domain/form.ts";
 import { accountFor } from "./accounts.ts";
+import { readCatalog } from "../store/catalog.ts";
+import { paths } from "../store/state.ts";
+import type { JobKey } from "../domain/job.ts";
 import { gate, type GateDecision } from "../gate/gate.ts";
 import { buildPlan, type FillPlan } from "../plan/plan.ts";
 import type { UserData } from "../profile/load.ts";
@@ -93,7 +96,8 @@ export function formUrl(url: string): string {
   return url;
 }
 
-async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000, job }: ApplyOptions): Promise<ApplyResult> {
+async function run(page: Page, { url, user, ledger, approved = false, confirmTimeoutMs = 15000, job: given }: ApplyOptions): Promise<ApplyResult> {
+  let job = given;
   const earlier = sameJob(ledger, url);
   if (earlier && !ledger.canStart(earlier.key)) return { outcome: "skipped", key: earlier.key, state: earlier.state };
   await page.goto(formUrl(url));
@@ -124,7 +128,17 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
     });
   }
 
+  // A posting run by hand (jh apply) is named from the catalog when the page is not.
+  if (!job) {
+    const hit = readCatalog(paths(user.dir).catalog).get(jobKey(url) as JobKey);
+    if (hit) job = { company: hit.company, title: hit.title, location: hit.location };
+  }
+  // Earlier applications to the same employer site (Workday tenants, boards).
+  const host = new URL(page.url()).hostname;
+  const board = new URL(url).pathname.split("/").filter(Boolean)[0];
+  const priorApplications = ledger.latest().filter((e) => e.key !== key && /^(submitted|confirmed|unconfirmed)$/.test(e.state) && (/myworkdayjobs/.test(host) ? e.key.includes(host) : board !== undefined && e.key.includes(`/${board}/`))).length;
   const named = (f: FormSnapshot): FormSnapshot => {
+    f.priorApplications = priorApplications;
     // An embed page may carry no title and only the board slug ("pinterest").
     if (job && !f.jobTitle) f.jobTitle = job.title;
     if (job && /^[a-z0-9-]*$/.test(f.company)) f.company = job.company;

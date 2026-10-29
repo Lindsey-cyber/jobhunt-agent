@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you been previously employed with us?\": sensitive question with no exact answer",
+    "required \"Have you been previously employed with us?\" is empty after filling"
+  ]
+}

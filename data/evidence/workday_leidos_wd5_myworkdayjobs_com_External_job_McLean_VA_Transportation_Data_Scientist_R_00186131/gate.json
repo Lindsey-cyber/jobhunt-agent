@@ -1,0 +1,6 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Phone Device Type\": answer \"Mobile\" matches none of the options"
+  ]
+}

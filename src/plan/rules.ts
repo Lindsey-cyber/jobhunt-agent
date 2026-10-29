@@ -125,7 +125,9 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "contact.phoneType",
     pattern: /^phone device type$/,
-    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^mobile\b/i.test(o.trim())) ?? (ctx.options ?? []).find((o) => /\b(cell|mobile)\b/i.test(o)) ?? "Mobile",
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^mobile\b/i.test(o.trim())) ?? (ctx.options ?? []).find((o) => /\b(cell|mobile)\b/i.test(o)) ??
+      // Leidos offers only "Main/Home": it is her main number.
+      (ctx.options ?? []).find((o) => /^(main|personal)\b/i.test(o.trim())) ?? "Mobile",
   },
   { path: "contact.address.country", pattern: /^country( region| territory)? phone code$/, resolve: (p) => (p.contact.address.country === "United States" ? "United States of America (+1)" : undefined) },
   {
@@ -325,7 +327,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Any other "have you worked for / been employed by / contracted with <this company>?":
     // the hiring company must be named, and her resume's employers decide.
     path: "workHistory",
-    pattern: /\b(worked|been employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bare you an? (previous|former|prior) [a-z ]{1,40}\bemployee\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
+    pattern: /\b(worked|been (previously )?employed|employed full time|engaged|contract work|contracted|provided services)\b.{0,60}\b(for|at|by|with)\b|\bare you a current employee (at|of)\b|\bare you an? (previous|former|prior) [a-z ]{1,40}\bemployee\b|\bbeen issued an? [a-z ]{1,30} (employee id|email address)\b/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       if (/\b(relative|family|familial|client|customer|government|partner|competitor)\b/.test(label)) return undefined;
@@ -334,7 +336,7 @@ export const PROFILE_RULES: ProfileRule[] = [
       const initials = (ctx.company ?? "").split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]!.toLowerCase()).join("");
       const names = [first, initials.length >= 3 ? initials : ""].filter((x): x is string => Boolean(x && x.length >= 2));
       // Aerospace: "Have you previously worked for this organization?" names the hiring company too.
-      const thisOne = /\bthis (organization|company|employer|firm)\b/.test(label);
+      const thisOne = /\bthis (organization|company|employer|firm)\b|\b(employed|worked) (with|for) us\b/.test(label);
       // "Hebrewseniorlife" in the catalog is "Hebrew SeniorLife" on the form.
       const squashed = normalize(ctx.company ?? "").replace(/ /g, "");
       const spaced = squashed.length >= 5 && label.replace(/ /g, "").includes(squashed);

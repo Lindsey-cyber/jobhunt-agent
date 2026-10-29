@@ -373,6 +373,8 @@ describe("buildPlan", () => {
     expect(one("Do you have any family members or people you have close relationships with who work for Accenture Federal Services?", ["Yes", "No"], "Accenture Federal Services")).toMatchObject({ value: "No" });
     expect(one("Are you a current employee of the U.S. Government (including U.S. Congress or military)?", ["Yes", "No"])).toMatchObject({ value: "No" });
     expect(one("Are you able to work in the specified job location, or are you willing to relocate for this position?", ["Yes", "No"], "Lila Sciences", "checkbox", "Cambridge, MA USA; San Francisco, CA USA")).toMatchObject({ value: "Yes" });
+    expect(one("Have you been previously employed with us?", ["Yes", "No"], "KSB")).toMatchObject({ value: "No" });
+    expect(one("Phone Device Type", ["Main/Home"])).toMatchObject({ value: "Main/Home" });
   });
 
   it("keys employer-page Greenhouse postings by job id, and reads Billtrust's and Bracebridge's wording", async () => {

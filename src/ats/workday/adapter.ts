@@ -174,7 +174,8 @@ export const workday: AtsAdapter = {
       if (await agree.isVisible().catch(() => false)) await agree.check();
       await formButton(page, "Create Account").click();
       await waitSettled(page);
-      const said = `${await pageError(page)} ${await page.locator("body").innerText()}`;
+      // The form's own "Verify New Password" label is not a verification notice.
+      const said = `${await pageError(page)} ${await page.locator("body").innerText()}`.replace(/verify new password/gi, "");
       if (/already exists|already in use|already registered/i.test(said)) return signIn();
       if (/verify|verification|activate/i.test(said)) console.error("workday: waiting for the account verification email");
       // A new account is activated by an emailed link (the page may not say so).

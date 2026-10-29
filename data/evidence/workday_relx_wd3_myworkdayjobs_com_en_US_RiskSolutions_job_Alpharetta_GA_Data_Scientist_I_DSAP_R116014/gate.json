@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you have any commitments or agreements with other employers that might affect your employment with RELX, Inc. or any of its subsidiaries (LexisNexis, Elsevier, Reed Exhibitions, Reed Business, Risk Solutions)?\": no answer in profile or answer bank",
+    "required \"Do you have any commitments or agreements with other employers that might affect your employment with RELX, Inc. or any of its subsidiaries (LexisNexis, Elsevier, Reed Exhibitions, Reed Business, Risk Solutions)?\" is empty after filling"
+  ]
+}

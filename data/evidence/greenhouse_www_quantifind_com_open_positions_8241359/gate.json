@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What is the soonest date you would be available to start?\": no answer in profile or answer bank",
+    "required \"What is your preferred location?\": no answer in profile or answer bank",
+    "required \"What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)\": no answer in profile or answer bank",
+    "required \"What is the soonest date you would be available to start?\" is empty after filling",
+    "required \"What is your preferred location?\" is empty after filling",
+    "required \"What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)\" is empty after filling"
+  ]
+}

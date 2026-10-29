@@ -49,6 +49,10 @@ answers:
       - What is your earliest available start date?
       - When would you be able to start?
       - Earliest start date
+      - What is the soonest date you would be available to start?
+      - What is your availability to start?
+      - When is the earliest you would want to start working with us?
+      - Ideal start date
     answer: November 15, 2026
     origin: human
   - id: form:69b81d02b5

@@ -390,6 +390,7 @@ describe("buildPlan", () => {
     expect(buildPlan(form([field("Preferred Given Name"), field("Preferred Family Name")], "Toyota"), { ...p, identity: { ...p.identity, preferredName: "Addie" } }, bank).items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["Addie", p.identity.lastName]);
     expect(buildPlan(form([field("Can you perform the tasks or functions published in the job description with or without accommodation?", { kind: "select", options: ["Yes", "No"] })], "Varsity Brands"), { ...p, eeo: { ...p.eeo, disability: "no" } }, bank).items[0]).toMatchObject({ value: "Yes" });
     expect(one("Are you related to (including in-laws), are or were in a relationship with, or live with anyone who is employed by any Toyota entity, affiliate or subsidiary?", ["Yes", "No"], "Toyota")).toMatchObject({ value: "No" });
+    expect(buildPlan(form([field("If no, please provide your immigration status in the U.S.", { kind: "textarea" })], "Vanguard"), { ...p, workAuthorization: { ...p.workAuthorization, status: "F-1 OPT" } }, bank).items[0]).toMatchObject({ value: "F-1 OPT" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

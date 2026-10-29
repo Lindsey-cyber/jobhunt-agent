@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"If no, please provide your immigration status in the U.S.\": no answer in profile or answer bank",
+    "readback mismatch on \"Do you currently hold either one of the these certifications?\": expected \"None\", got \"\"",
+    "required \"If no, please provide your immigration status in the U.S.\" is empty after filling",
+    "required \"Do you currently hold either one of the these certifications?\" is empty after filling"
+  ]
+}

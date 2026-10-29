@@ -246,6 +246,13 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
+    // Vanguard: "If no, please provide your immigration status in the U.S." in a text box: her status from the profile.
+    path: "workAuthorization.status",
+    pattern: /\b(provide|state|list|enter|what is) your (current )?(u s |us )?(immigration|visa|work authori[sz]ation) status\b/,
+    kinds: ["text", "textarea"],
+    resolve: (p) => p.workAuthorization.status || undefined,
+  },
+  {
     path: "workAuthorization.authorizedCountries",
     pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|eligible to work|right to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
     resolve: (p, label, ctx) => {

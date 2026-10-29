@@ -1,0 +1,1151 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://vanguard.wd5.myworkdayjobs.com/en-US/vanguard_external/job/Malvern-PA/Technology-Leadership-Program---Data---Analytics--Scientist----PA_180092-1/apply/applyManually",
+    "company": "Vanguard",
+    "jobTitle": "Technology Leadership Program – Data Science and AI (Scientist) - PA",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Job Board",
+          "Other",
+          "Professional Organization",
+          "Referral",
+          "Social Media",
+          "Staffing Agency",
+          "University Careers Site",
+          "Vanguard Careers Site",
+          "Vanguard Event"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Do you currently work, or have you ever worked for or with Vanguard in any of the following ways: - as a Crew Member - through a Staffing Agency - through any other type of third party vendor",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "regionSubdivision1",
+        "label": "County",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Landline",
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "6433f3d15e571001f067182d68870000",
+        "label": "Are you a U.S. citizen, lawful permanent resident, refugee, or person granted asylum?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671961f7a10000",
+        "label": "Will you now or in the future require sponsorship for employment visa status?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671961f7a10003",
+        "label": "Have you, or do you currently work for, or with Vanguard?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No, I have never worked for Vanguard as a crew member"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671a0ab0300000",
+        "label": "Have you ever performed temporary work for Vanguard or any of its subsidiaries?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "6433f3d15e571001f0671a0ab0300004",
+        "label": "Has a search agency submitted your application for consideration within the last 12 months?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671aa4d2a30002",
+        "label": "Have you ever interviewed for a position at Vanguard or any of its subsidiaries?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671b3eb45e0001",
+        "label": "Do you have any post-employment obligations to any current or former employer (i.e., non-compete, non-solicitation, etc.) that may prohibit or restrict your employment for a position?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671bd8f2ba0000",
+        "label": "Have you ever taken a FINRA or any other self-regulatory organization licensing exam? (Select all that apply) (required)",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "SIE",
+          "S6",
+          "S7",
+          "S63",
+          "S65",
+          "S66",
+          "S24",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671c7313cb0003",
+        "label": "If you selected other OR have taken any of the license exams, please enter the name of the exam AND the month and date the exam was taken.",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "6433f3d15e571001f0671c7313cb0004",
+        "label": "Do you currently hold either one of the these certifications?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Chartered Financial Analyst (CFA)",
+          "Certified Financial Planner (CFP)",
+          "None"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671d0cef260001",
+        "label": "Do you have Central Registration Depository (CRD) number?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671d0cef260005",
+        "label": "Securities industry regulations require investment advisory firms to collect data on political contributions made within the last 2 years. This information is used to ensure we are following regulatory requirements. Have you made a political contribution(s) to any political official, candidate, party, or organization (e.g. Political Action Committee) within the last 2 years?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671da6de470002",
+        "label": "Under the Employment policy of Vanguard or any of its subsidiaries, relatives may not work in the same area of responsibility or within the same transactional audit trail. A relative is defined as aunt/uncle, child/stepchild, cousin, daughter-in-law/son-in-law, grandchild, grandparent, guardian, niece/nephew, parent-in-law, parent/stepparent, sister-in-law/brother-in-law, sister/brother, and spouse/domestic partner. To help us ensure compliance with this policy, do you have any relatives employed at Vanguard or any of its subsidiaries?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "6433f3d15e571001f0671e410b6a0001",
+        "label": "Are you a current or former Government Official? Definition of a “Government Official” is:Any officer or employee of a government or any department, agency or instrumentality of a government; Any officer or employee of a public international organization (e.g., Red Cross, United Nations Inter-American Development Bank, International Monetary Fund, or World Bank); Any individual acting in an official capacity on behalf of a government entity or agency or public international organization; or Any individual of a company owned or controlled by a government entity; or Any close family members (e.g., brother, sister, mother, father, husband, wife or child) of a government official; and Any former government officials that may maintain some quasi-government status or be able to assert influence over certain government processes and authorizations.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671e410b6a0005",
+        "label": "Are you related to, by birth, adoption or marriage, or a close associate of a current or former Government Official at an entity that interacts or may interact with Vanguard in a business or regulatory context?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671edb8a560001",
+        "label": "Are you related to, by birth, adoption or marriage, or a close associate of a current or former director, officer or senior employee of a Vanguard client who has authority to award or materially influence any decision to award Vanguard business?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f0671edb8a560005",
+        "label": "To the best of your knowledge, did either of the following refer or recommend you for this or any other position with Vanguard? A Government Official A director, officer or senior employee of a Vanguard client who has authority to award or materially influence any decision to award Vanguard business.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "6433f3d15e571001f06718c7c3d20002",
+        "label": "If no, please provide your immigration status in the U.S.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Malvern, PA"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Job Board",
+          "Other",
+          "Professional Organization",
+          "Referral",
+          "Social Media",
+          "Staffing Agency",
+          "University Careers Site",
+          "Vanguard Careers Site",
+          "Vanguard Event"
+        ]
+      },
+      "value": "Social Media",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Do you currently work, or have you ever worked for or with Vanguard in any of the following ways: - as a Crew Member - through a Staffing Agency - through any other type of third party vendor",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "regionSubdivision1",
+        "label": "County",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Queens",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.county"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Landline",
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f067182d68870000",
+        "label": "Are you a U.S. citizen, lawful permanent resident, refugee, or person granted asylum?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-1",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671961f7a10000",
+        "label": "Will you now or in the future require sponsorship for employment visa status?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671961f7a10003",
+        "label": "Have you, or do you currently work for, or with Vanguard?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No, I have never worked for Vanguard as a crew member"
+        ]
+      },
+      "value": "No, I have never worked for Vanguard as a crew member",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-2",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671a0ab0300000",
+        "label": "Have you ever performed temporary work for Vanguard or any of its subsidiaries?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-3",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671a0ab0300004",
+        "label": "Has a search agency submitted your application for consideration within the last 12 months?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-4",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671aa4d2a30002",
+        "label": "Have you ever interviewed for a position at Vanguard or any of its subsidiaries?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-5",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671b3eb45e0001",
+        "label": "Do you have any post-employment obligations to any current or former employer (i.e., non-compete, non-solicitation, etc.) that may prohibit or restrict your employment for a position?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671bd8f2ba0000",
+        "label": "Have you ever taken a FINRA or any other self-regulatory organization licensing exam? (Select all that apply) (required)",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "SIE",
+          "S6",
+          "S7",
+          "S63",
+          "S65",
+          "S66",
+          "S24",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-6",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "6433f3d15e571001f0671c7313cb0003",
+        "label": "If you selected other OR have taken any of the license exams, please enter the name of the exam AND the month and date the exam was taken.",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671c7313cb0004",
+        "label": "Do you currently hold either one of the these certifications?",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "Chartered Financial Analyst (CFA)",
+          "Certified Financial Planner (CFP)",
+          "None"
+        ]
+      },
+      "value": "None",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-7",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671d0cef260001",
+        "label": "Do you have Central Registration Depository (CRD) number?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-8",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671d0cef260005",
+        "label": "Securities industry regulations require investment advisory firms to collect data on political contributions made within the last 2 years. This information is used to ensure we are following regulatory requirements. Have you made a political contribution(s) to any political official, candidate, party, or organization (e.g. Political Action Committee) within the last 2 years?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-9",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671da6de470002",
+        "label": "Under the Employment policy of Vanguard or any of its subsidiaries, relatives may not work in the same area of responsibility or within the same transactional audit trail. A relative is defined as aunt/uncle, child/stepchild, cousin, daughter-in-law/son-in-law, grandchild, grandparent, guardian, niece/nephew, parent-in-law, parent/stepparent, sister-in-law/brother-in-law, sister/brother, and spouse/domestic partner. To help us ensure compliance with this policy, do you have any relatives employed at Vanguard or any of its subsidiaries?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "relativesAtEmployers"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671e410b6a0001",
+        "label": "Are you a current or former Government Official? Definition of a “Government Official” is:Any officer or employee of a government or any department, agency or instrumentality of a government; Any officer or employee of a public international organization (e.g., Red Cross, United Nations Inter-American Development Bank, International Monetary Fund, or World Bank); Any individual acting in an official capacity on behalf of a government entity or agency or public international organization; or Any individual of a company owned or controlled by a government entity; or Any close family members (e.g., brother, sister, mother, father, husband, wife or child) of a government official; and Any former government officials that may maintain some quasi-government status or be able to assert influence over certain government processes and authorizations.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-10",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671e410b6a0005",
+        "label": "Are you related to, by birth, adoption or marriage, or a close associate of a current or former Government Official at an entity that interacts or may interact with Vanguard in a business or regulatory context?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-11",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671edb8a560001",
+        "label": "Are you related to, by birth, adoption or marriage, or a close associate of a current or former director, officer or senior employee of a Vanguard client who has authority to award or materially influence any decision to award Vanguard business?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "6433f3d15e571001f0671edb8a560005",
+        "label": "To the best of your knowledge, did either of the following refer or recommend you for this or any other position with Vanguard? A Government Official A director, officer or senior employee of a Vanguard client who has authority to award or materially influence any decision to award Vanguard business.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "vanguard-12",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "6433f3d15e571001f06718c7c3d20002",
+        "label": "If no, please provide your immigration status in the U.S.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

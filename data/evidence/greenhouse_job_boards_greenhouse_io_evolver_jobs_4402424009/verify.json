@@ -51,6 +51,13 @@
       "pass": true
     },
     {
+      "fieldId": "cover_letter",
+      "label": "Cover Letter",
+      "expected": "evolver.pdf",
+      "actual": "evolver.pdf",
+      "pass": true
+    },
+    {
       "fieldId": "school--0",
       "label": "School",
       "expected": "Columbia University",

@@ -1,6 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Cover Letter\": no document for this upload"
-  ]
+  "decision": "submit"
 }

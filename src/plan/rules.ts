@@ -24,7 +24,7 @@ export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|
 // What acceptApplicationAttestations covers, and the agreeing option to pick.
 // Narrow on purpose: "certify" only next to accuracy, recording only of an interview, AI only in
 // interview rules (a bare "Do you use AI tools?" or "criminal record" never matches).
-export const ATTESTATION_ALLOWED = /\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b/;
+export const ATTESTATION_ALLOWED = /\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
 export const AGREEING_OPTION = /^(yes|i agree|agree|i accept|accept|accepted|i acknowledge|acknowledge|i consent|consent|i certify|i understand)\b/i;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 

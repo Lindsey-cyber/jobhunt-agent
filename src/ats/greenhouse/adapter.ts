@@ -121,12 +121,13 @@ export const greenhouse: AtsAdapter = {
       }
       case "radio":
       case "checkbox": {
-        const group = page.locator(`${FORM} input[name="${field.id}"]`);
+        const group = page.locator(`${FORM} input[name="${field.id}"], ${FORM} input[type="checkbox"][id="${field.id}"]`);
         const n = await group.count();
         for (let i = 0; i < n; i++) {
           const input = group.nth(i);
           const text = await input.evaluate((x) => ((x as HTMLInputElement).labels?.[0]?.textContent ?? (x as HTMLInputElement).value).trim());
-          if (normalize(text) === normalize(value)) return input.check();
+          // A lone checkbox's option is its label without the required star.
+          if (normalize(text) === normalize(value) || (n === 1 && field.options.length === 1 && normalize(text).startsWith(normalize(value)))) return input.check();
         }
         throw new Error(`no option "${value}" in ${field.id}`);
       }
@@ -173,8 +174,8 @@ export const greenhouse: AtsAdapter = {
         }
         case "radio":
         case "checkbox":
-          out[f.id] = await page.locator(`${FORM} input[name="${f.id}"]:checked`).evaluateAll((xs) =>
-            xs.map((x) => ((x as HTMLInputElement).labels?.[0]?.textContent ?? (x as HTMLInputElement).value).trim()).join(", "),
+          out[f.id] = await page.locator(`${FORM} input[name="${f.id}"]:checked, ${FORM} input[type="checkbox"][id="${f.id}"]:checked`).evaluateAll((xs) =>
+            xs.map((x) => ((x as HTMLInputElement).labels?.[0]?.textContent ?? (x as HTMLInputElement).value).replace(/\s+/g, " ").replace(/\*\s*$/, "").trim()).join(", "),
           );
           break;
       }

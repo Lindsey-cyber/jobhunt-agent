@@ -327,6 +327,7 @@ describe("buildPlan", () => {
     expect(one(certify, { kind: "checkbox", options: ["I agree"] }, user.profile)).toMatchObject({ status: "blocked" });
     expect(one("By clicking accept, you agree that any disputes shall be submitted to binding arbitration.", { kind: "select", options: ["Accept", "Decline"] })).toMatchObject({ value: "Accept" });
     expect(one("I consent to my interview being recorded via BrightHire, Inc. to assist in our recruiting efforts.", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ value: "Yes" });
+    expect(one("By checking this box, I consent to Pinterest collecting, storing, and processing my responses to the demographic data surveys above.", { kind: "checkbox", options: ["By checking this box, I consent to Pinterest collecting, storing, and processing my responses to the demographic data surveys above."] })).toMatchObject({ status: "fill" });
     expect(one("Have you ever been convicted or do you have a criminal record?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Do you use AI tools in your daily work?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Signature: I certify the above is true and complete", { kind: "text" })).toMatchObject({ status: "blocked" });

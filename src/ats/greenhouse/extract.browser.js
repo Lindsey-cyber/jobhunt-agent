@@ -44,5 +44,13 @@
       options: inputs.map((i) => ((i.labels && i.labels[0] && i.labels[0].textContent) || i.value).trim()),
     });
   }
+  // A lone checkbox outside any fieldset (Pinterest's "I consent to Pinterest collecting ... my
+  // responses to the demographic data surveys" below the EEO block) is its own question.
+  for (const el of form.querySelectorAll('input[type="checkbox"]')) {
+    if (el.closest("fieldset") || el.closest(".select__container")) continue;
+    const label = labelText(el).replace(/\s+/g, " ").trim();
+    if (!label) continue;
+    out.push({ id: el.name || el.id, label, kind: "checkbox", required: required(el, label), options: [label.replace(/\*\s*$/, "").trim()] });
+  }
   return out;
 }

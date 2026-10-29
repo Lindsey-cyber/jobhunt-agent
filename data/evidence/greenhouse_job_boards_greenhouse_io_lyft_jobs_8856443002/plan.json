@@ -10,21 +10,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -283,7 +286,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "candidate-location",
@@ -304,14 +308,16 @@
         "label": "Company name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "title-0",
         "label": "Title",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "start-date-month-0",
@@ -338,7 +344,8 @@
         "label": "Start date year",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 4
       },
       {
         "id": "end-date-month-0",
@@ -365,7 +372,8 @@
         "label": "End date year",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 4
       },
       {
         "id": "school--0",
@@ -619,7 +627,8 @@
         "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_38593814002",
@@ -669,7 +678,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_38593818002",
@@ -686,7 +696,8 @@
         "label": "Zip / postal code",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_38593820002",
@@ -704,7 +715,8 @@
         "label": "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "gender",
@@ -775,7 +787,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -792,7 +805,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -809,7 +823,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -1088,7 +1103,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -1140,7 +1156,8 @@
         "label": "Company name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Columbia University",
       "source": {
@@ -1157,7 +1174,8 @@
         "label": "Title",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Research Assistant (ML)",
       "source": {
@@ -1204,7 +1222,8 @@
         "label": "Start date year",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 4
       },
       "value": "2026",
       "source": {
@@ -1251,7 +1270,8 @@
         "label": "End date year",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 4
       },
       "value": "2026",
       "source": {
@@ -1577,7 +1597,8 @@
         "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1656,7 +1677,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -1693,7 +1715,8 @@
         "label": "Zip / postal code",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "11354",
       "source": {
@@ -1732,7 +1755,8 @@
         "label": "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references.",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "references are someone else's data"
     },
@@ -1819,7 +1843,7 @@
       "sensitive": false
     },
     {
-      "status": "fill",
+      "status": "skip",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -1835,13 +1859,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
-      "sensitive": true
+      "reason": "declined through the Hispanic/Latino question, which hides race"
     }
   ]
 }

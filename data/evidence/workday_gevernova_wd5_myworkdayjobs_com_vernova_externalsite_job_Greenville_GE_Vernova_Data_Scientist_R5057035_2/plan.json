@@ -1,0 +1,851 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://gevernova.wd5.myworkdayjobs.com/vernova_externalsite/job/Greenville/GE-Vernova-Data-Scientist_R5057035-2/apply/applyManually",
+    "company": "GE Vernova",
+    "jobTitle": "GE Vernova Data Scientist",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Campus",
+          "Career Fair/Event",
+          "Contract Worker",
+          "GE Vernova Careers Website",
+          "GE Vernova Recruiter/Sourcing",
+          "Job Board",
+          "Newspaper/Print Media",
+          "Referral",
+          "Social Referral"
+        ]
+      },
+      {
+        "id": "candidateIsPreviousWorker",
+        "label": "Are you a former employee (including as a co-op/intern, but not as a contingent worker) of GE Vernova (including Renewable Energy, Power Portfolio, GE Digital, Gas Power), the General Electric Company, or one of either company’s affiliates or subsidiaries.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      {
+        "id": "legalName--title",
+        "label": "Prefix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Dr",
+          "Miss",
+          "Mr",
+          "Mrs",
+          "Ms",
+          "Prof"
+        ]
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "linkedInAccount",
+        "label": "LinkedIn Only",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "ca39bb9103cc1001614047c5dba70000",
+        "label": "Are you currently subject to any type of agreement, such as a non-competition or non-solicitation, with another employer that may restrict your ability to perform the job for which you are applying?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "ca39bb9103cc1001614047c5dba70003",
+        "label": "I agree that I will not disclose or use, while interviewing with or employed with GE Vernova and GE Vernova’s affiliate businesses, any confidential or proprietary information of others, including any former employer.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes, I agree.",
+          "No, I do not agree and I understand that not agreeing to this requirement withdraws me from consideration for this role."
+        ]
+      },
+      {
+        "id": "ca39bb9103cc10016140485faf750000",
+        "label": "Are you legally authorized to work in the country where this job is located?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "ca39bb9103cc10016140485faf750003",
+        "label": "Do you now or in the future require a visa sponsorship in the country where this job is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "ca39bb9103cc1001614048fa20bf0001",
+        "label": "Have you ever been an employee of any Government (civil service or military) (https://careers.gevernova.com/global/en/definition-of-government)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "ca39bb9103cc100161404fa295240003",
+        "label": "Have your immediate family member(s) (spouse, parent, sibling or child) or business partner(s) ever been employed by any Government (https://careers.gevernova.com/global/en/definition-of-government)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "ca39bb9103cc10016140503c76960001",
+        "label": "In addition to the role you are applying for, do you consent to GE Vernova retaining your Candidate profile* to assess your suitability for roles for which you may not have applied, and to contact you by email and by other electronic means about job opportunities and GE Vernova news? *Your Candidate profile includes the personal information you have provided to GE Vernova, and information GE Vernova may have obtained about you from publicly available sources.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I consent",
+          "I do not consent"
+        ]
+      },
+      {
+        "id": "ca39bb9103cc10016140503c76960004",
+        "label": "Which communication method would you like us to use when contacting you throughout the recruiting process? (SMS is currently supported in Australia, Canada, France, Germany, Ireland, the United Kingdom, and the United States.)",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Email",
+          "Email & Text/SMS"
+        ]
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Greenville, SC"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Campus",
+          "Career Fair/Event",
+          "Contract Worker",
+          "GE Vernova Careers Website",
+          "GE Vernova Recruiter/Sourcing",
+          "Job Board",
+          "Newspaper/Print Media",
+          "Referral",
+          "Social Referral"
+        ]
+      },
+      "value": "Job Board",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidateIsPreviousWorker",
+        "label": "Are you a former employee (including as a co-op/intern, but not as a contingent worker) of GE Vernova (including Renewable Energy, Power Portfolio, GE Digital, Gas Power), the General Electric Company, or one of either company’s affiliates or subsidiaries.",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country / Territory",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "United States of America"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--title",
+        "label": "Prefix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Dr",
+          "Miss",
+          "Mr",
+          "Mrs",
+          "Ms",
+          "Prof"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Apt 3BS",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line2"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country / Territory Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "linkedInAccount",
+        "label": "LinkedIn Only",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ca39bb9103cc1001614047c5dba70000",
+        "label": "Are you currently subject to any type of agreement, such as a non-competition or non-solicitation, with another employer that may restrict your ability to perform the job for which you are applying?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ca39bb9103cc1001614047c5dba70003",
+        "label": "I agree that I will not disclose or use, while interviewing with or employed with GE Vernova and GE Vernova’s affiliate businesses, any confidential or proprietary information of others, including any former employer.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes, I agree.",
+          "No, I do not agree and I understand that not agreeing to this requirement withdraws me from consideration for this role."
+        ]
+      },
+      "value": "Yes, I agree.",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ca39bb9103cc10016140485faf750000",
+        "label": "Are you legally authorized to work in the country where this job is located?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ca39bb9103cc10016140485faf750003",
+        "label": "Do you now or in the future require a visa sponsorship in the country where this job is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "ca39bb9103cc1001614048fa20bf0001",
+        "label": "Have you ever been an employee of any Government (civil service or military) (https://careers.gevernova.com/global/en/definition-of-government)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ca39bb9103cc100161404fa295240003",
+        "label": "Have your immediate family member(s) (spouse, parent, sibling or child) or business partner(s) ever been employed by any Government (https://careers.gevernova.com/global/en/definition-of-government)?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "ca39bb9103cc10016140503c76960001",
+        "label": "In addition to the role you are applying for, do you consent to GE Vernova retaining your Candidate profile* to assess your suitability for roles for which you may not have applied, and to contact you by email and by other electronic means about job opportunities and GE Vernova news? *Your Candidate profile includes the personal information you have provided to GE Vernova, and information GE Vernova may have obtained about you from publicly available sources.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I consent",
+          "I do not consent"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "ca39bb9103cc10016140503c76960004",
+        "label": "Which communication method would you like us to use when contacting you throughout the recruiting process? (SMS is currently supported in Australia, Canada, France, Germany, Ireland, the United Kingdom, and the United States.)",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Email",
+          "Email & Text/SMS"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

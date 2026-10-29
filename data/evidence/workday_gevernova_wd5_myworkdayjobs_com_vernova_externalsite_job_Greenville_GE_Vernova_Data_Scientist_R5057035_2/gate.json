@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you ever been an employee of any Government (civil service or military) (https://careers.gevernova.com/global/en/definition-of-government)?\": no answer in profile or answer bank",
+    "required \"In addition to the role you are applying for, do you consent to GE Vernova retaining your Candidate profile* to assess your suitability for roles for which you may not have applied, and to contact you by email and by other electronic means about job opportunities and GE Vernova news? *Your Candidate profile includes the personal information you have provided to GE Vernova, and information GE Vernova may have obtained about you from publicly available sources.\": no answer in profile or answer bank",
+    "required \"Which communication method would you like us to use when contacting you throughout the recruiting process? (SMS is currently supported in Australia, Canada, France, Germany, Ireland, the United Kingdom, and the United States.)\": no answer in profile or answer bank",
+    "required \"Have you ever been an employee of any Government (civil service or military) (https://careers.gevernova.com/global/en/definition-of-government)?\" is empty after filling",
+    "required \"In addition to the role you are applying for, do you consent to GE Vernova retaining your Candidate profile* to assess your suitability for roles for which you may not have applied, and to contact you by email and by other electronic means about job opportunities and GE Vernova news? *Your Candidate profile includes the personal information you have provided to GE Vernova, and information GE Vernova may have obtained about you from publicly available sources.\" is empty after filling",
+    "required \"Which communication method would you like us to use when contacting you throughout the recruiting process? (SMS is currently supported in Australia, Canada, France, Germany, Ireland, the United Kingdom, and the United States.)\" is empty after filling"
+  ]
+}

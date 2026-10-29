@@ -1,0 +1,151 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Job Board",
+      "actual": "Job Board › LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Are you a former employee (including as a co-op/intern, but not as a contingent worker) of GE Vernova (including Renewable Energy, Power Portfolio, GE Digital, Gas Power), the General Electric Company, or one of either company’s affiliates or subsidiaries.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country / Territory",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine2",
+      "label": "Address Line 2",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country / Territory Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "LinkedIn Only",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "ca39bb9103cc1001614047c5dba70000",
+      "label": "Are you currently subject to any type of agreement, such as a non-competition or non-solicitation, with another employer that may restrict your ability to perform the job for which you are applying?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "ca39bb9103cc1001614047c5dba70003",
+      "label": "I agree that I will not disclose or use, while interviewing with or employed with GE Vernova and GE Vernova’s affiliate businesses, any confidential or proprietary information of others, including any former employer.",
+      "expected": "Yes, I agree.",
+      "actual": "Yes, I agree.",
+      "pass": true
+    },
+    {
+      "fieldId": "ca39bb9103cc10016140485faf750000",
+      "label": "Are you legally authorized to work in the country where this job is located?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "ca39bb9103cc10016140485faf750003",
+      "label": "Do you now or in the future require a visa sponsorship in the country where this job is located?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "ca39bb9103cc100161404fa295240003",
+      "label": "Have your immediate family member(s) (spouse, parent, sibling or child) or business partner(s) ever been employed by any Government (https://careers.gevernova.com/global/en/definition-of-government)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Have you ever been an employee of any Government (civil service or military) (https://careers.gevernova.com/global/en/definition-of-government)?",
+    "In addition to the role you are applying for, do you consent to GE Vernova retaining your Candidate profile* to assess your suitability for roles for which you may not have applied, and to contact you by email and by other electronic means about job opportunities and GE Vernova news? *Your Candidate profile includes the personal information you have provided to GE Vernova, and information GE Vernova may have obtained about you from publicly available sources.",
+    "Which communication method would you like us to use when contacting you throughout the recruiting process? (SMS is currently supported in Australia, Canada, France, Germany, Ireland, the United Kingdom, and the United States.)"
+  ],
+  "fillErrors": []
+}

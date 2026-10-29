@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "readback mismatch on \"How Did You Hear About Us?\": expected \"LinkedIn\", got \"\"",
+    "readback mismatch on \"Phone Device Type\": expected \"Mobile\", got \"Main\"",
+    "required \"How Did You Hear About Us?\" is empty after filling"
+  ]
+}

@@ -115,7 +115,9 @@ export const ashby: AtsAdapter = {
     const out: Record<string, string> = {};
     for (const f of fields) {
       if (f.id === "communicationConsent") {
-        const v = await page.locator('input[name="communicationConsent"]:checked').getAttribute("value").catch(() => null);
+        // Nothing checked is an answer too; never wait for a checked box to appear.
+        const checked = page.locator('input[name="communicationConsent"]:checked');
+        const v = (await checked.count()) ? await checked.first().getAttribute("value") : null;
         out[f.id] = v === "given" ? "Yes" : v === "notGiven" ? "No" : "";
         continue;
       }

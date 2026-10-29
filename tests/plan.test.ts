@@ -217,6 +217,12 @@ describe("buildPlan", () => {
     expect(one(["Female", "Male", "Non-Binary"])).toMatchObject({ status: "fill", value: "Female" });
   });
 
+  it("answers Workday's veteran list with the plain not-a-veteran option", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, veteran: "no" } };
+    const options = ["I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERANS LISTED ABOVE", "I IDENTIFY AS A VETERAN, JUST NOT A PROTECTED VETERAN", "I AM NOT A VETERAN", "I DO NOT WISH TO SELF-IDENTIFY"];
+    expect(buildPlan(form([field("Veterans status", { kind: "select", options })]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "I AM NOT A VETERAN" });
+  });
+
   it("declines transgender identity, which the candidate has not answered", () => {
     const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "Female" } };
     const f = field("Do you identify as transgender?", { kind: "combobox", options: ["Yes", "No", "I don't wish to answer"] });

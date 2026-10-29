@@ -220,10 +220,14 @@ interface PageResult {
 async function fillPage(adapter: AtsAdapter, page: Page, form: FormSnapshot, user: UserData): Promise<PageResult> {
   const plan = buildPlan(form, user.profile, user.bank);
   const fillErrors: string[] = [];
+  const failed = new Set<string>();
   const fillAll = async (items: FillPlan["items"]) => {
     for (const item of items) {
       if (item.status !== "fill") continue;
-      await adapter.fill(page, item.field, item.value).catch((e: Error) => fillErrors.push(`${item.field.label}: ${e.message}`));
+      await adapter.fill(page, item.field, item.value).catch((e: Error) => {
+        failed.add(item.field.id);
+        fillErrors.push(`${item.field.label}: ${e.message}`);
+      });
     }
   };
   await fillAll(plan.items);
@@ -244,7 +248,7 @@ async function fillPage(adapter: AtsAdapter, page: Page, form: FormSnapshot, use
   {
     const ids = new Set(fieldsNow.map((f) => f.id));
     const rb = await adapter.readback(page, fieldsNow);
-    const lost = plan.items.filter((i) => i.status === "fill" && ids.has(i.field.id) && i.field.kind !== "file" && !(rb[i.field.id] ?? "").trim());
+    const lost = plan.items.filter((i) => i.status === "fill" && ids.has(i.field.id) && !failed.has(i.field.id) && i.field.kind !== "file" && !(rb[i.field.id] ?? "").trim());
     if (lost.length) await fillAll(lost);
   }
   // Read back every planned field, including ones the page re-rendered away

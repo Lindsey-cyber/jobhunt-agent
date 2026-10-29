@@ -1,11 +1,10 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"May we contact your current employer?\": no answer in profile or answer bank",
-    "required \"This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?\": no answer in profile or answer bank",
     "required \"I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references.\": references are someone else's data",
-    "required \"May we contact your current employer?\" is empty after filling",
-    "required \"This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?\" is empty after filling",
+    "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
+    "readback mismatch on \"Current role\": expected \"Research Engineer Intern\", got \"\"",
+    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
     "required \"I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references.\" is empty after filling"
   ]
 }

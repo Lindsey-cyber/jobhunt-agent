@@ -11,21 +11,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -284,7 +287,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "candidate-location",
@@ -325,7 +329,8 @@
         "label": "Do you have any non-compete or non-solicitation agreements that would prevent you from working on specific projects or with certain agencies for any period of time? (Enter “N/A” if not applicable)",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_18991834008",
@@ -465,7 +470,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -482,7 +488,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -499,7 +506,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -778,7 +786,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -871,7 +880,8 @@
         "label": "Do you have any non-compete or non-solicitation agreements that would prevent you from working on specific projects or with certain agencies for any period of time? (Enter “N/A” if not applicable)",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "No",
       "source": {

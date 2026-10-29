@@ -29,7 +29,8 @@
             : "text";
     const options = el.tagName === "SELECT" ? [...el.options].filter((o) => o.value !== "").map((o) => o.text.trim()) : [];
     const fileRequired = el.type === "file" && el.closest('[aria-required="true"]') !== null;
-    out.push({ id: el.id || el.name, label, kind, required: required(el, label) || fileRequired, options });
+    const max = (kind === "text" || kind === "textarea") && el.maxLength > 0 ? { maxLength: el.maxLength } : {};
+    out.push({ id: el.id || el.name, label, kind, required: required(el, label) || fileRequired, options, ...max });
   }
 
   for (const fs of form.querySelectorAll("fieldset")) {

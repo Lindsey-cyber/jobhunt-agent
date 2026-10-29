@@ -1,0 +1,164 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics & Decision Theory",
+      "actual": "Statistics & Decision Theory",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8034287009",
+      "label": "Are you current or former direct employee of Atlas Air or its subsidiaries?",
+      "expected": "No, I have NEVER BEEN EMPLOYED with Atlas Air",
+      "actual": "No, I have NEVER BEEN EMPLOYED with Atlas Air",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8034290009",
+      "label": "Minimum Desired Salary",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8034291009",
+      "label": "Are you currently authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8034292009",
+      "label": "Will you now or in the future require sponsorship for employment visa status? Please answer \"Yes\" if you currently require or will require visa sponsorship at any point during your employment. Note: Some common visa types that typically require sponsorship include, but are not limited to, F-1 (including OPT and STEM OPT), J-1, H-1B, H-4 (with EAD), TN, L-1, etc.).",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8034293009",
+      "label": "Were you referred by a current Atlas employee?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8034297009",
+      "label": "By selecting YES, I consent to receive SMS messages from Atlas Air at the phone number provided on my job application.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name of current or most recent Employer?",
+    "Are you a current or former contractor or vendor representative of Atlas Air?"
+  ],
+  "fillErrors": []
+}

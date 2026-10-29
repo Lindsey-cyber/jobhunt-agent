@@ -1399,7 +1399,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8899506005",
         "label": "What year did/will you complete your undergraduate degree?",
@@ -1415,7 +1415,13 @@
           "2028 or later"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "2023 or earlier",
+      "source": {
+        "type": "profile",
+        "path": "education"
+      },
+      "confidence": 0.85,
+      "sensitive": false
     },
     {
       "status": "blocked",

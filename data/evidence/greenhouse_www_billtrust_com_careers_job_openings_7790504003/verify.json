@@ -1,0 +1,126 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31230671003",
+      "label": "LinkedIn, portfolio or other personal website URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31230672003",
+      "label": "How did you hear about us?",
+      "expected": "Job Board: Other",
+      "actual": "Job Board: Other",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31230674003",
+      "label": "Desired Total Compensation Range",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31230675003",
+      "label": "Will you, now or in the future, require an employment visa or sponsorship of any kind in the country where this job is located?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31230676003",
+      "label": "Current or most recent employer",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "4000620003",
+      "label": "I identify my gender as",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000621003",
+      "label": "I identify my race/ethnicity as",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000622003",
+      "label": "Veteran status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "4000623003",
+      "label": "Disability status",
+      "expected": "No, I do not have a disability, or have a history/record of having a disability",
+      "actual": "No, I do not have a disability, or have a history/record of having a disability",
+      "pass": true
+    },
+    {
+      "fieldId": "4017832003",
+      "label": "I identify my sexual orientation as",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

@@ -1,7 +1,7 @@
 import type { FormField, FormSnapshot } from "../domain/form.ts";
 import type { AnswerBank, AnswerEntry, Profile } from "../profile/schema.ts";
 import { AGREEING_OPTION, ATTESTATION_ALLOWED, ATTESTATION_OPTION, COMPENSATION_VETO, TERMS_NOTICE, jobCountry, SALARY_EXPECTATION, SALARY_HISTORY, PRIVACY_EXCEPT, PRIVACY_NOTICE, PROFILE_RULES, RESUME, SENSITIVE, VETO, type RuleContext } from "./rules.ts";
-import { jaccard, matchOption, normalize } from "./text.ts";
+import { DECLINE, jaccard, matchOption, normalize } from "./text.ts";
 
 export type Source =
   | { type: "profile"; path: string }
@@ -72,6 +72,17 @@ function fromProfile(label: string, field: FormField, profile: Profile, ctx: Rul
 // "Cleveland Guardians - Baseball Operations" -> "cleveland-guardians-baseball-operations".
 export const companySlug = (company: string) => normalize(company).replace(/ /g, "-");
 
+// The leading whole sentences of `text` that fit in `max` characters, or undefined when not even one does.
+export function fitSentences(text: string, max: number): string | undefined {
+  const sentences = text.match(/[^.!?]+[.!?]+(\s+|$)/g) ?? [text];
+  let out = "";
+  for (const s of sentences) {
+    if ((out + s).trimEnd().length > max) break;
+    out += s;
+  }
+  return out.trim() || undefined;
+}
+
 function unanswered(field: FormField, reason: string): PlanItem {
   return field.required ? { status: "blocked", field, reason } : { status: "skip", field, reason };
 }
@@ -109,8 +120,15 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
 
   // Greenhouse's EEO block: declining race resets "Are you Hispanic/Latino?" to
   // decline and hides the race question. A voluntary race question left blank declines it.
-  if (form.ats === "greenhouse" && field.id === "race" && !field.required && profile.eeo.race === "decline") {
-    return { status: "skip", field, reason: "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)" };
+  if (form.ats === "greenhouse" && field.id === "race" && profile.eeo.race === "decline") {
+    return { status: "skip", field, reason: field.required ? "declined through the Hispanic/Latino question, which hides race" : "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)" };
+  }
+  // When the board requires race, declining it is only possible as a whole: answer the
+  // Hispanic/Latino question with its decline option, which hides the race question.
+  const raceRequired = form.fields.some((f) => f.id === "race" && f.required);
+  if (form.ats === "greenhouse" && field.id === "hispanic_ethnicity" && raceRequired && profile.eeo.race === "decline") {
+    const decline = field.options.find((o) => DECLINE.test(normalize(o)));
+    if (decline) return { status: "fill", field, value: decline, source: { type: "profile", path: "eeo.race" }, confidence: 1, sensitive: true };
   }
 
   if (field.kind === "file") {
@@ -134,6 +152,12 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   const hasOptions = field.kind === "select" || field.kind === "radio" || (field.kind === "combobox" && field.options.length > 0) || (field.kind === "checkbox" && field.options.length > 1);
   if (!hasOptions) {
     const confidence = field.kind === "combobox" ? Math.min(candidate.confidence, 0.8) : candidate.confidence;
+    // A box with a character limit keeps the whole sentences that fit; a value that cannot be cut so is held.
+    if (field.maxLength && candidate.value.length > field.maxLength) {
+      const fit = fitSentences(candidate.value, field.maxLength);
+      if (!fit) return unanswered(field, `the answer is longer than the box allows (${field.maxLength} characters)`);
+      return { status: "fill", field, value: fit, source: candidate.source, confidence, sensitive };
+    }
     return { status: "fill", field, value: candidate.value, source: candidate.source, confidence, sensitive };
   }
 

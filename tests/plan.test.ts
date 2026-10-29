@@ -404,4 +404,22 @@ describe("buildPlan", () => {
     const f = field("Do you have a location preference?", { kind: "combobox", options: ["New York", "San Francisco", "Remote", "No preference"] });
     expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: "New York" });
   });
+
+  it("declines race through the Hispanic question when a Greenhouse board requires race", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, race: "decline", hispanicLatino: "no" } };
+    const opts = ["Yes", "No", "Decline To Self Identify"];
+    const h = { ...field("Are you Hispanic/Latino?", { kind: "combobox", options: opts }), id: "hispanic_ethnicity" };
+    const r = (required: boolean) => ({ ...field("Please identify your race", { kind: "combobox", options: ["Asian", "Decline To Self Identify"] }), id: "race", required });
+    const plan = (required: boolean) => buildPlan({ ...form([h, r(required)]), ats: "greenhouse" }, p, user.bank).items;
+    expect(plan(true).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["Decline To Self Identify", "skip"]);
+    expect(plan(false).map((i) => i.status === "fill" ? i.value : i.status)).toEqual(["No", "skip"]);
+  });
+
+  it("keeps the whole sentences that fit a box's character limit", () => {
+    const long = "First sentence here. Second sentence is a bit longer. Third one.";
+    const bank = { answers: [{ id: "x", question: "Tell us more", aliases: [], answer: long, origin: "human" as const }] };
+    const f = { ...field("Tell us more"), maxLength: 40 };
+    expect(buildPlan(form([f]), user.profile, bank).items[0]).toMatchObject({ status: "fill", value: "First sentence here." });
+    expect(buildPlan(form([{ ...f, maxLength: 10 }]), user.profile, bank).items[0]).toMatchObject({ status: "blocked" });
+  });
 });

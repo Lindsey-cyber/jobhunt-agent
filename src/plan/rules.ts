@@ -523,7 +523,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Asana: "Current Company"; the work-history entry with no end date.
     path: "workHistory",
-    pattern: /^(current|most recent|current or most recent) (company|employer)( name)?$|^where have you most recently worked$/,
+    pattern: /^(name of (your )?)?(current|most recent|current or most recent) (company|employer)( name)?$|^where have you most recently worked$/,
     resolve: (p) => p.workHistory.find((w) => !w.end)?.employer,
   },
   {

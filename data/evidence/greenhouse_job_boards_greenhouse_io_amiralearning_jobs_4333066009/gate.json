@@ -1,9 +1,6 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Do you have at least 18 months of experience designing, developing, or operating machine learning–powered services deployed in production within a startup environment?\": no answer in profile or answer bank",
-    "required \"Does your experience include working with speech recognition, NLP, or large language models (LLMs) in a production AI system? Please describe.\": no answer in profile or answer bank",
-    "required \"Do you have at least 18 months of experience designing, developing, or operating machine learning–powered services deployed in production within a startup environment?\" is empty after filling",
-    "required \"Does your experience include working with speech recognition, NLP, or large language models (LLMs) in a production AI system? Please describe.\" is empty after filling"
+    "readback mismatch on \"Does your experience include working with speech recognition, NLP, or large language models (LLMs) in a production AI system? Please describe.\": expected \"Not in a production system yet; my language-model work has been in research and prototypes. In robotics I integrated a locally hosted language model (Ollama) to map voice commands to robot control actions. In interpretability research I reproduced a circuit-tracing analysis of hallucination on Qwen3-4B and built tooling across all 28 transformer layers of Qwen3-8B (activation hooks, linear probes, steering). At Arborphy AI I built a hierarchical multi-agent reasoning prototype that delegates to specialized agents and generates new tools on demand.\", got \"Not in a production system yet; my language-model work has been in research and prototypes. In robotics I integrated a locally hosted language model (Ollama) to map voice commands to robot control actions. In interpretability research I reproduced a circu\""
   ]
 }

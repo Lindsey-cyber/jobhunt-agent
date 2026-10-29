@@ -58,6 +58,13 @@
       "pass": true
     },
     {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master’s Degree",
+      "actual": "Master’s Degree",
+      "pass": true
+    },
+    {
       "fieldId": "discipline--0",
       "label": "Discipline",
       "expected": "Statistics",
@@ -69,6 +76,13 @@
       "label": "State",
       "expected": "New York",
       "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506351006",
+      "label": "Are you at least 18 years of age?",
+      "expected": "Yes",
+      "actual": "Yes",
       "pass": true
     },
     {
@@ -107,10 +121,52 @@
       "pass": true
     },
     {
+      "fieldId": "question_8506357006",
+      "label": "Do you hold a security clearance?",
+      "expected": "None",
+      "actual": "None",
+      "pass": true
+    },
+    {
       "fieldId": "question_8506358006",
       "label": "At your current employer, are you currently working on a project with Accenture or have you worked on a project with Accenture in the past 24 months?",
       "expected": "No",
       "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506359006",
+      "label": "Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506360006",
+      "label": "Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506361006",
+      "label": "Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506362006",
+      "label": "Do you have any family members or people you have close relationships with who work for Accenture Federal Services?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8506364006",
+      "label": "Affirmation",
+      "expected": "I agree",
+      "actual": "I agree",
       "pass": true
     },
     {
@@ -142,15 +198,6 @@
       "pass": false
     }
   ],
-  "emptyRequired": [
-    "Degree",
-    "Are you at least 18 years of age?",
-    "Do you hold a security clearance?",
-    "Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.",
-    "Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?",
-    "Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).",
-    "Do you have any family members or people you have close relationships with who work for Accenture Federal Services?",
-    "Affirmation"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

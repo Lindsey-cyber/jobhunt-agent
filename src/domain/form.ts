@@ -8,6 +8,8 @@ export interface FormField {
   kind: FieldKind;
   required: boolean;
   options: string[];
+  // A text box's character limit (maxlength), when the page sets one.
+  maxLength?: number;
 }
 
 export interface FormSnapshot {

@@ -18,6 +18,7 @@ interface RawField {
   kind: string;
   required: boolean;
   options: string[];
+  maxLength?: number;
 }
 const CONFIRMED = /thank you for applying|application (has been )?(received|submitted|sent)/i;
 
@@ -59,7 +60,7 @@ export const greenhouse: AtsAdapter = {
 
     const fields: FormField[] = [];
     for (const f of raw) {
-      const field: FormField = { id: f.id, label: cleanLabel(f.label), kind: f.kind as FormField["kind"], required: f.required, options: f.options };
+      const field: FormField = { id: f.id, label: cleanLabel(f.label), kind: f.kind as FormField["kind"], required: f.required, options: f.options, ...(f.maxLength ? { maxLength: f.maxLength } : {}) };
       if (field.kind === "combobox") {
         // The form is server-rendered before it is interactive: a dropdown that
         // ignores the click is retried once the page has hydrated.

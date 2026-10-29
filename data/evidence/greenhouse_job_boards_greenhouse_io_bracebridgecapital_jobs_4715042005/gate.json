@@ -1,7 +1,6 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"What year did/will you complete your undergraduate degree?\": no answer in profile or answer bank",
     "required \"If applicable, what year did/will you complete your Master’s degree?\": no answer in profile or answer bank",
     "required \"What is your anticipated start date for this role?\": no answer in profile or answer bank",
     "required \"Why Bracebridge?\": no answer in profile or answer bank",
@@ -9,7 +8,6 @@
     "required \"What kinds of skills or expertise are you most interested in developing over the next few years?\": no answer in profile or answer bank",
     "required \"Walk us through a decision you personally made with incomplete information and how you evaluated tradeoffs.\": no answer in profile or answer bank",
     "required \"Do you acknowledge that these answers are your own?\": no answer in profile or answer bank",
-    "required \"What year did/will you complete your undergraduate degree?\" is empty after filling",
     "required \"If applicable, what year did/will you complete your Master’s degree?\" is empty after filling",
     "required \"What is your anticipated start date for this role?\" is empty after filling",
     "required \"Why Bracebridge?\" is empty after filling",

@@ -107,6 +107,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_8899506005",
+      "label": "What year did/will you complete your undergraduate degree?",
+      "expected": "2023 or earlier",
+      "actual": "2023 or earlier",
+      "pass": true
+    },
+    {
       "fieldId": "question_8896597005",
       "label": "Race and Ethnic Identification:",
       "expected": "I choose not to disclose",
@@ -129,7 +136,6 @@
     }
   ],
   "emptyRequired": [
-    "What year did/will you complete your undergraduate degree?",
     "If applicable, what year did/will you complete your Master’s degree?",
     "What is your anticipated start date for this role?",
     "Why Bracebridge?",

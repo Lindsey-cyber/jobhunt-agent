@@ -1,23 +1,7 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Degree\": answer \"Master of Science\" matches none of the options",
-    "required \"Are you at least 18 years of age?\": no answer in profile or answer bank",
-    "required \"Do you hold a security clearance?\": no answer in profile or answer bank",
-    "required \"Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.\": no answer in profile or answer bank",
-    "required \"Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?\": no answer in profile or answer bank",
-    "required \"Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).\": no answer in profile or answer bank",
-    "required \"Do you have any family members or people you have close relationships with who work for Accenture Federal Services?\": no answer in profile or answer bank",
-    "required \"Affirmation\": acknowledgements and consents need the candidate",
     "readback mismatch on \"Are you Hispanic/Latino?\": expected \"No\", got \"Decline To Self Identify\"",
-    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\"",
-    "required \"Degree\" is empty after filling",
-    "required \"Are you at least 18 years of age?\" is empty after filling",
-    "required \"Do you hold a security clearance?\" is empty after filling",
-    "required \"Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.\" is empty after filling",
-    "required \"Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?\" is empty after filling",
-    "required \"Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).\" is empty after filling",
-    "required \"Do you have any family members or people you have close relationships with who work for Accenture Federal Services?\" is empty after filling",
-    "required \"Affirmation\" is empty after filling"
+    "readback mismatch on \"Please identify your race\": expected \"Decline To Self Identify\", got \"\""
   ]
 }

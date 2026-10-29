@@ -133,7 +133,9 @@ switch (command) {
   }
   case "applications": {
     const u = user();
-    console.log(await writeApplicationsPage(ledgerOf(u.dir), values.out ?? join(u.dir, "runs", "applications")));
+    // --out <dir> copies screenshots beside the page (to publish it); the default in docs/applications links to data/evidence.
+    const out = values.out ?? join(u.dir, "..", "docs", "applications");
+    console.log(await writeApplicationsPage(ledgerOf(u.dir), out, { dataDir: u.dir, copyShots: Boolean(values.out) }));
     break;
   }
   case "questions": {
@@ -146,16 +148,21 @@ switch (command) {
     const u = user();
     const ledger = ledgerOf(u.dir);
     const catalog = readCatalog(paths(u.dir).catalog);
-    const fit = [...new Map(readLabels(u.dir).map((l) => [l.key, l])).values()].filter((l) => l.label === "fit");
-    const ready = fit
-      .map((l) => catalog.get(l.key as JobKey))
+    const labels = new Map(readLabels(u.dir).map((l) => [l.key, l]));
+    const fit = [...labels.values()].filter((l) => l.label === "fit");
+    // Triage promoted to auto (by the candidate, jh trust promote triage): every
+    // current match counts as approved too, unless she labeled it not_fit.
+    const auto = readTrust(u.dir).triage.level === "auto";
+    const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match" && labels.get(j.key)?.label !== "not_fit").sort((a, b) => (b.lastSeen ?? "").localeCompare(a.lastSeen ?? "")) : [];
+    const ready = [...new Set([...fit.map((l) => l.key as JobKey), ...matched.map((j) => j.key)])]
+      .map((k) => catalog.get(k))
       .filter((j): j is NonNullable<typeof j> => Boolean(j) && (/^(greenhouse|lever|ashby):/.test(j!.key) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         return !prior || ledger.canStart(prior.key);
       });
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
-    console.log(`${ready.length} approved postings with an adapter are not yet applied to; trying up to ${limit}`);
+    console.log(`${ready.length} ${auto ? "approved or matched" : "approved"} postings with an adapter are not yet applied to; trying up to ${limit}`);
     // The candidate (2026-10-29): never several applications to one company at once.
     // Interleave companies, and leave two minutes between submissions to the same one.
     const order = interleaveByCompany(ready.slice(0, limit));

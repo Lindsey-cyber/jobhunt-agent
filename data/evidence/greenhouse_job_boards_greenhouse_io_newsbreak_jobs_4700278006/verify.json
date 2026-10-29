@@ -1,0 +1,105 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8588510006",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8588545006",
+      "label": "Are you legally authorized to work in the United States without requiring visa sponsorship now or in the future?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8588546006",
+      "label": "What's your earliest start date?",
+      "expected": "November 15, 2026",
+      "actual": "November 15, 2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8588547006",
+      "label": "Are you currently living in the San Francisco Bay Area?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8588548006",
+      "label": "Are you able to work onsite in our Mountain View, CA office? (5 days in-office required)",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8588549006",
+      "label": "What are your salary expectations? Please state a range.",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8588579006",
+      "label": "Why are you interested in this role, and what makes you a good fit for this position?",
+      "expected": "I’m interested in this role because it applies agentic LLM systems to a concrete optimization problem: diagnosing advertiser-account health, recommending auditable actions, and keeping automated tuning measurable before live spend. My fit is strongest where the role needs rigorous ML experimentation plus practical agent/tool building. At Arborphy AI, I built a multi-agent reasoning prototype with autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph evidence aggregation, and I also developed disjoint benchmarks and retrieval/evaluation workflows. My Columbia work strengthened my grounding in deep learning, advanced ML, and careful ablations. I’ve also integrated locally hosted language models into a robotics control workflow and built real-time asynchronous vision pipelines, so I’m comfortable connecting models to systems rather than treating them as notebooks only.",
+      "actual": "I’m interested in this role because it applies agentic LLM systems to a concrete optimization problem: diagnosing advertiser-account health, recommending auditable actions, and keeping automated tuning measurable before live spend. My fit is strongest where the role needs rigorous ML experimentation plus practical agent/tool building. At Arborphy AI, I built a multi-agent reasoning prototype with autonomous tool generation, constrained iterative planning, per-step information-gain evaluation, and knowledge-graph evidence aggregation, and I also developed disjoint benchmarks and retrieval/evaluation workflows. My Columbia work strengthened my grounding in deep learning, advanced ML, and careful ablations. I’ve also integrated locally hosted language models into a robotics control workflow and built real-time asynchronous vision pipelines, so I’m comfortable connecting models to systems rather than treating them as notebooks only.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

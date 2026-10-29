@@ -10,5 +10,6 @@ Group=jobhunt
 WorkingDirectory=/opt/jobhunt-agent
 EnvironmentFile=/etc/jobhunt/env
 ExecStart=/opt/jobhunt-agent/deploy/daily.sh
-TimeoutStartSec=2h
+# Discovery, ~100 applications (Workday takes minutes each) and the audit; runs are 6 hours apart.
+TimeoutStartSec=5h30min
 Nice=5

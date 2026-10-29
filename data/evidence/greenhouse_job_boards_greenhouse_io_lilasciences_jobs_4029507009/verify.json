@@ -1,0 +1,87 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4180236009",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4180239009",
+      "label": "Why Lila, why this role, and why at this moment in your life?",
+      "expected": "Lila is compelling to me because the role is about making AI part of the scientific method, not just building models around it. The posting’s emphasis on agentic AI, workflow/code generation, and evaluation/reliability matches the work I have been gravitating toward: scientific ML systems with benchmarks, tool use, and careful error analysis. At Arborphy, I have been building plant-identification models, disjoint evaluation benchmarks, and a multi-agent botanical reasoning prototype; at Columbia, I worked on self-supervised denoising for neural imaging and packaging research code for wet-lab researchers. This moment is right because I finished my M.S. in Statistics in May 2026 and now want to move from research projects into a team building reliable AI systems that can interface with real scientific workflows.",
+      "actual": "Lila is compelling to me because the role is about making AI part of the scientific method, not just building models around it. The posting’s emphasis on agentic AI, workflow/code generation, and evaluation/reliability matches the work I have been gravitating toward: scientific ML systems with benchmarks, tool use, and careful error analysis. At Arborphy, I have been building plant-identification models, disjoint evaluation benchmarks, and a multi-agent botanical reasoning prototype; at Columbia, I worked on self-supervised denoising for neural imaging and packaging research code for wet-lab researchers. This moment is right because I finished my M.S. in Statistics in May 2026 and now want to move from research projects into a team building reliable AI systems that can interface with real scientific workflows.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_6113032009",
+      "label": "Privacy Notice",
+      "expected": "I have read and acknowledge the privacy notice below",
+      "actual": "I have read and acknowledge the privacy notice below",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Do you currently reside within the continental United States?",
+    "Are you able to work in the specified job location, or are you willing to relocate for this position?"
+  ],
+  "fillErrors": []
+}

@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "Lever submits through hCaptcha: review the filled form and press Submit yourself",
+    "readback mismatch on \"Current location\": expected \"New York, New York, United States\", got \"\"",
+    "required \"Current location\" is empty after filling"
+  ]
+}

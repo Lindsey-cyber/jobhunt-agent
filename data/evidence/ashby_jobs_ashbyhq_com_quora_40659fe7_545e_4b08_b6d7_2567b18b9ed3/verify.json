@@ -1,0 +1,112 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "communicationConsent",
+      "label": "Do you consent to receive text messages about your application?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "d496a37b-529c-497a-8dde-4d474fbe1f19",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_education_history",
+      "label": "School Name",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "394d7238-e078-4ce5-941e-adacf934896e",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "fc69e246-b8ff-4443-aeb9-ba66a0a380b4",
+      "label": "Discipline/Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "0dc923df-dd84-40c8-bf11-af2f712de39d",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "a73da721-1b4e-4096-b043-97ba9205d42d",
+      "label": "Will you now or in the future require sponsorship for employment visa status?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "780dd243-f33e-4aaf-a83a-f05ad1238015",
+      "label": "How would you describe your gender identity?",
+      "expected": "I prefer not to say",
+      "actual": "I prefer not to say",
+      "pass": true
+    },
+    {
+      "fieldId": "bc34b516-d597-4d83-bb12-b184add60dfd",
+      "label": "US candidates only: Are you a veteran/have you served in the military?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "9ee6e34a-475c-4fad-ad7d-011013873424",
+      "label": "US candidates only: Do you live with a disability (as outlined in the Americans with Disabilities Act)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Graduation Date or Anticipated Graduation Date",
+    "What is your preferred programming language for your interviews (you can change this later)?",
+    "Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? How did you know it was working? Add a link (repo, paper, or demo) if you have one.",
+    "I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” (Mon-Fri, 9am-3pm Pacific Time).",
+    "In which of the following employment eligible countries (https://www.careers.quora.com/eligible-countries) are you seeking to work, if hired?",
+    "Are you legally authorized to work in that country?"
+  ],
+  "fillErrors": []
+}

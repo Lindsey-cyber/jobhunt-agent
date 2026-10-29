@@ -8,6 +8,7 @@ import { jobKey } from "../discover/identity.ts";
 import { gmailConfigured, waitForEmailLink, waitForSecurityCode } from "../sources/gmail.ts";
 import type { FormSnapshot } from "../domain/form.ts";
 import { accountFor } from "./accounts.ts";
+import { archiveEvidence } from "./evidence.ts";
 import { readCatalog } from "../store/catalog.ts";
 import { paths } from "../store/state.ts";
 import type { JobKey } from "../domain/job.ts";
@@ -188,7 +189,11 @@ async function run(page: Page, { url, user, ledger, approved = false, confirmTim
   const blockers = (await adapter.blockers?.(page)) ?? [];
   const decision = gate({ plan, verify, config: user.config, submittedToday, approved, blockers });
   save("gate.json", decision);
-  const done = (state: AppState) => ({ outcome: "done" as const, key, state, runDir, plan, verify, decision, fillErrors });
+  const done = async (state: AppState) => {
+    // Evidence into the repo (data/evidence) so every machine can show this application.
+    await archiveEvidence(user.dir, key, runDir).catch(() => undefined);
+    return { outcome: "done" as const, key, state, runDir, plan, verify, decision, fillErrors };
+  };
 
   // What the agent cannot submit goes to the candidate's daily list with the evidence.
   const handOff = (why: string) =>

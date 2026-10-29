@@ -1,0 +1,172 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_61968138",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_61968139",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_61968140",
+      "label": "How did you hear about this opportunity?",
+      "expected": "Job board",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_61968141",
+      "label": "Work Authorization",
+      "expected": "I require, or in the future will require, Waymo's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_61968142",
+      "label": "Please review and acknowledge our Candidate Privacy Policy linked below:",
+      "expected": "I acknowledge that I have read and understood the terms of the Waymo Applicant and Candidate Privacy Policy.",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_61968143",
+      "label": "Are you a current or former Alphabet employee, intern, vendor, contractor, or temp (including Google and other Alphabet subsidiaries)?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_65049069",
+      "label": "To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.",
+      "expected": "I acknowledge the above policies.",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_66412596",
+      "label": "Please provide the state/region in which you currently reside.",
+      "expected": "New York",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_66412610",
+      "label": "Please provide your full legal name as it appears on your government ID",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69594050",
+      "label": "Are you subject to any active non-compete, non-solicitation, or similar restrictive agreement with a current or former employer?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "75902",
+      "label": "Please indicate your gender",
+      "expected": "decline",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "75903",
+      "label": "Please indicate your race / ethnic group (choose all that apply)",
+      "expected": "decline",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "75904",
+      "label": "Please indicate if you are a veteran or active member of the United States Armed Forces.",
+      "expected": "no",
+      "actual": "",
+      "pass": false
+    }
+  ],
+  "emptyRequired": [
+    "Country",
+    "Location (City)",
+    "Work Authorization",
+    "Please review and acknowledge our Candidate Privacy Policy linked below:",
+    "Are you a current or former Alphabet employee, intern, vendor, contractor, or temp (including Google and other Alphabet subsidiaries)?",
+    "To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.",
+    "Please provide the state/region in which you currently reside.",
+    "Are you subject to any active non-compete, non-solicitation, or similar restrictive agreement with a current or former employer?",
+    "Please indicate your gender",
+    "Please indicate your race / ethnic group (choose all that apply)",
+    "Please indicate if you are a veteran or active member of the United States Armed Forces."
+  ],
+  "fillErrors": [
+    "Country: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"country\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Location (City): locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"candidate-location\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "How did you hear about this opportunity?: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_61968140\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Work Authorization: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_61968141\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Please review and acknowledge our Candidate Privacy Policy linked below:: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_61968142\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Are you a current or former Alphabet employee, intern, vendor, contractor, or temp (including Google and other Alphabet subsidiaries)?: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_61968143\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_65049069\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Please provide the state/region in which you currently reside.: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_66412596\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Are you subject to any active non-compete, non-solicitation, or similar restrictive agreement with a current or former employer?: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_69594050\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Please indicate your gender: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"75902\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Please indicate your race / ethnic group (choose all that apply): locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"75903\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Please indicate if you are a veteran or active member of the United States Armed Forces.: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"75904\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n"
+  ]
+}

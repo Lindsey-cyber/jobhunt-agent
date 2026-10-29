@@ -1,0 +1,140 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master of Science",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8547223006",
+      "label": "Are you legally authorized to work in the United States without requiring visa sponsorship now or in the future?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8547224006",
+      "label": "What's your earliest start date?",
+      "expected": "November 15, 2026",
+      "actual": "November 15, 2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8547225006",
+      "label": "Are you currently living in the San Francisco Bay Area?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8547226006",
+      "label": "Are you able to work onsite in our Mountain View, CA office? (5 days in-office required)",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8547227006",
+      "label": "What are your salary expectations? Please state a range.",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8547228006",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "decline",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "decline",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "no",
+      "actual": "",
+      "pass": false
+    }
+  ],
+  "emptyRequired": [
+    "School",
+    "Degree",
+    "Are you currently living in the San Francisco Bay Area?",
+    "Are you able to work onsite in our Mountain View, CA office? (5 days in-office required)"
+  ],
+  "fillErrors": [
+    "Country: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"country\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "School: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"school--0\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Degree: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"degree--0\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Are you currently living in the San Francisco Bay Area?: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_8547225006\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Are you able to work onsite in our Mountain View, CA office? (5 days in-office required): locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"question_8547226006\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Gender: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"gender\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Are you Hispanic/Latino?: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"hispanic_ethnicity\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n",
+    "Veteran Status: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form#application-form .select__container:has(input[id=\"veteran_status\"])').locator('[role=\"option\"]').first() to be visible\u001b[22m\n"
+  ]
+}

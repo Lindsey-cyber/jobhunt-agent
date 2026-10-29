@@ -1,0 +1,19 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you a current employee at CACI? If yes, do not apply here. Instead, apply through CACI’s Internal Career Hub.\": no answer in profile or answer bank",
+    "required \"Are you a U.S. Person? This includes a U.S. Citizen. It also includes a lawful permanent resident as defined by 8 U.S.C. 1101(a)(20) or who is a protected individual as defined by 8 U.S.C. 324b(a)(3). It does not include any foreign person as defined in 22 CFR 120.16.\": sensitive question with no exact answer",
+    "required \"Do you currently possess an active security clearance?\": no answer in profile or answer bank",
+    "required \"If you currently possess an active security clearance, which agency sponsored the clearance?\": sensitive question with no exact answer",
+    "required \"What is your desired salary?\": compensation is never filled automatically",
+    "required \"Have you ever served or are you currently serving in the United States Military?\": no answer in profile or answer bank",
+    "required \"The below survey requests information from you so that CACI can fulfill its obligations to mitigate, avoid or eliminate any conflict before assigning you to support one of CACI's federal government projects. Please select the appropriate value regarding your employment history with the U.S. Government:\": no answer in profile or answer bank",
+    "required \"Are you a current employee at CACI? If yes, do not apply here. Instead, apply through CACI’s Internal Career Hub.\" is empty after filling",
+    "required \"Are you a U.S. Person? This includes a U.S. Citizen. It also includes a lawful permanent resident as defined by 8 U.S.C. 1101(a)(20) or who is a protected individual as defined by 8 U.S.C. 324b(a)(3). It does not include any foreign person as defined in 22 CFR 120.16.\" is empty after filling",
+    "required \"Do you currently possess an active security clearance?\" is empty after filling",
+    "required \"If you currently possess an active security clearance, which agency sponsored the clearance?\" is empty after filling",
+    "required \"What is your desired salary?\" is empty after filling",
+    "required \"Have you ever served or are you currently serving in the United States Military?\" is empty after filling",
+    "required \"The below survey requests information from you so that CACI can fulfill its obligations to mitigate, avoid or eliminate any conflict before assigning you to support one of CACI's federal government projects. Please select the appropriate value regarding your employment history with the U.S. Government:\" is empty after filling"
+  ]
+}

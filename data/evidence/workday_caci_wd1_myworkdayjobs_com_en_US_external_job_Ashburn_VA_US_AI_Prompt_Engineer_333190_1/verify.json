@@ -1,0 +1,113 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine2",
+      "label": "Address Line 2",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "863b6ab598861001086da2f246380000",
+      "label": "Have you previously worked for CACI or a CACI subsidiary such as ARKA, Quadrint, Six3, Azure Summit, WGI, Mastodon, or IdTech?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you a current employee at CACI? If yes, do not apply here. Instead, apply through CACI’s Internal Career Hub.",
+    "Are you a U.S. Person? This includes a U.S. Citizen. It also includes a lawful permanent resident as defined by 8 U.S.C. 1101(a)(20) or who is a protected individual as defined by 8 U.S.C. 324b(a)(3). It does not include any foreign person as defined in 22 CFR 120.16.",
+    "Do you currently possess an active security clearance?",
+    "If you currently possess an active security clearance, which agency sponsored the clearance?",
+    "What is your desired salary?",
+    "Have you ever served or are you currently serving in the United States Military?",
+    "The below survey requests information from you so that CACI can fulfill its obligations to mitigate, avoid or eliminate any conflict before assigning you to support one of CACI's federal government projects. Please select the appropriate value regarding your employment history with the U.S. Government:"
+  ],
+  "fillErrors": []
+}

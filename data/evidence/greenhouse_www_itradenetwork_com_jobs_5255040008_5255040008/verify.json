@@ -44,6 +44,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_16407646008",
+      "label": "Are you authorized to work for any US employer without sponsorship?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "question_16407648008",
       "label": "Are you currently located in the Bay Area, CA area?",
       "expected": "No",
@@ -87,7 +94,6 @@
     }
   ],
   "emptyRequired": [
-    "Are you authorized to work for any US employer without sponsorship?",
     "If you are not located in the Bay Area, CA, are you open and willing to relocate to that area on your first day of employment? Please note: iTradeNetwork does not currently provide relocation assistance."
   ],
   "fillErrors": []

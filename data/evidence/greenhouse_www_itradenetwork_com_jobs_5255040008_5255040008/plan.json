@@ -10,21 +10,24 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -283,7 +286,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "resume",
@@ -334,14 +338,16 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_16407652008",
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "gender",
@@ -392,7 +398,7 @@
         ]
       }
     ],
-    "priorApplications": 43,
+    "priorApplications": 54,
     "jobLocation": "California"
   },
   "items": [
@@ -403,7 +409,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -420,7 +427,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -437,7 +445,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -716,7 +725,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -755,7 +765,7 @@
       "reason": "no document for this upload"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_16407646008",
         "label": "Are you authorized to work for any US employer without sponsorship?",
@@ -766,7 +776,13 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -809,7 +825,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -826,7 +843,8 @@
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.lindseyma.com/",
       "source": {

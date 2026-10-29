@@ -1,11 +1,9 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Are you eligible to work in this location (without sponsorship)?\": sensitive question with no exact answer",
     "required \"What are your preferred personal pronouns?\": no answer in profile or answer bank",
     "required \"I identify my ethnicity as (mark all that apply)\": sensitive question with no exact answer",
     "required \"Jumio has my consent to collect, store, and process my data for the purpose of considering me for employment, and for up to 1095 days thereafter.\": acknowledgements and consents need the candidate",
-    "required \"Are you eligible to work in this location (without sponsorship)?\" is empty after filling",
     "required \"What are your preferred personal pronouns?\" is empty after filling",
     "required \"I identify my ethnicity as (mark all that apply)\" is empty after filling",
     "required \"Jumio has my consent to collect, store, and process my data for the purpose of considering me for employment, and for up to 1095 days thereafter.\" is empty after filling"

@@ -376,7 +376,8 @@ export const PROFILE_RULES: ProfileRule[] = [
         const pick = near ? opts.filter((o) => /\balready (reside|live)\b/i.test(o)) : p.workArrangement?.relocate ? opts.filter((o) => /\bwilling to relocate\b/i.test(o) && !/\bnot willing\b/i.test(o)) : [];
         return pick.length === 1 ? pick[0] : undefined;
       }
-      if (/\b(support|assistance|package|stipend|reimburse)/.test(label)) return undefined;
+      // "Will you require relocation assistance?" is not a willingness question; a note that none is offered is.
+      if (/\b(require|need|requesting|request|want)\b.{0,30}\b(support|assistance|package|stipend|reimburse)/.test(label)) return undefined;
       const relocation = /\brelocat/.test(label);
       const ok = relocation ? p.workArrangement?.relocate : p.workArrangement?.onsite;
       if (ok === undefined) return undefined;
@@ -582,7 +583,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
   // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
   // Pronouns follow her gender choice: undisclosed where the list lets her decline.
-  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b|^(your )?pronouns?$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
+  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation)\b|^(your )?pronouns?$|^what are your (preferred )?(personal )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
   // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",

@@ -11,28 +11,32 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "preferred_name",
         "label": "Preferred First Name",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
@@ -291,7 +295,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "candidate-location",
@@ -371,7 +376,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -388,7 +394,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -405,7 +412,8 @@
         "label": "Preferred First Name",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lindsey",
       "source": {
@@ -422,7 +430,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -701,7 +710,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -818,7 +828,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_6424233009",
         "label": "Why Lila, why this role, and why at this moment in your life?",
@@ -826,7 +836,14 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Lila is trying to make the whole loop of science, from hypothesis to experiment to new data, run with AI in it, and this role builds the record that makes that loop trustworthy: knowing exactly how a result was produced. I have felt that need from the research side. At Columbia I built synthetic benchmarks and ran systematic ablations, then packaged the lab’s research code into a documented software package so wet-lab researchers could reuse it. More recently I built a multi-agent system that logs irreversible actions in an append-only ledger and turns every audit disagreement into a rule or a regression test. I have just finished my M.S. in Statistics, and this is the moment I want to put that habit of traceable, reproducible work into infrastructure that scientists and agents depend on.",
+      "source": {
+        "type": "bank",
+        "id": "why-lila-data-infra",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

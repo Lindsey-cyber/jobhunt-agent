@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -79,6 +79,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_6424233009",
+      "label": "Why Lila, why this role, and why at this moment in your life?",
+      "expected": "Lila is trying to make the whole loop of science, from hypothesis to experiment to new data, run with AI in it, and this role builds the record that makes that loop trustworthy: knowing exactly how a result was produced. I have felt that need from the research side. At Columbia I built synthetic benchmarks and ran systematic ablations, then packaged the lab’s research code into a documented software package so wet-lab researchers could reuse it. More recently I built a multi-agent system that logs irreversible actions in an append-only ledger and turns every audit disagreement into a rule or a regression test. I have just finished my M.S. in Statistics, and this is the moment I want to put that habit of traceable, reproducible work into infrastructure that scientists and agents depend on.",
+      "actual": "Lila is trying to make the whole loop of science, from hypothesis to experiment to new data, run with AI in it, and this role builds the record that makes that loop trustworthy: knowing exactly how a result was produced. I have felt that need from the research side. At Columbia I built synthetic benchmarks and ran systematic ablations, then packaged the lab’s research code into a documented software package so wet-lab researchers could reuse it. More recently I built a multi-agent system that logs irreversible actions in an append-only ledger and turns every audit disagreement into a rule or a regression test. I have just finished my M.S. in Statistics, and this is the moment I want to put that habit of traceable, reproducible work into infrastructure that scientists and agents depend on.",
+      "pass": true
+    },
+    {
       "fieldId": "question_6424234009",
       "label": "Privacy Notice",
       "expected": "I have read and acknowledge the privacy notice below",
@@ -86,8 +93,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Why Lila, why this role, and why at this moment in your life?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

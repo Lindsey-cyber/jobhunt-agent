@@ -5,14 +5,12 @@
     "required \"What degree have you earned?\": no answer in profile or answer bank",
     "required \"What was the major/field of study for your degree(s)?\": no answer in profile or answer bank",
     "required \"What is your expected hourly rate?\": no answer in profile or answer bank",
-    "required \"Which US state are you located in?\": no answer in profile or answer bank",
     "required \"What is your English proficiency level?\": no answer in profile or answer bank",
     "required \"Are you proficient in any other languages?\": no answer in profile or answer bank",
     "required \"What is your highest level of education?\" is empty after filling",
     "required \"What degree have you earned?\" is empty after filling",
     "required \"What was the major/field of study for your degree(s)?\" is empty after filling",
     "required \"What is your expected hourly rate?\" is empty after filling",
-    "required \"Which US state are you located in?\" is empty after filling",
     "required \"What is your English proficiency level?\" is empty after filling",
     "required \"Are you proficient in any other languages?\" is empty after filling"
   ]

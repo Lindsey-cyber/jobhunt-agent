@@ -58,6 +58,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_6255850009",
+      "label": "Which US state are you located in?",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
       "fieldId": "question_6255853009",
       "label": "Do you, now or in the future, require sponsorship to work in the United States?",
       "expected": "Yes",
@@ -119,7 +126,6 @@
     "What degree have you earned?",
     "What was the major/field of study for your degree(s)?",
     "What is your expected hourly rate?",
-    "Which US state are you located in?",
     "What is your English proficiency level?",
     "Are you proficient in any other languages?"
   ],

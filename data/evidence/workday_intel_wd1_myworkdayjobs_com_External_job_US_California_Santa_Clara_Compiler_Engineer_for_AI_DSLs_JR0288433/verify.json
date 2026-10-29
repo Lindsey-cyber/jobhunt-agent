@@ -2,8 +2,29 @@
   "ok": false,
   "checks": [
     {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Are you currently or have you previously been directly employed, accepted an offer, or contracted with Intel or an Intel subsidiary?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country/Region",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
       "fieldId": "legalName--lastName",
-      "label": "Family Name",
+      "label": "Last Name",
       "expected": "Ma",
       "actual": "Ma",
       "pass": true
@@ -13,6 +34,20 @@
       "label": "Address Line 1",
       "expected": "140-21 32nd Ave",
       "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
       "pass": true
     },
     {
@@ -30,16 +65,45 @@
       "pass": true
     },
     {
+      "fieldId": "countryPhoneCode",
+      "label": "Country/Region Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
       "fieldId": "phoneNumber",
       "label": "Phone Number",
       "expected": "9786681426",
       "actual": "9786681426",
       "pass": true
+    },
+    {
+      "fieldId": "jobTitle",
+      "label": "Job Title",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
+      "pass": true
+    },
+    {
+      "fieldId": "location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Are you currently or have you previously been directly employed, accepted an offer, or contracted with Intel or an Intel subsidiary?",
-    "Given Name(s)"
+    "Company",
+    "From",
+    "To"
   ],
   "fillErrors": []
 }

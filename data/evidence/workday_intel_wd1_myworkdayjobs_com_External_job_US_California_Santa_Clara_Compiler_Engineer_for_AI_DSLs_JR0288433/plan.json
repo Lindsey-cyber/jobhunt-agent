@@ -274,14 +274,14 @@
       },
       {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
         "options": []
       },
       {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -294,11 +294,79 @@
         "options": []
       },
       {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
+        "id": "city",
+        "label": "City",
         "kind": "text",
         "required": false,
         "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
       },
       {
         "id": "postalCode",
@@ -313,10 +381,7 @@
         "kind": "select",
         "required": true,
         "options": [
-          "Home",
-          "Mobile",
-          "Other",
-          "Work Mobile"
+          "Mobile"
         ]
       },
       {
@@ -339,6 +404,71 @@
         "kind": "text",
         "required": false,
         "options": []
+      },
+      {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
       }
     ],
     "priorApplications": 0,
@@ -346,7 +476,7 @@
   },
   "items": [
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "candidateIsPreviousWorker",
         "label": "Are you currently or have you previously been directly employed, accepted an offer, or contracted with Intel or an Intel subsidiary?",
@@ -357,10 +487,16 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "country",
         "label": "Country/Region",
@@ -618,24 +754,36 @@
           "Zimbabwe"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.9,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
       "field": {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -666,15 +814,100 @@
       "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
+        "id": "city",
+        "label": "City",
         "kind": "text",
         "required": false,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -701,10 +934,7 @@
         "kind": "select",
         "required": true,
         "options": [
-          "Home",
-          "Mobile",
-          "Other",
-          "Work Mobile"
+          "Mobile"
         ]
       },
       "value": "Mobile",
@@ -716,7 +946,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "countryPhoneCode",
         "label": "Country/Region Phone Code",
@@ -724,7 +954,13 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -753,6 +989,126 @@
         "options": []
       },
       "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Research Assistant (ML)",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

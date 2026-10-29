@@ -1,17 +1,9 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Have you been employed, or otherwise engaged, by an Asana entity in the past? (Previous independent contractors, select \"Yes.\")\": no answer in profile or answer bank",
     "required \"Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?\": no answer in profile or answer bank",
     "required \"If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'\": no answer in profile or answer bank",
-    "required \"By agreeing here: (1) I certify that the information I provided to Asana in connection with my application for employment is accurate and truthful; and (2) I acknowledge and agree that I have carefully read the mutual Applicant Arbitration Agreement set out below and agree to be bound by it\": legal attestations need the candidate",
-    "required \"Please identify your sex.\": sensitive question with no exact answer",
-    "required \"Please identify your ethnicity.\": sensitive question with no exact answer",
-    "required \"Have you been employed, or otherwise engaged, by an Asana entity in the past? (Previous independent contractors, select \"Yes.\")\" is empty after filling",
     "required \"Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?\" is empty after filling",
-    "required \"If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'\" is empty after filling",
-    "required \"By agreeing here: (1) I certify that the information I provided to Asana in connection with my application for employment is accurate and truthful; and (2) I acknowledge and agree that I have carefully read the mutual Applicant Arbitration Agreement set out below and agree to be bound by it\" is empty after filling",
-    "required \"Please identify your sex.\" is empty after filling",
-    "required \"Please identify your ethnicity.\" is empty after filling"
+    "required \"If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'\" is empty after filling"
   ]
 }

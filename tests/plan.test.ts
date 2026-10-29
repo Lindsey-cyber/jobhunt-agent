@@ -332,4 +332,15 @@ describe("buildPlan", () => {
     expect(one("Do you use AI tools in your daily work?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Signature: I certify the above is true and complete", { kind: "text" })).toMatchObject({ status: "blocked" });
   });
+
+  it("answers Lyft's relocation options by her metro, and Asana's government-employment pair", () => {
+    const p = { ...user.profile, contact: { ...user.profile.contact, address: { ...user.profile.contact.address, city: "Flushing", state: "NY" } }, workArrangement: { onsite: true, relocate: true }, workHistory: [{ employer: "Arborphy AI LLC" }] };
+    const lyft = ["I am willing to relocate before starting employment.", "I am not willing to relocate before starting employment.", "I already reside near a Lyft office and I am able to work at a Lyft On-site Office."];
+    const q = (city: string) => `This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in ${city} or are you open to relocating?`;
+    const one = (label: string, over: Partial<ReturnType<typeof field>>, loc: string) => buildPlan({ ...form([field(label, over)], "Lyft"), jobLocation: loc }, p, user.bank).items[0]!;
+    expect(one(q("New York City"), { kind: "combobox", options: lyft }, "New York, NY")).toMatchObject({ value: lyft[2] });
+    expect(one(q("San Francisco"), { kind: "combobox", options: lyft }, "San Francisco, CA")).toMatchObject({ value: lyft[0] });
+    expect(one("Do you currently work for or have you ever worked for a U.S. government entity, either as a contractor or employee?", { kind: "combobox", options: ["Yes, I do work/have worked for a U.S. government entity.", "No, I have never."] }, "New York, NY")).toMatchObject({ value: "No, I have never." });
+    expect(one("If you answered “Yes,” please list the U.S. government entity you worked for. If not applicable, type 'N/A.'", { kind: "text" }, "New York, NY")).toMatchObject({ value: "N/A" });
+  });
 });

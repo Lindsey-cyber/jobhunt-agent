@@ -840,7 +840,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1029,7 +1029,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_37465110002",
         "label": "Do you currently or have you previously worked for Databricks in the past?",
@@ -1043,7 +1043,13 @@
           "Yes - Previous Intern"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -1159,7 +1165,7 @@
       "sensitive": false
     },
     {
-      "status": "fill",
+      "status": "skip",
       "field": {
         "id": "race",
         "label": "Please identify your race",
@@ -1175,13 +1181,7 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "Decline To Self Identify",
-      "source": {
-        "type": "profile",
-        "path": "eeo.race"
-      },
-      "confidence": 1,
-      "sensitive": true
+      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

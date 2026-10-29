@@ -107,6 +107,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_37465110002",
+      "label": "Do you currently or have you previously worked for Databricks in the past?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "gender",
       "label": "Gender",
       "expected": "Decline To Self Identify",
@@ -117,8 +124,8 @@
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
       "expected": "No",
-      "actual": "Decline To Self Identify",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "veteran_status",
@@ -140,18 +147,10 @@
       "expected": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
       "actual": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
       "pass": true
-    },
-    {
-      "fieldId": "race",
-      "label": "Please identify your race",
-      "expected": "Decline To Self Identify",
-      "actual": "",
-      "pass": false
     }
   ],
   "emptyRequired": [
-    "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar).",
-    "Do you currently or have you previously worked for Databricks in the past?"
+    "Describe a production ML or GenAI system where you did model-level work (training, fine-tuning, optimization, or evaluation) on a transformer-based model (GPT, Llama, Claude, Mistral, Gemma, or similar)."
   ],
   "fillErrors": []
 }

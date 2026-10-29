@@ -1,9 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Have you worked at DoorDash?\": answer \"No\" matches none of the options",
-    "required \"Race (*Please select one option that best describes how you identify*)\": sensitive question with no exact answer",
-    "required \"Have you worked at DoorDash?\" is empty after filling",
-    "required \"Race (*Please select one option that best describes how you identify*)\" is empty after filling"
-  ]
+  "decision": "submit"
 }

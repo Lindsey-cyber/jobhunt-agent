@@ -1116,7 +1116,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1542,7 +1542,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_37676317002",
         "label": "Can you perform these essential functions of the job with reasonable accommodation?",
@@ -1553,7 +1553,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "eeo.disability"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "skip",

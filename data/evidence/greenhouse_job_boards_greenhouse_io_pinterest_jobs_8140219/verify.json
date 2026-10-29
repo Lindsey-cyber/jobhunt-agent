@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -114,6 +114,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_68820051",
+      "label": "In 1–2 sentences, please describe your MS program, including your research focus, specialization, or primary area of study.",
+      "expected": "M.S. in Statistics, Columbia University (Sep 2024 – May 2026), with coursework in Deep Learning, Advanced Machine Learning and Robot Learning. My research focused on self-supervised denoising for two-photon calcium imaging.",
+      "actual": "M.S. in Statistics, Columbia University (Sep 2024 – May 2026), with coursework in Deep Learning, Advanced Machine Learning and Robot Learning. My research focused on self-supervised denoising for two-photon calcium imaging.",
+      "pass": true
+    },
+    {
       "fieldId": "29783",
       "label": "Gender",
       "expected": "I don't wish to answer",
@@ -135,8 +142,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "In 1–2 sentences, please describe your MS program, including your research focus, specialization, or primary area of study."
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

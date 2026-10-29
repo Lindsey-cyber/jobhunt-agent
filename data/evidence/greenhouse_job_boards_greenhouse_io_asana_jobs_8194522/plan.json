@@ -836,7 +836,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1001,7 +1001,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69119893",
         "label": "Have you been employed, or otherwise engaged, by an Asana entity in the past? (Previous independent contractors, select \"Yes.\")",
@@ -1012,7 +1012,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1060,7 +1066,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69119897",
         "label": "By agreeing here: (1) I certify that the information I provided to Asana in connection with my application for employment is accurate and truthful; and (2) I acknowledge and agree that I have carefully read the mutual Applicant Arbitration Agreement set out below and agree to be bound by it",
@@ -1071,10 +1077,16 @@
           "No"
         ]
       },
-      "reason": "legal attestations need the candidate"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "1478",
         "label": "Please identify your sex.",
@@ -1087,7 +1099,13 @@
           "I don't wish to answer"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -1115,7 +1133,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "57037",
         "label": "Please identify your ethnicity.",
@@ -1127,7 +1145,13 @@
           "I don't wish to answer"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",

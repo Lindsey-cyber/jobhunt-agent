@@ -15,12 +15,12 @@
   "question_36493420002": "LinkedIn",
   "question_36493421002": "Yes",
   "question_36493422002": "Yes",
-  "question_37465110002": "",
+  "question_37465110002": "No",
   "gender": "Decline To Self Identify",
-  "hispanic_ethnicity": "Decline To Self Identify",
+  "hispanic_ethnicity": "No",
+  "race": "",
   "veteran_status": "I am not a protected veteran",
   "question_36493425002[]": "None of the above",
   "question_36493426002[]": "Individual granted citizenship in a country other than Cuba, Iran, North Korea, or Syria",
-  "resume": "Lindsey_Ma_Resume.pdf",
-  "race": ""
+  "resume": "Lindsey_Ma_Resume.pdf"
 }

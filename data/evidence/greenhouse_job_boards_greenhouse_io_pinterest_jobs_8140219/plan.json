@@ -1076,7 +1076,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_68820051",
         "label": "In 1–2 sentences, please describe your MS program, including your research focus, specialization, or primary area of study.",
@@ -1084,7 +1084,14 @@
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "M.S. in Statistics, Columbia University (Sep 2024 – May 2026), with coursework in Deep Learning, Advanced Machine Learning and Robot Learning. My research focused on self-supervised denoising for two-photon calcium imaging.",
+      "source": {
+        "type": "bank",
+        "id": "ms-program",
+        "origin": "generated"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

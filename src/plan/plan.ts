@@ -117,7 +117,7 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
     return unanswered(field, "no document for this upload");
   }
 
-  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, company: form.company, ...(form.priorApplications !== undefined ? { priorApplications: form.priorApplications } : {}), ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
+  const candidate = fromBank(label, bank, form.company, sensitive) ?? fromProfile(label, field, profile, { options: field.options, company: form.company, ...(form.jobLocation ? { jobLocation: form.jobLocation } : {}), ...(form.priorApplications !== undefined ? { priorApplications: form.priorApplications } : {}), ...(jobCountry(form.jobLocation) ? { jobCountry: jobCountry(form.jobLocation)! } : {}) });
   if (!candidate) return unanswered(field, sensitive ? "sensitive question with no exact answer" : "no answer in profile or answer bank");
 
   // A checkbox list (Workday's race/ethnicity) is matched like a radio group.

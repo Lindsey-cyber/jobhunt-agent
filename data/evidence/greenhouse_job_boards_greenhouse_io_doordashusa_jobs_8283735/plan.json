@@ -938,7 +938,7 @@
         "required": true,
         "options": []
       },
-      "value": "/opt/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
       "source": {
         "type": "file",
         "path": "documents.resume"
@@ -1181,7 +1181,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69886287",
         "label": "Have you worked at DoorDash?",
@@ -1197,7 +1197,13 @@
           "I have not worked at DoorDash"
         ]
       },
-      "reason": "answer \"No\" matches none of the options"
+      "value": "I have not worked at DoorDash",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1306,7 +1312,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "1333",
         "label": "Race (*Please select one option that best describes how you identify*)",
@@ -1323,7 +1329,13 @@
           "I don't wish to answer"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",

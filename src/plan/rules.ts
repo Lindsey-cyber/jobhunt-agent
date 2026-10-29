@@ -54,6 +54,8 @@ export interface RuleContext {
   jobCountry?: string;
   // The hiring company, as the form names it.
   company?: string;
+  // Where the posting is, as the form or catalog gives it.
+  jobLocation?: string;
   // How many earlier applications to this employer the ledger holds.
   priorApplications?: number;
 }
@@ -95,7 +97,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Are you currently living in / based in the Bay Area?" from the state the candidate lives in.
     path: "contact.address.state",
-    pattern: /\b(currently )?(living|based|located|residing|live) in (the )?(san francisco )?bay area\b|\b(currently )?(living|based|located|residing) in new york\b/,
+    // Not a relocation question that names an office ("... a Lyft Office located in New York City or are you open to relocating?").
+    pattern: /^(?!.*\brelocat)(?:.*\b(currently )?(living|based|located|residing|live) in (the )?(san francisco )?bay area\b|.*\b(currently )?(living|based|located|residing) in new york\b)/,
     resolve: (p, label) => yesNo(/bay area/.test(label) ? p.contact.address.state.toUpperCase() === "CA" : p.contact.address.state.toUpperCase() === "NY"),
   },
   {
@@ -231,6 +234,18 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // Asana: "Do you currently work for or have you ever worked for a U.S. government entity ...?" and its
+    // "If you answered Yes, list the entity; if not applicable, type N/A": from the resume's employers.
+    path: "workHistory",
+    pattern: /\b(work(ed)? for|employed by) (a |an |any )?(u s |us |federal |state )?government\b|\bgovernment entity you worked for\b/,
+    resolve: (p, label, ctx) => {
+      if (p.workHistory.some((w) => /\b(government|federal|department of|agency|u\.?s\.? army|navy|air force)\b/i.test(w.employer))) return undefined;
+      if (/\bif you answered\b.*\bn ?a\b/.test(label)) return "N/A";
+      const no = (ctx.options ?? []).filter((o) => /^no\b/i.test(o.trim()));
+      return ctx.options?.length ? (no.length === 1 ? no[0] : undefined) : "No";
+    },
+  },
+  {
     // Any other "have you worked for / been employed by / contracted with <this company>?":
     // the hiring company must be named, and her resume's employers decide.
     path: "workHistory",
@@ -275,7 +290,16 @@ export const PROFILE_RULES: ProfileRule[] = [
     pattern: /\b(on ?site|in office|in the office|in person|office (monday|five|5|four|4|three|3)|(five|5|four|4|three|3) days (a|per) week|relocat(e|ion|ing)|commute|commutable|work(ing)? (out of|from|in) our .{0,40}\b(office|hq|headquarters)|work in the specified (job )?location)\b/,
     kinds: ["select", "radio", "combobox"],
     resolve: (p, label, ctx) => {
-      if (ctx.jobCountry !== "United States" || !(ctx.options ?? []).some((o) => /^yes\b/i.test(o.trim()))) return undefined;
+      if (ctx.jobCountry !== "United States") return undefined;
+      const opts = ctx.options ?? [];
+      // Lyft: "I already reside near a Lyft office ..." / "I am willing to relocate ..." / "I am not willing ...".
+      if (!opts.some((o) => /^yes\b/i.test(o.trim()))) {
+        // Near when the posting's place (or the office the question names) is her metro: New York for a NY address.
+        const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
+        const near = Boolean(metro) && normalize(`${ctx.jobLocation ?? ""} ${label}`).includes(metro) && !/\b(san francisco|seattle|boston|chicago|austin|los angeles)\b/.test(normalize(`${ctx.jobLocation ?? ""} ${label}`));
+        const pick = near ? opts.filter((o) => /\balready (reside|live)\b/i.test(o)) : p.workArrangement?.relocate ? opts.filter((o) => /\bwilling to relocate\b/i.test(o) && !/\bnot willing\b/i.test(o)) : [];
+        return pick.length === 1 ? pick[0] : undefined;
+      }
       if (/\b(support|assistance|package|stipend|reimburse)/.test(label)) return undefined;
       const relocation = /\brelocat/.test(label);
       const ok = relocation ? p.workArrangement?.relocate : p.workArrangement?.onsite;

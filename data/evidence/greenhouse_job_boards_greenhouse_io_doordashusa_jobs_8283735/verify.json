@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -93,6 +93,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_69886287",
+      "label": "Have you worked at DoorDash?",
+      "expected": "I have not worked at DoorDash",
+      "actual": "I have not worked at DoorDash",
+      "pass": true
+    },
+    {
       "fieldId": "question_69886288",
       "label": "Applicant Privacy Acknowledgement",
       "expected": "Yes",
@@ -128,6 +135,13 @@
       "pass": true
     },
     {
+      "fieldId": "1333",
+      "label": "Race (*Please select one option that best describes how you identify*)",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
       "fieldId": "1336",
       "label": "Protected Veteran Status",
       "expected": "I am not a protected veteran",
@@ -142,9 +156,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Have you worked at DoorDash?",
-    "Race (*Please select one option that best describes how you identify*)"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

@@ -128,6 +128,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_37676317002",
+      "label": "Can you perform these essential functions of the job with reasonable accommodation?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_37676319002",
       "label": "Work Authorization",
       "expected": "I require/will require Lyft's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)",
@@ -192,7 +199,6 @@
     }
   ],
   "emptyRequired": [
-    "Can you perform these essential functions of the job with reasonable accommodation?",
     "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in New York City or are you open to relocating?",
     "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references."
   ],

@@ -11,280 +11,39 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "last_name",
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "email",
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "country",
         "label": "Country",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "United States",
-          "Afghanistan",
-          "Åland Islands",
-          "Albania",
-          "Algeria",
-          "American Samoa",
-          "Andorra",
-          "Angola",
-          "Anguilla",
-          "Antigua & Barbuda",
-          "Argentina",
-          "Armenia",
-          "Aruba",
-          "Ascension Island",
-          "Australia",
-          "Austria",
-          "Azerbaijan",
-          "Bahamas",
-          "Bahrain",
-          "Bangladesh",
-          "Barbados",
-          "Belarus",
-          "Belgium",
-          "Belize",
-          "Benin",
-          "Bermuda",
-          "Bhutan",
-          "Bolivia",
-          "Bosnia & Herzegovina",
-          "Botswana",
-          "Brazil",
-          "British Indian Ocean Territory",
-          "British Virgin Islands",
-          "Brunei",
-          "Bulgaria",
-          "Burkina Faso",
-          "Burundi",
-          "Cambodia",
-          "Cameroon",
-          "Canada",
-          "Cape Verde",
-          "Caribbean Netherlands",
-          "Cayman Islands",
-          "Central African Republic",
-          "Chad",
-          "Chile",
-          "China",
-          "Christmas Island",
-          "Cocos (Keeling) Islands",
-          "Colombia",
-          "Comoros",
-          "Congo - Brazzaville",
-          "Congo - Kinshasa",
-          "Cook Islands",
-          "Costa Rica",
-          "Côte d’Ivoire",
-          "Croatia",
-          "Cuba",
-          "Curaçao",
-          "Cyprus",
-          "Czechia",
-          "Denmark",
-          "Djibouti",
-          "Dominica",
-          "Dominican Republic",
-          "Ecuador",
-          "Egypt",
-          "El Salvador",
-          "Equatorial Guinea",
-          "Eritrea",
-          "Estonia",
-          "Eswatini",
-          "Ethiopia",
-          "Falkland Islands",
-          "Faroe Islands",
-          "Fiji",
-          "Finland",
-          "France",
-          "French Guiana",
-          "French Polynesia",
-          "Gabon",
-          "Gambia",
-          "Georgia",
-          "Germany",
-          "Ghana",
-          "Gibraltar",
-          "Greece",
-          "Greenland",
-          "Grenada",
-          "Guadeloupe",
-          "Guam",
-          "Guatemala",
-          "Guernsey",
-          "Guinea",
-          "Guinea-Bissau",
-          "Guyana",
-          "Haiti",
-          "Honduras",
-          "Hong Kong SAR China",
-          "Hungary",
-          "Iceland",
-          "India",
-          "Indonesia",
-          "Iran",
-          "Iraq",
-          "Ireland",
-          "Isle of Man",
-          "Israel",
-          "Italy",
-          "Jamaica",
-          "Japan",
-          "Jersey",
-          "Jordan",
-          "Kazakhstan",
-          "Kenya",
-          "Kiribati",
-          "Kosovo",
-          "Kuwait",
-          "Kyrgyzstan",
-          "Laos",
-          "Latvia",
-          "Lebanon",
-          "Lesotho",
-          "Liberia",
-          "Libya",
-          "Liechtenstein",
-          "Lithuania",
-          "Luxembourg",
-          "Macao SAR China",
-          "Madagascar",
-          "Malawi",
-          "Malaysia",
-          "Maldives",
-          "Mali",
-          "Malta",
-          "Marshall Islands",
-          "Martinique",
-          "Mauritania",
-          "Mauritius",
-          "Mayotte",
-          "Mexico",
-          "Micronesia",
-          "Moldova",
-          "Monaco",
-          "Mongolia",
-          "Montenegro",
-          "Montserrat",
-          "Morocco",
-          "Mozambique",
-          "Myanmar (Burma)",
-          "Namibia",
-          "Nauru",
-          "Nepal",
-          "Netherlands",
-          "New Caledonia",
-          "New Zealand",
-          "Nicaragua",
-          "Niger",
-          "Nigeria",
-          "Niue",
-          "Norfolk Island",
-          "North Korea",
-          "North Macedonia",
-          "Northern Mariana Islands",
-          "Norway",
-          "Oman",
-          "Pakistan",
-          "Palau",
-          "Palestinian Territories",
-          "Panama",
-          "Papua New Guinea",
-          "Paraguay",
-          "Peru",
-          "Philippines",
-          "Poland",
-          "Portugal",
-          "Puerto Rico",
-          "Qatar",
-          "Réunion",
-          "Romania",
-          "Russia",
-          "Rwanda",
-          "Samoa",
-          "San Marino",
-          "São Tomé & Príncipe",
-          "Saudi Arabia",
-          "Senegal",
-          "Serbia",
-          "Seychelles",
-          "Sierra Leone",
-          "Singapore",
-          "Sint Maarten",
-          "Slovakia",
-          "Slovenia",
-          "Solomon Islands",
-          "Somalia",
-          "South Africa",
-          "South Korea",
-          "South Sudan",
-          "Spain",
-          "Sri Lanka",
-          "St. Barthélemy",
-          "St. Helena",
-          "St. Kitts & Nevis",
-          "St. Lucia",
-          "St. Martin",
-          "St. Pierre & Miquelon",
-          "St. Vincent & Grenadines",
-          "Sudan",
-          "Suriname",
-          "Svalbard & Jan Mayen",
-          "Sweden",
-          "Switzerland",
-          "Syria",
-          "Taiwan",
-          "Tajikistan",
-          "Tanzania",
-          "Thailand",
-          "Timor-Leste",
-          "Togo",
-          "Tokelau",
-          "Tonga",
-          "Trinidad & Tobago",
-          "Tunisia",
-          "Turkey",
-          "Turkmenistan",
-          "Turks & Caicos Islands",
-          "Tuvalu",
-          "U.S. Virgin Islands",
-          "Uganda",
-          "Ukraine",
-          "United Arab Emirates",
-          "United Kingdom",
-          "Uruguay",
-          "Uzbekistan",
-          "Vanuatu",
-          "Vatican City",
-          "Venezuela",
-          "Vietnam",
-          "Wallis & Futuna",
-          "Western Sahara",
-          "Yemen",
-          "Zambia",
-          "Zimbabwe"
-        ]
+        "options": []
       },
       {
         "id": "phone",
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "resume",
@@ -305,177 +64,133 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8744970006",
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8744971006",
         "label": "Preferred First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8744972006",
         "label": "Preferred Last Name (if different from legal last name)",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8744973006",
         "label": "Where are you currently located? (city, state)",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8744974006",
         "label": "Are you comfortable interviewing for the salary outlined in the job description ?",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "question_8744975006",
         "label": "Do you have the right to work in the country you are applying to?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "question_8744976006",
         "label": "Current Company",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8744977006",
         "label": "Do you now or will you in the future require sponsorship to work in the country you are applying to?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "question_8744978006",
         "label": "Legal Address",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       {
         "id": "question_8744979006",
         "label": "Are you open to working 3 days from one of our office hubs in NYC, NJ, CA, WA?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "question_8744980006",
         "label": "Are you a former CoreWeave employee?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "question_8744981006",
         "label": "Are you now or have you ever been employed by CoreWeave?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "question_8744982006",
         "label": "Please indicate whether you are a “U.S. person”. U.S. person is defined as a (i) U.S. citizen or national; (ii) U.S. lawful permanent resident; (iii) refugee under 8 U.S.C. § 1157; or (iv) asylee under 8 U.S.C. § 1158.",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "question_8744983006",
         "label": "Do you now or will you in the future require sponsorship to work in the United States? (e.g. H1-B, H1B1, TN, E3, CPT, OPT/STEM OPT, H4, J2, or other visa type)",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       {
         "id": "gender",
         "label": "Gender",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "Male",
-          "Female",
-          "Decline To Self Identify"
-        ]
+        "options": []
       },
       {
         "id": "hispanic_ethnicity",
         "label": "Are you Hispanic/Latino?",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "Yes",
-          "No",
-          "Decline To Self Identify"
-        ]
+        "options": []
       },
       {
         "id": "veteran_status",
         "label": "Veteran Status",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "I am not a protected veteran",
-          "I identify as one or more of the classifications of a protected veteran",
-          "I don't wish to answer"
-        ]
-      },
-      {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
+        "options": []
       }
     ],
     "priorApplications": 1
@@ -488,7 +203,8 @@
         "label": "First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lanxin",
       "source": {
@@ -505,7 +221,8 @@
         "label": "Last Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Ma",
       "source": {
@@ -522,7 +239,8 @@
         "label": "Email",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "lm3879@columbia.edu",
       "source": {
@@ -539,259 +257,14 @@
         "label": "Country",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "United States",
-          "Afghanistan",
-          "Åland Islands",
-          "Albania",
-          "Algeria",
-          "American Samoa",
-          "Andorra",
-          "Angola",
-          "Anguilla",
-          "Antigua & Barbuda",
-          "Argentina",
-          "Armenia",
-          "Aruba",
-          "Ascension Island",
-          "Australia",
-          "Austria",
-          "Azerbaijan",
-          "Bahamas",
-          "Bahrain",
-          "Bangladesh",
-          "Barbados",
-          "Belarus",
-          "Belgium",
-          "Belize",
-          "Benin",
-          "Bermuda",
-          "Bhutan",
-          "Bolivia",
-          "Bosnia & Herzegovina",
-          "Botswana",
-          "Brazil",
-          "British Indian Ocean Territory",
-          "British Virgin Islands",
-          "Brunei",
-          "Bulgaria",
-          "Burkina Faso",
-          "Burundi",
-          "Cambodia",
-          "Cameroon",
-          "Canada",
-          "Cape Verde",
-          "Caribbean Netherlands",
-          "Cayman Islands",
-          "Central African Republic",
-          "Chad",
-          "Chile",
-          "China",
-          "Christmas Island",
-          "Cocos (Keeling) Islands",
-          "Colombia",
-          "Comoros",
-          "Congo - Brazzaville",
-          "Congo - Kinshasa",
-          "Cook Islands",
-          "Costa Rica",
-          "Côte d’Ivoire",
-          "Croatia",
-          "Cuba",
-          "Curaçao",
-          "Cyprus",
-          "Czechia",
-          "Denmark",
-          "Djibouti",
-          "Dominica",
-          "Dominican Republic",
-          "Ecuador",
-          "Egypt",
-          "El Salvador",
-          "Equatorial Guinea",
-          "Eritrea",
-          "Estonia",
-          "Eswatini",
-          "Ethiopia",
-          "Falkland Islands",
-          "Faroe Islands",
-          "Fiji",
-          "Finland",
-          "France",
-          "French Guiana",
-          "French Polynesia",
-          "Gabon",
-          "Gambia",
-          "Georgia",
-          "Germany",
-          "Ghana",
-          "Gibraltar",
-          "Greece",
-          "Greenland",
-          "Grenada",
-          "Guadeloupe",
-          "Guam",
-          "Guatemala",
-          "Guernsey",
-          "Guinea",
-          "Guinea-Bissau",
-          "Guyana",
-          "Haiti",
-          "Honduras",
-          "Hong Kong SAR China",
-          "Hungary",
-          "Iceland",
-          "India",
-          "Indonesia",
-          "Iran",
-          "Iraq",
-          "Ireland",
-          "Isle of Man",
-          "Israel",
-          "Italy",
-          "Jamaica",
-          "Japan",
-          "Jersey",
-          "Jordan",
-          "Kazakhstan",
-          "Kenya",
-          "Kiribati",
-          "Kosovo",
-          "Kuwait",
-          "Kyrgyzstan",
-          "Laos",
-          "Latvia",
-          "Lebanon",
-          "Lesotho",
-          "Liberia",
-          "Libya",
-          "Liechtenstein",
-          "Lithuania",
-          "Luxembourg",
-          "Macao SAR China",
-          "Madagascar",
-          "Malawi",
-          "Malaysia",
-          "Maldives",
-          "Mali",
-          "Malta",
-          "Marshall Islands",
-          "Martinique",
-          "Mauritania",
-          "Mauritius",
-          "Mayotte",
-          "Mexico",
-          "Micronesia",
-          "Moldova",
-          "Monaco",
-          "Mongolia",
-          "Montenegro",
-          "Montserrat",
-          "Morocco",
-          "Mozambique",
-          "Myanmar (Burma)",
-          "Namibia",
-          "Nauru",
-          "Nepal",
-          "Netherlands",
-          "New Caledonia",
-          "New Zealand",
-          "Nicaragua",
-          "Niger",
-          "Nigeria",
-          "Niue",
-          "Norfolk Island",
-          "North Korea",
-          "North Macedonia",
-          "Northern Mariana Islands",
-          "Norway",
-          "Oman",
-          "Pakistan",
-          "Palau",
-          "Palestinian Territories",
-          "Panama",
-          "Papua New Guinea",
-          "Paraguay",
-          "Peru",
-          "Philippines",
-          "Poland",
-          "Portugal",
-          "Puerto Rico",
-          "Qatar",
-          "Réunion",
-          "Romania",
-          "Russia",
-          "Rwanda",
-          "Samoa",
-          "San Marino",
-          "São Tomé & Príncipe",
-          "Saudi Arabia",
-          "Senegal",
-          "Serbia",
-          "Seychelles",
-          "Sierra Leone",
-          "Singapore",
-          "Sint Maarten",
-          "Slovakia",
-          "Slovenia",
-          "Solomon Islands",
-          "Somalia",
-          "South Africa",
-          "South Korea",
-          "South Sudan",
-          "Spain",
-          "Sri Lanka",
-          "St. Barthélemy",
-          "St. Helena",
-          "St. Kitts & Nevis",
-          "St. Lucia",
-          "St. Martin",
-          "St. Pierre & Miquelon",
-          "St. Vincent & Grenadines",
-          "Sudan",
-          "Suriname",
-          "Svalbard & Jan Mayen",
-          "Sweden",
-          "Switzerland",
-          "Syria",
-          "Taiwan",
-          "Tajikistan",
-          "Tanzania",
-          "Thailand",
-          "Timor-Leste",
-          "Togo",
-          "Tokelau",
-          "Tonga",
-          "Trinidad & Tobago",
-          "Tunisia",
-          "Turkey",
-          "Turkmenistan",
-          "Turks & Caicos Islands",
-          "Tuvalu",
-          "U.S. Virgin Islands",
-          "Uganda",
-          "Ukraine",
-          "United Arab Emirates",
-          "United Kingdom",
-          "Uruguay",
-          "Uzbekistan",
-          "Vanuatu",
-          "Vatican City",
-          "Venezuela",
-          "Vietnam",
-          "Wallis & Futuna",
-          "Western Sahara",
-          "Yemen",
-          "Zambia",
-          "Zimbabwe"
-        ]
+        "options": []
       },
       "value": "United States",
       "source": {
         "type": "profile",
         "path": "contact.address.country"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": false
     },
     {
@@ -801,7 +274,8 @@
         "label": "Phone",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "9786681426",
       "source": {
@@ -846,7 +320,8 @@
         "label": "LinkedIn Profile",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.linkedin.com/in/lindsey-ma/",
       "source": {
@@ -863,7 +338,8 @@
         "label": "Website",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "https://www.lindseyma.com/",
       "source": {
@@ -880,7 +356,8 @@
         "label": "Preferred First Name",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Lindsey",
       "source": {
@@ -897,20 +374,29 @@
         "label": "Preferred Last Name (if different from legal last name)",
         "kind": "text",
         "required": false,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8744973006",
         "label": "Where are you currently located? (city, state)",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "New York, NY",
+      "source": {
+        "type": "bank",
+        "id": "current-city-state",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "skip",
@@ -919,26 +405,26 @@
         "label": "Are you comfortable interviewing for the salary outlined in the job description ?",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       "reason": "compensation is never filled automatically"
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8744975006",
         "label": "Do you have the right to work in the country you are applying to?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 0.8,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -947,7 +433,8 @@
         "label": "Current Company",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "value": "Arborphy AI LLC",
       "source": {
@@ -964,17 +451,14 @@
         "label": "Do you now or will you in the future require sponsorship to work in the country you are applying to?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       "value": "Yes",
       "source": {
         "type": "profile",
         "path": "workAuthorization.needsSponsorship"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": true
     },
     {
@@ -984,7 +468,8 @@
         "label": "Legal Address",
         "kind": "text",
         "required": true,
-        "options": []
+        "options": [],
+        "maxLength": 255
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -995,10 +480,7 @@
         "label": "Are you open to working 3 days from one of our office hubs in NYC, NJ, CA, WA?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       "reason": "no answer in profile or answer bank"
     },
@@ -1009,17 +491,14 @@
         "label": "Are you a former CoreWeave employee?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       "value": "No",
       "source": {
         "type": "profile",
         "path": "workHistory"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": false
     },
     {
@@ -1029,17 +508,14 @@
         "label": "Are you now or have you ever been employed by CoreWeave?",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       "value": "No",
       "source": {
         "type": "profile",
         "path": "workHistory"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": false
     },
     {
@@ -1049,10 +525,7 @@
         "label": "Please indicate whether you are a “U.S. person”. U.S. person is defined as a (i) U.S. citizen or national; (ii) U.S. lawful permanent resident; (iii) refugee under 8 U.S.C. § 1157; or (iv) asylee under 8 U.S.C. § 1158.",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       "reason": "sensitive question with no exact answer"
     },
@@ -1063,17 +536,14 @@
         "label": "Do you now or will you in the future require sponsorship to work in the United States? (e.g. H1-B, H1B1, TN, E3, CPT, OPT/STEM OPT, H4, J2, or other visa type)",
         "kind": "combobox",
         "required": true,
-        "options": [
-          "Yes",
-          "No"
-        ]
+        "options": []
       },
       "value": "Yes",
       "source": {
         "type": "profile",
         "path": "workAuthorization.needsSponsorship"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": true
     },
     {
@@ -1083,18 +553,14 @@
         "label": "Gender",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "Male",
-          "Female",
-          "Decline To Self Identify"
-        ]
+        "options": []
       },
-      "value": "Decline To Self Identify",
+      "value": "decline",
       "source": {
         "type": "profile",
         "path": "eeo.gender"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": true
     },
     {
@@ -1104,18 +570,14 @@
         "label": "Are you Hispanic/Latino?",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "Yes",
-          "No",
-          "Decline To Self Identify"
-        ]
+        "options": []
       },
-      "value": "No",
+      "value": "no",
       "source": {
         "type": "profile",
         "path": "eeo.hispanicLatino"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": true
     },
     {
@@ -1125,38 +587,15 @@
         "label": "Veteran Status",
         "kind": "combobox",
         "required": false,
-        "options": [
-          "I am not a protected veteran",
-          "I identify as one or more of the classifications of a protected veteran",
-          "I don't wish to answer"
-        ]
+        "options": []
       },
-      "value": "I am not a protected veteran",
+      "value": "no",
       "source": {
         "type": "profile",
         "path": "eeo.veteran"
       },
-      "confidence": 0.95,
+      "confidence": 0.8,
       "sensitive": true
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

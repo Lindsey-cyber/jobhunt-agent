@@ -58,6 +58,13 @@
       "pass": true
     },
     {
+      "fieldId": "cover_letter",
+      "label": "Cover Letter",
+      "expected": "descript.pdf",
+      "actual": "descript.pdf",
+      "pass": true
+    },
+    {
       "fieldId": "question_32422468003",
       "label": "LinkedIn Profile",
       "expected": "https://www.linkedin.com/in/lindsey-ma/",

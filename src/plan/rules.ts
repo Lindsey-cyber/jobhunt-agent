@@ -118,6 +118,16 @@ export const PROFILE_RULES: ProfileRule[] = [
   // Workday's phone block: her number is a mobile in the US.
   { path: "contact.phoneType", pattern: /^phone device type$/, resolve: () => "Mobile" },
   { path: "contact.address.country", pattern: /^country( region)? phone code$/, resolve: (p) => (p.contact.address.country === "United States" ? "United States of America (+1)" : undefined) },
+  {
+    // "Legal Address", "Primary Residence Address", "Home address": the whole address on one line.
+    path: "contact.address",
+    pattern: /^(legal|home|mailing|residential|permanent|primary residence|current) (street )?address$|^(full|complete) address$/,
+    kinds: ["text", "textarea"],
+    resolve: (p) => {
+      const a = p.contact.address;
+      return a.line1 ? [a.line1, a.line2, a.city, `${a.state} ${a.postalCode ?? ""}`.trim(), a.country].filter(Boolean).join(", ") : undefined;
+    },
+  },
   { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
   { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
   { path: "contact.address.city", pattern: /^city$/, resolve: (p) => p.contact.address.city },

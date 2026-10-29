@@ -26,14 +26,14 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "United States",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "(978) 668-1426",
+      "actual": "9786681426",
       "pass": true
     },
     {
@@ -65,6 +65,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_8744973006",
+      "label": "Where are you currently located? (city, state)",
+      "expected": "New York, NY",
+      "actual": "New York, NY",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8744975006",
+      "label": "Do you have the right to work in the country you are applying to?",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
       "fieldId": "question_8744976006",
       "label": "Current Company",
       "expected": "Arborphy AI LLC",
@@ -75,58 +89,72 @@
       "fieldId": "question_8744977006",
       "label": "Do you now or will you in the future require sponsorship to work in the country you are applying to?",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_8744980006",
       "label": "Are you a former CoreWeave employee?",
       "expected": "No",
-      "actual": "No",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_8744981006",
       "label": "Are you now or have you ever been employed by CoreWeave?",
       "expected": "No",
-      "actual": "No",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "question_8744983006",
       "label": "Do you now or will you in the future require sponsorship to work in the United States? (e.g. H1-B, H1B1, TN, E3, CPT, OPT/STEM OPT, H4, J2, or other visa type)",
       "expected": "Yes",
-      "actual": "Yes",
-      "pass": true
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "gender",
       "label": "Gender",
-      "expected": "Decline To Self Identify",
-      "actual": "Decline To Self Identify",
-      "pass": true
+      "expected": "decline",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
-      "pass": true
+      "expected": "no",
+      "actual": "",
+      "pass": false
     },
     {
       "fieldId": "veteran_status",
       "label": "Veteran Status",
-      "expected": "I am not a protected veteran",
-      "actual": "I am not a protected veteran",
-      "pass": true
+      "expected": "no",
+      "actual": "",
+      "pass": false
     }
   ],
   "emptyRequired": [
-    "Where are you currently located? (city, state)",
+    "Country",
     "Do you have the right to work in the country you are applying to?",
+    "Do you now or will you in the future require sponsorship to work in the country you are applying to?",
     "Legal Address",
     "Are you open to working 3 days from one of our office hubs in NYC, NJ, CA, WA?",
-    "Please indicate whether you are a “U.S. person”. U.S. person is defined as a (i) U.S. citizen or national; (ii) U.S. lawful permanent resident; (iii) refugee under 8 U.S.C. § 1157; or (iv) asylee under 8 U.S.C. § 1158."
+    "Are you a former CoreWeave employee?",
+    "Are you now or have you ever been employed by CoreWeave?",
+    "Please indicate whether you are a “U.S. person”. U.S. person is defined as a (i) U.S. citizen or national; (ii) U.S. lawful permanent resident; (iii) refugee under 8 U.S.C. § 1157; or (iv) asylee under 8 U.S.C. § 1158.",
+    "Do you now or will you in the future require sponsorship to work in the United States? (e.g. H1-B, H1B1, TN, E3, CPT, OPT/STEM OPT, H4, J2, or other visa type)"
   ],
-  "fillErrors": []
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "Do you have the right to work in the country you are applying to?: the question_8744975006 menu did not open",
+    "Do you now or will you in the future require sponsorship to work in the country you are applying to?: the question_8744977006 menu did not open",
+    "Are you a former CoreWeave employee?: the question_8744980006 menu did not open",
+    "Are you now or have you ever been employed by CoreWeave?: the question_8744981006 menu did not open",
+    "Do you now or will you in the future require sponsorship to work in the United States? (e.g. H1-B, H1B1, TN, E3, CPT, OPT/STEM OPT, H4, J2, or other visa type): the question_8744983006 menu did not open",
+    "Gender: the gender menu did not open",
+    "Are you Hispanic/Latino?: the hispanic_ethnicity menu did not open",
+    "Veteran Status: the veteran_status menu did not open"
+  ]
 }

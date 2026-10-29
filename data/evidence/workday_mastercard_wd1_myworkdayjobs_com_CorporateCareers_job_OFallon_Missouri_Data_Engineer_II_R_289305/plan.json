@@ -28,19 +28,19 @@
         "kind": "select",
         "required": true,
         "options": [
-          "Finland"
+          "United States of America"
         ]
       },
       {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
         "options": []
       },
       {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -53,11 +53,79 @@
         "options": []
       },
       {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
+        "id": "city",
+        "label": "City",
         "kind": "text",
         "required": false,
         "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
       },
       {
         "id": "postalCode",
@@ -69,14 +137,9 @@
       {
         "id": "phoneType",
         "label": "Phone Device Type",
-        "kind": "select",
+        "kind": "combobox",
         "required": true,
-        "options": [
-          "Fax",
-          "Mobile",
-          "Pager",
-          "Telephone"
-        ]
+        "options": []
       },
       {
         "id": "countryPhoneCode",
@@ -97,6 +160,64 @@
         "label": "Phone Extension",
         "kind": "text",
         "required": false,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "802e7dac252910014df41dfe15110000",
+        "label": "Are you NOW legally authorized to work in the country where the position you are applying for is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "802e7dac252910014df41e9811360000",
+        "label": "Do you now, or will you in the future, require sponsorship for an employment visa in the country where the position you are applying for is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "802e7dac252910014df41e9811360003",
+        "label": "Have you entered into any restrictive covenant, non-compete agreement, or non-disclosure agreement which could restrict you from performing any duties of any of the position(s) for which you intend to apply?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "802e7dac252910014df41e9811360006",
+        "label": "Have you ever worked for Mastercard?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "802e7dac252910014df41f332be80001",
+        "label": "Desired Salary?",
+        "kind": "textarea",
+        "required": true,
         "options": []
       }
     ],
@@ -122,7 +243,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "candidateIsPreviousWorker",
         "label": "Have you ever worked for Mastercard as an employee or provided services as a contingent worker (contractor, consultant)?",
@@ -133,37 +254,55 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "country",
         "label": "Country",
         "kind": "select",
         "required": true,
         "options": [
-          "Finland"
+          "United States of America"
         ]
       },
-      "reason": "answer \"United States\" matches none of the options"
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.85,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "legalName--firstName",
-        "label": "Given Name(s)",
+        "label": "First Name",
         "kind": "text",
         "required": true,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
       "field": {
         "id": "legalName--lastName",
-        "label": "Family Name",
+        "label": "Last Name",
         "kind": "text",
         "required": true,
         "options": []
@@ -194,15 +333,100 @@
       "sensitive": false
     },
     {
-      "status": "skip",
+      "status": "fill",
       "field": {
-        "id": "citySubdivision1",
-        "label": "Postal District or City",
+        "id": "city",
+        "label": "City",
         "kind": "text",
         "required": false,
         "options": []
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -226,21 +450,16 @@
       "field": {
         "id": "phoneType",
         "label": "Phone Device Type",
-        "kind": "select",
+        "kind": "combobox",
         "required": true,
-        "options": [
-          "Fax",
-          "Mobile",
-          "Pager",
-          "Telephone"
-        ]
+        "options": []
       },
       "value": "Mobile",
       "source": {
         "type": "profile",
         "path": "contact.phoneType"
       },
-      "confidence": 1,
+      "confidence": 0.8,
       "sensitive": false
     },
     {
@@ -287,6 +506,122 @@
         "options": []
       },
       "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "802e7dac252910014df41dfe15110000",
+        "label": "Are you NOW legally authorized to work in the country where the position you are applying for is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "802e7dac252910014df41e9811360000",
+        "label": "Do you now, or will you in the future, require sponsorship for an employment visa in the country where the position you are applying for is located?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "802e7dac252910014df41e9811360003",
+        "label": "Have you entered into any restrictive covenant, non-compete agreement, or non-disclosure agreement which could restrict you from performing any duties of any of the position(s) for which you intend to apply?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "802e7dac252910014df41e9811360006",
+        "label": "Have you ever worked for Mastercard?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "802e7dac252910014df41f332be80001",
+        "label": "Desired Salary?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

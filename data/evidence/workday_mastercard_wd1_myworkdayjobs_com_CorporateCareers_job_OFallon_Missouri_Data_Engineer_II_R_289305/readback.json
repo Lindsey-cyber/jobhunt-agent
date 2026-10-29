@@ -1,14 +1,22 @@
 {
   "source": "LinkedIn",
-  "candidateIsPreviousWorker": "",
-  "country": "Finland",
-  "legalName--firstName": "",
+  "candidateIsPreviousWorker": "No",
+  "country": "United States of America",
+  "legalName--firstName": "Lanxin",
   "legalName--lastName": "Ma",
   "addressLine1": "140-21 32nd Ave",
-  "citySubdivision1": "",
+  "city": "New York",
+  "countryRegion": "New York",
   "postalCode": "11354",
   "phoneType": "Mobile",
   "countryPhoneCode": "United States of America (+1)",
   "phoneNumber": "9786681426",
-  "extension": ""
+  "extension": "",
+  "skills": "",
+  "": "Lindsey_Ma_Resume.pdf",
+  "802e7dac252910014df41dfe15110000": "",
+  "802e7dac252910014df41e9811360000": "Yes",
+  "802e7dac252910014df41e9811360003": "No",
+  "802e7dac252910014df41e9811360006": "No",
+  "802e7dac252910014df41f332be80001": "$100K–$150K"
 }

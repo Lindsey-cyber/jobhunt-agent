@@ -9,8 +9,29 @@
       "pass": true
     },
     {
+      "fieldId": "candidateIsPreviousWorker",
+      "label": "Have you ever worked for Mastercard as an employee or provided services as a contingent worker (contractor, consultant)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
       "fieldId": "legalName--lastName",
-      "label": "Family Name",
+      "label": "Last Name",
       "expected": "Ma",
       "actual": "Ma",
       "pass": true
@@ -20,6 +41,20 @@
       "label": "Address Line 1",
       "expected": "140-21 32nd Ave",
       "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
       "pass": true
     },
     {
@@ -49,11 +84,45 @@
       "expected": "9786681426",
       "actual": "9786681426",
       "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "802e7dac252910014df41e9811360000",
+      "label": "Do you now, or will you in the future, require sponsorship for an employment visa in the country where the position you are applying for is located?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "802e7dac252910014df41e9811360003",
+      "label": "Have you entered into any restrictive covenant, non-compete agreement, or non-disclosure agreement which could restrict you from performing any duties of any of the position(s) for which you intend to apply?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "802e7dac252910014df41e9811360006",
+      "label": "Have you ever worked for Mastercard?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "802e7dac252910014df41f332be80001",
+      "label": "Desired Salary?",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Have you ever worked for Mastercard as an employee or provided services as a contingent worker (contractor, consultant)?",
-    "Given Name(s)"
+    "Are you NOW legally authorized to work in the country where the position you are applying for is located?"
   ],
   "fillErrors": []
 }

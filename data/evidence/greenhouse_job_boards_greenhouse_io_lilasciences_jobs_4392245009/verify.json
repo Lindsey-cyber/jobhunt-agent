@@ -1,0 +1,98 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7449051009",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7449052009",
+      "label": "Do you currently reside within the continental United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7449053009",
+      "label": "Are you able to work in the specified job location, or are you willing to relocate for this position?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7449054009",
+      "label": "Why Lila, why this role, and why at this moment in your life?",
+      "expected": "Lila is compelling to me because the role treats protein engineering as a closed design-test-learn problem, not a benchmark exercise. That matches how I like to work: define a modeling question, build the workflow, stress-test representations, and make results usable by scientists. In my current applied ML research, I have been comparing BioCLIP, DINOv3, and EfficientNet representations, designing controlled fusion experiments, and building reproducible pipelines and interactive analysis tools. At Columbia’s Zuckerman Institute, I also worked on self-supervised denoising for two-photon calcium imaging and packaged research code with documentation for wet-lab researchers. This moment is right because I have completed my M.S. in Statistics and want my next work to move from strong ML evaluation into biological design programs where experimental feedback actually changes the model.",
+      "actual": "Lila is compelling to me because the role treats protein engineering as a closed design-test-learn problem, not a benchmark exercise. That matches how I like to work: define a modeling question, build the workflow, stress-test representations, and make results usable by scientists. In my current applied ML research, I have been comparing BioCLIP, DINOv3, and EfficientNet representations, designing controlled fusion experiments, and building reproducible pipelines and interactive analysis tools. At Columbia’s Zuckerman Institute, I also worked on self-supervised denoising for two-photon calcium imaging and packaged research code with documentation for wet-lab researchers. This moment is right because I have completed my M.S. in Statistics and want my next work to move from strong ML evaluation into biological design programs where experimental feedback actually changes the model.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7449055009",
+      "label": "Privacy Notice",
+      "expected": "I have read and acknowledge the privacy notice below",
+      "actual": "I have read and acknowledge the privacy notice below",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

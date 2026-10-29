@@ -114,6 +114,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_8899507005",
+      "label": "If applicable, what year did/will you complete your Master’s degree?",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
       "fieldId": "question_8896597005",
       "label": "Race and Ethnic Identification:",
       "expected": "I choose not to disclose",
@@ -136,7 +143,6 @@
     }
   ],
   "emptyRequired": [
-    "If applicable, what year did/will you complete your Master’s degree?",
     "What is your anticipated start date for this role?",
     "Why Bracebridge?",
     "Briefly describe an open-ended project that you worked on with others. What was your role, what did you learn, and what were the challenges?",

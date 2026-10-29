@@ -53,6 +53,9 @@ answers:
       - What is your availability to start?
       - When is the earliest you would want to start working with us?
       - Ideal start date
+      - What is your anticipated start date for this role?
+      - Anticipated start date
+      - Desired start date
     answer: November 15, 2026
     origin: human
   - id: form:69b81d02b5

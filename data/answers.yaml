@@ -374,3 +374,10 @@ answers:
       - Are you a military spouse?
     answer: "No"
     origin: human
+  # Inferred (standing permission, 2026-10-29): she applies to many companies at once; no particular engineering blog drew her in.
+  - id: doordash-blog
+    question: How much did content from the DoorDash Eng blog influence your decision to apply for a role at DoorDash?
+    aliases: []
+    answer: 3 = Neutral
+    company: DoorDash USA
+    origin: human

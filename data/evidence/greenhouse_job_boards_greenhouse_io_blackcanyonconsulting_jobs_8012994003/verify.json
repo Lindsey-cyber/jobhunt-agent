@@ -51,6 +51,13 @@
       "pass": true
     },
     {
+      "fieldId": "cover_letter",
+      "label": "Cover Letter",
+      "expected": "black-canyon-consulting.pdf",
+      "actual": "black-canyon-consulting.pdf",
+      "pass": true
+    },
+    {
       "fieldId": "question_32983460003",
       "label": "What are your salary requirements?",
       "expected": "$100K–$150K",

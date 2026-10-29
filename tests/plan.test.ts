@@ -398,4 +398,10 @@ describe("buildPlan", () => {
     expect(one("Are you able to work from San Francisco, CA?")).toMatchObject({ value: "Yes" });
     expect(one("Are you legally able to work in the United States without sponsorship?")).not.toMatchObject({ value: "Yes" });
   });
+
+  it("prefers her metro among a posting's offices", () => {
+    const p = { ...user.profile, contact: { ...user.profile.contact, address: { ...user.profile.contact.address, city: "Flushing", state: "NY" } } };
+    const f = field("Do you have a location preference?", { kind: "combobox", options: ["New York", "San Francisco", "Remote", "No preference"] });
+    expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: "New York" });
+  });
 });

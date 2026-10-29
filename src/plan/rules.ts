@@ -296,6 +296,17 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // The candidate (2026-10-28): location answers say New York. "Do you have a location preference?" among the posting's offices.
+    path: "contact.address.city",
+    pattern: /^(do you have a )?(preferred|location preference|preferred (work |office )?location)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, _l, ctx) => {
+      const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
+      const hit = (ctx.options ?? []).filter((o) => normalize(o).startsWith(metro));
+      return hit.length === 1 ? hit[0] : (ctx.options ?? []).find((o) => /^no preference$/i.test(o.trim()));
+    },
+  },
+  {
     // Notice period as choices ("Immediately Available", "1 Month", ...): the shortest option that covers hers.
     path: "noticePeriodWeeks",
     pattern: /\bnotice period\b/,

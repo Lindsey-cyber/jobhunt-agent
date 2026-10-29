@@ -5,7 +5,6 @@
   "country": "United States",
   "phone": "(978) 668-1426",
   "candidate-location": "New York, New York, United States",
-  "cover_letter": "Accepted file types: pdf, doc, docx, txt, rtf",
   "question_32983460003": "$100K–$150K",
   "question_32983466003": "Yes",
   "question_32983461003": "At Columbia’s Zuckerman Institute, I worked on a biomedical imaging project asking how well self-supervised learning could denoise two-photon calcium-imaging data while preserving neuronal signal. The data included real calcium-imaging videos and synthetic imaging datasets built from real neuronal spatial footprints, simulated temporal traces, and controlled Gaussian noise. I used Python-based deep learning workflows to implement a four-direction spatial masking strategy, integrate it with PMD spatial-component selection, and evaluate ResNet, U-Net, and lightweight convolutional models. I compared spatial, temporal, and combined denoising approaches, ran ablations on receptive fields, normalization, losses, and training settings, and assessed reconstruction fidelity, temporal correlation, signal retention, and rank-selection trade-offs.",
@@ -15,5 +14,6 @@
   "hispanic_ethnicity": "No",
   "race": "",
   "veteran_status": "I am not a protected veteran",
-  "resume": "Lindsey_Ma_Resume.pdf"
+  "resume": "Lindsey_Ma_Resume.pdf",
+  "cover_letter": "black-canyon-consulting.pdf"
 }

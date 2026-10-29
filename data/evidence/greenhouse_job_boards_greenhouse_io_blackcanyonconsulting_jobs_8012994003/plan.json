@@ -763,7 +763,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "cover_letter",
         "label": "Cover Letter",
@@ -771,7 +771,13 @@
         "required": true,
         "options": []
       },
-      "reason": "no document for this upload"
+      "value": "/home/user/jobhunt-agent/data/cover-letters/black-canyon-consulting.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.coverLetters"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

@@ -1,0 +1,138 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8955193007",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8955197007",
+      "label": "U.S. WORK AUTHORIZATION",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8955198007",
+      "label": "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8955199007",
+      "label": "HISTORY WITH ANDURIL",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8955200007",
+      "label": "Have you ever been employed by Anduril or any company that Anduril has acquired?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_8955201007",
+      "label": "CONFLICT OF INTEREST",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_9069526007",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9799039007",
+      "label": "How did you hear about Anduril?",
+      "expected": "LinkedIn",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_13259636007",
+      "label": "Legal First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "question_13259638007",
+      "label": "Legal Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Country",
+    "CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.",
+    "If you have held a U.S. security clearance in the past, what clearance level have you held?",
+    "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
+    "U.S. WORK AUTHORIZATION",
+    "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?",
+    "HISTORY WITH ANDURIL",
+    "Have you ever been employed by Anduril or any company that Anduril has acquired?",
+    "CONFLICT OF INTEREST",
+    "How did you hear about Anduril?"
+  ],
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "U.S. WORK AUTHORIZATION: the question_8955197007 menu did not open",
+    "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?: the question_8955198007 menu did not open",
+    "HISTORY WITH ANDURIL: the question_8955199007 menu did not open",
+    "Have you ever been employed by Anduril or any company that Anduril has acquired?: the question_8955200007 menu did not open",
+    "CONFLICT OF INTEREST: the question_8955201007 menu did not open",
+    "How did you hear about Anduril?: the question_9799039007 menu did not open"
+  ]
+}

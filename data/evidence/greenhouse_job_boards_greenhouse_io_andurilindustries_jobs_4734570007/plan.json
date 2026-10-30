@@ -1,0 +1,563 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=andurilindustries&token=4734570007",
+    "company": "Anduril Industries",
+    "jobTitle": "Mission Software Engineer, Vehicle Software, Computer Vision",
+    "jobLocation": "Costa Mesa, California, United States",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_8955193007",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_8955194007",
+        "label": "CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8955195007",
+        "label": "If you have held a U.S. security clearance in the past, what clearance level have you held?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8955196007",
+        "label": "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8955197007",
+        "label": "U.S. WORK AUTHORIZATION",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8955198007",
+        "label": "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8955199007",
+        "label": "HISTORY WITH ANDURIL",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8955200007",
+        "label": "Have you ever been employed by Anduril or any company that Anduril has acquired?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8955201007",
+        "label": "CONFLICT OF INTEREST",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_9069526007",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_9799039007",
+        "label": "How did you hear about Anduril?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_9799046007",
+        "label": "If other, please specify",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_13259636007",
+        "label": "Legal First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_13259638007",
+        "label": "Legal Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 1
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8955193007",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_8955194007",
+        "label": "CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_8955195007",
+        "label": "If you have held a U.S. security clearance in the past, what clearance level have you held?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_8955196007",
+        "label": "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8955197007",
+        "label": "U.S. WORK AUTHORIZATION",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8955198007",
+        "label": "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8955199007",
+        "label": "HISTORY WITH ANDURIL",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "history-with-company",
+        "origin": "human"
+      },
+      "confidence": 0.675,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8955200007",
+        "label": "Have you ever been employed by Anduril or any company that Anduril has acquired?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "history-with-company",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8955201007",
+        "label": "CONFLICT OF INTEREST",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "conflict-of-interest",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_9069526007",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_9799039007",
+        "label": "How did you hear about Anduril?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_9799046007",
+        "label": "If other, please specify",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_13259636007",
+        "label": "Legal First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_13259638007",
+        "label": "Legal Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    }
+  ]
+}

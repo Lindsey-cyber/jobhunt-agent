@@ -21,6 +21,7 @@ import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { appendAnswer } from "./store/answerlog.ts";
 import { readCatalog } from "./store/catalog.ts";
+import { expectationFloor, payBelowExpectation } from "./discover/pay.ts";
 import { tallyHolds } from "./verify/holds.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
@@ -167,6 +168,12 @@ switch (command) {
     const ready = [...new Set([...fit.map((l) => l.key as JobKey), ...matched.map((j) => j.key)])]
       .map((k) => catalog.get(k))
       .filter((j): j is NonNullable<typeof j> => Boolean(j) && (j!.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j!.key)) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      // The candidate (2026-10-30): pay that tops out at or below her range's low end is not applied to.
+      .filter((j) => {
+        if (!payBelowExpectation(j.description ?? "", expectationFloor(u.profile.salaryExpectation))) return true;
+        if (labels.get(j.key)?.label !== "not_fit") appendLabel(u.dir, labelFrom(j, "not_fit", "pay tops out below her expected range", new Date().toISOString(), "bulk"));
+        return false;
+      })
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
         if (!prior) return true;

@@ -184,9 +184,16 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "education[0].gradYear",
     pattern: /^(expected |anticipated )?graduation date( or anticipated graduation date)?$/,
-    resolve: (p) => {
+    resolve: (p, _l, ctx) => {
       const e = firstEdu(p);
-      return e.gradMonth ? `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}` : undefined;
+      if (!e.gradMonth) return undefined;
+      // BlackEdge: "2026 May/June" among choices: the one naming her year and month.
+      if (ctx.options?.length) {
+        const month = new Date(Date.UTC(2000, e.gradMonth - 1, 1)).toLocaleString("en-US", { month: "long", timeZone: "UTC" }).toLowerCase();
+        const hits = ctx.options.filter((o) => normalize(o).includes(String(e.gradYear)) && new RegExp(`\\b(${month}|${month.slice(0, 3)})\\b`).test(normalize(o)));
+        return hits.length === 1 ? hits[0] : undefined;
+      }
+      return `${String(e.gradMonth).padStart(2, "0")}/${e.gradYear}`;
     },
   },
   {

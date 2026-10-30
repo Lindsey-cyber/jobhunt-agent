@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Graduation Date\": answer \"05/2026\" matches none of the options",
+    "required \"Graduation Date\" is empty after filling"
+  ]
+}

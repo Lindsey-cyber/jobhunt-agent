@@ -366,6 +366,7 @@ describe("buildPlan", () => {
     };
     const bank = { answers: [{ id: "notice", question: "What is your current notice period?", aliases: [], answer: "2 weeks", origin: "human" as const }] };
     const one = (label: string, options: string[], company = "Acme Robotics", kind: "combobox" | "checkbox" = "combobox", loc = "Boston, MA") => buildPlan({ ...form([field(label, { kind, options })], company), jobLocation: loc }, p, bank).items[0]!;
+    expect(one("Graduation Date", ["Earlier", "2026 May/June", "2026 December", "2027 May/June", "Later"])).toMatchObject({ value: "2026 May/June" });
     expect(one("What is your anticipated graduation month/year?", ["December 2025", "May 2026", "Other"])).toMatchObject({ value: "May 2026" });
     expect(one("What is your GPA?", ["3.25 - 3.49", "3.5 - 3.74", "3.75 - 4", "4+"])).toMatchObject({ value: "3.5 - 3.74" });
     expect(one("What is your current notice period?", ["Immediately Available", "1 Month", "2 Months", "3+ Months"])).toMatchObject({ value: "1 Month" });

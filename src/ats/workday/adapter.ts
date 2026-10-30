@@ -331,12 +331,15 @@ export const workday: AtsAdapter = {
           if (i < 0) i = texts.findIndex((t) => searchMatch(value, t));
           if (i < 0) return false;
           await prompt.nth(i).click({ force: true });
-          // A category's own list loads after the click; wait until it stops growing.
-          for (let n = -1, t = 0; t < 6; t++) {
-            await page.waitForTimeout(700);
-            const c = await prompt.count();
-            if (c === n) break;
-            n = c;
+          // A category's own list replaces this one after the click (slowly under load): wait for
+          // the list to change, then to settle.
+          const before = texts.join("|");
+          for (let n = "", t = 0; t < 12; t++) {
+            await page.waitForTimeout(600);
+            if ((await pills.count()) > 0) break;
+            const now = (await prompt.allInnerTexts().catch(() => [])).map((x) => x.trim()).join("|");
+            if (now !== before && now === n) break;
+            n = now;
           }
           // A category ("LinkedIn" at Draper) opens its own list instead of being chosen:
           // take the child that names the answer, or its only child.

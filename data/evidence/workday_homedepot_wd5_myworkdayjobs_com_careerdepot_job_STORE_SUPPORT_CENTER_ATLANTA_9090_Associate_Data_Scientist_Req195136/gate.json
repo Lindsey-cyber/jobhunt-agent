@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you have any relatives currently working for The Home Depot, or any of our subsidiaries?\": sensitive question with no exact answer",
+    "readback mismatch on \"Desired Total Annual Compensation\": expected \"$100K–$150K\", got \"100150\"",
+    "required \"Do you have any relatives currently working for The Home Depot, or any of our subsidiaries?\" is empty after filling"
+  ]
+}

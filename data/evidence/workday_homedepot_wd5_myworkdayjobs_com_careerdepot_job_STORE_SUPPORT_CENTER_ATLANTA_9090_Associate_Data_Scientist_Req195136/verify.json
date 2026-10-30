@@ -1,0 +1,289 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "source",
+      "label": "How Did You Hear About Us?",
+      "expected": "Social Media",
+      "actual": "Social Media › LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--firstName",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "legalName--lastName",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredCheck",
+      "label": "I have a preferred name",
+      "expected": "I have a preferred name",
+      "actual": "I have a preferred name",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine1",
+      "label": "Address Line 1",
+      "expected": "140-21 32nd Ave",
+      "actual": "140-21 32nd Ave",
+      "pass": true
+    },
+    {
+      "fieldId": "addressLine2",
+      "label": "Address Line 2",
+      "expected": "Apt 3BS",
+      "actual": "Apt 3BS",
+      "pass": true
+    },
+    {
+      "fieldId": "city",
+      "label": "City",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "countryRegion",
+      "label": "State",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "postalCode",
+      "label": "Postal Code",
+      "expected": "11354",
+      "actual": "11354",
+      "pass": true
+    },
+    {
+      "fieldId": "regionSubdivision1",
+      "label": "County",
+      "expected": "Queens",
+      "actual": "Queens",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneType",
+      "label": "Phone Device Type",
+      "expected": "Mobile",
+      "actual": "Mobile",
+      "pass": true
+    },
+    {
+      "fieldId": "countryPhoneCode",
+      "label": "Country Phone Code",
+      "expected": "United States of America (+1)",
+      "actual": "United States of America (+1)",
+      "pass": true
+    },
+    {
+      "fieldId": "phoneNumber",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--firstName",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "preferredName--lastName",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "jobTitle",
+      "label": "Job Title",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
+      "pass": true
+    },
+    {
+      "fieldId": "companyName",
+      "label": "Company",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "startDate",
+      "label": "From",
+      "expected": "01/2026",
+      "actual": "01/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "endDate",
+      "label": "To",
+      "expected": "05/2026",
+      "actual": "05/2026",
+      "pass": true
+    },
+    {
+      "fieldId": "school",
+      "label": "School or University",
+      "expected": "Columbia University",
+      "actual": "Columbia University in the City of New York",
+      "pass": true
+    },
+    {
+      "fieldId": "degree",
+      "label": "Degree",
+      "expected": "Masters",
+      "actual": "Masters",
+      "pass": true
+    },
+    {
+      "fieldId": "fieldOfStudy",
+      "label": "Field of Study",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "language",
+      "label": "Language",
+      "expected": "English",
+      "actual": "English",
+      "pass": true
+    },
+    {
+      "fieldId": "3e82bdec28fd01a409e3cf270f110316",
+      "label": "Read",
+      "expected": "Fluent",
+      "actual": "Fluent",
+      "pass": true
+    },
+    {
+      "fieldId": "3e82bdec28fd01b09504d0270f110416",
+      "label": "Speak",
+      "expected": "Fluent",
+      "actual": "Fluent",
+      "pass": true
+    },
+    {
+      "fieldId": "3e82bdec28fd01972b32d0270f110516",
+      "label": "Write",
+      "expected": "Fluent",
+      "actual": "Fluent",
+      "pass": true
+    },
+    {
+      "fieldId": "",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "linkedInAccount",
+      "label": "LinkedIn",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495bd25fdb0000",
+      "label": "Are you currently, or have you previously been employed by The Home Depot, or any of our subsidiaries? For a complete listing of subsidiaries, please click here. This does not apply if you are an active contractor, former contractor, or Military Fellow.",
+      "expected": "Not Applicable",
+      "actual": "Not Applicable",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495d058fce0004",
+      "label": "Desired Total Annual Compensation",
+      "expected": "$100K–$150K",
+      "actual": "100150",
+      "pass": false
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495d058fce0005",
+      "label": "Are you currently eligible to work in the United States and authorized to work for The Home Depot?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495d058fce0008",
+      "label": "Will you now or in the future require sponsorship by the Home Depot to attain or maintain your employment eligibility?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495d9f13b10001",
+      "label": "Are you willing to relocate?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495d9f13b10004",
+      "label": "Are you currently 18 years of age or older?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495d9f13b10007",
+      "label": "Are you willing to take a drug test if the position requires?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495e38c9da0002",
+      "label": "Based on the job description, do you have the required amount of directly relevant work experience?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495e38c9da0005",
+      "label": "Do you meet the educational requirement as specified in the job description?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "1a9bef852e7a1030bd495e38c9da0008",
+      "label": "Never miss a new career opportunity! Sign up to receive SMS text notifications of next steps and appointments delivered straight to your device. Frequency Varies. Message and data rates may apply. For more information text HELP. To opt-out text STOP. Do you consent to receive automated calls/texts and/or pre-recorded voice messages from Home Depot U.S.A. Inc., and its parents affiliates and subsidiaries and on its behalf about my application or future employment opportunities to the phone number(s) that I provided.",
+      "expected": "I consent",
+      "actual": "I consent",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Do you have any relatives currently working for The Home Depot, or any of our subsidiaries?"
+  ],
+  "fillErrors": []
+}

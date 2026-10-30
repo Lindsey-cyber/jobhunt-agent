@@ -1,0 +1,2152 @@
+{
+  "form": {
+    "ats": "workday",
+    "url": "https://homedepot.wd5.myworkdayjobs.com/careerdepot/job/STORE-SUPPORT-CENTER-ATLANTA---9090/Associate-Data-Scientist_Req195136/apply/applyManually",
+    "company": "The Home Depot",
+    "jobTitle": "Associate Data Scientist - Supply Chain",
+    "fields": [
+      {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Career Fair",
+          "Community Partner & Associations",
+          "In Store",
+          "Job Boards",
+          "Media or Advertisement",
+          "Military",
+          "Other",
+          "Referral",
+          "Social Media",
+          "Website"
+        ]
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua and Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bonaire, Sint Eustatius, and Saba",
+          "Bosnia and Herzegovina",
+          "Botswana",
+          "Bouvet Island",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cabo Verde",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo",
+          "Congo, Democratic Republic of the",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d'Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "French Southern Territories",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Heard Island and McDonald Islands",
+          "Holy See (Vatican City State)",
+          "Honduras",
+          "Hong Kong",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Korea, Democratic People's Republic of",
+          "Korea, Republic of",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia, Federated States of",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "Northern Mariana Islands",
+          "North Macedonia",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Pitcairn Islands",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Reunion",
+          "Romania",
+          "Russian Federation",
+          "Rwanda",
+          "Saint Barthelemy",
+          "Saint Helena, Ascension and Tristan da Cunha",
+          "Saint Kitts and Nevis",
+          "Saint Lucia",
+          "Saint Martin",
+          "Saint Pierre and Miquelon",
+          "Saint Vincent and the Grenadines",
+          "Samoa",
+          "San Marino",
+          "Sao Tome and Principe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Georgia and the South Sandwich Islands",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "State of Palestine",
+          "Sudan",
+          "Suriname",
+          "Svalbard and Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad and Tobago",
+          "Tunisia",
+          "Türkiye",
+          "Turkmenistan",
+          "Turks and Caicos Islands",
+          "Tuvalu",
+          "U. S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "United States Minor Outlying Islands",
+          "United States of America",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Venezuela",
+          "Vietnam",
+          "Wallis and Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      {
+        "id": "legalName--title",
+        "label": "Prefix",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr.",
+          "V",
+          "VI"
+        ]
+      },
+      {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "regionSubdivision1",
+        "label": "County",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Landline",
+          "Mobile"
+        ]
+      },
+      {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--title",
+        "label": "Preferred Prefix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Dr.",
+          "Fr.",
+          "H.",
+          "M.",
+          "Miss",
+          "Mr.",
+          "Mrs.",
+          "Ms.",
+          "Prof."
+        ]
+      },
+      {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "preferredName--social",
+        "label": "Preferred Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr.",
+          "V",
+          "VI"
+        ]
+      },
+      {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "school",
+        "label": "School or University",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Associates",
+          "Bachelors",
+          "Certificate",
+          "College Diploma",
+          "Doctorate",
+          "GED",
+          "HS Diploma",
+          "JD",
+          "Masters",
+          "MBA",
+          "Other"
+        ]
+      },
+      {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "language",
+        "label": "Language",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Akan",
+          "Albanian",
+          "American Sign Language",
+          "Arabic",
+          "Armenian",
+          "Belarusian",
+          "Bengali",
+          "Bosnian",
+          "Chinese - Cantonese",
+          "Chinese - Mandarin",
+          "Cree language",
+          "Czech",
+          "Danish",
+          "Dutch",
+          "English",
+          "Ethiopian",
+          "Farsi",
+          "Finnish",
+          "French",
+          "Gaelic",
+          "German",
+          "Ghanian",
+          "Greek",
+          "Gujarati",
+          "Haitian Creole",
+          "Hebrew",
+          "Hindi",
+          "Hmong",
+          "Hungarian",
+          "Indonesian",
+          "Inuktut",
+          "Italian",
+          "Japanese",
+          "Korean",
+          "Kurdish",
+          "Malay",
+          "Norwegian",
+          "Ojibway",
+          "Other",
+          "Persian",
+          "Polish",
+          "Portuguese",
+          "Punjabi",
+          "Quebec Sign Language",
+          "Romanian",
+          "Russian",
+          "Serbian",
+          "Sinhala",
+          "Somali",
+          "Spanish",
+          "Swedish",
+          "Tagalog",
+          "Taiwanese",
+          "Tamil",
+          "Thai",
+          "Tigrinya",
+          "Turkish",
+          "Ukrainian",
+          "Urdu",
+          "Vietnamese"
+        ]
+      },
+      {
+        "id": "native",
+        "label": "I am fluent in this language.",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I am fluent in this language."
+        ]
+      },
+      {
+        "id": "3e82bdec28fd01a409e3cf270f110316",
+        "label": "Read",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Basic",
+          "Fluent",
+          "Intermediate"
+        ]
+      },
+      {
+        "id": "3e82bdec28fd01b09504d0270f110416",
+        "label": "Speak",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Basic",
+          "Fluent",
+          "Intermediate"
+        ]
+      },
+      {
+        "id": "3e82bdec28fd01972b32d0270f110516",
+        "label": "Write",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "linkedInAccount",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "1a9bef852e7a1030bd495bd25fdb0000",
+        "label": "Are you currently, or have you previously been employed by The Home Depot, or any of our subsidiaries? For a complete listing of subsidiaries, please click here. This does not apply if you are an active contractor, former contractor, or Military Fellow.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Current Associate with The Home Depot",
+          "Current Associate with a subsidiary of The Home Depot",
+          "Former Associate of The Home Depot, or subsidiary",
+          "Not Applicable"
+        ]
+      },
+      {
+        "id": "395dfb03530d1030bd7686a867d60000",
+        "label": "Do you have any relatives currently working for The Home Depot, or any of our subsidiaries?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1a9bef852e7a1030bd495d058fce0000",
+        "label": "Preferred Contact Method",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "1a9bef852e7a1030bd495d058fce0004",
+        "label": "Desired Total Annual Compensation",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "1a9bef852e7a1030bd495d058fce0005",
+        "label": "Are you currently eligible to work in the United States and authorized to work for The Home Depot?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1a9bef852e7a1030bd495d058fce0008",
+        "label": "Will you now or in the future require sponsorship by the Home Depot to attain or maintain your employment eligibility?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1a9bef852e7a1030bd495d9f13b10001",
+        "label": "Are you willing to relocate?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1a9bef852e7a1030bd495d9f13b10004",
+        "label": "Are you currently 18 years of age or older?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "1a9bef852e7a1030bd495d9f13b10007",
+        "label": "Are you willing to take a drug test if the position requires?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1a9bef852e7a1030bd495e38c9da0002",
+        "label": "Based on the job description, do you have the required amount of directly relevant work experience?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1a9bef852e7a1030bd495e38c9da0005",
+        "label": "Do you meet the educational requirement as specified in the job description?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "1a9bef852e7a1030bd495e38c9da0008",
+        "label": "Never miss a new career opportunity! Sign up to receive SMS text notifications of next steps and appointments delivered straight to your device. Frequency Varies. Message and data rates may apply. For more information text HELP. To opt-out text STOP. Do you consent to receive automated calls/texts and/or pre-recorded voice messages from Home Depot U.S.A. Inc., and its parents affiliates and subsidiaries and on its behalf about my application or future employment opportunities to the phone number(s) that I provided.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I consent",
+          "I do not consent"
+        ]
+      }
+    ],
+    "priorApplications": 0,
+    "jobLocation": "Atlanta, GA"
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "source",
+        "label": "How Did You Hear About Us?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Career Fair",
+          "Community Partner & Associations",
+          "In Store",
+          "Job Boards",
+          "Media or Advertisement",
+          "Military",
+          "Other",
+          "Referral",
+          "Social Media",
+          "Website"
+        ]
+      },
+      "value": "Social Media",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua and Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bonaire, Sint Eustatius, and Saba",
+          "Bosnia and Herzegovina",
+          "Botswana",
+          "Bouvet Island",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cabo Verde",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo",
+          "Congo, Democratic Republic of the",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d'Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "French Southern Territories",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Heard Island and McDonald Islands",
+          "Holy See (Vatican City State)",
+          "Honduras",
+          "Hong Kong",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Korea, Democratic People's Republic of",
+          "Korea, Republic of",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia, Federated States of",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "Northern Mariana Islands",
+          "North Macedonia",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Pitcairn Islands",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Reunion",
+          "Romania",
+          "Russian Federation",
+          "Rwanda",
+          "Saint Barthelemy",
+          "Saint Helena, Ascension and Tristan da Cunha",
+          "Saint Kitts and Nevis",
+          "Saint Lucia",
+          "Saint Martin",
+          "Saint Pierre and Miquelon",
+          "Saint Vincent and the Grenadines",
+          "Samoa",
+          "San Marino",
+          "Sao Tome and Principe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Georgia and the South Sandwich Islands",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "State of Palestine",
+          "Sudan",
+          "Suriname",
+          "Svalbard and Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad and Tobago",
+          "Tunisia",
+          "Türkiye",
+          "Turkmenistan",
+          "Turks and Caicos Islands",
+          "Tuvalu",
+          "U. S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "United States Minor Outlying Islands",
+          "United States of America",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Venezuela",
+          "Vietnam",
+          "Wallis and Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      "value": "United States of America",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.9,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--title",
+        "label": "Prefix",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--firstName",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--middleName",
+        "label": "Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "legalName--lastName",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "legalName--social",
+        "label": "Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr.",
+          "V",
+          "VI"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredCheck",
+        "label": "I have a preferred name",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I have a preferred name"
+        ]
+      },
+      "value": "I have a preferred name",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine1",
+        "label": "Address Line 1",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line1"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "addressLine2",
+        "label": "Address Line 2",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Apt 3BS",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.line2"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "city",
+        "label": "City",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "bank",
+        "id": "current-city",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryRegion",
+        "label": "State",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Alabama",
+          "Alaska",
+          "American Samoa",
+          "Arizona",
+          "Arkansas",
+          "Armed Forces Americas",
+          "Armed Forces Europe",
+          "Armed Forces Pacific",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Guam",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Northern Mariana Islands",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Puerto Rico",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "United States Minor Outlying Islands",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Virgin Islands, U.S.",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "postalCode",
+        "label": "Postal Code",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "11354",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.postalCode"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "regionSubdivision1",
+        "label": "County",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "Queens",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.county"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneType",
+        "label": "Phone Device Type",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Landline",
+          "Mobile"
+        ]
+      },
+      "value": "Mobile",
+      "source": {
+        "type": "profile",
+        "path": "contact.phoneType"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "countryPhoneCode",
+        "label": "Country Phone Code",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States of America (+1)",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phoneNumber",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "extension",
+        "label": "Phone Extension",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--title",
+        "label": "Preferred Prefix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Dr.",
+          "Fr.",
+          "H.",
+          "M.",
+          "Miss",
+          "Mr.",
+          "Mrs.",
+          "Ms.",
+          "Prof."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--firstName",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--middleName",
+        "label": "Preferred Middle Name",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferredName--lastName",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "preferredName--social",
+        "label": "Preferred Suffix",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "Jr.",
+          "Sr.",
+          "V",
+          "VI"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "jobTitle",
+        "label": "Job Title",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Research Assistant (ML)",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "companyName",
+        "label": "Company",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "location",
+        "label": "Location",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "currentlyWorkHere",
+        "label": "I currently work here",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I currently work here"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "startDate",
+        "label": "From",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "01/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "endDate",
+        "label": "To",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "roleDescription",
+        "label": "Role Description",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "school",
+        "label": "School or University",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree",
+        "label": "Degree",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Associates",
+          "Bachelors",
+          "Certificate",
+          "College Diploma",
+          "Doctorate",
+          "GED",
+          "HS Diploma",
+          "JD",
+          "Masters",
+          "MBA",
+          "Other"
+        ]
+      },
+      "value": "Masters",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "fieldOfStudy",
+        "label": "Field of Study",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "language",
+        "label": "Language",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Akan",
+          "Albanian",
+          "American Sign Language",
+          "Arabic",
+          "Armenian",
+          "Belarusian",
+          "Bengali",
+          "Bosnian",
+          "Chinese - Cantonese",
+          "Chinese - Mandarin",
+          "Cree language",
+          "Czech",
+          "Danish",
+          "Dutch",
+          "English",
+          "Ethiopian",
+          "Farsi",
+          "Finnish",
+          "French",
+          "Gaelic",
+          "German",
+          "Ghanian",
+          "Greek",
+          "Gujarati",
+          "Haitian Creole",
+          "Hebrew",
+          "Hindi",
+          "Hmong",
+          "Hungarian",
+          "Indonesian",
+          "Inuktut",
+          "Italian",
+          "Japanese",
+          "Korean",
+          "Kurdish",
+          "Malay",
+          "Norwegian",
+          "Ojibway",
+          "Other",
+          "Persian",
+          "Polish",
+          "Portuguese",
+          "Punjabi",
+          "Quebec Sign Language",
+          "Romanian",
+          "Russian",
+          "Serbian",
+          "Sinhala",
+          "Somali",
+          "Spanish",
+          "Swedish",
+          "Tagalog",
+          "Taiwanese",
+          "Tamil",
+          "Thai",
+          "Tigrinya",
+          "Turkish",
+          "Ukrainian",
+          "Urdu",
+          "Vietnamese"
+        ]
+      },
+      "value": "English",
+      "source": {
+        "type": "profile",
+        "path": "language"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "native",
+        "label": "I am fluent in this language.",
+        "kind": "checkbox",
+        "required": false,
+        "options": [
+          "I am fluent in this language."
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3e82bdec28fd01a409e3cf270f110316",
+        "label": "Read",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Basic",
+          "Fluent",
+          "Intermediate"
+        ]
+      },
+      "value": "Fluent",
+      "source": {
+        "type": "profile",
+        "path": "language"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3e82bdec28fd01b09504d0270f110416",
+        "label": "Speak",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Basic",
+          "Fluent",
+          "Intermediate"
+        ]
+      },
+      "value": "Fluent",
+      "source": {
+        "type": "profile",
+        "path": "language"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "3e82bdec28fd01972b32d0270f110516",
+        "label": "Write",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Fluent",
+      "source": {
+        "type": "profile",
+        "path": "language"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "skills",
+        "label": "Type to Add Skills",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "linkedInAccount",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495bd25fdb0000",
+        "label": "Are you currently, or have you previously been employed by The Home Depot, or any of our subsidiaries? For a complete listing of subsidiaries, please click here. This does not apply if you are an active contractor, former contractor, or Military Fellow.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Current Associate with The Home Depot",
+          "Current Associate with a subsidiary of The Home Depot",
+          "Former Associate of The Home Depot, or subsidiary",
+          "Not Applicable"
+        ]
+      },
+      "value": "Not Applicable",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "395dfb03530d1030bd7686a867d60000",
+        "label": "Do you have any relatives currently working for The Home Depot, or any of our subsidiaries?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "1a9bef852e7a1030bd495d058fce0000",
+        "label": "Preferred Contact Method",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495d058fce0004",
+        "label": "Desired Total Annual Compensation",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "$100K–$150K",
+      "source": {
+        "type": "profile",
+        "path": "salaryExpectation"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495d058fce0005",
+        "label": "Are you currently eligible to work in the United States and authorized to work for The Home Depot?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495d058fce0008",
+        "label": "Will you now or in the future require sponsorship by the Home Depot to attain or maintain your employment eligibility?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495d9f13b10001",
+        "label": "Are you willing to relocate?",
+        "kind": "select",
+        "required": false,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495d9f13b10004",
+        "label": "Are you currently 18 years of age or older?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "over-18",
+        "origin": "human"
+      },
+      "confidence": 0.7999999999999999,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495d9f13b10007",
+        "label": "Are you willing to take a drug test if the position requires?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "drug-test-willing",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495e38c9da0002",
+        "label": "Based on the job description, do you have the required amount of directly relevant work experience?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "required-relevant-experience",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495e38c9da0005",
+        "label": "Do you meet the educational requirement as specified in the job description?",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "meets-educational-requirement",
+        "origin": "human"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "1a9bef852e7a1030bd495e38c9da0008",
+        "label": "Never miss a new career opportunity! Sign up to receive SMS text notifications of next steps and appointments delivered straight to your device. Frequency Varies. Message and data rates may apply. For more information text HELP. To opt-out text STOP. Do you consent to receive automated calls/texts and/or pre-recorded voice messages from Home Depot U.S.A. Inc., and its parents affiliates and subsidiaries and on its behalf about my application or future employment opportunities to the phone number(s) that I provided.",
+        "kind": "select",
+        "required": true,
+        "options": [
+          "I consent",
+          "I do not consent"
+        ]
+      },
+      "value": "I consent",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

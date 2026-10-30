@@ -29,7 +29,7 @@ export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|
 // interview rules (a bare "Do you use AI tools?" or "criminal record" never matches).
 // Workday's bare "Confirm Consent" box sits under the accuracy certification (Crowe).
 // Adobe's "Check this box to confirm the statement above" closes its privacy, AI-use and accuracy terms.
-export const ATTESTATION_ALLOWED = /^affirmation$|\bnot disclose or use\b.{0,160}\bconfidential or proprietary information of others\b|^confirm consent$|^check this box to confirm the statement above$|\bi certify that i have read\b.{0,60}\baccept all terms\b|\bai note ?taker\b|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
+export const ATTESTATION_ALLOWED = /^affirmation$|^confidentiality acknowledge?ment$|\bnot disclose or use\b.{0,160}\bconfidential or proprietary information of others\b|^confirm consent$|^check this box to confirm the statement above$|\bi certify that i have read\b.{0,60}\baccept all terms\b|\bai note ?taker\b|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
 export const AGREEING_OPTION = /^(yes|i agree|agree|i accept|accept|accepted|i acknowledge|acknowledge|i consent|consent|i certify|i understand)\b/i;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
@@ -318,6 +318,17 @@ export const PROFILE_RULES: ProfileRule[] = [
       const never = (ctx.options ?? []).filter((o) => /^(never|i have never|i have not|no\b|not applicable$)/i.test(o.trim()));
       if (!worked && never.length === 1) return never[0];
       return yesNo(worked);
+    },
+  },
+  {
+    // "What is your current or more recent job title?" / "... employer?" (Scale AI): the latest role on her resume.
+    path: "workHistory",
+    pattern: /^what is your (current|most recent|current or (more|most) recent) (job title|title|employer|company)\b|^(current|most recent) (job title|employer)$/,
+    kinds: ["text"],
+    resolve: (p, label) => {
+      const latest = [...p.workHistory].sort((a, b) => (b.end ?? "9999").localeCompare(a.end ?? "9999") || (b.start ?? "").localeCompare(a.start ?? ""))[0];
+      if (!latest) return undefined;
+      return /\b(employer|company)\b/.test(label) ? latest.employer : latest.title;
     },
   },
   {

@@ -329,6 +329,7 @@ describe("buildPlan", () => {
     expect(one("I consent to my interview being recorded via BrightHire, Inc. to assist in our recruiting efforts.", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ value: "Yes" });
     expect(one("By checking this box, I consent to Pinterest collecting, storing, and processing my responses to the demographic data surveys above.", { kind: "checkbox", options: ["By checking this box, I consent to Pinterest collecting, storing, and processing my responses to the demographic data surveys above."] })).toMatchObject({ status: "fill" });
     expect(one("I agree that I will not disclose or use, while interviewing with or employed with GE Vernova and GE Vernova’s affiliate businesses, any confidential or proprietary information of others, including any former employer.", { kind: "select", options: ["Yes, I agree.", "No, I do not agree and I understand that not agreeing to this requirement withdraws me from consideration for this role."] })).toMatchObject({ value: "Yes, I agree." });
+    expect(one("Confidentiality Acknowledgement", { kind: "combobox", options: ["I Agree"] })).toMatchObject({ value: "I Agree" });
     expect(one("Have you ever been convicted or do you have a criminal record?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Do you use AI tools in your daily work?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Signature: I certify the above is true and complete", { kind: "text" })).toMatchObject({ status: "blocked" });
@@ -395,6 +396,8 @@ describe("buildPlan", () => {
     const pay = (label: string) => buildPlan(form([field(label, { kind: "textarea" })], "TransUnion"), { ...p, salaryExpectation: "$100K–$150K" }, bank).items[0]!;
     expect(pay("What are your base compensation expectations for this role? (Please provide your expectations only. We are not requesting information about your current or past compensation.)")).toMatchObject({ value: "$100K–$150K" });
     expect(pay("What is your current base salary?")).toMatchObject({ status: "blocked" });
+    const hist = { ...p, workHistory: [{ employer: "Arborphy AI LLC", title: "Research Engineer Intern", start: "2026-05" }, { employer: "Columbia University", title: "Research Assistant", start: "2026-01", end: "2026-05" }] };
+    expect(buildPlan(form([field("What is your current or more recent job title?"), field("What is your current or most recent employer?")], "Scale AI"), hist, bank).items.map((i) => (i.status === "fill" ? i.value : i.status))).toEqual(["Research Engineer Intern", "Arborphy AI LLC"]);
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

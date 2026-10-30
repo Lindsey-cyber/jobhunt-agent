@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Consent for contacting about future job openings\": acknowledgements and consents need the candidate",
+    "required \"Consent for contacting about future job openings\" is empty after filling"
+  ]
+}

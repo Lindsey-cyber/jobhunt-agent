@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What is your current or more recent job title?\": no answer in profile or answer bank",
+    "required \"What is your current or more recent job title?\" is empty after filling"
+  ]
+}

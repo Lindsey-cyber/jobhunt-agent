@@ -1,0 +1,142 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "company-name-0",
+      "label": "Company name",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "title-0",
+      "label": "Title",
+      "expected": "Research Assistant (ML)",
+      "actual": "Research Assistant (ML)",
+      "pass": true
+    },
+    {
+      "fieldId": "start-date-month-0",
+      "label": "Start date month",
+      "expected": "January",
+      "actual": "January",
+      "pass": true
+    },
+    {
+      "fieldId": "start-date-year-0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-date-month-0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-date-year-0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7575456101",
+      "label": "How did you hear about us?",
+      "expected": "Social Media",
+      "actual": "Social Media",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7575457101",
+      "label": "Will you require immigration sponsorship to begin working for IMC?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7575458101",
+      "label": "Will you require immigration sponsorship in the future to continue working for IMC?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7575459101",
+      "label": "Privacy Statement",
+      "expected": "I Agree",
+      "actual": "I Agree",
+      "pass": true
+    },
+    {
+      "fieldId": "4005629101",
+      "label": "What is your Race/Ethnicity?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Confidentiality Acknowledgement"
+  ],
+  "fillErrors": []
+}

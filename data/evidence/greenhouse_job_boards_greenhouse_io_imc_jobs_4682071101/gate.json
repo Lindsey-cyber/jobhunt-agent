@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Confidentiality Acknowledgement\": acknowledgements and consents need the candidate",
+    "required \"Confidentiality Acknowledgement\" is empty after filling"
+  ]
+}

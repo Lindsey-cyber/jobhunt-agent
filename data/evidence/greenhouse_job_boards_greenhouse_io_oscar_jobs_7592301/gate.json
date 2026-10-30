@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you acknowledge the work location expectations listed on this job posting?\": no answer in profile or answer bank",
+    "required \"Do you acknowledge the work location expectations listed on this job posting?\" is empty after filling"
+  ]
+}

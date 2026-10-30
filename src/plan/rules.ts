@@ -29,7 +29,7 @@ export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|
 // interview rules (a bare "Do you use AI tools?" or "criminal record" never matches).
 // Workday's bare "Confirm Consent" box sits under the accuracy certification (Crowe).
 // Adobe's "Check this box to confirm the statement above" closes its privacy, AI-use and accuracy terms.
-export const ATTESTATION_ALLOWED = /^affirmation$|\bconsent (for|to) (being )?contact(ing|ed)? (me )?(about|regarding) future (job )?(openings|opportunities|positions)\b|^confidentiality acknowledge?ment$|\bnot disclose or use\b.{0,160}\bconfidential or proprietary information of others\b|^confirm consent$|^check this box to confirm the statement above$|\bi certify that i have read\b.{0,60}\baccept all terms\b|\bai note ?taker\b|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
+export const ATTESTATION_ALLOWED = /^affirmation$|^gdpr (disclosure|notice|consent|acknowledge?ment)$|\bconsent (for|to) (being )?contact(ing|ed)? (me )?(about|regarding) future (job )?(openings|opportunities|positions)\b|^confidentiality acknowledge?ment$|\bnot disclose or use\b.{0,160}\bconfidential or proprietary information of others\b|^confirm consent$|^check this box to confirm the statement above$|\bi certify that i have read\b.{0,60}\baccept all terms\b|\bai note ?taker\b|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
 export const AGREEING_OPTION = /^(yes|i agree|agree|i accept|accept|accepted|i acknowledge|acknowledge|i consent|consent|i certify|i understand)\b/i;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
@@ -159,7 +159,7 @@ export const PROFILE_RULES: ProfileRule[] = [
       return ctx.options.find((o) => normalize(o).startsWith(normalize(c)));
     },
   },
-  { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode|zip postal( code)?)$/, resolve: (p) => p.contact.address.postalCode },
+  { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode|zip postal( code)?)$|^zip code postal code\b/, resolve: (p) => p.contact.address.postalCode },
   { path: "contact.address.country", pattern: /^country( of residence| region| territory)?$/, resolve: (p) => p.contact.address.country },
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },
@@ -266,7 +266,8 @@ export const PROFILE_RULES: ProfileRule[] = [
     pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|eligible to work|right to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
     resolve: (p, label, ctx) => {
       // "... in the country you currently reside in": hers, not the job's.
-      const country = /\bcountry you (currently )?(reside|live) in\b/.test(label) ? p.contact.address.country : countryIn(label, ctx);
+      // Stripe: "the location(s) you selected" when the posting names none ("N/A"): the earlier answer chose her residence country.
+      const country = /\bcountry you (currently )?(reside|live) in\b/.test(label) ? p.contact.address.country : countryIn(label, ctx) ?? (/\blocations? (s )?you selected\b/.test(label) ? p.contact.address.country : undefined);
       if (!country) return undefined;
       const authorized = p.workAuthorization.authorizedCountries.includes(country);
       // Red Ventures: "Yes, and I am currently in F-1 status (if you currently have OPT ...)" among several Yes options.
@@ -337,6 +338,27 @@ export const PROFILE_RULES: ProfileRule[] = [
       if (!latest) return undefined;
       return /\b(employer|company)\b/.test(label) ? latest.employer : latest.title;
     },
+  },
+  {
+    // Stripe: "Are you currently based in US or willing to relocate to US?": from her address.
+    path: "contact.address.country",
+    pattern: /\b(currently )?based in (the )?(us|u s|united states)\b.{0,40}\brelocate\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p) => yesNo(p.contact.address.country === "United States" || Boolean(p.workArrangement?.relocate)),
+  },
+  {
+    // Stripe: "full time, industry ... (not counting internships or school work)": she is a new grad.
+    path: "workHistory",
+    pattern: /\byears of experience\b.{0,60}\bfull time\b.{0,80}\bnot counting internships\b|\bfull time\b.{0,40}\byears of experience\b.{0,80}\bnot counting internships\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /\bnew grad\b|^none\b/i.test(o.trim())),
+  },
+  {
+    // Stripe: "Please select the location you anticipate working in" in a text box: where she lives.
+    path: "contact.address.city",
+    pattern: /^the location you anticipate working in\b/,
+    kinds: ["text"],
+    resolve: () => "New York, NY",
   },
   {
     // "Are you currently serving or have you ever served as part of the military?" (P&G): she is on
@@ -541,7 +563,9 @@ export const PROFILE_RULES: ProfileRule[] = [
       const earned = p.education.filter((e) => `${e.gradYear}-${String(e.gradMonth).padStart(2, "0")}` <= today).sort((a, b) => rank(b.degree) - rank(a.degree))[0];
       if (!earned) return undefined;
       const want = ["", "bachelor", "master", "doctor"][rank(earned.degree)] ?? "";
-      return (want && (ctx.options ?? []).find((o) => normalize(o).startsWith(want))) || earned.degree;
+      // Stripe: "B.A./ B.S.", "M.A./ M.S.", "Ph.D".
+      const short = [undefined, /^b\.? ?[as]\b/i, /^m\.? ?[as]\b/i, /^ph\.? ?d\b/i][rank(earned.degree)];
+      return (want && (ctx.options ?? []).find((o) => normalize(o).startsWith(want) || Boolean(short?.test(o.trim())))) || earned.degree;
     },
   },
   {

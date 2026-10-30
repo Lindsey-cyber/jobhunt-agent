@@ -1,0 +1,140 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_61194927",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_61194929",
+      "label": "Are you legally authorized to work in the country where you are applying?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_61194930",
+      "label": "Will you now or in the future require visa sponsorship for employment?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "605",
+      "label": "How would you describe your gender identity (please select one)?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "606",
+      "label": "I identify as transgender (please select one):",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "607",
+      "label": "I identify my sexual orientation as (please select one):",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "608",
+      "label": "I identify my race/ethnicity as (mark all that apply):",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "609",
+      "label": "Veteran Status (please select one):",
+      "expected": "No, I am not a veteran",
+      "actual": "No, I am not a veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "610",
+      "label": "I have a disability (please select one):",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_61194928[]",
+      "label": "How did you hear about this opportunity? (select all that apply)",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Zip Code / Postal Code (Non-U.S. based candidates, please enter \"00000\")",
+    "Do you live in one of the following metro areas? Denver, New York City, San Francisco Bay Area, Seattle, Toronto?",
+    "How many years have you spent in roles focusing Enterprise Apps, Business Systems, or Automation?",
+    "What are the most impactful systems or workflows you’ve been responsible for, and what made them high impact?",
+    "Have you ever, or are you currently working at Gusto or Symmetry in any capacity (ie: employee or contingent worker)?",
+    "I identify as a first-generation professional (please select one):"
+  ],
+  "fillErrors": []
+}

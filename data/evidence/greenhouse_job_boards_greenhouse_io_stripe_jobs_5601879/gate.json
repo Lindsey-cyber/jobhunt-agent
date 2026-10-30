@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you authorized to work in the location(s) you selected in your previous response?\": sensitive question with no exact answer",
+    "required \"Are you currently based in US or willing to relocate to US?\": no answer in profile or answer bank",
+    "required \"Please select the location you anticipate working in for the role in which you are applying.\": no answer in profile or answer bank",
+    "required \"How many years of experience full time, industry do you have as a data analyst? (not counting internships or school work)\": no answer in profile or answer bank",
+    "required \"What is the highest level of education you have completed?\": answer \"Master of Science\" matches none of the options",
+    "required \"Are you authorized to work in the location(s) you selected in your previous response?\" is empty after filling",
+    "required \"Are you currently based in US or willing to relocate to US?\" is empty after filling",
+    "required \"Please select the location you anticipate working in for the role in which you are applying.\" is empty after filling",
+    "required \"How many years of experience full time, industry do you have as a data analyst? (not counting internships or school work)\" is empty after filling",
+    "required \"What is the highest level of education you have completed?\" is empty after filling"
+  ]
+}

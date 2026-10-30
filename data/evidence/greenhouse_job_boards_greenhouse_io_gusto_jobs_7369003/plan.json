@@ -1,0 +1,1213 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=gusto&token=7369003",
+    "company": "Gusto, Inc.",
+    "jobTitle": "Enterprise Application AI Engineer",
+    "jobLocation": "San Francisco, CA - Hybrid",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "preferred_name",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_61194926",
+        "label": "Zip Code / Postal Code (Non-U.S. based candidates, please enter \"00000\")",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_61616159",
+        "label": "Do you live in one of the following metro areas? Denver, New York City, San Francisco Bay Area, Seattle, Toronto?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_61194927",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_61194929",
+        "label": "Are you legally authorized to work in the country where you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_61194930",
+        "label": "Will you now or in the future require visa sponsorship for employment?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "question_61598267",
+        "label": "How many years have you spent in roles focusing Enterprise Apps, Business Systems, or Automation?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_61598268",
+        "label": "What are the most impactful systems or workflows you’ve been responsible for, and what made them high impact?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_68983099",
+        "label": "Have you ever, or are you currently working at Gusto or Symmetry in any capacity (ie: employee or contingent worker)?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "605",
+        "label": "How would you describe your gender identity (please select one)?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Non-binary / third gender (Inclusive of bigender, agender, androgynous, gender fluid, gender non-conforming, two-spirit)",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "606",
+        "label": "I identify as transgender (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "607",
+        "label": "I identify my sexual orientation as (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Asexual",
+          "Bisexual, pansexual and/or queer",
+          "Gay and/or lesbian",
+          "Heterosexual",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "608",
+        "label": "I identify my race/ethnicity as (mark all that apply):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Alaskan Native / American Indian / Indigenous American / Native American",
+          "Black / of African or African-American descent",
+          "East Asian (inclusive of Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)",
+          "Latino/a/x/Hispanic (inclusive of the United States of America, South America, Central America, and the Caribbean)",
+          "Latino/a/x/Hispanic (inclusive of Canada, South America, Central America, and the Caribbean)",
+          "Middle Eastern",
+          "Pacific Islander or Native Hawaiian",
+          "South Asian (inclusive of Afghani, Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, and Sri Lankan)",
+          "Southeast Asian (inclusive of Burmese, Cambodian, Filipino, Hmong, Indonesian, Laotian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)",
+          "White",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "609",
+        "label": "Veteran Status (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes, I am a veteran",
+          "No, I am not a veteran",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "610",
+        "label": "I have a disability (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "1012",
+        "label": "I identify as a first-generation professional (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I don't wish to answer"
+        ]
+      },
+      {
+        "id": "question_61194928[]",
+        "label": "How did you hear about this opportunity? (select all that apply)",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "LinkedIn",
+          "Glassdoor",
+          "Indeed",
+          "Facebook",
+          "Built In Colorado",
+          "News Article",
+          "Conference or Meetup",
+          "Company Blog",
+          "Company Employee",
+          "Company Website",
+          "Billboard/Outdoor Ads"
+        ]
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "preferred_name",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "United States",
+          "Afghanistan",
+          "Åland Islands",
+          "Albania",
+          "Algeria",
+          "American Samoa",
+          "Andorra",
+          "Angola",
+          "Anguilla",
+          "Antigua & Barbuda",
+          "Argentina",
+          "Armenia",
+          "Aruba",
+          "Ascension Island",
+          "Australia",
+          "Austria",
+          "Azerbaijan",
+          "Bahamas",
+          "Bahrain",
+          "Bangladesh",
+          "Barbados",
+          "Belarus",
+          "Belgium",
+          "Belize",
+          "Benin",
+          "Bermuda",
+          "Bhutan",
+          "Bolivia",
+          "Bosnia & Herzegovina",
+          "Botswana",
+          "Brazil",
+          "British Indian Ocean Territory",
+          "British Virgin Islands",
+          "Brunei",
+          "Bulgaria",
+          "Burkina Faso",
+          "Burundi",
+          "Cambodia",
+          "Cameroon",
+          "Canada",
+          "Cape Verde",
+          "Caribbean Netherlands",
+          "Cayman Islands",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Christmas Island",
+          "Cocos (Keeling) Islands",
+          "Colombia",
+          "Comoros",
+          "Congo - Brazzaville",
+          "Congo - Kinshasa",
+          "Cook Islands",
+          "Costa Rica",
+          "Côte d’Ivoire",
+          "Croatia",
+          "Cuba",
+          "Curaçao",
+          "Cyprus",
+          "Czechia",
+          "Denmark",
+          "Djibouti",
+          "Dominica",
+          "Dominican Republic",
+          "Ecuador",
+          "Egypt",
+          "El Salvador",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Estonia",
+          "Eswatini",
+          "Ethiopia",
+          "Falkland Islands",
+          "Faroe Islands",
+          "Fiji",
+          "Finland",
+          "France",
+          "French Guiana",
+          "French Polynesia",
+          "Gabon",
+          "Gambia",
+          "Georgia",
+          "Germany",
+          "Ghana",
+          "Gibraltar",
+          "Greece",
+          "Greenland",
+          "Grenada",
+          "Guadeloupe",
+          "Guam",
+          "Guatemala",
+          "Guernsey",
+          "Guinea",
+          "Guinea-Bissau",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Hong Kong SAR China",
+          "Hungary",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Isle of Man",
+          "Israel",
+          "Italy",
+          "Jamaica",
+          "Japan",
+          "Jersey",
+          "Jordan",
+          "Kazakhstan",
+          "Kenya",
+          "Kiribati",
+          "Kosovo",
+          "Kuwait",
+          "Kyrgyzstan",
+          "Laos",
+          "Latvia",
+          "Lebanon",
+          "Lesotho",
+          "Liberia",
+          "Libya",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Macao SAR China",
+          "Madagascar",
+          "Malawi",
+          "Malaysia",
+          "Maldives",
+          "Mali",
+          "Malta",
+          "Marshall Islands",
+          "Martinique",
+          "Mauritania",
+          "Mauritius",
+          "Mayotte",
+          "Mexico",
+          "Micronesia",
+          "Moldova",
+          "Monaco",
+          "Mongolia",
+          "Montenegro",
+          "Montserrat",
+          "Morocco",
+          "Mozambique",
+          "Myanmar (Burma)",
+          "Namibia",
+          "Nauru",
+          "Nepal",
+          "Netherlands",
+          "New Caledonia",
+          "New Zealand",
+          "Nicaragua",
+          "Niger",
+          "Nigeria",
+          "Niue",
+          "Norfolk Island",
+          "North Korea",
+          "North Macedonia",
+          "Northern Mariana Islands",
+          "Norway",
+          "Oman",
+          "Pakistan",
+          "Palau",
+          "Palestinian Territories",
+          "Panama",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Portugal",
+          "Puerto Rico",
+          "Qatar",
+          "Réunion",
+          "Romania",
+          "Russia",
+          "Rwanda",
+          "Samoa",
+          "San Marino",
+          "São Tomé & Príncipe",
+          "Saudi Arabia",
+          "Senegal",
+          "Serbia",
+          "Seychelles",
+          "Sierra Leone",
+          "Singapore",
+          "Sint Maarten",
+          "Slovakia",
+          "Slovenia",
+          "Solomon Islands",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sri Lanka",
+          "St. Barthélemy",
+          "St. Helena",
+          "St. Kitts & Nevis",
+          "St. Lucia",
+          "St. Martin",
+          "St. Pierre & Miquelon",
+          "St. Vincent & Grenadines",
+          "Sudan",
+          "Suriname",
+          "Svalbard & Jan Mayen",
+          "Sweden",
+          "Switzerland",
+          "Syria",
+          "Taiwan",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Timor-Leste",
+          "Togo",
+          "Tokelau",
+          "Tonga",
+          "Trinidad & Tobago",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Turks & Caicos Islands",
+          "Tuvalu",
+          "U.S. Virgin Islands",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "Uruguay",
+          "Uzbekistan",
+          "Vanuatu",
+          "Vatican City",
+          "Venezuela",
+          "Vietnam",
+          "Wallis & Futuna",
+          "Western Sahara",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ]
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_61194926",
+        "label": "Zip Code / Postal Code (Non-U.S. based candidates, please enter \"00000\")",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_61616159",
+        "label": "Do you live in one of the following metro areas? Denver, New York City, San Francisco Bay Area, Seattle, Toronto?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_61194927",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_61194929",
+        "label": "Are you legally authorized to work in the country where you are applying?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_61194930",
+        "label": "Will you now or in the future require visa sponsorship for employment?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_61598267",
+        "label": "How many years have you spent in roles focusing Enterprise Apps, Business Systems, or Automation?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_61598268",
+        "label": "What are the most impactful systems or workflows you’ve been responsible for, and what made them high impact?",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_68983099",
+        "label": "Have you ever, or are you currently working at Gusto or Symmetry in any capacity (ie: employee or contingent worker)?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "605",
+        "label": "How would you describe your gender identity (please select one)?",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Female",
+          "Male",
+          "Non-binary / third gender (Inclusive of bigender, agender, androgynous, gender fluid, gender non-conforming, two-spirit)",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "606",
+        "label": "I identify as transgender (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "607",
+        "label": "I identify my sexual orientation as (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Asexual",
+          "Bisexual, pansexual and/or queer",
+          "Gay and/or lesbian",
+          "Heterosexual",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.gender"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "608",
+        "label": "I identify my race/ethnicity as (mark all that apply):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Alaskan Native / American Indian / Indigenous American / Native American",
+          "Black / of African or African-American descent",
+          "East Asian (inclusive of Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)",
+          "Latino/a/x/Hispanic (inclusive of the United States of America, South America, Central America, and the Caribbean)",
+          "Latino/a/x/Hispanic (inclusive of Canada, South America, Central America, and the Caribbean)",
+          "Middle Eastern",
+          "Pacific Islander or Native Hawaiian",
+          "South Asian (inclusive of Afghani, Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, and Sri Lankan)",
+          "Southeast Asian (inclusive of Burmese, Cambodian, Filipino, Hmong, Indonesian, Laotian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)",
+          "White",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "609",
+        "label": "Veteran Status (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes, I am a veteran",
+          "No, I am not a veteran",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "No, I am not a veteran",
+      "source": {
+        "type": "profile",
+        "path": "eeo.veteran"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "610",
+        "label": "I have a disability (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I prefer to self-describe",
+          "I don't wish to answer"
+        ]
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "eeo.disability"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "1012",
+        "label": "I identify as a first-generation professional (please select one):",
+        "kind": "combobox",
+        "required": true,
+        "options": [
+          "Yes",
+          "No",
+          "I don't wish to answer"
+        ]
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_61194928[]",
+        "label": "How did you hear about this opportunity? (select all that apply)",
+        "kind": "checkbox",
+        "required": true,
+        "options": [
+          "LinkedIn",
+          "Glassdoor",
+          "Indeed",
+          "Facebook",
+          "Built In Colorado",
+          "News Article",
+          "Conference or Meetup",
+          "Company Blog",
+          "Company Employee",
+          "Company Website",
+          "Billboard/Outdoor Ads"
+        ]
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

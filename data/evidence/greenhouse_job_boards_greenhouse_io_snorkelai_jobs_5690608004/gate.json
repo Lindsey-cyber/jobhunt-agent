@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"GDPR Disclosure\": acknowledgements and consents need the candidate",
+    "required \"Your authorization to work in the country where you live:\": sensitive question with no exact answer",
+    "required \"GDPR Disclosure\" is empty after filling",
+    "required \"Your authorization to work in the country where you live:\" is empty after filling"
+  ]
+}

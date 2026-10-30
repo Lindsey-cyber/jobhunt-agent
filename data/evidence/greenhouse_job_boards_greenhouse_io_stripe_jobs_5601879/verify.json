@@ -1,0 +1,160 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "question_44982213",
+      "label": "Please select the country where you currently reside.",
+      "expected": "US",
+      "actual": "US",
+      "pass": true
+    },
+    {
+      "fieldId": "question_44982216",
+      "label": "Will you require Stripe to sponsor you for a work permit now or in the future for the location(s) you selected in in your previous response?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_44982217",
+      "label": "If this role offers the option to work from a remote location, do you plan to work remotely?",
+      "expected": "No, I intend to work from an office location.",
+      "actual": "No, I intend to work from an office location.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_47744016",
+      "label": "Have you ever been employed by Stripe or a Stripe affiliate?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_49127871",
+      "label": "What is your current or previous job title?",
+      "expected": "Research Engineer Intern",
+      "actual": "Research Engineer Intern",
+      "pass": true
+    },
+    {
+      "fieldId": "question_49127873",
+      "label": "Who is your current or previous employer?",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "question_49691295",
+      "label": "Do you opt-in to receive WhatsApp messages from Stripe Recruiting?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_64191475",
+      "label": "If located in the US, in what city and state do you reside?",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "question_44982214[]",
+      "label": "Please select the country or countries you anticipate working in for the role in which you are applying.",
+      "expected": "US",
+      "actual": "US",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you authorized to work in the location(s) you selected in your previous response?",
+    "Are you currently based in US or willing to relocate to US?",
+    "Please select the location you anticipate working in for the role in which you are applying.",
+    "How many years of experience full time, industry do you have as a data analyst? (not counting internships or school work)",
+    "What is the highest level of education you have completed?"
+  ],
+  "fillErrors": []
+}

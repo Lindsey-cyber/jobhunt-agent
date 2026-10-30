@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Zip Code / Postal Code (Non-U.S. based candidates, please enter \"00000\")\": no answer in profile or answer bank",
+    "required \"Do you live in one of the following metro areas? Denver, New York City, San Francisco Bay Area, Seattle, Toronto?\": no answer in profile or answer bank",
+    "required \"How many years have you spent in roles focusing Enterprise Apps, Business Systems, or Automation?\": no answer in profile or answer bank",
+    "required \"What are the most impactful systems or workflows you’ve been responsible for, and what made them high impact?\": no answer in profile or answer bank",
+    "required \"Have you ever, or are you currently working at Gusto or Symmetry in any capacity (ie: employee or contingent worker)?\": no answer in profile or answer bank",
+    "required \"I identify as a first-generation professional (please select one):\": no answer in profile or answer bank",
+    "required \"Zip Code / Postal Code (Non-U.S. based candidates, please enter \"00000\")\" is empty after filling",
+    "required \"Do you live in one of the following metro areas? Denver, New York City, San Francisco Bay Area, Seattle, Toronto?\" is empty after filling",
+    "required \"How many years have you spent in roles focusing Enterprise Apps, Business Systems, or Automation?\" is empty after filling",
+    "required \"What are the most impactful systems or workflows you’ve been responsible for, and what made them high impact?\" is empty after filling",
+    "required \"Have you ever, or are you currently working at Gusto or Symmetry in any capacity (ie: employee or contingent worker)?\" is empty after filling",
+    "required \"I identify as a first-generation professional (please select one):\" is empty after filling"
+  ]
+}

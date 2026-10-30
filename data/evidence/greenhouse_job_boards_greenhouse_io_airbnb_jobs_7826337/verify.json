@@ -1,0 +1,126 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727420",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727421",
+      "label": "How did you hear about this job?",
+      "expected": "Company Website (Airbnb Careers)",
+      "actual": "Company Website (Airbnb Careers)",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727423",
+      "label": "Gender:",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727424",
+      "label": "Race:",
+      "expected": "Decline to Self Identify",
+      "actual": "Decline to Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727425",
+      "label": "Veteran Status:",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727426",
+      "label": "Are you legally authorized to work in the country where the job is located?",
+      "expected": "Yes, I am currently legally authorized to work in the country where the job is located.",
+      "actual": "Yes, I am currently legally authorized to work in the country where the job is located.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727427",
+      "label": "Will you now or in the future require company sponsorship to retain or extend your work authorization in the country where the job is located?",
+      "expected": "Yes, I will require immigration sponsorship in the future to legally work in the country where the job is located.",
+      "actual": "Yes, I will require immigration sponsorship in the future to legally work in the country where the job is located.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727428",
+      "label": "Airbnb Candidate Privacy Policy",
+      "expected": "I acknowledge that I have read and understood the Airbnb Candidate Privacy Policy.",
+      "actual": "I acknowledge that I have read and understood the Airbnb Candidate Privacy Policy.",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727429",
+      "label": "Are you currently subject to any non-compete or non-solicitation agreement that would impact your ability to work at Airbnb or prevent you from accepting a job offer from Airbnb?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65727430",
+      "label": "Are you currently or have you ever worked for Airbnb in any capacity? This could include, but is not limited to, a full-time employee, intern, apprentice, or contingent worker.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

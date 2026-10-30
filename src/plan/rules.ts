@@ -484,7 +484,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): no other commitments; no outside work or business she would keep.
     path: "otherCommitments",
-    pattern: /\b(outside employment|outside (professional|business) activit(y|ies)|engage in any outside)\b/,
+    pattern: /\b(outside employment|outside (professional|business) activit(y|ies)|engage in any outside)\b|\bcontractual obligations\b.{0,80}\bcommitments to another (person|entity)\b|\bcommitments or agreements with other employers\b/,
     kinds: ["select", "radio", "combobox"],
     resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^no$/i.test(o.trim())),
   },

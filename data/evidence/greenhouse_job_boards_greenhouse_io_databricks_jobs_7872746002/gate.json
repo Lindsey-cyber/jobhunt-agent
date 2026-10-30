@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Current firm you're part of?\": no answer in profile or answer bank",
+    "required \"Do you have 6+ years of industry experience?\": no answer in profile or answer bank",
+    "required \"Do you have experience working on Spark ?\": no answer in profile or answer bank",
+    "required \"How many years of experience developing, testing, and sustaining Python or Java or Scala-based applications do you have?\": no answer in profile or answer bank",
+    "required \"Are you comfortable with compiling, building and navigating the \"Spark™\" source code?\": no answer in profile or answer bank",
+    "required \"Current firm you're part of?\" is empty after filling",
+    "required \"Do you have 6+ years of industry experience?\" is empty after filling",
+    "required \"Do you have experience working on Spark ?\" is empty after filling",
+    "required \"How many years of experience developing, testing, and sustaining Python or Java or Scala-based applications do you have?\" is empty after filling",
+    "required \"Are you comfortable with compiling, building and navigating the \"Spark™\" source code?\" is empty after filling"
+  ]
+}

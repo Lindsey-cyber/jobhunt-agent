@@ -340,6 +340,18 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   {
+    // Oscar Health: "Do you acknowledge the work location expectations listed on this job posting?":
+    // she works on site and will relocate (profile workArrangement).
+    path: "workArrangement",
+    pattern: /\backnowledge the (work location|in office|on site|hybrid) (expectations?|requirements?)\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, _l, ctx) => {
+      if (!p.workArrangement?.onsite || !p.workArrangement?.relocate) return undefined;
+      const yes = (ctx.options ?? []).filter((o) => /^yes\b/i.test(o.trim()));
+      return ctx.options?.length ? (yes.length === 1 ? yes[0] : undefined) : "Yes";
+    },
+  },
+  {
     // Stripe: "Are you currently based in US or willing to relocate to US?": from her address.
     path: "contact.address.country",
     pattern: /\b(currently )?based in (the )?(us|u s|united states)\b.{0,40}\brelocate\b/,

@@ -603,7 +603,7 @@ export const PROFILE_RULES: ProfileRule[] = [
     // Export-control "U.S. person" questions, from citizenship. Her F-1 status
     // makes her none of citizen, permanent resident, refugee or asylee.
     path: "citizenship",
-    pattern: /\bexport (controls?|compliance)\b|\bu s persons?\b/,
+    pattern: /\bexport (controls?|compliance)\b|\bu s persons?\b|\bprotected individual s?\b.{0,80}\b1324b\b/,
     resolve: (p, _label, ctx) => {
       const opts = ctx.options ?? [];
       if (p.citizenship.includes("United States")) return opts.find((o) => /\bcitizen\b/i.test(o));

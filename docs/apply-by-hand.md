@@ -123,6 +123,12 @@
 - [ ] https://dealertire.wd5.myworkdayjobs.com/DealerTireLLC-Careers/job/Remote-Ohio/Associate-Data-Scientist_R13774
   - 问题：I CERTIFY THAT I HAVE READ, FULLY UNDERSTAND, AND ACCEPT ALL TERMS OF THE FOREGOING STATEMENT.
 
+### 种族问题没有"不愿透露"选项（Crowe）
+
+- [ ] https://crowe.wd12.myworkdayjobs.com/External_Careers/job/Chicago-IL-USA/Machine-Learning-Software-Engineer-1_R-71006
+  - Crowe 的种族下拉框没有"不愿透露"，你的设置是不透露，所以 agent 不选。
+  - 注意：Crowe 的草稿里这一栏现在是错的（"American Indian or Alaska Native"，旧版本留下的，从未提交）。请改成你要选的答案再提交。
+
 ## 3. Ashby / Lever（有验证码，agent 提交不了）
 
 见 [manual-submit.md](manual-submit.md)：共 90 个，其中 42 个的答案都已备好，复制粘贴就能投。

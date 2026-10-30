@@ -1,7 +1,6 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Please select the race/ethnicity which most accurately describes how you identify yourself\": the field's choices did not load",
-    "required \"Please select the race/ethnicity which most accurately describes how you identify yourself\" is empty after filling"
+    "readback mismatch on \"Please select the race/ethnicity which most accurately describes how you identify yourself\": expected \"decline\", got \"American Indian or Alaska Native (Not Hispanic or Latino) (United States of America)\""
   ]
 }

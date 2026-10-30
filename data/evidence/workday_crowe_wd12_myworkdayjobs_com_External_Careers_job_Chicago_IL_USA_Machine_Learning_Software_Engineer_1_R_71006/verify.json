@@ -170,6 +170,13 @@
       "pass": true
     },
     {
+      "fieldId": "ethnicity",
+      "label": "Please select the race/ethnicity which most accurately describes how you identify yourself",
+      "expected": "decline",
+      "actual": "American Indian or Alaska Native (Not Hispanic or Latino) (United States of America)",
+      "pass": false
+    },
+    {
       "fieldId": "veteranStatus",
       "label": "Please select your veteran status.",
       "expected": "No, I am not a protected veteran",
@@ -191,8 +198,8 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Please select the race/ethnicity which most accurately describes how you identify yourself"
-  ],
-  "fillErrors": []
+  "emptyRequired": [],
+  "fillErrors": [
+    "Please select the race/ethnicity which most accurately describes how you identify yourself: no decline option (saw Select One / American Indian or Alaska Native (Not Hispanic or Latino) (United States of America) / Asian (Not Hispanic or Latino) (United States of America) / Black or African American (Not Hispanic or Latino) (United States of America) / Hispanic or Latino (United States of America) / Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino) (United States of America))"
+  ]
 }

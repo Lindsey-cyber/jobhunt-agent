@@ -392,6 +392,9 @@ describe("buildPlan", () => {
     expect(one("Are you related to (including in-laws), are or were in a relationship with, or live with anyone who is employed by any Toyota entity, affiliate or subsidiary?", ["Yes", "No"], "Toyota")).toMatchObject({ value: "No" });
     expect(buildPlan(form([field("If no, please provide your immigration status in the U.S.", { kind: "textarea" })], "Vanguard"), { ...p, workAuthorization: { ...p.workAuthorization, status: "F-1 OPT" } }, bank).items[0]).toMatchObject({ value: "F-1 OPT" });
     expect(one("Do you have any relatives currently working for The Home Depot, or any of our subsidiaries?", ["Yes", "No"], "The Home Depot")).toMatchObject({ value: "No" });
+    const pay = (label: string) => buildPlan(form([field(label, { kind: "textarea" })], "TransUnion"), { ...p, salaryExpectation: "$100K–$150K" }, bank).items[0]!;
+    expect(pay("What are your base compensation expectations for this role? (Please provide your expectations only. We are not requesting information about your current or past compensation.)")).toMatchObject({ value: "$100K–$150K" });
+    expect(pay("What is your current base salary?")).toMatchObject({ status: "blocked" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

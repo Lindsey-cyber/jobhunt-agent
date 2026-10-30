@@ -13,7 +13,9 @@ export const VETO: { pattern: RegExp; reason: string }[] = [
 
 export const COMPENSATION_VETO = VETO[0]!;
 export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target|requirements?)\b/;
-export const SALARY_HISTORY = /\b(current|previous|past|prior|last|history)\b/;
+// Salary history is never given. A disclaimer saying it is not asked ("We are not requesting
+// information about your current or past compensation", TransUnion) does not make it one.
+export const SALARY_HISTORY = /^(?!.*\bnot (requesting|asking|seeking)\b).*\b(current|previous|past|prior|last|history)\b/;
 
 export const ATTESTATION_OPTION = /\b(i )?(acknowledge|acknowledged|agree|consent|accept|accepted|understand|understood|certify|attest|declare)\b/;
 

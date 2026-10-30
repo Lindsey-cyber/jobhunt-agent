@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Processing of Personal Data\": acknowledgements and consents need the candidate",
+    "required \"What is the zip code of your primary residence?\": no answer in profile or answer bank",
+    "required \"Where have you learned about Samsara? Select all that apply.\": no answer in profile or answer bank",
+    "required \"AI Policy for Interviewers\": no answer in profile or answer bank",
+    "required \"How do you identify? (gender identity)\": sensitive question with no exact answer",
+    "required \"Processing of Personal Data\" is empty after filling",
+    "required \"What is the zip code of your primary residence?\" is empty after filling",
+    "required \"Where have you learned about Samsara? Select all that apply.\" is empty after filling",
+    "required \"AI Policy for Interviewers\" is empty after filling",
+    "required \"How do you identify? (gender identity)\" is empty after filling"
+  ]
+}

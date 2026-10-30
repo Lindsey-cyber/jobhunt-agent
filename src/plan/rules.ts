@@ -331,7 +331,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "What is your current or more recent job title?" / "... employer?" (Scale AI): the latest role on her resume.
     path: "workHistory",
-    pattern: /^what is your (current|most recent|current or (more|most) recent) (job title|title|employer|company)\b|^(current|most recent) (job title|employer)$|^current (firm|company|employer)( you re part of| you work for)?$/,
+    pattern: /^what is your (current|most recent|current or (more|most) recent) (job title|title|employer|company)\b|^(current|most recent) (job title|employer)$|^current (firm|company|employer)( you ?re part of| you work for)?$/,
     kinds: ["text"],
     resolve: (p, label) => {
       const latest = [...p.workHistory].sort((a, b) => (b.end ?? "9999").localeCompare(a.end ?? "9999") || (b.start ?? "").localeCompare(a.start ?? ""))[0];

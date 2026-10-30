@@ -333,6 +333,7 @@ describe("buildPlan", () => {
     expect(one("Confidentiality Acknowledgement", { kind: "combobox", options: ["I Agree"] })).toMatchObject({ value: "I Agree" });
     expect(one("Consent for contacting about future job openings", { kind: "combobox", options: ["I agree"] })).toMatchObject({ value: "I agree" });
     expect(one("GDPR Disclosure", { kind: "combobox", options: ["Acknowledge/Confirm"] })).toMatchObject({ value: "Acknowledge/Confirm" });
+    expect(one("Processing of Personal Data", { kind: "combobox", options: ["I agree"] })).toMatchObject({ value: "I agree" });
     expect(one("Have you ever been convicted or do you have a criminal record?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Do you use AI tools in your daily work?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Signature: I certify the above is true and complete", { kind: "text" })).toMatchObject({ status: "blocked" });

@@ -1,3 +1,5 @@
+> **最新交接：[HANDOFF-2026-10-30.md](HANDOFF-2026-10-30.md)，先读它。** 下面是最初的交接说明，留作背景。
+
 # Handoff prompt for the next agent session
 
 继续开发 jobhunt-agent v2：一个帮我（Lanxin "Lindsey" Ma）自动找 New Grad / Entry-Level AI/ML 岗位并投递的 agent。

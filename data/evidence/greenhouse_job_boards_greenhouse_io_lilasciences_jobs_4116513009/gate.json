@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Why Lila, why this role, and why at this moment in your life?\": no answer in profile or answer bank",
+    "required \"Do you have experience deploying AI/ML services in cloud-based infrastructure (e.g., FastAPI, containers, orchestration, databases)?\": no answer in profile or answer bank",
+    "required \"Do you have experience bringing models to production (e.g., deep learning models, LLMs, multimodal models, or RAG), with strong debugging, profiling, and optimization skills?\": no answer in profile or answer bank",
+    "required \"Why Lila, why this role, and why at this moment in your life?\" is empty after filling",
+    "required \"Do you have experience deploying AI/ML services in cloud-based infrastructure (e.g., FastAPI, containers, orchestration, databases)?\" is empty after filling",
+    "required \"Do you have experience bringing models to production (e.g., deep learning models, LLMs, multimodal models, or RAG), with strong debugging, profiling, and optimization skills?\" is empty after filling"
+  ]
+}

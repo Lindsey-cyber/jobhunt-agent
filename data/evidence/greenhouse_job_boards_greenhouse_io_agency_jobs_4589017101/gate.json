@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What country are you currently a resident of?\": no answer in profile or answer bank",
+    "required \"If you are currently based in United States, please confirm your current state of residence. If you are based outside of the United States, select \"I am not located in the United States\".\": no answer in profile or answer bank",
+    "required \"Please acknowledge that you have read and agree to our Privacy Policy.\": no answer in profile or answer bank",
+    "required \"What country are you currently a resident of?\" is empty after filling",
+    "required \"If you are currently based in United States, please confirm your current state of residence. If you are based outside of the United States, select \"I am not located in the United States\".\" is empty after filling",
+    "required \"Please acknowledge that you have read and agree to our Privacy Policy.\" is empty after filling"
+  ]
+}

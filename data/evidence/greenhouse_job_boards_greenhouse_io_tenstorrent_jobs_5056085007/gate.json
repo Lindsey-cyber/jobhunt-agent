@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"I have read and understand the Export Control statement included in the job description above.\": sensitive question with no exact answer",
+    "readback mismatch on \"Country\": expected \"United States\", got \"\"",
+    "readback mismatch on \"Location (City)\": expected \"New York, New York, United States\", got \"\"",
+    "required \"Country\" is empty after filling",
+    "required \"Location (City)\" is empty after filling",
+    "required \"I have read and understand the Export Control statement included in the job description above.\" is empty after filling"
+  ]
+}

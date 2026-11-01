@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Describe your experience working with large foundation models for single-cell data? For example, models that are pre-trained across many cell types and then fine-tuned for specific tasks?\": no answer in profile or answer bank",
+    "required \"Describe your experience working with Perturb-seq or CRISPR-based perturbation single-cell datasets?\": no answer in profile or answer bank",
+    "required \"What excites you about the opportunity to work at Xaira?\": no answer in profile or answer bank",
+    "required \"Describe your experience working with large foundation models for single-cell data? For example, models that are pre-trained across many cell types and then fine-tuned for specific tasks?\" is empty after filling",
+    "required \"Describe your experience working with Perturb-seq or CRISPR-based perturbation single-cell datasets?\" is empty after filling",
+    "required \"What excites you about the opportunity to work at Xaira?\" is empty after filling"
+  ]
+}

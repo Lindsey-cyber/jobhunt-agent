@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"In what city/town do you currently reside?\": no answer in profile or answer bank",
+    "required \"What is your hourly pay rate expectations for this role?\": no answer in profile or answer bank",
+    "required \"In what city/town do you currently reside?\" is empty after filling",
+    "required \"What is your hourly pay rate expectations for this role?\" is empty after filling"
+  ]
+}

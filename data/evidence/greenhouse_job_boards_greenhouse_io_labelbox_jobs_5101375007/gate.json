@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"We are currently prioritizing candidates based in one of our hubs. Please select your current location from this list.\": no answer in profile or answer bank",
+    "required \"We are currently prioritizing candidates based in one of our hubs. Please select your current location from this list.\" is empty after filling"
+  ]
+}

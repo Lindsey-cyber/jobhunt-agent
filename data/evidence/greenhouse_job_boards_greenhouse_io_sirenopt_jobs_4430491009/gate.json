@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you completed at least a bachelor's degree in a relevant field? Relevant fields include engineering, physics, chemistry or materials science.\": no answer in profile or answer bank",
+    "required \"Have you completed at least a bachelor's degree in a relevant field? Relevant fields include engineering, physics, chemistry or materials science.\" is empty after filling"
+  ]
+}

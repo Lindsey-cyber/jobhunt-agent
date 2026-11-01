@@ -6,6 +6,7 @@ import { chromium } from "playwright";
 import { loadUserData } from "./profile/load.ts";
 import { apply, sameJob } from "./run/apply.ts";
 import { excludedBy } from "./discover/exclude.ts";
+import { tooSenior } from "./discover/seniority.ts";
 import type { JobKey } from "./domain/job.ts";
 import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
@@ -167,7 +168,7 @@ switch (command) {
     const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match" && labels.get(j.key)?.label !== "not_fit").sort((a, b) => (b.lastSeen ?? "").localeCompare(a.lastSeen ?? "")) : [];
     const ready = [...new Set([...fit.map((l) => l.key as JobKey), ...matched.map((j) => j.key)])]
       .map((k) => catalog.get(k))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j) && (j!.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j!.key)) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && j!.link?.status !== "invalid")
+      .filter((j): j is NonNullable<typeof j> => Boolean(j) && (j!.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j!.key)) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && !tooSenior(j!.title) && j!.link?.status !== "invalid")
       // The candidate (2026-10-30): pay that tops out at or below her range's low end is not applied to.
       .filter((j) => {
         if (!payBelowExpectation(j.description ?? "", expectationFloor(u.profile.salaryExpectation))) return true;

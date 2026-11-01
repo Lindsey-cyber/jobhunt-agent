@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Applicant Privacy Acknowledgement\": no answer in profile or answer bank",
+    "required \"Applicant Privacy Acknowledgement\" is empty after filling"
+  ]
+}

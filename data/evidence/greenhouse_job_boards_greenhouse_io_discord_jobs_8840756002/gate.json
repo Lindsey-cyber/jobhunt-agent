@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Why do you want to work at Discord?\": no answer in profile or answer bank",
+    "required \"Are you currently located in the US?\": no answer in profile or answer bank",
+    "required \"Tell us about a time a metric or result moved in a way you didn't expect - in a job, internship, research project, or personal project. How did you figure out what was going on, and what did you do about it?\": no answer in profile or answer bank",
+    "required \"Why do you want to work at Discord?\" is empty after filling",
+    "required \"Are you currently located in the US?\" is empty after filling",
+    "required \"Tell us about a time a metric or result moved in a way you didn't expect - in a job, internship, research project, or personal project. How did you figure out what was going on, and what did you do about it?\" is empty after filling"
+  ]
+}

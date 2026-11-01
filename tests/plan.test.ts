@@ -257,6 +257,11 @@ describe("buildPlan", () => {
     expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ status: "fill", value: "I don't wish to answer" });
   });
 
+  it("declines a bare 'I identify as' when its choices are cisgender / transgender", () => {
+    const f = field("I identify as:", { kind: "combobox", options: ["Cisgender", "Transgender", "I prefer to self-describe", "I don't wish to answer"] });
+    expect(buildPlan(form([f]), user.profile, user.bank).items[0]).toMatchObject({ status: "fill", value: "I don't wish to answer" });
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");
@@ -308,6 +313,7 @@ describe("buildPlan", () => {
     expect(one("Legal Name", "Roblox")).toMatchObject({ value: `${p.identity.firstName} ${p.identity.lastName}` });
     expect(one("What is your legal first name? (Please also ensure that you input your legal first name in the *first name* field above).", "Akuna Capital")).toMatchObject({ value: p.identity.firstName });
     expect(one("What is your GPA?", "Klaviyo")).toMatchObject({ value: "3.71" });
+    expect(one("CGPA", "Graviton Research Capital LLP")).toMatchObject({ value: "3.71" });
     expect(one("What is your anticipated graduation month/year?", "Klaviyo")).toMatchObject({ value: "05/2026" });
     expect(one("Where did you complete your undergraduate degree?", "Bertram")).toMatchObject({ value: "Renmin University of China" });
     expect(one('Have you been employed, or otherwise engaged, by an Asana entity in the past? (Previous independent contractors, select "Yes.")', "Asana", yn)).toMatchObject({ value: "No" });

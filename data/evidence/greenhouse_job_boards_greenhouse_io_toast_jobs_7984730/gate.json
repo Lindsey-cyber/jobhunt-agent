@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What's your postal code?\": no answer in profile or answer bank",
+    "required \"What's your postal code?\" is empty after filling"
+  ]
+}

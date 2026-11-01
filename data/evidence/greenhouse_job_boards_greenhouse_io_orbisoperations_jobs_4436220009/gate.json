@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What percentage of travel are you willing to accept?\": no answer in profile or answer bank",
+    "required \"What city do you currently live in?\": no answer in profile or answer bank",
+    "required \"Are you legally eligible to be employed in the United States?\": no answer in profile or answer bank",
+    "required \"To help us prevent automated job applications, solve for X: 1 + X = 3\": no answer in profile or answer bank",
+    "required \"Orbis maintains a zero-tolerance policy on unauthorized assistance throughout the recruitment process. During all interviews and assessments, you may not use AI tools, automated response-generation software, unauthorized external resources, or third-party assistance. Headsets, earphones, secondary devices, and any other channels or equipment that could be used to receive assistance are also prohibited. Your camera must remain on for the duration of every interview. Do you agree to abide by these rules?\": no answer in profile or answer bank",
+    "required \"What percentage of travel are you willing to accept?\" is empty after filling",
+    "required \"What city do you currently live in?\" is empty after filling",
+    "required \"Are you legally eligible to be employed in the United States?\" is empty after filling",
+    "required \"To help us prevent automated job applications, solve for X: 1 + X = 3\" is empty after filling",
+    "required \"Orbis maintains a zero-tolerance policy on unauthorized assistance throughout the recruitment process. During all interviews and assessments, you may not use AI tools, automated response-generation software, unauthorized external resources, or third-party assistance. Headsets, earphones, secondary devices, and any other channels or equipment that could be used to receive assistance are also prohibited. Your camera must remain on for the duration of every interview. Do you agree to abide by these rules?\" is empty after filling"
+  ]
+}

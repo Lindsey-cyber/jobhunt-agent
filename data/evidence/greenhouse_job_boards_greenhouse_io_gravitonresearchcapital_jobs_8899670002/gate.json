@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"CGPA\": no answer in profile or answer bank",
+    "required \"CGPA\" is empty after filling"
+  ]
+}

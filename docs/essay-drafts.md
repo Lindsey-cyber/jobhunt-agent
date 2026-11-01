@@ -8,6 +8,14 @@
 
 遇到个性化问题，申请会停下来，题目列在这里。你写好答案后告诉我，我加进答案库，下一轮自动重投。
 
+### Discord · Data Scientist - Client Platform
+
+- Why do you want to work at Discord?
+
+### Orbis · Research Engineer, AI (Entry-Level)
+
+- What percentage of travel are you willing to accept?（选项：0-10% / 25% / 50+%。你说过愿意出差，但没说比例，我没猜）
+
 ### Black Canyon Consulting · Data Engineer
 
 - 你有几年数据工程或相关领域的工作经验？（文本框）

@@ -209,7 +209,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   {
     path: "education[0].gpa",
-    pattern: /^(what is your )?(cumulative |overall )?gpa$|^overall result( gpa)?$/,
+    // Graviton: "CGPA" (cumulative GPA).
+    pattern: /^(what is your )?(cumulative |overall )?c?gpa$|^overall result( gpa)?$/,
     // Klaviyo: ranges ("3.5 - 3.74", "4+", "Below 2").
     resolve: (p, _l, ctx) => {
       const gpa = firstEdu(p).gpa;
@@ -809,6 +810,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
   // Pronouns follow her gender choice: undisclosed where the list lets her decline.
   { path: "eeo.gender", pattern: /\b(transgender|sexual orientation|lgbtq?i?a?)\b|^(your )?pronouns?$|^what are your (preferred )?(personal )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
+  // Chime: a bare "I identify as:" whose choices are cisgender / transgender is the same question: decline.
+  { path: "eeo.gender", pattern: /^i identify as:?$/, kinds: ["select", "radio", "combobox"], resolve: (_p, _l, ctx) => ((ctx.options ?? []).some((o) => /\b(cis|trans)gender\b/i.test(o)) ? "decline" : undefined) },
   // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",

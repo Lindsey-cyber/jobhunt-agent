@@ -650,3 +650,20 @@ answers:
     aliases: []
     answer: "Yes"
     origin: human
+  # From her resume: no multi-GPU LLM training, post-training data pipelines or RL on LLMs (her LLM work is interpretability).
+  - id: llm-multi-gpu-training
+    question: Have you trained an LLM on a multi-GPU cluster (8+ GPUs)?
+    aliases: []
+    answer: "No"
+    origin: human
+  - id: llm-post-training-pipelines
+    question: Have you built data pipelines for LLM post-training (preference pairs, reward signals, etc.
+    aliases:
+      - Have you built data pipelines for LLM post-training (preference pairs, reward signals, etc.)?
+    answer: "No"
+    origin: human
+  - id: llm-rl-training
+    question: Have you personally run RL training on an LLM (PPO, GRPO, DPO, or similar)?
+    aliases: []
+    answer: "No"
+    origin: human

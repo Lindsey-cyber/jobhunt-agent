@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What is your current location? Please note we are unable to hire candidates based in Quebec at this time.\": no answer in profile or answer bank",
+    "required \"Before applying, how familiar are you with Upstart?\": no answer in profile or answer bank",
+    "required \"Before applying, how did you hear about Upstart?\": no answer in profile or answer bank",
+    "required \"What is your current location? Please note we are unable to hire candidates based in Quebec at this time.\" is empty after filling",
+    "required \"Before applying, how familiar are you with Upstart?\" is empty after filling",
+    "required \"Before applying, how did you hear about Upstart?\" is empty after filling"
+  ]
+}

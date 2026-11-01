@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What excites you about this opportunity?\": no answer in profile or answer bank",
+    "required \"Describe a data pipeline you built or rebuilt end-to-end. What did you choose, what trade-offs did you make, and what would you do differently now?\": no answer in profile or answer bank",
+    "required \"What's a piece of data craft you love? A SQL pattern, a modeling approach, an Airflow trick, a way you've structured a repo. Tell us what it is and why it matters to you.\": no answer in profile or answer bank",
+    "required \"What's something you'd ship differently today than you would have two years ago?\": no answer in profile or answer bank",
+    "required \"What excites you about this opportunity?\" is empty after filling",
+    "required \"Describe a data pipeline you built or rebuilt end-to-end. What did you choose, what trade-offs did you make, and what would you do differently now?\" is empty after filling",
+    "required \"What's a piece of data craft you love? A SQL pattern, a modeling approach, an Airflow trick, a way you've structured a repo. Tell us what it is and why it matters to you.\" is empty after filling",
+    "required \"What's something you'd ship differently today than you would have two years ago?\" is empty after filling"
+  ]
+}

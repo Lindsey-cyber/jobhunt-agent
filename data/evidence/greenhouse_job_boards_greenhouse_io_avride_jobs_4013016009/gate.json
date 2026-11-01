@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Describe one machine learning system you shipped that ran on physical hardware. What was the latency or compute constraint, and what did you have to give up to meet it?\": no answer in profile or answer bank",
+    "required \"Tell us about a failure mode in a deployed model that you did not anticipate. How did you find it, and what did you change?\": no answer in profile or answer bank",
+    "required \"Which of the following have you worked on hands-on, in a system that ran on real hardware?\": no answer in profile or answer bank",
+    "required \"Describe one machine learning system you shipped that ran on physical hardware. What was the latency or compute constraint, and what did you have to give up to meet it?\" is empty after filling",
+    "required \"Tell us about a failure mode in a deployed model that you did not anticipate. How did you find it, and what did you change?\" is empty after filling",
+    "required \"Which of the following have you worked on hands-on, in a system that ran on real hardware?\" is empty after filling"
+  ]
+}

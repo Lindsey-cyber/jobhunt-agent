@@ -1,0 +1,93 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35972997002",
+      "label": "Current Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35973005002",
+      "label": "What are your annualized total compensation expectations?",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35973006002",
+      "label": "How did you hear about this job?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35973007002",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35972998002[]",
+      "label": "Location Preference",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Do you have any outstanding offers or deadlines?",
+    "Employment eligibility status",
+    "What degree are you currently pursuing or have recently completed?",
+    "For your most recent degree, what is/was your GPA (normalized to a 4.0 scale)?",
+    "What year are you expected to graduate?",
+    "Have you completed any internships? If yes, were any of them at a hedge fund or a proprietary trading firm?",
+    "Please select all fields of study that closely align with your education background",
+    "Have you participated in any of the following mathematics competitions?"
+  ],
+  "fillErrors": []
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you have any outstanding offers or deadlines?\": no answer in profile or answer bank",
+    "required \"Employment eligibility status\": no answer in profile or answer bank",
+    "required \"What degree are you currently pursuing or have recently completed?\": no answer in profile or answer bank",
+    "required \"For your most recent degree, what is/was your GPA (normalized to a 4.0 scale)?\": no answer in profile or answer bank",
+    "required \"What year are you expected to graduate?\": no answer in profile or answer bank",
+    "required \"Have you completed any internships? If yes, were any of them at a hedge fund or a proprietary trading firm?\": no answer in profile or answer bank",
+    "required \"Please select all fields of study that closely align with your education background\": no answer in profile or answer bank",
+    "required \"Have you participated in any of the following mathematics competitions?\": no answer in profile or answer bank",
+    "required \"Do you have any outstanding offers or deadlines?\" is empty after filling",
+    "required \"Employment eligibility status\" is empty after filling",
+    "required \"What degree are you currently pursuing or have recently completed?\" is empty after filling",
+    "required \"For your most recent degree, what is/was your GPA (normalized to a 4.0 scale)?\" is empty after filling",
+    "required \"What year are you expected to graduate?\" is empty after filling",
+    "required \"Have you completed any internships? If yes, were any of them at a hedge fund or a proprietary trading firm?\" is empty after filling",
+    "required \"Please select all fields of study that closely align with your education background\" is empty after filling",
+    "required \"Have you participated in any of the following mathematics competitions?\" is empty after filling"
+  ]
+}

@@ -705,6 +705,10 @@ github:
   - { name: SimplifyJobs/New-Grad-Positions, url: 'https://github.com/SimplifyJobs/New-Grad-Positions', raw: 'https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json', format: simplify-json }
   - { name: speedyapply/2027-AI-College-Jobs, url: 'https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md', raw: 'https://raw.githubusercontent.com/speedyapply/2027-AI-College-Jobs/main/NEW_GRAD_USA.md', format: markdown }
   - { name: Tar-ive/ML_Newgrad_2027, url: 'https://github.com/Tar-ive/ML_Newgrad_2027', raw: 'https://raw.githubusercontent.com/Tar-ive/ML_Newgrad_2027/main/README.md', format: markdown }
+  # Added 2026-11-01 (candidate: more shared new-grad lists); each checked live that day.
+  - { name: cvrve/New-Grad, url: 'https://github.com/cvrve/New-Grad', raw: 'https://raw.githubusercontent.com/cvrve/New-Grad/dev/.github/scripts/listings.json', format: simplify-json }
+  - { name: speedyapply/2027-SWE-College-Jobs, url: 'https://github.com/speedyapply/2027-SWE-College-Jobs/blob/main/NEW_GRAD_USA.md', raw: 'https://raw.githubusercontent.com/speedyapply/2027-SWE-College-Jobs/HEAD/NEW_GRAD_USA.md', format: markdown }
+  - { name: zapplyjobs/New-Grad-Data-Science-Jobs-2027, url: 'https://github.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027', raw: 'https://raw.githubusercontent.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027/HEAD/README.md', format: markdown }
 hn:
   commentLimit: 400
 # Sources with no approved API. Listed so every report states they were skipped and why.

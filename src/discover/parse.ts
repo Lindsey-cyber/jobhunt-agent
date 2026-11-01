@@ -155,7 +155,7 @@ export function parseMarkdownJobTable(md: string, source: string, seenAt: string
     }
     const cells = line.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
     if (cells.every((c) => /^:?-+:?$/.test(c))) continue;
-    const names = cells.map((c) => htmlToText(c).toLowerCase());
+    const names = cells.map((c) => htmlToText(c).replace(/\*\*/g, "").trim().toLowerCase());
     if (names.includes("company") && (names.includes("role") || names.includes("position"))) {
       header = names;
       continue;

@@ -70,6 +70,15 @@ describe("parsers", () => {
     ]);
   });
 
+  it("reads a table whose header is bold (zapplyjobs: | **Apply** |)", () => {
+    const md = [
+      "| Company | Role | Location | Posted | Visa | **Apply** |",
+      "|---------|------|----------|--------|------|----------|",
+      '| **Waymo** | ML Engineer | Mountain View, CA, USA | 1d | ✅ Sponsor | [<img src="images/apply.png" width="80" alt="Apply">](https://job-boards.greenhouse.io/waymo/jobs/8337719) |',
+    ].join("\n");
+    expect(parseMarkdownJobTable(md, "list", T0).map((r) => [r.company, r.title, r.key])).toEqual([["Waymo", "ML Engineer", "greenhouse:8337719"]]);
+  });
+
   it("reads a LinkedIn alert digest block by block", () => {
     const body = [
       "Your job alert for Research engineer",

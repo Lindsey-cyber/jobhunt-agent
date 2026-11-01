@@ -305,6 +305,7 @@ describe("buildPlan", () => {
     const one = (label: string, company: string, over: Partial<ReturnType<typeof field>> = {}, loc = "New York, NY") => buildPlan({ ...form([field(label, over)], company), jobLocation: loc }, p, user.bank).items[0]!;
     expect(one("Given Name(s)", "Adobe")).toMatchObject({ value: p.identity.firstName });
     expect(one("What is your Legal Last Name?", "Block")).toMatchObject({ value: p.identity.lastName });
+    expect(one("Legal Name", "Roblox")).toMatchObject({ value: `${p.identity.firstName} ${p.identity.lastName}` });
     expect(one("What is your legal first name? (Please also ensure that you input your legal first name in the *first name* field above).", "Akuna Capital")).toMatchObject({ value: p.identity.firstName });
     expect(one("What is your GPA?", "Klaviyo")).toMatchObject({ value: "3.71" });
     expect(one("What is your anticipated graduation month/year?", "Klaviyo")).toMatchObject({ value: "05/2026" });

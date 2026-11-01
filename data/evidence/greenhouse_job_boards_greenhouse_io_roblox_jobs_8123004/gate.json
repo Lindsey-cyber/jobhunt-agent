@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Legal Name\": no answer in profile or answer bank",
+    "required \"Legal Name\" is empty after filling"
+  ]
+}

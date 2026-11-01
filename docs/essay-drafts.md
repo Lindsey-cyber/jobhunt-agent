@@ -24,6 +24,21 @@
 
 - In 1–2 sentences, what makes you a fit for this role?
 
+### Elastic · Agentic AI Engineer
+
+个性化题（等你写）：
+- What interests you in this specific role at Elastic?
+- Describe a GenAI or agentic project you built independently, end-to-end. What problem did it solve, what tools/frameworks did you use, and what made it "autonomous" rather than just conversational?
+
+事实题（我建议的答案，你确认或改）：
+- In what countries do you have the unrestricted right to work? → China（公民）。美国是 F-1 OPT，有期限，不算不受限制。
+- 搭过 agentic workflow 或多 agent 系统吗？ → Yes（Arborphy 的分层多 agent 推理原型）
+- 用过 Terraform 或其他基础设施即代码工具吗？ → No（简历只有 Docker）
+- 熟练使用 Python 或 TypeScript 吗？ → Yes
+- 做过 RAG 或向量检索吗？ → 模棱两可：简历里有用嵌入向量做跨物种检索（P@1 84.3%），但没有 RAG 或向量数据库。你定 Yes 还是 No。
+- 住在美东时区吗？ → Yes（纽约）
+- 怎么联系你？ → Email
+
 ### NewsBreak · Machine Learning Engineer, LLM Post-Training
 
 - What makes you a strong fit for this role?

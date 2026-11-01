@@ -99,7 +99,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "identity.preferredName", pattern: /^i have a preferred name$/, kinds: ["checkbox"], resolve: (p, label, ctx) => (p.identity.preferredName ? ctx.options?.[0] : undefined) },
   { path: "identity.preferredName", pattern: /\bpreferred (first |given )?name\b/, kinds: ["text"], resolve: (p) => p.identity.preferredName },
   // "Full name" only: a bare "Name" is often an attestation signature (Lever's EEO block).
-  { path: "identity.fullName", pattern: /^full (legal )?name$|\bfull legal name\b|\blegal name as it appears\b/, resolve: (p) => `${p.identity.firstName} ${p.identity.lastName}` },
+  { path: "identity.fullName", pattern: /^full (legal )?name$|^legal name$|\bfull legal name\b|\blegal name as it appears\b/, resolve: (p) => `${p.identity.firstName} ${p.identity.lastName}` },
   { path: "identity.lastName", pattern: /^preferred (last|family) name$/, resolve: (p) => p.identity.lastName },
   {
     // "Are you currently living in / based in the Bay Area?" from the state the candidate lives in.

@@ -319,6 +319,7 @@ describe("buildPlan", () => {
     expect(one("Are you an employee of Flutter or a Flutter brand?", "FanDuel")).toMatchObject({ value: "No" });
     expect(one("What is your state of residence?", "Zocdoc", { kind: "combobox", options: ["California", "New Jersey", "New York"] })).toMatchObject({ value: "New York" });
     expect(one("In which city do you currently reside?", "Avride")).toMatchObject({ value: p.contact.address.city });
+    expect(one("Your Location", "SpaceXSI")).toMatchObject({ value: `${p.contact.address.city}, ${p.contact.address.state}` });
     // F-1 OPT: authorized now, but needs sponsorship later.
     expect(one("If yes, will you now or in the future require Appian to file a petition or application for employment-based visa status on your behalf to begin or continue employment with our company? (Please note that if you are in F-1 OPT/STEM OPT, H-1B, ... you must answer YES to this question).", "Appian Corporation", { kind: "combobox", options: ["Yes", "No"] })).toMatchObject({ value: "Yes" });
     expect(one("I am authorized to work in the United States and do not require current or future visa sponsorship.", "Avride", { kind: "combobox", options: ["Yes", "No"] })).toMatchObject({ value: "No" });

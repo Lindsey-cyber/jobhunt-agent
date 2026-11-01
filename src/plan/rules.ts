@@ -142,6 +142,8 @@ export const PROFILE_RULES: ProfileRule[] = [
       return a.line1 ? [a.line1, a.line2, a.city, `${a.state} ${a.postalCode ?? ""}`.trim(), a.country].filter(Boolean).join(", ") : undefined;
     },
   },
+  // xAI: "Your Location" in a text box: her city and state.
+  { path: "contact.address.city", pattern: /^(your|current|your current) location$/, kinds: ["text"], resolve: (p) => `${p.contact.address.city}, ${p.contact.address.state}` },
   { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
   { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
   // Avride: "In which city do you currently reside?"

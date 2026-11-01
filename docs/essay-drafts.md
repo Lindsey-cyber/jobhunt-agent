@@ -20,6 +20,14 @@
 
 - Are you currently employed by a client, partner, or competitor of Addepar?（Yes/No。你现在在 Arborphy AI，我不知道它和 Addepar 有没有业务关系，没猜）
 
+### The Allen Institute for AI (Ai2) · Research Scientist, Asta
+
+- Please list 3-5 key words indicating your research areas of interest (specific sub-areas, e.g. "query-focused summarization" rather than "natural language processing").
+
+### Klaviyo · Software Engineer II - Recommendations
+
+- Klaviyo is an AI-forward organization. Tell us a bit more about how you use AI in your work.
+
 ### Black Canyon Consulting · Data Engineer
 
 - 你有几年数据工程或相关领域的工作经验？（文本框）

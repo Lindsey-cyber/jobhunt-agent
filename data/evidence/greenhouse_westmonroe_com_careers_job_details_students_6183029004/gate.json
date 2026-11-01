@@ -1,0 +1,16 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What is your overall, total GPA?\": no answer in profile or answer bank",
+    "required \"Is your graduation date between December 2024 and August 2025?\": no answer in profile or answer bank",
+    "required \"Please upload your unofficial transcript.\": no document for this upload",
+    "required \"Please review our current policy regarding use of generative artificial intelligence during the application process.\": acknowledgements and consents need the candidate",
+    "required \"With which gender identity do you identify?\": sensitive question with no exact answer",
+    "required \"Which racial categories best describe you? Select all that apply.\": sensitive question with no exact answer",
+    "required \"What is your overall, total GPA?\" is empty after filling",
+    "required \"Is your graduation date between December 2024 and August 2025?\" is empty after filling",
+    "required \"Please review our current policy regarding use of generative artificial intelligence during the application process.\" is empty after filling",
+    "required \"With which gender identity do you identify?\" is empty after filling",
+    "required \"Which racial categories best describe you? Select all that apply.\" is empty after filling"
+  ]
+}

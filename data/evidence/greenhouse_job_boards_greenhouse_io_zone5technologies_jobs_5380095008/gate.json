@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Our contracts with the United States Department of Defense require that all Zone 5 Technologies employees are US Citizens- are you currently a US Citizen?\": sensitive question with no exact answer",
+    "required \"Our contracts with the United States Department of Defense require that all Zone 5 Technologies employees are US Citizens- are you currently a US Citizen?\" is empty after filling"
+  ]
+}

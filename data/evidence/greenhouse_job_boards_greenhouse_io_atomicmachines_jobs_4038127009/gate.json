@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you legally allowed to work in the United States?*\": no answer in profile or answer bank",
+    "required \"Which CAD platforms and APIs have you interfaced with?\": no answer in profile or answer bank",
+    "required \"If yes, describe a project where you automated or parametrized CAD geometry using scripting. What tools and languages did you use?\": no answer in profile or answer bank",
+    "required \"If yes, how large (how many data points) were your training datasets?\": no answer in profile or answer bank",
+    "required \"If yes, what models did you use?\": no answer in profile or answer bank",
+    "required \"Are you legally allowed to work in the United States?*\" is empty after filling",
+    "required \"Which CAD platforms and APIs have you interfaced with?\" is empty after filling",
+    "required \"If yes, describe a project where you automated or parametrized CAD geometry using scripting. What tools and languages did you use?\" is empty after filling",
+    "required \"If yes, how large (how many data points) were your training datasets?\" is empty after filling",
+    "required \"If yes, what models did you use?\" is empty after filling"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -86,6 +86,34 @@
       "pass": true
     },
     {
+      "fieldId": "question_8613458006",
+      "label": "Some roles at CoreWeave require a live paired coding exercise in Python or Go. Which programming language(s) do you prefer to use?",
+      "expected": "Python",
+      "actual": "Python",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8613459006",
+      "label": "Select the metropolitan area to closest to your city of residence.",
+      "expected": "New York City, New York",
+      "actual": "New York City, New York",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8613460006",
+      "label": "Legal Address",
+      "expected": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "actual": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8613461006",
+      "label": "Are you open to working 3 days from one of our office hubs in NYC, NJ, CA, WA?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_8613462006",
       "label": "Are you a former CoreWeave employee?",
       "expected": "No",
@@ -107,6 +135,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_8613465006",
+      "label": "Please indicate whether you are a “U.S. person”. U.S. person is defined as a (i) U.S. citizen or national; (ii) U.S. lawful permanent resident; (iii) refugee under 8 U.S.C. § 1157; or (iv) asylee under 8 U.S.C. § 1158.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
       "fieldId": "gender",
       "label": "Gender",
       "expected": "Decline To Self Identify",
@@ -116,8 +151,8 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
       "pass": true
     },
     {
@@ -128,12 +163,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Some roles at CoreWeave require a live paired coding exercise in Python or Go. Which programming language(s) do you prefer to use?",
-    "Select the metropolitan area to closest to your city of residence.",
-    "Legal Address",
-    "Are you open to working 3 days from one of our office hubs in NYC, NJ, CA, WA?",
-    "Please indicate whether you are a “U.S. person”. U.S. person is defined as a (i) U.S. citizen or national; (ii) U.S. lawful permanent resident; (iii) refugee under 8 U.S.C. § 1157; or (iv) asylee under 8 U.S.C. § 1158."
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

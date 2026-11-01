@@ -1,0 +1,662 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=twosixtechnologies&token=6112014004",
+    "company": "Two Six Technologies",
+    "jobTitle": "Data Scientist",
+    "jobLocation": "Arlington, Virginia",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_19176484004",
+        "label": "Please provide your City",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176485004",
+        "label": "Please select your State",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19176486004",
+        "label": "Please provide your Zip Code",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176487004",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176488004",
+        "label": "Are you eligible for a DoD security clearance?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19176489004",
+        "label": "Security Clearance",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19176490004",
+        "label": "Are you currently bound by any non-compete or employment agreement?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19176491004",
+        "label": "Desired Salary",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19176492004",
+        "label": "Are you a current or former direct employee of any government institutions (including any governmental entities at the federal/national, state/provincial, and local levels and including publicly funded institutions)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19176493004",
+        "label": "How did you hear about us?",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176494004",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176495004",
+        "label": "Have you worked for Two Six Technologies or an affiliate in the past? If so, please provide the name of the team you supported and dates of employment.",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176496004",
+        "label": "If you were referred by an Employee, please list their name.",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176497004",
+        "label": "Please provide your Legal Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_19176498004",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_19176499004",
+        "label": "Do you now, or will you in the future, require company sponsorship for an employment visa? (e.g. H-1B, E-3, TN status)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Master of Science",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19176484004",
+        "label": "Please provide your City",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19176485004",
+        "label": "Please select your State",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19176486004",
+        "label": "Please provide your Zip Code",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176487004",
+        "label": "Website",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "https://www.lindseyma.com/",
+      "source": {
+        "type": "profile",
+        "path": "links.website"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19176488004",
+        "label": "Are you eligible for a DoD security clearance?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19176489004",
+        "label": "Security Clearance",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176490004",
+        "label": "Are you currently bound by any non-compete or employment agreement?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19176491004",
+        "label": "Desired Salary",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "compensation is never filled automatically"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176492004",
+        "label": "Are you a current or former direct employee of any government institutions (including any governmental entities at the federal/national, state/provincial, and local levels and including publicly funded institutions)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176493004",
+        "label": "How did you hear about us?",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176494004",
+        "label": "LinkedIn Profile",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176495004",
+        "label": "Have you worked for Two Six Technologies or an affiliate in the past? If so, please provide the name of the team you supported and dates of employment.",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_19176496004",
+        "label": "If you were referred by an Employee, please list their name.",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_19176497004",
+        "label": "Please provide your Legal Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176498004",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_19176499004",
+        "label": "Do you now, or will you in the future, require company sponsorship for an employment visa? (e.g. H-1B, E-3, TN status)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Have you ever worked for a Sony company previously?\": no answer in profile or answer bank",
+    "required \"Will you need relocation assistance to work at this role's specified location?\": no answer in profile or answer bank",
+    "required \"Are you currently located in the United States?\": no answer in profile or answer bank",
+    "required \"Are you a protected veteran?\": answer \"no\" matches none of the options",
+    "required \"Have you ever worked for a Sony company previously?\" is empty after filling",
+    "required \"Will you need relocation assistance to work at this role's specified location?\" is empty after filling",
+    "required \"Are you currently located in the United States?\" is empty after filling",
+    "required \"Are you a protected veteran?\" is empty after filling"
+  ]
+}

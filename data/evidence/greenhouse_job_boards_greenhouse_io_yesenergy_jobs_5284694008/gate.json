@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are your salary expectations in line with the salary range posted in the job description?\": compensation is never filled automatically",
+    "required \"Do you have at least 3 years of professional experience developing software using C# and SQL Server?\": no answer in profile or answer bank",
+    "required \"This role includes participating in an on-call rotation and providing after-hours support for critical production issues. Are you willing and able to participate in this rotation?\": no answer in profile or answer bank",
+    "required \"Are your salary expectations in line with the salary range posted in the job description?\" is empty after filling",
+    "required \"Do you have at least 3 years of professional experience developing software using C# and SQL Server?\" is empty after filling",
+    "required \"This role includes participating in an on-call rotation and providing after-hours support for critical production issues. Are you willing and able to participate in this rotation?\" is empty after filling"
+  ]
+}

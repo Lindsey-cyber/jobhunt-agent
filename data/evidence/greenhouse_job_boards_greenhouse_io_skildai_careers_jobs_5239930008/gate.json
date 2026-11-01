@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Why do you want to work at Skild AI?\": no answer in profile or answer bank",
+    "required \"Tell us about two to three projects or accomplishments you’re most proud of! Whether it’s building something impactful, contributing to open-source work, launching a company, winning an award, or anything else that showcases your skills — we’re excited to hear about it!\": no answer in profile or answer bank",
+    "required \"Why do you want to work at Skild AI?\" is empty after filling",
+    "required \"Tell us about two to three projects or accomplishments you’re most proud of! Whether it’s building something impactful, contributing to open-source work, launching a company, winning an award, or anything else that showcases your skills — we’re excited to hear about it!\" is empty after filling"
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics & Decision Theory",
+      "actual": "Statistics & Decision Theory",
+      "pass": true
+    },
+    {
+      "fieldId": "start-month--0",
+      "label": "Start date month",
+      "expected": "January",
+      "actual": "January",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-month--0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967256005",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967257005",
+      "label": "Are you 18 years or older?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967260005",
+      "label": "Do you now, or will you in the future, require employer sponsorship or other immigration-related support to obtain, maintain, or extend your legal right to work in the country where this position is located? If you are on an OPT and it can be extended for 3 years please answer NO to this question. If less than 3 years please answer YES. Providing inaccurate or misleading information regarding your work authorization or future sponsorship needs will result in immediate disqualification from the hiring process or withdrawal of an employment offer.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967262005",
+      "label": "If you answered yes to the above, please provide details and state your current status, future sponsorship needs and expiration date if applies.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967263005",
+      "label": "Preferred name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967264005",
+      "label": "Do you have any relatives employed by this organization?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967266005",
+      "label": "How did you hear about us?",
+      "expected": "Company Website",
+      "actual": "Company Website",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967267005",
+      "label": "Have you ever been employed at Precisely?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8967268005",
+      "label": "What is the notice period you need to give to your current organization if offered a position at Precisely?",
+      "expected": "2 weeks notice",
+      "actual": "2 weeks notice",
+      "pass": true
+    },
+    {
+      "fieldId": "question_9027653005",
+      "label": "How many years of professional experience do you have developing applications using Python?",
+      "expected": "1 - 2 years",
+      "actual": "1 - 2 years",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "gdpr_demographic_data_consent_given",
+      "label": "By checking this box, I consent to Precisely US Jobs collecting, storing, and processing my responses to the demographic data surveys above.",
+      "expected": "By checking this box, I consent to Precisely US Jobs collecting, storing, and processing my responses to the demographic data surveys above.",
+      "actual": "By checking this box, I consent to Precisely US Jobs collecting, storing, and processing my responses to the demographic data surveys above.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you legally authorized to work in the country in which you're applying for?",
+    "Based on your experience and the responsibilities of this role, what base salary range in local currency are you looking for? (please do not enter zero)",
+    "Which best describes your hands-on experience building AI-powered applications or solutions?",
+    "Which best describes your recent Python development experience?",
+    "Which best describes your hands-on experience developing software using object-oriented programming (OOP) principles and REST APIs?",
+    "Do you reside in any of the following locations (Alaska, Hawaii, Montana, North Dakota, South Dakota, New Mexico, Wyoming, American Samoa, Guam, Northern Mariana Islands, Puerto Rico, Trust Territories, Virgin Islands)",
+    "Precisely is empowering every employee with AI to unlock new ways of working, learning, and innovating. This question is to help us understand the extent of your knowledge and use with AI tools in your current job. Please select one of the below that best describes you.",
+    "Ethnic Identity",
+    "Do you think of yourself as:"
+  ],
+  "fillErrors": []
+}

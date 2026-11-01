@@ -1,0 +1,8 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"For undergraduate applicants, transcripts must be included in your application. Please attach below.\": no document for this upload",
+    "required \"Please include your GPA if you are a recent graduate or have limited work experience.\": no answer in profile or answer bank",
+    "required \"Please include your GPA if you are a recent graduate or have limited work experience.\" is empty after filling"
+  ]
+}

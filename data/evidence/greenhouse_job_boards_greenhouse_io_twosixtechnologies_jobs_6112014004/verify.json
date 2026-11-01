@@ -1,0 +1,151 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master of Science",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_19176487004",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19176490004",
+      "label": "Are you currently bound by any non-compete or employment agreement?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_19176492004",
+      "label": "Are you a current or former direct employee of any government institutions (including any governmental entities at the federal/national, state/provincial, and local levels and including publicly funded institutions)?",
+      "expected": "No",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_19176493004",
+      "label": "How did you hear about us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19176494004",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19176495004",
+      "label": "Have you worked for Two Six Technologies or an affiliate in the past? If so, please provide the name of the team you supported and dates of employment.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19176498004",
+      "label": "Are you legally authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "question_19176499004",
+      "label": "Do you now, or will you in the future, require company sponsorship for an employment visa? (e.g. H-1B, E-3, TN status)",
+      "expected": "Yes",
+      "actual": "",
+      "pass": false
+    }
+  ],
+  "emptyRequired": [
+    "Country",
+    "Please provide your City",
+    "Please select your State",
+    "Please provide your Zip Code",
+    "Are you eligible for a DoD security clearance?",
+    "Security Clearance",
+    "Are you currently bound by any non-compete or employment agreement?",
+    "Desired Salary",
+    "Are you a current or former direct employee of any government institutions (including any governmental entities at the federal/national, state/provincial, and local levels and including publicly funded institutions)?",
+    "Please provide your Legal Name",
+    "Are you legally authorized to work in the United States?",
+    "Do you now, or will you in the future, require company sponsorship for an employment visa? (e.g. H-1B, E-3, TN status)",
+    "Gender",
+    "Are you Hispanic/Latino?",
+    "Veteran Status"
+  ],
+  "fillErrors": [
+    "Country: the country menu did not open",
+    "School: the school--0 menu did not open",
+    "Degree: the degree--0 menu did not open",
+    "Discipline: the discipline--0 menu did not open",
+    "Are you currently bound by any non-compete or employment agreement?: the question_19176490004 menu did not open",
+    "Are you a current or former direct employee of any government institutions (including any governmental entities at the federal/national, state/provincial, and local levels and including publicly funded institutions)?: the question_19176492004 menu did not open",
+    "Are you legally authorized to work in the United States?: the question_19176498004 menu did not open",
+    "Do you now, or will you in the future, require company sponsorship for an employment visa? (e.g. H-1B, E-3, TN status): the question_19176499004 menu did not open"
+  ]
+}

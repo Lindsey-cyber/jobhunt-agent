@@ -1,0 +1,139 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4264525009",
+      "label": "Current Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4264527009",
+      "label": "LinkedIn URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4264529009",
+      "label": "GitHub URL",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4264530009",
+      "label": "Portfolio URL",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4264532009",
+      "label": "This position is 100 % onsite in our office, Monday – Friday. Can you commit to working from the office each day?*",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4264534009",
+      "label": "Will you now or in the future require sponsorship for employment visa status?*",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4265979009",
+      "label": "Have you developed or worked on systems that create or modify designs automatically?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4265980009",
+      "label": "If yes, how many years of experience do you have working directly with CAD automation or computational geometry in a professional setting?",
+      "expected": "2",
+      "actual": "2",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4265982009",
+      "label": "If yes, how many years of experience (if any) do you have developing or using algorithms for geometric reasoning — such as automatically or programmatically detecting how parts can mate, fit, or interact?",
+      "expected": "2",
+      "actual": "2",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4265983009",
+      "label": "Have you developed or worked on generative CAD workflows?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you legally allowed to work in the United States?*",
+    "Which CAD platforms and APIs have you interfaced with?",
+    "If yes, describe a project where you automated or parametrized CAD geometry using scripting. What tools and languages did you use?",
+    "If yes, how large (how many data points) were your training datasets?",
+    "If yes, what models did you use?"
+  ],
+  "fillErrors": []
+}

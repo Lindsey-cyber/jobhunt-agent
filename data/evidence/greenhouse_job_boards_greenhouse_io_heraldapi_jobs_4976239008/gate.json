@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"(For candidates local to NYC) Are you comfortable working hybrid in our office at least 3x per week?\": no answer in profile or answer bank",
+    "required \"Do you require any reasonable accommodations for your interviews? We want to make sure the interviewing experience is as comfortable for you as possible. Therefore if there's anything we can do to make the experience more pleasant, please let us know.\": no answer in profile or answer bank",
+    "required \"(For candidates local to NYC) Are you comfortable working hybrid in our office at least 3x per week?\" is empty after filling",
+    "required \"Do you require any reasonable accommodations for your interviews? We want to make sure the interviewing experience is as comfortable for you as possible. Therefore if there's anything we can do to make the experience more pleasant, please let us know.\" is empty after filling"
+  ]
+}

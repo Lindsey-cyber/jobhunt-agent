@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"State you will be working from\": no answer in profile or answer bank",
+    "required \"Have you been a previous employee at Blend?\": no answer in profile or answer bank",
+    "required \"State you will be working from\" is empty after filling",
+    "required \"Have you been a previous employee at Blend?\" is empty after filling"
+  ]
+}

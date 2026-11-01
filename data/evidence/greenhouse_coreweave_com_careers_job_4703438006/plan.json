@@ -775,24 +775,9 @@
           "I identify as one or more of the classifications of a protected veteran",
           "I don't wish to answer"
         ]
-      },
-      {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
       }
     ],
-    "priorApplications": 1
+    "priorApplications": 3
   },
   "items": [
     {
@@ -1238,7 +1223,7 @@
       "value": "Yes",
       "source": {
         "type": "profile",
-        "path": "workAuthorization.authorizedCountries"
+        "path": "answers.qualifications"
       },
       "confidence": 1,
       "sensitive": false
@@ -1281,7 +1266,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8613458006",
         "label": "Some roles at CoreWeave require a live paired coding exercise in Python or Go. Which programming language(s) do you prefer to use?",
@@ -1293,10 +1278,16 @@
           "Either"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Python",
+      "source": {
+        "type": "profile",
+        "path": "interviewLanguage"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8613459006",
         "label": "Select the metropolitan area to closest to your city of residence.",
@@ -1609,10 +1600,16 @@
           "Rock Springs, Wyoming"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "New York City, New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.city"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8613460006",
         "label": "Legal Address",
@@ -1621,10 +1618,16 @@
         "options": [],
         "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8613461006",
         "label": "Are you open to working 3 days from one of our office hubs in NYC, NJ, CA, WA?",
@@ -1635,7 +1638,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workArrangement"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1698,7 +1707,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8613465006",
         "label": "Please indicate whether you are a “U.S. person”. U.S. person is defined as a (i) U.S. citizen or national; (ii) U.S. lawful permanent resident; (iii) refugee under 8 U.S.C. § 1157; or (iv) asylee under 8 U.S.C. § 1158.",
@@ -1709,7 +1718,13 @@
           "No"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "citizenship"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -1745,10 +1760,10 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "No",
+      "value": "Decline To Self Identify",
       "source": {
         "type": "profile",
-        "path": "eeo.hispanicLatino"
+        "path": "eeo.race"
       },
       "confidence": 1,
       "sensitive": true
@@ -1773,25 +1788,6 @@
       },
       "confidence": 0.95,
       "sensitive": true
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

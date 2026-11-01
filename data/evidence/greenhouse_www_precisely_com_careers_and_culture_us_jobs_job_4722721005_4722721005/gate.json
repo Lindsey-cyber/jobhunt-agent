@@ -1,0 +1,23 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you legally authorized to work in the country in which you're applying for?\": sensitive question with no exact answer",
+    "required \"Based on your experience and the responsibilities of this role, what base salary range in local currency are you looking for? (please do not enter zero)\": compensation is never filled automatically",
+    "required \"Which best describes your hands-on experience building AI-powered applications or solutions?\": no answer in profile or answer bank",
+    "required \"Which best describes your recent Python development experience?\": no answer in profile or answer bank",
+    "required \"Which best describes your hands-on experience developing software using object-oriented programming (OOP) principles and REST APIs?\": no answer in profile or answer bank",
+    "required \"Do you reside in any of the following locations (Alaska, Hawaii, Montana, North Dakota, South Dakota, New Mexico, Wyoming, American Samoa, Guam, Northern Mariana Islands, Puerto Rico, Trust Territories, Virgin Islands)\": no answer in profile or answer bank",
+    "required \"Precisely is empowering every employee with AI to unlock new ways of working, learning, and innovating. This question is to help us understand the extent of your knowledge and use with AI tools in your current job. Please select one of the below that best describes you.\": no answer in profile or answer bank",
+    "required \"Ethnic Identity\": no answer in profile or answer bank",
+    "required \"Do you think of yourself as:\": no answer in profile or answer bank",
+    "required \"Are you legally authorized to work in the country in which you're applying for?\" is empty after filling",
+    "required \"Based on your experience and the responsibilities of this role, what base salary range in local currency are you looking for? (please do not enter zero)\" is empty after filling",
+    "required \"Which best describes your hands-on experience building AI-powered applications or solutions?\" is empty after filling",
+    "required \"Which best describes your recent Python development experience?\" is empty after filling",
+    "required \"Which best describes your hands-on experience developing software using object-oriented programming (OOP) principles and REST APIs?\" is empty after filling",
+    "required \"Do you reside in any of the following locations (Alaska, Hawaii, Montana, North Dakota, South Dakota, New Mexico, Wyoming, American Samoa, Guam, Northern Mariana Islands, Puerto Rico, Trust Territories, Virgin Islands)\" is empty after filling",
+    "required \"Precisely is empowering every employee with AI to unlock new ways of working, learning, and innovating. This question is to help us understand the extent of your knowledge and use with AI tools in your current job. Please select one of the below that best describes you.\" is empty after filling",
+    "required \"Ethnic Identity\" is empty after filling",
+    "required \"Do you think of yourself as:\" is empty after filling"
+  ]
+}

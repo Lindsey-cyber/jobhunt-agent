@@ -4,6 +4,30 @@
 
 怎么用：觉得可以用的，在标题前打勾；要改的，直接改文字。告诉我哪些通过，我再以「你确认过」的身份加回答案库。同一道题有好几个版本的，挑一个就行。
 
+## 等你写的题（申请停在这里）
+
+遇到个性化问题，申请会停下来，题目列在这里。你写好答案后告诉我，我加进答案库，下一轮自动重投。
+
+### Black Canyon Consulting · Data Engineer
+
+- 你有几年数据工程或相关领域的工作经验？（文本框）
+- 描述一条你亲自设计或主要参与的数据管线：处理什么数据、用了什么技术、你的角色。
+- 描述一次数据管线出现可靠性、性能或数据质量问题的经历：问题是什么、怎么发现的、怎么解决的。
+- 你在工作中用过哪些编程语言或查询语言做数据工程？（我可以按简历填 Python、SQL、R，你确认一下）
+- 你是怎么开发或维护用来提供数据、分析结果或模型接口的 API 或服务层的？
+
+### NewsBreak · Machine Learning Engineer, LLM Post-Training
+
+- What makes you a strong fit for this role?
+
+### Lila Sciences · ML Scientist, Foundation Models for Life Sciences
+
+- Why Lila, why this role, and why at this moment in your life?
+
+### Figma · Software Engineer - Data Infrastructure
+
+- Why do you want to join Figma?
+
 ## Databricks · Describe a time you worked directly with an external enterprise customer on an ML/AI problem.
 
 - [ ] `draft:e6ada9a703`（岗位：AI Engineer – Forward Deployed Engineering (AI FDE)）

@@ -1,0 +1,104 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "cover_letter",
+      "label": "Cover Letter",
+      "expected": "black-canyon-consulting.pdf",
+      "actual": "black-canyon-consulting.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32908642003",
+      "label": "What are your salary requirements?",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_32908776003",
+      "label": "Will you now, or in the future, require visa sponsorship? This includes if you are on a STEM OPT, J-1, F-1 visa currently.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "How many years of relevant professional experience do you have in data engineering or a closely related field?",
+    "Briefly describe one data pipeline you personally designed or significantly contributed to. What data was being processed, what technologies did you use, and what was your role?",
+    "Describe a situation where a data pipeline had a reliability, performance, or data-quality problem. What was the issue, how did you identify it, and what did you do to resolve it?",
+    "Which programming or query languages have you used professionally for data engineering?",
+    "How have you developed or maintained APIs or service layers used to expose data, analytical results, or model endpoints?"
+  ],
+  "fillErrors": []
+}

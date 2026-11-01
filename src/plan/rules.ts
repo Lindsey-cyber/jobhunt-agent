@@ -159,7 +159,8 @@ export const PROFILE_RULES: ProfileRule[] = [
       return ctx.options.find((o) => normalize(o).startsWith(normalize(c)));
     },
   },
-  { path: "contact.address.postalCode", pattern: /^(zip|zip code|postal code|postcode|zip postal( code)?)$|^zip code postal code\b/, resolve: (p) => p.contact.address.postalCode },
+  // Toast: "What's your postal code?"
+  { path: "contact.address.postalCode", pattern: /^((what is |whats )?your )?(zip|zip code|postal code|postcode|zip postal( code)?)$|^zip code postal code\b/, resolve: (p) => p.contact.address.postalCode },
   { path: "contact.address.country", pattern: /^country( of residence| region| territory)?$/, resolve: (p) => p.contact.address.country },
   { path: "links.linkedin", kinds: ["text"], pattern: /\blinkedin\b/, resolve: (p) => p.links.linkedin },
   { path: "links.github", kinds: ["text"], pattern: /\bgithub\b/, resolve: (p) => p.links.github },

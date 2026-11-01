@@ -67,7 +67,10 @@
 - [ ] https://homedepot.wd5.myworkdayjobs.com/careerdepot/job/STORE-SUPPORT-CENTER-ATLANTA---9090/Associate-Data-Scientist_Req195136
   - 问题：Desired Total Annual Compensation（数字框，agent 不知道该填哪个数）
 
-### 家人或熟人是医疗从业者 / 政府官员（Smith+Nephew）
+### 家人或熟人是医疗从业者 / 政府官员（Smith+Nephew、Robinhood）
+
+- [ ] https://job-boards.greenhouse.io/robinhood/jobs/8305772 （AI Operations Engineer）
+  - 问题（Yes/No 一题）：a) 你现在或过去 5 年内是否担任过政府官员？b) 是否由政府官员推荐了这个岗位？c) 你是否与政府官员有亲属或亲近关系？三项都否就选 No。告诉我答案，我加进答案库重投。
 
 - [ ] https://smithnephew.wd5.myworkdayjobs.com/en-US/external/job/Pittsburgh-PA/R-D-Engineer---Data-Science_R90815
   - 问题：Do you have a family member who is a Health Care Professional or government official?

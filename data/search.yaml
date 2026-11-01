@@ -9,3 +9,45 @@ excludeCompanies:
   - TikTok
   - Google
   - Palantir
+  # The candidate (2026-11-01): skip the well-known quant firms (low odds for her background); smaller quant shops stay.
+  - Jane Street
+  - Citadel
+  - Two Sigma
+  - Hudson River Trading
+  - Jump Trading
+  - D. E. Shaw
+  - DE Shaw
+  - Renaissance Technologies
+  - Optiver
+  - IMC
+  - Susquehanna
+  - DRW
+  - Tower Research
+  - Akuna
+  - Point72
+  - Cubist
+  - Millennium
+  - Bridgewater
+  - Squarepoint
+  - PDT Partners
+  - WorldQuant
+  - XTX
+  - Virtu
+  - Five Rings
+  - Radix
+  - Headlands
+  - Balyasny
+  - AQR
+  - Flow Traders
+  - Aquatic
+  - Schonfeld
+  - Old Mission
+  - Chicago Trading Company
+  - Wolverine
+  - Man Group
+  - Marshall Wace
+  - G-Research
+  - Qube
+  - Voleon
+  - Arrowstreet
+  - Graham Capital

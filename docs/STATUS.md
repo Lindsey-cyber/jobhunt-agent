@@ -25,6 +25,7 @@
 1. 先投排队的 20 条：第三方来源的岗位，已在 Greenhouse 或 Lever 上找到同一个岗位，你已批准。清单在 `docs/HANDOFF-2026-10-30.md`。
 2. 再跑 Greenhouse 批量投递（`JH_WORKDAY=off`）。上一轮卡住的 Stripe、Scale AI、Figma、Gusto、Oscar Health、Axon、Databricks、Coherent、Snorkel、CHAOS、Samsara 等，规则都已经修好。
 3. 小公司外联：等你给一封 sample 邮件。
+5. 个性化回答：之前写的 59 篇都在 `docs/essay-drafts.md`，等你过目。以后遇到这类题，申请会停下来等你。
 4. 等你决定：被某家公司拒后，要不要暂停投它的其他岗位；Workable / SmartRecruiters 要不要投。
 
 ## 文件索引

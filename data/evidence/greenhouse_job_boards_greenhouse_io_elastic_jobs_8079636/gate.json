@@ -1,0 +1,23 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"In what countries do you have the unrestricted right to work?\": no answer in profile or answer bank",
+    "required \"Do you have professional experience building agentic workflows or multi-agent systems (e.g., with LangGraph, LangChain, AutoGen, or similar frameworks)?\": no answer in profile or answer bank",
+    "required \"Do you have hands-on experience with Terraform or another Infrastructure-as-Code tool?\": no answer in profile or answer bank",
+    "required \"Are you proficient in Python or TypeScript for backend/agent development?\": no answer in profile or answer bank",
+    "required \"Do you have experience with RAG (Retrieval Augmented Generation) or vector search/relevance engines (e.g., Elasticsearch, Pinecone, Weaviate)?\": no answer in profile or answer bank",
+    "required \"What interests you in this specific role at Elastic?\": no answer in profile or answer bank",
+    "required \"Describe a GenAI or agentic project you built independently, end-to-end. What problem did it solve, what tools/frameworks did you use, and what made it \"autonomous\" rather than just conversational?\": no answer in profile or answer bank",
+    "required \"Do you currently reside in EST timezone?\": no answer in profile or answer bank",
+    "required \"How should we communicate with you?\": no answer in profile or answer bank",
+    "required \"In what countries do you have the unrestricted right to work?\" is empty after filling",
+    "required \"Do you have professional experience building agentic workflows or multi-agent systems (e.g., with LangGraph, LangChain, AutoGen, or similar frameworks)?\" is empty after filling",
+    "required \"Do you have hands-on experience with Terraform or another Infrastructure-as-Code tool?\" is empty after filling",
+    "required \"Are you proficient in Python or TypeScript for backend/agent development?\" is empty after filling",
+    "required \"Do you have experience with RAG (Retrieval Augmented Generation) or vector search/relevance engines (e.g., Elasticsearch, Pinecone, Weaviate)?\" is empty after filling",
+    "required \"What interests you in this specific role at Elastic?\" is empty after filling",
+    "required \"Describe a GenAI or agentic project you built independently, end-to-end. What problem did it solve, what tools/frameworks did you use, and what made it \"autonomous\" rather than just conversational?\" is empty after filling",
+    "required \"Do you currently reside in EST timezone?\" is empty after filling",
+    "required \"How should we communicate with you?\" is empty after filling"
+  ]
+}

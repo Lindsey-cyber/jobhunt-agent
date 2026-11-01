@@ -118,8 +118,8 @@ export const PROFILE_RULES: ProfileRule[] = [
       return ms ? yesNo(`${ms.gradYear}-${String(ms.gradMonth).padStart(2, "0")}` > today) : undefined;
     },
   },
-  { path: "identity.firstName", pattern: /^(legal )?first name$|^given names?( s)?$|^what is your legal first name$/, resolve: (p) => p.identity.firstName },
-  { path: "identity.lastName", pattern: /^(legal )?last name$|^family name$|^surname$|^what is your legal last name$/, resolve: (p) => p.identity.lastName },
+  { path: "identity.firstName", pattern: /^(legal )?first name$|^given names?( s)?$|^what is your legal first name\b/, resolve: (p) => p.identity.firstName },
+  { path: "identity.lastName", pattern: /^(legal )?last name$|^family name$|^surname$|^what is your legal last name\b/, resolve: (p) => p.identity.lastName },
   { path: "contact.email", pattern: /^e ?mail( address)?$/, resolve: (p) => p.contact.email },
   { path: "contact.phone", pattern: /^(phone|mobile|phone number|mobile number)$/, resolve: (p) => p.contact.phone },
   // Workday's phone block: her number is a mobile in the US.

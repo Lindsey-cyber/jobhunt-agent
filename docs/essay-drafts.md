@@ -20,6 +20,10 @@
 
 - 要上传最高学历（Columbia 硕士）的最新成绩单。repo 里没有成绩单文件。你可以自己去投，或者把成绩单 PDF 放进 `data/`，我让 agent 在表单要求时上传。
 
+### Wonderschool · Forward Deployed Engineer – Applied AI
+
+- In 1–2 sentences, what makes you a fit for this role?
+
 ### NewsBreak · Machine Learning Engineer, LLM Post-Training
 
 - What makes you a strong fit for this role?

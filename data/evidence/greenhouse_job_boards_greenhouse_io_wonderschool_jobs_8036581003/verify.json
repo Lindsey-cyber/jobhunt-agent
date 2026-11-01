@@ -1,0 +1,107 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_33173426003",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_33173427003",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_33173428003",
+      "label": "What is your current position?",
+      "expected": "Research Engineer Intern",
+      "actual": "Research Engineer Intern",
+      "pass": true
+    },
+    {
+      "fieldId": "question_33173429003",
+      "label": "What is your current company?",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "question_33173430003",
+      "label": "Are you currently authorized to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_33173431003",
+      "label": "Do you now, or will you in the future, require sponsorship to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "In 1–2 sentences, what makes you a fit for this role?",
+    "What was the main reason for a short tenure in a prior role?",
+    "Has software you built or helped build generated more than $100 in sales?",
+    "What’s your ability to travel for this role and for most jobs?",
+    "Describe customer discovery that led you to ship an AI system, including adoption and outcome.",
+    "Which AI development tools have you used? Link to a work sample if you can share one.",
+    "What types of early childhood experience do you have?",
+    "Which of these fields have you worked in?"
+  ],
+  "fillErrors": []
+}

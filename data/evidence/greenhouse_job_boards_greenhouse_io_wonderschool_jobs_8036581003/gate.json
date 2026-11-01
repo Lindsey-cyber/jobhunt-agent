@@ -1,0 +1,21 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"In 1–2 sentences, what makes you a fit for this role?\": no answer in profile or answer bank",
+    "required \"What was the main reason for a short tenure in a prior role?\": no answer in profile or answer bank",
+    "required \"Has software you built or helped build generated more than $100 in sales?\": no answer in profile or answer bank",
+    "required \"What’s your ability to travel for this role and for most jobs?\": no answer in profile or answer bank",
+    "required \"Describe customer discovery that led you to ship an AI system, including adoption and outcome.\": no answer in profile or answer bank",
+    "required \"Which AI development tools have you used? Link to a work sample if you can share one.\": no answer in profile or answer bank",
+    "required \"What types of early childhood experience do you have?\": no answer in profile or answer bank",
+    "required \"Which of these fields have you worked in?\": no answer in profile or answer bank",
+    "required \"In 1–2 sentences, what makes you a fit for this role?\" is empty after filling",
+    "required \"What was the main reason for a short tenure in a prior role?\" is empty after filling",
+    "required \"Has software you built or helped build generated more than $100 in sales?\" is empty after filling",
+    "required \"What’s your ability to travel for this role and for most jobs?\" is empty after filling",
+    "required \"Describe customer discovery that led you to ship an AI system, including adoption and outcome.\" is empty after filling",
+    "required \"Which AI development tools have you used? Link to a work sample if you can share one.\" is empty after filling",
+    "required \"What types of early childhood experience do you have?\" is empty after filling",
+    "required \"Which of these fields have you worked in?\" is empty after filling"
+  ]
+}

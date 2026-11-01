@@ -7,6 +7,8 @@ export interface CandidateFacts {
   needsSponsorship: boolean;
   usCitizen: boolean;
   hasPhd: boolean;
+  // Schools she attended, for "(UMiami Only)"-style postings.
+  schools?: string[];
 }
 
 export interface TriageInput {
@@ -126,6 +128,9 @@ export function triage(job: TriageInput, me: CandidateFacts): Triage {
   const adjacent = ADJACENT.test(title) && !ROLE.test(title);
   if (!ROLE.test(title) && !dataScience && !adjacent) return v("reject", "role.out_of_scope", "Title is not an AI/ML, research or data-engineering role");
   if (INTERN.test(title)) return v("reject", "type.internship", "Internship or co-op, not a full-time role");
+  // The candidate (2026-11-01): postings open only to one school's students are out ("Associate Data Engineer (UMiami Only)").
+  const only = /\(([^()]{2,40}?)\s+(?:students?\s+|grads?\s+|graduates?\s+)?only\)/i.exec(title)?.[1] ?? /\brestricted to ([a-z .&-]{2,60}?) (?:students|graduates|alumni)\b/i.exec(body ?? "")?.[1];
+  if (only && !(me.schools ?? []).some((s) => s.toLowerCase().includes(only.toLowerCase()) || only.toLowerCase().includes(s.toLowerCase().split(" ")[0]!))) return v("reject", "eligibility.school_only", `Open only to ${only}; not one of her schools`);
   // "[Junior / Senior / Staff] Engineer" hires at every level, including entry.
   // "Senior / Engineer II": a title offering several levels counts when one of them is not senior.
   // Level II (about 2 years) is in range by the candidate's rule (2026-10-28).

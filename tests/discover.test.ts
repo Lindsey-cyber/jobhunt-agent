@@ -143,6 +143,10 @@ describe("triage", () => {
   it("excludes only on an explicit no-sponsorship statement, and silence passes", () => {
     expect(triage(job("ML Engineer, New Grad", { description: "We are unable to sponsor visas for this role." }), me).rule).toBe("auth.no_sponsorship");
     expect(triage(job("ML Engineer, New Grad", { description: "Visa sponsorship is available." }), me).verdict).toBe("match");
+    const mine = { ...me, schools: ["Columbia University", "Renmin University of China"] };
+    expect(triage(job("Associate Data Engineer (UMiami Only)"), mine).rule).toBe("eligibility.school_only");
+    expect(triage(job("Associate Data Engineer", { description: "This role is restricted to University of Miami students." }), mine).rule).toBe("eligibility.school_only");
+    expect(triage(job("Associate Data Engineer (Columbia Only)"), mine).rule).not.toBe("eligibility.school_only");
     expect(triage(job("ML Engineer, New Grad", { description: "Open to candidates with or without sponsorship needs." }), me).verdict).toBe("match");
     expect(triage(job("ML Engineer, New Grad", { description: "We are unable to sponsor visas." }), { ...me, needsSponsorship: false }).verdict).toBe("match");
   });

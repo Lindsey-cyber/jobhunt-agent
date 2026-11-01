@@ -20,6 +20,7 @@ export function candidateFacts(p: Profile): CandidateFacts {
     needsSponsorship: p.workAuthorization.needsSponsorship,
     usCitizen: p.citizenship.some((c) => /^(us|usa|u\.s\.|united states( of america)?)$/i.test(c.trim())),
     hasPhd: p.education.some((e) => /ph\.?d|doctor/i.test(e.degree)),
+    schools: p.education.map((e) => e.school),
   };
 }
 

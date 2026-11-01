@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you willing to share your academic transcripts?\": no answer in profile or answer bank",
+    "required \"Are you willing to share your academic transcripts?\" is empty after filling"
+  ]
+}

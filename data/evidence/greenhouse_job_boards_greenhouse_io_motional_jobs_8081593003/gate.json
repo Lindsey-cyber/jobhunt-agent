@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Permanent Legal Address\": no answer in profile or answer bank",
+    "required \"Have you previously worked within the Motional ecosphere? (ex. Motional, Ottomatika, Aptiv, nuTonomy, or Hyundai Motor Company)\": sensitive question with no exact answer",
+    "required \"Permanent Legal Address\": no answer in profile or answer bank",
+    "required \"Current / Most Recent Employer\": no answer in profile or answer bank",
+    "required \"Have you previously worked within the Motional ecosphere? (ex. Motional, Ottomatika, Aptiv, nuTonomy, or Hyundai Motor Company)\": sensitive question with no exact answer",
+    "required \"Are you currently a Motional employee? (If yes, please apply via Greenhouse internal Job Board)\": no answer in profile or answer bank",
+    "required \"Permanent Legal Address\" is empty after filling",
+    "required \"Have you previously worked within the Motional ecosphere? (ex. Motional, Ottomatika, Aptiv, nuTonomy, or Hyundai Motor Company)\" is empty after filling",
+    "required \"Permanent Legal Address\" is empty after filling",
+    "required \"Current / Most Recent Employer\" is empty after filling",
+    "required \"Have you previously worked within the Motional ecosphere? (ex. Motional, Ottomatika, Aptiv, nuTonomy, or Hyundai Motor Company)\" is empty after filling",
+    "required \"Are you currently a Motional employee? (If yes, please apply via Greenhouse internal Job Board)\" is empty after filling"
+  ]
+}

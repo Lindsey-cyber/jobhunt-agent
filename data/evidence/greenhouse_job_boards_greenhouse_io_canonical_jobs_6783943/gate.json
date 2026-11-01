@@ -1,0 +1,29 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Outline your experience with Kubernetes.\": no answer in profile or answer bank",
+    "required \"Describe your professional experience in customer-facing technical roles.\": no answer in profile or answer bank",
+    "required \"How did you perform in mathematics at high school?\": no answer in profile or answer bank",
+    "required \"How did you perform in your native language at high school?\": no answer in profile or answer bank",
+    "required \"Please share your rationale or evidence for the high school performance selections above. Make reference to provincial, state or nation-wide scoring systems, rankings, or recognition awards, or to competitive or selective college entrance results such as SAT or ACT scores, JAMB, matriculation results, IB results etc. We recognise every system is different but we will ask you to justify your selections above.\": references are someone else's data",
+    "required \"What was your bachelor's university degree result, or expected result if you have not yet graduated? Please include the grading system to help us understand your result e.g. ‘85 out of 100’, ‘2:1 (Grading system: first class, 2:1, 2:2, third class)’ or ‘GPA score of 3.8/4.0 (predicted)’. We have hired outstanding individuals who did not attend or complete university. If this describes you, please continue with your application and enter ‘no degree’.\": no answer in profile or answer bank",
+    "required \"We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Field Engineers also travel to external events and customer offices for project related work. Are you willing and able to commit to this?\": no answer in profile or answer bank",
+    "required \"In which country do you currently work?\": no answer in profile or answer bank",
+    "required \"During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.\": no answer in profile or answer bank",
+    "required \"In the past ten years, looking only at the time since you graduated your first undergraduate degree, how many companies have you worked for?\": no answer in profile or answer bank",
+    "required \"Which gender do you identify as?\": sensitive question with no exact answer",
+    "required \"Please indicate your nationality:\": no answer in profile or answer bank",
+    "required \"Outline your experience with Kubernetes.\" is empty after filling",
+    "required \"Describe your professional experience in customer-facing technical roles.\" is empty after filling",
+    "required \"How did you perform in mathematics at high school?\" is empty after filling",
+    "required \"How did you perform in your native language at high school?\" is empty after filling",
+    "required \"Please share your rationale or evidence for the high school performance selections above. Make reference to provincial, state or nation-wide scoring systems, rankings, or recognition awards, or to competitive or selective college entrance results such as SAT or ACT scores, JAMB, matriculation results, IB results etc. We recognise every system is different but we will ask you to justify your selections above.\" is empty after filling",
+    "required \"What was your bachelor's university degree result, or expected result if you have not yet graduated? Please include the grading system to help us understand your result e.g. ‘85 out of 100’, ‘2:1 (Grading system: first class, 2:1, 2:2, third class)’ or ‘GPA score of 3.8/4.0 (predicted)’. We have hired outstanding individuals who did not attend or complete university. If this describes you, please continue with your application and enter ‘no degree’.\" is empty after filling",
+    "required \"We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Field Engineers also travel to external events and customer offices for project related work. Are you willing and able to commit to this?\" is empty after filling",
+    "required \"In which country do you currently work?\" is empty after filling",
+    "required \"During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.\" is empty after filling",
+    "required \"In the past ten years, looking only at the time since you graduated your first undergraduate degree, how many companies have you worked for?\" is empty after filling",
+    "required \"Which gender do you identify as?\" is empty after filling",
+    "required \"Please indicate your nationality:\" is empty after filling"
+  ]
+}

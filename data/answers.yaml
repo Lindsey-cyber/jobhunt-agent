@@ -720,5 +720,6 @@ answers:
     aliases:
       - Please list 3-5 key words indicating your research areas of interest.
       - What are your research areas of interest?
+      - Describe your research interests and area of expertise (1 sentence).
     answer: multimodal fusion for fine-grained visual classification; representation analysis of vision foundation models; self-supervised denoising for neural imaging; hierarchical multi-agent reasoning with tool generation; real-time vision for robotics
     origin: human

@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you legally authorized to work in the country in which this role is located?\": sensitive question with no exact answer",
+    "required \"This is a hybrid position, are you willing to work from our office in Century City?\": no answer in profile or answer bank",
+    "required \"Were you referred for this position?\": no answer in profile or answer bank",
+    "required \"Are you legally authorized to work in the country in which this role is located?\" is empty after filling",
+    "required \"This is a hybrid position, are you willing to work from our office in Century City?\" is empty after filling",
+    "required \"Were you referred for this position?\" is empty after filling"
+  ]
+}

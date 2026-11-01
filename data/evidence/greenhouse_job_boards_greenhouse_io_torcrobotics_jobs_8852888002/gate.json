@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What base salary range are you targeting for your next opportunity?\": compensation is never filled automatically",
+    "required \"If you checked either 'I am a Citizen or Legal Permanent Resident of a different country' or 'I reside in a different country and have a valid work visa there' please indicate the applicable country or countries. Type N/A if not applicable.\": sensitive question with no exact answer",
+    "required \"Do you have an agreement between you and your current or former employer that may restrict your ability to accept this offer of employment with Torc or restrict any work that you may do for Torc?\": no answer in profile or answer bank",
+    "required \"Do you have any relatives or family members currently employed at Torc Robotics?\": sensitive question with no exact answer",
+    "required \"U.S. Export Control Requirements - Are you a citizen, national, or resident of any of the following countries/regions? Check each that apply:\": sensitive question with no exact answer",
+    "required \"If you checked any of the boxes above other than None / Not applicable, then please provide additional information regarding your immigration and residency status. Check each that apply:\": no answer in profile or answer bank",
+    "required \"What base salary range are you targeting for your next opportunity?\" is empty after filling",
+    "required \"If you checked either 'I am a Citizen or Legal Permanent Resident of a different country' or 'I reside in a different country and have a valid work visa there' please indicate the applicable country or countries. Type N/A if not applicable.\" is empty after filling",
+    "required \"Do you have an agreement between you and your current or former employer that may restrict your ability to accept this offer of employment with Torc or restrict any work that you may do for Torc?\" is empty after filling",
+    "required \"Do you have any relatives or family members currently employed at Torc Robotics?\" is empty after filling",
+    "required \"U.S. Export Control Requirements - Are you a citizen, national, or resident of any of the following countries/regions? Check each that apply:\" is empty after filling",
+    "required \"If you checked any of the boxes above other than None / Not applicable, then please provide additional information regarding your immigration and residency status. Check each that apply:\" is empty after filling"
+  ]
+}

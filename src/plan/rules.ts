@@ -12,7 +12,7 @@ export const VETO: { pattern: RegExp; reason: string }[] = [
 ];
 
 export const COMPENSATION_VETO = VETO[0]!;
-export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target|requirements?)\b/;
+export const SALARY_EXPECTATION = /\b(expect|expectation|expectations|expected|desired|target|targeting|requirements?)\b/;
 // Salary history is never given. A disclaimer saying it is not asked ("We are not requesting
 // information about your current or past compensation", TransUnion) does not make it one.
 export const SALARY_HISTORY = /^(?!.*\bnot (requesting|asking|seeking)\b).*\b(current|previous|past|prior|last|history)\b/;
@@ -44,7 +44,7 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 
 // "the country where the job is located" names no country; the posting does.
 // Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry where the (job|position|role) (you are applying for |you applied for )?is (located|based)\b|\bcountry you are applying (to|for|in)\b|\bcountry (for which|where) you are applying\b|\bin the country for this (job|position|role)\b/;
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry where the (job|position|role) (you are applying for |you applied for )?is (located|based)\b|\bcountry you are applying (to|for|in)\b|\bcountry (for which|where) you are applying\b|\bin the country for this (job|position|role)\b|\bcountry (in which|where) (this|the) (job|position|role) is (located|posted|based)\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
@@ -113,6 +113,13 @@ function yearsAnswer(options: string[] | undefined): string | undefined {
 
 export const PROFILE_RULES: ProfileRule[] = [
   // ---- The candidate's standing answers (2026-11-01) ----
+  // Residence country, permanent address, clearance, transcripts, on-site work: from her profile.
+  { path: "contact.address.country", pattern: /^(what|which) country (are you currently a resident of|do you (currently )?(live|reside) in)$|^country of residence$/, resolve: (p, _l, ctx) => (ctx.options ?? []).find((o) => /^(united states|usa|us)\b/i.test(o.trim())) ?? p.contact.address.country },
+  { path: "contact.address", pattern: /^permanent (legal )?address$/, kinds: ["text", "textarea"], resolve: (p) => { const a = p.contact.address; return [a.line1, a.line2, a.city, `${a.state} ${a.postalCode ?? ""}`.trim(), a.country].filter(Boolean).join(", "); } },
+  // She is on F-1 OPT and has never held a U.S. security clearance.
+  { path: "workAuthorization.status", pattern: /^do you (currently )?(hold|have) (an? )?(active |current )?(u ?s )?security clearance$/, kinds: ["select", "radio", "combobox"], resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^(no|none)\b/i.test(o.trim())) ?? "No" },
+  { path: "answers.transcript", pattern: /^are you willing to (share|provide) (your )?(academic )?transcripts?$/, kinds: ["select", "radio", "combobox"], resolve: () => "Yes" },
+  { path: "workArrangement", pattern: /\bare you able to work on ?site\b|\bable to work (in|from) (the|our) office\b/, kinds: ["select", "radio", "combobox"], resolve: (p) => (p.workArrangement?.onsite ? "Yes" : undefined) },
   // Travel: any amount, up to 100%. Picks the option allowing the most travel.
   {
     path: "answers.travel",
@@ -339,7 +346,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   {
     path: "workAuthorization.authorizedCountries",
-    pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|eligible to work|right to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
+    pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|(currently )?eligible to work|right to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
     resolve: (p, label, ctx) => {
       // "... in the country you currently reside in": hers, not the job's.
       // Stripe: "the location(s) you selected" when the posting names none ("N/A"): the earlier answer chose her residence country.
@@ -375,9 +382,9 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // FanDuel: "Are you an employee of Flutter or a Flutter brand?" Current employers are the ones with no end date.
     path: "workHistory",
-    pattern: /^are you (currently )?an? (current )?employee of [a-z0-9&.' -]{1,60}$/,
+    pattern: /^are you (currently )?an? (current )?employee of [a-z0-9&.' -]{1,60}$|^are you currently employed (by|at|with) [a-z0-9&.' -]{1,60}$/,
     resolve: (p, label) => {
-      const named = /\bemployee of (.+?)(?: or (?:a|an|any|its|one of)\b.*)?$/.exec(label)?.[1]?.trim();
+      const named = /\b(?:employee of|employed (?:by|at|with)) (.+?)(?: or (?:a|an|any|its|one of)\b.*)?$/.exec(label)?.[1]?.trim();
       if (!named) return undefined;
       return yesNo(p.workHistory.some((w) => !w.end && (w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase()))));
     },

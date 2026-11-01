@@ -1,0 +1,23 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you authorised to work in the country in which this role is located? (Fin sponsors immigration for some roles so we encourage you to still apply if you require sponsorship.)\": sensitive question with no exact answer",
+    "required \"Current Location\": answer \"New York, New York, United States\" matches none of the options",
+    "required \"Are you willing to relocate?\": no answer in profile or answer bank",
+    "required \"We work under a hybrid in-office model. Are you willing to work from our office location 3 days per week?\": no answer in profile or answer bank",
+    "required \"Please email me about future job openings\": no answer in profile or answer bank",
+    "required \"US Export Control laws 2026: Are you a citizen, national or permanent resident of Iran, Cuba, North Korea or Syria?\": sensitive question with no exact answer",
+    "required \"US Export Control laws 2026: Do you hold an ADDITIONAL citizenship, nationality, or permanent residency of any other country that is NOT Iran, Cuba, Syria or North Korea?\": sensitive question with no exact answer",
+    "required \"US Export Control laws 2026: In which country did you obtain citizenship, nationality, or permanent residency first?\": sensitive question with no exact answer",
+    "required \"Point of Data Transfer\": acknowledgements and consents need the candidate",
+    "required \"Are you authorised to work in the country in which this role is located? (Fin sponsors immigration for some roles so we encourage you to still apply if you require sponsorship.)\" is empty after filling",
+    "required \"Current Location\" is empty after filling",
+    "required \"Are you willing to relocate?\" is empty after filling",
+    "required \"We work under a hybrid in-office model. Are you willing to work from our office location 3 days per week?\" is empty after filling",
+    "required \"Please email me about future job openings\" is empty after filling",
+    "required \"US Export Control laws 2026: Are you a citizen, national or permanent resident of Iran, Cuba, North Korea or Syria?\" is empty after filling",
+    "required \"US Export Control laws 2026: Do you hold an ADDITIONAL citizenship, nationality, or permanent residency of any other country that is NOT Iran, Cuba, Syria or North Korea?\" is empty after filling",
+    "required \"US Export Control laws 2026: In which country did you obtain citizenship, nationality, or permanent residency first?\" is empty after filling",
+    "required \"Point of Data Transfer\" is empty after filling"
+  ]
+}

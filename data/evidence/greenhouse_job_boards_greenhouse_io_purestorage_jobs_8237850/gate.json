@@ -1,0 +1,22 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Does the deemed export rule affect your employment by Everpure ?\": no answer in profile or answer bank",
+    "required \"Personal Information Policy\": acknowledgements and consents need the candidate",
+    "readback mismatch on \"Country\": expected \"United States\", got \"\"",
+    "readback mismatch on \"Location (City)\": expected \"New York, New York, United States\", got \"\"",
+    "readback mismatch on \"School\": expected \"Columbia University\", got \"\"",
+    "readback mismatch on \"Degree\": expected \"Master of Science\", got \"\"",
+    "readback mismatch on \"Discipline\": expected \"Statistics\", got \"\"",
+    "readback mismatch on \"Have you previously worked for Everpure (formerly Pure Storage)?\": expected \"No\", got \"\"",
+    "readback mismatch on \"Are you authorized to work in the country you are applying to work in?\": expected \"Yes\", got \"\"",
+    "readback mismatch on \"Will you now or in the future require sponsorship for employment visa status?\": expected \"Yes\", got \"\"",
+    "required \"Country\" is empty after filling",
+    "required \"Location (City)\" is empty after filling",
+    "required \"Have you previously worked for Everpure (formerly Pure Storage)?\" is empty after filling",
+    "required \"Does the deemed export rule affect your employment by Everpure ?\" is empty after filling",
+    "required \"Are you authorized to work in the country you are applying to work in?\" is empty after filling",
+    "required \"Will you now or in the future require sponsorship for employment visa status?\" is empty after filling",
+    "required \"Personal Information Policy\" is empty after filling"
+  ]
+}

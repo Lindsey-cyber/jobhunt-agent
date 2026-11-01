@@ -272,6 +272,13 @@ describe("buildPlan", () => {
     expect(one("Do you meet all of the Basic Qualifications for this role as specified in the job description?")).toMatchObject({ value: "Yes" });
     expect(one("How many years of experience do you have using data analytics tools (i.e. Tableau, Looker, BigQuery, AWS)", ["0-1", "1-3", "3-5", "5+"])).toMatchObject({ value: "1-3" });
     expect(one("Years of ML Infrastructure experience", [], "text")).toMatchObject({ value: "2" });
+    expect(one("What country are you currently a resident of?", ["Canada", "United States"])).toMatchObject({ value: "United States" });
+    expect(one("Do you hold a security clearance?")).toMatchObject({ value: "No" });
+    expect(one("Are you willing to share your academic transcripts?")).toMatchObject({ value: "Yes" });
+    const onsite = { ...user.profile, workArrangement: { onsite: true, relocate: true } };
+    expect(buildPlan(form([field("This is not a remote role. Are you able to work on site at our facility?", { kind: "combobox", options: ["Yes", "No"] })]), onsite, user.bank).items[0]).toMatchObject({ value: "Yes" });
+    expect(one("Are you currently employed by PokerStars?")).toMatchObject({ value: "No" });
+    expect(one("Permanent Legal Address", [], "text")).toMatchObject({ status: "fill" });
     // Not swallowed: relatives, clearance, disability stay with their own rules.
     expect(one("Do you have a current security clearance?")).not.toMatchObject({ value: "Yes" });
     expect(one("Do you have relatives employed by Acme?")).not.toMatchObject({ value: "Yes" });

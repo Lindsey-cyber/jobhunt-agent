@@ -1,0 +1,94 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69558521",
+      "label": "Current or most recent company?",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69558522",
+      "label": "Have you previously worked for Fin (formerly Intercom) or Salesforce?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69558523",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69558524",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69558525",
+      "label": "How did you hear about this job?",
+      "expected": "Social Media",
+      "actual": "Social Media",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you authorised to work in the country in which this role is located? (Fin sponsors immigration for some roles so we encourage you to still apply if you require sponsorship.)",
+    "Current Location",
+    "Are you willing to relocate?",
+    "We work under a hybrid in-office model. Are you willing to work from our office location 3 days per week?",
+    "Please email me about future job openings",
+    "US Export Control laws 2026: Are you a citizen, national or permanent resident of Iran, Cuba, North Korea or Syria?",
+    "US Export Control laws 2026: Do you hold an ADDITIONAL citizenship, nationality, or permanent residency of any other country that is NOT Iran, Cuba, Syria or North Korea?",
+    "US Export Control laws 2026: In which country did you obtain citizenship, nationality, or permanent residency first?",
+    "Point of Data Transfer"
+  ],
+  "fillErrors": []
+}

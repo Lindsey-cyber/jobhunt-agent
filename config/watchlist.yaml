@@ -59,592 +59,592 @@ greenhouse:
   - { board: faire, company: 'Faire', size: medium_large }
   # Added 2026-11-01 at the candidate's request: boards seen through third-party lists, plus a curated set of
   # US tech, AI and trading companies. Each answered the public board API with open US jobs that day.
-  - { board: blackedgecapital, company: ' BlackEdge Capital', size: unknown }
-  - { board: 10beauty, company: '10Beauty', size: unknown }
-  - { board: 3redpartners, company: '3Red Partners', size: unknown }
-  - { board: 66degrees, company: '66degrees', size: unknown }
-  - { board: abacusinsights, company: 'Abacus Insights', size: unknown }
-  - { board: accenturefederalservices, company: 'Accenture Federal Services', size: unknown }
-  - { board: acuitymd, company: 'AcuityMD', size: unknown }
-  - { board: addepar1, company: 'Addepar', size: unknown }
-  - { board: airtable, company: 'Airtable', size: unknown }
-  - { board: akunacapital, company: 'Akuna Capital', size: unknown }
-  - { board: akunacapitaloci, company: 'Akuna Capital On-Campus Interviews', size: unknown }
-  - { board: alarmcom, company: 'Alarm.com', size: unknown }
-  - { board: altentechnologyusa, company: 'ALTEN Technology USA', size: unknown }
-  - { board: americaninstitutesforresearch, company: 'American Institutes for Research', size: unknown }
-  - { board: amiralearning, company: 'Amira Learning', size: unknown }
-  - { board: anthropic, company: 'Anthropic', size: unknown }
-  - { board: apcon, company: 'APCON', size: unknown }
-  - { board: appian, company: 'Appian Corporation ', size: unknown }
-  - { board: applovin, company: 'AppLovin', size: unknown }
-  - { board: apptronik, company: 'Apptronik', size: unknown }
-  - { board: aqr, company: 'AQR', size: unknown }
-  - { board: aquaticcapitalmanagement, company: 'Aquatic Capital Management', size: unknown }
-  - { board: assystinc, company: 'ASSYST, Inc.', size: unknown }
-  - { board: asteralabs, company: 'Astera Labs', size: unknown }
-  - { board: asteraearlycareer2027, company: 'Astera Labs Early Career - North America 2027', size: unknown }
-  - { board: astranis, company: 'Astranis', size: unknown }
-  - { board: astronicscorporation, company: 'Astronics ', size: unknown }
-  - { board: atomicobject, company: 'Atomic Object', size: unknown }
-  - { board: attentive, company: 'Attentive', size: unknown }
-  - { board: attotude, company: 'AttoTude', size: unknown }
-  - { board: authenticinsurance, company: 'Authentic', size: unknown }
-  - { board: avride, company: 'Avride', size: unknown }
-  - { board: axon, company: 'Axon', size: unknown }
-  - { board: babelstreet, company: 'Babel Street', size: unknown }
-  - { board: barkleyokrp, company: 'BarkleyOKRP', size: unknown }
-  - { board: bertramcapitalmanagement, company: 'Bertram Capital Management', size: unknown }
-  - { board: betterment, company: 'Betterment', size: unknown }
-  - { board: beyondtrust, company: 'BeyondTrust', size: unknown }
-  - { board: bird, company: 'Bird', size: unknown }
-  - { board: blackcanyonconsulting, company: 'Black Canyon Consulting', size: unknown }
-  - { board: blenheimchalcot, company: 'Blenheim Chalcot', size: unknown }
-  - { board: blockchain, company: 'Blockchain.com', size: unknown }
-  - { board: botauto, company: 'Bot Auto', size: unknown }
-  - { board: bottomlinetechnologies, company: 'Bottomline', size: unknown }
-  - { board: bracebridgecapital, company: 'Bracebridge Capital', size: unknown }
-  - { board: braze, company: 'Braze', size: unknown }
-  - { board: bridgewater89, company: 'Bridgewater Associates', size: unknown }
-  - { board: bwaltpostings, company: 'Bridgewater Associates LP', size: unknown }
-  - { board: cambridgeconsultantslimited, company: 'Cambridge Consultants', size: unknown }
-  - { board: canonical, company: 'Canonical', size: unknown }
-  - { board: captivation, company: 'Captivation Software', size: unknown }
-  - { board: castelioncorporation, company: 'Castelion Corporation', size: unknown }
-  - { board: catapultsports, company: 'Catapult Sports', size: unknown }
-  - { board: chainguard, company: 'Chainguard', size: unknown }
-  - { board: chaosindustries, company: 'CHAOS Industries', size: unknown }
-  - { board: charterup, company: 'CharterUP', size: unknown }
-  - { board: chowbus, company: 'Chowbus', size: unknown }
-  - { board: claudecorps, company: 'Claude Corps', size: unknown }
-  - { board: clear, company: 'CLEAR - Corporate', size: unknown }
-  - { board: clearwayjobs, company: 'Clearway Energy', size: unknown }
-  - { board: clevelandguardiansbops, company: 'Cleveland Guardians - Baseball Operations', size: unknown }
-  - { board: coast, company: 'Coast', size: unknown }
-  - { board: cockroachlabs, company: 'Cockroach Labs', size: unknown }
-  - { board: coherentsolutions, company: 'Coherent Solutions', size: unknown }
-  - { board: collibra, company: 'Collibra', size: unknown }
-  - { board: constantcontact, company: 'Constant Contact', size: unknown }
-  - { board: ctccampusboard, company: 'CTC Campus - External, Not Advertised', size: unknown }
-  - { board: chicagotradingcampus, company: 'CTC Campus - Website', size: unknown }
-  - { board: cultureamp, company: 'Culture Amp', size: unknown }
-  - { board: current, company: 'Current', size: unknown }
-  - { board: davinciderivatives, company: 'Da Vinci', size: unknown }
-  - { board: darkwolfsolutions, company: 'Dark Wolf Solutions', size: unknown }
-  - { board: datacor, company: 'Datacor', size: unknown }
-  - { board: dataiku, company: 'Dataiku', size: unknown }
-  - { board: descript, company: 'Descript', size: unknown }
-  - { board: dhpace, company: 'DH Pace', size: unknown }
-  - { board: doordashcanada, company: 'DoorDash Canada', size: unknown }
-  - { board: drweng, company: 'DRW ', size: unknown }
-  - { board: duolingounirecruitment, company: 'Duolingo University Recruitment', size: unknown }
-  - { board: dvtrading, company: 'DV Trading', size: unknown }
-  - { board: edmentum, company: 'Edmentum', size: unknown }
-  - { board: elwoodtechnologies, company: 'Elwood Technologies', size: unknown }
-  - { board: enigmaio, company: 'Enigma', size: unknown }
-  - { board: purestorage, company: 'Everpure', size: unknown }
-  - { board: evolutioniq, company: 'EvolutionIQ', size: unknown }
-  - { board: evolver, company: 'Evolver', size: unknown }
-  - { board: fanaticsfbg, company: 'Fanatics Betting & Gaming', size: unknown }
-  - { board: fanduel, company: 'FanDuel', size: unknown }
-  - { board: faradayfuture, company: 'Faraday Future', size: unknown }
-  - { board: fartherfinance, company: 'Farther', size: unknown }
-  - { board: fastly, company: 'Fastly', size: unknown }
-  - { board: figureai, company: 'Figure', size: unknown }
-  - { board: intercom, company: 'Fin', size: unknown }
-  - { board: localitymediallcdbafirstdue, company: 'First Due', size: unknown }
-  - { board: fiveringsllc, company: 'Five Rings LLC - Careers', size: unknown }
-  - { board: fivetran, company: 'Fivetran ', size: unknown }
-  - { board: flatironhealth, company: 'Flatiron Health', size: unknown }
-  - { board: flexport, company: 'Flexport', size: unknown }
-  - { board: flowtraders, company: 'Flow Traders', size: unknown }
-  - { board: fosphamarketing, company: 'Fospha ', size: unknown }
-  - { board: fourkites, company: 'FourKites', size: unknown }
-  - { board: freeformfuturecorp, company: 'Freeform', size: unknown }
-  - { board: globalizationpartners, company: 'G-P', size: unknown }
-  - { board: gallup, company: 'Gallup', size: unknown }
-  - { board: garnerhealth, company: 'Garner Health', size: unknown }
-  - { board: gassouth, company: 'Gas South', size: unknown }
-  - { board: gemini, company: 'Gemini', size: unknown }
-  - { board: remote, company: 'General Assembly Remote Jobs ', size: unknown }
-  - { board: generalmatter, company: 'General Matter', size: unknown }
-  - { board: genevatrading, company: 'Geneva Trading', size: unknown }
-  - { board: genscript, company: 'GenScript', size: unknown }
-  - { board: giftogram, company: 'Giftogram', size: unknown }
-  - { board: givedirectly, company: 'GiveDirectly', size: unknown }
-  - { board: glydways, company: 'Glydways', size: unknown }
-  - { board: goodfire, company: 'Goodfire', size: unknown }
-  - { board: grahamcapitalmanagement, company: 'Graham Capital Management, L.P.', size: unknown }
-  - { board: graphcore, company: 'Graphcore', size: unknown }
-  - { board: graphcore-early-careers, company: 'Graphcore Early Careers', size: unknown }
-  - { board: gravitonresearchcapital, company: 'Graviton Research Capital LLP', size: unknown }
-  - { board: harbingermotors, company: 'Harbinger Motors Inc.', size: unknown }
-  - { board: harborglobal, company: 'Harbor', size: unknown }
-  - { board: headlandstechnologiesllc, company: 'Headlands Technologies LLC', size: unknown }
-  - { board: hearst, company: 'Hearst', size: unknown }
-  - { board: heartflowinc, company: 'Heartflow', size: unknown }
-  - { board: hellbenderinc, company: 'HELLBENDER Inc.', size: unknown }
-  - { board: heygen, company: 'HeyGen', size: unknown }
-  - { board: humaninterestswe1, company: 'Human Interest SWE 1', size: unknown }
-  - { board: humansignal, company: 'HumanSignal', size: unknown }
-  - { board: i360technologiesinc, company: 'i360technologies, Inc.', size: unknown }
-  - { board: icapitalnetwork, company: 'iCapital', size: unknown }
-  - { board: idme, company: 'ID.me', size: unknown }
-  - { board: idmeuniversityrecruiting, company: 'ID.me University Recruiting', size: unknown }
-  - { board: imc, company: 'IMC', size: unknown }
-  - { board: impact, company: 'impact.com', size: unknown }
-  - { board: indeedflex, company: 'Indeed Flex', size: unknown }
-  - { board: innodatainc, company: 'Innodata Inc.', size: unknown }
-  - { board: instalilyai, company: 'INSTALILY.AI', size: unknown }
-  - { board: instawork, company: 'Instawork', size: unknown }
-  - { board: intersystems, company: 'InterSystems', size: unknown }
-  - { board: janestreet, company: 'Jane Street', size: unknown }
-  - { board: jumio, company: 'Jumio', size: unknown }
-  - { board: jumptrading, company: 'Jump Trading', size: unknown }
-  - { board: k2spacecorporation, company: 'K2 Space ', size: unknown }
-  - { board: kairospower, company: 'Kairos Power', size: unknown }
-  - { board: kikoff, company: 'Kikoff', size: unknown }
-  - { board: klaviyo, company: 'Klaviyo', size: unknown }
-  - { board: klaviyocampus, company: 'Klaviyo Campus', size: unknown }
-  - { board: knowbe4, company: 'KnowBe4', size: unknown }
-  - { board: kodiak, company: 'Kodiak', size: unknown }
-  - { board: labelbox, company: 'Labelbox', size: unknown }
-  - { board: latitude, company: 'Latitude AI', size: unknown }
-  - { board: lattice, company: 'Lattice', size: unknown }
-  - { board: lgelectronics, company: 'LG Electronics', size: unknown }
-  - { board: lightmatter, company: 'Lightmatter', size: unknown }
-  - { board: lilasciences, company: 'Lila Sciences', size: unknown }
-  - { board: artefactlinkedin, company: 'LinkedIn Job Wrapping', size: unknown }
-  - { board: lodestarspace, company: 'Lodestar', size: unknown }
-  - { board: machindustries, company: 'Mach Industries', size: unknown }
-  - { board: mangroup, company: 'Man Group', size: unknown }
-  - { board: manifest, company: 'Manifest', size: unknown }
-  - { board: map, company: 'MAP', size: unknown }
-  - { board: mw-tech-grad, company: 'Marshall Wace - Graduate & Associate roles', size: unknown }
-  - { board: mattermost, company: 'Mattermost', size: unknown }
-  - { board: mavensecuritiesholdingltd, company: 'Maven', size: unknown }
-  - { board: mediaalpha, company: 'MediaAlpha', size: unknown }
-  - { board: mercury, company: 'Mercury', size: unknown }
-  - { board: agency, company: 'Meridial', size: unknown }
-  - { board: consensys, company: 'MetaMask', size: unknown }
-  - { board: missiononemedia, company: 'MissionOne Media', size: unknown }
-  - { board: mixpanel, company: 'Mixpanel', size: unknown }
-  - { board: morsecorp, company: 'MORSE Corp', size: unknown }
-  - { board: motional, company: 'Motional', size: unknown }
-  - { board: motive, company: 'Motive', size: unknown }
-  - { board: moxxidigital, company: 'Moxxi Digital', size: unknown }
-  - { board: muonspace, company: 'Muon Space', size: unknown }
-  - { board: myfundedfutures, company: 'MyFunded Futures', size: unknown }
-  - { board: netlify, company: 'Netlify', size: unknown }
-  - { board: networkbio, company: 'Network Bio', size: unknown }
-  - { board: neuralink, company: 'Neuralink', size: unknown }
-  - { board: nimblerobotics, company: 'Nimble Robotics', size: unknown }
-  - { board: undercontrolroboticsinc, company: 'Noble Machines, Inc', size: unknown }
-  - { board: gingerlabsinc, company: 'Notability', size: unknown }
-  - { board: nuancelabs, company: 'Nuance Labs', size: unknown }
-  - { board: oklo, company: 'Oklo', size: unknown }
-  - { board: oneimaging, company: 'OneImaging', size: unknown }
-  - { board: opentable, company: 'OpenTable', size: unknown }
-  - { board: optimove, company: 'Optimove', size: unknown }
-  - { board: orbisoperations, company: 'Orbis ', size: unknown }
-  - { board: pathrobotics, company: 'Path Robotics', size: unknown }
-  - { board: pdtpartners, company: 'PDT Partners', size: unknown }
-  - { board: pendo, company: 'Pendo', size: unknown }
-  - { board: perfectserve, company: 'PerfectServe', size: unknown }
-  - { board: perpay, company: 'Perpay - Career''s Page', size: unknown }
-  - { board: planetscale, company: 'PlanetScale', size: unknown }
-  - { board: pmg, company: 'PMG', size: unknown }
-  - { board: point72, company: 'Point72 ', size: unknown }
-  - { board: precisionaq, company: 'Precision AQ', size: unknown }
-  - { board: precisionmedicinegroup, company: 'Precision Medicine Group', size: unknown }
-  - { board: project44, company: 'project44', size: unknown }
-  - { board: prolificacademicltd, company: 'Prolific Academic Ltd', size: unknown }
-  - { board: pubmatic, company: 'PubMatic', size: unknown }
-  - { board: quantiq, company: 'Quantiq', size: unknown }
-  - { board: quberesearchandtechnologies, company: 'Qube Research & Technologies', size: unknown }
-  - { board: reach3insights, company: 'Reach3 Insights', size: unknown }
-  - { board: recidiviz, company: 'Recidiviz', size: unknown }
-  - { board: recursionpharmaceuticals, company: 'Recursion', size: unknown }
-  - { board: redwoodmaterials, company: 'Redwood Materials', size: unknown }
-  - { board: thoughtworksreferral, company: 'Referrals Only', size: unknown }
-  - { board: relativity, company: 'Relativity Space', size: unknown }
-  - { board: relaypro, company: 'Relay', size: unknown }
-  - { board: rendezvousrobotics, company: 'Rendezvous Robotics', size: unknown }
-  - { board: ripple, company: 'Ripple ', size: unknown }
-  - { board: roboforce, company: 'RoboForce', size: unknown }
-  - { board: rocketlab, company: 'Rocket Lab Corporation', size: unknown }
-  - { board: rubrik, company: 'Rubrik Job Board', size: unknown }
-  - { board: rvohealth, company: 'RVO Health', size: unknown }
-  - { board: salesloft, company: 'Salesloft', size: unknown }
-  - { board: samsungresearchamericainternship, company: 'Samsung Research America Internship', size: unknown }
-  - { board: schonfeld, company: 'Schonfeld ', size: unknown }
-  - { board: scopely, company: 'Scopely', size: unknown }
-  - { board: sigmacomputing, company: 'Sigma Computing', size: unknown }
-  - { board: singlestore, company: 'SingleStore', size: unknown }
-  - { board: sirenopt, company: 'SirenOpt', size: unknown }
-  - { board: sitimecorporation, company: 'SiTime Corporation', size: unknown }
-  - { board: spacex, company: 'SpaceX', size: unknown }
-  - { board: xai, company: 'SpaceXSI', size: unknown }
-  - { board: splashfinancial, company: 'Splash Financial', size: unknown }
-  - { board: star-catcher, company: 'Star Catcher', size: unknown }
-  - { board: starmountaincapital, company: 'Star Mountain Capital', size: unknown }
-  - { board: starburst, company: 'Starburst', size: unknown }
-  - { board: startree, company: 'StarTree', size: unknown }
-  - { board: stitchfix, company: 'Stitch Fix', size: unknown }
-  - { board: systemstechnologyresearch, company: 'STR', size: unknown }
-  - { board: striveworks, company: 'Striveworks', size: unknown }
-  - { board: superapp, company: 'SuperApp', size: unknown }
-  - { board: synack, company: 'Synack', size: unknown }
-  - { board: taboola, company: 'Taboola', size: unknown }
-  - { board: tailscale, company: 'Tailscale', size: unknown }
-  - { board: tanium, company: 'Tanium', size: unknown }
-  - { board: technergetics, company: 'Technergetics', size: unknown }
-  - { board: teletrackingtechnologiesinc, company: 'TeleTracking Technologies, Inc.', size: unknown }
-  - { board: tenstorrent, company: 'Tenstorrent', size: unknown }
-  - { board: textnowinc, company: 'TextNow, Inc.', size: unknown }
-  - { board: thealleninstitute, company: 'The Allen Institute for Artificial Intelligence', size: unknown }
-  - { board: thebrattlegroup, company: 'The Brattle Group', size: unknown }
-  - { board: thetradedesk, company: 'The Trade Desk', size: unknown }
-  - { board: think-cell, company: 'think-cell', size: unknown }
-  - { board: thinkcellsoftware, company: 'think-cell Software', size: unknown }
-  - { board: torcrobotics, company: 'Torc Robotics', size: unknown }
-  - { board: towerresearchcapital, company: 'Tower Research Capital', size: unknown }
-  - { board: trace3, company: 'Trace3', size: unknown }
-  - { board: transmarketgroup, company: 'TransMarket Group', size: unknown }
-  - { board: tripadvisor, company: 'Tripadvisor', size: unknown }
-  - { board: trovebrands, company: 'Trove Brands', size: unknown }
-  - { board: trueanomalyinc, company: 'True Anomaly', size: unknown }
-  - { board: truveta, company: 'Truveta', size: unknown }
-  - { board: tubitv, company: 'Tubi', size: unknown }
-  - { board: uasi, company: 'UASI', size: unknown }
-  - { board: upstart, company: 'Upstart', size: unknown }
-  - { board: vast, company: 'Vast', size: unknown }
-  - { board: via, company: 'Via', size: unknown }
-  - { board: virtu, company: 'Virtu Financial', size: unknown }
-  - { board: vividseatsllc, company: 'Vivid Seats', size: unknown }
-  - { board: voloridgeinvestmentmanagement, company: 'Voloridge Investment Management', size: unknown }
-  - { board: voyagertechnologiesinc, company: 'Voyager Technologies, Inc.', size: unknown }
-  - { board: wilsonelser, company: 'Wilson Elser - Business & Legal Professionals', size: unknown }
-  - { board: wonderschool, company: 'Wonderschool', size: unknown }
-  - { board: worldquant, company: 'WorldQuant', size: unknown }
-  - { board: wpp, company: 'WPP', size: unknown }
-  - { board: xairatherapeutics, company: 'Xaira Therapeutics', size: unknown }
-  - { board: xpengmotors, company: 'XPENG', size: unknown }
-  - { board: yext, company: 'Yext', size: unknown }
-  - { board: zetaglobal, company: 'Zeta Global', size: unknown }
-  - { board: ziprecruiter, company: 'ZipRecruiter', size: unknown }
+  - { board: 'blackedgecapital', company: ' BlackEdge Capital', size: unknown }
+  - { board: '10beauty', company: '10Beauty', size: unknown }
+  - { board: '3redpartners', company: '3Red Partners', size: unknown }
+  - { board: '66degrees', company: '66degrees', size: unknown }
+  - { board: 'abacusinsights', company: 'Abacus Insights', size: unknown }
+  - { board: 'accenturefederalservices', company: 'Accenture Federal Services', size: unknown }
+  - { board: 'acuitymd', company: 'AcuityMD', size: unknown }
+  - { board: 'addepar1', company: 'Addepar', size: unknown }
+  - { board: 'airtable', company: 'Airtable', size: unknown }
+  - { board: 'akunacapital', company: 'Akuna Capital', size: unknown }
+  - { board: 'akunacapitaloci', company: 'Akuna Capital On-Campus Interviews', size: unknown }
+  - { board: 'alarmcom', company: 'Alarm.com', size: unknown }
+  - { board: 'altentechnologyusa', company: 'ALTEN Technology USA', size: unknown }
+  - { board: 'americaninstitutesforresearch', company: 'American Institutes for Research', size: unknown }
+  - { board: 'amiralearning', company: 'Amira Learning', size: unknown }
+  - { board: 'anthropic', company: 'Anthropic', size: unknown }
+  - { board: 'apcon', company: 'APCON', size: unknown }
+  - { board: 'appian', company: 'Appian Corporation ', size: unknown }
+  - { board: 'applovin', company: 'AppLovin', size: unknown }
+  - { board: 'apptronik', company: 'Apptronik', size: unknown }
+  - { board: 'aqr', company: 'AQR', size: unknown }
+  - { board: 'aquaticcapitalmanagement', company: 'Aquatic Capital Management', size: unknown }
+  - { board: 'assystinc', company: 'ASSYST, Inc.', size: unknown }
+  - { board: 'asteralabs', company: 'Astera Labs', size: unknown }
+  - { board: 'asteraearlycareer2027', company: 'Astera Labs Early Career - North America 2027', size: unknown }
+  - { board: 'astranis', company: 'Astranis', size: unknown }
+  - { board: 'astronicscorporation', company: 'Astronics ', size: unknown }
+  - { board: 'atomicobject', company: 'Atomic Object', size: unknown }
+  - { board: 'attentive', company: 'Attentive', size: unknown }
+  - { board: 'attotude', company: 'AttoTude', size: unknown }
+  - { board: 'authenticinsurance', company: 'Authentic', size: unknown }
+  - { board: 'avride', company: 'Avride', size: unknown }
+  - { board: 'axon', company: 'Axon', size: unknown }
+  - { board: 'babelstreet', company: 'Babel Street', size: unknown }
+  - { board: 'barkleyokrp', company: 'BarkleyOKRP', size: unknown }
+  - { board: 'bertramcapitalmanagement', company: 'Bertram Capital Management', size: unknown }
+  - { board: 'betterment', company: 'Betterment', size: unknown }
+  - { board: 'beyondtrust', company: 'BeyondTrust', size: unknown }
+  - { board: 'bird', company: 'Bird', size: unknown }
+  - { board: 'blackcanyonconsulting', company: 'Black Canyon Consulting', size: unknown }
+  - { board: 'blenheimchalcot', company: 'Blenheim Chalcot', size: unknown }
+  - { board: 'blockchain', company: 'Blockchain.com', size: unknown }
+  - { board: 'botauto', company: 'Bot Auto', size: unknown }
+  - { board: 'bottomlinetechnologies', company: 'Bottomline', size: unknown }
+  - { board: 'bracebridgecapital', company: 'Bracebridge Capital', size: unknown }
+  - { board: 'braze', company: 'Braze', size: unknown }
+  - { board: 'bridgewater89', company: 'Bridgewater Associates', size: unknown }
+  - { board: 'bwaltpostings', company: 'Bridgewater Associates LP', size: unknown }
+  - { board: 'cambridgeconsultantslimited', company: 'Cambridge Consultants', size: unknown }
+  - { board: 'canonical', company: 'Canonical', size: unknown }
+  - { board: 'captivation', company: 'Captivation Software', size: unknown }
+  - { board: 'castelioncorporation', company: 'Castelion Corporation', size: unknown }
+  - { board: 'catapultsports', company: 'Catapult Sports', size: unknown }
+  - { board: 'chainguard', company: 'Chainguard', size: unknown }
+  - { board: 'chaosindustries', company: 'CHAOS Industries', size: unknown }
+  - { board: 'charterup', company: 'CharterUP', size: unknown }
+  - { board: 'chowbus', company: 'Chowbus', size: unknown }
+  - { board: 'claudecorps', company: 'Claude Corps', size: unknown }
+  - { board: 'clear', company: 'CLEAR - Corporate', size: unknown }
+  - { board: 'clearwayjobs', company: 'Clearway Energy', size: unknown }
+  - { board: 'clevelandguardiansbops', company: 'Cleveland Guardians - Baseball Operations', size: unknown }
+  - { board: 'coast', company: 'Coast', size: unknown }
+  - { board: 'cockroachlabs', company: 'Cockroach Labs', size: unknown }
+  - { board: 'coherentsolutions', company: 'Coherent Solutions', size: unknown }
+  - { board: 'collibra', company: 'Collibra', size: unknown }
+  - { board: 'constantcontact', company: 'Constant Contact', size: unknown }
+  - { board: 'ctccampusboard', company: 'CTC Campus - External, Not Advertised', size: unknown }
+  - { board: 'chicagotradingcampus', company: 'CTC Campus - Website', size: unknown }
+  - { board: 'cultureamp', company: 'Culture Amp', size: unknown }
+  - { board: 'current', company: 'Current', size: unknown }
+  - { board: 'davinciderivatives', company: 'Da Vinci', size: unknown }
+  - { board: 'darkwolfsolutions', company: 'Dark Wolf Solutions', size: unknown }
+  - { board: 'datacor', company: 'Datacor', size: unknown }
+  - { board: 'dataiku', company: 'Dataiku', size: unknown }
+  - { board: 'descript', company: 'Descript', size: unknown }
+  - { board: 'dhpace', company: 'DH Pace', size: unknown }
+  - { board: 'doordashcanada', company: 'DoorDash Canada', size: unknown }
+  - { board: 'drweng', company: 'DRW ', size: unknown }
+  - { board: 'duolingounirecruitment', company: 'Duolingo University Recruitment', size: unknown }
+  - { board: 'dvtrading', company: 'DV Trading', size: unknown }
+  - { board: 'edmentum', company: 'Edmentum', size: unknown }
+  - { board: 'elwoodtechnologies', company: 'Elwood Technologies', size: unknown }
+  - { board: 'enigmaio', company: 'Enigma', size: unknown }
+  - { board: 'purestorage', company: 'Everpure', size: unknown }
+  - { board: 'evolutioniq', company: 'EvolutionIQ', size: unknown }
+  - { board: 'evolver', company: 'Evolver', size: unknown }
+  - { board: 'fanaticsfbg', company: 'Fanatics Betting & Gaming', size: unknown }
+  - { board: 'fanduel', company: 'FanDuel', size: unknown }
+  - { board: 'faradayfuture', company: 'Faraday Future', size: unknown }
+  - { board: 'fartherfinance', company: 'Farther', size: unknown }
+  - { board: 'fastly', company: 'Fastly', size: unknown }
+  - { board: 'figureai', company: 'Figure', size: unknown }
+  - { board: 'intercom', company: 'Fin', size: unknown }
+  - { board: 'localitymediallcdbafirstdue', company: 'First Due', size: unknown }
+  - { board: 'fiveringsllc', company: 'Five Rings LLC - Careers', size: unknown }
+  - { board: 'fivetran', company: 'Fivetran ', size: unknown }
+  - { board: 'flatironhealth', company: 'Flatiron Health', size: unknown }
+  - { board: 'flexport', company: 'Flexport', size: unknown }
+  - { board: 'flowtraders', company: 'Flow Traders', size: unknown }
+  - { board: 'fosphamarketing', company: 'Fospha ', size: unknown }
+  - { board: 'fourkites', company: 'FourKites', size: unknown }
+  - { board: 'freeformfuturecorp', company: 'Freeform', size: unknown }
+  - { board: 'globalizationpartners', company: 'G-P', size: unknown }
+  - { board: 'gallup', company: 'Gallup', size: unknown }
+  - { board: 'garnerhealth', company: 'Garner Health', size: unknown }
+  - { board: 'gassouth', company: 'Gas South', size: unknown }
+  - { board: 'gemini', company: 'Gemini', size: unknown }
+  - { board: 'remote', company: 'General Assembly Remote Jobs ', size: unknown }
+  - { board: 'generalmatter', company: 'General Matter', size: unknown }
+  - { board: 'genevatrading', company: 'Geneva Trading', size: unknown }
+  - { board: 'genscript', company: 'GenScript', size: unknown }
+  - { board: 'giftogram', company: 'Giftogram', size: unknown }
+  - { board: 'givedirectly', company: 'GiveDirectly', size: unknown }
+  - { board: 'glydways', company: 'Glydways', size: unknown }
+  - { board: 'goodfire', company: 'Goodfire', size: unknown }
+  - { board: 'grahamcapitalmanagement', company: 'Graham Capital Management, L.P.', size: unknown }
+  - { board: 'graphcore', company: 'Graphcore', size: unknown }
+  - { board: 'graphcore-early-careers', company: 'Graphcore Early Careers', size: unknown }
+  - { board: 'gravitonresearchcapital', company: 'Graviton Research Capital LLP', size: unknown }
+  - { board: 'harbingermotors', company: 'Harbinger Motors Inc.', size: unknown }
+  - { board: 'harborglobal', company: 'Harbor', size: unknown }
+  - { board: 'headlandstechnologiesllc', company: 'Headlands Technologies LLC', size: unknown }
+  - { board: 'hearst', company: 'Hearst', size: unknown }
+  - { board: 'heartflowinc', company: 'Heartflow', size: unknown }
+  - { board: 'hellbenderinc', company: 'HELLBENDER Inc.', size: unknown }
+  - { board: 'heygen', company: 'HeyGen', size: unknown }
+  - { board: 'humaninterestswe1', company: 'Human Interest SWE 1', size: unknown }
+  - { board: 'humansignal', company: 'HumanSignal', size: unknown }
+  - { board: 'i360technologiesinc', company: 'i360technologies, Inc.', size: unknown }
+  - { board: 'icapitalnetwork', company: 'iCapital', size: unknown }
+  - { board: 'idme', company: 'ID.me', size: unknown }
+  - { board: 'idmeuniversityrecruiting', company: 'ID.me University Recruiting', size: unknown }
+  - { board: 'imc', company: 'IMC', size: unknown }
+  - { board: 'impact', company: 'impact.com', size: unknown }
+  - { board: 'indeedflex', company: 'Indeed Flex', size: unknown }
+  - { board: 'innodatainc', company: 'Innodata Inc.', size: unknown }
+  - { board: 'instalilyai', company: 'INSTALILY.AI', size: unknown }
+  - { board: 'instawork', company: 'Instawork', size: unknown }
+  - { board: 'intersystems', company: 'InterSystems', size: unknown }
+  - { board: 'janestreet', company: 'Jane Street', size: unknown }
+  - { board: 'jumio', company: 'Jumio', size: unknown }
+  - { board: 'jumptrading', company: 'Jump Trading', size: unknown }
+  - { board: 'k2spacecorporation', company: 'K2 Space ', size: unknown }
+  - { board: 'kairospower', company: 'Kairos Power', size: unknown }
+  - { board: 'kikoff', company: 'Kikoff', size: unknown }
+  - { board: 'klaviyo', company: 'Klaviyo', size: unknown }
+  - { board: 'klaviyocampus', company: 'Klaviyo Campus', size: unknown }
+  - { board: 'knowbe4', company: 'KnowBe4', size: unknown }
+  - { board: 'kodiak', company: 'Kodiak', size: unknown }
+  - { board: 'labelbox', company: 'Labelbox', size: unknown }
+  - { board: 'latitude', company: 'Latitude AI', size: unknown }
+  - { board: 'lattice', company: 'Lattice', size: unknown }
+  - { board: 'lgelectronics', company: 'LG Electronics', size: unknown }
+  - { board: 'lightmatter', company: 'Lightmatter', size: unknown }
+  - { board: 'lilasciences', company: 'Lila Sciences', size: unknown }
+  - { board: 'artefactlinkedin', company: 'LinkedIn Job Wrapping', size: unknown }
+  - { board: 'lodestarspace', company: 'Lodestar', size: unknown }
+  - { board: 'machindustries', company: 'Mach Industries', size: unknown }
+  - { board: 'mangroup', company: 'Man Group', size: unknown }
+  - { board: 'manifest', company: 'Manifest', size: unknown }
+  - { board: 'map', company: 'MAP', size: unknown }
+  - { board: 'mw-tech-grad', company: 'Marshall Wace - Graduate & Associate roles', size: unknown }
+  - { board: 'mattermost', company: 'Mattermost', size: unknown }
+  - { board: 'mavensecuritiesholdingltd', company: 'Maven', size: unknown }
+  - { board: 'mediaalpha', company: 'MediaAlpha', size: unknown }
+  - { board: 'mercury', company: 'Mercury', size: unknown }
+  - { board: 'agency', company: 'Meridial', size: unknown }
+  - { board: 'consensys', company: 'MetaMask', size: unknown }
+  - { board: 'missiononemedia', company: 'MissionOne Media', size: unknown }
+  - { board: 'mixpanel', company: 'Mixpanel', size: unknown }
+  - { board: 'morsecorp', company: 'MORSE Corp', size: unknown }
+  - { board: 'motional', company: 'Motional', size: unknown }
+  - { board: 'motive', company: 'Motive', size: unknown }
+  - { board: 'moxxidigital', company: 'Moxxi Digital', size: unknown }
+  - { board: 'muonspace', company: 'Muon Space', size: unknown }
+  - { board: 'myfundedfutures', company: 'MyFunded Futures', size: unknown }
+  - { board: 'netlify', company: 'Netlify', size: unknown }
+  - { board: 'networkbio', company: 'Network Bio', size: unknown }
+  - { board: 'neuralink', company: 'Neuralink', size: unknown }
+  - { board: 'nimblerobotics', company: 'Nimble Robotics', size: unknown }
+  - { board: 'undercontrolroboticsinc', company: 'Noble Machines, Inc', size: unknown }
+  - { board: 'gingerlabsinc', company: 'Notability', size: unknown }
+  - { board: 'nuancelabs', company: 'Nuance Labs', size: unknown }
+  - { board: 'oklo', company: 'Oklo', size: unknown }
+  - { board: 'oneimaging', company: 'OneImaging', size: unknown }
+  - { board: 'opentable', company: 'OpenTable', size: unknown }
+  - { board: 'optimove', company: 'Optimove', size: unknown }
+  - { board: 'orbisoperations', company: 'Orbis ', size: unknown }
+  - { board: 'pathrobotics', company: 'Path Robotics', size: unknown }
+  - { board: 'pdtpartners', company: 'PDT Partners', size: unknown }
+  - { board: 'pendo', company: 'Pendo', size: unknown }
+  - { board: 'perfectserve', company: 'PerfectServe', size: unknown }
+  - { board: 'perpay', company: 'Perpay - Career''s Page', size: unknown }
+  - { board: 'planetscale', company: 'PlanetScale', size: unknown }
+  - { board: 'pmg', company: 'PMG', size: unknown }
+  - { board: 'point72', company: 'Point72 ', size: unknown }
+  - { board: 'precisionaq', company: 'Precision AQ', size: unknown }
+  - { board: 'precisionmedicinegroup', company: 'Precision Medicine Group', size: unknown }
+  - { board: 'project44', company: 'project44', size: unknown }
+  - { board: 'prolificacademicltd', company: 'Prolific Academic Ltd', size: unknown }
+  - { board: 'pubmatic', company: 'PubMatic', size: unknown }
+  - { board: 'quantiq', company: 'Quantiq', size: unknown }
+  - { board: 'quberesearchandtechnologies', company: 'Qube Research & Technologies', size: unknown }
+  - { board: 'reach3insights', company: 'Reach3 Insights', size: unknown }
+  - { board: 'recidiviz', company: 'Recidiviz', size: unknown }
+  - { board: 'recursionpharmaceuticals', company: 'Recursion', size: unknown }
+  - { board: 'redwoodmaterials', company: 'Redwood Materials', size: unknown }
+  - { board: 'thoughtworksreferral', company: 'Referrals Only', size: unknown }
+  - { board: 'relativity', company: 'Relativity Space', size: unknown }
+  - { board: 'relaypro', company: 'Relay', size: unknown }
+  - { board: 'rendezvousrobotics', company: 'Rendezvous Robotics', size: unknown }
+  - { board: 'ripple', company: 'Ripple ', size: unknown }
+  - { board: 'roboforce', company: 'RoboForce', size: unknown }
+  - { board: 'rocketlab', company: 'Rocket Lab Corporation', size: unknown }
+  - { board: 'rubrik', company: 'Rubrik Job Board', size: unknown }
+  - { board: 'rvohealth', company: 'RVO Health', size: unknown }
+  - { board: 'salesloft', company: 'Salesloft', size: unknown }
+  - { board: 'samsungresearchamericainternship', company: 'Samsung Research America Internship', size: unknown }
+  - { board: 'schonfeld', company: 'Schonfeld ', size: unknown }
+  - { board: 'scopely', company: 'Scopely', size: unknown }
+  - { board: 'sigmacomputing', company: 'Sigma Computing', size: unknown }
+  - { board: 'singlestore', company: 'SingleStore', size: unknown }
+  - { board: 'sirenopt', company: 'SirenOpt', size: unknown }
+  - { board: 'sitimecorporation', company: 'SiTime Corporation', size: unknown }
+  - { board: 'spacex', company: 'SpaceX', size: unknown }
+  - { board: 'xai', company: 'SpaceXSI', size: unknown }
+  - { board: 'splashfinancial', company: 'Splash Financial', size: unknown }
+  - { board: 'star-catcher', company: 'Star Catcher', size: unknown }
+  - { board: 'starmountaincapital', company: 'Star Mountain Capital', size: unknown }
+  - { board: 'starburst', company: 'Starburst', size: unknown }
+  - { board: 'startree', company: 'StarTree', size: unknown }
+  - { board: 'stitchfix', company: 'Stitch Fix', size: unknown }
+  - { board: 'systemstechnologyresearch', company: 'STR', size: unknown }
+  - { board: 'striveworks', company: 'Striveworks', size: unknown }
+  - { board: 'superapp', company: 'SuperApp', size: unknown }
+  - { board: 'synack', company: 'Synack', size: unknown }
+  - { board: 'taboola', company: 'Taboola', size: unknown }
+  - { board: 'tailscale', company: 'Tailscale', size: unknown }
+  - { board: 'tanium', company: 'Tanium', size: unknown }
+  - { board: 'technergetics', company: 'Technergetics', size: unknown }
+  - { board: 'teletrackingtechnologiesinc', company: 'TeleTracking Technologies, Inc.', size: unknown }
+  - { board: 'tenstorrent', company: 'Tenstorrent', size: unknown }
+  - { board: 'textnowinc', company: 'TextNow, Inc.', size: unknown }
+  - { board: 'thealleninstitute', company: 'The Allen Institute for Artificial Intelligence', size: unknown }
+  - { board: 'thebrattlegroup', company: 'The Brattle Group', size: unknown }
+  - { board: 'thetradedesk', company: 'The Trade Desk', size: unknown }
+  - { board: 'think-cell', company: 'think-cell', size: unknown }
+  - { board: 'thinkcellsoftware', company: 'think-cell Software', size: unknown }
+  - { board: 'torcrobotics', company: 'Torc Robotics', size: unknown }
+  - { board: 'towerresearchcapital', company: 'Tower Research Capital', size: unknown }
+  - { board: 'trace3', company: 'Trace3', size: unknown }
+  - { board: 'transmarketgroup', company: 'TransMarket Group', size: unknown }
+  - { board: 'tripadvisor', company: 'Tripadvisor', size: unknown }
+  - { board: 'trovebrands', company: 'Trove Brands', size: unknown }
+  - { board: 'trueanomalyinc', company: 'True Anomaly', size: unknown }
+  - { board: 'truveta', company: 'Truveta', size: unknown }
+  - { board: 'tubitv', company: 'Tubi', size: unknown }
+  - { board: 'uasi', company: 'UASI', size: unknown }
+  - { board: 'upstart', company: 'Upstart', size: unknown }
+  - { board: 'vast', company: 'Vast', size: unknown }
+  - { board: 'via', company: 'Via', size: unknown }
+  - { board: 'virtu', company: 'Virtu Financial', size: unknown }
+  - { board: 'vividseatsllc', company: 'Vivid Seats', size: unknown }
+  - { board: 'voloridgeinvestmentmanagement', company: 'Voloridge Investment Management', size: unknown }
+  - { board: 'voyagertechnologiesinc', company: 'Voyager Technologies, Inc.', size: unknown }
+  - { board: 'wilsonelser', company: 'Wilson Elser - Business & Legal Professionals', size: unknown }
+  - { board: 'wonderschool', company: 'Wonderschool', size: unknown }
+  - { board: 'worldquant', company: 'WorldQuant', size: unknown }
+  - { board: 'wpp', company: 'WPP', size: unknown }
+  - { board: 'xairatherapeutics', company: 'Xaira Therapeutics', size: unknown }
+  - { board: 'xpengmotors', company: 'XPENG', size: unknown }
+  - { board: 'yext', company: 'Yext', size: unknown }
+  - { board: 'zetaglobal', company: 'Zeta Global', size: unknown }
+  - { board: 'ziprecruiter', company: 'ZipRecruiter', size: unknown }
   # From SimplifyJobs/New-Grad-Positions: every Greenhouse board that posted a new-grad role in the last 12 months,
   # checked live on 2026-11-01 (open jobs on boards-api). The candidate (2026-11-01): cover every company.
-  - { board: 10alabs, company: '10a Labs', size: unknown }
-  - { board: 1800contacts, company: '1-800 Contacts', size: unknown }
-  - { board: 2k, company: '2K', size: unknown }
-  - { board: 2u, company: '2U', size: unknown }
-  - { board: 540, company: '540', size: unknown }
-  - { board: 8451, company: '84.51 Degrees', size: unknown }
-  - { board: 9thwayinsignia, company: '9th Way Insignia', size: unknown }
-  - { board: a3c41b8b71eff8c4, company: 'Ivanti', size: unknown }
-  - { board: adswerveinc, company: 'Adswerve', size: unknown }
-  - { board: advancedtechnologyservices, company: 'Advanced Technology Services', size: unknown }
-  - { board: adyen, company: 'Adyen', size: unknown }
-  - { board: aegworldwide, company: 'AEG', size: unknown }
-  - { board: aevexaerospace, company: 'Aevex Aerospace', size: unknown }
-  - { board: affirmedrxpbc, company: 'AffirmedRx', size: unknown }
-  - { board: agoda, company: 'Agoda', size: unknown }
-  - { board: agwestfarmcredit, company: 'AgWest Farm Credit', size: unknown }
-  - { board: aisi, company: 'AI Security Institute', size: unknown }
-  - { board: allcareers, company: 'Cortica', size: unknown }
-  - { board: alpaca, company: 'Alpaca', size: unknown }
-  - { board: alphafmcroles, company: 'Alpha FMC', size: unknown }
-  - { board: alphafmcrolesearlycareers, company: 'Alpha FMC', size: unknown }
-  - { board: alphasense, company: 'AlphaSense', size: unknown }
-  - { board: alphataraxia, company: 'Alphataraxia', size: unknown }
-  - { board: altaresourcetechnologiesinc, company: 'Alta Resource Technologies', size: unknown }
-  - { board: anaplan, company: 'Anaplan', size: unknown }
-  - { board: aperiatechnologies, company: 'Aperia Technologies', size: unknown }
-  - { board: arcanaanalytics, company: 'Arcana', size: unknown }
-  - { board: archer56, company: 'Archer', size: unknown }
-  - { board: arenaclub, company: 'Arena Club', size: unknown }
-  - { board: arevonenergyimpltest, company: 'Arevon', size: unknown }
-  - { board: arizeai, company: 'Arize AI', size: unknown }
-  - { board: armada, company: 'Armada', size: unknown }
-  - { board: ashfieldadvisory, company: 'Inizio', size: unknown }
-  - { board: assuredguaranty, company: 'Assured Guaranty', size: unknown }
-  - { board: atek, company: 'A-TEK', size: unknown }
-  - { board: atomicmachines, company: 'Atomic Machines', size: unknown }
-  - { board: attentionarc, company: 'Attention Arc', size: unknown }
-  - { board: avidxchangeinc, company: 'AvidXchange', size: unknown }
-  - { board: axle, company: 'Axle', size: unknown }
-  - { board: axontalentcommunity, company: 'Axon', size: unknown }
-  - { board: bakerhicks, company: 'BakerHicks', size: unknown }
-  - { board: bandwidth, company: 'Bandwidth', size: unknown }
-  - { board: beauhurst, company: 'Beauhurst', size: unknown }
-  - { board: bevicareers, company: 'Bevi', size: unknown }
-  - { board: bgeinc, company: 'BGE', size: unknown }
-  - { board: birdygrey, company: 'Birdy Grey', size: unknown }
-  - { board: blend, company: 'Blend', size: unknown }
-  - { board: bluelabsanalyticsinc, company: 'BlueLabs Analytics', size: unknown }
-  - { board: blueskyinnovators, company: 'Blue Sky Innovators', size: unknown }
-  - { board: bluestaq, company: 'Bluestaq', size: unknown }
-  - { board: bpcs, company: 'Blueprint Technologies', size: unknown }
-  - { board: brevium, company: 'Brevium', size: unknown }
-  - { board: brightai, company: 'BrightAI', size: unknown }
-  - { board: butternutbox, company: 'Butternut Box', size: unknown }
-  - { board: cadwell, company: 'Cadwell', size: unknown }
-  - { board: capco, company: 'Capco', size: unknown }
-  - { board: capitalontap, company: 'Capital on Tap', size: unknown }
-  - { board: carefeed, company: 'Carefeed', size: unknown }
-  - { board: caseguard, company: 'CaseGuard', size: unknown }
-  - { board: celigo, company: 'Celigo', size: unknown }
-  - { board: celonis, company: 'Celonis', size: unknown }
-  - { board: censys, company: 'Censys', size: unknown }
-  - { board: chanzuckerberginitiative, company: 'Chan Zuckerberg Initiative', size: unknown }
-  - { board: charlesriverassociates, company: 'Charles River Associates (CRA)', size: unknown }
-  - { board: cision, company: 'Cision', size: unknown }
-  - { board: civisanalytics, company: 'Civis Analytics', size: unknown }
-  - { board: clarityinnovates, company: 'Clarity Innovations', size: unknown }
-  - { board: clinicalarchitecture, company: 'Clinical Architecture', size: unknown }
-  - { board: commerceiq, company: 'CommerceIQ', size: unknown }
-  - { board: commvault, company: 'Commvault', size: unknown }
-  - { board: comstock, company: 'Comstock Companies', size: unknown }
-  - { board: consumerreports, company: 'Consumer Reports', size: unknown }
-  - { board: convene, company: 'Convene', size: unknown }
-  - { board: cooksys, company: 'Cook Systems', size: unknown }
-  - { board: cortland, company: 'Cortland', size: unknown }
-  - { board: cpisecurity, company: 'CPI Security', size: unknown }
-  - { board: cresta, company: 'Cresta', size: unknown }
-  - { board: cssmerge, company: 'Atoms', size: unknown }
-  - { board: datasystemsanalystsinc, company: 'Data Systems Analysts', size: unknown }
-  - { board: dbeconorthamerica, company: 'DB E.C.O. North America', size: unknown }
-  - { board: ddome, company: 'DataDome', size: unknown }
-  - { board: defenseunicorns, company: 'Defense Unicorns', size: unknown }
-  - { board: deliveroo, company: 'Deliveroo', size: unknown }
-  - { board: didi, company: 'DiDi Global', size: unknown }
-  - { board: diligentcorporation, company: 'Diligent Corporation', size: unknown }
-  - { board: duettoresearch, company: 'Duetto Research', size: unknown }
-  - { board: dunnhumby, company: 'dunnhumby', size: unknown }
-  - { board: dv01, company: 'dv01', size: unknown }
-  - { board: ebury, company: 'Ebury', size: unknown }
-  - { board: edgewoodpartnersinsurancecenter, company: 'EPIC Insurance Brokers & Consultants', size: unknown }
-  - { board: eikontherapeutics, company: 'Eikon Therapeutics', size: unknown }
-  - { board: elevationscreditunion, company: 'Elevations Credit Union', size: unknown }
-  - { board: energyhub, company: 'EnergyHub', size: unknown }
-  - { board: energysolutions, company: 'Energy Solutions', size: unknown }
-  - { board: engineersgate, company: 'Engineers Gate', size: unknown }
-  - { board: ennoblecare, company: 'Ennoble Care', size: unknown }
-  - { board: enova, company: 'Enova', size: unknown }
-  - { board: eosfitness, company: 'EoS Fitness', size: unknown }
-  - { board: epickids, company: 'Epic Kids', size: unknown }
-  - { board: eudia, company: 'Eudia', size: unknown }
-  - { board: eulerity, company: 'Eulerity', size: unknown }
-  - { board: everlaw, company: 'Everlaw', size: unknown }
-  - { board: fairlife, company: 'Fairlife', size: unknown }
-  - { board: fanaticscollectibles, company: 'Fanatics', size: unknown }
-  - { board: fashionnova, company: 'Fashion Nova', size: unknown }
-  - { board: federato, company: 'Federato', size: unknown }
-  - { board: fideres, company: 'Fideres', size: unknown }
-  - { board: financialtimes33, company: 'Financial Times', size: unknown }
-  - { board: flagshippioneeringinc, company: 'Flagship Pioneering', size: unknown }
-  - { board: flighthub, company: 'FlightHub', size: unknown }
-  - { board: focalsystems, company: 'Focal Systems', size: unknown }
-  - { board: focusfinancialpartners, company: 'Focus Financial Partners', size: unknown }
-  - { board: forbes, company: 'Forbes', size: unknown }
-  - { board: fourhands, company: 'Four Hands', size: unknown }
-  - { board: freedomconsulting, company: 'Freedom Technology Solutions Group', size: unknown }
-  - { board: fschumacherco, company: 'F. Schumacher & Co.', size: unknown }
-  - { board: galaxydigitalservices, company: 'Galaxy', size: unknown }
-  - { board: generalatlantic, company: 'General Atlantic', size: unknown }
-  - { board: gensyn, company: 'Gensyn', size: unknown }
-  - { board: geotab, company: 'Geotab', size: unknown }
-  - { board: getbuilt, company: 'Built Technologies', size: unknown }
-  - { board: globalwebindex, company: 'Global Web Index', size: unknown }
-  - { board: gotion, company: 'Gotion', size: unknown }
-  - { board: grafanalabs, company: 'Grafana Labs', size: unknown }
-  - { board: greenhouse, company: 'Greenhouse', size: unknown }
-  - { board: groupon, company: 'Groupon', size: unknown }
-  - { board: growthloop, company: 'GrowthLoop', size: unknown }
-  - { board: grvty, company: 'GRVTY', size: unknown }
-  - { board: guidepointsecurity, company: 'GuidePoint Security', size: unknown }
-  - { board: hankooktireamericacorp, company: 'Hankook Tire America ', size: unknown }
-  - { board: hasbro, company: 'Hasbro', size: unknown }
-  - { board: heraldapi, company: 'Herald', size: unknown }
-  - { board: homesolutions, company: 'Home Solutions', size: unknown }
-  - { board: horizonsurgicalsystems, company: 'Horizon Surgical Systems', size: unknown }
-  - { board: hyannisportresearch, company: 'HPR (Hyannis Port Research)', size: unknown }
-  - { board: ieqcapital, company: 'IEQ Capital', size: unknown }
-  - { board: immersive, company: 'CGS Immersive', size: unknown }
-  - { board: impiricus, company: 'Impiricus', size: unknown }
-  - { board: industrialelectricmanufacturing, company: 'IEM', size: unknown }
-  - { board: infinitumelectric, company: 'Infinitum', size: unknown }
-  - { board: inflectionai, company: 'Inflection', size: unknown }
-  - { board: insurify, company: 'Insurify', size: unknown }
-  - { board: interwellhealth, company: 'Interwell Health', size: unknown }
-  - { board: inversionspace, company: 'Inversion Space', size: unknown }
-  - { board: ionq, company: 'IonQ', size: unknown }
-  - { board: isam, company: 'iSAM', size: unknown }
-  - { board: ispottv, company: 'iSpot.tv', size: unknown }
-  - { board: itslogisticsllc, company: 'ITS Logistics', size: unknown }
-  - { board: justworks, company: 'Justworks', size: unknown }
-  - { board: katalyst, company: 'Katalyst Space Technologies', size: unknown }
-  - { board: koalafi, company: 'Koalafi', size: unknown }
-  - { board: koboldmetals, company: 'KoBold Metals', size: unknown }
-  - { board: krollbondratingagency, company: 'Kroll Bond Rating Agency', size: unknown }
-  - { board: laskoproducts, company: 'Lasko Products', size: unknown }
-  - { board: legendcareers, company: 'Legend Biotech', size: unknown }
-  - { board: leolabsinc, company: 'LeoLabs', size: unknown }
-  - { board: lexingtonmedical, company: 'Lexington Medical', size: unknown }
-  - { board: liberis, company: 'Liberis', size: unknown }
-  - { board: livescore9, company: 'LiveScore Group', size: unknown }
-  - { board: lucidmotors, company: 'Lucid Motors', size: unknown }
-  - { board: ludorobotics, company: 'Ludo Robotics', size: unknown }
-  - { board: lumosfiber, company: 'Lumos', size: unknown }
-  - { board: m3, company: 'M3', size: unknown }
-  - { board: mavenclinic, company: 'Maven Clinic', size: unknown }
-  - { board: maybellquantum, company: 'Maybell Quantum Industries', size: unknown }
-  - { board: maymobility, company: 'May Mobility', size: unknown }
-  - { board: mcadams, company: 'McAdams', size: unknown }
-  - { board: mcmastercarr, company: 'McMaster-Carr', size: unknown }
-  - { board: mechanicallicensingcollective, company: 'Mechanical Licensing Collective', size: unknown }
-  - { board: mergeworld, company: 'MERGE', size: unknown }
-  - { board: metron, company: 'Metron', size: unknown }
-  - { board: mettel, company: 'MetTel', size: unknown }
-  - { board: miopartners, company: 'MIO Partners', size: unknown }
-  - { board: mitratech, company: 'Mitratech', size: unknown }
-  - { board: momentumcompany3, company: 'Momentum', size: unknown }
-  - { board: momentus, company: 'Momentus Space', size: unknown }
-  - { board: monsterenergy, company: 'Monster Energy', size: unknown }
-  - { board: monzo, company: 'Monzo', size: unknown }
-  - { board: mthreerecruitingportal, company: 'mthree', size: unknown }
-  - { board: murj, company: 'Murj', size: unknown }
-  - { board: natera, company: 'Natera', size: unknown }
-  - { board: nationallifeinsurancecompany, company: 'National Life', size: unknown }
-  - { board: neptunenorth, company: 'Neptune North', size: unknown }
-  - { board: nerostechnologies, company: 'Neros Technologies', size: unknown }
-  - { board: nexla, company: 'Nexla', size: unknown }
-  - { board: ninjatrader, company: 'NinjaTrader', size: unknown }
-  - { board: nisc, company: 'National Information Solutions Cooperative (NISC)', size: unknown }
-  - { board: notexternal, company: 'Blueprint Technologies', size: unknown }
-  - { board: nozominetworks, company: 'Nozomi Networks', size: unknown }
-  - { board: okx, company: 'OKX', size: unknown }
-  - { board: olsson, company: 'Olsson', size: unknown }
-  - { board: omadahealth, company: 'Omada Health', size: unknown }
-  - { board: omnicomhealth, company: 'Omnicom Health', size: unknown }
-  - { board: ooma, company: 'Ooma', size: unknown }
-  - { board: openeye, company: 'OpenEye', size: unknown }
-  - { board: opensesame, company: 'OpenSesame', size: unknown }
-  - { board: optoinvest, company: 'Opto Investments', size: unknown }
-  - { board: orennia, company: 'Orennia', size: unknown }
-  - { board: otter, company: 'Otter', size: unknown }
-  - { board: pagerduty, company: 'PagerDuty', size: unknown }
-  - { board: pallet, company: 'Pallet', size: unknown }
-  - { board: parallel, company: 'Parallel Systems', size: unknown }
-  - { board: pathward, company: 'Pathward', size: unknown }
-  - { board: patientpoint, company: 'PatientPoint', size: unknown }
-  - { board: patterndata, company: 'Pattern Data', size: unknown }
-  - { board: penninteractive, company: 'Penn Interactive', size: unknown }
-  - { board: peregrinetechnologies, company: 'Peregrine', size: unknown }
-  - { board: perryellisinternational, company: 'Perry Ellis International', size: unknown }
-  - { board: perscholashires, company: 'Per Scholas', size: unknown }
-  - { board: personalisinc, company: 'Personalis', size: unknown }
-  - { board: phaidra, company: 'Phaidra', size: unknown }
-  - { board: pharomanagement, company: 'Pharo Management', size: unknown }
-  - { board: philliesbaseballoperations, company: 'Major League Baseball', size: unknown }
-  - { board: phoenixcontact, company: 'Phoenix Contact', size: unknown }
-  - { board: picoquantitativetrading, company: 'Pico', size: unknown }
-  - { board: pingidentity, company: 'Ping Identity', size: unknown }
-  - { board: planetlabs, company: 'Planet', size: unknown }
-  - { board: polyai, company: 'PolyAI', size: unknown }
-  - { board: postscript, company: 'Postscript', size: unknown }
-  - { board: proconex, company: 'Proconex', size: unknown }
-  - { board: queracomputinginc, company: 'QuEra Computing', size: unknown }
-  - { board: quick-release, company: 'Quick Release', size: unknown }
-  - { board: quince, company: 'Quince', size: unknown }
-  - { board: rab, company: 'RAB Lighting', size: unknown }
-  - { board: racapitalmanagementllc, company: 'RA Capital Management', size: unknown }
-  - { board: rackner, company: 'Rackner', size: unknown }
-  - { board: radar, company: 'RADAR', size: unknown }
-  - { board: realchemistry, company: 'Real Chemistry', size: unknown }
-  - { board: rebuildmanufacturing, company: 'Re:Build Manufacturing', size: unknown }
-  - { board: reltio, company: 'Reltio', size: unknown }
-  - { board: remodelhealth, company: 'Remodel Health', size: unknown }
-  - { board: renaissancelearning-nam, company: 'Renaissance', size: unknown }
-  - { board: rfsmart, company: 'RF-SMART', size: unknown }
-  - { board: rhombuspower, company: 'Rhombus Power', size: unknown }
-  - { board: rocketems, company: 'Rocket EMS', size: unknown }
-  - { board: sandstonecare, company: 'Sandstone Care', size: unknown }
-  - { board: sanmar, company: 'SanMar', size: unknown }
-  - { board: scotch, company: 'Scotch', size: unknown }
-  - { board: secretariatadvisorsllc, company: 'Secretariat', size: unknown }
-  - { board: selffinancial, company: 'Self Financial', size: unknown }
-  - { board: sharkninjaoperatingllc, company: 'SharkNinja', size: unknown }
-  - { board: sharpelectronics, company: 'Sharp Electronics', size: unknown }
-  - { board: silvus, company: 'Silvus Technologies', size: unknown }
-  - { board: simplisafe, company: 'SimpliSafe', size: unknown }
-  - { board: sironamedical, company: 'Sirona Medical', size: unknown }
-  - { board: sitrepsllc, company: 'Sitreps', size: unknown }
-  - { board: skildai-careers, company: 'Skild AI', size: unknown }
-  - { board: sleepdoctor, company: 'Sleep Doctor', size: unknown }
-  - { board: smartsheet, company: 'Smartsheet', size: unknown }
-  - { board: soci, company: 'SOCi', size: unknown }
-  - { board: sonobello, company: 'Sono Bello', size: unknown }
-  - { board: sonyinteractiveentertainmentglobal, company: 'PlayStation', size: unknown }
-  - { board: sonypicturesimageworks, company: 'Sony Pictures Imageworks', size: unknown }
-  - { board: spacekinetic, company: 'Space Kinetic', size: unknown }
-  - { board: sparksoftcorporation, company: 'Sparksoft', size: unknown }
-  - { board: specterops, company: 'SpecterOps', size: unknown }
-  - { board: speechify, company: 'Speechify', size: unknown }
-  - { board: speechmatics, company: 'Speechmatics', size: unknown }
-  - { board: srsacquiom, company: 'SRS Acquiom', size: unknown }
-  - { board: stackav, company: 'StackAV', size: unknown }
-  - { board: stackline, company: 'Stackline', size: unknown }
-  - { board: stemhealthcare, company: 'STEM Healthcare', size: unknown }
-  - { board: stratacareers, company: 'Strata Decision Technology', size: unknown }
-  - { board: stratolaunch, company: 'Stratolaunch', size: unknown }
-  - { board: stubhubinc, company: 'StubHub', size: unknown }
-  - { board: summitpartnerslp, company: 'Summit Partners', size: unknown }
-  - { board: taketwo, company: 'Take Two', size: unknown }
-  - { board: tatari, company: 'Tatari', size: unknown }
-  - { board: taxreliefadvocates, company: 'Tax Relief Advocates', size: unknown }
-  - { board: taxrise, company: 'TaxRise', size: unknown }
-  - { board: tebra, company: 'Tebra', size: unknown }
-  - { board: tenon, company: 'Tenon', size: unknown }
-  - { board: testlio, company: 'Testlio', size: unknown }
-  - { board: thenewyorktimes, company: 'The New York Times', size: unknown }
-  - { board: thenuclearcompany, company: 'The Nuclear Company', size: unknown }
-  - { board: thinkacademyus, company: 'Think Academy International Education', size: unknown }
-  - { board: tintai, company: 'Tint', size: unknown }
-  - { board: tobogganlabs, company: 'TobogganLabs', size: unknown }
-  - { board: topsort, company: 'Topsort', size: unknown }
-  - { board: toshibaglobalcommercesolutions, company: 'Toshiba Global Commerce', size: unknown }
-  - { board: tpcengineeringholdingsllc, company: 'Trexon', size: unknown }
-  - { board: transcendinc, company: 'Transcend', size: unknown }
-  - { board: trelliswaretechnologies-newgrads, company: 'TrellisWare Technologies', size: unknown }
-  - { board: trinityparktalent, company: 'Trinity Park Talent', size: unknown }
-  - { board: trumid, company: 'Trumid', size: unknown }
-  - { board: twistbioscience, company: 'Twist Bioscience', size: unknown }
-  - { board: twosixtechnologies, company: 'Two Six Technologies', size: unknown }
-  - { board: ujet, company: 'UJET', size: unknown }
-  - { board: ultimagenomics, company: 'Ultima Genomics', size: unknown }
-  - { board: unlimitedtechnology, company: 'Unlimited Technology', size: unknown }
-  - { board: usconec, company: 'US Conec', size: unknown }
-  - { board: vardaspace, company: 'Varda Space', size: unknown }
-  - { board: vegaamericas, company: 'VEGA Americas', size: unknown }
-  - { board: verifone, company: 'Verifone', size: unknown }
-  - { board: vestmark, company: 'Vestmark', size: unknown }
-  - { board: vestwell, company: 'Vestwell', size: unknown }
-  - { board: vipvermontinformationprocessing2, company: 'Vermont Information Processing', size: unknown }
-  - { board: vscfiresecurityinc, company: 'VSC Fire & Security', size: unknown }
-  - { board: walleyecapital-external-fulltime, company: 'Walleye Capital', size: unknown }
-  - { board: walleyecapital-external-students, company: 'Walleye Capital', size: unknown }
-  - { board: waymark, company: 'Waymark', size: unknown }
-  - { board: welbehealth, company: 'WelbeHealth', size: unknown }
-  - { board: winton, company: 'Winton', size: unknown }
-  - { board: woolpert, company: 'Woolpert', size: unknown }
-  - { board: workstream, company: 'Workstream', size: unknown }
-  - { board: world4822stri986des, company: 'WorldStrides', size: unknown }
-  - { board: wppmedia, company: 'WPP Media', size: unknown }
-  - { board: yesenergy, company: 'Yes Energy', size: unknown }
-  - { board: zone5technologies, company: 'Zone 5 Technologies', size: unknown }
-  - { board: zscaler, company: 'Zscaler', size: unknown }
+  - { board: '10alabs', company: '10a Labs', size: unknown }
+  - { board: '1800contacts', company: '1-800 Contacts', size: unknown }
+  - { board: '2k', company: '2K', size: unknown }
+  - { board: '2u', company: '2U', size: unknown }
+  - { board: '540', company: '540', size: unknown }
+  - { board: '8451', company: '84.51 Degrees', size: unknown }
+  - { board: '9thwayinsignia', company: '9th Way Insignia', size: unknown }
+  - { board: 'a3c41b8b71eff8c4', company: 'Ivanti', size: unknown }
+  - { board: 'adswerveinc', company: 'Adswerve', size: unknown }
+  - { board: 'advancedtechnologyservices', company: 'Advanced Technology Services', size: unknown }
+  - { board: 'adyen', company: 'Adyen', size: unknown }
+  - { board: 'aegworldwide', company: 'AEG', size: unknown }
+  - { board: 'aevexaerospace', company: 'Aevex Aerospace', size: unknown }
+  - { board: 'affirmedrxpbc', company: 'AffirmedRx', size: unknown }
+  - { board: 'agoda', company: 'Agoda', size: unknown }
+  - { board: 'agwestfarmcredit', company: 'AgWest Farm Credit', size: unknown }
+  - { board: 'aisi', company: 'AI Security Institute', size: unknown }
+  - { board: 'allcareers', company: 'Cortica', size: unknown }
+  - { board: 'alpaca', company: 'Alpaca', size: unknown }
+  - { board: 'alphafmcroles', company: 'Alpha FMC', size: unknown }
+  - { board: 'alphafmcrolesearlycareers', company: 'Alpha FMC', size: unknown }
+  - { board: 'alphasense', company: 'AlphaSense', size: unknown }
+  - { board: 'alphataraxia', company: 'Alphataraxia', size: unknown }
+  - { board: 'altaresourcetechnologiesinc', company: 'Alta Resource Technologies', size: unknown }
+  - { board: 'anaplan', company: 'Anaplan', size: unknown }
+  - { board: 'aperiatechnologies', company: 'Aperia Technologies', size: unknown }
+  - { board: 'arcanaanalytics', company: 'Arcana', size: unknown }
+  - { board: 'archer56', company: 'Archer', size: unknown }
+  - { board: 'arenaclub', company: 'Arena Club', size: unknown }
+  - { board: 'arevonenergyimpltest', company: 'Arevon', size: unknown }
+  - { board: 'arizeai', company: 'Arize AI', size: unknown }
+  - { board: 'armada', company: 'Armada', size: unknown }
+  - { board: 'ashfieldadvisory', company: 'Inizio', size: unknown }
+  - { board: 'assuredguaranty', company: 'Assured Guaranty', size: unknown }
+  - { board: 'atek', company: 'A-TEK', size: unknown }
+  - { board: 'atomicmachines', company: 'Atomic Machines', size: unknown }
+  - { board: 'attentionarc', company: 'Attention Arc', size: unknown }
+  - { board: 'avidxchangeinc', company: 'AvidXchange', size: unknown }
+  - { board: 'axle', company: 'Axle', size: unknown }
+  - { board: 'axontalentcommunity', company: 'Axon', size: unknown }
+  - { board: 'bakerhicks', company: 'BakerHicks', size: unknown }
+  - { board: 'bandwidth', company: 'Bandwidth', size: unknown }
+  - { board: 'beauhurst', company: 'Beauhurst', size: unknown }
+  - { board: 'bevicareers', company: 'Bevi', size: unknown }
+  - { board: 'bgeinc', company: 'BGE', size: unknown }
+  - { board: 'birdygrey', company: 'Birdy Grey', size: unknown }
+  - { board: 'blend', company: 'Blend', size: unknown }
+  - { board: 'bluelabsanalyticsinc', company: 'BlueLabs Analytics', size: unknown }
+  - { board: 'blueskyinnovators', company: 'Blue Sky Innovators', size: unknown }
+  - { board: 'bluestaq', company: 'Bluestaq', size: unknown }
+  - { board: 'bpcs', company: 'Blueprint Technologies', size: unknown }
+  - { board: 'brevium', company: 'Brevium', size: unknown }
+  - { board: 'brightai', company: 'BrightAI', size: unknown }
+  - { board: 'butternutbox', company: 'Butternut Box', size: unknown }
+  - { board: 'cadwell', company: 'Cadwell', size: unknown }
+  - { board: 'capco', company: 'Capco', size: unknown }
+  - { board: 'capitalontap', company: 'Capital on Tap', size: unknown }
+  - { board: 'carefeed', company: 'Carefeed', size: unknown }
+  - { board: 'caseguard', company: 'CaseGuard', size: unknown }
+  - { board: 'celigo', company: 'Celigo', size: unknown }
+  - { board: 'celonis', company: 'Celonis', size: unknown }
+  - { board: 'censys', company: 'Censys', size: unknown }
+  - { board: 'chanzuckerberginitiative', company: 'Chan Zuckerberg Initiative', size: unknown }
+  - { board: 'charlesriverassociates', company: 'Charles River Associates (CRA)', size: unknown }
+  - { board: 'cision', company: 'Cision', size: unknown }
+  - { board: 'civisanalytics', company: 'Civis Analytics', size: unknown }
+  - { board: 'clarityinnovates', company: 'Clarity Innovations', size: unknown }
+  - { board: 'clinicalarchitecture', company: 'Clinical Architecture', size: unknown }
+  - { board: 'commerceiq', company: 'CommerceIQ', size: unknown }
+  - { board: 'commvault', company: 'Commvault', size: unknown }
+  - { board: 'comstock', company: 'Comstock Companies', size: unknown }
+  - { board: 'consumerreports', company: 'Consumer Reports', size: unknown }
+  - { board: 'convene', company: 'Convene', size: unknown }
+  - { board: 'cooksys', company: 'Cook Systems', size: unknown }
+  - { board: 'cortland', company: 'Cortland', size: unknown }
+  - { board: 'cpisecurity', company: 'CPI Security', size: unknown }
+  - { board: 'cresta', company: 'Cresta', size: unknown }
+  - { board: 'cssmerge', company: 'Atoms', size: unknown }
+  - { board: 'datasystemsanalystsinc', company: 'Data Systems Analysts', size: unknown }
+  - { board: 'dbeconorthamerica', company: 'DB E.C.O. North America', size: unknown }
+  - { board: 'ddome', company: 'DataDome', size: unknown }
+  - { board: 'defenseunicorns', company: 'Defense Unicorns', size: unknown }
+  - { board: 'deliveroo', company: 'Deliveroo', size: unknown }
+  - { board: 'didi', company: 'DiDi Global', size: unknown }
+  - { board: 'diligentcorporation', company: 'Diligent Corporation', size: unknown }
+  - { board: 'duettoresearch', company: 'Duetto Research', size: unknown }
+  - { board: 'dunnhumby', company: 'dunnhumby', size: unknown }
+  - { board: 'dv01', company: 'dv01', size: unknown }
+  - { board: 'ebury', company: 'Ebury', size: unknown }
+  - { board: 'edgewoodpartnersinsurancecenter', company: 'EPIC Insurance Brokers & Consultants', size: unknown }
+  - { board: 'eikontherapeutics', company: 'Eikon Therapeutics', size: unknown }
+  - { board: 'elevationscreditunion', company: 'Elevations Credit Union', size: unknown }
+  - { board: 'energyhub', company: 'EnergyHub', size: unknown }
+  - { board: 'energysolutions', company: 'Energy Solutions', size: unknown }
+  - { board: 'engineersgate', company: 'Engineers Gate', size: unknown }
+  - { board: 'ennoblecare', company: 'Ennoble Care', size: unknown }
+  - { board: 'enova', company: 'Enova', size: unknown }
+  - { board: 'eosfitness', company: 'EoS Fitness', size: unknown }
+  - { board: 'epickids', company: 'Epic Kids', size: unknown }
+  - { board: 'eudia', company: 'Eudia', size: unknown }
+  - { board: 'eulerity', company: 'Eulerity', size: unknown }
+  - { board: 'everlaw', company: 'Everlaw', size: unknown }
+  - { board: 'fairlife', company: 'Fairlife', size: unknown }
+  - { board: 'fanaticscollectibles', company: 'Fanatics', size: unknown }
+  - { board: 'fashionnova', company: 'Fashion Nova', size: unknown }
+  - { board: 'federato', company: 'Federato', size: unknown }
+  - { board: 'fideres', company: 'Fideres', size: unknown }
+  - { board: 'financialtimes33', company: 'Financial Times', size: unknown }
+  - { board: 'flagshippioneeringinc', company: 'Flagship Pioneering', size: unknown }
+  - { board: 'flighthub', company: 'FlightHub', size: unknown }
+  - { board: 'focalsystems', company: 'Focal Systems', size: unknown }
+  - { board: 'focusfinancialpartners', company: 'Focus Financial Partners', size: unknown }
+  - { board: 'forbes', company: 'Forbes', size: unknown }
+  - { board: 'fourhands', company: 'Four Hands', size: unknown }
+  - { board: 'freedomconsulting', company: 'Freedom Technology Solutions Group', size: unknown }
+  - { board: 'fschumacherco', company: 'F. Schumacher & Co.', size: unknown }
+  - { board: 'galaxydigitalservices', company: 'Galaxy', size: unknown }
+  - { board: 'generalatlantic', company: 'General Atlantic', size: unknown }
+  - { board: 'gensyn', company: 'Gensyn', size: unknown }
+  - { board: 'geotab', company: 'Geotab', size: unknown }
+  - { board: 'getbuilt', company: 'Built Technologies', size: unknown }
+  - { board: 'globalwebindex', company: 'Global Web Index', size: unknown }
+  - { board: 'gotion', company: 'Gotion', size: unknown }
+  - { board: 'grafanalabs', company: 'Grafana Labs', size: unknown }
+  - { board: 'greenhouse', company: 'Greenhouse', size: unknown }
+  - { board: 'groupon', company: 'Groupon', size: unknown }
+  - { board: 'growthloop', company: 'GrowthLoop', size: unknown }
+  - { board: 'grvty', company: 'GRVTY', size: unknown }
+  - { board: 'guidepointsecurity', company: 'GuidePoint Security', size: unknown }
+  - { board: 'hankooktireamericacorp', company: 'Hankook Tire America ', size: unknown }
+  - { board: 'hasbro', company: 'Hasbro', size: unknown }
+  - { board: 'heraldapi', company: 'Herald', size: unknown }
+  - { board: 'homesolutions', company: 'Home Solutions', size: unknown }
+  - { board: 'horizonsurgicalsystems', company: 'Horizon Surgical Systems', size: unknown }
+  - { board: 'hyannisportresearch', company: 'HPR (Hyannis Port Research)', size: unknown }
+  - { board: 'ieqcapital', company: 'IEQ Capital', size: unknown }
+  - { board: 'immersive', company: 'CGS Immersive', size: unknown }
+  - { board: 'impiricus', company: 'Impiricus', size: unknown }
+  - { board: 'industrialelectricmanufacturing', company: 'IEM', size: unknown }
+  - { board: 'infinitumelectric', company: 'Infinitum', size: unknown }
+  - { board: 'inflectionai', company: 'Inflection', size: unknown }
+  - { board: 'insurify', company: 'Insurify', size: unknown }
+  - { board: 'interwellhealth', company: 'Interwell Health', size: unknown }
+  - { board: 'inversionspace', company: 'Inversion Space', size: unknown }
+  - { board: 'ionq', company: 'IonQ', size: unknown }
+  - { board: 'isam', company: 'iSAM', size: unknown }
+  - { board: 'ispottv', company: 'iSpot.tv', size: unknown }
+  - { board: 'itslogisticsllc', company: 'ITS Logistics', size: unknown }
+  - { board: 'justworks', company: 'Justworks', size: unknown }
+  - { board: 'katalyst', company: 'Katalyst Space Technologies', size: unknown }
+  - { board: 'koalafi', company: 'Koalafi', size: unknown }
+  - { board: 'koboldmetals', company: 'KoBold Metals', size: unknown }
+  - { board: 'krollbondratingagency', company: 'Kroll Bond Rating Agency', size: unknown }
+  - { board: 'laskoproducts', company: 'Lasko Products', size: unknown }
+  - { board: 'legendcareers', company: 'Legend Biotech', size: unknown }
+  - { board: 'leolabsinc', company: 'LeoLabs', size: unknown }
+  - { board: 'lexingtonmedical', company: 'Lexington Medical', size: unknown }
+  - { board: 'liberis', company: 'Liberis', size: unknown }
+  - { board: 'livescore9', company: 'LiveScore Group', size: unknown }
+  - { board: 'lucidmotors', company: 'Lucid Motors', size: unknown }
+  - { board: 'ludorobotics', company: 'Ludo Robotics', size: unknown }
+  - { board: 'lumosfiber', company: 'Lumos', size: unknown }
+  - { board: 'm3', company: 'M3', size: unknown }
+  - { board: 'mavenclinic', company: 'Maven Clinic', size: unknown }
+  - { board: 'maybellquantum', company: 'Maybell Quantum Industries', size: unknown }
+  - { board: 'maymobility', company: 'May Mobility', size: unknown }
+  - { board: 'mcadams', company: 'McAdams', size: unknown }
+  - { board: 'mcmastercarr', company: 'McMaster-Carr', size: unknown }
+  - { board: 'mechanicallicensingcollective', company: 'Mechanical Licensing Collective', size: unknown }
+  - { board: 'mergeworld', company: 'MERGE', size: unknown }
+  - { board: 'metron', company: 'Metron', size: unknown }
+  - { board: 'mettel', company: 'MetTel', size: unknown }
+  - { board: 'miopartners', company: 'MIO Partners', size: unknown }
+  - { board: 'mitratech', company: 'Mitratech', size: unknown }
+  - { board: 'momentumcompany3', company: 'Momentum', size: unknown }
+  - { board: 'momentus', company: 'Momentus Space', size: unknown }
+  - { board: 'monsterenergy', company: 'Monster Energy', size: unknown }
+  - { board: 'monzo', company: 'Monzo', size: unknown }
+  - { board: 'mthreerecruitingportal', company: 'mthree', size: unknown }
+  - { board: 'murj', company: 'Murj', size: unknown }
+  - { board: 'natera', company: 'Natera', size: unknown }
+  - { board: 'nationallifeinsurancecompany', company: 'National Life', size: unknown }
+  - { board: 'neptunenorth', company: 'Neptune North', size: unknown }
+  - { board: 'nerostechnologies', company: 'Neros Technologies', size: unknown }
+  - { board: 'nexla', company: 'Nexla', size: unknown }
+  - { board: 'ninjatrader', company: 'NinjaTrader', size: unknown }
+  - { board: 'nisc', company: 'National Information Solutions Cooperative (NISC)', size: unknown }
+  - { board: 'notexternal', company: 'Blueprint Technologies', size: unknown }
+  - { board: 'nozominetworks', company: 'Nozomi Networks', size: unknown }
+  - { board: 'okx', company: 'OKX', size: unknown }
+  - { board: 'olsson', company: 'Olsson', size: unknown }
+  - { board: 'omadahealth', company: 'Omada Health', size: unknown }
+  - { board: 'omnicomhealth', company: 'Omnicom Health', size: unknown }
+  - { board: 'ooma', company: 'Ooma', size: unknown }
+  - { board: 'openeye', company: 'OpenEye', size: unknown }
+  - { board: 'opensesame', company: 'OpenSesame', size: unknown }
+  - { board: 'optoinvest', company: 'Opto Investments', size: unknown }
+  - { board: 'orennia', company: 'Orennia', size: unknown }
+  - { board: 'otter', company: 'Otter', size: unknown }
+  - { board: 'pagerduty', company: 'PagerDuty', size: unknown }
+  - { board: 'pallet', company: 'Pallet', size: unknown }
+  - { board: 'parallel', company: 'Parallel Systems', size: unknown }
+  - { board: 'pathward', company: 'Pathward', size: unknown }
+  - { board: 'patientpoint', company: 'PatientPoint', size: unknown }
+  - { board: 'patterndata', company: 'Pattern Data', size: unknown }
+  - { board: 'penninteractive', company: 'Penn Interactive', size: unknown }
+  - { board: 'peregrinetechnologies', company: 'Peregrine', size: unknown }
+  - { board: 'perryellisinternational', company: 'Perry Ellis International', size: unknown }
+  - { board: 'perscholashires', company: 'Per Scholas', size: unknown }
+  - { board: 'personalisinc', company: 'Personalis', size: unknown }
+  - { board: 'phaidra', company: 'Phaidra', size: unknown }
+  - { board: 'pharomanagement', company: 'Pharo Management', size: unknown }
+  - { board: 'philliesbaseballoperations', company: 'Major League Baseball', size: unknown }
+  - { board: 'phoenixcontact', company: 'Phoenix Contact', size: unknown }
+  - { board: 'picoquantitativetrading', company: 'Pico', size: unknown }
+  - { board: 'pingidentity', company: 'Ping Identity', size: unknown }
+  - { board: 'planetlabs', company: 'Planet', size: unknown }
+  - { board: 'polyai', company: 'PolyAI', size: unknown }
+  - { board: 'postscript', company: 'Postscript', size: unknown }
+  - { board: 'proconex', company: 'Proconex', size: unknown }
+  - { board: 'queracomputinginc', company: 'QuEra Computing', size: unknown }
+  - { board: 'quick-release', company: 'Quick Release', size: unknown }
+  - { board: 'quince', company: 'Quince', size: unknown }
+  - { board: 'rab', company: 'RAB Lighting', size: unknown }
+  - { board: 'racapitalmanagementllc', company: 'RA Capital Management', size: unknown }
+  - { board: 'rackner', company: 'Rackner', size: unknown }
+  - { board: 'radar', company: 'RADAR', size: unknown }
+  - { board: 'realchemistry', company: 'Real Chemistry', size: unknown }
+  - { board: 'rebuildmanufacturing', company: 'Re:Build Manufacturing', size: unknown }
+  - { board: 'reltio', company: 'Reltio', size: unknown }
+  - { board: 'remodelhealth', company: 'Remodel Health', size: unknown }
+  - { board: 'renaissancelearning-nam', company: 'Renaissance', size: unknown }
+  - { board: 'rfsmart', company: 'RF-SMART', size: unknown }
+  - { board: 'rhombuspower', company: 'Rhombus Power', size: unknown }
+  - { board: 'rocketems', company: 'Rocket EMS', size: unknown }
+  - { board: 'sandstonecare', company: 'Sandstone Care', size: unknown }
+  - { board: 'sanmar', company: 'SanMar', size: unknown }
+  - { board: 'scotch', company: 'Scotch', size: unknown }
+  - { board: 'secretariatadvisorsllc', company: 'Secretariat', size: unknown }
+  - { board: 'selffinancial', company: 'Self Financial', size: unknown }
+  - { board: 'sharkninjaoperatingllc', company: 'SharkNinja', size: unknown }
+  - { board: 'sharpelectronics', company: 'Sharp Electronics', size: unknown }
+  - { board: 'silvus', company: 'Silvus Technologies', size: unknown }
+  - { board: 'simplisafe', company: 'SimpliSafe', size: unknown }
+  - { board: 'sironamedical', company: 'Sirona Medical', size: unknown }
+  - { board: 'sitrepsllc', company: 'Sitreps', size: unknown }
+  - { board: 'skildai-careers', company: 'Skild AI', size: unknown }
+  - { board: 'sleepdoctor', company: 'Sleep Doctor', size: unknown }
+  - { board: 'smartsheet', company: 'Smartsheet', size: unknown }
+  - { board: 'soci', company: 'SOCi', size: unknown }
+  - { board: 'sonobello', company: 'Sono Bello', size: unknown }
+  - { board: 'sonyinteractiveentertainmentglobal', company: 'PlayStation', size: unknown }
+  - { board: 'sonypicturesimageworks', company: 'Sony Pictures Imageworks', size: unknown }
+  - { board: 'spacekinetic', company: 'Space Kinetic', size: unknown }
+  - { board: 'sparksoftcorporation', company: 'Sparksoft', size: unknown }
+  - { board: 'specterops', company: 'SpecterOps', size: unknown }
+  - { board: 'speechify', company: 'Speechify', size: unknown }
+  - { board: 'speechmatics', company: 'Speechmatics', size: unknown }
+  - { board: 'srsacquiom', company: 'SRS Acquiom', size: unknown }
+  - { board: 'stackav', company: 'StackAV', size: unknown }
+  - { board: 'stackline', company: 'Stackline', size: unknown }
+  - { board: 'stemhealthcare', company: 'STEM Healthcare', size: unknown }
+  - { board: 'stratacareers', company: 'Strata Decision Technology', size: unknown }
+  - { board: 'stratolaunch', company: 'Stratolaunch', size: unknown }
+  - { board: 'stubhubinc', company: 'StubHub', size: unknown }
+  - { board: 'summitpartnerslp', company: 'Summit Partners', size: unknown }
+  - { board: 'taketwo', company: 'Take Two', size: unknown }
+  - { board: 'tatari', company: 'Tatari', size: unknown }
+  - { board: 'taxreliefadvocates', company: 'Tax Relief Advocates', size: unknown }
+  - { board: 'taxrise', company: 'TaxRise', size: unknown }
+  - { board: 'tebra', company: 'Tebra', size: unknown }
+  - { board: 'tenon', company: 'Tenon', size: unknown }
+  - { board: 'testlio', company: 'Testlio', size: unknown }
+  - { board: 'thenewyorktimes', company: 'The New York Times', size: unknown }
+  - { board: 'thenuclearcompany', company: 'The Nuclear Company', size: unknown }
+  - { board: 'thinkacademyus', company: 'Think Academy International Education', size: unknown }
+  - { board: 'tintai', company: 'Tint', size: unknown }
+  - { board: 'tobogganlabs', company: 'TobogganLabs', size: unknown }
+  - { board: 'topsort', company: 'Topsort', size: unknown }
+  - { board: 'toshibaglobalcommercesolutions', company: 'Toshiba Global Commerce', size: unknown }
+  - { board: 'tpcengineeringholdingsllc', company: 'Trexon', size: unknown }
+  - { board: 'transcendinc', company: 'Transcend', size: unknown }
+  - { board: 'trelliswaretechnologies-newgrads', company: 'TrellisWare Technologies', size: unknown }
+  - { board: 'trinityparktalent', company: 'Trinity Park Talent', size: unknown }
+  - { board: 'trumid', company: 'Trumid', size: unknown }
+  - { board: 'twistbioscience', company: 'Twist Bioscience', size: unknown }
+  - { board: 'twosixtechnologies', company: 'Two Six Technologies', size: unknown }
+  - { board: 'ujet', company: 'UJET', size: unknown }
+  - { board: 'ultimagenomics', company: 'Ultima Genomics', size: unknown }
+  - { board: 'unlimitedtechnology', company: 'Unlimited Technology', size: unknown }
+  - { board: 'usconec', company: 'US Conec', size: unknown }
+  - { board: 'vardaspace', company: 'Varda Space', size: unknown }
+  - { board: 'vegaamericas', company: 'VEGA Americas', size: unknown }
+  - { board: 'verifone', company: 'Verifone', size: unknown }
+  - { board: 'vestmark', company: 'Vestmark', size: unknown }
+  - { board: 'vestwell', company: 'Vestwell', size: unknown }
+  - { board: 'vipvermontinformationprocessing2', company: 'Vermont Information Processing', size: unknown }
+  - { board: 'vscfiresecurityinc', company: 'VSC Fire & Security', size: unknown }
+  - { board: 'walleyecapital-external-fulltime', company: 'Walleye Capital', size: unknown }
+  - { board: 'walleyecapital-external-students', company: 'Walleye Capital', size: unknown }
+  - { board: 'waymark', company: 'Waymark', size: unknown }
+  - { board: 'welbehealth', company: 'WelbeHealth', size: unknown }
+  - { board: 'winton', company: 'Winton', size: unknown }
+  - { board: 'woolpert', company: 'Woolpert', size: unknown }
+  - { board: 'workstream', company: 'Workstream', size: unknown }
+  - { board: 'world4822stri986des', company: 'WorldStrides', size: unknown }
+  - { board: 'wppmedia', company: 'WPP Media', size: unknown }
+  - { board: 'yesenergy', company: 'Yes Energy', size: unknown }
+  - { board: 'zone5technologies', company: 'Zone 5 Technologies', size: unknown }
+  - { board: 'zscaler', company: 'Zscaler', size: unknown }
 lever:
   - { board: spotify, company: 'Spotify', size: medium_large }
   - { board: zoox, company: 'Zoox', size: medium_large, ai: true }

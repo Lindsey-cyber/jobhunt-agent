@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -107,6 +107,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_19008305008",
+      "label": "Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_19008306008",
+      "label": "Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "gender",
       "label": "Gender",
       "expected": "Decline To Self Identify",
@@ -128,9 +142,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?",
-    "Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

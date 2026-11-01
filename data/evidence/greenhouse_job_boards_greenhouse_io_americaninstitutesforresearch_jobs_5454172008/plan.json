@@ -987,7 +987,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_19008305008",
         "label": "Do you have hands-on experience conducting advanced quantitative analyses using R or Python, including statistical modeling and causal inference methods (e.g., experimental or quasi-experimental designs)?",
@@ -998,10 +998,16 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "answers.qualifications"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_19008306008",
         "label": "Do you have professional experience working with complex research data (e.g., survey, administrative, longitudinal, or linked datasets) and applying quantitative methods to education, health, or social policy research?",
@@ -1012,7 +1018,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "answers.qualifications"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

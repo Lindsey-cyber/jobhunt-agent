@@ -1,7 +1,7 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"What is your anticipated start date for this role?\": no answer in profile or answer bank",
+    "required \"What is your anticipated start date for this role?\": answer \"November 15, 2026\" matches none of the options",
     "required \"Why Bracebridge?\": no answer in profile or answer bank",
     "required \"Briefly describe an open-ended project that you worked on with others. What was your role, what did you learn, and what were the challenges?\": no answer in profile or answer bank",
     "required \"What kinds of skills or expertise are you most interested in developing over the next few years?\": no answer in profile or answer bank",

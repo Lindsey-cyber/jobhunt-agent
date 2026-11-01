@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Please list 3-5 key words indicating your research areas of interest. We recommend specific sub-areas rather than broad fields of study (e.g. \"query-focused summarization\" instead of \"natural Language processing\").\": no answer in profile or answer bank",
+    "required \"Tell us about a project that you worked on in the past few years that you found most exciting and important. (max 100 words)\": no answer in profile or answer bank",
+    "required \"Tell us about a research question or problem that you’d be excited to work on with our team (Aimed for Agents for Science). Why is this problem important and challenging? See https://allenai.org/ai-for-science for examples of our work. (max 100 words)\": no answer in profile or answer bank",
+    "required \"What recent advance in computing and artificial intelligence do you personally find most exciting (not including work by you or by Ai2), and why do you find it interesting? (max 100 words)\": no answer in profile or answer bank",
+    "required \"Please list 3-5 key words indicating your research areas of interest. We recommend specific sub-areas rather than broad fields of study (e.g. \"query-focused summarization\" instead of \"natural Language processing\").\" is empty after filling",
+    "required \"Tell us about a project that you worked on in the past few years that you found most exciting and important. (max 100 words)\" is empty after filling",
+    "required \"Tell us about a research question or problem that you’d be excited to work on with our team (Aimed for Agents for Science). Why is this problem important and challenging? See https://allenai.org/ai-for-science for examples of our work. (max 100 words)\" is empty after filling",
+    "required \"What recent advance in computing and artificial intelligence do you personally find most exciting (not including work by you or by Ai2), and why do you find it interesting? (max 100 words)\" is empty after filling"
+  ]
+}

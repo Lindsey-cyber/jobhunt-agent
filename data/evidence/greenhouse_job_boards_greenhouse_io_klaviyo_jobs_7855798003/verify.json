@@ -1,0 +1,198 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics & Decision Theory",
+      "actual": "Statistics & Decision Theory",
+      "pass": true
+    },
+    {
+      "fieldId": "start-month--0",
+      "label": "Start date month",
+      "expected": "January",
+      "actual": "January",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-month--0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31822546003",
+      "label": "Preferred Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31822547003",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31822548003",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31822549003",
+      "label": "Would you be willing to relocate if the role requires it?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31908204003",
+      "label": "This is an in-office position in Boston, MA. Will you come into the Boston office five (5) times per week for this role?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31822550003",
+      "label": "Do you currently have legal work authorization in the country where this position is based?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31822551003",
+      "label": "Would you, now or in the future, require immigration sponsorship* for work authorization?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_31822552003",
+      "label": "How did you hear about us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "4000706003",
+      "label": "Gender Identity",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000707003",
+      "label": "Race/Ethnicity",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000981003",
+      "label": "Pronoun",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000982003",
+      "label": "Sexual Orientation",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Klaviyo is an AI-forward organization. Tell us a bit more about how you use AI in your work:"
+  ],
+  "fillErrors": []
+}

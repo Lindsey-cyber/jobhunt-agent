@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Klaviyo is an AI-forward organization. Tell us a bit more about how you use AI in your work:\": no answer in profile or answer bank",
+    "required \"Klaviyo is an AI-forward organization. Tell us a bit more about how you use AI in your work:\" is empty after filling"
+  ]
+}

@@ -13,6 +13,15 @@
 
 已批准岗位 840 条：greenhouse 202、url 189、linkedin 134、ashby 126、workday 92、glassdoor 54、lever 21、smartrecruiters 13、lead 9。
 
+## ⚠️ 需要你注意（11/01 发现）
+
+有两份已投出的 NewsBreak 申请，工作许可题答错了。题目是 "Are you legally authorized to work in the United States without requiring visa sponsorship now or in the future?"，agent 当时选了 **Yes**，正确答案是 **No**（你以后需要 sponsorship）：
+
+- NewsBreak · AI Engineer, Agent Platform（https://job-boards.greenhouse.io/newsbreak/jobs/4683873006，10/30 投）
+- NewsBreak · Applied AI Engineer, Advertising Agents (New Grad)（https://job-boards.greenhouse.io/newsbreak/jobs/4700278006，10/28 投）
+
+原因：规则只认 "without sponsorship"，没认出 "without requiring visa sponsorship"。规则已修好并加了测试；我用新规则把所有存档的表单重算了一遍，已投出的申请里只有这两份受影响，其余都是没投出去的。是否联系 NewsBreak 更正、或撤回重投，由你决定，agent 不会碰这两份。
+
 ## 你已手动完成（11/01 告知）
 
 - 10/29 之前的所有提交，都已用新简历（10/29 的 MLE 版）重新提交。

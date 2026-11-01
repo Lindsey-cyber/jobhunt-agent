@@ -44,7 +44,7 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 
 // "the country where the job is located" names no country; the posting does.
 // Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry where the (job|position|role) (you are applying for |you applied for )?is (located|based)\b|\bcountry you are applying (to|for|in)\b|\bcountry (for which|where) you are applying\b/;
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry where the (job|position|role) (you are applying for |you applied for )?is (located|based)\b|\bcountry you are applying (to|for|in)\b|\bcountry (for which|where) you are applying\b|\bin the country for this (job|position|role)\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
@@ -294,7 +294,10 @@ export const PROFILE_RULES: ProfileRule[] = [
       const f1 = /\bF-?1\b/i.test(status) ? (ctx.options ?? []).filter((o) => /\bF-?1 status\b/i.test(o)) : [];
       if (authorized && f1.length === 1) return f1[0];
       // ADI: "authorized to work ... on a fulltime and indefinite basis": OPT is not indefinite.
-      if (/\b(indefinite|indefinitely|permanent basis|permanently|without (any )?(restriction|sponsorship|limitation)|unrestricted)\b/.test(label)) return yesNo(authorized && !p.workAuthorization.needsSponsorship);
+      // Sponsorship as a condition asks whether she needs it: NewsBreak "without requiring visa sponsorship now or in the future",
+      // Xaira "without requiring employer-sponsored work authorization", Avride "do not require current or future visa sponsorship".
+      // A preamble that only says the company sponsors (Akuna) does not count.
+      if (/\b(indefinite|indefinitely|permanent basis|permanently|without (any )?(restriction|limitation)|unrestricted)\b|\bwithout\b.{0,40}\bsponsor|\b(do|does|will) not (now or in the future )?require\b.{0,60}\bsponsor|\bno (visa )?sponsorship\b/.test(label)) return yesNo(authorized && !p.workAuthorization.needsSponsorship);
       return yesNo(authorized);
     },
   },
@@ -803,7 +806,8 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     path: "workAuthorization.needsSponsorship",
     // Pinterest: "Will you require our assistance with work authorization now or in the future?"
-    pattern: /\b(sponsorship|sponorship|sponsor|sponsored)\b|\bassistance with work authori[sz]ation\b|\bimmigration (assistance|support)\b/,
+    // Appian: "will you now or in the future require Appian to file a petition or application for employment-based visa status on your behalf ...?"
+    pattern: /\b(sponsorship|sponorship|sponsor|sponsored)\b|\bassistance with work authori[sz]ation\b|\bimmigration (assistance|support)\b|\brequire .{1,40} to file a petition\b.{0,60}\bvisa\b/,
     // Options that split "now" from "in the future": authorized today and
     // needing sponsorship means the future one.
     resolve: (p, _label, ctx) => {

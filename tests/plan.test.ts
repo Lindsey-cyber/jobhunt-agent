@@ -263,6 +263,20 @@ describe("buildPlan", () => {
     expect(buildPlan(form([f]), user.profile, user.bank).items[0]).toMatchObject({ status: "fill", value: "I don't wish to answer" });
   });
 
+  it("applies the candidate's standing answers of 2026-11-01", () => {
+    const one = (label: string, options: string[] = ["Yes", "No"], kind: "combobox" | "text" = "combobox") => buildPlan(form([field(label, { kind, options })]), user.profile, user.bank).items[0]!;
+    expect(one("What percentage of travel are you willing to accept?", ["0-10%", "25%", "50+%"])).toMatchObject({ value: "50+%" });
+    expect(one("Robinhood adheres to applicable laws ... a) Do you currently hold or have you held a position as a government official? b) ... c) Are you related to a government official?")).toMatchObject({ value: "No" });
+    expect(one("Are you currently employed by a client, partner, or competitor of Addepar?")).toMatchObject({ value: "No" });
+    expect(one("Do you have two years or more of Python development experience?")).toMatchObject({ value: "Yes" });
+    expect(one("Do you meet all of the Basic Qualifications for this role as specified in the job description?")).toMatchObject({ value: "Yes" });
+    expect(one("How many years of experience do you have using data analytics tools (i.e. Tableau, Looker, BigQuery, AWS)", ["0-1", "1-3", "3-5", "5+"])).toMatchObject({ value: "1-3" });
+    expect(one("Years of ML Infrastructure experience", [], "text")).toMatchObject({ value: "2" });
+    // Not swallowed: relatives, clearance, disability stay with their own rules.
+    expect(one("Do you have a current security clearance?")).not.toMatchObject({ value: "Yes" });
+    expect(one("Do you have relatives employed by Acme?")).not.toMatchObject({ value: "Yes" });
+  });
+
   it("uses a drafted answer only on the posting it was written for", () => {
     const why = { id: "draft:1", question: "Why are you interested in this role?", aliases: [], answer: "Because of the robots.", company: "Acme Robotics", jobTitle: "Intern", origin: "generated" as const };
     const f = field("Why are you interested in this role?");
@@ -318,8 +332,6 @@ describe("buildPlan", () => {
     expect(one("What's your postal code?", "Toast")).toMatchObject({ value: p.contact.address.postalCode });
     expect(one("Are you an employee of Flutter or a Flutter brand?", "FanDuel")).toMatchObject({ value: "No" });
     expect(one("What is your state of residence?", "Zocdoc", { kind: "combobox", options: ["California", "New Jersey", "New York"] })).toMatchObject({ value: "New York" });
-    expect(one("In which city do you currently reside?", "Avride")).toMatchObject({ value: p.contact.address.city });
-    expect(one("Your Location", "SpaceXSI")).toMatchObject({ value: `${p.contact.address.city}, ${p.contact.address.state}` });
     // F-1 OPT: authorized now, but needs sponsorship later.
     expect(one("If yes, will you now or in the future require Appian to file a petition or application for employment-based visa status on your behalf to begin or continue employment with our company? (Please note that if you are in F-1 OPT/STEM OPT, H-1B, ... you must answer YES to this question).", "Appian Corporation", { kind: "combobox", options: ["Yes", "No"] })).toMatchObject({ value: "Yes" });
     expect(one("I am authorized to work in the United States and do not require current or future visa sponsorship.", "Avride", { kind: "combobox", options: ["Yes", "No"] })).toMatchObject({ value: "No" });

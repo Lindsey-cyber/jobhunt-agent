@@ -18,12 +18,18 @@ answers:
       - Current location
       - Current Location (City)
       - Where are you currently located?
+      - Your Location
+      - Your current location
+      - What is your current location?
     answer: New York, New York, United States
     origin: human
   - id: current-city
     question: City
     aliases:
       - Current city
+      - In which city do you currently reside?
+      - What city do you currently live in?
+      - City of residence
     answer: New York
     origin: human
   # The candidate (2026-10-28): no non-compete, non-solicitation or similar agreement.
@@ -707,4 +713,12 @@ answers:
     question: Have you participated in any of the following mathematics competitions?
     aliases: []
     answer: "I have not participated in any of these competitions"
+    origin: human
+  # The candidate (2026-11-01): research keywords come from her resume.
+  - id: research-keywords
+    question: Please list 3-5 key words indicating your research areas of interest. We recommend specific sub-areas rather than broad fields of study (e.g. "query-focused summarization" instead of "natural Language processing").
+    aliases:
+      - Please list 3-5 key words indicating your research areas of interest.
+      - What are your research areas of interest?
+    answer: multimodal fusion for fine-grained visual classification; representation analysis of vision foundation models; self-supervised denoising for neural imaging; hierarchical multi-agent reasoning with tool generation; real-time vision for robotics
     origin: human

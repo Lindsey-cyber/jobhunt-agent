@@ -94,7 +94,65 @@ export interface ProfileRule {
 const firstEdu = (p: Profile) => p.education[0]!;
 
 // Ordered: the first rule whose pattern matches the normalized label wins.
+// The candidate (2026-11-01): "years of experience" questions take 2 (her professional and research
+// experience since 2025, and Python well beyond that); a choice list gets the bucket that holds 2.
+const YEARS = 2;
+function yearsAnswer(options: string[] | undefined): string | undefined {
+  if (!options || options.length === 0) return String(YEARS);
+  for (const o of options) {
+    const t = o.toLowerCase();
+    const range = /(\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(\d+(?:\.\d+)?)/.exec(t);
+    if (range && YEARS >= Number(range[1]) && YEARS <= Number(range[2])) return o;
+    const plus = /(\d+(?:\.\d+)?)\s*\+|(?:more than|over|at least)\s*(\d+)/.exec(t);
+    if (plus && !range && YEARS >= Number(plus[1] ?? plus[2]) && !options.some((x) => x !== o && /(\d+)\s*\+/.test(x) && Number(/(\d+)\s*\+/.exec(x)![1]) <= YEARS && Number(/(\d+)\s*\+/.exec(x)![1]) > Number(plus[1] ?? plus[2]))) return o;
+    const exact = /^(\d+)( years?)?$/.exec(t.trim());
+    if (exact && Number(exact[1]) === YEARS) return o;
+  }
+  return undefined;
+}
+
 export const PROFILE_RULES: ProfileRule[] = [
+  // ---- The candidate's standing answers (2026-11-01) ----
+  // Travel: any amount, up to 100%. Picks the option allowing the most travel.
+  {
+    path: "answers.travel",
+    pattern: /\b(percentage|percent|%|amount) of travel\b|\btravel (up to |approximately |about )?\d+ ?%|\b(ability|able|willing|willingness) to travel\b|\brequires? travel\b/,
+    resolve: (_p, _l, ctx) => {
+      const opts = ctx.options ?? [];
+      if (opts.length === 0) return "Yes, up to 100%";
+      const yes = opts.find((o) => /^yes\b/i.test(o.trim()));
+      if (yes) return yes;
+      const num = (o: string) => Math.max(-1, ...[...o.matchAll(/(\d+)/g)].map((m) => Number(m[1])));
+      return [...opts].sort((a, b) => num(b) - num(a))[0];
+    },
+  },
+  // A law-abiding Chinese citizen with no ties to any government official, and none to health-care professionals.
+  {
+    path: "answers.governmentOfficial",
+    pattern: /\bgovernment (official|officer|employee)s?\b|\bpolitically exposed\b|\bforeign official\b|\bhealth ?care professional\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^no\b/i.test(o.trim())) ?? "No",
+  },
+  // Arborphy AI is a small company run by her professor's friend: not a client, partner, vendor or competitor of anyone.
+  {
+    path: "answers.employerRelationship",
+    pattern: /\b(employed by|work(ing)? for|relationship with|affiliated with)\b.{0,40}\b(client|customer|partner|competitor|vendor)s?\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^no\b/i.test(o.trim())) ?? "No",
+  },
+  // "How many years of X experience": 2.
+  {
+    path: "answers.yearsOfExperience",
+    pattern: /^(?!.*\b(clearance|military|served|degree|school|university|graduat|visa|sponsor|authori[sz]ed|age)\b).*(\bhow many years\b|^years (of|in)\b|^number of years\b|^total years\b|\byears of (professional |relevant |industry |work |hands on )?experience\b)/,
+    resolve: (_p, _l, ctx) => yearsAnswer(ctx.options),
+  },
+  // Skill, experience and qualification yes/no questions: she applies because she meets them, so Yes.
+  {
+    path: "answers.qualifications",
+    pattern: /^(?!.*\b(famil|relativ|related|relationship|romantic|spouse|disab|clearance|non ?compete|non ?solicit|agreement|criminal|convict|felon|licen[sc]|offer|sponsor|visa|authori[sz]|citizen|resident|pending|referr|accommodat|phd|doctora|currently (employed|enrolled)|resid|located|location|preference|prefer|relocat|commut|office|onsite|on site|in person|hybrid|remote|start|notice|salary|compensation|veteran|military|gender|race|racial|hispanic|ethnic|pronoun|interview|agree|acknowledg|certif|consent|employ|worked (at|for)|conflict|bankrupt|debt|drug|tattoo))(?!.*\b(pay|age|18|21)\b)(do you (have|possess|meet|bring)\b|are you (proficient|comfortable|familiar|experienced|skilled|fluent)\b|have you (used|worked with|built|deployed|developed|shipped|written|trained)\b|can you (code|program|write|build)\b)/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^yes\b/i.test(o.trim())),
+  },
   // Workday: an "I have a preferred name" box, ticked when the profile has one.
   { path: "identity.preferredName", pattern: /^i have a preferred name$/, kinds: ["checkbox"], resolve: (p, label, ctx) => (p.identity.preferredName ? ctx.options?.[0] : undefined) },
   { path: "identity.preferredName", pattern: /\bpreferred (first |given )?name\b/, kinds: ["text"], resolve: (p) => p.identity.preferredName },
@@ -142,12 +200,9 @@ export const PROFILE_RULES: ProfileRule[] = [
       return a.line1 ? [a.line1, a.line2, a.city, `${a.state} ${a.postalCode ?? ""}`.trim(), a.country].filter(Boolean).join(", ") : undefined;
     },
   },
-  // xAI: "Your Location" in a text box: her city and state.
-  { path: "contact.address.city", pattern: /^(your|current|your current) location$/, kinds: ["text"], resolve: (p) => `${p.contact.address.city}, ${p.contact.address.state}` },
   { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
   { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
-  // Avride: "In which city do you currently reside?"
-  { path: "contact.address.city", pattern: /^city$|\b(current )?address city\b|^(in )?(which|what) city do you (currently )?(reside|live)( in)?$|^(current )?city of residence$/, resolve: (p) => p.contact.address.city },
+  { path: "contact.address.city", pattern: /^city$|\b(current )?address city\b/, resolve: (p) => p.contact.address.city },
   {
     path: "contact.address.state",
     // Zocdoc: "What is your state of residence?"

@@ -1,0 +1,94 @@
+{
+  "at": "2026-11-01T18:07:41.900Z",
+  "auditor": "sonnet, blind, brief only",
+  "sampleSize": 110,
+  "missing": [],
+  "score": {
+    "judged": 104,
+    "unsure": 6,
+    "falseMatchRate": 0.10526315789473684,
+    "matchJudged": 38,
+    "missRate": 0,
+    "rejectJudged": 19,
+    "nearMissRate": 0,
+    "nearJudged": 30,
+    "reviewFit": 8,
+    "reviewNotFit": 9,
+    "byRule": {
+      "match": {
+        "judged": 33,
+        "disagree": 3
+      },
+      "role.out_of_scope": {
+        "judged": 15,
+        "disagree": 0
+      },
+      "role.non_engineering": {
+        "judged": 18,
+        "disagree": 0
+      },
+      "experience.too_senior": {
+        "judged": 2,
+        "disagree": 0
+      },
+      "level.senior": {
+        "judged": 11,
+        "disagree": 0
+      },
+      "model.fit": {
+        "judged": 5,
+        "disagree": 1
+      },
+      "auth.citizenship": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "location.non_us": {
+        "judged": 1,
+        "disagree": 0
+      },
+      "type.internship": {
+        "judged": 1,
+        "disagree": 0
+      }
+    },
+    "disagreements": [
+      {
+        "id": "a001",
+        "key": "url:https://careers.amd.com/jobs/91746?lang=en-us",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "Field applications engineer is a customer-facing hardware role, not a target role"
+      },
+      {
+        "id": "a051",
+        "key": "greenhouse:4423646009",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"UMiami Only\" restricts to one school"
+      },
+      {
+        "id": "a060",
+        "key": "greenhouse:4513943005",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "model.fit",
+        "fit": "no",
+        "reason": "\"4+ years of full-time engineering experience\""
+      },
+      {
+        "id": "a068",
+        "key": "workday:intel:jr0288433",
+        "stratum": "match",
+        "verdict": "match",
+        "rule": "match",
+        "fit": "no",
+        "reason": "\"not eligible for Intel immigration sponsorship\""
+      }
+    ]
+  }
+}

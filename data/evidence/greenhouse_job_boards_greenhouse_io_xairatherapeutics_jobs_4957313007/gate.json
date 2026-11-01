@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you legally authorized to work in the country for this position without requiring employer-sponsored work authorization?\": sensitive question with no exact answer",
+    "required \"This role is based in our South San Francisco office and requires five days per week in-office. How does this align with your preferences?\": no answer in profile or answer bank",
+    "required \"What excites you about the opportunity to work at Xaira?\": no answer in profile or answer bank",
+    "required \"Are you legally authorized to work in the country for this position without requiring employer-sponsored work authorization?\" is empty after filling",
+    "required \"This role is based in our South San Francisco office and requires five days per week in-office. How does this align with your preferences?\" is empty after filling",
+    "required \"What excites you about the opportunity to work at Xaira?\" is empty after filling"
+  ]
+}

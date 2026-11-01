@@ -1,0 +1,101 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_6522675009",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_6522677009",
+      "label": "In which state or province do you currently reside?",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4392713009",
+      "label": "I am available to work onsite at our Austin headquarters?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_6522678009",
+      "label": "I am authorized to work in the United States and do not require current or future visa sponsorship.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_6522679009",
+      "label": "Avride complies with the Americans with Disabilities Act (ADA). Can you perform the essential functions of the position for which you are applying, with or without reasonable accommodation?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7826809009",
+      "label": "How did you hear about this position? (Please provide specific details.) For example: Indeed, LinkedIn, ZipRecruiter, Facebook group (name of group), employee referral (name of employee), recruiter outreach or other (please describe fully).",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "In which city do you currently reside?",
+    "If you require an accommodation to participate in the application process or to perform the essential duties of the job, please describe the accommodation requested below. (Note: You are not required to disclose specific medical diagnoses)."
+  ],
+  "fillErrors": []
+}

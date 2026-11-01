@@ -144,10 +144,12 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   { path: "contact.address.line1", pattern: /^(street )?address( line 1)?$/, resolve: (p) => p.contact.address.line1 },
   { path: "contact.address.line2", pattern: /^address line 2$|^(apt|apartment|suite|unit)\b/, resolve: (p) => p.contact.address.line2 },
-  { path: "contact.address.city", pattern: /^city$|\b(current )?address city\b/, resolve: (p) => p.contact.address.city },
+  // Avride: "In which city do you currently reside?"
+  { path: "contact.address.city", pattern: /^city$|\b(current )?address city\b|^(in )?(which|what) city do you (currently )?(reside|live)( in)?$|^(current )?city of residence$/, resolve: (p) => p.contact.address.city },
   {
     path: "contact.address.state",
-    pattern: /^(state|state province|province)$|^state of residence$|\b(current )?address state\b|^which u ?s state are you located in$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
+    // Zocdoc: "What is your state of residence?"
+    pattern: /^(state|state province|province)$|^((what is |whats )?your )?state of residence$|\b(current )?address state\b|^which u ?s state are you located in$|\b(state|state region|state province)\b.{0,30}\b(you )?(currently )?(reside|live)\b|\bu ?s state\b.{0,30}\breside\b/,
     resolve: (p, _label, ctx) => usStateName(p.contact.address.state, ctx.options),
   },
   {

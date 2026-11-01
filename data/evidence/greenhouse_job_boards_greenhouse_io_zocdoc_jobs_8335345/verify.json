@@ -1,0 +1,117 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_70289068",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_70289069",
+      "label": "Do you now or in the future require sponsorship for employment visa status? (Write \"Yes\" if you require any immigration or work permit/EAD application or renewal - sponsored by an employer, university or otherwise - either now or at some point in the future)",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_70289070",
+      "label": "You're applying for an NYC based role. Can you please confirm that you're willing and able to work from our NYC office in an encouraged hybrid model (2 days per week)?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "7312",
+      "label": "How would you describe your gender identity? (mark all that apply)",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "7311",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "7310",
+      "label": "How would you describe your sexual orientation? (mark all that apply)",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "7309",
+      "label": "Do you identify as transgender?",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "7308",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "7307",
+      "label": "Are you a veteran or active member of the United States Armed Forces?",
+      "expected": "No, I am not a veteran or active member",
+      "actual": "No, I am not a veteran or active member",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "What is your state of residence?",
+    "Do you have a Bachelor's degree of foreign equivalent in Business Analytics, Engineering, or Math?",
+    "Do you have 2+ years of experience manipulating large data sets using Python and Snowflake to perform data extraction, cleaning, transformation, and workflow automation for reporting and analysis",
+    "How many years of experience do you have using data analytics tools (i.e. Tableau, Looker, BigQuery, AWS)"
+  ],
+  "fillErrors": []
+}

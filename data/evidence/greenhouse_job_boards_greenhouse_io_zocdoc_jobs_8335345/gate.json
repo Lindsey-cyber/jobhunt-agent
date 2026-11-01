@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What is your state of residence?\": no answer in profile or answer bank",
+    "required \"Do you have a Bachelor's degree of foreign equivalent in Business Analytics, Engineering, or Math?\": no answer in profile or answer bank",
+    "required \"Do you have 2+ years of experience manipulating large data sets using Python and Snowflake to perform data extraction, cleaning, transformation, and workflow automation for reporting and analysis\": no answer in profile or answer bank",
+    "required \"How many years of experience do you have using data analytics tools (i.e. Tableau, Looker, BigQuery, AWS)\": no answer in profile or answer bank",
+    "required \"What is your state of residence?\" is empty after filling",
+    "required \"Do you have a Bachelor's degree of foreign equivalent in Business Analytics, Engineering, or Math?\" is empty after filling",
+    "required \"Do you have 2+ years of experience manipulating large data sets using Python and Snowflake to perform data extraction, cleaning, transformation, and workflow automation for reporting and analysis\" is empty after filling",
+    "required \"How many years of experience do you have using data analytics tools (i.e. Tableau, Looker, BigQuery, AWS)\" is empty after filling"
+  ]
+}

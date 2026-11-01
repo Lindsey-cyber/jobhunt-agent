@@ -317,6 +317,8 @@ describe("buildPlan", () => {
     expect(one("CGPA", "Graviton Research Capital LLP")).toMatchObject({ value: "3.71" });
     expect(one("What's your postal code?", "Toast")).toMatchObject({ value: p.contact.address.postalCode });
     expect(one("Are you an employee of Flutter or a Flutter brand?", "FanDuel")).toMatchObject({ value: "No" });
+    expect(one("What is your state of residence?", "Zocdoc", { kind: "combobox", options: ["California", "New Jersey", "New York"] })).toMatchObject({ value: "New York" });
+    expect(one("In which city do you currently reside?", "Avride")).toMatchObject({ value: p.contact.address.city });
     expect(one("Are you an employee of Arborphy AI LLC?", "Arborphy AI")).toMatchObject({ value: "Yes" });
     expect(one("What is your anticipated graduation month/year?", "Klaviyo")).toMatchObject({ value: "05/2026" });
     expect(one("Where did you complete your undergraduate degree?", "Bertram")).toMatchObject({ value: "Renmin University of China" });

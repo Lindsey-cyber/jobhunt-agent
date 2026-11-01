@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"In which city do you currently reside?\": no answer in profile or answer bank",
+    "required \"If you require an accommodation to participate in the application process or to perform the essential duties of the job, please describe the accommodation requested below. (Note: You are not required to disclose specific medical diagnoses).\": no answer in profile or answer bank",
+    "required \"In which city do you currently reside?\" is empty after filling",
+    "required \"If you require an accommodation to participate in the application process or to perform the essential duties of the job, please describe the accommodation requested below. (Note: You are not required to disclose specific medical diagnoses).\" is empty after filling"
+  ]
+}

@@ -16,6 +16,10 @@
 
 - What percentage of travel are you willing to accept?（选项：0-10% / 25% / 50+%。你说过愿意出差，但没说比例，我没猜）
 
+### Addepar · Software Engineer - Customer Facing Applied AI
+
+- Are you currently employed by a client, partner, or competitor of Addepar?（Yes/No。你现在在 Arborphy AI，我不知道它和 Addepar 有没有业务关系，没猜）
+
 ### Black Canyon Consulting · Data Engineer
 
 - 你有几年数据工程或相关领域的工作经验？（文本框）

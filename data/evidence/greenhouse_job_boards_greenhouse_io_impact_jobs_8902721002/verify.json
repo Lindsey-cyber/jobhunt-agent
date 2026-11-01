@@ -1,0 +1,99 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38888936002",
+      "label": "Are you eligible to live and work in South Africa or would you need sponsorship?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38888938002",
+      "label": "What is your expected annual salary in ZAR?",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38888939002",
+      "label": "What is your contractual notice period?",
+      "expected": "2 weeks",
+      "actual": "2 weeks",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Do you have at least 2+ years experience in data analysis, business intelligence or data engineering role?",
+    "Do you have experience in Python and SQL coding skills?",
+    "Do you have exposure to DataBricks, PySpark and BigQuery?",
+    "Do you have exposure to the Google Cloud Platform (GCP) and integrated technologies?",
+    "Do you have exposure to machine learning libraries, tools and protocols?",
+    "Do you have exposure to data visualization tools such as Tableau, Power BI, SSRS/SSAS, Looker or QlikView?",
+    "Are you willing to relocate to Cape Town?"
+  ],
+  "fillErrors": []
+}

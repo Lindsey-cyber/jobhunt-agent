@@ -1,0 +1,10 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Please attach a copy of your S.A. ID or Visa.\": no document for this upload",
+    "required \"Briefly describe a production-ready AI solution or workflow automation you designed and deployed (preferably using Python, Node.js, or prompt engineering). What manual process did it automate, and how did you ensure it was reliable for daily business use beyond just a prototype?\": no answer in profile or answer bank",
+    "required \"How do you approach translating a complex AI or technical concept into simple terms for non-engineers, and how do you ensure marketing stakeholders can independently use and adopt what you build?\": no answer in profile or answer bank",
+    "required \"Briefly describe a production-ready AI solution or workflow automation you designed and deployed (preferably using Python, Node.js, or prompt engineering). What manual process did it automate, and how did you ensure it was reliable for daily business use beyond just a prototype?\" is empty after filling",
+    "required \"How do you approach translating a complex AI or technical concept into simple terms for non-engineers, and how do you ensure marketing stakeholders can independently use and adopt what you build?\" is empty after filling"
+  ]
+}

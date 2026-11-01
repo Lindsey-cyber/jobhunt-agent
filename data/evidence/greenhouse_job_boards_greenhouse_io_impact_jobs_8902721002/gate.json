@@ -1,0 +1,19 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you have at least 2+ years experience in data analysis, business intelligence or data engineering role?\": no answer in profile or answer bank",
+    "required \"Do you have experience in Python and SQL coding skills?\": no answer in profile or answer bank",
+    "required \"Do you have exposure to DataBricks, PySpark and BigQuery?\": no answer in profile or answer bank",
+    "required \"Do you have exposure to the Google Cloud Platform (GCP) and integrated technologies?\": no answer in profile or answer bank",
+    "required \"Do you have exposure to machine learning libraries, tools and protocols?\": no answer in profile or answer bank",
+    "required \"Do you have exposure to data visualization tools such as Tableau, Power BI, SSRS/SSAS, Looker or QlikView?\": no answer in profile or answer bank",
+    "required \"Are you willing to relocate to Cape Town?\": no answer in profile or answer bank",
+    "required \"Do you have at least 2+ years experience in data analysis, business intelligence or data engineering role?\" is empty after filling",
+    "required \"Do you have experience in Python and SQL coding skills?\" is empty after filling",
+    "required \"Do you have exposure to DataBricks, PySpark and BigQuery?\" is empty after filling",
+    "required \"Do you have exposure to the Google Cloud Platform (GCP) and integrated technologies?\" is empty after filling",
+    "required \"Do you have exposure to machine learning libraries, tools and protocols?\" is empty after filling",
+    "required \"Do you have exposure to data visualization tools such as Tableau, Power BI, SSRS/SSAS, Looker or QlikView?\" is empty after filling",
+    "required \"Are you willing to relocate to Cape Town?\" is empty after filling"
+  ]
+}

@@ -13,6 +13,13 @@
 
 已批准岗位 840 条：greenhouse 202、url 189、linkedin 134、ashby 126、workday 92、glassdoor 54、lever 21、smartrecruiters 13、lead 9。
 
+## 你已手动完成（11/01 告知）
+
+- 10/29 之前的所有提交，都已用新简历（10/29 的 MLE 版）重新提交。
+- Lyft 的所有申请已投完。
+- Amazon 的所有申请已投完。
+- 下面"已提交、未确认"的 15 份，全部已手动重新提交：Pinterest ×7、Applied Intuition、Synhawk、Tabs、Klaviyo Campus、Deepgram、Brain Co.、Accenture Federal Services（Jr. Data Scientist）。Billtrust 之前已收到确认邮件。
+
 ## 接下来（有额度时）
 
 1. 先投排队的 20 条：第三方来源的岗位，已在 Greenhouse 或 Lever 上找到同一个岗位，你已批准。清单在 `docs/HANDOFF-2026-10-30.md`。

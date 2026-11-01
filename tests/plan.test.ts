@@ -181,6 +181,7 @@ describe("buildPlan", () => {
     const yn = { kind: "combobox" as const, options: ["Yes", "No"] };
     const one = (label: string) => buildPlan({ ...form([field(label, yn)]), jobLocation: "New York, NY" }, p, user.bank).items[0]!;
     expect(one("Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?")).toMatchObject({ status: "fill", value: "No" });
+    expect(one("Please indicate whether you are either a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine.")).toMatchObject({ status: "fill", value: "No" });
     expect(one("Will you require our assistance with work authorization now or in the future?")).toMatchObject({ status: "fill", value: "Yes" });
     expect(one("Are you authorized to work lawfully in the location posted for this position?")).toMatchObject({ status: "fill", value: "Yes" });
     expect(one("Do you currently reside within the continental United States?")).toMatchObject({ status: "fill" });

@@ -654,8 +654,9 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // Asana: "Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?"
     path: "citizenship",
-    pattern: /\bcitizen or (legal )?permanent resident of cuba\b/,
-    resolve: (p) => yesNo(p.citizenship.some((c) => /cuba|iran|north korea|syria|ukraine/i.test(c))),
+    // Twilio: "...a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine." Residence is her address.
+    pattern: /\bcitizen or (legal )?(permanent )?resident of (any of the following countries )?cuba\b/,
+    resolve: (p) => yesNo([...p.citizenship, p.contact.address.country ?? ""].some((c) => /cuba|iran|north korea|syria|ukraine|crimea/i.test(c))),
   },
   {
     // Lila Sciences: "Do you currently reside within the continental United States?"

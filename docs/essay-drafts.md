@@ -39,6 +39,10 @@
 - 住在美东时区吗？ → Yes（纽约）
 - 怎么联系你？ → Email
 
+### Aquatic Capital Management · Quantitative Researcher, Early Career
+
+- Do you have any outstanding offers or deadlines?（文本框，只有你知道。其他题我都按你的资料填好了。）
+
 ### NewsBreak · Machine Learning Engineer, LLM Post-Training
 
 - What makes you a strong fit for this role?

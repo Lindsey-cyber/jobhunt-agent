@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Please select your current state of residence. Select “Not in the US” if you reside outside the United States. This information helps us understand our talent pool and ensures we provide accurate resources throughout the hiring process.\": no answer in profile or answer bank",
+    "required \"Before seeing this job posting, how familiar were you with Faire as a company? (Your response will not impact your application)\": no answer in profile or answer bank",
+    "required \"Which categories describe you? Select all that apply to you:\": no answer in profile or answer bank",
+    "required \"Please select your current state of residence. Select “Not in the US” if you reside outside the United States. This information helps us understand our talent pool and ensures we provide accurate resources throughout the hiring process.\" is empty after filling",
+    "required \"Before seeing this job posting, how familiar were you with Faire as a company? (Your response will not impact your application)\" is empty after filling",
+    "required \"Which categories describe you? Select all that apply to you:\" is empty after filling"
+  ]
+}

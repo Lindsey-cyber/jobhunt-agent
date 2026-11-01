@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"I identify as:\": no answer in profile or answer bank",
+    "required \"I identify as:\" is empty after filling"
+  ]
+}

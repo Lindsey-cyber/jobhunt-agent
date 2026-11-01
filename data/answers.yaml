@@ -667,3 +667,44 @@ answers:
     aliases: []
     answer: "No"
     origin: human
+  # From her profile (Aquatic Capital): F-1 OPT, needs sponsorship later.
+  - id: aquatic-eligibility
+    question: Employment eligibility status
+    aliases: []
+    answer: "Yes, will require firm sponsorship"
+    company: Aquatic Capital Management
+    origin: human
+  # From her profile: M.S. Statistics, Columbia, May 2026, GPA 3.71.
+  - id: degree-recent-completed
+    question: What degree are you currently pursuing or have recently completed?
+    aliases: []
+    answer: "Master's"
+    origin: human
+  - id: gpa-most-recent-normalized
+    question: For your most recent degree, what is/was your GPA (normalized to a 4.0 scale)?
+    aliases: []
+    answer: "3.6-4.0"
+    origin: human
+  - id: expected-graduation-year
+    question: What year are you expected to graduate?
+    aliases: []
+    answer: "2026"
+    origin: human
+  # From her resume: internships (Arborphy AI, InnoX Academy), none at a hedge fund or trading firm.
+  - id: internships-hedge-fund
+    question: Have you completed any internships? If yes, were any of them at a hedge fund or a proprietary trading firm?
+    aliases: []
+    answer: "Yes, I have internship experience, but not within a hedge fund or proprietary trading firm."
+    origin: human
+  # From her profile: M.S. Statistics; B.A. Economics.
+  - id: fields-of-study-quant
+    question: Please select all fields of study that closely align with your education background
+    aliases: []
+    answer: "Statistics"
+    origin: human
+  # Inferred (standing permission, 2026-10-29): her resume lists no math or programming competitions.
+  - id: math-competitions
+    question: Have you participated in any of the following mathematics competitions?
+    aliases: []
+    answer: "I have not participated in any of these competitions"
+    origin: human

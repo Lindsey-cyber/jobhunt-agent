@@ -1,0 +1,149 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38831374002",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38831375002",
+      "label": "How did you hear about this job?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38831376002",
+      "label": "Country",
+      "expected": "United States of America",
+      "actual": "United States of America",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38831377002",
+      "label": "Are you currently eligible to work legally in the United States of America?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38831378002",
+      "label": "Do you now or in the future require immigration support or visa sponsorship to continue working in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38831379002",
+      "label": "Do you acknowledge that this is a hybrid role based in San Francisco, New York and/or Chicago and you will be required to come into the office four days a week?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38831380002",
+      "label": "Are you currently subject to any agreement with a former employer/third party (such as a non-solicitation or non-compete agreement) that may potentially limit your ability to perform the duties of the position you are applying for? If yes, you may be asked to provide a copy for review. Please note, answering \"yes\" will not disqualify your application from consideration.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "4024620002",
+      "label": "I identify my gender as:",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4024622002",
+      "label": "I identify my sexual orientation as:",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4024623002",
+      "label": "Veteran Status:",
+      "expected": "No, I am not a veteran",
+      "actual": "No, I am not a veteran",
+      "pass": true
+    },
+    {
+      "fieldId": "4024624002",
+      "label": "I have a disability:",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "4024625002",
+      "label": "I identify my race/ethnicity as (please mark all that apply):",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "gdpr_demographic_data_consent_given",
+      "label": "By checking this box, I consent to Chime Financial, Inc collecting, storing, and processing my responses to the demographic data surveys above.",
+      "expected": "By checking this box, I consent to Chime Financial, Inc collecting, storing, and processing my responses to the demographic data surveys above.",
+      "actual": "By checking this box, I consent to Chime Financial, Inc collecting, storing, and processing my responses to the demographic data surveys above.",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "I identify as:"
+  ],
+  "fillErrors": []
+}

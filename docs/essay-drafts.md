@@ -16,6 +16,10 @@
 - 你在工作中用过哪些编程语言或查询语言做数据工程？（我可以按简历填 Python、SQL、R，你确认一下）
 - 你是怎么开发或维护用来提供数据、分析结果或模型接口的 API 或服务层的？
 
+### DRW · Quantitative Researcher
+
+- 要上传最高学历（Columbia 硕士）的最新成绩单。repo 里没有成绩单文件。你可以自己去投，或者把成绩单 PDF 放进 `data/`，我让 agent 在表单要求时上传。
+
 ### NewsBreak · Machine Learning Engineer, LLM Post-Training
 
 - What makes you a strong fit for this role?

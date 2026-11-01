@@ -192,7 +192,9 @@ switch (command) {
     // The candidate (2026-10-29): never several applications to one company at once.
     // Interleave companies, and leave two minutes between submissions to the same one.
     // Postings never tried go first; retries of held ones after them.
-    const fresh = ready.filter((j) => !sameJob(ledger, j.url));
+    // The candidate (2026-11-01): newest postings first (employer's publish date, else when we first saw it).
+    const posted = (j: (typeof ready)[number]) => j.publishedAt ?? j.firstSeen ?? "";
+    const fresh = ready.filter((j) => !sameJob(ledger, j.url)).sort((a, b) => posted(b).localeCompare(posted(a)));
     const retries = ready.filter((j) => sameJob(ledger, j.url));
     const order = [...interleaveByCompany(fresh), ...interleaveByCompany(retries)].slice(0, limit);
     const lastAt = new Map<string, number>();

@@ -645,6 +645,23 @@ greenhouse:
   - { board: 'yesenergy', company: 'Yes Energy', size: unknown }
   - { board: 'zone5technologies', company: 'Zone 5 Technologies', size: unknown }
   - { board: 'zscaler', company: 'Zscaler', size: unknown }
+  # From speedyapply (AI + SWE) and zapplyjobs new-grad lists, checked live 2026-11-01.
+  - { board: 'terraclear', company: 'terraclear', size: unknown }
+  - { board: 'tenet3', company: 'Tenet3', size: unknown }
+  - { board: 'arcinstitute', company: 'Arc Institute', size: unknown }
+  - { board: 'clearstreet', company: 'Clear Street', size: unknown }
+  - { board: 'vialogic', company: 'Via Logic LLC', size: unknown }
+  - { board: 'ascend21', company: 'Ascend', size: unknown }
+  - { board: 'gelbergroup', company: 'Gelber Group', size: unknown }
+  - { board: 'hpiq', company: 'HP IQ', size: unknown }
+  - { board: 'mlbevents', company: 'MLB (Job Board Only)', size: unknown }
+  - { board: 'mill', company: 'Mill', size: unknown }
+  - { board: 'kargo', company: 'Kargo', size: unknown }
+  - { board: 'podium81', company: 'Podium', size: unknown }
+  - { board: 'stokespacetechnologies', company: 'stokespacetechnologies', size: unknown }
+  - { board: 'scm', company: 'scm', size: unknown }
+  - { board: 'divergent', company: 'Divergent', size: unknown }
+  - { board: 'theweathercompany', company: 'The Weather Company', size: unknown }
 lever:
   - { board: spotify, company: 'Spotify', size: medium_large }
   - { board: zoox, company: 'Zoox', size: medium_large, ai: true }

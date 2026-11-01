@@ -316,6 +316,8 @@ describe("buildPlan", () => {
     expect(one("What is your GPA?", "Klaviyo")).toMatchObject({ value: "3.71" });
     expect(one("CGPA", "Graviton Research Capital LLP")).toMatchObject({ value: "3.71" });
     expect(one("What's your postal code?", "Toast")).toMatchObject({ value: p.contact.address.postalCode });
+    expect(one("Are you an employee of Flutter or a Flutter brand?", "FanDuel")).toMatchObject({ value: "No" });
+    expect(one("Are you an employee of Arborphy AI LLC?", "Arborphy AI")).toMatchObject({ value: "Yes" });
     expect(one("What is your anticipated graduation month/year?", "Klaviyo")).toMatchObject({ value: "05/2026" });
     expect(one("Where did you complete your undergraduate degree?", "Bertram")).toMatchObject({ value: "Renmin University of China" });
     expect(one('Have you been employed, or otherwise engaged, by an Asana entity in the past? (Previous independent contractors, select "Yes.")', "Asana", yn)).toMatchObject({ value: "No" });

@@ -311,6 +311,16 @@ export const PROFILE_RULES: ProfileRule[] = [
     resolve: (p) => (p.restrictiveAgreements === undefined ? undefined : yesNo(p.restrictiveAgreements)),
   },
   {
+    // FanDuel: "Are you an employee of Flutter or a Flutter brand?" Current employers are the ones with no end date.
+    path: "workHistory",
+    pattern: /^are you (currently )?an? (current )?employee of [a-z0-9&.' -]{1,60}$/,
+    resolve: (p, label) => {
+      const named = /\bemployee of (.+?)(?: or (?:a|an|any|its|one of)\b.*)?$/.exec(label)?.[1]?.trim();
+      if (!named) return undefined;
+      return yesNo(p.workHistory.some((w) => !w.end && (w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase()))));
+    },
+  },
+  {
     // "Are you a current or former Alphabet employee ...?" answered from the resume's employers.
     path: "workHistory",
     // (Government-employment questions have their own rule below.)

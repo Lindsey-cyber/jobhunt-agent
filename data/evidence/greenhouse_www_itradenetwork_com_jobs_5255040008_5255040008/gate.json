@@ -1,7 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"If you are not located in the Bay Area, CA, are you open and willing to relocate to that area on your first day of employment? Please note: iTradeNetwork does not currently provide relocation assistance.\": no answer in profile or answer bank",
-    "required \"If you are not located in the Bay Area, CA, are you open and willing to relocate to that area on your first day of employment? Please note: iTradeNetwork does not currently provide relocation assistance.\" is empty after filling"
-  ]
+  "decision": "submit"
 }

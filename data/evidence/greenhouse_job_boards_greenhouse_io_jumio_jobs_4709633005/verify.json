@@ -67,8 +67,8 @@
     {
       "fieldId": "question_8842974005",
       "label": "How did you hear about this job?",
-      "expected": "Job Board",
-      "actual": "Job Board",
+      "expected": "Social Media",
+      "actual": "Social Media",
       "pass": true
     },
     {
@@ -81,6 +81,13 @@
     {
       "fieldId": "4000142005",
       "label": "I identify my gender as",
+      "expected": "I don't wish to answer",
+      "actual": "I don't wish to answer",
+      "pass": true
+    },
+    {
+      "fieldId": "4000143005",
+      "label": "I identify my ethnicity as (mark all that apply)",
       "expected": "I don't wish to answer",
       "actual": "I don't wish to answer",
       "pass": true
@@ -102,8 +109,8 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
       "pass": true
     },
     {
@@ -116,7 +123,6 @@
   ],
   "emptyRequired": [
     "What are your preferred personal pronouns?",
-    "I identify my ethnicity as (mark all that apply)",
     "Jumio has my consent to collect, store, and process my data for the purpose of considering me for employment, and for up to 1095 days thereafter."
   ],
   "fillErrors": []

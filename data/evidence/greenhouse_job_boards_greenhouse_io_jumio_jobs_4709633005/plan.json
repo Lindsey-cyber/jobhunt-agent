@@ -451,21 +451,6 @@
         ]
       },
       {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      {
         "id": "gdpr_consent_given",
         "label": "Jumio has my consent to collect, store, and process my data for the purpose of considering me for employment, and for up to 1095 days thereafter.",
         "kind": "checkbox",
@@ -910,7 +895,7 @@
           "other (self-describe)"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "reason": "answer \"decline\" matches none of the options"
     },
     {
       "status": "skip",
@@ -944,7 +929,7 @@
           "Other"
         ]
       },
-      "value": "Job Board",
+      "value": "Social Media",
       "source": {
         "type": "profile",
         "path": "howHeard"
@@ -995,7 +980,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "4000143005",
         "label": "I identify my ethnicity as (mark all that apply)",
@@ -1012,7 +997,13 @@
           "I don't wish to answer"
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "I don't wish to answer",
+      "source": {
+        "type": "profile",
+        "path": "eeo.race"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",
@@ -1069,10 +1060,10 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "No",
+      "value": "Decline To Self Identify",
       "source": {
         "type": "profile",
-        "path": "eeo.hispanicLatino"
+        "path": "eeo.race"
       },
       "confidence": 1,
       "sensitive": true
@@ -1097,25 +1088,6 @@
       },
       "confidence": 0.95,
       "sensitive": true
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     },
     {
       "status": "blocked",

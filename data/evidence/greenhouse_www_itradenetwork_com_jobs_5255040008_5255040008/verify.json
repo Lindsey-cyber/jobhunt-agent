@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -58,6 +58,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_16407649008",
+      "label": "If you are not located in the Bay Area, CA, are you open and willing to relocate to that area on your first day of employment? Please note: iTradeNetwork does not currently provide relocation assistance.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_16407651008",
       "label": "LinkedIn Profile",
       "expected": "https://www.linkedin.com/in/lindsey-ma/",
@@ -81,8 +88,8 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
       "pass": true
     },
     {
@@ -93,8 +100,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "If you are not located in the Bay Area, CA, are you open and willing to relocate to that area on your first day of employment? Please note: iTradeNetwork does not currently provide relocation assistance."
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

@@ -1,6 +1,6 @@
 {
   "4000142005": "I don't wish to answer",
-  "4000143005": "",
+  "4000143005": "I don't wish to answer",
   "4000144005": "No",
   "first_name": "Lanxin",
   "last_name": "Ma",
@@ -13,11 +13,10 @@
   "question_8842971005": "No",
   "question_8842972005": "",
   "question_8842973005": "",
-  "question_8842974005": "Job Board",
+  "question_8842974005": "Social Media",
   "question_8842975005": "Yes",
   "gender": "Decline To Self Identify",
-  "hispanic_ethnicity": "No",
-  "race": "",
+  "hispanic_ethnicity": "Decline To Self Identify",
   "veteran_status": "I am not a protected veteran",
   "gdpr_consent_given": "",
   "resume": "Lindsey_Ma_Resume.pdf"

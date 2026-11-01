@@ -336,6 +336,7 @@ describe("buildPlan", () => {
     expect(one("Consent for contacting about future job openings", { kind: "combobox", options: ["I agree"] })).toMatchObject({ value: "I agree" });
     expect(one("GDPR Disclosure", { kind: "combobox", options: ["Acknowledge/Confirm"] })).toMatchObject({ value: "Acknowledge/Confirm" });
     expect(one("Processing of Personal Data", { kind: "combobox", options: ["I agree"] })).toMatchObject({ value: "I agree" });
+    expect(one("Applicant Privacy Acknowledgement", { kind: "combobox", options: ["Yes", "No"] })).toMatchObject({ value: "Yes" });
     expect(one("Have you ever been convicted or do you have a criminal record?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Do you use AI tools in your daily work?", { kind: "select", options: ["Yes", "No"] })).toMatchObject({ status: "blocked" });
     expect(one("Signature: I certify the above is true and complete", { kind: "text" })).toMatchObject({ status: "blocked" });
@@ -413,6 +414,7 @@ describe("buildPlan", () => {
     const opt = { ...p, contact: { ...p.contact, address: { ...p.contact.address, country: "United States" } }, workAuthorization: { ...p.workAuthorization, status: "F-1 OPT", authorizedCountries: ["United States"], needsSponsorship: true } };
     const permits = ["I am authorized to work in the US due to my nationality.", "I am authorized to work in the US based on a valid work permit and do NOT need a company to sponsor my visa.", "I am authorized to work in the US based on a valid work permit and require a company to sponsor my visa.", "I am not authorized to work in the US and require visa support."];
     expect(buildPlan(form([field("Your authorization to work in the country where you live:", { kind: "combobox", options: permits })], "Snorkel AI"), opt, bank).items[0]).toMatchObject({ value: permits[2] });
+    expect(one("Please select the region you are currently located in", ["AMER", "APAC", "EMEA"], "Squarepoint Capital")).toMatchObject({ value: "AMER" });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

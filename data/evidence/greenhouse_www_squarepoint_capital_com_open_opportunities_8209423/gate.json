@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Please select the region you are currently located in\": no answer in profile or answer bank",
+    "required \"Please select the region you are currently located in\" is empty after filling"
+  ]
+}

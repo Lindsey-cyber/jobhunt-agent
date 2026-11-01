@@ -29,7 +29,7 @@ export const TERMS_NOTICE = /\b(accept|agree to) the terms (and|&) conditions\b|
 // interview rules (a bare "Do you use AI tools?" or "criminal record" never matches).
 // Workday's bare "Confirm Consent" box sits under the accuracy certification (Crowe).
 // Adobe's "Check this box to confirm the statement above" closes its privacy, AI-use and accuracy terms.
-export const ATTESTATION_ALLOWED = /^affirmation$|^processing of personal data$|^gdpr (disclosure|notice|consent|acknowledge?ment)$|\bconsent (for|to) (being )?contact(ing|ed)? (me )?(about|regarding) future (job )?(openings|opportunities|positions)\b|^confidentiality acknowledge?ment$|\bnot disclose or use\b.{0,160}\bconfidential or proprietary information of others\b|^confirm consent$|^check this box to confirm the statement above$|\bi certify that i have read\b.{0,60}\baccept all terms\b|\bai note ?taker\b|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
+export const ATTESTATION_ALLOWED = /^affirmation$|^applicant privacy acknowledge?ment$|^processing of personal data$|^gdpr (disclosure|notice|consent|acknowledge?ment)$|\bconsent (for|to) (being )?contact(ing|ed)? (me )?(about|regarding) future (job )?(openings|opportunities|positions)\b|^confidentiality acknowledge?ment$|\bnot disclose or use\b.{0,160}\bconfidential or proprietary information of others\b|^confirm consent$|^check this box to confirm the statement above$|\bi certify that i have read\b.{0,60}\baccept all terms\b|\bai note ?taker\b|\bcertify\b.{0,120}\b(true|accurate|correct|complete)\b|\b(true (and|&) (complete|correct|accurate)|accurate and truthful|correct and complete)\b|\barbitration\b|\bhow we interview\b|\binterview (process|guidelines|expectations|policy|rules)\b|\b(ai|artificial intelligence) (during|in) (the |your )?interviews?\b|\b(interviews?|calls?|conversations?)\b.{0,60}\b(record(ed|ing)|transcri(be|bed|ption))\b|\b(record(ed|ing)|transcri(be|bed|ption))\b.{0,60}\binterviews?\b|\bconsent to .{1,40}\b(collecting|storing|processing)\b.{0,80}\b(responses|data|information)\b/;
 export const AGREEING_OPTION = /^(yes|i agree|agree|i accept|accept|accepted|i acknowledge|acknowledge|i consent|consent|i certify|i understand)\b/i;
 export const PRIVACY_EXCEPT = /\b(artificial intelligence|ai|certify|accurate|true|complete|signature|sign|arbitration|non compete|background|drug)\b/;
 
@@ -352,6 +352,17 @@ export const PROFILE_RULES: ProfileRule[] = [
       const latest = [...p.workHistory].sort((a, b) => (b.end ?? "9999").localeCompare(a.end ?? "9999") || (b.start ?? "").localeCompare(a.start ?? ""))[0];
       if (!latest) return undefined;
       return /\b(employer|company|firm)\b/.test(label) ? latest.employer : latest.title;
+    },
+  },
+  {
+    // Squarepoint: "Please select the region you are currently located in" (AMER / APAC / EMEA): from her address.
+    path: "contact.address.country",
+    pattern: /\bregion you are (currently )?(located|based) in\b|^(your )?current region$/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, _l, ctx) => {
+      if (!["United States", "Canada", "Mexico", "Brazil"].includes(p.contact.address.country)) return undefined;
+      const hits = (ctx.options ?? []).filter((o) => /^(amer|americas?|north america|na)\b/i.test(o.trim()));
+      return hits.length === 1 ? hits[0] : undefined;
     },
   },
   {

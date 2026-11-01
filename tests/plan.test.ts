@@ -408,6 +408,9 @@ describe("buildPlan", () => {
     expect(buildPlan(form([field("Please select the location you anticipate working in for the role in which you are applying.")], "Stripe"), p, bank).items[0]).toMatchObject({ value: "New York, NY" });
     expect(one("Do you acknowledge the work location expectations listed on this job posting?", ["Yes, I acknowledge the work location expectations for this role.", "No, I do not acknowledge the work location expectation for this role."], "Oscar Health")).toMatchObject({ value: "Yes, I acknowledge the work location expectations for this role." });
     expect(one("Do you have any contractual obligations, agreements, relationships, or commitments to another person or entity that would impact, impede or interfere with your ability to perform this job?", ["Yes", "No"], "Axon")).toMatchObject({ value: "No" });
+    const opt = { ...p, contact: { ...p.contact, address: { ...p.contact.address, country: "United States" } }, workAuthorization: { ...p.workAuthorization, status: "F-1 OPT", authorizedCountries: ["United States"], needsSponsorship: true } };
+    const permits = ["I am authorized to work in the US due to my nationality.", "I am authorized to work in the US based on a valid work permit and do NOT need a company to sponsor my visa.", "I am authorized to work in the US based on a valid work permit and require a company to sponsor my visa.", "I am not authorized to work in the US and require visa support."];
+    expect(buildPlan(form([field("Your authorization to work in the country where you live:", { kind: "combobox", options: permits })], "Snorkel AI"), opt, bank).items[0]).toMatchObject({ value: permits[2] });
     expect(one("Please indicate your current age range.", ["14-15 years old", "16-17 years old", "18 years or older"])).toMatchObject({ value: "18 years or older" });
     expect(one("Are you over the age of 18?", [])).toMatchObject({ value: "Yes" });
   });

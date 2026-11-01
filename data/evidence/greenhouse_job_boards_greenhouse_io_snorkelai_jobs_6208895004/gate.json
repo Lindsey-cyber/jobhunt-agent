@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Your authorization to work in the country where you live:\": sensitive question with no exact answer",
+    "required \"Your authorization to work in the country where you live:\" is empty after filling"
+  ]
+}

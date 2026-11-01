@@ -255,6 +255,21 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   { path: "education[0].gradYear", pattern: /^(end|graduation) year$/, resolve: (p) => String(firstEdu(p).gradYear) },
   {
+    // Snorkel: "Your authorization to work in the country where you live:" with nationality /
+    // work permit without sponsorship / work permit with sponsorship / not authorized. F-1 OPT is a
+    // work permit (EAD), and she needs sponsorship later (profile).
+    path: "workAuthorization.status",
+    pattern: /^your authori[sz]ation to work in the country where you live\b/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, _l, ctx) => {
+      const status = p.workAuthorization.status ?? "";
+      if (!/\b(opt|ead|f-?1|h-?1b|work permit)\b/i.test(status) || !p.workAuthorization.authorizedCountries.includes(p.contact.address.country)) return undefined;
+      const permit = (ctx.options ?? []).filter((o) => /\bvalid work permit\b/i.test(o));
+      const hit = permit.filter((o) => (/\b(do not|don't) need\b/i.test(o) ? !p.workAuthorization.needsSponsorship : p.workAuthorization.needsSponsorship && /\brequire\b/i.test(o)));
+      return hit.length === 1 ? hit[0] : undefined;
+    },
+  },
+  {
     // Vanguard: "If no, please provide your immigration status in the U.S." in a text box: her status from the profile.
     path: "workAuthorization.status",
     pattern: /\b(provide|state|list|enter|what is) your (current )?(u s |us )?(immigration|visa|work authori[sz]ation) status\b/,

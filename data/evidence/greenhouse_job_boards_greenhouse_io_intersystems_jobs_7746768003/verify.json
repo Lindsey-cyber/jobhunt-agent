@@ -1,0 +1,99 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "",
+      "pass": false
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "question_30837885003",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_30837890003",
+      "label": "Please provide your preferred first name or nickname (if different from first name provided above).",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "School",
+    "Job Location",
+    "Do you now or have you previously worked for an InterSystems client?",
+    "Data Protection Information Notice",
+    "InterSystems Employment History"
+  ],
+  "fillErrors": [
+    "School: no option \"Columbia University\" in school--0"
+  ]
+}

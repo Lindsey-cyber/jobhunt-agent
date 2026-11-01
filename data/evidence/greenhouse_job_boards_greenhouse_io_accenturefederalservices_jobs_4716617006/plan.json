@@ -1,0 +1,699 @@
+{
+  "form": {
+    "ats": "greenhouse",
+    "url": "https://job-boards.greenhouse.io/embed/job_app?for=accenturefederalservices&token=4716617006",
+    "company": "Accenture Federal Services",
+    "jobTitle": "Enterprise AI Feature Engineer",
+    "jobLocation": "Arlington, VA",
+    "fields": [
+      {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_8715300006",
+        "label": "State",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715301006",
+        "label": "Are you at least 18 years of age?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715302006",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715303006",
+        "label": "Many AFS positions require US citizenship. Please indicate your citizenship status so we can determine eligibility for specific roles.",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "question_8715304006",
+        "label": "Will you now or in the future require sponsorship for employment visa status (for example, H-1B visa status)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715305006",
+        "label": "Have you entered into a non-disclosure or non-compete agreement or understanding of any kind?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715306006",
+        "label": "Have you worked at Accenture in the past?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715307006",
+        "label": "How did you hear about us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715308006",
+        "label": "Do you hold a security clearance?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715309006",
+        "label": "At your current employer, are you currently working on a project with Accenture or have you worked on a project with Accenture in the past 24 months?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715310006",
+        "label": "Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715311006",
+        "label": "Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715312006",
+        "label": "Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715313006",
+        "label": "Do you have any family members or people you have close relationships with who work for Accenture Federal Services?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "question_8715314006",
+        "label": "If yes, please list the full name of the employee(s) and your relationship to them.",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      {
+        "id": "question_8715315006",
+        "label": "Affirmation",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 7
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "first_name",
+        "label": "First Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Lanxin",
+      "source": {
+        "type": "profile",
+        "path": "identity.firstName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "last_name",
+        "label": "Last Name",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "country",
+        "label": "Country",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.country"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "phone",
+        "label": "Phone",
+        "kind": "text",
+        "required": true,
+        "options": [],
+        "maxLength": 255
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "candidate-location",
+        "label": "Location (City)",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "resume",
+        "label": "Resume/CV",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "cover_letter",
+        "label": "Cover Letter",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "school--0",
+        "label": "School",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Columbia University",
+      "source": {
+        "type": "profile",
+        "path": "education[0].school"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "degree--0",
+        "label": "Degree",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Master of Science",
+      "source": {
+        "type": "profile",
+        "path": "education[0].degree"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "discipline--0",
+        "label": "Discipline",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "value": "Statistics",
+      "source": {
+        "type": "profile",
+        "path": "education[0].major"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715300006",
+        "label": "State",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.state"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715301006",
+        "label": "Are you at least 18 years of age?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "bank",
+        "id": "over-18",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715302006",
+        "label": "Are you legally authorized to work in the United States?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_8715303006",
+        "label": "Many AFS positions require US citizenship. Please indicate your citizenship status so we can determine eligibility for specific roles.",
+        "kind": "combobox",
+        "required": false,
+        "options": []
+      },
+      "reason": "sensitive question with no exact answer"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715304006",
+        "label": "Will you now or in the future require sponsorship for employment visa status (for example, H-1B visa status)?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.8,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715305006",
+        "label": "Have you entered into a non-disclosure or non-compete agreement or understanding of any kind?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "restrictiveAgreements"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715306006",
+        "label": "Have you worked at Accenture in the past?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715307006",
+        "label": "How did you hear about us?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "LinkedIn",
+      "source": {
+        "type": "profile",
+        "path": "howHeard"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_8715308006",
+        "label": "Do you hold a security clearance?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715309006",
+        "label": "At your current employer, are you currently working on a project with Accenture or have you worked on a project with Accenture in the past 24 months?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715310006",
+        "label": "Are you a current employee of the U.S. Government (including U.S. Congress or military) or any state or local government? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below). NOTE: answer yes if you have accepted the “Fork-in-the-Road” offer, separated with a Deferred Retirement Plan, or are on administrative leave pending separation from the Government.",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715311006",
+        "label": "Will you be serving as enlisted personnel in either the Reserves or the National Guard while working for AFS?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "bank",
+        "id": "reserves-guard",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715312006",
+        "label": "Were you an employee of the U.S. Government (including U.S. Congress or military) or any state or local government within the past 10 years? This includes entities owned or controlled by the U.S. Federal Government, such as Amtrak, the United States Postal Service, and USAID (see list of exceptions below).",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "question_8715313006",
+        "label": "Do you have any family members or people you have close relationships with who work for Accenture Federal Services?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "relativesAtEmployers"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "question_8715314006",
+        "label": "If yes, please list the full name of the employee(s) and your relationship to them.",
+        "kind": "text",
+        "required": false,
+        "options": [],
+        "maxLength": 255
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "question_8715315006",
+        "label": "Affirmation",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "gender",
+        "label": "Gender",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "hispanic_ethnicity",
+        "label": "Are you Hispanic/Latino?",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "veteran_status",
+        "label": "Veteran Status",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "reason": "the field's choices did not load"
+    }
+  ]
+}

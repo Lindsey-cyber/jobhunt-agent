@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"This is not a remote role. Are you able to work on site at our facility in North Austin, Monday-Friday?\": no answer in profile or answer bank",
+    "required \"This is not a remote role. Are you able to work on site at our facility in North Austin, Monday-Friday?\" is empty after filling"
+  ]
+}

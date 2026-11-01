@@ -1,0 +1,131 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69038997",
+      "label": "Are you willing to relocate?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69038998",
+      "label": "Current or most recent company?",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69038999",
+      "label": "Have you previously worked for Fin (formerly Intercom) or Salesforce?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69039000",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69039001",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69039002",
+      "label": "How did you hear about this job?",
+      "expected": "Social Media",
+      "actual": "Social Media",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69039005",
+      "label": "We work under a hybrid in-office model. Are you willing to work from our office location 3 days per week?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you authorised to work in the country in which this role is located? (Fin sponsors immigration for some roles so we encourage you to still apply if you require sponsorship.)",
+    "Current Location",
+    "Please email me about future job openings",
+    "Point of Data Transfer"
+  ],
+  "fillErrors": []
+}

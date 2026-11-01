@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently employed by PokerStars?\": no answer in profile or answer bank",
+    "required \"Please list legal first and last name\": no answer in profile or answer bank",
+    "required \"What is your preferred name?\": no answer in profile or answer bank",
+    "required \"Are you located within 120 miles of Jersey City office?\": no answer in profile or answer bank",
+    "required \"It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.\": sensitive question with no exact answer",
+    "required \"Are you currently employed by PokerStars?\" is empty after filling",
+    "required \"Please list legal first and last name\" is empty after filling",
+    "required \"What is your preferred name?\" is empty after filling",
+    "required \"Are you located within 120 miles of Jersey City office?\" is empty after filling",
+    "required \"It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.\" is empty after filling"
+  ]
+}

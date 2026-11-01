@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Name a dataset or benchmark you've personally trained or evaluated on for a perception problem. What metric did you move, what was the baseline, and by how much?\": no answer in profile or answer bank",
+    "required \"Link us to one thing you made a paper, repo, demo, or competition profile and tell us in one sentence which part was yours.\": no answer in profile or answer bank",
+    "required \"Describe a model that failed in a way your offline metric didn't catch. How did you find out, and what did you change?\": no answer in profile or answer bank",
+    "required \"Where's the C++ in your background? Which project had you writing it, and what for?\": no answer in profile or answer bank",
+    "required \"Name a dataset or benchmark you've personally trained or evaluated on for a perception problem. What metric did you move, what was the baseline, and by how much?\" is empty after filling",
+    "required \"Link us to one thing you made a paper, repo, demo, or competition profile and tell us in one sentence which part was yours.\" is empty after filling",
+    "required \"Describe a model that failed in a way your offline metric didn't catch. How did you find out, and what did you change?\" is empty after filling",
+    "required \"Where's the C++ in your background? Which project had you writing it, and what for?\" is empty after filling"
+  ]
+}

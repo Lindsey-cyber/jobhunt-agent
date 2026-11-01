@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you currently eligible to work in the country where this role is posted without visa sponsorship?\": sensitive question with no exact answer",
+    "required \"Have you been referred by another G-P employee within the last 12 months?\": no answer in profile or answer bank",
+    "required \"Have you worked at G-P in the past?\": no answer in profile or answer bank",
+    "required \"Are you currently eligible to work in the country where this role is posted without visa sponsorship?\" is empty after filling",
+    "required \"Have you been referred by another G-P employee within the last 12 months?\" is empty after filling",
+    "required \"Have you worked at G-P in the past?\" is empty after filling"
+  ]
+}

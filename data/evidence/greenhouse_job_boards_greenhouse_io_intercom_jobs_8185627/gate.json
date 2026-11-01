@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Are you authorised to work in the country in which this role is located? (Fin sponsors immigration for some roles so we encourage you to still apply if you require sponsorship.)\": answer \"Yes\" matches none of the options",
+    "required \"Current Location\": answer \"New York, New York, United States\" matches none of the options",
+    "required \"Please email me about future job openings\": no answer in profile or answer bank",
+    "required \"Point of Data Transfer\": acknowledgements and consents need the candidate",
+    "required \"Are you authorised to work in the country in which this role is located? (Fin sponsors immigration for some roles so we encourage you to still apply if you require sponsorship.)\" is empty after filling",
+    "required \"Current Location\" is empty after filling",
+    "required \"Please email me about future job openings\" is empty after filling",
+    "required \"Point of Data Transfer\" is empty after filling"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4067853009",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_5683392009",
+      "label": "GitHub Link",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4067856009",
+      "label": "I am authorized to work in the United States and do not require current or future visa sponsorship.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_4392725009",
+      "label": "I am available to work onsite at our Austin headquarters?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_5841692009",
+      "label": "Avride complies with the Americans with Disabilities Act (ADA). Can you perform the essential functions of the position for which you are applying, with or without reasonable accommodation?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_7826807009",
+      "label": "How did you hear about this position? (Please provide specific details.) For example: Indeed, LinkedIn, ZipRecruiter, Facebook group (name of group), employee referral (name of employee), recruiter outreach or other (please describe fully).",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Name a dataset or benchmark you've personally trained or evaluated on for a perception problem. What metric did you move, what was the baseline, and by how much?",
+    "Link us to one thing you made a paper, repo, demo, or competition profile and tell us in one sentence which part was yours.",
+    "Describe a model that failed in a way your offline metric didn't catch. How did you find out, and what did you change?",
+    "Where's the C++ in your background? Which project had you writing it, and what for?"
+  ],
+  "fillErrors": []
+}

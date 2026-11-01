@@ -1,0 +1,188 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics & Decision Theory",
+      "actual": "Statistics & Decision Theory",
+      "pass": true
+    },
+    {
+      "fieldId": "start-month--0",
+      "label": "Start date month",
+      "expected": "January",
+      "actual": "January",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-month--0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65989793",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65989794",
+      "label": "Website",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65989795",
+      "label": "How did you hear about this job?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65989796",
+      "label": "Are you legally eligible to work in the U.S.?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65989797",
+      "label": "Will you now, or in the future, require visa sponsorship for employment at Ai2?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65989798",
+      "label": "This role is in Seattle. If you are not currently local, are you willing to relocate?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_65989799",
+      "label": "I hereby certify that all information in my application is true and complete to the best of my knowledge. I understand that Ai2 may perform a background investigation to make inquiries regarding my education, work experience, credit record, criminal history, and references to determine my suitability for employment. I authorize Ai2. to secure any information necessary to make a decision. I understand that Ai2 will adhere to the provisions of the Fair Credit Reporting Act, if applicable, and other applicable state and federal statutes concerning the securing of information, handling, utilization, and release of information obtained in the pre-employment investigation. I understand that any material misrepresentation or omission on this application may be grounds for rejection of my application or termination of any subsequent employment with Ai2.",
+      "expected": "I agree",
+      "actual": "I agree",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Describe your research interests and area of expertise (1 sentence).",
+    "List the 2-3 publications most representative of your work with a one sentence summary of each publication.",
+    "Briefly describe your experience working with real robots and with robot simulators.",
+    "What is your academic background, including your University, Department, PhD Advisor, and completion date?",
+    "What is your current role (e.g., PhD student, post-doctoral researcher, industry position)?"
+  ],
+  "fillErrors": []
+}

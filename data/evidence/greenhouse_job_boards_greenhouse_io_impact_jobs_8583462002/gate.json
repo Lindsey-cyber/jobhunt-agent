@@ -1,0 +1,12 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Why should Impact.com hire you for the Gen AI Engineer role?\": no answer in profile or answer bank",
+    "required \"Do you have at least 1 year working in Generative AI?\": no answer in profile or answer bank",
+    "required \"Please attach a copy of your South African ID or Passport.\": no document for this upload",
+    "required \"Are you willing to relocate to Cape Town at your own cost?\": no answer in profile or answer bank",
+    "required \"Why should Impact.com hire you for the Gen AI Engineer role?\" is empty after filling",
+    "required \"Do you have at least 1 year working in Generative AI?\" is empty after filling",
+    "required \"Are you willing to relocate to Cape Town at your own cost?\" is empty after filling"
+  ]
+}

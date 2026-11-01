@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you require sponsorship to work in the country you are applying for?\": answer \"Yes\" matches none of the options",
+    "required \"Do you speak one or more of these languages at fully professional proficiency?\": no answer in profile or answer bank",
+    "required \"Personal Data\": acknowledgements and consents need the candidate",
+    "required \"Do you require sponsorship to work in the country you are applying for?\" is empty after filling",
+    "required \"Do you speak one or more of these languages at fully professional proficiency?\" is empty after filling",
+    "required \"Personal Data\" is empty after filling"
+  ]
+}

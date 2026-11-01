@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Do you currently reside in the San Francisco, CA or Washington DC/Virginia area?\": no answer in profile or answer bank",
+    "required \"Do you currently reside in the San Francisco, CA or Washington DC/Virginia area?\" is empty after filling"
+  ]
+}

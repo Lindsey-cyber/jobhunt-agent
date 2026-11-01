@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Does the deemed export rule affect your employment by Everpure?\": no answer in profile or answer bank",
+    "required \"Personal Information Policy\": acknowledgements and consents need the candidate",
+    "required \"Does the deemed export rule affect your employment by Everpure?\" is empty after filling",
+    "required \"Personal Information Policy\" is empty after filling"
+  ]
+}

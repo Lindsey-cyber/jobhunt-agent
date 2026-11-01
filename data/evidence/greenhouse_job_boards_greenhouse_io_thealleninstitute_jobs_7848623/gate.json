@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Describe your research interests and area of expertise (1 sentence).\": no answer in profile or answer bank",
+    "required \"List the 2-3 publications most representative of your work with a one sentence summary of each publication.\": no answer in profile or answer bank",
+    "required \"Briefly describe your experience working with real robots and with robot simulators.\": no answer in profile or answer bank",
+    "required \"What is your academic background, including your University, Department, PhD Advisor, and completion date?\": no answer in profile or answer bank",
+    "required \"What is your current role (e.g., PhD student, post-doctoral researcher, industry position)?\": no answer in profile or answer bank",
+    "required \"Describe your research interests and area of expertise (1 sentence).\" is empty after filling",
+    "required \"List the 2-3 publications most representative of your work with a one sentence summary of each publication.\" is empty after filling",
+    "required \"Briefly describe your experience working with real robots and with robot simulators.\" is empty after filling",
+    "required \"What is your academic background, including your University, Department, PhD Advisor, and completion date?\" is empty after filling",
+    "required \"What is your current role (e.g., PhD student, post-doctoral researcher, industry position)?\" is empty after filling"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"This role is based in our South San Francisco, CA office and requires five days per week in-office. How does this align with your preferences?\": no answer in profile or answer bank",
+    "required \"Briefly describe your technical experience, specifically relating to developing Agentic AI architectures/LLM-based agents, and how you believe it aligns with the capabilities we are looking for in this position:\": no answer in profile or answer bank",
+    "required \"What excites you about the opportunity to work at Xaira?\": no answer in profile or answer bank",
+    "required \"This role is based in our South San Francisco, CA office and requires five days per week in-office. How does this align with your preferences?\" is empty after filling",
+    "required \"Briefly describe your technical experience, specifically relating to developing Agentic AI architectures/LLM-based agents, and how you believe it aligns with the capabilities we are looking for in this position:\" is empty after filling",
+    "required \"What excites you about the opportunity to work at Xaira?\" is empty after filling"
+  ]
+}

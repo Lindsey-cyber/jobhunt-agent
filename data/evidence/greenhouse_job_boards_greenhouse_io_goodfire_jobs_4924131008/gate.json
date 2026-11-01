@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Why do you want to work at Goodfire?\": no answer in profile or answer bank",
+    "required \"Why do you want to work at Goodfire?\" is empty after filling"
+  ]
+}

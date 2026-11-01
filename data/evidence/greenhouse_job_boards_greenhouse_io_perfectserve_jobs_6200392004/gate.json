@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"In your own words, why do you want to work for PerfectServe?\": no answer in profile or answer bank",
+    "required \"Just for fun, please share what favorite food is and how do you like it best prepared!\": no answer in profile or answer bank",
+    "required \"In your own words, why do you want to work for PerfectServe?\" is empty after filling",
+    "required \"Just for fun, please share what favorite food is and how do you like it best prepared!\" is empty after filling"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37458575002",
+      "label": "How did you first hear about this job? Please list the site, event, or person that referred you.",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37458576002",
+      "label": "What is your availability or desired start date?",
+      "expected": "November 15, 2026",
+      "actual": "November 15, 2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37458577002",
+      "label": "What are your salary expectations?",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37458578002",
+      "label": "Are you legally authorized to work in the United States for TORC Robotics?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37458579002",
+      "label": "Do you require or will you require sponsorship for employment visa status (e.g., H-1B visa status, etc.) to work legally in the United States for TORC Robotics?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37458585002",
+      "label": "LinkedIn Profile",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37458586002",
+      "label": "Website / Portfolio",
+      "expected": "https://www.lindseyma.com/",
+      "actual": "https://www.lindseyma.com/",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Are you local to Ann Arbor, MI?",
+    "If you checked either 'I am a Citizen or Legal Permanent Resident of a different country' or 'I reside in a different country and have a valid work visa there' please indicate the applicable country or countries. Type N/A if not applicable.",
+    "Do you have an agreement between you and your current or former employer that may restrict your ability to accept this offer of employment with Torc or restrict any work that you may do for Torc?",
+    "Do you have any relatives or family members currently employed at Torc Robotics?",
+    "U.S. Export Control Requirements - Are you a citizen, national, or resident of any of the following countries/regions? Check each that apply:",
+    "If you checked any of the boxes above other than None / Not applicable, then please provide additional information regarding your immigration and residency status. Check each that apply:"
+  ],
+  "fillErrors": []
+}

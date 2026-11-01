@@ -1,0 +1,15 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Job Location\": no answer in profile or answer bank",
+    "required \"Do you now or have you previously worked for an InterSystems client?\": sensitive question with no exact answer",
+    "required \"Data Protection Information Notice\": acknowledgements and consents need the candidate",
+    "required \"InterSystems Employment History\": no answer in profile or answer bank",
+    "readback mismatch on \"School\": expected \"Columbia University\", got \"\"",
+    "required \"School\" is empty after filling",
+    "required \"Job Location\" is empty after filling",
+    "required \"Do you now or have you previously worked for an InterSystems client?\" is empty after filling",
+    "required \"Data Protection Information Notice\" is empty after filling",
+    "required \"InterSystems Employment History\" is empty after filling"
+  ]
+}

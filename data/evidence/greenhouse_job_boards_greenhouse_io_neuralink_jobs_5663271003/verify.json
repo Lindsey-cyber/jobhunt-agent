@@ -1,0 +1,96 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "question_14176306003",
+      "label": "Additional Links (e.g., LinkedIn, personal website, Github, portfolio)",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_15192947003",
+      "label": "Will you, at any point, require employer sponsorship to work in the United States?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_15192981003",
+      "label": "I am willing and able to work entirely on-site.",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_15193109003[]",
+      "label": "How did you hear about us?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "We look for evidence of exceptional ability. Please provide us with 3 examples highlighting your exceptional ability, using quantitative metrics to display the impact on a product/project related to the requirements of the position you are applying for. Each bullet should be very concise— no longer than 3-4 sentences each and should capture the problem, solution, and result. We recommend starting with an action word (designed, led, built, promoted, launched, created, etc.) and be sure to include technical detail. This is your moment to WOW us! NOTE: Answering this question fully is the most important part of our interview process. First example:",
+    "Second example:",
+    "Third example:",
+    "Which onsite location would you like to apply to?"
+  ],
+  "fillErrors": []
+}

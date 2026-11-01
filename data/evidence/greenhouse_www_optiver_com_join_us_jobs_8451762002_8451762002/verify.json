@@ -1,0 +1,177 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics",
+      "actual": "Statistics",
+      "pass": true
+    },
+    {
+      "fieldId": "start-month--0",
+      "label": "Start date month",
+      "expected": "January",
+      "actual": "January",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-month--0",
+      "label": "End date month",
+      "expected": "May",
+      "actual": "May",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35598873002",
+      "label": "If so, please explain (visa status and expiration). If you do not require sponsorship, please type \"N/A\".",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_37111458002",
+      "label": "As part of our assessment process, you may be invited to participate in an on-site evaluative program. If invited, would you be available to attend from November 11 - November 13, 2026?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35598870002",
+      "label": "What are your preferred pronouns?",
+      "expected": "Prefer not to say",
+      "actual": "Prefer not to say",
+      "pass": true
+    },
+    {
+      "fieldId": "question_36407190002",
+      "label": "LinkedIn profile URL (if available)",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_35598874002",
+      "label": "How did you hear about Optiver?",
+      "expected": "Social Media",
+      "actual": "Social Media",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Please re-confirm the university you currently attend.",
+    "Undergrad Discipline(s)",
+    "Undergraduate Academic Performance Rating (US)",
+    "Postgrad Discipline(s)",
+    "Postgrad Academic Performance Rating (US)",
+    "What year did you start your PhD program?",
+    "Please confirm your graduation time frame from your PhD program.",
+    "Work Authorization",
+    "Sponsorship Requirements",
+    "Please select office location(s) you are open to working in:",
+    "What is your availability to commence full-time employment (month and year)?",
+    "In the past 8 months, have you applied to and completed an assessment for, or interviewed for a quants role (full-time or internship) role at any Optiver location?",
+    "Where did you complete your most recent internship or research experience?",
+    "By submitting this application, you confirm and agree that you will complete any assessment for Optiver independently and without the use of AI tools, online resources, or assistance from others, unless stated otherwise. This application process and assessment are proctored and may include visual, audio, and on-device behaviour tracking. By clicking the box below, you consent to Optiver’s use of such proctoring. Shortlisted candidates may be required to complete any assessment again in person at the final stage. A breach of the foregoing may result in an immediate and indefinite ban from applying to any Optiver roles.",
+    "Terms and Conditions"
+  ],
+  "fillErrors": []
+}

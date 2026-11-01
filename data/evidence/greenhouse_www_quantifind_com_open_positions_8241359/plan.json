@@ -1128,7 +1128,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69521847",
         "label": "What is your preferred location?",
@@ -1140,10 +1140,16 @@
           "Either"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Either",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.city"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_69521848",
         "label": "What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)",
@@ -1152,7 +1158,13 @@
         "options": [],
         "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "05/2026",
+      "source": {
+        "type": "profile",
+        "path": "education[0].gradYear"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

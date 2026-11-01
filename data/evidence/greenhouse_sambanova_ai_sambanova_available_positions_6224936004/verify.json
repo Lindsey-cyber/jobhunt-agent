@@ -70,10 +70,16 @@
       "expected": "Yes",
       "actual": "Yes",
       "pass": true
+    },
+    {
+      "fieldId": "question_20291835004",
+      "label": "Years of AI performance engineering",
+      "expected": "2",
+      "actual": "2",
+      "pass": true
     }
   ],
   "emptyRequired": [
-    "Years of AI performance engineering",
     "Preferred office?"
   ],
   "fillErrors": []

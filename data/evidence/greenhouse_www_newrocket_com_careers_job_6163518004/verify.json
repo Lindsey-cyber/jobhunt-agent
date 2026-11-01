@@ -114,6 +114,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_19678968004",
+      "label": "Do you have two years or more of Python development experience?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
       "fieldId": "question_19678999004",
       "label": "Will you now or in the future require visa sponsorship to legally work in the US?",
       "expected": "Yes",
@@ -130,8 +137,8 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
       "pass": true
     },
     {
@@ -143,7 +150,6 @@
     }
   ],
   "emptyRequired": [
-    "Do you have two years or more of Python development experience?",
     "Anthropic Certifications?",
     "Are you a US Citizen or Permanent Resident?"
   ],

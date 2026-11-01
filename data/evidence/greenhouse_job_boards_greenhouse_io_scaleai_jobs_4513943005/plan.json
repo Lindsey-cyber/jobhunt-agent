@@ -439,24 +439,9 @@
           "I identify as one or more of the classifications of a protected veteran",
           "I don't wish to answer"
         ]
-      },
-      {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
       }
     ],
-    "priorApplications": 3
+    "priorApplications": 6
   },
   "items": [
     {
@@ -888,7 +873,7 @@
       "reason": "no answer in profile or answer bank"
     },
     {
-      "status": "fill",
+      "status": "blocked",
       "field": {
         "id": "question_8378665005",
         "label": "In 2-3 sentences, provide an example of something meaningful that you have done in line with your values.",
@@ -897,14 +882,7 @@
         "options": [],
         "maxLength": 255
       },
-      "value": "I value results that hold up and work other people can build on.",
-      "source": {
-        "type": "bank",
-        "id": "values-example",
-        "origin": "generated"
-      },
-      "confidence": 1,
-      "sensitive": false
+      "reason": "no answer in profile or answer bank"
     },
     {
       "status": "fill",
@@ -1000,7 +978,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8751026005",
         "label": "Who is your current or most recent employer?",
@@ -1009,10 +987,16 @@
         "options": [],
         "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_8751029005",
         "label": "What is your current or more recent job title?",
@@ -1021,7 +1005,13 @@
         "options": [],
         "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Research Engineer Intern",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1057,10 +1047,10 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "No",
+      "value": "Decline To Self Identify",
       "source": {
         "type": "profile",
-        "path": "eeo.hispanicLatino"
+        "path": "eeo.race"
       },
       "confidence": 1,
       "sensitive": true
@@ -1085,25 +1075,6 @@
       },
       "confidence": 0.95,
       "sensitive": true
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

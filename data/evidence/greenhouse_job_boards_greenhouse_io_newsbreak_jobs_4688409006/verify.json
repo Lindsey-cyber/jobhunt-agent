@@ -60,8 +60,8 @@
     {
       "fieldId": "question_8501522006[]",
       "label": "Are you legally authorized to work in the United States without requiring visa sponsorship now or in the future?",
-      "expected": "Yes",
-      "actual": "Yes",
+      "expected": "No — I will require H1B or other sponsorship",
+      "actual": "No — I will require H1B or other sponsorship",
       "pass": true
     },
     {
@@ -83,6 +83,27 @@
       "label": "What are your salary expectations? Please state a range.",
       "expected": "$100K–$150K",
       "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8501563006",
+      "label": "Have you trained an LLM on a multi-GPU cluster (8+ GPUs)?",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8501564006",
+      "label": "Have you built data pipelines for LLM post-training (preference pairs, reward signals, etc.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8501565006",
+      "label": "Have you personally run RL training on an LLM (PPO, GRPO, DPO, or similar)?",
+      "expected": "No",
+      "actual": "No",
       "pass": true
     },
     {
@@ -115,9 +136,6 @@
     }
   ],
   "emptyRequired": [
-    "Have you trained an LLM on a multi-GPU cluster (8+ GPUs)?",
-    "Have you built data pipelines for LLM post-training (preference pairs, reward signals, etc.",
-    "Have you personally run RL training on an LLM (PPO, GRPO, DPO, or similar)?",
     "What makes you a strong fit for this role?"
   ],
   "fillErrors": []

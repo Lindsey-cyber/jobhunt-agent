@@ -924,21 +924,6 @@
           "Consulting",
           "None"
         ]
-      },
-      {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
       }
     ],
     "priorApplications": 0
@@ -1662,7 +1647,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_29257726003",
         "label": "What is your current position?",
@@ -1671,10 +1656,16 @@
         "options": [],
         "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Research Engineer Intern",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_29257737003",
         "label": "What is your current company?",
@@ -1683,7 +1674,13 @@
         "options": [],
         "maxLength": 255
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",
@@ -1906,7 +1903,7 @@
           "outside Bay Area willing to relocate"
         ]
       },
-      "reason": "answer \"New York, NY\" matches none of the options"
+      "reason": "answer \"New York, New York, United States\" matches none of the options"
     },
     {
       "status": "skip",
@@ -2143,10 +2140,10 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "No",
+      "value": "Decline To Self Identify",
       "source": {
         "type": "profile",
-        "path": "eeo.hispanicLatino"
+        "path": "eeo.race"
       },
       "confidence": 1,
       "sensitive": true
@@ -2206,25 +2203,6 @@
         ]
       },
       "reason": "no answer in profile or answer bank"
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

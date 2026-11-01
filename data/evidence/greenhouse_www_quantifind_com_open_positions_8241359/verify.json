@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -107,6 +107,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_69521847",
+      "label": "What is your preferred location?",
+      "expected": "Either",
+      "actual": "Either",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69521848",
+      "label": "What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)",
+      "expected": "05/2026",
+      "actual": "05/2026",
+      "pass": true
+    },
+    {
       "fieldId": "question_69521849",
       "label": "Are you authorized to work lawfully in the United States for Quantifind?",
       "expected": "Yes",
@@ -121,9 +135,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "What is your preferred location?",
-    "What is the graduation month/year for your Master's or highest completed degree? (MM/YYYY)"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

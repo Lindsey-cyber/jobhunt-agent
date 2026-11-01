@@ -1,9 +1,7 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Years of AI performance engineering\": no answer in profile or answer bank",
     "required \"Preferred office?\": no answer in profile or answer bank",
-    "required \"Years of AI performance engineering\" is empty after filling",
     "required \"Preferred office?\" is empty after filling"
   ]
 }

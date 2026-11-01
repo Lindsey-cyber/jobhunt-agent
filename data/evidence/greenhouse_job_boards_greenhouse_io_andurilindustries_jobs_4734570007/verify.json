@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -26,14 +26,14 @@
       "fieldId": "country",
       "label": "Country",
       "expected": "United States",
-      "actual": "",
-      "pass": false
+      "actual": "United States",
+      "pass": true
     },
     {
       "fieldId": "phone",
       "label": "Phone",
       "expected": "9786681426",
-      "actual": "9786681426",
+      "actual": "(978) 668-1426",
       "pass": true
     },
     {
@@ -51,39 +51,60 @@
       "pass": true
     },
     {
+      "fieldId": "question_8955194007",
+      "label": "CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.",
+      "expected": "No",
+      "actual": "No",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8955195007",
+      "label": "If you have held a U.S. security clearance in the past, what clearance level have you held?",
+      "expected": "N/A - have never held U.S. security clearance",
+      "actual": "N/A - have never held U.S. security clearance",
+      "pass": true
+    },
+    {
+      "fieldId": "question_8955196007",
+      "label": "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
+      "expected": "None of the above",
+      "actual": "None of the above",
+      "pass": true
+    },
+    {
       "fieldId": "question_8955197007",
       "label": "U.S. WORK AUTHORIZATION",
       "expected": "Yes",
-      "actual": "",
-      "pass": false
+      "actual": "Yes",
+      "pass": true
     },
     {
       "fieldId": "question_8955198007",
       "label": "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?",
       "expected": "Yes",
-      "actual": "",
-      "pass": false
+      "actual": "Yes",
+      "pass": true
     },
     {
       "fieldId": "question_8955199007",
       "label": "HISTORY WITH ANDURIL",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8955200007",
       "label": "Have you ever been employed by Anduril or any company that Anduril has acquired?",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_8955201007",
       "label": "CONFLICT OF INTEREST",
       "expected": "No",
-      "actual": "",
-      "pass": false
+      "actual": "No",
+      "pass": true
     },
     {
       "fieldId": "question_9069526007",
@@ -95,9 +116,9 @@
     {
       "fieldId": "question_9799039007",
       "label": "How did you hear about Anduril?",
-      "expected": "LinkedIn",
-      "actual": "",
-      "pass": false
+      "expected": "GitHub",
+      "actual": "GitHub",
+      "pass": true
     },
     {
       "fieldId": "question_13259636007",
@@ -112,27 +133,29 @@
       "expected": "Ma",
       "actual": "Ma",
       "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
     }
   ],
-  "emptyRequired": [
-    "Country",
-    "CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.",
-    "If you have held a U.S. security clearance in the past, what clearance level have you held?",
-    "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
-    "U.S. WORK AUTHORIZATION",
-    "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?",
-    "HISTORY WITH ANDURIL",
-    "Have you ever been employed by Anduril or any company that Anduril has acquired?",
-    "CONFLICT OF INTEREST",
-    "How did you hear about Anduril?"
-  ],
-  "fillErrors": [
-    "Country: the country menu did not open",
-    "U.S. WORK AUTHORIZATION: the question_8955197007 menu did not open",
-    "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?: the question_8955198007 menu did not open",
-    "HISTORY WITH ANDURIL: the question_8955199007 menu did not open",
-    "Have you ever been employed by Anduril or any company that Anduril has acquired?: the question_8955200007 menu did not open",
-    "CONFLICT OF INTEREST: the question_8955201007 menu did not open",
-    "How did you hear about Anduril?: the question_9799039007 menu did not open"
-  ]
+  "emptyRequired": [],
+  "fillErrors": []
 }

@@ -1,13 +1,7 @@
 {
   "decision": "hold",
   "reasons": [
-    "required \"Have you trained an LLM on a multi-GPU cluster (8+ GPUs)?\": no answer in profile or answer bank",
-    "required \"Have you built data pipelines for LLM post-training (preference pairs, reward signals, etc.\": no answer in profile or answer bank",
-    "required \"Have you personally run RL training on an LLM (PPO, GRPO, DPO, or similar)?\": no answer in profile or answer bank",
     "required \"What makes you a strong fit for this role?\": no answer in profile or answer bank",
-    "required \"Have you trained an LLM on a multi-GPU cluster (8+ GPUs)?\" is empty after filling",
-    "required \"Have you built data pipelines for LLM post-training (preference pairs, reward signals, etc.\" is empty after filling",
-    "required \"Have you personally run RL training on an LLM (PPO, GRPO, DPO, or similar)?\" is empty after filling",
     "required \"What makes you a strong fit for this role?\" is empty after filling"
   ]
 }

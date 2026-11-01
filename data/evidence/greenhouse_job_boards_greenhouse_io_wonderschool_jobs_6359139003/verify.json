@@ -107,6 +107,20 @@
       "pass": true
     },
     {
+      "fieldId": "question_29257726003",
+      "label": "What is your current position?",
+      "expected": "Research Engineer Intern",
+      "actual": "Research Engineer Intern",
+      "pass": true
+    },
+    {
+      "fieldId": "question_29257737003",
+      "label": "What is your current company?",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
       "fieldId": "question_29257749003",
       "label": "Are you currently authorized to work in the United States?",
       "expected": "Yes",
@@ -144,8 +158,8 @@
     {
       "fieldId": "hispanic_ethnicity",
       "label": "Are you Hispanic/Latino?",
-      "expected": "No",
-      "actual": "No",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
       "pass": true
     },
     {
@@ -157,8 +171,6 @@
     }
   ],
   "emptyRequired": [
-    "What is your current position?",
-    "What is your current company?",
     "Are you willing to spend a significant portion of your time (up to 50%) working directly with customers through support tickets and calls to inform the AI systems you build, and can you share specific examples where you’ve worked outside traditional engineering responsibilities or why this type of work appeals to you?",
     "What experience do you have using tools like Claude Code, OpenClaw, or similar AI-assisted development environments?",
     "Where did you attend undergad?",

@@ -327,6 +327,24 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Lumos",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Software Engineer, AI Agent Governance",
+        "url": "https://jobs.ashbyhq.com/lumos/37ecfa5a-f047-4b70-a29b-79cc885df706",
+        "verdict": "match",
+        "location": "United States; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Lumos team,\n\nI came across the Software Engineer, AI Agent Governance opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Idler",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -960,30 +978,6 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "OneImaging",
-    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
-    "roles": [
-      {
-        "title": "Associate Data Engineer (UF Only)",
-        "url": "https://job-boards.greenhouse.io/oneimaging/jobs/4404708009",
-        "verdict": "match",
-        "location": "Miami"
-      },
-      {
-        "title": "Associate Data Engineer (UMiami Only)",
-        "url": "https://job-boards.greenhouse.io/oneimaging/jobs/4423646009",
-        "verdict": "match",
-        "location": "Miami"
-      }
-    ],
-    "hiringPosts": [],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi OneImaging team,\n\nI came across the Associate Data Engineer (UF Only) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
     "company": "SirenOpt",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -1357,6 +1351,12 @@
         "url": "https://job-boards.greenhouse.io/botauto/jobs/5371947008",
         "verdict": "match",
         "location": "Houston, TX"
+      },
+      {
+        "title": "Algorithm Engineer, Deep Learning & Vision",
+        "url": "https://go.vansh.nyc/Kc",
+        "verdict": "match",
+        "location": "Houston, TX; San Francisco, CA"
       }
     ],
     "hiringPosts": [],
@@ -1417,6 +1417,24 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Mattermost team,\n\nI came across the Senior Full Stack Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Ascend",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data Scientist, Product",
+        "url": "https://job-boards.greenhouse.io/ascend21/jobs/5421300008",
+        "verdict": "review",
+        "location": "San Francisco"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Ascend team,\n\nI came across the Data Scientist, Product opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -1583,6 +1601,36 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi PerfectServe team,\n\nI came across the Data Engineer - US Remote opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Stevens Capital Management LP",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Quantitative Researcher - Portfolio Optimization",
+        "url": "https://job-boards.greenhouse.io/scm/jobs/7311297",
+        "verdict": "review",
+        "location": "Radnor, PA"
+      },
+      {
+        "title": "Quantitative Researcher - Portfolio Optimization - Jersey City, NJ",
+        "url": "https://job-boards.greenhouse.io/scm/jobs/7359467",
+        "verdict": "review",
+        "location": "Jersey City, NJ"
+      },
+      {
+        "title": "Quantitative Researcher - Portfolio Optimization - Remote",
+        "url": "https://job-boards.greenhouse.io/scm/jobs/7359481",
+        "verdict": "review",
+        "location": "Radnor, PA"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Stevens Capital Management LP team,\n\nI came across the Quantitative Researcher - Portfolio Optimization opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -2110,6 +2158,30 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "OneImaging",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "New Grad 2027: Associate Data Engineer",
+        "url": "https://go.vansh.nyc/Hu",
+        "verdict": "match",
+        "location": "Miami, FL"
+      },
+      {
+        "title": "New Grad 2027: Associate Data Engineer",
+        "url": "https://go.vansh.nyc/KN",
+        "verdict": "match",
+        "location": "Miami, FL"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi OneImaging team,\n\nI came across the New Grad 2027: Associate Data Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Checkly",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [
@@ -2203,30 +2275,6 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Prior Labs team,\n\nI came across the Prior Labs | Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
-    "company": "SentiLink",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
-    "roles": [
-      {
-        "title": "SentiLink | https://www.sentilink.com/ | Engineering & Data Science | REMOTE, HYBRID, and ONSITE (UNITED STATES ONLY) | Full Time",
-        "url": "https://jobs.ashbyhq.com/sentilink",
-        "verdict": "review",
-        "location": "https://www.sentilink.com/ | Engineering & Data Science | REMOTE, HYBRID, and ONSITE (UNITED STATES ONLY) | Full Time"
-      }
-    ],
-    "hiringPosts": [
-      {
-        "url": "https://jobs.ashbyhq.com/sentilink (linked from HN post)",
-        "date": "2026-10-05T23:19:50.000Z",
-        "excerpt": "SentiLink | https://www.sentilink.com/ | Engineering & Data Science | REMOTE, HYBRID, and ONSITE (UNITED STATES ONLY) | Full Time\nPrimarily hiring in the U.S. for more senior level roles.\nWe’re hiring across Engineering (Primarily Backend/Data Platform) and Data Science / ML role"
-      }
-    ],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi SentiLink team,\n\nI came across the SentiLink | https://www.sentilink.com/ | Engineering & Data Science | REMOTE, HYBRID, and ONSITE (UNITED STATES ONLY) | Full Time opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {

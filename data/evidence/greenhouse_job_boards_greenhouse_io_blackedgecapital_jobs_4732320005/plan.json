@@ -800,7 +800,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_9058066005",
         "label": "Graduation Date",
@@ -816,7 +816,13 @@
           "Later"
         ]
       },
-      "reason": "answer \"05/2026\" matches none of the options"
+      "value": "2026 May/June",
+      "source": {
+        "type": "profile",
+        "path": "education[0].gradYear"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

@@ -658,24 +658,9 @@
           "I identify as one or more of the classifications of a protected veteran",
           "I don't wish to answer"
         ]
-      },
-      {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
       }
     ],
-    "priorApplications": 1,
+    "priorApplications": 3,
     "jobLocation": "Remote in USA"
   },
   "items": [
@@ -1426,7 +1411,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_19678968004",
         "label": "Do you have two years or more of Python development experience?",
@@ -1437,7 +1422,13 @@
           "No"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "answers.qualifications"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "blocked",
@@ -1521,10 +1512,10 @@
           "Decline To Self Identify"
         ]
       },
-      "value": "No",
+      "value": "Decline To Self Identify",
       "source": {
         "type": "profile",
-        "path": "eeo.hispanicLatino"
+        "path": "eeo.race"
       },
       "confidence": 1,
       "sensitive": true
@@ -1549,25 +1540,6 @@
       },
       "confidence": 0.95,
       "sensitive": true
-    },
-    {
-      "status": "skip",
-      "field": {
-        "id": "race",
-        "label": "Please identify your race",
-        "kind": "combobox",
-        "required": false,
-        "options": [
-          "American Indian or Alaskan Native",
-          "Asian",
-          "Black or African American",
-          "White",
-          "Native Hawaiian or Other Pacific Islander",
-          "Two or More Races",
-          "Decline To Self Identify"
-        ]
-      },
-      "reason": "race declined by leaving it blank (choosing decline resets the Hispanic/Latino answer)"
     }
   ]
 }

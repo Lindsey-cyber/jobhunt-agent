@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -58,6 +58,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_9058066005",
+      "label": "Graduation Date",
+      "expected": "2026 May/June",
+      "actual": "2026 May/June",
+      "pass": true
+    },
+    {
       "fieldId": "question_9074028005",
       "label": "High School Graduation Year",
       "expected": "2019",
@@ -86,8 +93,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Graduation Date"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

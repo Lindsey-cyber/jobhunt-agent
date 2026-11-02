@@ -4,7 +4,7 @@ import { z } from "zod";
 import type { Channel, JobKey, Sighting, SizeBand } from "../domain/job.ts";
 import { jobKey } from "../discover/identity.ts";
 import { inScopeTitle } from "../discover/triage.ts";
-import { atlassianInUS, parseAmazon, parseAshby, parseAtlassian, parseIbm, parseJibe, parseEightfold, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, eightfoldInUS, type AtlassianRow, type EightfoldItem, type HnComment, type IbmHit, type JibeJob, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
+import { atlassianInUS, parseAmazon, parseAshby, parseAtlassian, parseIbm, parseJibe, parseEightfold, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, eightfoldInUS, type AtlassianRow, type EightfoldItem, type HnComment, type IbmHit, type JibeJob, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
 import { getJson, getText, HttpError, pool, postJson } from "./http.ts";
 
 // Size band and H-1B filing count the watchlist was built with (scripts/rebuild-watchlist.ts); coverage reads the band.
@@ -55,7 +55,7 @@ export interface SourceOutcome {
   count: number;
   error?: string;
   note?: string;
-  // Workday full walk: list pages fetched, postings listed, and whether recall is still bounded (cap hit or fallback).
+  // Workday full walk and Amazon: list pages fetched, postings listed, and whether recall is still bounded (cap hit or fallback).
   pages?: number;
   listed?: number;
   capHit?: boolean;
@@ -106,11 +106,6 @@ type WorkdayPosting = NonNullable<WorkdayList["jobPostings"]>[number];
 export interface WorkdayOptions {
   // Hard cap on list pages per board (20 postings each), so one huge board cannot starve the rest.
   pageCap?: number;
-  // ISO time of the last successful run for this board: postings dated before it are stale.
-  since?: string;
-  // Consecutive pages made up entirely of stale postings that end the walk. Pages, not postings:
-  // Adobe lists a run of 20+ "30+ Days Ago" postings in the middle of fresh ones.
-  stalePages?: number;
   // Per-query depth of the keyword fallback, in postings.
   perQuery?: number;
 }
@@ -119,21 +114,12 @@ export const WORKDAY_PAGE = 20;
 // Workday itself serves at most 2000 postings per search (100 pages of 20).
 export const WORKDAY_PAGE_CAP = 100;
 
-// A posting is stale when it is older than the window: "30+ days" is always
-// outside it, and so is anything dated before the last successful run.
-function workdayStale(postedOn: string | undefined, seenAt: string, since?: string): boolean {
-  const r = parseWorkdayPostedOn(postedOn, seenAt);
-  if (!r) return false;
-  if (r.dateKind === "posted_before") return true;
-  return since !== undefined && r.date < since;
-}
-
-// Workday lists postings newest first, so a board is read in full but
-// incrementally: empty search, page by page, until the postings are older than
-// the window. Keyword search is only the fallback for a board that rejects an
-// empty search. Only titles that look like AI/ML roles get their detail fetched.
+// Workday lists are not reliably date-ordered ("30+ Days Ago" postings sit between fresh ones on General
+// Motors, Omnicom, Adobe), so no date stops the walk: it reads the list to its end or to the page cap.
+// Keyword search is only the fallback for a board that rejects an empty search. Only titles that look
+// like AI/ML roles get their detail fetched.
 export async function fetchWorkday(w: Watchlist["workday"][number], queries: string[], seenAt: string, opts: WorkdayOptions = {}): Promise<Fetched> {
-  const { pageCap = WORKDAY_PAGE_CAP, since, stalePages = 2, perQuery = 60 } = opts;
+  const { pageCap = WORKDAY_PAGE_CAP, perQuery = 60 } = opts;
   const u = new URL(w.site);
   const tenant = u.hostname.split(".")[0]!;
   const api = `https://${u.hostname}/wday/cxs/${tenant}${u.pathname.replace(/\/$/, "")}`;
@@ -165,13 +151,10 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
       pages = 1;
       let page: WorkdayList = first;
       const total = first.total ?? 0;
-      let stale = 0;
       for (let offset = 0; ; offset += WORKDAY_PAGE) {
         const posts = page.jobPostings ?? [];
         if (posts.length === 0) { stopReason = "end of list"; break; }
         take(posts);
-        stale = posts.every((p) => workdayStale(p.postedOn, seenAt, since)) ? stale + 1 : 0;
-        if (stale >= stalePages) { stopReason = "reached postings older than the window"; break; }
         // total is reported on the first page only; later pages may say 0.
         if (offset + WORKDAY_PAGE >= total || posts.length < WORKDAY_PAGE) { stopReason = "end of list"; break; }
         if (pages >= pageCap) { capHit = true; stopReason = `page cap ${pageCap}`; break; }
@@ -340,23 +323,30 @@ export async function fetchEightfold(e: Watchlist["eightfold"][number], queries:
 }
 
 // amazon.jobs/en/search.json: the endpoint the public search page calls; no login.
-// Newest first, so a bounded page count keeps the recent postings of each query.
-export async function fetchAmazon(queries: string[], seenAt: string, perQuery = 200): Promise<Fetched> {
+// Newest first. Each query is read to the end of its hits (the server reports the total), up to a safety
+// cap: a cap of a few hundred cut "machine learning" (2000+ hits) to its newest tenth, which is how
+// postings such as "Data Engineer I, Fire TV" were never fetched.
+export const AMAZON_PER_QUERY = 3000;
+export async function fetchAmazon(queries: string[], seenAt: string, perQuery = AMAZON_PER_QUERY): Promise<Fetched> {
   const base = { name: "Amazon", channel: "official_amazon" as Channel, url: "https://www.amazon.jobs/en/search" };
   try {
     const seen = new Map<string, Sighting>();
     let listed = 0;
+    // A query that reaches the per-query cap before its hits run out leaves postings unread: recall is bounded.
+    let capHit = false;
     for (const q of queries) {
+      let reachedEnd = false;
       for (let offset = 0; offset < perQuery; offset += 100) {
         const body = await getJson<{ hits?: number; jobs?: Parameters<typeof parseAmazon>[0]["jobs"] }>(`https://www.amazon.jobs/en/search.json?base_query=${encodeURIComponent(q)}&country%5B%5D=USA&result_limit=100&offset=${offset}&sort=recent`, 60000);
         const page = parseAmazon(body, seenAt);
         listed += page.length;
         for (const s of page) if (inScopeTitle(s.title)) seen.set(s.key, s);
-        if (offset + 100 >= (body.hits ?? 0)) break;
+        if (offset + 100 >= (body.hits ?? 0)) { reachedEnd = true; break; }
       }
+      if (!reachedEnd) capHit = true;
     }
     const s = [...seen.values()];
-    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: "medium_large", note: `${queries.length} searches, ${listed} US results, ${s.length} AI/ML titles` } };
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: "medium_large", capHit, note: `${queries.length} searches, ${listed} US results, ${s.length} AI/ML titles${capHit ? `; per-query cap ${perQuery} hit, recall bounded here` : ""}` } };
   } catch (e) {
     return fail(base, e);
   }

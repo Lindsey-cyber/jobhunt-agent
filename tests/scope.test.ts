@@ -1,9 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { isAggregator } from "../src/discover/coverage.ts";
 import { inScopeTitle, ROLE, triage } from "../src/discover/triage.ts";
-import { fetchSample } from "../src/sources/coverage.ts";
 import { loadWatchlist } from "../src/sources/fetch.ts";
 
 afterEach(() => vi.unstubAllGlobals());
@@ -34,31 +32,4 @@ describe("structure: fetchers share one title scope", () => {
     expect(own).toEqual([]);
   });
   it("fetch.ts filters titles through inScopeTitle", () => expect(readFileSync(join(dir, "fetch.ts"), "utf8")).toMatch(/inScopeTitle\(/));
-});
-
-describe("coverage sampling skips aggregators", () => {
-  const AGG = ["Lensa", "Talent.com", "Military Spouse Jobs"];
-  it("matches by normalized company name", () => {
-    expect(isAggregator("Lensa", AGG)).toBe(true);
-    expect(isAggregator("LENSA, Inc.", AGG)).toBe(true);
-    expect(isAggregator("Talent.com", AGG)).toBe(true);
-    expect(isAggregator("Acme", AGG)).toBe(false);
-    expect(isAggregator("Lensa Labs", AGG)).toBe(false);
-    expect(isAggregator("", AGG)).toBe(false);
-    expect(isAggregator("Lensa", [])).toBe(false);
-  });
-  it("the watchlist names aggregators", () => expect(loadWatchlist().aggregators).toContain("Lensa"));
-  const md = [
-    "| Company | Role | Location | Application/Link | Date Posted |",
-    "| --- | --- | --- | :---: | :---: |",
-    '| **Lensa** | ML Engineer | Austin, TX | <a href="https://lensa.test/1"><img alt="Apply"></a> | Nov 01 |',
-    '| **Acme** | ML Engineer | Austin, TX | <a href="https://acme.test/1"><img alt="Apply"></a> | Nov 01 |',
-  ].join("\n");
-  it("fetchSample drops aggregator rows, using the watchlist by default", async () => {
-    vi.stubGlobal("fetch", vi.fn(async () => new Response(md)));
-    const list = [{ name: "L", raw: "https://raw.example.test/l.md" }] as never;
-    expect((await fetchSample(list, ["Lensa"])).rows.map((r) => r.company)).toEqual(["Acme"]);
-    expect((await fetchSample(list, [])).rows.map((r) => r.company).sort()).toEqual(["Acme", "Lensa"]);
-    expect((await fetchSample(list)).rows.map((r) => r.company)).toEqual(["Acme"]);
-  });
 });

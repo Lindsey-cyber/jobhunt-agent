@@ -19,50 +19,33 @@ import { readH1b, writeH1b } from "./store/h1b.ts";
 import type { JobKey } from "./domain/job.ts";
 import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
-import { runAuditor } from "./org/auditor.ts";
-import { draftAnswers } from "./org/drafter.ts";
-import { modelTriage } from "./org/triager.ts";
+import { draftAnswers } from "./run/drafter.ts";
 import { authUrl, fetchAlerts, finishAuth, gmailConfigured, recentHeaders } from "./sources/gmail.ts";
 import { receiptFor } from "./verify/reconcile.ts";
-import { daily, scoreLatestAudit, writeReport } from "./org/coordinator.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
-import { serve } from "./run/serve.ts";
 import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { appendAnswer } from "./store/answerlog.ts";
 import { readCatalog } from "./store/catalog.ts";
-import { bandOfCompany, causeOf, fits, indexCatalog, isBig, isStale, makeCanon, match, report as coverageReport, resampleRows, sampleOf, summarize, RESAMPLE_TARGET, type Judged, type SampleRow, type WatchedBoard } from "./discover/coverage.ts";
-import { fetchSample, loadSizeSources, requireIndependent, resolveRequisitions, resolveShortLinks, SAMPLE_LISTS, watchedBoards, watchlistUrls } from "./sources/coverage.ts";
 import { readModelVerdicts } from "./store/modelverdicts.ts";
 import { retriage } from "./discover/merge.ts";
 import { expectationFloor } from "./discover/pay.ts";
 import { tallyHolds } from "./verify/holds.ts";
-import { readCoverage } from "./store/coverage.ts";
 import { stageGates } from "./discover/gates.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
-import { appendLabel, paths, readBaseline, readLabels, readLatest, readTrust, writeBaseline, writeTrust } from "./store/state.ts";
+import { appendLabel, paths, readBaseline, readLabels, readTrust, writeBaseline, writeTrust } from "./store/state.ts";
 
 const USAGE = `jh <command>
 
   apply <url> [--approve] [--headed]   fill, verify and (if the gate allows) submit one application
   discover [--inbox <dir>] [--only greenhouse,lever,ashby,workday,github,hn,gmail]
                                        fetch every source, merge into the catalog, triage, check links
-  coverage [--limit <n>]               search verifier: sample fitting postings from public lists the pipeline does not
-                                       fetch, check each against the catalog, write data/coverage/<date>.json
-  daily [--inbox <dir>]                coordinator run: Gmail alerts (when authorized), discover, audit sample,
-                                       approval queue, outreach, report
+                                       (search only: no audit sample, approval queue, outreach or report)
   gmail auth [--code <address>]        authorize read-only Gmail access (two steps; prints a consent link first)
   gmail fetch [--inbox <dir>]          save the last 30 days of job-alert emails
-  report                               re-render the latest report and dashboard
-  audit run [--model <id>]             have the API auditor (Anthropic or OpenAI, see JH_AUDIT_PROVIDER) judge
-                                       the latest blind sample, then score it
-  audit score <verdicts.jsonl> [--auditor <name>]
-                                       score the independent auditor's blind verdicts; adjusts triage trust
   applications [--out <dir>]           page of every application: fields filled, read back, screenshot
   questions                            collect the questions holding applications into the review list, once each
-  triage-model [--limit <n>]           a model judges postings the rules left at "review" (auditor's brief);
-                                       yes → match, no → reject, unsure stays; default 300 a run
   holds                                why applications are held, grouped: needs your answer, site mechanics
                                        (for an engineering session), or held by design
   reconcile                            mark unconfirmed applications confirmed when the employer's receipt email arrived
@@ -76,7 +59,6 @@ const USAGE = `jh <command>
   answer <review-id> <text>            record your answer to a question on the review list
   eval [--record]                      score triage rules on your labels; fails if worse than the baseline
   trust [promote <stage>]              stage trust levels; promotion is yours to make
-  serve [--port <n>]                   dashboard, report and review list on 127.0.0.1 (default port 8787)
   status                               latest state of every application
   pending                              today's review list: held applications, matches to approve, questions
   doctor                               check the data directory and the browser`;
@@ -98,13 +80,13 @@ const { positionals, values } = parseArgs({
     record: { type: "boolean", default: false },
     model: { type: "string" },
     code: { type: "string" },
-    port: { type: "string", default: "8787" },
     limit: { type: "string" },
     list: { type: "boolean", default: false },
     refresh: { type: "boolean", default: false },
     since: { type: "string" },
     from: { type: "string" },
     out: { type: "string" },
+    help: { type: "boolean", default: false },
   },
 });
 const [command, url, arg2] = positionals;
@@ -133,7 +115,6 @@ function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
 // Every posting's one state (src/discover/today.ts), shared by jh today, apply-approved and facts-map.
 function gatesOf(u: ReturnType<typeof user>, w: ReturnType<typeof gather>) {
   return stageGates({
-    ...(({ coverage, problem }) => ({ coverage, coverageProblem: problem }))(readCoverage(u.dir)),
     registry: SOURCE_REGISTRY,
     today: w.today,
     matches: [...w.catalog.values()].filter((j) => j.triage?.verdict === "match"),
@@ -161,7 +142,7 @@ function gather(u: ReturnType<typeof user>) {
   return { ledger, catalog, h1b, today, policy, input, posts, tierOf, tierOfJob, queue: agentQueue(posts, policy, today, tierOf) };
 }
 
-switch (command) {
+switch (values.help ? undefined : command) {
   case "apply": {
     if (!url) throw new Error("usage: jh apply <url>");
     const u = user();
@@ -194,48 +175,6 @@ switch (command) {
     console.log(`match ${count("match")}  review ${count("review")}  reject ${count("reject")}`);
     console.log(`sources ok ${r.outcomes.filter((o) => o.ok).length}, failed ${r.outcomes.filter((o) => !o.ok).length}`);
     console.log(`run ${r.runDir}`);
-    break;
-  }
-  case "coverage": {
-    // The independent check on search: postings from lists the pipeline does not fetch, matched against the catalog.
-    const u = user();
-    requireIndependent(SAMPLE_LISTS, watchlistUrls());
-    const now = new Date();
-    const date = now.toISOString().slice(0, 10);
-    const wl = loadWatchlist();
-    const canon = makeCanon(wl.aliases);
-    const since = u.search.h1bRequiredSince;
-    const size = loadSizeSources(u.dir, since, wl, canon);
-    const { rows, failed } = await fetchSample(SAMPLE_LISTS, wl.aggregators, canon);
-    for (const f of failed) console.error(`source failed: ${f}`);
-    const fitting = rows.filter((r) => fits(r, u.search, now));
-    const idx = indexCatalog(retriage(readCatalog(paths(u.dir).catalog).values(), candidateFacts(u.profile), u.search.excludeCompanies, readModelVerdicts(u.dir)), canon);
-    const boardsOf = new Map<string, WatchedBoard[]>();
-    const judgeRows = async (batch: SampleRow[]): Promise<Judged[]> => {
-      const sampled = await resolveRequisitions(await resolveShortLinks(batch), wl);
-      const found = sampled.map((row) => ({ row, found: match(row, idx) }));
-      const unread = [...new Set(found.filter((f) => !f.found).map((f) => f.row.company))].filter((c) => !boardsOf.has(canon(c)));
-      for (const [c, b] of await watchedBoards(unread, wl)) boardsOf.set(c, b);
-      return found.map((f) => ({ ...f, cause: causeOf(f.row, f.found, idx, boardsOf.get(canon(f.row.company)) ?? []), band: bandOfCompany(f.row.company, canon, size) }));
-    };
-    // Gate 1a counts large + mid employers: top up from the lists until that many real postings (stale ones do not count)
-    // are measured, or the lists run out. The first sample spans every size so small and unknown are still reported.
-    const taken = sampleOf(fitting, Number(values.limit ?? 100), canon);
-    const judged = await judgeRows(taken);
-    const bigPool = fitting.filter((r) => isBig(bandOfCompany(r.company, canon, size)));
-    for (let round = 0; round < 8; round++) {
-      const more = resampleRows(bigPool, taken, judged.filter((j) => !isStale(j.cause) && isBig(j.band)).length, RESAMPLE_TARGET, canon);
-      if (more.length === 0) break;
-      taken.push(...more);
-      judged.push(...(await judgeRows(more)));
-    }
-    const sources = SAMPLE_LISTS.map((l) => l.name).filter((n) => !failed.some((f) => f.startsWith(`${n}:`)));
-    const r = coverageReport(date, sources, judged);
-    const out = join("data", "coverage", `${date}.json`);
-    mkdirSync(dirname(out), { recursive: true });
-    writeFileSync(out, JSON.stringify(r, null, 1) + "\n");
-    console.log(summarize(r));
-    console.log(`wrote ${out}`);
     break;
   }
   case "applications": {
@@ -386,11 +325,6 @@ switch (command) {
     for (const o of out) console.log(`${o.problems.length ? "HELD" : "USED"}  ${o.company} · ${o.question}${o.answer ? `\n      ${o.answer}` : ""}${o.problems.length ? `\n      ${o.problems.join("; ")}` : ""}`);
     break;
   }
-  case "triage-model": {
-    const r = await modelTriage(user(), { limit: Number(values.limit ?? 300), log: (s) => console.error(s) });
-    console.log(`model triage (${r.model}): judged ${r.judged}: ${r.yes} fit → match, ${r.no} not fit → reject, ${r.unsure} unsure`);
-    break;
-  }
   case "reconcile": {
     // Applications left unconfirmed whose employer has since emailed a receipt become confirmed.
     const u = user();
@@ -481,47 +415,6 @@ switch (command) {
     } else throw new Error("usage: jh gmail auth [--code <address>] | jh gmail fetch [--inbox <dir>]");
     break;
   }
-  case "daily": {
-    const u = user();
-    let inbox = values.inbox;
-    if (!inbox && gmailConfigured()) {
-      inbox = join(u.dir, "inbox", new Date().toISOString().slice(0, 10));
-      console.error(`gmail: saved ${(await fetchAlerts(inbox)).saved} alert emails to ${inbox}`);
-    }
-    const r = await daily({ user: u, watchlist: loadWatchlist(), ...(inbox ? { inboxDir: inbox } : {}), log: (s) => console.error(s) });
-    const seen = r.jobs.filter((j) => j.lastSeen >= r.startedAt);
-    const n = (v: string) => seen.filter((j) => j.triage.verdict === v).length;
-    console.log(`postings seen ${seen.length}: match ${n("match")}, review ${n("review")}, reject ${n("reject")}`);
-    console.log(`queued ${r.queued} for approval; audit sample ${r.auditSize} in ${r.auditDir}; outreach ${r.outreach.length} companies`);
-    console.log(`report ${r.reportDir}/REPORT.md`);
-    break;
-  }
-  case "serve": {
-    serve(user().dir, Number(values.port));
-    console.log(`serving on http://127.0.0.1:${values.port}`);
-    break;
-  }
-  case "report": {
-    console.log(writeReport(user(), loadWatchlist()));
-    break;
-  }
-  case "audit": {
-    let verdicts = arg2;
-    let auditor = values.auditor;
-    if (url === "run") {
-      const latest = readLatest(user().dir);
-      if (!latest) throw new Error("no discovery run yet; run jh daily first");
-      const run = await runAuditor(latest.auditDir, values.model, (s) => console.error(s));
-      console.log(`verdicts ${run.path}: ${run.answered} answered, ${run.missing.length} recorded as unsure`);
-      verdicts = run.path;
-      auditor = `${run.model} via the ${run.provider === "openai" ? "OpenAI" : "Claude"} API, blind, brief + postings only`;
-    } else if (url !== "score" || !arg2) throw new Error("usage: jh audit run [--model <id>] | jh audit score <verdicts.jsonl> [--auditor <name>]");
-    const r = scoreLatestAudit(user(), loadWatchlist(), verdicts!, auditor);
-    const p = (x: number | null) => (x == null ? "n/a" : `${(x * 100).toFixed(1)}%`);
-    console.log(`false-match ${p(r.score.falseMatchRate)} (n=${r.score.matchJudged}); miss ${p(r.score.missRate)} (n=${r.score.rejectJudged}); near-miss ${p(r.score.nearMissRate)} (n=${r.score.nearJudged})`);
-    console.log(`disagreements ${r.score.disagreements.length}; unanswered ${r.missing}; triage trust ${r.trust.state.level}${r.trust.demoted ? " (demoted)" : ""}`);
-    break;
-  }
   case "label": {
     const u = user();
     if (!url || (arg2 !== "fit" && arg2 !== "not_fit")) throw new Error("usage: jh label <review-id|job-key> fit|not_fit [--note <text>]");
@@ -529,7 +422,7 @@ switch (command) {
     const key = (review.get(url) ? url.slice(url.indexOf(":") + 1) : url) as JobKey;
     const job = readCatalog(paths(u.dir).catalog).get(key);
     if (!job) throw new Error(`no posting ${key} in the catalog`);
-    if (job.official && !job.description) console.error(`warning: ${key} has no description in the catalog; its label will hold the title only. Label it again after the next jh daily.`);
+    if (job.official && !job.description) console.error(`warning: ${key} has no description in the catalog; its label will hold the title only. Label it again after the next jh discover.`);
     appendLabel(u.dir, labelFrom(job, arg2, values.note, new Date().toISOString()));
     for (const id of [`match:${key}`, `audit:${key}`]) if (review.get(id)?.status === "open") review.resolve(id, `${arg2}${values.note ? `: ${values.note}` : ""}`);
     console.log(`labeled ${key} ${arg2}`);

@@ -26,7 +26,7 @@ config/watchlist.yaml ─▶ src/sources (fetch, read-only) ─▶ src/discover/
 Gmail alerts (data/inbox) ─┘                                                        │
        catalog ◀── link check ◀── triage ◀── mergeRun (JobKey only) ◀──────────────┘
           │
-          └─▶ audit sample · approval queue · outreach queue · REPORT.md · dashboard.html
+          └─▶ data/discovery/catalog.jsonl.gz
 ```
 
 | stage | code | pure | output |
@@ -37,7 +37,6 @@ Gmail alerts (data/inbox) ─┘                                                
 | merge | `src/discover/merge.ts` | yes | one `Job` per key with every source's first and last sighting; official fields win |
 | triage | `src/discover/triage.ts` | yes | match, review or reject with a rule id; facts come from the profile |
 | link check | `src/discover/links.ts` + `src/run/discover.ts` | classify is | valid, invalid, blocked or unverified per match |
-| report | `src/discover/{metrics,render,outreach}.ts` | yes | channel metrics, CSVs, dashboard, outreach drafts |
 
 Sponsorship: silence passes. An explicit no-sponsorship statement on the official posting rejects when the profile needs sponsorship; the same statement in a third-party copy only sends it to review.
 
@@ -60,36 +59,11 @@ Confidence of 0.9 and above is green. Amber fills the field but holds an unatten
 
 ## Agent organization
 
-Modeled on Lauren Tan's setup: one coordinator, managers per pipeline, workers, and independent verifiers.
-
-```
-coordinator (long-running on the VPS; schedules, budgets, writes the daily report and review list)
-├─ discovery manager
-│   ├─ workers: source fetchers (code), Gmail alert parser, triage agent (is this a New Grad AI/ML fit?)
-│   └─ verifier: triage auditor, blind re-judges a sample of matches and rejects, reports precision and recall
-├─ apply manager
-│   ├─ workers: fill pipeline (code), answer writer (open questions only), adapter fixer (opens PRs)
-│   └─ verifiers: answer reviewer (every claim traced to the candidate's data), submission auditor (evidence vs plan vs profile)
-└─ outreach manager
-    ├─ worker: hiring-contact and posting researcher
-    └─ verifier: source and date checker, assigns confidence
-```
-
-What runs today (`src/org/coordinator.ts`, `jh daily`): the discovery manager's code worker, a blind audit sample for its verifier, the apply manager in phase-1 form (the day's best official matches go to the review list for approval) and the outreach manager (collects and drafts, never sends). The auditor is a separate agent on another model given only `audit/brief.md` and `audit/blind.jsonl`; `jh audit score` grades it against the hidden answer key. The triage auditor's brief is built from the profile, like every other fact.
-
-Rules for a verifier:
-
-- Independent: a different model or prompt from the worker, reading artifacts (pages, screenshots, raw records), never the worker's own summary.
-- Measured: its verdicts are scored against the candidate's daily approve/reject decisions, which are stored as a labeled eval set.
-- Structural: every error it finds ends as a rule, test or adapter fix, so it is not caught by hand twice.
-
-Anything code can check (readback, links, dedupe, confirmation) stays in code, not in an agent.
-
-Each stage has its own trust level in `data/trust.json` (`confirm` or `auto`, `src/discover/stagetrust.ts`). An audit with a false-match or miss rate above 10% (n ≥ 15) demotes the stage to `confirm` automatically; three clean audits (≤ 5%) only put a promotion proposal on the review list, and the candidate promotes with `jh trust promote`. The candidate's `jh label` decisions are the eval set (`data/labels/triage.jsonl`, with the evidence they were made on); `tests/eval.test.ts` fails `npm run check` when a rule change scores below the recorded baseline.
+The organization is real agent sessions, not scripts; its rules are in `docs/program/ORG.md`.
 
 ## Review list
 
-`data/review.jsonl` (append-only, last line per id wins) holds everything waiting on the candidate: matches to approve, audit disagreements, failed sources, promotion proposals, outreach drafts with a public contact. `jh pending` prints it with held applications. Items are never re-asked once resolved.
+`data/review.jsonl` (append-only, last line per id wins) holds everything waiting on the candidate: matches to approve, failed sources, questions. `jh pending` prints it with held applications. Items are never re-asked once resolved.
 
 ## Ledger
 
@@ -107,4 +81,4 @@ Every run writes `data/runs/<key>/<timestamp>/` with the plan, readback, verify 
 
 ## Not built yet
 
-The coordinator as a long-running VPS service (systemd timer around `jh daily`, Gmail API read-only OAuth, the auditor as an API call), an LLM triage worker for `review` items, fit scoring, resume tailoring with a fact gate, Lever/Ashby/Workday adapters, inbox confirmation checks, an eval harness on captured pages, and a trust report per ATS.
+A long-running VPS service (Gmail API read-only OAuth), an LLM triage worker for `review` items, fit scoring, resume tailoring with a fact gate, Lever/Ashby/Workday adapters, inbox confirmation checks, an eval harness on captured pages, and a trust report per ATS.

@@ -25,10 +25,6 @@ export function basisOf(j: Pick<Job, "title" | "location" | "description">): str
   return h.toString(16).padStart(8, "0");
 }
 
-// Postings a model may judge: rule verdict "review", openable, not a bare lead.
-export const needsModel = (j: Job, v: ModelVerdict | undefined) =>
-  j.triage.verdict === "review" && !j.key.startsWith("lead:") && !j.hints.closed && (!v || v.basis !== basisOf(j));
-
 export function applyModelVerdict(j: Job, v: ModelVerdict | undefined): Triage {
   if (j.triage.verdict !== "review" || !v || v.basis !== basisOf(j) || v.fit === "unsure") return j.triage;
   return v.fit === "yes"

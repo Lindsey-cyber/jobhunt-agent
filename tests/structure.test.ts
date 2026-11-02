@@ -14,7 +14,7 @@ describe("structure", () => {
     const offenders = ["src/plan", "src/gate", "src/verify", "src/discover"]
       .flatMap(files)
       // Type-only imports are erased at runtime, so they may name IO modules.
-      .filter((f) => /from "(playwright|node:fs|node:child_process|node:http|node:https)"|\bfetch\(|from "\.\.\/(sources|run|store|org)\//.test(source(f).replace(/^import type .*$/gm, "")));
+      .filter((f) => /from "(playwright|node:fs|node:child_process|node:http|node:https)"|\bfetch\(|from "\.\.\/(sources|run|store)\//.test(source(f).replace(/^import type .*$/gm, "")));
     expect(offenders).toEqual([]);
   });
 
@@ -37,14 +37,14 @@ describe("structure", () => {
     expect(deciding).toEqual([]);
   });
 
-  it("keeps discovery read-only and free of application code: sources and org never import src/ats or playwright, and gmail.ts calls no write endpoint", () => {
-    const offenders = ["src/sources", "src/org"].flatMap(files).filter((f) => /from "(playwright|\.\.\/ats\/[^"]*)"/.test(source(f)));
+  it("keeps discovery read-only and free of application code: sources never import src/ats or playwright, and gmail.ts calls no write endpoint", () => {
+    const offenders = ["src/sources"].flatMap(files).filter((f) => /from "(playwright|\.\.\/ats\/[^"]*)"/.test(source(f)));
     expect(offenders).toEqual([]);
     expect(source("src/sources/gmail.ts")).not.toMatch(/\/(send|modify|trash|untrash|drafts|batchModify|batchDelete)\b|\.(send|modify|trash|drafts)\(/);
   });
 
-  it("never waits for a typed answer: no readline or prompt under run, org or cli", () => {
-    const offenders = [...files("src/run"), ...files("src/org"), "src/cli.ts"].filter((f) => /node:readline|\breadline\b|\bprompt\(|process\.stdin/.test(source(f).replace(/\/\/.*$/gm, "")));
+  it("never waits for a typed answer: no readline or prompt under run or cli", () => {
+    const offenders = [...files("src/run"), "src/cli.ts"].filter((f) => /node:readline|\breadline\b|\bprompt\(|process\.stdin/.test(source(f).replace(/\/\/.*$/gm, "")));
     expect(offenders).toEqual([]);
   });
 

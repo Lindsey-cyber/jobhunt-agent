@@ -5,7 +5,6 @@ import type { Job, JobKey, Sighting } from "../src/domain/job.ts";
 import { jobKey } from "../src/discover/identity.ts";
 import { mergeRun, rekeyPrior } from "../src/discover/merge.ts";
 import { parseAmazon } from "../src/discover/parse.ts";
-import { reportMarkdown, type ReportData } from "../src/discover/render.ts";
 import { SOURCE_REGISTRY } from "../src/discover/sources.ts";
 import type { CandidateFacts } from "../src/discover/triage.ts";
 
@@ -89,11 +88,6 @@ describe("registry rows render their reasons", () => {
       expect(r.reason).toBeTruthy();
     }
     for (const r of SOURCE_REGISTRY.filter((x) => x.status === "deferred")) expect(r.reason).toBeTruthy();
-  });
-  it("prints the reason for deferred and no_api rows in the report", () => {
-    const d = { generatedAt: T1, runStartedAt: T1, runFinishedAt: T1, runDir: "", trust: "t", jobs: [], sightings: 0, channels: [], outcomes: [], skipped: [], stage: {}, outreach: [], inboxMessages: 0, pending: [] } as unknown as ReportData;
-    const md = reportMarkdown(d);
-    for (const r of SOURCE_REGISTRY.filter((x) => x.reason && (x.status === "deferred" || x.status === "no_api"))) expect(md).toContain(`理由：${r.reason!.replace(/\|/g, "\\|")}`);
   });
 });
 

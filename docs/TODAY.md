@@ -8,9 +8,7 @@
 
 **1a 搜全：✗ 未通过**
 
-- ✓ 覆盖率测量在 7 天内：2026-11-02（0 天前）
-- ✓ 覆盖率样本 n ≥ 50：n=70
-- ✗ 样本在库内 ≥ 95.0%：56/70 = 80.0%
+- ✗ 每家目标公司的官方招聘板今天读完：未测量: per-company completeness not built yet
 - ✓ 来源登记表没有“未做”，推迟的都有理由：0 个未做；6 个推迟（都有理由：official_icims、official_workable、official_career_pages、ai_ml_boards、network、brave_tavily）
 - ✗ 当前匹配岗位有发布日期（官方或列表注明的日期）≥ 90.0%：849/1009 = 84.1%
 
@@ -18,7 +16,7 @@
 
 - ✗ 盲审误选率 ≤ 10.0%（n ≥ 15）：10.5%，n=38
 - ✓ 盲审漏选率 ≤ 10.0%（n ≥ 15）：0.0%，n=19
-- ✗ 在库但被规则误拒 ≤ 5.0%：22/56 = 39.3%
+- ✗ 在库但被规则误拒：未测量: per-company completeness not built yet
 
 **1c 投出：✗ 未通过**
 

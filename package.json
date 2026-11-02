@@ -7,7 +7,7 @@
     "typecheck": "tsc",
     "test": "vitest run",
     "check": "tsc && vitest run",
-    "day": "tsx src/cli.ts daily && tsx src/cli.ts h1b && tsx src/cli.ts reconcile; tsx src/cli.ts today",
+    "day": "tsx src/cli.ts discover && tsx src/cli.ts h1b && tsx src/cli.ts reconcile; tsx src/cli.ts today",
     "day:apply": "JH_WORKDAY=off JH_RESOLVE=off tsx src/cli.ts apply-approved && tsx src/cli.ts reconcile; tsx src/cli.ts today"
   },
   "license": "ISC",

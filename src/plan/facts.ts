@@ -1,4 +1,4 @@
-// Answering from facts (docs/DESIGN-v3.md, step 4). Every fact about the candidate gets an id:
+// Answering from facts. Every fact about the candidate gets an id:
 // each profile field ("profile:workAuthorization.needsSponsorship") and each answer she gave
 // ("answer:visa-status"). A question the rules cannot answer is mapped once, by a model, to one
 // fact and an answer taken from it (data/question-map.jsonl); a mapping that cites no existing

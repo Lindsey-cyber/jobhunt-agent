@@ -7,7 +7,6 @@ import { initialStage, type Stage, type StageState } from "../discover/stagetrus
 // ledger.jsonl stay the candidate's; these the agent may write.
 export const paths = (dataDir: string) => ({
   catalog: join(dataDir, "discovery", "catalog.jsonl"),
-  latest: join(dataDir, "discovery", "latest.json"),
   review: join(dataDir, "review.jsonl"),
   trust: join(dataDir, "trust.json"),
   labels: join(dataDir, "labels", "triage.jsonl"),
@@ -19,19 +18,6 @@ const writeJson = (p: string, v: unknown) => {
   mkdirSync(dirname(p), { recursive: true });
   writeFileSync(p, JSON.stringify(v, null, 2) + "\n");
 };
-
-export interface LatestRun {
-  runDir: string;
-  reportDir: string;
-  auditDir: string;
-  startedAt: string;
-  finishedAt: string;
-  inboxMessages: number;
-  auditSeed: number;
-}
-
-export const readLatest = (dataDir: string) => readJson<LatestRun | null>(paths(dataDir).latest, null);
-export const writeLatest = (dataDir: string, v: LatestRun) => writeJson(paths(dataDir).latest, v);
 
 export function readTrust(dataDir: string): Record<Stage, StageState> {
   const at = new Date().toISOString();

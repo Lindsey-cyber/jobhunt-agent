@@ -1,0 +1,126 @@
+{
+ "status": 200,
+ "error": {
+  "message": "",
+  "body": ""
+ },
+ "data": {
+  "count": 36,
+  "positions": [
+   {
+    "id": 687238994277,
+    "displayJobId": "72498",
+    "name": "Senior Software Engineer, AI Governance",
+    "locations": [
+     "Beachwood, Ohio, USA, 44122",
+     "Moon Township, Pennsylvania, USA, 15108",
+     "Galesburg, Michigan, USA, 49053",
+     "Menomonee Falls, Wisconsin, USA, 53051",
+     "Raleigh, North Carolina, USA, 27616"
+    ],
+    "standardizedLocations": [
+     "Beachwood, OH, US",
+     "Coraopolis, PA, US",
+     "Galesburg, MI, US",
+     "Menomonee Falls, WI, US",
+     "Raleigh, NC, US"
+    ],
+    "postedTs": 1788370851,
+    "solrScore": null,
+    "stars": 0,
+    "department": "Information Technology",
+    "creationTs": 1787922783,
+    "isHot": 0,
+    "workLocationOption": "onsite",
+    "locationFlexibility": null,
+    "atsJobId": "72498",
+    "positionUrl": "/careers/job/687238994277"
+   },
+   {
+    "id": 687239932321,
+    "displayJobId": "76508",
+    "name": "Entry Level Electrical Technician",
+    "locations": [
+     "Minden, Louisiana, USA, 71055"
+    ],
+    "standardizedLocations": [
+     "Minden, LA, US"
+    ],
+    "postedTs": 1793222123,
+    "solrScore": null,
+    "stars": 0,
+    "department": "Manufacturing",
+    "creationTs": 1793055798,
+    "isHot": 0,
+    "workLocationOption": "onsite",
+    "locationFlexibility": null,
+    "atsJobId": "76508",
+    "positionUrl": "/careers/job/687239932321"
+   },
+   {
+    "id": 687239400241,
+    "displayJobId": "74206",
+    "name": "Maintenance Tech- 1st Shift",
+    "locations": [
+     "Sherman, Texas, USA, 75090"
+    ],
+    "standardizedLocations": [
+     "Tom Bean, TX, US"
+    ],
+    "postedTs": 1790269090,
+    "solrScore": null,
+    "stars": 0,
+    "department": "Manufacturing",
+    "creationTs": 1790189685,
+    "isHot": 0,
+    "workLocationOption": "onsite",
+    "locationFlexibility": null,
+    "atsJobId": "74206",
+    "positionUrl": "/careers/job/687239400241"
+   },
+   {
+    "id": 687239739444,
+    "displayJobId": "75664",
+    "name": "CNC Setup Machinist - 3rd Shift",
+    "locations": [
+     "North Charleston, South Carolina, USA, 29418"
+    ],
+    "standardizedLocations": [
+     "North Charleston, SC, US"
+    ],
+    "postedTs": 1792085333,
+    "solrScore": null,
+    "stars": 0,
+    "department": "Manufacturing",
+    "creationTs": 1791989179,
+    "isHot": 1,
+    "workLocationOption": "onsite",
+    "locationFlexibility": null,
+    "atsJobId": "75664",
+    "positionUrl": "/careers/job/687239739444"
+   },
+   {
+    "id": 687239619394,
+    "displayJobId": "75169",
+    "name": "Fabrication Technician II (3rd Shift)",
+    "locations": [
+     "Greenwood, South Carolina, USA, 29649"
+    ],
+    "standardizedLocations": [
+     "Greenwood, SC, US"
+    ],
+    "postedTs": 1791405678,
+    "solrScore": null,
+    "stars": 0,
+    "department": "Manufacturing",
+    "creationTs": 1791393685,
+    "isHot": 0,
+    "workLocationOption": "onsite",
+    "locationFlexibility": null,
+    "atsJobId": "75169",
+    "positionUrl": "/careers/job/687239619394"
+   }
+  ]
+ },
+ "metadata": null
+}

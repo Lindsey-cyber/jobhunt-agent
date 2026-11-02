@@ -476,6 +476,8 @@ greenhouse:
   - { board: roku, company: 'Roku', size: medium_large, band: large, h1b: 415 }
   - { board: imanage, company: 'iManage', size: medium_large, band: mid, h1b: 66 }
   - { board: komodohealth, company: 'Komodo Health', size: medium_large, band: mid, h1b: 56 }
+  - { board: invisibletech, company: 'Invisible Technologies', size: medium_large, band: mid, h1b: 36 }
+  - { board: smxtech, company: 'SMX', size: unknown, band: small, h1b: 0 }
 lever:
   - { board: spotify, company: 'Spotify', size: medium_large, band: large, h1b: 979 }
   - { board: zoox, company: 'Zoox', size: medium_large, band: large, h1b: 1997, ai: true }
@@ -544,6 +546,7 @@ lever:
   - { board: skydance, company: 'Skydance', size: unknown, band: small, h1b: 4 }
   - { board: regal.ai, company: 'Regal', size: medium_large, band: large, h1b: 254 }
   - { board: gauntlet, company: 'Gauntlet', size: unknown, band: small, h1b: 17 }
+  - { board: saviynt, company: 'Saviynt', size: medium_large, band: large, h1b: 415 }
 ashby:
   - { board: applied, company: 'Applied Intuition', size: medium_large, band: large, h1b: 316, ai: true }
   - { board: quora, company: 'Quora', size: medium_large, band: mid, h1b: 136 }
@@ -750,6 +753,8 @@ ashby:
   - { board: vals-ai, company: 'Vals AI', size: unknown, band: small, h1b: 4 }
   - { board: wynd-labs, company: 'Wynd Labs', size: unknown, band: small, h1b: 0 }
   - { board: adaption, company: 'adaption', size: unknown, band: small, h1b: 0 }
+  - { board: appfolio, company: 'AppFolio', size: medium_large, band: mid, h1b: 95 }
+  - { board: skydio, company: 'Skydio', size: medium_large, band: mid, h1b: 115 }
 workdayQueries: [new grad, new college grad, university graduate, entry level, machine learning, AI engineer, applied scientist, research engineer]
 workday:
   - { site: 'https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite', company: 'NVIDIA', size: medium_large, band: large, h1b: 6492 }
@@ -1229,6 +1234,9 @@ workday:
   - { site: 'https://wf.wd1.myworkdayjobs.com/WellsFargoJobs', company: 'Wells Fargo', size: medium_large, band: large, h1b: 2097 }
   - { site: 'https://qualcomm.wd12.myworkdayjobs.com/External', company: 'Qualcomm', size: medium_large, band: large, h1b: 8295 }
   - { site: 'https://nike.wd1.myworkdayjobs.com/nke', company: 'Nike', size: medium_large, band: large, h1b: 1143 }
+  - { site: 'https://gdit.wd5.myworkdayjobs.com/External_Career_Site', company: 'General Dynamics Information Technology', size: medium_large, band: mid, h1b: 198 }
+  - { site: 'https://comcast.wd115.myworkdayjobs.com/Comcast_Careers', company: 'Comcast', size: medium_large, band: large, h1b: 2077 }
+  - { site: 'https://aptos.wd108.myworkdayjobs.com/Revionics', company: 'Revionics', size: unknown, band: small, h1b: 0 }
 github:
   - { name: SimplifyJobs/New-Grad-Positions, url: 'https://github.com/SimplifyJobs/New-Grad-Positions', raw: 'https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json', format: simplify-json }
   - { name: speedyapply/2027-AI-College-Jobs, url: 'https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md', raw: 'https://raw.githubusercontent.com/speedyapply/2027-AI-College-Jobs/main/NEW_GRAD_USA.md', format: markdown }
@@ -1247,71 +1255,39 @@ skipped:
   - { name: Handshake direct, reason: 'Needs an account integration; covered through Handshake emails in Gmail' }
   - { name: Wellfound, reason: 'Account authorization not configured' }
 pending:
-  - { company: 'Tata Consultancy Services', ats: 'TCS iBegin (own site)', careers: 'https://www.tcs.com/careers', band: large, h1b: 27309 }
-  - { company: 'BNY', ats: 'Eightfold', careers: 'https://bny.eightfold.ai/careers', band: small, h1b: 0 }
-  - { company: 'American Honda', ats: 'Workday (Honda)', careers: 'https://careers.honda.com', band: mid, h1b: 148 }
-  - { company: 'Eaton', ats: 'Eightfold', careers: 'https://eaton.eightfold.ai/careers', band: large, h1b: 781 }
-  - { company: 'General Dynamics IT', ats: 'Oracle Cloud', careers: 'https://www.gdit.com/careers/', band: small, h1b: 0 }
-  - { company: 'Annapurna Labs', ats: 'amazon.jobs (own site)', careers: 'https://www.amazon.jobs/en/teams/annapurna-labs', band: large, h1b: 371 }
-  - { company: 'Military Spouse Jobs', ats: 'unknown (job aggregator, not an employer)', careers: 'https://www.google.com/search?q=Military+Spouse+Jobs+careers', band: small, h1b: 0 }
+  - { company: 'Tata Consultancy Services', ats: 'TCS iBegin (own site)', careers: 'https://www.tcs.com/careers', band: large, h1b: 27309, reason: 'TCS iBegin is a login-gated own site with no public job API (tcs.com/careers answers 403 to non-browser clients)' }
+  - { company: 'American Honda', ats: 'Phenom People (own site)', careers: 'https://careers.honda.com', band: mid, h1b: 148, reason: 'Phenom People site (careers.honda.com); no JSON endpoint we are approved to read, no fetcher' }
   - { company: 'Peraton', ats: 'iCIMS', careers: 'https://careers-peraton.icims.com/jobs', band: mid, h1b: 24 }
-  - { company: 'Harvard University', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/HarvardUniversity', band: large, h1b: 1911 }
-  - { company: 'AbbVie', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/AbbVie', band: large, h1b: 1887 }
-  - { company: 'Bosch', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/BoschGroup', band: mid, h1b: 147 }
-  - { company: 'Sia Partners', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/Sia', band: mid, h1b: 28 }
-  - { company: 'ServiceNow', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/ServiceNow', band: large, h1b: 3007 }
-  - { company: 'Eversana', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/EVERSANA1', band: mid, h1b: 146 }
-  - { company: 'PA Consulting', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/PAConsulting', band: mid, h1b: 48 }
-  - { company: 'AECOM', ats: 'SmartRecruiters', careers: 'https://jobs.smartrecruiters.com/AECOM2', band: large, h1b: 211 }
   - { company: 'RealPage', ats: 'iCIMS', careers: 'https://careers-realpagepms.icims.com/jobs', band: mid, h1b: 90 }
   - { company: 'SRI International', ats: 'iCIMS', careers: 'https://careers-sri.icims.com/jobs', band: mid, h1b: 69 }
-  - { company: 'Oracle', ats: 'Oracle Cloud', careers: 'https://eeho.fa.us2.oraclecloud.com/hcmUI', band: large, h1b: 3944 }
-  - { company: 'Texas Instruments', ats: 'Oracle Cloud', careers: 'https://edbz.fa.us2.oraclecloud.com/hcmUI', band: large, h1b: 701 }
-  - { company: 'Fortinet', ats: 'Oracle Cloud', careers: 'https://edel.fa.us2.oraclecloud.com/hcmUI', band: large, h1b: 1086 }
-  - { company: 'Southern Company', ats: 'Oracle Cloud', careers: 'https://emje.fa.us6.oraclecloud.com/hcmUI', band: large, h1b: 908 }
-  - { company: 'Navy Federal', ats: 'Oracle Cloud', careers: 'https://fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI', band: large, h1b: 521 }
-  - { company: 'Mayo Clinic', ats: 'Oracle Cloud', careers: 'https://fa-euwp-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI', band: large, h1b: 3408 }
-  - { company: 'Citco', ats: 'Oracle Cloud', careers: 'https://fa-euxc-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI', band: mid, h1b: 36 }
-  - { company: 'Penske', ats: 'Oracle Cloud', careers: 'https://fa-euyk-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI', band: large, h1b: 568 }
-  - { company: 'Nokia', ats: 'Oracle Cloud', careers: 'https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI', band: large, h1b: 1077 }
-  - { company: 'Citizens Financial Group', ats: 'Oracle Cloud', careers: 'https://hcgn.fa.us2.oraclecloud.com/hcmUI', band: large, h1b: 592 }
-  - { company: 'Goldman Sachs', ats: 'Oracle Cloud', careers: 'https://hdpc.fa.us2.oraclecloud.com/hcmUI', band: large, h1b: 15249 }
-  - { company: 'Dell Technologies', ats: 'Oracle Cloud', careers: 'https://iawmqy.fa.ocs.oraclecloud.com/hcmUI', band: large, h1b: 3207 }
   - { company: 'Nutanix', ats: 'Jobvite', careers: 'https://jobs.jobvite.com/nutanix', band: large, h1b: 781 }
   - { company: 'WebMD', ats: 'Jobvite', careers: 'https://jobs.jobvite.com/webmd', band: mid, h1b: 58 }
-  - { company: 'JPMorgan Chase', ats: 'Oracle Cloud', careers: 'https://jpmc.fa.oraclecloud.com/hcmUI', band: large, h1b: 11868 }
-  - { company: 'JP Morgan Chase', ats: 'Oracle Cloud', careers: 'https://jpmc.fa.oraclecloud.com/hcmUI', band: large, h1b: 11868 }
   - { company: 'Hyper', ats: 'Paylocity', careers: 'https://recruiting.paylocity.com/Recruiting', band: mid, h1b: 83 }
   - { company: 'Intuit', ats: 'Intuit Careers (own site)', careers: 'https://jobs.intuit.com', band: large, h1b: 4112 }
   - { company: 'Deloitte', ats: 'Deloitte Careers (own site)', careers: 'https://apply.deloitte.com', band: large, h1b: 20535 }
-  - { company: 'Amazon', ats: 'amazon.jobs (own site)', careers: 'https://www.amazon.jobs', band: large, h1b: 20460 }
-  - { company: 'Amazon Web Services', ats: 'amazon.jobs (own site)', careers: 'https://www.amazon.jobs', band: large, h1b: 10774 }
   - { company: 'Microsoft', ats: 'Microsoft Careers (own site)', careers: 'https://jobs.careers.microsoft.com', band: large, h1b: 30021 }
-  - { company: 'Netflix', ats: 'Eightfold', careers: 'https://explore.jobs.netflix.net', band: large, h1b: 1184 }
   - { company: 'Meta', ats: 'Meta Careers (own site)', careers: 'https://www.metacareers.com/jobs', band: large, h1b: 21188 }
   - { company: 'IBM', ats: 'IBM Careers (own site)', careers: 'https://www.ibm.com/careers', band: large, h1b: 376 }
   - { company: 'Apple', ats: 'Apple Jobs (own site)', careers: 'https://jobs.apple.com', band: large, h1b: 19139 }
   - { company: 'Tesla', ats: 'Tesla Careers (own site)', careers: 'https://www.tesla.com/careers', band: large, h1b: 9255 }
   - { company: 'Atlassian', ats: 'Atlassian Careers (own site)', careers: 'https://www.atlassian.com/company/careers', band: large, h1b: 1610 }
-  - { company: 'L.E.K. Consulting', ats: 'unknown', careers: 'https://www.google.com/search?q=L.E.K.%20Consulting%20careers', band: small, h1b: 0 }
-  - { company: 'Stamp', ats: 'unknown', careers: 'https://www.google.com/search?q=Stamp%20careers', band: small, h1b: 0 }
-  - { company: 'Sixtyfour', ats: 'unknown', careers: 'https://www.google.com/search?q=Sixtyfour%20careers', band: small, h1b: 0 }
-  - { company: 'Concord', ats: 'unknown', careers: 'https://www.google.com/search?q=Concord%20careers', band: mid, h1b: 196 }
-  - { company: 'American Express', ats: 'Workday (site not confirmed live)', careers: 'https://aexp.wd5.myworkdayjobs.com/Amex', band: large, h1b: 2568 }
-  - { company: 'Capgemini', ats: 'Workday (site not confirmed live)', careers: 'https://capgemini.wd3.myworkdayjobs.com/capgemini', band: large, h1b: 10624 }
-  - { company: 'B4Corp', ats: 'unknown', careers: 'https://www.google.com/search?q=B4Corp%20careers', band: small, h1b: 0 }
+  - { company: 'L.E.K. Consulting', ats: 'unknown', careers: 'https://www.google.com/search?q=L.E.K.%20Consulting%20careers', band: small, h1b: 0, reason: 'Tal.net vacancy board (lek.tal.net); no fetcher' }
+  - { company: 'Stamp', ats: 'unknown', careers: 'https://www.google.com/search?q=Stamp%20careers', band: small, h1b: 0, reason: 'YC startup; no ATS board found on Greenhouse/Lever/Ashby; small company, outreach lead only' }
+  - { company: 'Omnicom', ats: 'own site (agency brands hire separately)', careers: 'https://www.omnicomgroup.com/careers/', band: large, h1b: 0, reason: 'no AI/ML board: its SmartRecruiters company page lists 1 US posting (an administrative role); the agency brands hire on separate sites' }
+  - { company: 'Torentify', ats: 'unknown', careers: 'https://www.torentify.com', band: small, h1b: 0, reason: 'tiny company, no careers page or ATS board found; outreach lead only' }
+  - { company: 'Sixtyfour', ats: 'unknown', careers: 'https://www.google.com/search?q=Sixtyfour%20careers', band: small, h1b: 0, reason: 'YC X25 startup (about 3 postings); no ATS board found on Greenhouse/Lever/Ashby; small company, outreach lead only' }
+  - { company: 'Concord', ats: 'unknown', careers: 'https://www.google.com/search?q=Concord%20careers', band: mid, h1b: 196, reason: 'small company (concordusa.com/careers) with no ATS board found on Greenhouse/Lever/Ashby/SmartRecruiters; outreach lead only' }
+  - { company: 'Capgemini', ats: 'SAP SuccessFactors (own site)', careers: 'https://careers.capgemini.com', band: large, h1b: 10624, reason: 'own site on SAP SuccessFactors (careers.capgemini.com), not Workday; no public JSON, no fetcher' }
+  - { company: 'B4Corp', ats: 'unknown', careers: 'https://www.google.com/search?q=B4Corp%20careers', band: small, h1b: 0, reason: 'tiny company, site 403 to non-browser clients; no ATS board found on Greenhouse/Lever/Ashby; outreach lead only' }
   - { company: 'University of Michigan', ats: 'unknown', careers: 'https://www.google.com/search?q=University%20of%20Michigan%20careers', band: large, h1b: 4369 }
   - { company: 'FFF Enterprises', ats: 'unknown', careers: 'https://www.google.com/search?q=FFF%20Enterprises%20careers', band: mid, h1b: 24 }
-  - { company: 'AppFolio', ats: 'unknown', careers: 'https://www.google.com/search?q=AppFolio%20careers', band: mid, h1b: 95 }
   - { company: 'Optum', ats: 'unknown', careers: 'https://www.google.com/search?q=Optum%20careers', band: large, h1b: 2116 }
-  - { company: 'American Honda Motor', ats: 'unknown', careers: 'https://www.google.com/search?q=American%20Honda%20Motor%20careers', band: mid, h1b: 148 }
-  - { company: 'General Dynamics Information Technology', ats: 'unknown', careers: 'https://www.google.com/search?q=General%20Dynamics%20Information%20Technology%20careers', band: mid, h1b: 198 }
+  - { company: 'American Honda Motor', ats: 'unknown', careers: 'https://www.google.com/search?q=American%20Honda%20Motor%20careers', band: mid, h1b: 148, reason: 'same Phenom People site as American Honda; no fetcher' }
   - { company: 'Infosys', ats: 'unknown', careers: 'https://www.google.com/search?q=Infosys%20careers', band: large, h1b: 22766 }
   - { company: 'Corning', ats: 'unknown', careers: 'https://www.google.com/search?q=Corning%20careers', band: large, h1b: 272 }
   - { company: 'Bank OZK', ats: 'unknown', careers: 'https://www.google.com/search?q=Bank%20OZK%20careers', band: mid, h1b: 125 }
   - { company: 'McKesson', ats: 'unknown', careers: 'https://www.google.com/search?q=McKesson%20careers', band: large, h1b: 431 }
   - { company: 'Integral Ad Science', ats: 'unknown', careers: 'https://www.google.com/search?q=Integral%20Ad%20Science%20careers', band: mid, h1b: 80 }
-  - { company: 'Comcast', ats: 'Workday (site not confirmed live)', careers: 'https://comcast.wd5.myworkdayjobs.com/Comcast_Careers', band: large, h1b: 2077 }
   - { company: 'Robotics Technologies', ats: 'unknown', careers: 'https://www.google.com/search?q=Robotics%20Technologies%20careers', band: large, h1b: 333 }
   - { company: 'Precisely', ats: 'unknown', careers: 'https://www.google.com/search?q=Precisely%20careers', band: mid, h1b: 35 }
   - { company: 'West Monroe', ats: 'unknown', careers: 'https://www.google.com/search?q=West%20Monroe%20careers', band: mid, h1b: 20 }
@@ -1336,21 +1312,16 @@ pending:
   - { company: 'ASSA ABLOY', ats: 'unknown', careers: 'https://www.google.com/search?q=ASSA%20ABLOY%20careers', band: mid, h1b: 47 }
   - { company: 'Axtria', ats: 'unknown', careers: 'https://www.google.com/search?q=Axtria%20careers', band: large, h1b: 484 }
   - { company: 'Acuity', ats: 'unknown', careers: 'https://www.google.com/search?q=Acuity%20careers', band: mid, h1b: 141 }
-  - { company: 'AMD', ats: 'Workday (site not confirmed live)', careers: 'https://amd.wd1.myworkdayjobs.com/AMD', band: large, h1b: 1984 }
+  - { company: 'AMD', ats: 'Workday (site not confirmed live)', careers: 'https://amd.wd1.myworkdayjobs.com/AMD', band: large, h1b: 1984, reason: 'Workday site name unconfirmed: guessed tenant/site paths return HTTP 422 on the CXS API; needs the real site name from the careers page' }
   - { company: 'NRG Energy', ats: 'unknown', careers: 'https://www.google.com/search?q=NRG%20Energy%20careers', band: mid, h1b: 95 }
   - { company: 'Ringcentral', ats: 'unknown', careers: 'https://www.google.com/search?q=Ringcentral%20careers', band: large, h1b: 344 }
-  - { company: 'Invisible Tech', ats: 'unknown', careers: 'https://www.google.com/search?q=Invisible%20Tech%20careers', band: mid, h1b: 36 }
-  - { company: '66 Degrees', ats: 'unknown', careers: 'https://www.google.com/search?q=66%20Degrees%20careers', band: mid, h1b: 21 }
-  - { company: 'Honeywell', ats: 'Workday (site not confirmed live)', careers: 'https://honeywell.wd5.myworkdayjobs.com/Honeywell', band: large, h1b: 1249 }
   - { company: 'L3Harris Technologies', ats: 'unknown', careers: 'https://www.google.com/search?q=L3Harris%20Technologies%20careers', band: mid, h1b: 50 }
-  - { company: 'Skydio', ats: 'unknown', careers: 'https://www.google.com/search?q=Skydio%20careers', band: mid, h1b: 115 }
   - { company: 'Rivian Automotive', ats: 'unknown', careers: 'https://www.google.com/search?q=Rivian%20Automotive%20careers', band: large, h1b: 2213 }
   - { company: 'NucleusTeq', ats: 'unknown', careers: 'https://www.google.com/search?q=NucleusTeq%20careers', band: mid, h1b: 42 }
   - { company: 'Sentinel Group', ats: 'unknown', careers: 'https://www.google.com/search?q=Sentinel%20Group%20careers', band: mid, h1b: 29 }
   - { company: 'Nimble', ats: 'unknown', careers: 'https://www.google.com/search?q=Nimble%20careers', band: mid, h1b: 70 }
   - { company: 'OSF HealthCare', ats: 'unknown', careers: 'https://www.google.com/search?q=OSF%20HealthCare%20careers', band: large, h1b: 255 }
   - { company: 'Boston Consulting Group', ats: 'unknown', careers: 'https://www.google.com/search?q=Boston%20Consulting%20Group%20careers', band: large, h1b: 1440 }
-  - { company: 'Saviynt', ats: 'unknown', careers: 'https://www.google.com/search?q=Saviynt%20careers', band: large, h1b: 415 }
   - { company: 'Toyota Research Institute', ats: 'unknown', careers: 'https://www.google.com/search?q=Toyota%20Research%20Institute%20careers', band: mid, h1b: 54 }
   - { company: 'First Solar', ats: 'unknown', careers: 'https://www.google.com/search?q=First%20Solar%20careers', band: large, h1b: 271 }
   - { company: 'University of Miami', ats: 'unknown', careers: 'https://www.google.com/search?q=University%20of%20Miami%20careers', band: large, h1b: 1109 }
@@ -1372,7 +1343,7 @@ pending:
 smartrecruiters:
   - { id: 'ServiceNow', company: 'ServiceNow', size: medium_large }
   - { id: 'AbbVie', company: 'AbbVie', size: medium_large }
-  - { id: 'AECOM', company: 'AECOM', size: medium_large }
+  - { id: 'AECOM2', company: 'AECOM', size: medium_large }
   - { id: 'WesternDigital', company: 'Western Digital', size: medium_large }
   - { id: 'BoschGroup', company: 'Bosch', size: medium_large }
   - { id: 'FannieMae1SB', company: 'Fannie Mae', size: medium_large }
@@ -1382,6 +1353,9 @@ smartrecruiters:
   - { id: 'LLNL', company: 'Lawrence Livermore National Laboratory', size: medium_large }
   - { id: 'HarvardUniversity', company: 'Harvard University', size: medium_large }
   - { id: 'Dominos', company: "Domino's", size: medium_large }
+  - { id: 'Sia', company: 'Sia Partners', size: medium_large }
+  - { id: 'EVERSANA1', company: 'Eversana', size: medium_large }
+  - { id: 'PAConsulting', company: 'PA Consulting', size: medium_large }
   - { id: 'Cricut', company: 'Cricut', size: unknown }
 # oracleHcm: host and site (CX site number) from the company's candidate-experience URL.
 oracleHcm:
@@ -1401,6 +1375,29 @@ oracleHcm:
   - { host: 'eedu.fa.em3.oraclecloud.com', site: 'CX_1003', company: 'WTW', size: medium_large }
   - { host: 'ejhp.fa.us6.oraclecloud.com', site: 'CX_2', company: 'Sherwin-Williams', size: medium_large }
   - { host: 'fa-euyk-saasfaprod1.fa.ocs.oraclecloud.com', site: 'CX_3', company: 'Penske', size: medium_large }
+  - { host: 'emje.fa.us6.oraclecloud.com', site: 'SouthernCompanyJobs', company: 'Southern Company', size: medium_large }
+  - { host: 'fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com', site: 'nfcu', company: 'Navy Federal', size: medium_large }
+  - { host: 'fa-euwp-saasfaprod1.fa.ocs.oraclecloud.com', site: 'Mayo-US', company: 'Mayo Clinic', size: medium_large }
+  - { host: 'hcgn.fa.us2.oraclecloud.com', site: 'CX_1', company: 'Citizens Financial Group', size: medium_large }
+  - { host: 'fa-euxc-saasfaprod1.fa.ocs.oraclecloud.com', site: 'CX_1', company: 'Citco', size: medium_large }
+# eightfold: tenant career-site host plus the `domain` its API expects. api apply_v2 = /api/apply/v2/jobs, pcsx = /api/pcsx/search
+# (the family a tenant serves; the other answers 403). BNY is also on Eightfold but its host is unreachable from here; it is covered through oracleHcm above.
+eightfold:
+  - { host: 'explore.jobs.netflix.net', domain: 'netflix.com', api: apply_v2, company: 'Netflix', size: medium_large }
+  - { host: 'eaton.eightfold.ai', domain: 'eaton.com', api: pcsx, company: 'Eaton', size: medium_large }
+# aggregators: sites that repost other employers' jobs and are not employers themselves. Coverage sampling skips rows whose company is listed here.
+aggregators:
+  - 'Military Spouse Jobs'
+  - 'Lensa'
+  - 'Jobgether'
+  - 'Jooble'
+  - 'Jobright'
+  - 'Dice'
+  - 'SimplyHired'
+  - 'Adzuna'
+  - 'Talent.com'
+  - 'CareerBuilder'
+  - 'Snagajob'
 # amazon: amazon.jobs/en/search.json has no ATS board; queries are AND-matched, so "university graduate" style phrases return nothing.
 amazon:
-  queries: ['machine learning', 'applied scientist', 'research scientist', 'data scientist', 'deep learning', 'artificial intelligence', 'ML engineer', 'university']
+  queries: ['machine learning', 'applied scientist', 'research scientist', 'data scientist', 'deep learning', 'artificial intelligence', 'ML engineer', 'university', 'Annapurna Labs']

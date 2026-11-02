@@ -16,6 +16,10 @@ const iso = (v: unknown) => {
   return Number.isNaN(d.getTime()) ? "" : d.toISOString();
 };
 
+// A date only counts as "published" when the source gave one: a missing or
+// unparseable field is "none", never a published kind with an empty date.
+const kindOf = (date: string, kind: DateKind): DateKind => (date ? kind : "none");
+
 // ── Official boards ────────────────────────────────────────────────────────
 
 interface GreenhouseJob { id: number; title: string; absolute_url: string; location?: { name?: string }; first_published?: string; updated_at?: string; content?: string; company_name?: string }
@@ -36,7 +40,7 @@ export function parseGreenhouse(body: { jobs?: GreenhouseJob[] }, board: string,
       location: j.location?.name ?? "",
       description: htmlToText(j.content ?? ""),
       date: published || iso(j.updated_at),
-      dateKind: published ? "published" : "updated",
+      dateKind: published ? "published" : kindOf(iso(j.updated_at), "updated"),
     });
   });
 }
@@ -44,8 +48,9 @@ export function parseGreenhouse(body: { jobs?: GreenhouseJob[] }, board: string,
 interface LeverJob { id: string; text: string; hostedUrl: string; createdAt?: number; categories?: { location?: string; allLocations?: string[]; commitment?: string }; descriptionPlain?: string; lists?: { text: string; content: string }[]; additionalPlain?: string; country?: string; workplaceType?: string }
 
 export function parseLever(body: LeverJob[], board: string, company: string, seenAt: string): Sighting[] {
-  return body.map((j) =>
-    sighting({
+  return body.map((j) => {
+    const published = iso(j.createdAt);
+    return sighting({
       channel: "official_lever",
       source: `https://jobs.lever.co/${board}`,
       url: j.hostedUrl,
@@ -57,10 +62,10 @@ export function parseLever(body: LeverJob[], board: string, company: string, see
       description: [j.descriptionPlain ?? "", ...(j.lists ?? []).map((l) => `${l.text}\n${htmlToText(l.content)}`), j.additionalPlain ?? ""].join("\n"),
       // Lever's createdAt is when the posting was created in the ATS; the closest
       // thing Lever publishes to a publication date.
-      date: iso(j.createdAt),
-      dateKind: "published",
-    }),
-  );
+      date: published,
+      dateKind: kindOf(published, "published"),
+    });
+  });
 }
 
 interface AshbyJob { id: string; title: string; jobUrl: string; location?: string; secondaryLocations?: { location?: string }[]; publishedAt?: string; isListed?: boolean; descriptionPlain?: string; employmentType?: string; address?: { postalAddress?: { addressCountry?: string } } }
@@ -68,8 +73,9 @@ interface AshbyJob { id: string; title: string; jobUrl: string; location?: strin
 export function parseAshby(body: { jobs?: AshbyJob[] }, board: string, company: string, seenAt: string): Sighting[] {
   return (body.jobs ?? [])
     .filter((j) => j.isListed !== false)
-    .map((j) =>
-      sighting({
+    .map((j) => {
+      const published = iso(j.publishedAt);
+      return sighting({
         channel: "official_ashby",
         source: `https://jobs.ashbyhq.com/${board}`,
         url: j.jobUrl,
@@ -79,10 +85,10 @@ export function parseAshby(body: { jobs?: AshbyJob[] }, board: string, company: 
         title: j.title.trim(),
         location: [j.location, ...(j.secondaryLocations ?? []).map((s) => s.location), j.address?.postalAddress?.addressCountry].filter(Boolean).join("; "),
         description: (j.employmentType ? `Employment type: ${j.employmentType}\n` : "") + (j.descriptionPlain ?? ""),
-        date: iso(j.publishedAt),
-        dateKind: "published",
-      }),
-    );
+        date: published,
+        dateKind: kindOf(published, "published"),
+      });
+    });
 }
 
 export interface WorkdayDetail { jobPostingInfo?: { postedOn?: string; title?: string; jobDescription?: string; location?: string; additionalLocations?: string[]; startDate?: string; externalUrl?: string; country?: { descriptor?: string }; timeType?: string } }
@@ -161,6 +167,29 @@ export function parseSimplifyListings(body: SimplifyListing[], source: string, s
     });
 }
 
+// The "Age" / "Posted" cell of a markdown list: "today", "2d", "3w", "1mo", or
+// an ISO date. It is resolved against fetch time to a UTC day so it sorts, but it
+// is the list's age for the row, not the employer's date (dateKind list_age).
+// "30d+" style cells are only a bound (posted_before); "Date unknown" is nothing.
+export function parseListAge(text: string | undefined, seenAt: string): { date: string; dateKind: DateKind } {
+  const t = (text ?? "").trim().toLowerCase();
+  const now = Date.parse(seenAt);
+  const none = { date: "", dateKind: "none" as DateKind };
+  if (!t || Number.isNaN(now)) return none;
+  const dayStart = (daysAgo: number) => {
+    const d = new Date(now);
+    return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - daysAgo)).toISOString();
+  };
+  if (/^(today|just posted|new)$/.test(t)) return { date: dayStart(0), dateKind: "list_age" };
+  if (t === "yesterday") return { date: dayStart(1), dateKind: "list_age" };
+  if (/^\d{4}-\d{2}-\d{2}$/.test(t)) return { date: iso(`${t}T00:00:00.000Z`), dateKind: iso(`${t}T00:00:00.000Z`) ? "list_age" : "none" };
+  // "2d", "30d+", "3 weeks", "30+ days"
+  const m = /^(\d+)(\+?)\s*(d|days?|w|weeks?|mo|months?)(\+?)$/.exec(t);
+  if (!m) return none;
+  const unit = m[3]![0] === "d" ? 1 : m[3]![0] === "w" ? 7 : 30;
+  return { date: dayStart(Number(m[1]) * unit), dateKind: m[2] || m[4] ? "posted_before" : "list_age" };
+}
+
 const LIST_NOISE = /(^|\.)(imgur\.com|simplify\.jobs|github\.com|shields\.io)$/;
 
 // Markdown tables (| Company | Role | Location | ... | Apply | Age |) where a
@@ -201,8 +230,7 @@ export function parseMarkdownJobTable(md: string, source: string, seenAt: string
         title,
         location: cell(col("location")),
         description: "",
-        date: age,
-        dateKind: age ? "list_age" : "none",
+        ...parseListAge(age, seenAt),
         hints: { earlyCareerList: true, closed: line.includes("🔒") },
       }),
     );

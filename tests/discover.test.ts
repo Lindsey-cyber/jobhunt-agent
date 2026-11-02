@@ -65,8 +65,8 @@ describe("parsers", () => {
     ].join("\n");
     const rows = parseMarkdownJobTable(md, "list", T0);
     expect(rows.map((r) => [r.company, r.title, r.key, r.date])).toEqual([
-      ["Lyft", "ML Engineer", "greenhouse:8908005002", "5d"],
-      ["Lyft", "Data Engineer", "lever:11111111-2222-3333-4444-555555555555", "6d"],
+      ["Lyft", "ML Engineer", "greenhouse:8908005002", "2026-10-23T00:00:00.000Z"],
+      ["Lyft", "Data Engineer", "lever:11111111-2222-3333-4444-555555555555", "2026-10-22T00:00:00.000Z"],
     ]);
   });
 

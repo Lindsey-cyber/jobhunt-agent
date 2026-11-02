@@ -20,7 +20,7 @@ const DAY = 86_400_000;
 // a day of the new one is kept.
 function publishedOf(rep: Sighting, old: Job | undefined): string {
   if (!rep.official) return old?.publishedAt ?? "";
-  if (rep.dateKind === "published") return rep.date;
+  if (rep.dateKind === "published") return rep.date || old?.publishedAt || "";
   if (rep.dateKind !== "relative_posted") return old?.publishedAt ?? "";
   if (old?.publishedAt && Math.abs(Date.parse(old.publishedAt) - Date.parse(rep.date)) <= DAY) return old.publishedAt;
   return rep.date;

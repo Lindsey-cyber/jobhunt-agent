@@ -18,9 +18,12 @@ export type Channel =
 
 export const OFFICIAL_CHANNELS: readonly Channel[] = ["official_greenhouse", "official_lever", "official_ashby", "official_workday"];
 
-// What a date on a sighting means. Only "published" is the employer's own
-// publication date; the rest must never be reported as one.
-export type DateKind = "published" | "updated" | "start_date" | "list_posted" | "list_age" | "email_received" | "post_time" | "none";
+// What a date on a sighting means. "published" and "relative_posted" (an
+// employer's "Posted 3 Days Ago", resolved against fetch time, day precision)
+// are the employer's own publication date; the rest must never be reported as
+// one. "posted_before" is only an upper bound ("Posted 30+ Days Ago": posted on
+// or before that date).
+export type DateKind = "published" | "relative_posted" | "posted_before" | "updated" | "start_date" | "list_posted" | "list_age" | "email_received" | "post_time" | "none";
 
 export interface Sighting {
   key: JobKey;
@@ -45,6 +48,9 @@ export interface Sighting {
     earlyCareerList?: boolean;
     // The source does not identify one posting (a hiring post, an alert without a link).
     unresolved?: boolean;
+    // Set on a job only ever seen in an alert email (title, company, location)
+    // that matched no official posting uniquely: it still needs its official page.
+    needsOfficialPage?: boolean;
     // Public contact text in a hiring post.
     contact?: string;
   };
@@ -88,6 +94,15 @@ export interface Job {
   hints: Sighting["hints"];
   size: SizeBand;
   link?: LinkCheck;
+  // An alert-only job's unique official counterpart (same company, same title,
+  // compatible location). A pointer only: the two stay separate jobs.
+  officialLink?: OfficialLink;
+}
+
+export interface OfficialLink {
+  key: JobKey;
+  url: string;
+  basis: "company+title+location";
 }
 
 // A code check that the posting's page is live, never an agent's opinion.

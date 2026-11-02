@@ -85,12 +85,32 @@ export function parseAshby(body: { jobs?: AshbyJob[] }, board: string, company: 
     );
 }
 
-export interface WorkdayDetail { jobPostingInfo?: { title?: string; jobDescription?: string; location?: string; additionalLocations?: string[]; startDate?: string; externalUrl?: string; country?: { descriptor?: string }; timeType?: string } }
+export interface WorkdayDetail { jobPostingInfo?: { postedOn?: string; title?: string; jobDescription?: string; location?: string; additionalLocations?: string[]; startDate?: string; externalUrl?: string; country?: { descriptor?: string }; timeType?: string } }
+
+// The CXS list (and detail) gives only a relative age: "Posted Today",
+// "Posted Yesterday", "Posted 3 Days Ago", "Posted 30+ Days Ago". It is resolved
+// against fetch time to a UTC day. "30+" is only a bound: posted on or before
+// that day, so it is never reported as a publication date.
+export function parseWorkdayPostedOn(text: string | undefined, seenAt: string): { date: string; dateKind: DateKind } | undefined {
+  const t = (text ?? "").trim().toLowerCase();
+  const now = Date.parse(seenAt);
+  if (!t || Number.isNaN(now)) return undefined;
+  const dayStart = (daysAgo: number) => {
+    const d = new Date(now);
+    return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - daysAgo)).toISOString();
+  };
+  if (t === "posted today") return { date: dayStart(0), dateKind: "relative_posted" };
+  if (t === "posted yesterday") return { date: dayStart(1), dateKind: "relative_posted" };
+  const m = /^posted (\d+)(\+?) days? ago$/.exec(t);
+  if (!m) return undefined;
+  return { date: dayStart(Number(m[1])), dateKind: m[2] ? "posted_before" : "relative_posted" };
+}
 
 // site is e.g. https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite
-export function parseWorkdayDetail(detail: WorkdayDetail, site: string, externalPath: string, company: string, seenAt: string): Sighting | undefined {
+export function parseWorkdayDetail(detail: WorkdayDetail, site: string, externalPath: string, company: string, seenAt: string, postedOn?: string): Sighting | undefined {
   const j = detail.jobPostingInfo;
   if (!j?.title) return undefined;
+  const posted = parseWorkdayPostedOn(postedOn, seenAt) ?? parseWorkdayPostedOn(j.postedOn, seenAt);
   return sighting({
     channel: "official_workday",
     source: site,
@@ -101,9 +121,10 @@ export function parseWorkdayDetail(detail: WorkdayDetail, site: string, external
     title: j.title.trim(),
     location: [j.location, ...(j.additionalLocations ?? []), j.country?.descriptor].filter(Boolean).join("; "),
     description: (j.timeType ? `Time type: ${j.timeType}\n` : "") + htmlToText(j.jobDescription ?? ""),
-    // Workday exposes the posting's start date, not a publication timestamp.
-    date: iso(j.startDate),
-    dateKind: "start_date",
+    // The relative "posted" age when Workday gives one; otherwise only the
+    // start date, which is not a publication timestamp.
+    date: posted?.date ?? iso(j.startDate),
+    dateKind: posted?.dateKind ?? "start_date",
   });
 }
 

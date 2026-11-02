@@ -5,7 +5,9 @@ import type { SourceOutcome } from "../sources/fetch.ts";
 import type { AuditScore } from "./audit.ts";
 import type { ChannelMetrics } from "./metrics.ts";
 import { priority, publishedWithin } from "./metrics.ts";
+import { isAlertOnly } from "./merge.ts";
 import type { OutreachEntry } from "./outreach.ts";
+import { registryCounts, SOURCE_REGISTRY, statusZh } from "./sources.ts";
 import type { StageState } from "./stagetrust.ts";
 
 export interface ReportData {
@@ -81,6 +83,7 @@ export function summarize(d: ReportData) {
     all30: postings.filter((j) => publishedWithin(j, 30, d.runStartedAt)).length,
     companies: new Set(postings.map((j) => j.company.toLowerCase())).size,
     matchCompanies: new Set(matches.map((j) => j.company.toLowerCase())).size,
+    alertOnly: postings.filter(isAlertOnly),
     largeMatches: matches.filter((j) => j.size === "medium_large").length,
   };
 }
@@ -103,13 +106,14 @@ export function reportMarkdown(d: ReportData): string {
     ["匹配岗位链接核验：有效 / 失效 / 受限 / 未能核验", `${s.linkValid} / ${s.linkInvalid} / ${s.linkBlocked} / ${s.linkUnverified}（共核验 ${s.linkChecked}）`],
     ["匹配岗位中官方发布于近 7 / 30 天", `${s.m7} / ${s.m30}（${s.mUnknown} 个无官方发布日期）`],
     ["全部岗位中官方发布于近 7 / 30 天", `${s.all7} / ${s.all30}`],
+    ["仅邮件提醒的岗位：已对应唯一官方页 / 仍需官方页", `${s.alertOnly.filter((j) => j.officialLink).length} / ${s.alertOnly.filter((j) => !j.officialLink).length}`],
     ["观察到的公司 / 有匹配的公司", `${s.companies} / ${s.matchCompanies}`],
     ["匹配岗位中属于名单内中大型公司", `${s.largeMatches} / ${s.matches.length}`],
     ["来源成功 / 失败或跳过", `${ok.length} / ${failed.length + d.skipped.length}`],
   ];
   for (const [k, v] of rows) L.push(`| ${k} | ${v} |`);
   L.push("");
-  L.push("“近 7/30 天”只用雇主 ATS 给出的发布时间（Greenhouse `first_published`、Lever `createdAt`、Ashby `publishedAt`）。Workday 只给 start date，GitHub 列表和邮件只有转载/收件时间，这些都不当成发布时间。本仓库从今天开始记录每个来源的首次发现时间，下次运行起才能统计“我们新发现”的岗位。", "");
+  L.push("“近 7/30 天”只用雇主 ATS 给出的发布时间（Greenhouse `first_published`、Lever `createdAt`、Ashby `publishedAt`）。Workday 只给相对天数（“Posted 3 Days Ago”），按抓取时间换算成日期，精度是天；“Posted 30+ Days Ago”只是下界，不当成发布时间。GitHub 列表和邮件只有转载/收件时间，这些都不当成发布时间。本仓库从今天开始记录每个来源的首次发现时间，下次运行起才能统计“我们新发现”的岗位。", "");
 
   L.push("## 渠道贡献", "");
   L.push("| 渠道 | 发现记录 | 岗位数 | 独有 | 与其他渠道共有 | 渠道内重复率 | 匹配 | 独有匹配 | 官方近7/30天（全部） | 匹配近7/30天 |", "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |");
@@ -117,6 +121,13 @@ export function reportMarkdown(d: ReportData): string {
     L.push(`| ${CHANNEL_ZH[c.channel] ?? c.channel} | ${c.sightings} | ${c.postings} | ${c.exclusive} | ${c.shared} | ${pct(c.duplicateRate)} | ${c.matches} | ${c.exclusiveMatches} | ${c.published7d}/${c.published30d} | ${c.matchesPublished7d}/${c.matchesPublished30d} |`);
   }
   L.push("", "“独有”= 本轮只有这个渠道报告了这个 Job ID。一个岗位可被多个渠道报告，各列不能相加。第三方渠道（GitHub、邮件、HN）的“官方近7/30天”来自同一岗位的官方记录，没有官方记录就算未知。", "");
+
+  L.push("## 来源登记表", "");
+  const rc = registryCounts();
+  L.push(`她要求的每个渠道一行。已接入 ${rc.live}，无授权接口跳过 ${rc.no_api}，未做 ${rc.not_built}。`, "");
+  L.push("| 渠道 | 状态 | 说明 |", "| --- | --- | --- |");
+  for (const r of SOURCE_REGISTRY) L.push(`| ${md(r.name)} | ${statusZh(r.status)} | ${md(r.note)} |`);
+  L.push("");
 
   L.push("## 来源覆盖", "");
   const wl = ok.filter((o) => !o.discoveredFrom && o.channel.startsWith("official_"));

@@ -71,7 +71,7 @@ export async function fetchBoard(kind: BoardKind, b: { board: string; company: s
   }
 }
 
-interface WorkdayList { total?: number; jobPostings?: { title?: string; externalPath?: string }[] }
+interface WorkdayList { total?: number; jobPostings?: { title?: string; externalPath?: string; postedOn?: string }[] }
 
 // Workday has no list-everything API, so each site is searched with bounded
 // queries; only titles that look like AI/ML roles get their detail fetched.
@@ -81,7 +81,7 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
   const api = `https://${u.hostname}/wday/cxs/${tenant}${u.pathname.replace(/\/$/, "")}`;
   const base = { name: w.company, channel: "official_workday" as Channel, url: w.site };
   try {
-    const paths = new Map<string, string>();
+    const paths = new Map<string, { title: string; postedOn: string }>();
     let listed = 0;
     for (const q of queries) {
       for (let offset = 0; offset < perQuery; offset += 20) {
@@ -89,14 +89,14 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
         for (const p of page.jobPostings ?? []) {
           if (!p.externalPath) continue;
           listed++;
-          if (ROLE.test(p.title ?? "")) paths.set(p.externalPath, p.title ?? "");
+          if (ROLE.test(p.title ?? "")) paths.set(p.externalPath, { title: p.title ?? "", postedOn: p.postedOn ?? "" });
         }
         if (offset + 20 >= (page.total ?? 0)) break;
       }
     }
     const details = await pool([...paths.keys()], 4, async (path) => {
       try {
-        return parseWorkdayDetail(await getJson<WorkdayDetail>(api + path, 60000), w.site, path, w.company, seenAt);
+        return parseWorkdayDetail(await getJson<WorkdayDetail>(api + path, 60000), w.site, path, w.company, seenAt, paths.get(path)?.postedOn);
       } catch {
         return undefined;
       }

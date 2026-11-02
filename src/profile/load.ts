@@ -32,7 +32,7 @@ export function loadUserData(dir = process.env.JH_DATA_DIR ?? "data"): UserData 
   if (existsSync(letters)) for (const f of readdirSync(letters).filter((x) => x.endsWith(".pdf"))) profile.documents.coverLetters[f.slice(0, -4)] = join(letters, f);
   const answersPath = join(root, "answers.yaml");
   const configPath = join(root, "config.yaml");
-  const searchPath = join(root, "search.yaml");
+  const searchPath = existsSync(join(root, "policy.yaml")) ? join(root, "policy.yaml") : join(root, "search.yaml");
   return {
     dir: root,
     profile,

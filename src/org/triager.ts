@@ -48,7 +48,7 @@ export async function modelTriage(user: UserData, opts: { limit?: number; model?
   const verdicts = readModelVerdicts(user.dir);
   // Newest first: what the candidate can still apply to.
   const todo = [...catalog.values()].filter((j) => needsModel(j, verdicts.get(j.key))).sort((a, b) => b.lastSeen.localeCompare(a.lastSeen)).slice(0, opts.limit ?? 300);
-  const brief = auditorBrief(user.profile) + NO_DESCRIPTION;
+  const brief = auditorBrief(user.profile, user.search) + NO_DESCRIPTION;
   const at = new Date().toISOString();
   const fresh: ModelVerdict[] = [];
   for (let i = 0; i < todo.length; i += BATCH) {

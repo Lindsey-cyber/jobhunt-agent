@@ -2,7 +2,7 @@
 // independent auditor (another model or prompt, reading only the evidence)
 // judges each item; code scores the judgments against the hidden verdicts.
 import type { Job, Verdict } from "../domain/job.ts";
-import type { Profile } from "../profile/schema.ts";
+import type { Policy, Profile } from "../profile/schema.ts";
 import { ROLE } from "./triage.ts";
 
 export type Stratum = "match" | "reject_near" | "reject_any" | "review";
@@ -141,7 +141,7 @@ export function scoreAudit(key: AnswerKeyItem[], verdicts: AuditVerdict[]): Audi
 // The auditor's instructions. Deliberately a different framing from the rules:
 // it reads the posting as a recruiter would, knowing only the candidate's facts,
 // which come from the profile like everything else.
-export function auditorBrief(p: Profile): string {
+export function auditorBrief(p: Profile, policy?: Policy): string {
   const degrees = p.education.map((e) => `${e.degree} in ${e.major} (${e.school}, ${e.gradYear}-${String(e.gradMonth).padStart(2, "0")})`).join("; ");
   const phd = p.education.some((e) => /ph\.?d|doctor/i.test(e.degree));
   const auth = p.workAuthorization.authorizedCountries.join(", ");
@@ -153,5 +153,7 @@ For each posting answer "yes" if the candidate should see it as a fitting openin
 
 ${p.newGradCohorts.length ? `New-grad postings for the graduating classes of ${p.newGradCohorts.join(" or ")} count as fitting even when the candidate's own graduation date falls outside the stated window; she applies to them on purpose. ` : ""}A required degree "in Computer Science or a related field" (or in a quantitative or technical field) includes her degrees; only an explicit requirement she does not meet (a PhD, a specific engineering degree with no "related field") disqualifies. An explicit statement that the role does not sponsor visas, requires U.S. citizenship or a security clearance, is contract-only, or is not open to new graduates is a no.
 
-Give a one-sentence reason quoting the decisive words.`;
+${policy?.excludeSeniorTitles ? `A Senior, Staff, Principal or Lead title is "no" even when no years are stated, unless the title also offers a junior or unlevelled option (for example "Senior/Software Engineer").
+
+` : ""}Give a one-sentence reason quoting the decisive words.`;
 }

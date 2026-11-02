@@ -131,5 +131,15 @@ export const Config = z.object({
 });
 export type Config = z.infer<typeof Config>;
 
-export const SearchPrefs = z.object({ excludeCompanies: z.array(z.string().min(1)).default([]) });
-export type SearchPrefs = z.infer<typeof SearchPrefs>;
+// data/policy.yaml: the candidate's decisions on what to apply to (see the file's comments).
+export const Policy = z.object({
+  excludeCompanies: z.array(z.string().min(1)).default([]),
+  windowDays: z.number().int().positive().default(30),
+  excludeSeniorTitles: z.boolean().default(true),
+  h1bRequiredSince: z.number().int().nullable().default(null),
+  agentAts: z.array(z.string()).default(["greenhouse"]),
+  applyLast: z.array(z.string()).default([]),
+});
+export type Policy = z.infer<typeof Policy>;
+export const SearchPrefs = Policy;
+export type SearchPrefs = Policy;

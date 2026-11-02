@@ -50,7 +50,7 @@ export async function daily(o: DailyOptions) {
   const seed = Date.parse(r.startedAt) % 2 ** 31;
   const { blind, key } = drawSample(seen, seed);
   writeFileSync(join(auditDir, "blind.jsonl"), blind.map((b) => JSON.stringify(b)).join("\n") + "\n");
-  writeFileSync(join(auditDir, "brief.md"), auditorBrief(o.user.profile) + "\n");
+  writeFileSync(join(auditDir, "brief.md"), auditorBrief(o.user.profile, o.user.search) + "\n");
   // The answer key stays out of the report dir until scoring, so an auditor
   // pointed at that dir cannot read it.
   writeFileSync(join(r.runDir, "audit-key.json"), JSON.stringify(key, null, 2));

@@ -6,9 +6,8 @@ import { parseArgs } from "node:util";
 import { chromium } from "playwright";
 import { loadUserData } from "./profile/load.ts";
 import { apply, sameJob } from "./run/apply.ts";
-import { excludedBy } from "./discover/exclude.ts";
-import { tooSenior } from "./discover/seniority.ts";
 import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
+import { applyOrder, eligibility, postedOn } from "./discover/eligibility.ts";
 import { lookupH1b } from "./sources/h1b.ts";
 import { pool } from "./sources/http.ts";
 import { readH1b, writeH1b } from "./store/h1b.ts";
@@ -27,7 +26,7 @@ import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { appendAnswer } from "./store/answerlog.ts";
 import { readCatalog } from "./store/catalog.ts";
-import { expectationFloor, payBelowExpectation } from "./discover/pay.ts";
+import { expectationFloor } from "./discover/pay.ts";
 import { tallyHolds } from "./verify/holds.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
@@ -169,7 +168,10 @@ switch (command) {
     const u = user();
     const catalog = readCatalog(paths(u.dir).catalog);
     const latest = new Map(readLabels(u.dir).map((l) => [l.key, l]));
-    const companies = [...new Set([...latest.values()].filter((l) => l.label === "fit").map((l) => catalog.get(l.key as JobKey)?.company).filter((c): c is string => Boolean(c)))];
+    // Every approved posting's company, and every current match inside the policy window.
+    const since = new Date(Date.now() - u.search.windowDays * 86400000).toISOString().slice(0, 10);
+    const inWindow = [...catalog.values()].filter((j) => j.triage?.verdict === "match" && postedOn(j) >= since).map((j) => j.company);
+    const companies = [...new Set([...inWindow, ...[...latest.values()].filter((l) => l.label === "fit").map((l) => catalog.get(l.key as JobKey)?.company)].filter((c): c is string => Boolean(c)))];
     const h1b = readH1b(u.dir);
     const todo = companies.filter((c) => values.refresh || !h1b.has(employerKey(c)));
     console.log(`${companies.length} companies in the approved pool; looking up ${todo.length}`);
@@ -189,19 +191,25 @@ switch (command) {
     const ledger = ledgerOf(u.dir);
     const catalog = readCatalog(paths(u.dir).catalog);
     const labels = new Map(readLabels(u.dir).map((l) => [l.key, l]));
+    // One eligibility answer per posting, from data/policy.yaml (src/discover/eligibility.ts).
     const fit = [...labels.values()].filter((l) => l.label === "fit");
     // Triage promoted to auto (by the candidate, jh trust promote triage): every
     // current match counts as approved too, unless she labeled it not_fit.
     const auto = readTrust(u.dir).triage.level === "auto";
-    const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match" && labels.get(j.key)?.label !== "not_fit").sort((a, b) => (b.lastSeen ?? "").localeCompare(a.lastSeen ?? "")) : [];
+    const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match") : [];
+    const h1b = readH1b(u.dir);
+    const today = new Date().toISOString().slice(0, 10);
+    const policy = values.since ? { ...u.search, windowDays: Math.max(1, Math.ceil((Date.parse(today) - Date.parse(values.since)) / 86400000)) } : u.search;
+    const payFloor = expectationFloor(u.profile.salaryExpectation);
+    const why = new Map<string, number>();
     const ready = [...new Set([...fit.map((l) => l.key as JobKey), ...matched.map((j) => j.key)])]
       .map((k) => catalog.get(k))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j) && (j!.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j!.key)) || (WORKDAY_READY && j!.key.startsWith("workday:"))) && !excludedBy(j!.company, u.search.excludeCompanies) && !tooSenior(j!.title) && j!.link?.status !== "invalid")
-      // The candidate (2026-10-30): pay that tops out at or below her range's low end is not applied to.
+      .filter((j): j is NonNullable<typeof j> => Boolean(j))
       .filter((j) => {
-        if (!payBelowExpectation(j.description ?? "", expectationFloor(u.profile.salaryExpectation))) return true;
-        if (labels.get(j.key)?.label !== "not_fit") appendLabel(u.dir, labelFrom(j, "not_fit", "pay tops out below her expected range", new Date().toISOString(), "bulk"));
-        return false;
+        const e = eligibility({ job: j, label: labels.get(j.key)?.label, h1b: h1b.get(employerKey(j.company)), policy, payFloor, today });
+        for (const r of e.reasons) { const k = r.replace(/posted .*/, "posted outside the window").replace(/\(.*\)/, "").trim(); why.set(k, (why.get(k) ?? 0) + 1); }
+        const adapter = j.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j.key)) || (WORKDAY_READY && j.key.startsWith("workday:"));
+        return e.ok && adapter;
       })
       .filter((j) => {
         const prior = sameJob(ledger, j.url);
@@ -210,36 +218,20 @@ switch (command) {
         // Held only on something the candidate must sign: a rerun cannot change it.
         const last = ledger.history(prior.key).at(-1);
         const reasons = ((last?.detail as { reasons?: string[] } | undefined)?.reasons ?? []).filter((r) => !/trust level|autoSubmitAts|low confidence|generated answer/.test(r));
-        // (The signed field is also reported empty after filling; that is the same hold.)
         const signed = reasons.filter((r) => /legal attestations need the candidate/.test(r)).map((r) => /^required "(.+?)":/.exec(r)?.[1]);
         const rest = reasons.filter((r) => !/legal attestations need the candidate/.test(r) && !signed.some((l) => l && r === `required "${l}" is empty after filling`));
         return !(last?.state === "held" && signed.length > 0 && rest.length === 0);
       });
-    // The candidate (2026-11-02): only employers with H-1B filings since 2023 (jh h1b looks them up);
-    // no record, or a name no filer matches, stays in the catalog unapplied.
-    const h1b = readH1b(u.dir);
-    const verdicts = new Map(ready.map((j) => [j.key, sponsorVerdict(h1b.get(employerKey(j.company)))]));
-    const skipped = { none: ready.filter((j) => verdicts.get(j.key) === "none").length, unknown: ready.filter((j) => verdicts.get(j.key) === "unknown").length };
-    ready.splice(0, ready.length, ...ready.filter((j) => verdicts.get(j.key) === "sponsor"));
-    console.log(`H-1B filter: skipped ${skipped.none} with no filings since 2023, ${skipped.unknown} not yet looked up (run jh h1b)`);
+    console.log(`not eligible: ${[...why].sort((x, y) => y[1] - x[1]).map(([k, n]) => `${n} ${k}`).join("; ") || "none"}`);
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
-    console.log(`${ready.length} ${auto ? "approved or matched" : "approved"} postings with an adapter are not yet applied to; trying up to ${limit}`);
+    console.log(`${ready.length} eligible postings on the agent's ATS not yet applied to; trying up to ${limit}`);
     // The candidate (2026-10-29): never several applications to one company at once.
     // Interleave companies, and leave two minutes between submissions to the same one.
-    // Postings never tried go first; retries of held ones after them.
-    // The candidate (2026-11-01): newest postings first (employer's publish date, else when we first saw it).
-    const posted = (j: (typeof ready)[number]) => j.publishedAt || j.firstSeen || "";
-    // The candidate (2026-11-02): only postings from the last 30 days, unless --since says otherwise.
-    const since = values.since ?? new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
-    ready.splice(0, ready.length, ...ready.filter((j) => posted(j).slice(0, 10) >= since));
-    console.log(`only postings since ${since}`);
-    // The candidate (2026-11-02): analytics-engineer roles after everything else.
-    const later = (j: (typeof ready)[number]) => (/analytics engineer/i.test(j.title) ? 1 : 0);
-    const fresh = ready.filter((j) => !sameJob(ledger, j.url)).sort((a, b) => later(a) - later(b) || posted(b).localeCompare(posted(a)));
-    // Retry a held application only when today's rules fill every required field of its last form
-    // (questions waiting on the candidate would only hold it again); newest postings first.
+    // Never-tried postings first, newest first (policy.applyLast at the end); then held ones that
+    // today's rules can now fully answer (questions waiting on the candidate would only hold them again).
+    const fresh = applyOrder(ready.filter((j) => !sameJob(ledger, j.url)), policy);
     let waiting = 0;
-    const retries = ready.filter((j) => {
+    const retries = applyOrder(ready.filter((j) => {
       const prior = sameJob(ledger, j.url);
       if (!prior) return false;
       const runDir = ledger.history(prior.key).at(-1)?.runDir;
@@ -249,11 +241,11 @@ switch (command) {
       const blocked = plan.items.some((i) => i.field.required && i.status === "blocked");
       if (blocked) waiting++;
       return !blocked;
-    }).sort((a, b) => posted(b).localeCompare(posted(a)));
+    }), policy);
     console.log(`${fresh.length} never tried; ${retries.length} held ones now fully answerable; ${waiting} still waiting on questions for the candidate`);
     const order = [...interleaveByCompany(fresh), ...interleaveByCompany(retries)].slice(0, limit);
     if (values.list) {
-      for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${(j.publishedAt ?? j.firstSeen ?? "").slice(0, 10) || "no date   "}  ${sameJob(ledger, j.url) ? "retry" : "new  "}  ${j.company} · ${j.title}`);
+      for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${postedOn(j) || "no date   "}  ${sameJob(ledger, j.url) ? "retry" : "new  "}  ${j.company} · ${j.title}`);
       break;
     }
     const lastAt = new Map<string, number>();

@@ -4,6 +4,7 @@ Applies to jobs for one candidate, and submits only what it can prove is correct
 
 ## Rules
 
+- The candidate's decisions about what to apply to live in `data/policy.yaml`; every stage asks `src/discover/eligibility.ts`, none filters on its own. See docs/DESIGN-v3.md.
 - Every fact sent to an employer comes from `data/profile.yaml`, `data/answers.yaml` or the resume. If it is not there, the field is blocked, not guessed.
 - `data/` holds the candidate's real profile, answers and resume, committed on purpose (private repo). `data/config.yaml` (trust level, auto-submit list, daily cap) and `data/ledger.jsonl` belong to the candidate. Do not edit them.
 - Anything the agent cannot resolve goes on the daily review list (`jh pending`); the candidate reads it at the end of each day. Never block a run waiting for an answer.

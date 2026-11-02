@@ -5,6 +5,14 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "66 degrees": {
+  "company": "66 Degrees",
+  "matched": [
+   "66DEGREES LLC"
+  ],
+  "filings": 2,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "abacus": {
   "company": "ABACUS",
   "matched": [
@@ -39,6 +47,24 @@
   ],
   "filings": 21,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "abbott": {
+  "company": "Abbott",
+  "matched": [
+   "ABBOTT ANESTHESIOLOGIST ASSOCIATES PC",
+   "ABBOTT CARDIOVASCULAR SYSTEMS INC",
+   "ABBOTT CONSTRUCTION LLC",
+   "ABBOTT DIABETES CARE INC",
+   "ABBOTT DIABETES CARE SALES CORPORATION",
+   "ABBOTT DIAGNOSTICS SCARBOROUGH INC",
+   "ABBOTT INTERFAST LLC",
+   "ABBOTT LABORATORIES",
+   "ABBOTT LABORATORIES INC",
+   "ABBOTT POINT OF CARE INC",
+   "ABBOTT'S INVESTMENTS"
+  ],
+  "filings": 97,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "abbvie": {
   "company": "AbbVie",
@@ -111,6 +137,16 @@
   "filings": 2,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "aerospace": {
+  "company": "Aerospace",
+  "matched": [
+   "AEROSPACE LIGHTING CORPORATION",
+   "AEROSPACE TECHNOLOGIES GROUP INC",
+   "AEROSPACE TESTING ENGINEERING AND CERTIFICATION INC"
+  ],
+  "filings": 4,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "affirm": {
   "company": "Affirm",
   "matched": [
@@ -168,6 +204,12 @@
   "filings": 722,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "ajaia": {
+  "company": "Ajaia",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "akuna capital": {
   "company": "Akuna Capital",
   "matched": [
@@ -198,11 +240,48 @@
   "filings": 4,
   "checkedAt": "2026-11-02T02:19:46.662Z"
  },
+ "alliancebernstein": {
+  "company": "AllianceBernstein",
+  "matched": [
+   "ALLIANCEBERNSTEIN LP"
+  ],
+  "filings": 226,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "alloy ai": {
   "company": "Alloy.ai",
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "alpha financial markets consulting": {
+  "company": "Alpha Financial Markets Consulting",
+  "matched": [
+   "ALPHA FINANCIAL MARKETS CONSULTING INC"
+  ],
+  "filings": 5,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "amazon": {
+  "company": "Amazon",
+  "matched": [
+   "AMAZON ADVERTISING LLC",
+   "AMAZON CAPITAL SERVICES INC",
+   "AMAZON DATA SERVICES INC",
+   "AMAZON DEVELOPMENT CENTER US INC",
+   "AMAZON FRESH LLC",
+   "AMAZON FULFILLMENT CENTER (BF14)",
+   "AMAZON KUIPER MANUFACTURING ENTERPRISES LLC",
+   "AMAZON LLC",
+   "AMAZON MEDIA VENTURE LLC",
+   "AMAZON PAYMENTS INC",
+   "AMAZON RETAIL LLC",
+   "AMAZON STUDIOS LLC",
+   "AMAZON WEB SERVICES INC",
+   "AMAZON WEB SERVICES LLC"
+  ],
+  "filings": 7013,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "amd": {
   "company": "AMD",
@@ -271,6 +350,14 @@
   "filings": 7,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "analog devices": {
+  "company": "Analog Devices",
+  "matched": [
+   "ANALOG DEVICES INC"
+  ],
+  "filings": 164,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "anduril industries": {
   "company": "Anduril Industries",
   "matched": [
@@ -278,6 +365,12 @@
   ],
   "filings": 2,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "anthony and sylvan pools": {
+  "company": "Anthony & Sylvan Pools",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "appian": {
   "company": "Appian Corporation ",
@@ -331,6 +424,12 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "argonne national laboratory": {
+  "company": "Argonne National Laboratory",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "arizent": {
   "company": "Arizent",
@@ -392,6 +491,14 @@
   "filings": 175,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "astrazeneca": {
+  "company": "AstraZeneca",
+  "matched": [
+   "ASTRAZENECA PHARMACEUTICALS LP"
+  ],
+  "filings": 90,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "asure": {
   "company": "Asure",
   "matched": [
@@ -407,6 +514,12 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "at and t": {
+  "company": "AT&T",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "atlas air": {
   "company": "Atlas Air",
@@ -462,6 +575,15 @@
   "filings": 6,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "aveva": {
+  "company": "AVEVA",
+  "matched": [
+   "AVEVA DRUG DELIVERY SYSTEMS INC",
+   "AVEVA SOFTWARE LLC"
+  ],
+  "filings": 29,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "avride": {
   "company": "Avride",
   "matched": [
@@ -499,6 +621,29 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "bandwidth": {
+  "company": "Bandwidth",
+  "matched": [
+   "BANDWIDTH INC"
+  ],
+  "filings": 2,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "bank of": {
+  "company": "Bank of America",
+  "matched": [
+   "BANK OF AMERICA CORPORATION",
+   "BANK OF AMERICA NA",
+   "BANK OF CHINA",
+   "BANK OF HAWAII",
+   "BANK OF HOPE",
+   "BANK OF MONTREAL",
+   "BANK OF THE ORIENT",
+   "BANK OF UTAH"
+  ],
+  "filings": 409,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "bank ozk": {
   "company": "Bank OZK",
   "matched": [
@@ -506,6 +651,18 @@
   ],
   "filings": 75,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "barclays": {
+  "company": "Barclays",
+  "matched": [
+   "BARCLAYS BANK DELAWARE",
+   "BARCLAYS BANK PLC",
+   "BARCLAYS CAPITAL INC",
+   "BARCLAYS SERVICES CORP",
+   "BARCLAYS SERVICES LLC"
+  ],
+  "filings": 412,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "based on your title and location update": {
   "company": "Based on your title and location. Update:",
@@ -526,6 +683,18 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "behaviorai": {
+  "company": "BehaviorAI",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "belvedere trading": {
+  "company": "Belvedere Trading",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "bertram capital management": {
   "company": "Bertram Capital Management",
@@ -571,6 +740,14 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "blackline": {
+  "company": "BlackLine",
+  "matched": [
+   "BLACKLINE SYSTEMS INC"
+  ],
+  "filings": 23,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "blackrock neurotech": {
   "company": "Blackrock Neurotech",
   "matched": [],
@@ -596,6 +773,14 @@
   "filings": 42,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "blissway": {
+  "company": "Blissway",
+  "matched": [
+   "BLISSWAY INC"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "block": {
   "company": "Block",
   "matched": [
@@ -615,6 +800,20 @@
   "filings": 915,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "blue marble space": {
+  "company": "Blue Marble Space",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "blue origin": {
+  "company": "Blue Origin",
+  "matched": [
+   "BLUE ORIGIN LLC"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "bluehawk": {
   "company": "Bluehawk",
   "matched": [
@@ -628,6 +827,22 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "boeing": {
+  "company": "Boeing",
+  "matched": [
+   "BOEING DISTRIBUTION SERVICES INC"
+  ],
+  "filings": 2,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "booz allen": {
+  "company": "Booz Allen",
+  "matched": [
+   "BOOZ ALLEN HAMILTON INC"
+  ],
+  "filings": 6,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "booz allen hamilton": {
   "company": "Booz Allen Hamilton",
@@ -682,6 +897,14 @@
   "filings": 225,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "bright vision technologies": {
+  "company": "Bright Vision Technologies",
+  "matched": [
+   "BRIGHT VISION TECHNOLOGIES"
+  ],
+  "filings": 70,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "brightai": {
   "company": "BrightAI Corporation",
   "matched": [],
@@ -695,6 +918,53 @@
   ],
   "filings": 876,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "bristol myers squibb": {
+  "company": "Bristol Myers Squibb",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "bruno": {
+  "company": "Bruno",
+  "matched": [
+   "BRUNO EDUCATION LLC",
+   "BRUNO FRUSTACI CONTRACTING INC"
+  ],
+  "filings": 3,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "bytedance": {
+  "company": "Bytedance",
+  "matched": [
+   "BYTEDANCE INC"
+  ],
+  "filings": 482,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "caci": {
+  "company": "CACI",
+  "matched": [
+   "CACI INC - FEDERAL"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "cadence design systems": {
+  "company": "Cadence Design Systems",
+  "matched": [
+   "CADENCE DESIGN SYSTEMS INC"
+  ],
+  "filings": 288,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "cadmus": {
+  "company": "Cadmus",
+  "matched": [
+   "CADMUS HOLDING COMPANY INC"
+  ],
+  "filings": 4,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "canonical": {
   "company": "Canonical",
@@ -713,6 +983,12 @@
   "filings": 10624,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "cardinal technology systems": {
+  "company": "Cardinal Technology Systems",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "caresource": {
   "company": "CareSource",
   "matched": [
@@ -721,6 +997,20 @@
   ],
   "filings": 139,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "carnegie mellon university": {
+  "company": "Carnegie Mellon University",
+  "matched": [
+   "CARNEGIE MELLON UNIVERSITY"
+  ],
+  "filings": 468,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "carter s": {
+  "company": "Carter’s",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "catapult sports": {
   "company": "Catapult Sports",
@@ -742,6 +1032,15 @@
   ],
   "filings": 327,
   "checkedAt": "2026-11-02T02:15:37.831Z"
+ },
+ "centific": {
+  "company": "Centific",
+  "matched": [
+   "CENTIFIC GLOBAL SOLUTIONS INC",
+   "CENTIFIC TECHNOLOGIES INC"
+  ],
+  "filings": 19,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "cerebras": {
   "company": "Cerebras",
@@ -787,6 +1086,17 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "cigna": {
+  "company": "Cigna",
+  "matched": [
+   "CIGNA HEALTH & LIFE INSURANCE CO",
+   "CIGNA HEALTH AND LIFE INSURANCE COMPANY",
+   "CIGNA- EVERNORTH SERVICES INC",
+   "CIGNA-EVERNORTH SERVICES INC"
+  ],
+  "filings": 225,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "cisco": {
   "company": "Cisco",
   "matched": [
@@ -821,6 +1131,17 @@
   "filings": 498,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "citi": {
+  "company": "Citi",
+  "matched": [
+   "CITI CELLULAR LLC",
+   "CITI DIAMONDS INC",
+   "CITI FUND SERVICES OHIO INC",
+   "CITI VENTURES INC"
+  ],
+  "filings": 8,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "citizens financial": {
   "company": "Citizens Financial Group",
   "matched": [
@@ -834,6 +1155,12 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "clear": {
+  "company": "CLEAR",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "clear corporate": {
   "company": "CLEAR - Corporate",
@@ -1073,6 +1400,14 @@
   "filings": 12,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "direct supply": {
+  "company": "Direct Supply",
+  "matched": [
+   "DIRECT SUPPLY INC"
+  ],
+  "filings": 3,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "discord": {
   "company": "Discord",
   "matched": [
@@ -1080,6 +1415,18 @@
   ],
   "filings": 125,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "disney": {
+  "company": "Disney",
+  "matched": [
+   "DISNEY CONSTRUCTION INC",
+   "DISNEY GLOBAL PRODUCT DEVELOPMENT AND CREATIVE INC",
+   "DISNEY PARKS TECHNOLOGY SERVICES CO LLC",
+   "DISNEY STREAMING ENTERPRISES SERVICES CO LLC",
+   "DISNEY WORLDWIDE SERVICES INC"
+  ],
+  "filings": 11,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "distyl": {
   "company": "Distyl",
@@ -1103,6 +1450,23 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "dow jones": {
+  "company": "Dow Jones",
+  "matched": [
+   "DOW JONES & COMPANY INC",
+   "DOW JONES AND COMPANY INC"
+  ],
+  "filings": 21,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "draftkings": {
+  "company": "DraftKings",
+  "matched": [
+   "DRAFTKINGS INC"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "draper": {
   "company": "Draper",
   "matched": [
@@ -1124,6 +1488,32 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "duke university": {
+  "company": "Duke University",
+  "matched": [
+   "DUKE UNIVERSITY"
+  ],
+  "filings": 127,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "duolingo": {
+  "company": "Duolingo",
+  "matched": [
+   "DUOLINGO INC"
+  ],
+  "filings": 91,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "ebay": {
+  "company": "eBay",
+  "matched": [
+   "EBAY COMMERCE INC",
+   "EBAY INC",
+   "EBAY PAYMENTS LLC"
+  ],
+  "filings": 550,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "edmund optics": {
   "company": "Edmund Optics",
@@ -1171,6 +1561,22 @@
   "filings": 1,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "engineers gate": {
+  "company": "Engineers Gate",
+  "matched": [
+   "ENGINEERS GATE MANAGER LP"
+  ],
+  "filings": 9,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "equifax": {
+  "company": "Equifax",
+  "matched": [
+   "EQUIFAX INC"
+  ],
+  "filings": 92,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "ernst and young": {
   "company": "Ernst & Young",
   "matched": [
@@ -1207,6 +1613,15 @@
   ],
   "filings": 18,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "exelixis": {
+  "company": "Exelixis",
+  "matched": [
+   "EXELIXIS INC",
+   "EXELIXIS US LLC"
+  ],
+  "filings": 110,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "exlabora ai general purpose robot workforce": {
   "company": "exLabora AI (General Purpose Robot Workforce)",
@@ -1282,6 +1697,14 @@
   "filings": 63,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "fiserv": {
+  "company": "Fiserv",
+  "matched": [
+   "FISERV SOLUTIONS LLC"
+  ],
+  "filings": 234,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "five rings careers": {
   "company": "Five Rings LLC - Careers",
   "matched": [],
@@ -1338,6 +1761,20 @@
   "filings": 3,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "gartner": {
+  "company": "Gartner",
+  "matched": [
+   "GARTNER INC"
+  ],
+  "filings": 22,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "gdit": {
+  "company": "GDIT",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "ge vernova": {
   "company": "GE Vernova",
   "matched": [
@@ -1373,6 +1810,14 @@
   ],
   "filings": 1924,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "generalist": {
+  "company": "Generalist",
+  "matched": [
+   "GENERALIST AI INC"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "glean": {
   "company": "Glean",
@@ -1467,6 +1912,14 @@
   "filings": 253,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "guidewire": {
+  "company": "Guidewire",
+  "matched": [
+   "GUIDEWIRE SOFTWARE INC"
+  ],
+  "filings": 52,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "gusto": {
   "company": "Gusto, Inc.",
   "matched": [
@@ -1488,6 +1941,17 @@
   ],
   "filings": 1013,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "harvey": {
+  "company": "Harvey",
+  "matched": [
+   "HARVEY & COMPANY LLC",
+   "HARVEY AI CORPORATION",
+   "HARVEY MUDD COLLEGE",
+   "HARVEY NASH INC"
+  ],
+  "filings": 73,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "hatch it": {
   "company": "Hatch IT",
@@ -1607,6 +2071,14 @@
   "filings": 2167,
   "checkedAt": "2026-11-02T02:19:46.662Z"
  },
+ "humana": {
+  "company": "Humana",
+  "matched": [
+   "HUMANA INC"
+  ],
+  "filings": 168,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "humble robotics": {
   "company": "Humble Robotics",
   "matched": [
@@ -1614,6 +2086,20 @@
   ],
   "filings": 2,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "huntington bank": {
+  "company": "Huntington Bank",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "huron": {
+  "company": "Huron",
+  "matched": [
+   "HURON CONSULTING SERVICES LLC"
+  ],
+  "filings": 20,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "hyper": {
   "company": "Hyper",
@@ -1657,6 +2143,15 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "idexx": {
+  "company": "IDEXX",
+  "matched": [
+   "IDEXX DISTRIBUTION INC",
+   "IDEXX LABORATORIES INC"
+  ],
+  "filings": 75,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "idler": {
   "company": "Idler",
@@ -1709,6 +2204,17 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "intel": {
+  "company": "Intel",
+  "matched": [
+   "INTEL AMERICAS INC",
+   "INTEL CORPORATION",
+   "INTEL FEDERAL LLC",
+   "INTEL GRAPH LLC"
+  ],
+  "filings": 1454,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "interdigital": {
   "company": "InterDigital, Inc.",
   "matched": [
@@ -1716,6 +2222,12 @@
   ],
   "filings": 4,
   "checkedAt": "2026-11-02T02:15:37.831Z"
+ },
+ "intermountain health": {
+  "company": "Intermountain Health",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "internet brands": {
   "company": "Internet Brands",
@@ -1731,6 +2243,25 @@
   "filings": 181,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "invisible tech": {
+  "company": "Invisible Tech",
+  "matched": [
+   "INVISIBLE TECHNOLOGIES INC"
+  ],
+  "filings": 8,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "iqvia": {
+  "company": "IQVIA",
+  "matched": [
+   "IQVIA DIGITAL INC",
+   "IQVIA INC",
+   "IQVIA LABORATORIES LLC",
+   "IQVIA RDS INC"
+  ],
+  "filings": 123,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "itradenetwork": {
   "company": "iTradeNetwork",
   "matched": [
@@ -1738,6 +2269,23 @@
   ],
   "filings": 2,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "itron": {
+  "company": "Itron",
+  "matched": [
+   "ITRON INC"
+  ],
+  "filings": 28,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "jabil": {
+  "company": "Jabil",
+  "matched": [
+   "JABIL INC",
+   "JABIL PROCUREMENT SERVICES INC"
+  ],
+  "filings": 48,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "jane street": {
   "company": "Jane Street",
@@ -1829,6 +2377,14 @@
   "filings": 31,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "kensho technologies": {
+  "company": "Kensho Technologies",
+  "matched": [
+   "KENSHO TECHNOLOGIES LLC"
+  ],
+  "filings": 31,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "klaviyo": {
   "company": "Klaviyo",
   "matched": [
@@ -1844,6 +2400,14 @@
   ],
   "filings": 145,
   "checkedAt": "2026-11-02T02:19:46.662Z"
+ },
+ "kyndryl": {
+  "company": "Kyndryl",
+  "matched": [
+   "KYNDRYL"
+  ],
+  "filings": 82,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "labelbox": {
   "company": "Labelbox",
@@ -1886,6 +2450,14 @@
   ],
   "filings": 2,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "lendingclub": {
+  "company": "LendingClub",
+  "matched": [
+   "LENDINGCLUB BANK NATIONAL ASSOCIATION"
+  ],
+  "filings": 40,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "lexisnexis risk solutions": {
   "company": "LexisNexis Risk Solutions",
@@ -1938,6 +2510,12 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "lowe s": {
+  "company": "Lowe's",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "lpl financial": {
   "company": "LPL Financial Holdings",
   "matched": [
@@ -1945,6 +2523,18 @@
   ],
   "filings": 61,
   "checkedAt": "2026-11-02T02:15:37.831Z"
+ },
+ "lseg": {
+  "company": "LSEG",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "lucid motors": {
+  "company": "Lucid Motors",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "ludo robotics": {
   "company": "Ludo Robotics",
@@ -1973,6 +2563,31 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "lumos": {
+  "company": "Lumos",
+  "matched": [
+   "LUMOS & ASSOCIATES INC",
+   "LUMOS APP INC",
+   "LUMOS DIAGNOSTICS INC",
+   "LUMOS HEALTH PBC",
+   "LUMOS INFINITAS USA INC",
+   "LUMOS LABS INC",
+   "LUMOS LANGUAGE SCHOOL INC",
+   "LUMOS MARKETING GROUP INC",
+   "LUMOS NETWORKS CORP",
+   "LUMOS SOLAR INC"
+  ],
+  "filings": 29,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "lyft": {
+  "company": "Lyft",
+  "matched": [
+   "LYFT INC"
+  ],
+  "filings": 386,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "mach9": {
   "company": "Mach9",
@@ -2031,6 +2646,12 @@
   ],
   "filings": 25,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "marsh mclennan": {
+  "company": "Marsh McLennan",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "mastercard": {
   "company": "Mastercard",
@@ -2115,6 +2736,34 @@
   "filings": 21188,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "michelin": {
+  "company": "Michelin",
+  "matched": [
+   "MICHELIN NORTH AMERICA INC"
+  ],
+  "filings": 3,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "micron": {
+  "company": "Micron",
+  "matched": [
+   "MICRON IDAHO SEMICONDUCTOR MANUFACTURING (TRITON) LLC",
+   "MICRON NEW YORK SEMICONDUCTOR MANUFACTURING LLC",
+   "MICRON PRODUCTS INC",
+   "MICRON SEMICONDUCTOR PRODUCTS INC",
+   "MICRON TECHNOLOGY INC"
+  ],
+  "filings": 1942,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "micron technology": {
+  "company": "Micron Technology",
+  "matched": [
+   "MICRON TECHNOLOGY INC"
+  ],
+  "filings": 429,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "microsoft": {
   "company": "Microsoft",
   "matched": [
@@ -2128,6 +2777,12 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "mind computing": {
+  "company": "Mind Computing",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "miratech": {
   "company": "Miratech",
@@ -2175,6 +2830,27 @@
   ],
   "filings": 34,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "moog": {
+  "company": "Moog",
+  "matched": [
+   "MOOG INC"
+  ],
+  "filings": 3,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "morningstar": {
+  "company": "Morningstar",
+  "matched": [
+   "MORNINGSTAR DBRS",
+   "MORNINGSTAR FELLOWSHIP CHURCH",
+   "MORNINGSTAR INC",
+   "MORNINGSTAR INVESTMENT MANAGEMENT",
+   "MORNINGSTAR INVESTMENT MANAGEMENT LLC",
+   "MORNINGSTAR RESEARCH SERVICES LLC"
+  ],
+  "filings": 222,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "mortenson": {
   "company": "Mortenson",
@@ -2276,6 +2952,14 @@
   "filings": 20,
   "checkedAt": "2026-11-02T02:19:46.662Z"
  },
+ "nextdoor": {
+  "company": "Nextdoor",
+  "matched": [
+   "NEXTDOOR INC"
+  ],
+  "filings": 20,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "niantic spatial": {
   "company": "Niantic Spatial",
   "matched": [
@@ -2329,6 +3013,22 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "nordstrom": {
+  "company": "Nordstrom",
+  "matched": [
+   "NORDSTROM INC"
+  ],
+  "filings": 100,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "northeastern university": {
+  "company": "Northeastern University",
+  "matched": [
+   "NORTHEASTERN UNIVERSITY"
+  ],
+  "filings": 67,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "northmark strategies": {
   "company": "NorthMark Strategies",
   "matched": [
@@ -2336,6 +3036,12 @@
   ],
   "filings": 1,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "northrop grumman": {
+  "company": "Northrop Grumman",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "notion": {
   "company": "Notion",
@@ -2377,6 +3083,12 @@
   "filings": 6492,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "nxp semiconductors": {
+  "company": "NXP Semiconductors",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "nyc department of health and mental hygiene": {
   "company": "NYC Department of Health and Mental Hygiene",
   "matched": [],
@@ -2408,6 +3120,12 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "oneimaging": {
+  "company": "OneImaging",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "onyx staffing": {
   "company": "Onyx Staffing",
@@ -2454,6 +3172,16 @@
   "filings": 2116,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "oracle": {
+  "company": "Oracle",
+  "matched": [
+   "ORACLE AMERICA INC",
+   "ORACLE FINANCIAL SERVICES SOFTWARE INC",
+   "ORACLE ROBOTICS CORP"
+  ],
+  "filings": 670,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "orbis": {
   "company": "Orbis ",
   "matched": [
@@ -2494,6 +3222,17 @@
   "filings": 255,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "otis": {
+  "company": "Otis",
+  "matched": [
+   "OTIS COLLEGE OF ART AND DESIGN",
+   "OTIS ELEVATOR COMPANY",
+   "OTIS IT INC",
+   "OTIS TECHNOLOGY LLC"
+  ],
+  "filings": 17,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "oxbridge health": {
   "company": "Oxbridge Health",
   "matched": [
@@ -2521,6 +3260,16 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "parsons": {
+  "company": "Parsons",
+  "matched": [
+   "PARSONS BEHLE & LATIMER",
+   "PARSONS CONSTRUCTION GROUP INC",
+   "PARSONS TRANSPORTATION GROUP INC"
+  ],
+  "filings": 37,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "path robotics": {
   "company": "Path Robotics",
@@ -2552,6 +3301,30 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "penn state": {
+  "company": "Penn State",
+  "matched": [
+   "PENN STATE HEALTH CORPORATION",
+   "PENN STATE HEALTH MEDICAL GROUP LLC",
+   "PENN STATE MILTON S HERSHEY MEDICAL CENTER"
+  ],
+  "filings": 19,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "penske": {
+  "company": "Penske",
+  "matched": [
+   "PENSKE AUTOMOTIVE GROUP INC",
+   "PENSKE LOGISTICS LLC",
+   "PENSKE MEDIA CORPORATION",
+   "PENSKE RACING INC",
+   "PENSKE RACING SOUTH INC",
+   "PENSKE TRUCK LEASING CO LP",
+   "PENSKE VEHICLE SERVICES"
+  ],
+  "filings": 316,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "peraton": {
   "company": "Peraton",
@@ -2655,6 +3428,28 @@
   ],
   "filings": 406,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "pointclickcare": {
+  "company": "PointClickCare",
+  "matched": [
+   "POINTCLICKCARE TECHNOLOGIES USA CORP"
+  ],
+  "filings": 2,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "polaris": {
+  "company": "Polaris",
+  "matched": [
+   "POLARIS BUSINESS SOLUTIONS INC",
+   "POLARIS INDUSTRIES INC",
+   "POLARIS PHARMACY SERVICES LLC",
+   "POLARIS PROPERTY GROUP LLC",
+   "POLARIS TECH CHARTER SCHOOL",
+   "POLARIS TECHNOLOGY INC",
+   "POLARIS WIRELESS INC"
+  ],
+  "filings": 18,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "pond ai": {
   "company": "Pond AI",
@@ -2795,6 +3590,21 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "raydar": {
+  "company": "Raydar",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "raymond james": {
+  "company": "Raymond James",
+  "matched": [
+   "RAYMOND JAMES & ASSOCIATES INC",
+   "RAYMOND JAMES FINANCIAL INC"
+  ],
+  "filings": 358,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "red ventures": {
   "company": "Red Ventures",
   "matched": [],
@@ -2829,6 +3639,12 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "reflexive concepts": {
+  "company": "Reflexive Concepts",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "relativity space": {
   "company": "Relativity Space",
   "matched": [],
@@ -2851,11 +3667,75 @@
   "filings": 1,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "republic": {
+  "company": "Republic",
+  "matched": [
+   "REPUBLIC AIRWAYS INC",
+   "REPUBLIC FINANCE LLC",
+   "REPUBLIC NATIONAL DISTRIBUTING COMPANY",
+   "REPUBLIC NATIONAL DISTRIBUTING COMPANY LLC",
+   "REPUBLIC SERVICES INC"
+  ],
+  "filings": 31,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "research engineer": {
   "company": "Research Engineer",
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "resmed": {
+  "company": "ResMed",
+  "matched": [
+   "RESMED CORP",
+   "RESMED DIGITAL HEALTH INC",
+   "RESMED INC",
+   "RESMED MOTOR TECHNOLOGIES INC",
+   "RESMED SAAS HOLDINGS INC"
+  ],
+  "filings": 29,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "restaurant brands international": {
+  "company": "Restaurant Brands International",
+  "matched": [
+   "RESTAURANT BRANDS INTERNATIONAL US SERVICES LLC"
+  ],
+  "filings": 4,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "revionics": {
+  "company": "Revionics",
+  "matched": [
+   "REVIONICS LLC"
+  ],
+  "filings": 3,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "richmond university medical center": {
+  "company": "Richmond University Medical Center",
+  "matched": [
+   "RICHMOND UNIVERSITY MEDICAL CENTER"
+  ],
+  "filings": 2,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "ring power": {
+  "company": "Ring Power",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "rivian": {
+  "company": "Rivian",
+  "matched": [
+   "RIVIAN AND VOLKSWAGEN GROUP TECHNOLOGIES LLC",
+   "RIVIAN AUTOMOTIVE LLC",
+   "RIVIAN LLC"
+  ],
+  "filings": 582,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "robinhood": {
   "company": "Robinhood",
@@ -2882,6 +3762,20 @@
   ],
   "filings": 1,
   "checkedAt": "2026-11-02T02:15:37.831Z"
+ },
+ "rocket companies": {
+  "company": "Rocket Companies",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "rockwell automation": {
+  "company": "Rockwell Automation",
+  "matched": [
+   "ROCKWELL AUTOMATION INC"
+  ],
+  "filings": 70,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "roku": {
   "company": "Roku",
@@ -2958,6 +3852,17 @@
   ],
   "filings": 2,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "sanofi": {
+  "company": "Sanofi",
+  "matched": [
+   "SANOFI PASTEUR INC",
+   "SANOFI US SERVICES INC",
+   "SANOFI VACCINES US INC",
+   "SANOFI-AVENTIS US LLC"
+  ],
+  "filings": 66,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "scale ai": {
   "company": "Scale AI",
@@ -3036,6 +3941,14 @@
   "filings": 4,
   "checkedAt": "2026-11-02T02:15:37.831Z"
  },
+ "servco pacific": {
+  "company": "Servco Pacific",
+  "matched": [
+   "SERVCO PACIFIC INC"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "servicenow": {
   "company": "ServiceNow",
   "matched": [
@@ -3044,6 +3957,14 @@
   ],
   "filings": 3007,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "servicetitan": {
+  "company": "ServiceTitan",
+  "matched": [
+   "SERVICETITAN INC"
+  ],
+  "filings": 170,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "sesame": {
   "company": "Sesame",
@@ -3054,6 +3975,12 @@
   ],
   "filings": 12,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "sherwin williams": {
+  "company": "Sherwin-Williams",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "shield ai": {
   "company": "Shield AI",
@@ -3139,6 +4066,14 @@
   "filings": 7,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "skanska": {
+  "company": "Skanska",
+  "matched": [
+   "SKANSKA USA BUILDING INC"
+  ],
+  "filings": 4,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "skild ai": {
   "company": "Skild AI",
   "matched": [
@@ -3219,6 +4154,29 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "sony": {
+  "company": "Sony",
+  "matched": [
+   "SONY AI AMERICA INC",
+   "SONY BIOTECHNOLOGY INC",
+   "SONY CORPORATION OF AMERICA",
+   "SONY ELECTRONICS INC",
+   "SONY ENGAGEMENT PLATFORM SERVICES LLC",
+   "SONY INNOVATION STUDIOS INC",
+   "SONY INTERACTIVE ENTERTAINMENT LLC",
+   "SONY INTERACTIVEENTERTAINMENT LLC",
+   "SONY MUSIC ENTERTAINMENT",
+   "SONY MUSIC ENTERTAINMENT INC",
+   "SONY MUSIC PUBLISHING (US) LLC",
+   "SONY PICTURE TELEVISION INC",
+   "SONY PICTURES ENTERTAINMENT INC",
+   "SONY PICTURES STUDIOS INC",
+   "SONY PICTURES TELEVISION ADVERTISING SALES COMPANY",
+   "SONY PICTURES TELEVISION INC"
+  ],
+  "filings": 904,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "sopra steria i2s": {
   "company": "Sopra Steria I2S",
   "matched": [],
@@ -3246,6 +4204,12 @@
   ],
   "filings": 8,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "spacex": {
+  "company": "SpaceX",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "spacexsi": {
   "company": "SpaceXSI",
@@ -3275,6 +4239,14 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "st onge": {
+  "company": "St. Onge",
+  "matched": [
+   "ST ONGE COMPANY"
+  ],
+  "filings": 4,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "staac professional e learning": {
   "company": "STAAC Professional E-Learning LTD",
   "matched": [],
@@ -3290,11 +4262,28 @@
   "filings": 25,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "starfish": {
+  "company": "Starfish",
+  "matched": [
+   "STARFISH NEUROSCIENCE INC"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "state employees credit union": {
   "company": "State Employees' Credit Union",
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "state street": {
+  "company": "State Street",
+  "matched": [
+   "STATE STREET BANK AND TRUST COMPANY",
+   "STATE STREET FINANCIAL SERVICES INC"
+  ],
+  "filings": 213,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "steampunk": {
   "company": "Steampunk",
@@ -3385,6 +4374,12 @@
   "filings": 13,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "tamus": {
+  "company": "Tamus",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "tavern research": {
   "company": "Tavern Research",
   "matched": [
@@ -3392,6 +4387,12 @@
   ],
   "filings": 3,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "tax relief advocates": {
+  "company": "Tax Relief Advocates",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "techop": {
   "company": "TechOp",
@@ -3487,6 +4488,14 @@
   ],
   "filings": 196,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "thermo fisher scientific": {
+  "company": "Thermo Fisher Scientific",
+  "matched": [
+   "THERMO FISHER SCIENTIFIC INC"
+  ],
+  "filings": 253,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "thomson reuters": {
   "company": "Thomson Reuters",
@@ -3584,6 +4593,12 @@
   "filings": 3,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "trace labs": {
+  "company": "Trace Labs",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "transunion": {
   "company": "TransUnion",
   "matched": [
@@ -3595,6 +4610,26 @@
   ],
   "filings": 557,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "travelers": {
+  "company": "Travelers",
+  "matched": [
+   "TRAVELERS & IMMIGRANTS AID’S HEARTLAND ALLIANCE FOR HUMAN NEEDS & HUMAN RIGHTS"
+  ],
+  "filings": 1,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "travelers companies": {
+  "company": "The Travelers Companies",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "true anomaly": {
+  "company": "True Anomaly",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "tubi": {
   "company": "Tubi",
@@ -3653,6 +4688,14 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "tyson foods": {
+  "company": "Tyson Foods",
+  "matched": [
+   "TYSON FOODS INC"
+  ],
+  "filings": 22,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "umai consultancy": {
   "company": "UMAI Consultancy",
   "matched": [],
@@ -3667,6 +4710,32 @@
   "filings": 9,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "united methodist communities": {
+  "company": "United Methodist Communities",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "united placement": {
+  "company": "United Placement Group",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "university for atmospheric research": {
+  "company": "University Corporation for Atmospheric Research",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "university of arkansas": {
+  "company": "University of Arkansas",
+  "matched": [
+   "UNIVERSITY OF ARKANSAS"
+  ],
+  "filings": 30,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "university of michigan": {
   "company": "University of Michigan",
   "matched": [
@@ -3674,6 +4743,20 @@
   ],
   "filings": 2337,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "university of rochester": {
+  "company": "University of Rochester",
+  "matched": [
+   "UNIVERSITY OF ROCHESTER"
+  ],
+  "filings": 104,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "university of texas at austin": {
+  "company": "University of Texas at Austin",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "unlocking tech": {
   "company": "Unlocking Tech",
@@ -3689,6 +4772,21 @@
   ],
   "filings": 216,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "usaa": {
+  "company": "USAA",
+  "matched": [
+   "USAA FEDERAL SAVINGS BANK",
+   "USAA LOGISTICS INC"
+  ],
+  "filings": 7,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "usbank": {
+  "company": "Usbank",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "vals ai": {
   "company": "Vals AI",
@@ -3720,6 +4818,12 @@
   "filings": 25,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "vantor": {
+  "company": "Vantor",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "varsity brands": {
   "company": "Varsity Brands",
   "matched": [
@@ -3727,6 +4831,29 @@
   ],
   "filings": 1,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "veritus": {
+  "company": "Veritus",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "verizon": {
+  "company": "Verizon",
+  "matched": [
+   "VERIZON CORPORATE RESOURCES GROUP LLC",
+   "VERIZON DATA SERVICES LLC",
+   "VERIZON SERVICES CORP",
+   "VERIZON VALUE INC"
+  ],
+  "filings": 87,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "verizon communications": {
+  "company": "Verizon Communications",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "verkada": {
   "company": "Verkada",
@@ -3752,6 +4879,25 @@
   "filings": 16,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "vertex": {
+  "company": "Vertex",
+  "matched": [
+   "VERTEX ANALYTICS INC",
+   "VERTEX COMPUTER SYSTEMS INC",
+   "VERTEX CONSULTING INC",
+   "VERTEX CONSULTING SERVICES INC",
+   "VERTEX EDUCATION LLC",
+   "VERTEX ELITE LLC",
+   "VERTEX ETS LLC",
+   "VERTEX INC",
+   "VERTEX INNOVATION LLC",
+   "VERTEX IT SYSTEMS",
+   "VERTEX PHARMACEUTICALS INCORPORATED",
+   "VERTEX RESOURCE SERVICES INC"
+  ],
+  "filings": 156,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "viavi solutions": {
   "company": "Viavi Solutions",
   "matched": [
@@ -3759,6 +4905,12 @@
   ],
   "filings": 83,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "viridien": {
+  "company": "Viridien",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "virtu financial": {
   "company": "Virtu Financial",
@@ -3785,6 +4937,12 @@
   "filings": 11,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "wash u": {
+  "company": "Wash U",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "waymo": {
   "company": "Waymo",
   "matched": [
@@ -3792,6 +4950,15 @@
   ],
   "filings": 1,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "webmd": {
+  "company": "WebMD",
+  "matched": [
+   "WEBMD LLC",
+   "WEBMD PROFESSIONAL SERVICES LLC"
+  ],
+  "filings": 8,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  },
  "webxloo": {
   "company": "WEBXLOO",
@@ -3887,6 +5054,14 @@
   "filings": 9,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "xcel energy": {
+  "company": "Xcel Energy",
+  "matched": [
+   "XCEL ENERGY SERVICES INC"
+  ],
+  "filings": 7,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "yes energy": {
   "company": "Yes Energy",
   "matched": [
@@ -3911,6 +5086,22 @@
   "filings": 8,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "zelis": {
+  "company": "Zelis",
+  "matched": [
+   "ZELIS HEALTHCARE LLC"
+  ],
+  "filings": 5,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "zillow": {
+  "company": "Zillow",
+  "matched": [
+   "ZILLOW INC"
+  ],
+  "filings": 51,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
  "zincfive": {
   "company": "ZincFive",
   "matched": [],
@@ -3930,5 +5121,23 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "zoom": {
+  "company": "Zoom",
+  "matched": [
+   "ZOOM COMMUNICATIONS INC",
+   "ZOOM VIDEO COMMUNICATIONS INC"
+  ],
+  "filings": 733,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
+ },
+ "zoox": {
+  "company": "Zoox",
+  "matched": [
+   "ZOOX INC",
+   "ZOOX LLC"
+  ],
+  "filings": 1130,
+  "checkedAt": "2026-11-02T04:33:31.286Z"
  }
 }

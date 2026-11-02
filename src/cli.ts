@@ -30,6 +30,8 @@ import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { appendAnswer } from "./store/answerlog.ts";
 import { readCatalog } from "./store/catalog.ts";
+import { normCompany, causeOf, fits, indexCatalog, match, report as coverageReport, sampleOf, summarize, type Judged } from "./discover/coverage.ts";
+import { fetchSample, requireIndependent, resolveShortLinks, SAMPLE_LISTS, watchedBoards, watchlistUrls } from "./sources/coverage.ts";
 import { readModelVerdicts } from "./store/modelverdicts.ts";
 import { retriage } from "./discover/merge.ts";
 import { expectationFloor } from "./discover/pay.ts";
@@ -45,6 +47,8 @@ const USAGE = `jh <command>
   apply <url> [--approve] [--headed]   fill, verify and (if the gate allows) submit one application
   discover [--inbox <dir>] [--only greenhouse,lever,ashby,workday,github,hn,gmail]
                                        fetch every source, merge into the catalog, triage, check links
+  coverage [--limit <n>]               search verifier: sample fitting postings from public lists the pipeline does not
+                                       fetch, check each against the catalog, write data/coverage/<date>.json
   daily [--inbox <dir>]                coordinator run: Gmail alerts (when authorized), discover, audit sample,
                                        approval queue, outreach, report
   gmail auth [--code <address>]        authorize read-only Gmail access (two steps; prints a consent link first)
@@ -189,6 +193,28 @@ switch (command) {
     console.log(`match ${count("match")}  review ${count("review")}  reject ${count("reject")}`);
     console.log(`sources ok ${r.outcomes.filter((o) => o.ok).length}, failed ${r.outcomes.filter((o) => !o.ok).length}`);
     console.log(`run ${r.runDir}`);
+    break;
+  }
+  case "coverage": {
+    // The independent check on search: postings from lists the pipeline does not fetch, matched against the catalog.
+    const u = user();
+    requireIndependent(SAMPLE_LISTS, watchlistUrls());
+    const now = new Date();
+    const date = now.toISOString().slice(0, 10);
+    const { rows, failed } = await fetchSample(SAMPLE_LISTS);
+    for (const f of failed) console.error(`source failed: ${f}`);
+    const sampled = await resolveShortLinks(sampleOf(rows.filter((r) => fits(r, u.search, now)), Number(values.limit ?? 100)));
+    const idx = indexCatalog(retriage(readCatalog(paths(u.dir).catalog).values(), candidateFacts(u.profile), u.search.excludeCompanies, readModelVerdicts(u.dir)));
+    const found = sampled.map((row) => ({ row, found: match(row, idx) }));
+    const boards = await watchedBoards(found.filter((f) => !f.found).map((f) => f.row.company));
+    const judged: Judged[] = found.map((f) => ({ ...f, cause: causeOf(f.row, f.found, idx, boards.get(normCompany(f.row.company)) ?? []) }));
+    const sources = SAMPLE_LISTS.map((l) => l.name).filter((n) => !failed.some((f) => f.startsWith(`${n}:`)));
+    const r = coverageReport(date, sources, judged);
+    const out = join("data", "coverage", `${date}.json`);
+    mkdirSync(dirname(out), { recursive: true });
+    writeFileSync(out, JSON.stringify(r, null, 1) + "\n");
+    console.log(summarize(r));
+    console.log(`wrote ${out}`);
     break;
   }
   case "applications": {

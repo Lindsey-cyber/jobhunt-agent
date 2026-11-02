@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { causeOf, fits, indexCatalog, match, notIndependent, parseListTable, report, sampleOf, summarize, urlsIn, type Judged, type SampleRow } from "../src/discover/coverage.ts";
+import { causeOf, fits, indexCatalog, liveness, match, MIN_N, notIndependent, parseListTable, report, resampleRows, sampleOf, summarize, urlsIn, type Judged, type SampleRow } from "../src/discover/coverage.ts";
 import type { Job, JobKey } from "../src/domain/job.ts";
 import { requireIndependent, type SampleList } from "../src/sources/coverage.ts";
 
@@ -110,7 +110,7 @@ describe("the coverage file", () => {
   });
   const r = report("2026-11-02", ["L"], judged);
   it("has exactly the tracker's fields and counts", () => {
-    expect(Object.keys(r).sort()).toEqual(["date", "inCatalog", "inCatalogNotRejected", "misses", "n", "sources"]);
+    expect(Object.keys(r).sort()).toEqual(["date", "inCatalog", "inCatalogNotRejected", "misses", "n", "sources", "stale", "staleExcluded"]);
     expect([r.n, r.inCatalog, r.inCatalogNotRejected]).toEqual([3, 2, 1]);
     expect(r.misses.map((m) => Object.keys(m).sort())).toEqual([["cause", "company", "title", "url"], ["cause", "company", "title", "url"]]);
     expect(r.misses[1]).toMatchObject({ company: "Nobody", url: "https://n.test/j", cause: "company not on watchlist" });
@@ -130,5 +130,82 @@ describe("independence check before fetching", () => {
   it("passes when no sample list's repo is in the watchlist", () => {
     const other = list("vanshb03/New-Grad-2027", "https://github.com/vanshb03/New-Grad-2027", "https://raw.githubusercontent.com/vanshb03/New-Grad-2027/dev/README.md");
     expect(() => requireIndependent([other], watch)).not.toThrow();
+  });
+});
+
+describe("stale list entries", () => {
+  const wd = (titles: string[], o: Partial<Parameters<typeof liveness>[1][number]> = {}) => ({ ats: "workday", titles, keys: ["workday:nvidia:jr1"], ...o });
+  const nv = row("NVIDIA", "New Grad 2026: Deep Learning Engineer");
+
+  it("live: the board lists an exact normalized title (suffix and year differences ignored)", () => {
+    expect(liveness(nv, [wd(["Deep Learning Engineer - New College Grad 2027"])])).toBe("live");
+  });
+  it("live: the board lists the job id the list's link names (Greenhouse), whatever the title", () => {
+    const r = row("Acme", "Old name", { url: "https://boards.greenhouse.io/acme/jobs/123" });
+    expect(liveness(r, [{ ats: "greenhouse", titles: ["New name"], keys: ["greenhouse:123"] }])).toBe("live");
+  });
+  it("live: a Workday requisition in the link", () => {
+    const r = row("NVIDIA", "X", { url: "https://nvidia.wd5.myworkdayjobs.com/en-US/Site/job/Santa-Clara/Some-Title_JR1" });
+    expect(liveness(r, [wd([])])).toBe("live");
+  });
+  it("not listed: the whole board was read and has neither the id nor the title", () => {
+    expect(liveness(nv, [wd(["Chef"])])).toBe("not_listed");
+    const r = row("Acme", "ML Engineer", { url: "https://job-boards.greenhouse.io/acme/jobs/999" });
+    expect(liveness(r, [{ ats: "greenhouse", titles: ["Chef"], keys: ["greenhouse:123"] }])).toBe("not_listed");
+  });
+  it("unknown: no board, a board that was not read, or a partial read that lacks it", () => {
+    expect(liveness(nv, [])).toBe("unknown");
+    expect(liveness(nv, [{ ats: "workday" }])).toBe("unknown");
+    expect(liveness(nv, [wd(["Chef"], { partial: true })])).toBe("unknown");
+    expect(liveness(nv, [wd(["Chef"]), { ats: "greenhouse" }])).toBe("unknown");
+  });
+  it("a partial read can still prove a posting live", () => {
+    expect(liveness(nv, [wd(["Deep Learning Engineer"], { partial: true })])).toBe("live");
+  });
+  it("one live board among several wins over a board that does not list it", () => {
+    expect(liveness(nv, [wd(["Chef"]), { ats: "greenhouse", titles: ["Deep Learning Engineer"] }])).toBe("live");
+  });
+  it("a non-ATS link does not count as a job id", () => {
+    const r = row("NVIDIA", "Chef Engineer", { url: "https://jobright.ai/jobs/info/1" });
+    expect(liveness(r, [wd(["Chef"], { keys: ["raw:https://jobright.ai/jobs/info/1"] })])).toBe("not_listed");
+  });
+
+  const idx = indexCatalog([]);
+  const judge = (rows: SampleRow[], boards: Parameters<typeof causeOf>[3]): Judged[] => rows.map((r) => ({ row: r, found: undefined, cause: causeOf(r, undefined, idx, boards) }));
+  it("a stale entry leaves n, is counted in staleExcluded and is not a miss; unknown stays a miss", () => {
+    const judged = [...judge([nv, row("NVIDIA", "Computer Vision Engineer")], [wd(["Chef"])]), ...judge([row("Nobody", "AI Engineer")], [])];
+    const r = report("2026-11-02", ["L"], judged);
+    expect(r).toMatchObject({ n: 1, inCatalog: 0, staleExcluded: 2 });
+    expect(r.misses.map((m) => m.company)).toEqual(["Nobody"]);
+    expect(r.stale?.map((x) => x.title)).toEqual([nv.title, "Computer Vision Engineer"]);
+    expect(summarize(r)).toContain("2 stale list entries");
+  });
+  it("with nothing stale the count is 0 and n is unchanged", () => {
+    const r = report("d", [], judge([row("Nobody", "AI Engineer")], []));
+    expect([r.n, r.staleExcluded]).toEqual([1, 0]);
+  });
+  it("all entries stale gives n = 0 without dividing by zero", () => {
+    expect(summarize(report("d", ["L"], judge([nv], [wd(["Chef"])])))).toContain("0/0");
+  });
+
+  describe("resample rule", () => {
+    const pool = Array.from({ length: 80 }, (_, i) => row(`C${String(i).padStart(2, "0")}`, "ML Engineer"));
+    it("adds nothing when n is already at the minimum", () => {
+      expect(resampleRows(pool, pool.slice(0, 10), MIN_N)).toEqual([]);
+    });
+    it("adds exactly the shortfall, never a row already taken, deterministically", () => {
+      const taken = pool.slice(0, 60);
+      const more = resampleRows(pool, taken, 45);
+      expect(more).toHaveLength(5);
+      expect(more.every((m) => !taken.includes(m))).toBe(true);
+      expect(resampleRows(pool, taken, 45)).toEqual(more);
+    });
+    it("takes all that is left when the lists run out", () => {
+      expect(resampleRows(pool, pool.slice(0, 75), 10)).toHaveLength(5);
+      expect(resampleRows(pool, pool, 10)).toEqual([]);
+    });
+    it("does not re-add a posting taken under a different year in its title", () => {
+      expect(resampleRows([row("A", "ML Engineer 2026")], [row("A", "ML Engineer 2027")], 0)).toEqual([]);
+    });
   });
 });

@@ -5,7 +5,7 @@
   "jobright-ai/2026-Software-Engineer-New-Grad",
   "vanshb03/New-Grad-2027"
  ],
- "n": 100,
+ "n": 91,
  "inCatalog": 67,
  "inCatalogNotRejected": 50,
  "misses": [
@@ -20,18 +20,6 @@
    "title": "New Grad 2027: Associate Data Engineer, Gradient Specialist",
    "url": "https://job-boards.greenhouse.io/66degrees/jobs/6220280004",
    "cause": "filtered by triage rule auth.no_sponsorship"
-  },
-  {
-   "company": "Adobe",
-   "title": "New Grad 2026: AI Context Engineer",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "AIG",
-   "title": "Early Career Analyst, Gen AI, Data Engineering",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
   },
   {
    "company": "Amazon",
@@ -88,22 +76,10 @@
    "cause": "watched company, posting not fetched (url)"
   },
   {
-   "company": "Booz Allen Hamilton",
-   "title": "University - Data Scientist",
-   "url": "https://jobright.ai/jobs/info/6a8f5ea1d7c91d0cf446ef68?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "watched company, posting not fetched (workday/workday)"
-  },
-  {
    "company": "Capgemini",
    "title": "Associate Data Scientist Job Details / Capgemini",
    "url": "https://jobright.ai/jobs/info/6ad8b84ce4b94611ab84e954?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
-  },
-  {
-   "company": "Centene",
-   "title": "Data Engineer I",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
   },
   {
    "company": "Concord",
@@ -122,12 +98,6 @@
    "title": "Data Scientist - Cleared (Multiple Levels) - Chantilly, VA",
    "url": "https://jobright.ai/jobs/info/6ae5508577c09cb3bd4b30ae?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
-  },
-  {
-   "company": "Gauntlet",
-   "title": "New Grad: Quant Research Engineer",
-   "url": "",
-   "cause": "stale list entry (not on the official lever board)"
   },
   {
    "company": "GE Vernova",
@@ -166,12 +136,6 @@
    "cause": "company not on watchlist"
   },
   {
-   "company": "Mastercard",
-   "title": "New Grad 2027: AI Engineer 1 - Launch Program",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
    "company": "Military Spouse Jobs",
    "title": "Data Scientist - Cleared (Multiple Levels) - Chantilly, VA",
    "url": "https://jobright.ai/jobs/info/6ae556a9eab1f96730981033?utm_campaign=Data%20Analysis&utm_source=1103",
@@ -203,12 +167,6 @@
   },
   {
    "company": "NVIDIA",
-   "title": "New Grad 2025: Deep Learning Algorithm Engineer, Dynamo",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "NVIDIA",
    "title": "New Grad 2025: Deep Learning Software Engineer, Inference and Model Optimization",
    "url": "",
    "cause": "watched company, posting not fetched (workday)"
@@ -234,7 +192,7 @@
   {
    "company": "Omnicom",
    "title": "Data Science and Analytics04",
-   "url": "https://jobright.ai/jobs/info/6a588b153330ca6f993c5765?utm_campaign=Data%20Analysis&utm_source=1103",
+   "url": "https://jobright.ai/jobs/info/6a588b2268d16a30e2413f8e?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
   },
   {
@@ -292,22 +250,58 @@
    "cause": "company not on watchlist"
   },
   {
-   "company": "Thomson Reuters",
-   "title": "AI Solutions Engineer, CoCounsel AI Applications",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "Torc Robotics",
-   "title": "Machine Learning Engineer, I, App Engine (CUDA)",
-   "url": "",
-   "cause": "stale list entry (not on the official greenhouse board)"
-  },
-  {
    "company": "Torentify",
    "title": "Data Scientist - USA / Remote",
    "url": "https://jobright.ai/jobs/info/6ae8306ca2a252e219425877?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
+  }
+ ],
+ "staleExcluded": 9,
+ "stale": [
+  {
+   "company": "Adobe",
+   "title": "New Grad 2026: AI Context Engineer",
+   "url": ""
+  },
+  {
+   "company": "AIG",
+   "title": "Early Career Analyst, Gen AI, Data Engineering",
+   "url": ""
+  },
+  {
+   "company": "Booz Allen Hamilton",
+   "title": "University - Data Scientist",
+   "url": "https://jobright.ai/jobs/info/6a8f5ea1d7c91d0cf446ef68?utm_campaign=Data%20Analysis&utm_source=1103"
+  },
+  {
+   "company": "Centene",
+   "title": "Data Engineer I",
+   "url": ""
+  },
+  {
+   "company": "Gauntlet",
+   "title": "New Grad: Quant Research Engineer",
+   "url": ""
+  },
+  {
+   "company": "Mastercard",
+   "title": "New Grad 2027: AI Engineer 1 - Launch Program",
+   "url": ""
+  },
+  {
+   "company": "NVIDIA",
+   "title": "New Grad 2025: Deep Learning Algorithm Engineer, Dynamo",
+   "url": ""
+  },
+  {
+   "company": "Thomson Reuters",
+   "title": "AI Solutions Engineer, CoCounsel AI Applications",
+   "url": ""
+  },
+  {
+   "company": "Torc Robotics",
+   "title": "Machine Learning Engineer, I, App Engine (CUDA)",
+   "url": ""
   }
  ]
 }

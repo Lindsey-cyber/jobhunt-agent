@@ -15,6 +15,8 @@ export function coverageProblem(c: unknown): string | undefined {
   if (counts.some((x) => (x as number) < 0)) return "计数为负";
   if ((inCatalog as number) > (n as number)) return "inCatalog 大于 n";
   if ((inCatalogNotRejected as number) > (inCatalog as number)) return "inCatalogNotRejected 大于 inCatalog";
+  const stale = (c as Record<string, unknown>).staleExcluded;
+  if (stale !== undefined && !(typeof stale === "number" && Number.isInteger(stale) && stale >= 0)) return "staleExcluded 不是非负整数";
   return undefined;
 }
 

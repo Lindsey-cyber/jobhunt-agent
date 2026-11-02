@@ -31,6 +31,15 @@ export interface CoverageReport {
   inCatalog: number;
   inCatalogNotRejected: number;
   misses: Miss[];
+  // List entries that no longer exist on the employer's official board: not postings, so not in n.
+  staleExcluded?: number;
+  stale?: Stale[];
+}
+
+export interface Stale {
+  company: string;
+  title: string;
+  url: string;
 }
 
 export type Matched = { job: Job; how: "key" | "title" | "fuzzy" };
@@ -180,6 +189,40 @@ export interface WatchedBoard {
   ats: string;
   // Titles the official board lists right now; undefined when that cannot be checked cheaply.
   titles?: readonly string[] | undefined;
+  // JobKeys the board lists (Greenhouse/Lever/Ashby job id, Workday requisition).
+  keys?: readonly string[] | undefined;
+  // The listing is known to be incomplete (e.g. a capped Workday walk): it can prove a posting live, never gone.
+  partial?: boolean | undefined;
+}
+
+export type Liveness = "live" | "not_listed" | "unknown";
+
+// Is a sampled posting still on its employer's official board(s)? Live: the board lists its job id (when the
+// list's link names one) or its title (exact, or near). Not listed: every known board was read in full and
+// none lists it. Anything else (a board not read, a partial read, no board at all) is unknown.
+export function liveness(r: SampleRow, known: readonly WatchedBoard[]): Liveness {
+  if (known.length === 0) return "unknown";
+  const named = r.url ? jobKey(r.url) : undefined;
+  const key = named && atsOf(named) ? named : undefined;
+  const live = known.some(
+    (b) => (key !== undefined && b.keys?.includes(key)) || b.titles?.some((t) => normTitle(t) === normTitle(r.title) || similarity(t, r.title) >= FUZZY),
+  );
+  if (live) return "live";
+  return known.every((b) => b.titles && !b.partial) ? "not_listed" : "unknown";
+}
+
+export const STALE_CAUSE = "stale list entry";
+export const isStale = (cause: string | undefined): boolean => cause?.startsWith(STALE_CAUSE) ?? false;
+
+// How many postings a measurement needs before it counts (src/discover/gates.ts GATE_LIMITS.coverageN).
+export const MIN_N = 50;
+
+// More rows from the lists when stale exclusions leave fewer than `min` real postings: the rows not yet
+// taken, de-duplicated like sampleOf, evenly spaced and deterministic. Fewer than asked when the lists run out.
+export function resampleRows(pool: readonly SampleRow[], taken: readonly SampleRow[], n: number, min = MIN_N): SampleRow[] {
+  if (n >= min) return [];
+  const have = new Set(taken.map((r) => `${normCompany(r.company)}|${normTitle(r.title)}`));
+  return sampleOf(pool.filter((r) => !have.has(`${normCompany(r.company)}|${normTitle(r.title)}`)), min - n);
 }
 
 // Why a sampled posting is not usable in the catalog. Undefined means it is (in the catalog, not rejected).
@@ -189,10 +232,7 @@ export function causeOf(r: SampleRow, found: Matched | undefined, idx: CatalogIn
   const official = new Set((idx.byCompany.get(normCompany(r.company)) ?? []).filter((j) => j.official).map((j) => j.key.split(":")[0]!));
   const known = [...boards, ...[...official].filter((a) => !boards.some((b) => b.ats === a)).map((ats) => ({ ats }) as WatchedBoard)];
   if (known.length === 0) return "company not on watchlist";
-  const checked = known.filter((b) => b.titles);
-  if (checked.length === known.length && checked.every((b) => !b.titles!.some((t) => normTitle(t) === normTitle(r.title) || similarity(t, r.title) >= FUZZY))) {
-    return `stale list entry (not on the official ${known.map((b) => b.ats).join("/")} board)`;
-  }
+  if (liveness(r, known) === "not_listed") return `${STALE_CAUSE} (not on the official ${known.map((b) => b.ats).join("/")} board)`;
   return `watched company, posting not fetched (${known.map((b) => b.ats).join("/")})`;
 }
 
@@ -203,14 +243,18 @@ export interface Judged {
 }
 
 export function report(date: string, sources: string[], judged: readonly Judged[]): CoverageReport {
-  const hits = judged.filter((j) => j.found);
+  const stale = judged.filter((j) => isStale(j.cause));
+  const real = judged.filter((j) => !isStale(j.cause));
+  const hits = real.filter((j) => j.found);
   return {
     date,
     sources,
-    n: judged.length,
+    n: real.length,
     inCatalog: hits.length,
     inCatalogNotRejected: hits.filter((j) => j.found!.job.triage.verdict !== "reject").length,
-    misses: judged.filter((j) => j.cause).map((j) => ({ company: j.row.company, title: j.row.title, url: j.found?.job.url ?? j.row.url ?? "", cause: j.cause! })),
+    misses: real.filter((j) => j.cause).map((j) => ({ company: j.row.company, title: j.row.title, url: j.found?.job.url ?? j.row.url ?? "", cause: j.cause! })),
+    staleExcluded: stale.length,
+    stale: stale.map((j) => ({ company: j.row.company, title: j.row.title, url: j.row.url ?? "" })),
   };
 }
 
@@ -222,5 +266,5 @@ export function summarize(r: CoverageReport): string {
     causes.set(c, (causes.get(c) ?? 0) + 1);
   }
   const top = [...causes].sort((a, b) => b[1] - a[1]).map(([c, k]) => `${c} ${k}`).join("; ");
-  return `Coverage ${r.date}: ${r.inCatalog}/${r.n} sampled postings are in the catalog (${pct(r.inCatalog)}), ${r.inCatalogNotRejected}/${r.n} in it and not rejected (${pct(r.inCatalogNotRejected)}), from ${r.sources.length} independent source${r.sources.length === 1 ? "" : "s"}. ${r.misses.length ? `Misses by cause: ${top}.` : "No misses."}`;
+  return `Coverage ${r.date}: ${r.inCatalog}/${r.n} sampled postings are in the catalog (${pct(r.inCatalog)}), ${r.inCatalogNotRejected}/${r.n} in it and not rejected (${pct(r.inCatalogNotRejected)}), from ${r.sources.length} independent source${r.sources.length === 1 ? "" : "s"}${r.staleExcluded ? `; ${r.staleExcluded} stale list entries (gone from the official board) excluded from n` : ""}. ${r.misses.length ? `Misses by cause: ${top}.` : "No misses."}`;
 }

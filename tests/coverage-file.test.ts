@@ -15,6 +15,11 @@ const ok = { date: "2026-10-30", n: 50, inCatalog: 48, inCatalogNotRejected: 46 
 
 describe("coverage file validation", () => {
   it("accepts a consistent file", () => expect(readCoverage(dirWith({ "2026-10-30.json": ok })).coverage).toEqual(ok));
+  it("accepts the optional staleExcluded, and rejects a bad one", () => {
+    const withStale = { ...ok, staleExcluded: 7 };
+    expect(readCoverage(dirWith({ "2026-10-30.json": withStale })).coverage).toEqual(withStale);
+    for (const bad of [-1, 1.5, "7"]) expect(readCoverage(dirWith({ "2026-10-30.json": { ...ok, staleExcluded: bad } })).problem).toContain("staleExcluded");
+  });
   it.each([
     ["inCatalog > n", { ...ok, inCatalog: 51 }],
     ["inCatalogNotRejected > inCatalog", { ...ok, inCatalogNotRejected: 49 }],

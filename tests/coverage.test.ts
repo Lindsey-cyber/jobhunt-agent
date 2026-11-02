@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { causeOf, fits, indexCatalog, liveness, match, MIN_N, notIndependent, parseListTable, report, resampleRows, sampleOf, summarize, urlsIn, type Judged, type SampleRow } from "../src/discover/coverage.ts";
+import { causeOf, fits, indexCatalog, liveness, match, MIN_N, notIndependent, parseListTable, readInFull, report, resampleRows, sampleOf, summarize, urlsIn, workdaySite, type Judged, type SampleRow, type WatchedBoard } from "../src/discover/coverage.ts";
 import type { Job, JobKey } from "../src/domain/job.ts";
 import { requireIndependent, type SampleList } from "../src/sources/coverage.ts";
 
@@ -91,8 +91,12 @@ describe("causes", () => {
     expect(cause(row("Acme", "Vision Engineer"), [{ ats: "workday" }])).toBe("watched company, posting not fetched (workday/greenhouse)");
     expect(cause(row("Acme", "Vision Engineer"), [{ ats: "greenhouse", titles: ["Vision Engineer"] }])).toBe("watched company, posting not fetched (greenhouse)");
   });
-  it("calls a list entry stale when the official board no longer lists it", () => {
-    expect(cause(row("Acme", "Vision Engineer"), [{ ats: "greenhouse", titles: ["Chef"] }])).toMatch(/^stale list entry/);
+  it("calls a list entry stale only when its own id is missing from a complete board of its ATS", () => {
+    const withId = row("Acme", "Vision Engineer", { url: "https://job-boards.greenhouse.io/acme/jobs/999" });
+    expect(cause(withId, [{ ats: "greenhouse", titles: ["Chef"], keys: ["greenhouse:123"] }])).toMatch(/^stale list entry/);
+  });
+  it("never calls a list entry stale on its title alone, however the board reads", () => {
+    expect(cause(row("Acme", "Vision Engineer"), [{ ats: "greenhouse", titles: ["Chef"], keys: [] }])).not.toMatch(/^stale/);
   });
   it("does not call it stale when one of the company's boards cannot be checked", () => {
     expect(cause(row("Acme", "Vision Engineer"), [{ ats: "greenhouse", titles: ["Chef"] }, { ats: "workday" }])).toMatch(/^watched company/);
@@ -134,50 +138,69 @@ describe("independence check before fetching", () => {
 });
 
 describe("stale list entries", () => {
-  const wd = (titles: string[], o: Partial<Parameters<typeof liveness>[1][number]> = {}) => ({ ats: "workday", titles, keys: ["workday:nvidia:jr1"], ...o });
-  const nv = row("NVIDIA", "New Grad 2026: Deep Learning Engineer");
+  const board = (ats: string, o: Partial<WatchedBoard> = {}): WatchedBoard => ({ ats, titles: ["Chef"], keys: [], ...o });
+  const ghRow = (id: number, title = "Vision Engineer") => row("Acme", title, { url: `https://job-boards.greenhouse.io/acme/jobs/${id}` });
+  const wdSite = "nvidia/nvidiaexternalcareersite";
+  const wdUrl = "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Deep-Learning-Engineer_JR2028177";
+  const wdRow = row("NVIDIA", "Deep Learning Engineer", { url: wdUrl });
+  const wdBoard = (titles: string[], keys: string[], o: Partial<WatchedBoard> = {}): WatchedBoard => ({ ats: "workday", titles, keys, site: wdSite, ...o });
 
-  it("live: the board lists an exact normalized title (suffix and year differences ignored)", () => {
-    expect(liveness(nv, [wd(["Deep Learning Engineer - New College Grad 2027"])])).toBe("live");
-  });
-  it("live: the board lists the job id the list's link names (Greenhouse), whatever the title", () => {
-    const r = row("Acme", "Old name", { url: "https://boards.greenhouse.io/acme/jobs/123" });
-    expect(liveness(r, [{ ats: "greenhouse", titles: ["New name"], keys: ["greenhouse:123"] }])).toBe("live");
-  });
-  it("live: a Workday requisition in the link", () => {
-    const r = row("NVIDIA", "X", { url: "https://nvidia.wd5.myworkdayjobs.com/en-US/Site/job/Santa-Clara/Some-Title_JR1" });
-    expect(liveness(r, [wd([])])).toBe("live");
-  });
-  it("not listed: the whole board was read and has neither the id nor the title", () => {
-    expect(liveness(nv, [wd(["Chef"])])).toBe("not_listed");
-    const r = row("Acme", "ML Engineer", { url: "https://job-boards.greenhouse.io/acme/jobs/999" });
-    expect(liveness(r, [{ ats: "greenhouse", titles: ["Chef"], keys: ["greenhouse:123"] }])).toBe("not_listed");
-  });
-  it("unknown: no board, a board that was not read, or a partial read that lacks it", () => {
-    expect(liveness(nv, [])).toBe("unknown");
-    expect(liveness(nv, [{ ats: "workday" }])).toBe("unknown");
-    expect(liveness(nv, [wd(["Chef"], { partial: true })])).toBe("unknown");
-    expect(liveness(nv, [wd(["Chef"]), { ats: "greenhouse" }])).toBe("unknown");
-  });
-  it("a partial read can still prove a posting live", () => {
-    expect(liveness(nv, [wd(["Deep Learning Engineer"], { partial: true })])).toBe("live");
-  });
-  it("one live board among several wins over a board that does not list it", () => {
-    expect(liveness(nv, [wd(["Chef"]), { ats: "greenhouse", titles: ["Deep Learning Engineer"] }])).toBe("live");
-  });
-  it("a non-ATS link does not count as a job id", () => {
-    const r = row("NVIDIA", "Chef Engineer", { url: "https://jobright.ai/jobs/info/1" });
-    expect(liveness(r, [wd(["Chef"], { keys: ["raw:https://jobright.ai/jobs/info/1"] })])).toBe("not_listed");
+  describe("liveness", () => {
+    it("live by title, when the board lists the title and the id is absent", () => {
+      expect(liveness(row("NVIDIA", "New Grad 2026: Deep Learning Engineer"), [wdBoard(["Deep Learning Engineer - New College Grad 2027"], [])])).toBe("live");
+    });
+    it("live by id, whatever the title", () => {
+      expect(liveness(ghRow(123, "Old name"), [board("greenhouse", { titles: ["New name"], keys: ["greenhouse:123"] })])).toBe("live");
+    });
+    it("live by Workday requisition in the link", () => {
+      expect(liveness(wdRow, [wdBoard([], ["workday:nvidia:jr2028177"])])).toBe("live");
+    });
+    it("not listed only when the id is absent from a complete board of its ATS", () => {
+      expect(liveness(ghRow(999), [board("greenhouse", { keys: ["greenhouse:123"] })])).toBe("not_listed");
+      expect(liveness(wdRow, [wdBoard(["Chef"], ["workday:nvidia:jr1"])])).toBe("not_listed");
+    });
+    it("no id in the link means unknown, even when no title on any complete board matches", () => {
+      expect(liveness(row("NVIDIA", "Vision Engineer"), [wdBoard(["Chef"], ["workday:nvidia:jr1"])])).toBe("unknown");
+      expect(liveness(row("Acme", "Vision Engineer", { url: "https://jobright.ai/jobs/info/1" }), [board("greenhouse")])).toBe("unknown");
+      expect(liveness(row("Acme", "Vision Engineer", { url: "" }), [board("greenhouse")])).toBe("unknown");
+    });
+    it("unknown when the ATS of the link has no board that was read", () => {
+      expect(liveness(ghRow(999), [])).toBe("unknown");
+      expect(liveness(ghRow(999), [board("lever", { keys: [] })])).toBe("unknown");
+      expect(liveness(ghRow(999), [{ ats: "greenhouse" }])).toBe("unknown");
+    });
+    it("unknown when a board of that ATS is partial, or lists titles but no ids", () => {
+      expect(liveness(ghRow(999), [board("greenhouse", { keys: [], partial: true })])).toBe("unknown");
+      expect(liveness(ghRow(999), [board("greenhouse", { keys: undefined })])).toBe("unknown");
+    });
+    it("unknown when a board of that ATS is read but another of its boards for the company is not", () => {
+      expect(liveness(ghRow(999), [board("greenhouse", { keys: ["greenhouse:1"] }), { ats: "greenhouse" }])).toBe("unknown");
+    });
+    it("a partial read can still prove a posting live, by title", () => {
+      expect(liveness(row("NVIDIA", "Deep Learning Engineer"), [wdBoard(["Deep Learning Engineer"], [], { partial: true })])).toBe("live");
+    });
+    it("a Workday link is judged only against its own career site", () => {
+      expect(liveness(wdRow, [wdBoard([], [], { site: "nvidia/othersite" })])).toBe("unknown");
+    });
+    it("readInFull needs titles, ids and no partial flag", () => {
+      expect([readInFull(board("greenhouse")), readInFull({ ats: "greenhouse" }), readInFull(board("greenhouse", { partial: true }))]).toEqual([true, false, false]);
+    });
+    it("workdaySite names tenant and site, skipping a locale", () => {
+      expect(workdaySite(wdUrl)).toBe(wdSite);
+      expect(workdaySite("https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite")).toBe(wdSite);
+      expect(workdaySite("https://jobs.lever.co/acme")).toBeUndefined();
+    });
   });
 
-  const idx = indexCatalog([]);
   const judge = (rows: SampleRow[], boards: Parameters<typeof causeOf>[3]): Judged[] => rows.map((r) => ({ row: r, found: undefined, cause: causeOf(r, undefined, idx, boards) }));
+  const idx = indexCatalog([]);
   it("a stale entry leaves n, is counted in staleExcluded and is not a miss; unknown stays a miss", () => {
-    const judged = [...judge([nv, row("NVIDIA", "Computer Vision Engineer")], [wd(["Chef"])]), ...judge([row("Nobody", "AI Engineer")], [])];
+    const greenhouse = [board("greenhouse", { keys: ["greenhouse:123"] })];
+    const judged = [...judge([ghRow(999, "Vision Engineer"), ghRow(998, "Other Engineer")], greenhouse), ...judge([row("Nobody", "AI Engineer")], [])];
     const r = report("2026-11-02", ["L"], judged);
     expect(r).toMatchObject({ n: 1, inCatalog: 0, staleExcluded: 2 });
     expect(r.misses.map((m) => m.company)).toEqual(["Nobody"]);
-    expect(r.stale?.map((x) => x.title)).toEqual([nv.title, "Computer Vision Engineer"]);
+    expect(r.stale?.map((x) => x.title)).toEqual(["Vision Engineer", "Other Engineer"]);
     expect(summarize(r)).toContain("2 stale list entries");
   });
   it("with nothing stale the count is 0 and n is unchanged", () => {
@@ -185,7 +208,7 @@ describe("stale list entries", () => {
     expect([r.n, r.staleExcluded]).toEqual([1, 0]);
   });
   it("all entries stale gives n = 0 without dividing by zero", () => {
-    expect(summarize(report("d", ["L"], judge([nv], [wd(["Chef"])])))).toContain("0/0");
+    expect(summarize(report("d", ["L"], judge([ghRow(999)], [board("greenhouse", { keys: ["greenhouse:123"] })])))).toContain("0/0");
   });
 
   describe("resample rule", () => {

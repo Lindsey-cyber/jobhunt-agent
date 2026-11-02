@@ -193,13 +193,35 @@ export interface WatchedBoard {
   keys?: readonly string[] | undefined;
   // The listing is known to be incomplete (e.g. a capped Workday walk): it can prove a posting live, never gone.
   partial?: boolean | undefined;
+  // Workday only: "tenant/site" of the career site this board is (see workdaySite). A link on another site is not this board's.
+  site?: string | undefined;
+}
+
+// A board read in full: its titles and its ids are both known, and nothing was cut short.
+export const readInFull = (b: WatchedBoard): boolean => b.titles !== undefined && b.keys !== undefined && !b.partial;
+
+// "tenant/site" of a Workday job link or career-site URL (a locale segment such as en-US is skipped); undefined otherwise.
+export function workdaySite(url: string): string | undefined {
+  let u: URL;
+  try {
+    u = new URL(url);
+  } catch {
+    return undefined;
+  }
+  const host = u.hostname.toLowerCase();
+  if (!host.endsWith(".myworkdayjobs.com")) return undefined;
+  const parts = u.pathname.split("/").filter(Boolean);
+  if (parts[0] && /^[a-z]{2}-[a-z]{2}$/i.test(parts[0])) parts.shift();
+  return parts[0] ? `${host.split(".")[0]}/${parts[0].toLowerCase()}` : undefined;
 }
 
 export type Liveness = "live" | "not_listed" | "unknown";
 
-// Is a sampled posting still on its employer's official board(s)? Live: the board lists its job id (when the
-// list's link names one) or its title (exact, or near). Not listed: every known board was read in full and
-// none lists it. Anything else (a board not read, a partial read, no board at all) is unknown.
+// Is a sampled posting still on its employer's official board(s)? Live: a board lists its job id (when the list's
+// link names one) or its title (exact, or near). Not listed (stale) only when the posting's own id is known from its
+// link, and every board of that ATS for the company (the same Workday site, for Workday) was read in full, and none
+// lists the id. A title alone never proves a posting gone; neither does a link without an ATS id, nor a board of that
+// ATS that was not read. Everything else is unknown.
 export function liveness(r: SampleRow, known: readonly WatchedBoard[]): Liveness {
   if (known.length === 0) return "unknown";
   const named = r.url ? jobKey(r.url) : undefined;
@@ -208,7 +230,11 @@ export function liveness(r: SampleRow, known: readonly WatchedBoard[]): Liveness
     (b) => (key !== undefined && b.keys?.includes(key)) || b.titles?.some((t) => normTitle(t) === normTitle(r.title) || similarity(t, r.title) >= FUZZY),
   );
   if (live) return "live";
-  return known.every((b) => b.titles && !b.partial) ? "not_listed" : "unknown";
+  if (key === undefined) return "unknown";
+  const ats = atsOf(key)!;
+  const site = ats === "workday" ? workdaySite(r.url!) : undefined;
+  const same = known.filter((b) => b.ats === ats && (ats !== "workday" || b.site === site));
+  return same.length > 0 && same.every(readInFull) ? "not_listed" : "unknown";
 }
 
 export const STALE_CAUSE = "stale list entry";

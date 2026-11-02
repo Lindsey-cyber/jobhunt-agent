@@ -3,9 +3,11 @@
 // Never opens an application form: a link is only followed hop by hop for its Location header (HEAD), never rendered.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { isAggregator, normCompany, notIndependent, parseListTable, urlsIn, workdaySite, type SampleRow, type WatchedBoard } from "../discover/coverage.ts";
+import { isAggregator, makeCanon, normCompany, notIndependent, parseListTable, urlsIn, watchBands, workdaySite, type Canon, type SampleRow, type SizeSources, type WatchedBoard } from "../discover/coverage.ts";
+import { employerKey } from "../discover/h1b.ts";
 import { atsOf, jobKey } from "../discover/identity.ts";
-import { loadWatchlist, WORKDAY_PAGE, WORKDAY_PAGE_CAP, type BoardKind } from "./fetch.ts";
+import type { EightfoldItem } from "../discover/parse.ts";
+import { loadWatchlist, WORKDAY_PAGE, WORKDAY_PAGE_CAP, type BoardKind, type Watchlist } from "./fetch.ts";
 import { getJson, getText, pool, postJson } from "./http.ts";
 
 export interface SampleList {
@@ -31,12 +33,12 @@ export function requireIndependent(lists: readonly SampleList[], watched: readon
 }
 
 // Rows whose company is in config/watchlist.yaml `aggregators:` are left out: they repost other employers' jobs.
-export async function fetchSample(lists: readonly SampleList[], aggregators: readonly string[] = loadWatchlist().aggregators): Promise<{ rows: SampleRow[]; failed: string[] }> {
+export async function fetchSample(lists: readonly SampleList[], aggregators: readonly string[] = loadWatchlist().aggregators, canon: Canon = normCompany): Promise<{ rows: SampleRow[]; failed: string[] }> {
   const rows: SampleRow[] = [];
   const failed: string[] = [];
   for (const l of lists) {
     try {
-      rows.push(...parseListTable(l.name, await getText(l.raw, 120000)).filter((r) => !isAggregator(r.company, aggregators)));
+      rows.push(...parseListTable(l.name, await getText(l.raw, 120000)).filter((r) => !isAggregator(r.company, aggregators, canon)));
     } catch (e) {
       failed.push(`${l.name}: ${e instanceof Error ? e.message : String(e)}`);
     }
@@ -252,14 +254,111 @@ export async function readBoard(kind: BoardKind, board: string): Promise<Watched
 
 // What each watched company's official boards list now (Greenhouse, Lever, Ashby: the board API; Workday: the
 // full enumeration), to tell a stale list entry from a posting the pipeline missed. Read-only.
-export async function watchedBoards(companies: readonly string[]): Promise<Map<string, WatchedBoard[]>> {
-  const wl = loadWatchlist();
-  const want = new Set(companies.map(normCompany));
+export async function watchedBoards(companies: readonly string[], wl: Watchlist = loadWatchlist()): Promise<Map<string, WatchedBoard[]>> {
+  const canon = makeCanon(wl.aliases);
+  const want = new Set(companies.map(canon));
   const out = new Map<string, WatchedBoard[]>();
-  const add = (c: string, b: WatchedBoard) => out.set(normCompany(c), [...(out.get(normCompany(c)) ?? []), b]);
+  const add = (c: string, b: WatchedBoard) => out.set(canon(c), [...(out.get(canon(c)) ?? []), b]);
   const jobs: { kind: BoardKind; b: { board: string; company: string } }[] = [];
-  for (const kind of ["greenhouse", "lever", "ashby"] as const) for (const b of wl[kind]) if (want.has(normCompany(b.company))) jobs.push({ kind, b });
+  for (const kind of ["greenhouse", "lever", "ashby"] as const) for (const b of wl[kind]) if (want.has(canon(b.company))) jobs.push({ kind, b });
   await pool(jobs, 4, async ({ kind, b }) => add(b.company, await readBoard(kind, b.board)));
-  await pool(wl.workday.filter((w) => want.has(normCompany(w.company))), 2, async (w) => add(w.company, await enumerateWorkday(w.site)));
+  await pool(wl.workday.filter((w) => want.has(canon(w.company))), 2, async (w) => add(w.company, await enumerateWorkday(w.site)));
+  await pool(wl.eightfold.filter((e) => want.has(canon(e.company))), 2, async (e) => add(e.company, await enumerateEightfold(e)));
   return out;
 }
+
+// ---- Eightfold ------------------------------------------------------------------------------------
+
+interface EfApply { count?: unknown; positions?: unknown }
+// The server fixes the page size (10); a board of more than this many pages is not read in full.
+export const EIGHTFOLD_PAGE_CAP = 400;
+
+// Every position an Eightfold career site lists (empty search, no location filter, all pages), by its own API: the
+// stale check for tenants the pipeline reads through search. Titles and ids only. `partial` (it can prove a posting
+// live, never gone) unless: a positive whole-number count, within the page cap, every page answered as a list, every
+// position has an id, and as many distinct positions came back as the count says.
+export async function enumerateEightfold(e: Watchlist["eightfold"][number]): Promise<WatchedBoard> {
+  const root = `https://${e.host}/api`;
+  const dom = encodeURIComponent(e.domain);
+  const page = async (start: number): Promise<{ count: unknown; items: EightfoldItem[] } | undefined> => {
+    try {
+      const qs = `domain=${dom}&start=${start}&query=`;
+      const body = e.api === "pcsx" ? (await getJson<{ data?: EfApply }>(`${root}/pcsx/search?${qs}`, 60000)).data : await getJson<EfApply>(`${root}/apply/v2/jobs?${qs}&num=10`, 60000);
+      return body && Array.isArray(body.positions) ? { count: body.count, items: body.positions as EightfoldItem[] } : undefined;
+    } catch {
+      return undefined;
+    }
+  };
+  const first = await page(0);
+  if (!first) return { ats: "eightfold" };
+  const count = typeof first.count === "number" && Number.isInteger(first.count) && first.count > 0 ? first.count : undefined;
+  const size = first.items.length;
+  const pagesNeeded = count === undefined || size === 0 ? 1 : Math.ceil(count / size);
+  const offsets = Array.from({ length: Math.min(pagesNeeded, EIGHTFOLD_PAGE_CAP) - 1 }, (_, i) => (i + 1) * size);
+  const rest = await pool(offsets, 4, page);
+  const pages = [first, ...rest];
+  const items = new Map<string, EightfoldItem>();
+  let noId = false;
+  for (const p of pages) for (const it of p?.items ?? []) (it.id === undefined || it.id === null ? (noId = true) : items.set(String(it.id), it));
+  const keys = [...items.keys()].map((id) => jobKey(`https://${e.host}/careers/job/${id}`));
+  const partial = count === undefined || pagesNeeded > EIGHTFOLD_PAGE_CAP || pages.some((p) => p === undefined) || noId || keys.some((k) => atsOf(k) !== "eightfold") || items.size < count;
+  return { ats: "eightfold", titles: [...items.values()].map((it) => it.posting_name || it.name || ""), keys, partial };
+}
+
+// A link into a career site by its own position id (jobs.nvidia.com/careers/job/893397927110) is a different id from the
+// ATS requisition the pipeline keys the same posting by (Workday JR2026576). The site's own position details name the
+// requisition (displayJobId), so the row is matched by it. Read-only, one request per distinct link; a link that answers
+// nothing useful is left as it was.
+export async function resolveRequisitions(rows: readonly SampleRow[], wl: Watchlist = loadWatchlist()): Promise<SampleRow[]> {
+  const domains = new Map(wl.eightfold.map((e) => [e.host.toLowerCase(), e.domain]));
+  const memo = new Map<string, Promise<string | undefined>>();
+  const lookup = (host: string, id: string): Promise<string | undefined> => {
+    const k = `${host}/${id}`;
+    let p = memo.get(k);
+    if (!p) {
+      const dom = domains.get(host) ?? host.split(".").slice(-2).join(".");
+      p = getJson<{ data?: { displayJobId?: unknown } }>(`https://${host}/api/pcsx/position_details?position_id=${encodeURIComponent(id)}&domain=${encodeURIComponent(dom)}&hl=en`, 30000)
+        .then((d) => (typeof d.data?.displayJobId === "string" || typeof d.data?.displayJobId === "number" ? String(d.data.displayJobId).trim().toLowerCase() || undefined : undefined))
+        .catch(() => undefined);
+      memo.set(k, p);
+    }
+    return p;
+  };
+  return pool([...rows], 4, async (r) => {
+    const m = r.url ? /^eightfold:([^:]+):(\d+)$/.exec(jobKey(r.url)) : null;
+    if (!m) return r;
+    const requisition = await lookup(m[1]!, m[2]!);
+    return requisition ? { ...r, requisition } : r;
+  });
+}
+
+// ---- Size bands -------------------------------------------------------------------------------------
+
+type Counts = Record<string, { filings?: unknown; since?: unknown } | undefined>;
+const readCounts = (path: string): Counts => {
+  try {
+    const v: unknown = JSON.parse(readFileSync(path, "utf8"));
+    return v && typeof v === "object" ? (v as Counts) : {};
+  } catch {
+    return {};
+  }
+};
+
+// Where each employer's size comes from: the watchlist's band (its boards and its pending list), else H-1B filings since the
+// policy year from data/h1b (the watchlist's own counts first, then the lookup cache). `since` is the policy year: a count
+// taken since another year is not comparable and is ignored.
+export function loadSizeSources(dataDir: string, since: number | null, wl: Watchlist = loadWatchlist(), canon: Canon = makeCanon(wl.aliases)): SizeSources {
+  const entries = [...wl.greenhouse, ...wl.lever, ...wl.ashby, ...wl.workday, ...wl.smartrecruiters, ...wl.oracleHcm, ...wl.eightfold, ...wl.pending];
+  const own = readCounts(join(dataDir, "h1b", "watchlist-counts.json"));
+  const cache = readCounts(join(dataDir, "h1b", "sponsors.json"));
+  const count = (c: Counts[string], checkSince: boolean): number | undefined =>
+    c && typeof c.filings === "number" && Number.isFinite(c.filings) && (!checkSince || since === null || c.since === undefined || c.since === since) ? c.filings : undefined;
+  return {
+    watch: watchBands(entries, canon),
+    filings: (company) => {
+      const k = employerKey(company);
+      return count(own[k], true) ?? count(cache[k], false);
+    },
+  };
+}
+

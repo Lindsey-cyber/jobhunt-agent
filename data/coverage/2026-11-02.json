@@ -5,227 +5,250 @@
   "jobright-ai/2026-Software-Engineer-New-Grad",
   "vanshb03/New-Grad-2027"
  ],
- "n": 70,
- "inCatalog": 56,
- "inCatalogNotRejected": 34,
+ "n": 68,
+ "inCatalog": 57,
+ "inCatalogNotRejected": 37,
  "misses": [
   {
    "company": "66 Degrees",
    "title": "New Grad 2027: Associate AI/ML Engineer, Gradient Specialist",
    "url": "https://job-boards.greenhouse.io/66degrees/jobs/6220259004",
-   "cause": "filtered by triage rule auth.no_sponsorship"
+   "cause": "filtered by triage rule auth.no_sponsorship",
+   "band": "mid"
   },
   {
    "company": "66 Degrees",
    "title": "New Grad 2027: Associate Data Engineer, Gradient Specialist",
    "url": "https://job-boards.greenhouse.io/66degrees/jobs/6220280004",
-   "cause": "filtered by triage rule auth.no_sponsorship"
+   "cause": "filtered by triage rule auth.no_sponsorship",
+   "band": "mid"
   },
   {
    "company": "Amazon",
    "title": "Application Builder, Blink Subs + ai",
    "url": "https://www.amazon.jobs/jobs/10514428/apply",
-   "cause": "filtered by triage rule role.non_engineering"
+   "cause": "filtered by triage rule role.non_engineering",
+   "band": "large"
   },
   {
    "company": "American Honda Motor Company, Inc.",
    "title": "Data Scientist",
    "url": "https://jobright.ai/jobs/info/6ae49a46d45dc30fb7d30887?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "company not on watchlist",
+   "band": "mid"
   },
   {
    "company": "Astera Labs",
    "title": "Applied AI (Non Silicon)",
    "url": "https://job-boards.greenhouse.io/asteraearlycareer2027/jobs/4731594005",
-   "cause": "filtered by triage rule role.non_engineering"
-  },
-  {
-   "company": "Axle",
-   "title": "Data Scientist Fellow — Multi-Omics Analysis",
-   "url": "https://job-boards.greenhouse.io/axle/jobs/5274583007",
-   "cause": "filtered by triage rule model.not_fit"
+   "cause": "filtered by triage rule role.non_engineering",
+   "band": "mid"
   },
   {
    "company": "Axtria",
    "title": "New Grad 2027: AI & Data Associate",
    "url": "https://axtriainc.applytojob.com/apply/WvWFVnBuU0/Campus-2027-AI-Data",
-   "cause": "filtered by triage rule role.non_engineering"
+   "cause": "filtered by triage rule role.non_engineering",
+   "band": "large"
   },
   {
    "company": "B4Corp",
    "title": "812273 Data Scientist $270,000.00",
    "url": "https://jobright.ai/jobs/info/6ae2004205a39c3e2c715648?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
-  },
-  {
-   "company": "Booz Allen Hamilton",
-   "title": "Data Scientist",
-   "url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/McLean-VA/Data-Scientist_R0229815-1",
-   "cause": "filtered by triage rule experience.too_senior"
+   "cause": "company not on watchlist",
+   "band": "small"
   },
   {
    "company": "Booz Allen Hamilton",
    "title": "University - Data Scientist",
-   "url": "https://jobright.ai/jobs/info/6a8f5ea1d7c91d0cf446ef68?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "watched company, posting not fetched (workday/workday)"
-  },
-  {
-   "company": "Booz Allen",
-   "title": "New Grad 2027: Data Scientist 🇺🇸",
-   "url": "https://bah.wd1.myworkdayjobs.com/Confidential/job/McLean-VA/University---Data-Scientist_R0252610",
-   "cause": "filtered by triage rule auth.citizenship"
+   "url": "https://bah.wd1.myworkdayjobs.com/Confidential/job/McLean-VA/University---Data-Scientist_R0247963",
+   "cause": "filtered by triage rule auth.citizenship",
+   "band": "mid"
   },
   {
    "company": "Capgemini",
    "title": "Associate Data Scientist Job Details / Capgemini",
    "url": "https://jobright.ai/jobs/info/6ad8b84ce4b94611ab84e954?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "company not on watchlist",
+   "band": "large"
   },
   {
    "company": "Concord",
    "title": "Data Science Analyst",
    "url": "https://jobright.ai/jobs/info/6ad0fde0a4f99fef81940b62?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "company not on watchlist",
+   "band": "mid"
   },
   {
    "company": "CWILL",
    "title": "AI SEO R&D Trainee - Multiple Teams",
    "url": "https://apply.workable.com/cwill-us/j/82C35F8307/apply",
-   "cause": "filtered by triage rule role.non_engineering"
+   "cause": "filtered by triage rule role.non_engineering",
+   "band": "unknown"
   },
   {
    "company": "Eaton",
    "title": "Data Scientist - Cleared (Multiple Levels) - Chantilly, VA",
    "url": "https://jobright.ai/jobs/info/6ae5508577c09cb3bd4b30ae?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "watched company, posting not fetched (eightfold)"
+   "cause": "watched company, posting not fetched (eightfold)",
+   "band": "large"
   },
   {
    "company": "GE Vernova",
    "title": "Data Scientist 🛂",
    "url": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Greenville/GE-Vernova-Data-Scientist_R5057035-2",
-   "cause": "filtered by triage rule auth.no_sponsorship"
+   "cause": "filtered by triage rule auth.no_sponsorship",
+   "band": "mid"
   },
   {
    "company": "GE Vernova",
    "title": "GE Vernova Data Scientist",
    "url": "https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Greenville/GE-Vernova-Data-Scientist_R5057035-1",
-   "cause": "filtered by triage rule auth.no_sponsorship"
+   "cause": "filtered by triage rule auth.no_sponsorship",
+   "band": "mid"
   },
   {
    "company": "GE Vernova",
    "title": "New Grad: AI Engineer 🛂",
    "url": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Greenville/GE-Vernova-AI-Engineer_R5057133-2",
-   "cause": "filtered by triage rule auth.no_sponsorship"
-  },
-  {
-   "company": "General Dynamics Information Technology",
-   "title": "Data Scientist",
-   "url": "https://jobright.ai/jobs/info/6ae285c3eb7e8f715a60ec5d?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "filtered by triage rule auth.no_sponsorship",
+   "band": "mid"
   },
   {
    "company": "GlobalFoundries",
    "title": "AI Enabled Device Modeling",
    "url": "https://globalfoundries.wd1.myworkdayjobs.com/External/job/USA---New-York---Malta/AI-Enabled-Device-Modeling_JR-2606083",
-   "cause": "filtered by triage rule role.non_engineering"
+   "cause": "filtered by triage rule role.non_engineering",
+   "band": "large"
   },
   {
    "company": "Guidehouse",
    "title": "Data Scientist",
    "url": "https://guidehouse.wd1.myworkdayjobs.com/External/job/US---MD-Bethesda/Data-Scientist_44617",
-   "cause": "filtered by triage rule auth.citizenship"
+   "cause": "filtered by triage rule auth.citizenship",
+   "band": "large"
   },
   {
    "company": "Johns Hopkins Applied Physics Laboratory",
    "title": "New Grad 2027: Signal Processing/Computer Science/Algorithm Development/AI-ML",
    "url": "https://go.vansh.nyc/TN",
-   "cause": "filtered by triage rule role.non_engineering"
+   "cause": "filtered by triage rule role.non_engineering",
+   "band": "small"
   },
   {
    "company": "L.E.K. Consulting",
    "title": "Data Science Associate",
    "url": "https://jobright.ai/jobs/info/6ae28245de23f466ec8c730f?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "company not on watchlist",
+   "band": "small"
   },
   {
    "company": "Northeastern University",
    "title": "Research Engineer",
    "url": "https://northeastern.wd1.myworkdayjobs.com/careers/job/Boston-MA-Main-Campus/Research-Engineer_R143103",
-   "cause": "filtered by triage rule role.research_not_ml"
+   "cause": "filtered by triage rule role.research_not_ml",
+   "band": "large"
   },
   {
    "company": "Northrop Grumman",
    "title": "Associate Data Scientist - Pathways - Aurora CO",
    "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Aurora/Associate-Data-Scientist---Pathways---Aurora-CO_R10258253-1",
-   "cause": "filtered by triage rule auth.citizenship"
+   "cause": "filtered by triage rule auth.citizenship",
+   "band": "small"
   },
   {
    "company": "Northrop Grumman",
    "title": "Associate Data Scientist 🇺🇸",
    "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Aurora/Associate-Data-Scientist---Pathways---Aurora-CO_R10258253-1",
-   "cause": "filtered by triage rule auth.citizenship"
-  },
-  {
-   "company": "NVIDIA",
-   "title": "Applied Machine Learning Engineer, AI for VLSI Design (Master's)",
-   "url": "https://jobs.nvidia.com/careers/job/893397927110",
-   "cause": "watched company, posting not fetched (workday)"
+   "cause": "filtered by triage rule auth.citizenship",
+   "band": "small"
   },
   {
    "company": "Omnicom",
    "title": "Data Science and Analytics04",
    "url": "https://jobright.ai/jobs/info/6a588b2268d16a30e2413f8e?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "watched company, posting not fetched (workday)",
+   "band": "large"
   },
   {
    "company": "Precision Medicine Group",
    "title": "Associate Research Scientist, Real World Evidence",
    "url": "https://job-boards.greenhouse.io/precisionmedicinegroup/jobs/6128935004",
-   "cause": "filtered by triage rule role.research_not_ml"
+   "cause": "filtered by triage rule role.research_not_ml",
+   "band": "mid"
   },
   {
    "company": "Revionics",
    "title": "New Grad: Machine Learning Engineer",
    "url": "https://revionics.com/about/careers/open-jobs?gh_jid=7172125",
-   "cause": "watched company, posting not fetched (workday)"
+   "cause": "watched company, posting not fetched (workday)",
+   "band": "small"
   },
   {
    "company": "SpaceX",
    "title": "AI Software Engineer, Vehicle Engineering",
    "url": "https://job-boards.greenhouse.io/spacex/jobs/8910071002",
-   "cause": "filtered by triage rule auth.citizenship"
+   "cause": "filtered by triage rule auth.citizenship",
+   "band": "small"
   },
   {
    "company": "Tata Consultancy Services",
    "title": "Data Scientist",
    "url": "https://jobright.ai/jobs/info/6ac5efd48ff3fb9b3bc8b77f?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "company not on watchlist",
+   "band": "large"
   },
   {
    "company": "The Aerospace Corporation",
    "title": "2026 Data Scientist",
    "url": "https://aero.wd5.myworkdayjobs.com/External/job/Colorado-Springs-CO/XMLNAME-2026-Data-Scientist_R015833",
-   "cause": "filtered by triage rule auth.citizenship"
+   "cause": "filtered by triage rule auth.citizenship",
+   "band": "mid"
   },
   {
    "company": "Torentify",
    "title": "Data Scientist - USA / Remote",
    "url": "https://jobright.ai/jobs/info/6ae8306ca2a252e219425877?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "company not on watchlist",
+   "band": "small"
   },
   {
    "company": "Vantor",
    "title": "Junior Data Scientist",
    "url": "https://maxar.wd1.myworkdayjobs.com/Vantor/job/Remote-United-States/Junior-Data-Scientist_R24603",
-   "cause": "filtered by triage rule auth.citizenship"
+   "cause": "filtered by triage rule auth.citizenship",
+   "band": "small"
   },
   {
    "company": "Venmo",
    "title": "Data Scientist - Payments Risk Management & Data Analytics",
    "url": "https://jobright.ai/jobs/info/6aaa413223b7fdf74007a362?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "company not on watchlist",
+   "band": "unknown"
   }
  ],
+ "bands": {
+  "large": {
+   "n": 25,
+   "inCatalog": 21,
+   "inCatalogNotRejected": 16
+  },
+  "mid": {
+   "n": 21,
+   "inCatalog": 19,
+   "inCatalogNotRejected": 10
+  },
+  "small": {
+   "n": 20,
+   "inCatalog": 16,
+   "inCatalogNotRejected": 11
+  },
+  "unknown": {
+   "n": 2,
+   "inCatalog": 1,
+   "inCatalogNotRejected": 0
+  }
+ },
  "staleExcluded": 2,
  "stale": [
   {

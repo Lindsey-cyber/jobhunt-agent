@@ -1384,6 +1384,12 @@ oracleHcm:
 eightfold:
   - { host: 'explore.jobs.netflix.net', domain: 'netflix.com', api: apply_v2, company: 'Netflix', size: medium_large }
   - { host: 'eaton.eightfold.ai', domain: 'eaton.com', api: pcsx, company: 'Eaton', size: medium_large }
+# aliases: one name per employer for identity checks (coverage matching, board lookups): alias -> the name it stands for. One hop only.
+# Not used for policy exclusions (data/policy.yaml compares names as written).
+aliases:
+  GDIT: General Dynamics Information Technology
+  Omnicom: Omnicom Group
+  Booz Allen: Booz Allen Hamilton
 # aggregators: sites that repost other employers' jobs and are not employers themselves. Coverage sampling skips rows whose company is listed here.
 aggregators:
   - 'Military Spouse Jobs'

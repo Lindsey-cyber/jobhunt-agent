@@ -114,9 +114,9 @@ describe("the coverage file", () => {
   });
   const r = report("2026-11-02", ["L"], judged);
   it("has exactly the tracker's fields and counts", () => {
-    expect(Object.keys(r).sort()).toEqual(["date", "inCatalog", "inCatalogNotRejected", "misses", "n", "sources", "stale", "staleExcluded"]);
+    expect(Object.keys(r).sort()).toEqual(["bands", "date", "inCatalog", "inCatalogNotRejected", "misses", "n", "sources", "stale", "staleExcluded"]);
     expect([r.n, r.inCatalog, r.inCatalogNotRejected]).toEqual([3, 2, 1]);
-    expect(r.misses.map((m) => Object.keys(m).sort())).toEqual([["cause", "company", "title", "url"], ["cause", "company", "title", "url"]]);
+    expect(r.misses.map((m) => Object.keys(m).sort())).toEqual([["band", "cause", "company", "title", "url"], ["band", "cause", "company", "title", "url"]]);
     expect(r.misses[1]).toMatchObject({ company: "Nobody", url: "https://n.test/j", cause: "company not on watchlist" });
   });
   it("summarizes in one paragraph", () => {

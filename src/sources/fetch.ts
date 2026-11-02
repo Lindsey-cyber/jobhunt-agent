@@ -7,19 +7,26 @@ import { inScopeTitle } from "../discover/triage.ts";
 import { parseAmazon, parseAshby, parseEightfold, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, eightfoldInUS, type EightfoldItem, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
 import { getJson, getText, HttpError, pool, postJson } from "./http.ts";
 
-const Board = z.object({ board: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ai: z.boolean().default(false) });
+// Size band and H-1B filing count the watchlist was built with (scripts/rebuild-watchlist.ts); coverage reads the band.
+const Sized = { band: z.enum(["large", "mid", "small", "unknown"]).optional(), h1b: z.number().optional() };
+const Board = z.object({ board: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ai: z.boolean().default(false), ...Sized });
 export const Watchlist = z.object({
   greenhouse: z.array(Board).default([]),
   lever: z.array(Board).default([]),
   ashby: z.array(Board).default([]),
   workdayQueries: z.array(z.string()).default(["new grad", "machine learning"]),
-  workday: z.array(z.object({ site: z.url(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  workday: z.array(z.object({ site: z.url(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ...Sized })).default([]),
   // Public job-list APIs of two more ATS families (SmartRecruiters Posting API,
   // Oracle HCM Candidate Experience). Searched with workdayQueries, US only.
-  smartrecruiters: z.array(z.object({ id: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
-  oracleHcm: z.array(z.object({ host: z.string(), site: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  smartrecruiters: z.array(z.object({ id: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ...Sized })).default([]),
+  oracleHcm: z.array(z.object({ host: z.string(), site: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ...Sized })).default([]),
   // Eightfold career sites: `api` picks the JSON family the tenant serves (see fetchEightfold).
-  eightfold: z.array(z.object({ host: z.string(), domain: z.string(), api: z.enum(["apply_v2", "pcsx"]).default("apply_v2"), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  eightfold: z.array(z.object({ host: z.string(), domain: z.string(), api: z.enum(["apply_v2", "pcsx"]).default("apply_v2"), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ...Sized })).default([]),
+  // Employers whose board has no adapter yet: listed for their size band only (coverage), never fetched.
+  pending: z.array(z.object({ company: z.string(), ...Sized })).default([]),
+  // One name per employer for identity checks: alias -> the name it stands for ("GDIT: General Dynamics Information
+  // Technology"). Read by coverage matching and every identity comparison of company names; not by policy exclusions.
+  aliases: z.record(z.string(), z.string()).default({}),
   // Job aggregators and boards that are not employers; coverage sampling skips rows named here.
   aggregators: z.array(z.string()).default([]),
   // Amazon's career site JSON search (no ATS board exists): AND-matched keyword queries, US only.

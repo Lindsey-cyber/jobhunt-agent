@@ -30,10 +30,11 @@ const ML_WORDS = /video generation|world models?|neural|multimodal|speech|robot 
 const ML_WORK = /deep learning|neural net|\bllms?\b|large language model|reinforcement learning|computer vision|\bnlp\b|natural language processing|transformers?\b|pytorch|tensorflow|\bjax\b|(?:train|training|fine-tun\w*|evaluat\w*|deploy\w*)\s+(?:\w+\s+){0,3}models?|(?:ml|machine learning|generative|foundation|multimodal|vision|language) models?/i;
 // In scope by the candidate's decision (2026-10-28): data scientist roles and
 // AI/data analyst roles count like ML roles.
-const DATA_SCIENCE = /data scien/i;
+// The candidate (2026-11-02): analytics engineers and statistics roles (her M.S. is in statistics) too.
+const DATA_SCIENCE = /data scien|analytics engineer|biostatistic|statistician|statistical (?:data )?analyst|statistical scientist/i;
 const AI_ANALYST = /\b(?:ai|artificial intelligence|machine learning|ml)\b[^,]{0,25}\banalyst\b/i;
 // Adjacent to the target; shown for review, not matched.
-const ADJACENT = /\bquantitative researcher\b|\bstatistician\b/i;
+const ADJACENT = /\bquantitative researcher\b/i;
 const SENIOR = /\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished|architect|vp|vice president|chief|founding)\b|\b(engineer|scientist|developer)\s+(iii|iv|3|4)\b|\b(l[5-9]|e[5-9]|ic[4-9])\b/i;
 const INTERN = /\bintern(ship)?s?\b|\bco-?op\b|summer 20\d\d|\bapprentice/i;
 const ENGINEERING = /\bengineer(ing)?\b|scientist|researcher|\bdeveloper\b|\bswe\b|\bmts\b|member of technical staff|programmer/i;

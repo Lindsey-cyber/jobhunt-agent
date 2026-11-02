@@ -135,3 +135,9 @@
 ## 3. Ashby / Lever（有验证码，agent 提交不了）
 
 见 [manual-submit.md](manual-submit.md)：共 90 个，其中 42 个的答案都已备好，复制粘贴就能投。
+
+### 2026-11-02 加入：程序投不了的三个
+
+- [ ] Nextdoor · New Grad 2026: Machine Learning Engineer — https://about.nextdoor.com/careers-list/?gh_jid=7264954 （申请页在 Nextdoor 自己的网站上，程序出错）
+- [ ] Invisible Tech · Data Scientist — https://job-boards.eu.greenhouse.io/invisibletech/jobs/4643870101 （"出差程度"和"愿意在哪些地点工作（多选）"两题程序填不上）
+- [ ] Torc Robotics · Software Engineer, I - Data Engineering — https://job-boards.greenhouse.io/torcrobotics/jobs/8649372002 （出口管制题：问你是否为某些国家的公民，你来决定怎么答）

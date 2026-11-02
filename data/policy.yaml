@@ -14,6 +14,15 @@ h1bRequiredSince: 2023
 agentAts: [greenhouse]
 # Every match within these rules is applied to without a per-posting approval (2026-11-02).
 approveMatches: true
+# How close a posting is to her background, from her resume (2026-11-02). Orders applying
+# (tier A first, then B, then C); it never excludes. Title hits count 3x, description 1x.
+fit:
+  strong: [computer vision, vision, perception, multimodal, multi-modal, foundation model, foundation models, representation learning, self-supervised, contrastive, image, video, imaging, robotics, robot, autonomous, autonomy, embodied, deep learning, research engineer, applied scientist, research scientist, machine learning engineer, ml engineer, evaluation, benchmark, agents, agentic, ai agent]
+  good: [machine learning, pytorch, llm, llms, generative, training, inference, model, models, data scientist, statistics, statistical, modeling, python, ai engineer, new grad, entry level, early career]
+  weak: [etl, dbt, tableau, power bi, looker, reporting, dashboards, salesforce, sap, frontend, front-end, react, ios, android, mobile, devops, kubernetes, terraform, sales, firmware, hardware, compliance, accounting]
+  h1bVolume: 20
+  tierA: 18
+  tierB: 8
 # Titles applied to after everything else (2026-11-02).
 applyLast: [analytics engineer]
 
@@ -24,6 +33,8 @@ excludeCompanies:
   - OpenAI
   - Anthropic
   - TikTok
+  # ByteDance is TikTok's parent; the candidate (2026-10-30): no ByteDance/TikTok.
+  - ByteDance
   - Google
   - Palantir
   # The candidate (2026-11-01): skip the well-known quant firms (low odds for her background); smaller quant shops stay.

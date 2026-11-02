@@ -142,6 +142,15 @@ export const Policy = z.object({
   applyLast: z.array(z.string()).default([]),
   // Every match within the policy counts as approved (no per-posting confirmation).
   approveMatches: z.boolean().default(false),
+  // Closeness to her background: terms read in title and description (src/discover/fit.ts).
+  fit: z.object({
+    strong: z.array(z.string()).default([]),
+    good: z.array(z.string()).default([]),
+    weak: z.array(z.string()).default([]),
+    h1bVolume: z.number().default(20),
+    tierA: z.number().default(12),
+    tierB: z.number().default(5),
+  }).default({ strong: [], good: [], weak: [], h1bVolume: 20, tierA: 12, tierB: 5 }),
 });
 export type Policy = z.infer<typeof Policy>;
 export const SearchPrefs = Policy;

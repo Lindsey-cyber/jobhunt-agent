@@ -8,6 +8,7 @@ import { loadUserData } from "./profile/load.ts";
 import { apply, sameJob } from "./run/apply.ts";
 import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
 import { applyOrder, eligibility, postedOn } from "./discover/eligibility.ts";
+import { fitOf } from "./discover/fit.ts";
 import { applicationIndex, postings, renderToday, type Blocker } from "./discover/today.ts";
 import { factSheet, type QuestionMapping } from "./plan/facts.ts";
 import { normalize } from "./plan/text.ts";
@@ -304,7 +305,8 @@ switch (command) {
     // Interleave companies, and leave two minutes between submissions to the same one.
     // Never-tried postings first, newest first (policy.applyLast at the end); then held ones that
     // today's rules can now fully answer (questions waiting on the candidate would only hold them again).
-    const fresh = applyOrder(ready.filter((j) => !sameJob(ledger, j.url)), policy);
+    const tierOf = (j: (typeof ready)[number]) => fitOf(j, policy, h1b.get(employerKey(j.company))).tier;
+    const fresh = applyOrder(ready.filter((j) => !sameJob(ledger, j.url)), policy, tierOf);
     let waiting = 0;
     const retries = applyOrder(ready.filter((j) => {
       const prior = sameJob(ledger, j.url);
@@ -316,11 +318,11 @@ switch (command) {
       const blocked = plan.items.some((i) => i.field.required && i.status === "blocked");
       if (blocked) waiting++;
       return !blocked;
-    }), policy);
+    }), policy, tierOf);
     console.log(`${fresh.length} never tried; ${retries.length} held ones now fully answerable; ${waiting} still waiting on questions for the candidate`);
     const order = [...interleaveByCompany(fresh), ...interleaveByCompany(retries)].slice(0, limit);
     if (values.list) {
-      for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${postedOn(j) || "no date   "}  ${sameJob(ledger, j.url) ? "retry" : "new  "}  ${j.company} · ${j.title}`);
+      for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${tierOf(j)}  ${postedOn(j) || "no date   "}  ${sameJob(ledger, j.url) ? "retry" : "new  "}  ${j.company} · ${j.title}`);
       break;
     }
     const lastAt = new Map<string, number>();

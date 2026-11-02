@@ -48,8 +48,9 @@ export function eligibility({ job, label, h1b, policy, payFloor, today }: Eligib
   return { ok: reasons.length === 0, lane: policy.agentAts.includes(ats) ? "agent" : "you", reasons };
 }
 
-// Apply order: titles the policy puts last go last; otherwise newest first.
-export function applyOrder<T extends Pick<Job, "title" | "publishedAt" | "firstSeen">>(jobs: T[], policy: Policy): T[] {
+// Apply order: fit tier (A, B, C) when a scorer is given, then titles the policy puts last, then newest first.
+export function applyOrder<T extends Pick<Job, "title" | "publishedAt" | "firstSeen">>(jobs: T[], policy: Policy, tierOf?: (j: T) => "A" | "B" | "C"): T[] {
   const last = (j: T) => (policy.applyLast.some((t) => j.title.toLowerCase().includes(t.toLowerCase())) ? 1 : 0);
-  return [...jobs].sort((a, b) => last(a) - last(b) || postedOn(b).localeCompare(postedOn(a)));
+  const tier = (j: T) => (tierOf ? tierOf(j) : "A");
+  return [...jobs].sort((a, b) => tier(a).localeCompare(tier(b)) || last(a) - last(b) || postedOn(b).localeCompare(postedOn(a)));
 }

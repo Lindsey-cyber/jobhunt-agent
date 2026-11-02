@@ -111,7 +111,8 @@ export const AnswerEntry = z.object({
   company: z.string().optional(),
   // A drafted answer is written for one posting and only used there.
   jobTitle: z.string().optional(),
-  origin: z.enum(["human", "generated"]).default("human"),
+  // fact: mapped by a model to one fact about her (src/plan/facts.ts); evidence names the fact.
+  origin: z.enum(["human", "generated", "fact"]).default("human"),
   // Generated answers: the resume and profile passages every fact came from.
   evidence: z.array(z.string()).optional(),
 });
@@ -139,6 +140,8 @@ export const Policy = z.object({
   h1bRequiredSince: z.number().int().nullable().default(null),
   agentAts: z.array(z.string()).default(["greenhouse"]),
   applyLast: z.array(z.string()).default([]),
+  // Every match within the policy counts as approved (no per-posting confirmation).
+  approveMatches: z.boolean().default(false),
 });
 export type Policy = z.infer<typeof Policy>;
 export const SearchPrefs = Policy;

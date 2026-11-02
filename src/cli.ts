@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { buildPlan } from "./plan/plan.ts";
 import { dirname, join } from "node:path";
 import { queueQuestions } from "./store/questions.ts";
@@ -9,6 +9,8 @@ import { apply, sameJob } from "./run/apply.ts";
 import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
 import { applyOrder, eligibility, postedOn } from "./discover/eligibility.ts";
 import { applicationIndex, postings, renderToday, type Blocker } from "./discover/today.ts";
+import { factSheet, type QuestionMapping } from "./plan/facts.ts";
+import { normalize } from "./plan/text.ts";
 import { lookupH1b } from "./sources/h1b.ts";
 import { pool } from "./sources/http.ts";
 import { readH1b, writeH1b } from "./store/h1b.ts";
@@ -91,6 +93,7 @@ const { positionals, values } = parseArgs({
     list: { type: "boolean", default: false },
     refresh: { type: "boolean", default: false },
     since: { type: "string" },
+    from: { type: "string" },
     out: { type: "string" },
   },
 });
@@ -164,6 +167,50 @@ switch (command) {
     console.log(`${n} distinct questions hold applications; see jh pending and answer with jh answer <id> <text>`);
     break;
   }
+  case "facts-map": {
+    // Answering from facts: --out DIR exports every question that holds an eligible application, with
+    // her fact sheet; a model maps each to one fact; --from FILE records the mappings in data/question-map.jsonl.
+    const u = user();
+    const mapFile = join(u.dir, "question-map.jsonl");
+    if (values.from) {
+      const items = new Map(readFileSync(join(dirname(values.from), "items.jsonl"), "utf8").split("\n").filter(Boolean).map((l) => { const i = JSON.parse(l); return [i.id, i]; }));
+      const at = new Date().toISOString();
+      const rows: QuestionMapping[] = [];
+      for (const l of readFileSync(values.from, "utf8").split("\n").filter(Boolean)) {
+        const v = JSON.parse(l); const i = items.get(v.id);
+        if (!i || !v.fact || v.fact === "none") continue;
+        rows.push({ question: i.question, ...(i.options?.length ? { options: i.options } : {}), fact: v.fact, answer: String(v.answer ?? ""), reason: String(v.reason ?? "").slice(0, 300), by: values.model ?? "model", at });
+      }
+      appendFileSync(mapFile, rows.map((r) => JSON.stringify(r)).join("\n") + (rows.length ? "\n" : ""));
+      const loaded = user().bank.answers.filter((a) => a.origin === "fact").length;
+      console.log(`recorded ${rows.length} mappings; ${loaded} fact answers load (mappings citing no fact or a choice not offered are dropped)`);
+      break;
+    }
+    const out = values.out ?? join(".scratch", "facts-map");
+    const ledger = ledgerOf(u.dir);
+    const catalog = readCatalog(paths(u.dir).catalog);
+    const today = new Date().toISOString().slice(0, 10);
+    const posts = postings({ jobs: catalog.values(), labels: new Map(readLabels(u.dir).map((l) => [l.key, l.label])), apps: applicationIndex(ledger.latest()), h1b: readH1b(u.dir), policy: u.search, payFloor: expectationFloor(u.profile.salaryExpectation), today });
+    const qs = new Map<string, { id: string; question: string; kind: string; options: string[]; companies: string[] }>();
+    for (const p of posts) {
+      if (p.state !== "held" || !p.app) continue;
+      const runDir = ledger.history(p.app.key as Parameters<typeof ledger.history>[0]).at(-1)?.runDir;
+      if (!runDir || !existsSync(`${runDir}/plan.json`)) continue;
+      const plan = buildPlan(JSON.parse(readFileSync(`${runDir}/plan.json`, "utf8")).form, u.profile, u.bank);
+      for (const it of plan.items) {
+        if (!it.field.required || it.status !== "blocked") continue;
+        const k = `${normalize(it.field.label)}|${it.field.options.join("|")}`;
+        const q = qs.get(k) ?? { id: `q${qs.size + 1}`, question: it.field.label, kind: it.field.kind, options: it.field.options, companies: [] };
+        q.companies.push(p.job.company);
+        qs.set(k, q);
+      }
+    }
+    mkdirSync(out, { recursive: true });
+    writeFileSync(join(out, "items.jsonl"), [...qs.values()].map((q) => JSON.stringify(q)).join("\n") + "\n");
+    writeFileSync(join(out, "facts.md"), factSheet(u.profile, u.bank).map((f) => `- \`${f.id}\` (${f.about}) = ${f.value}`).join("\n") + "\n");
+    console.log(`${qs.size} distinct questions hold eligible applications; wrote ${out}/items.jsonl and ${out}/facts.md`);
+    break;
+  }
   case "today": {
     // The candidate's daily page: every posting's one state, her to-dos ranked by what they unblock.
     const u = user();
@@ -223,7 +270,7 @@ switch (command) {
     const fit = [...labels.values()].filter((l) => l.label === "fit");
     // Triage promoted to auto (by the candidate, jh trust promote triage): every
     // current match counts as approved too, unless she labeled it not_fit.
-    const auto = readTrust(u.dir).triage.level === "auto";
+    const auto = readTrust(u.dir).triage.level === "auto" || u.search.approveMatches;
     const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match") : [];
     const h1b = readH1b(u.dir);
     const today = new Date().toISOString().slice(0, 10);

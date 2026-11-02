@@ -49,6 +49,8 @@ function fromBank(label: string, bank: AnswerEntry[], company: string, sensitive
 
   let best: { entry: AnswerEntry; score: number } | undefined;
   for (const entry of bank) {
+    // A fact mapping answers the question it was mapped for, never a look-alike.
+    if (entry.origin === "fact") continue;
     const score = Math.max(...questionsOf(entry, company).map((q) => jaccard(q, label)));
     if (score >= FUZZY_MIN && (!best || score > best.score)) best = { entry, score };
   }

@@ -12,6 +12,8 @@ excludeSeniorTitles: true
 h1bRequiredSince: 2023
 # The ATS the agent applies on; the rest go on her own list (2026-10-30).
 agentAts: [greenhouse]
+# Every match within these rules is applied to without a per-posting approval (2026-11-02).
+approveMatches: true
 # Titles applied to after everything else (2026-11-02).
 applyLast: [analytics engineer]
 

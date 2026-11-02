@@ -2,6 +2,7 @@ import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
 import { readAnswerLog } from "../store/answerlog.ts";
+import { acceptMapping, factSheet, type QuestionMapping } from "../plan/facts.ts";
 import { AnswerBank, Config, Profile, SearchPrefs } from "./schema.ts";
 
 export interface UserData {
@@ -41,7 +42,13 @@ export function loadUserData(dir = process.env.JH_DATA_DIR ?? "data"): UserData 
       const kept = AnswerBank.parse(existsSync(answersPath) ? readYaml(answersPath) : {});
       const logged = readAnswerLog(root);
       const ids = new Set(logged.map((a) => a.id));
-      return { answers: [...kept.answers.filter((a) => !ids.has(a.id)), ...logged] };
+      const bank = { answers: [...kept.answers.filter((a) => !ids.has(a.id)), ...logged] };
+      // Questions mapped to one fact each (src/plan/facts.ts); a mapping citing no fact is dropped.
+      const mapPath = join(root, "question-map.jsonl");
+      if (!existsSync(mapPath)) return bank;
+      const facts = new Map(factSheet(profile, bank).map((f) => [f.id, f]));
+      const mapped = readFileSync(mapPath, "utf8").split("\n").filter(Boolean).map((l) => acceptMapping(JSON.parse(l) as QuestionMapping, facts)).filter((a) => a !== undefined);
+      return { answers: [...bank.answers, ...mapped] };
     })(),
     config: Config.parse(existsSync(configPath) ? readYaml(configPath) : {}),
     search: SearchPrefs.parse(existsSync(searchPath) ? readYaml(searchPath) : {}),

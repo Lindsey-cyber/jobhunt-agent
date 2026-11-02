@@ -8,12 +8,13 @@
 // eligibility). sponsors.json is read only as a fallback when a company has no count of its own. Keeps workdayQueries, github, hn, skipped as they are.
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { parse } from "yaml";
-import { employerKey, filerName, parseH1bTable, recordFrom, SINCE_YEAR, type H1bFiling } from "../src/discover/h1b.ts";
+import { employerKey, filerName, parseH1bTable, recordFrom, type H1bFiling } from "../src/discover/h1b.ts";
 import { excludedBy } from "../src/discover/exclude.ts";
 import { ROLE } from "../src/discover/triage.ts";
 import { getJson, getText, pool } from "../src/sources/http.ts";
 import { readCatalog } from "../src/store/catalog.ts";
 import { readH1b } from "../src/store/h1b.ts";
+import { Policy } from "../src/profile/schema.ts";
 
 // ---------- pure helpers (tested in tests/watchlist.test.ts) ----------
 
@@ -77,8 +78,6 @@ export function locate(url: string): Located | undefined {
   const hit = other.find(([re]) => re.test(host));
   return hit ? { kind: "other", ats: hit[1], careers: `${u.protocol}//${host}${/^\/?$/.test(u.pathname) ? "" : `/${seg[0] ?? ""}`}` } : undefined;
 }
-
-export const CHECK_YEAR_FROM = SINCE_YEAR;
 
 const q = (s: string) => `'${s.replace(/'/g, "''")}'`;
 const plain = (s: string) => (/^[A-Za-z0-9_.-]+$/.test(s) && !/^(\d+|true|false|null|yes|no|on|off|~)$/i.test(s) ? s : q(s));
@@ -174,11 +173,11 @@ function readWatchlist(text: string): { rows: Row[]; pending: Pending[] } {
 
 // ---------- H-1B (all years since 2023 summed; the site answers one year per request) ----------
 
-async function lookupAllYears(company: string, checkedAt: string): Promise<{ filings: number } | undefined> {
+async function lookupAllYears(company: string, checkedAt: string, since: number): Promise<{ filings: number } | undefined> {
   const q2 = encodeURIComponent(filerName(company) || company.trim()).replace(/%20/g, "+");
   const filings: H1bFiling[] = [];
   try {
-    for (let y = Number(checkedAt.slice(0, 4)); y >= SINCE_YEAR; y--) {
+    for (let y = Number(checkedAt.slice(0, 4)); y >= since; y--) {
       const html = await getText(`https://h1bdata.info/index.php?em=${q2}&job=&city=&year=${y}`, 60000);
       if (!/<th>EMPLOYER<\/th>/i.test(html) && !/no results|0 results/i.test(html)) return undefined; // throttled page, not "no filings"
       filings.push(...parseH1bTable(html));
@@ -186,10 +185,10 @@ async function lookupAllYears(company: string, checkedAt: string): Promise<{ fil
   } catch {
     return undefined;
   }
-  return { filings: recordFrom(company, filings, checkedAt).filings };
+  return { filings: recordFrom(company, filings, checkedAt, since).filings };
 }
 
-async function ensureH1b(companies: string[], counts: Map<string, Count>, refresh: boolean): Promise<number> {
+async function ensureH1b(companies: string[], counts: Map<string, Count>, refresh: boolean, since: number): Promise<number> {
   // Tried again: no count yet, a failed count, or everything with --refresh-h1b.
   const todo = [...new Map(companies.map((c) => [employerKey(c), c])).entries()]
     .filter(([k]) => refresh || counts.get(k)?.filings === undefined || counts.get(k)?.filings === null)
@@ -198,12 +197,12 @@ async function ensureH1b(companies: string[], counts: Map<string, Count>, refres
   const checkedAt = NOW.toISOString();
   await pool(todo, 6, async (c) => {
     const k = employerKey(c);
-    const r = await lookupAllYears(c, checkedAt);
-    if (r) counts.set(k, { filings: r.filings, since: SINCE_YEAR, checkedAt });
+    const r = await lookupAllYears(c, checkedAt, since);
+    if (r) counts.set(k, { filings: r.filings, since, checkedAt });
     else {
       failed++;
       // A failed refresh keeps an earlier good count; a company with none is recorded as failed.
-      if (counts.get(k)?.filings === undefined || counts.get(k)?.filings === null) counts.set(k, { filings: null, since: SINCE_YEAR, checkedAt, failed: true });
+      if (counts.get(k)?.filings === undefined || counts.get(k)?.filings === null) counts.set(k, { filings: null, since, checkedAt, failed: true });
     }
     if (++done % 100 === 0) {
       writeCounts(counts);
@@ -253,8 +252,11 @@ async function liveWorkday(site: string): Promise<boolean> {
 async function main(): Promise<void> {
   const offline = arg("--offline"), dry = arg("--dry");
   const text = readFileSync(WATCHLIST, "utf8");
-  const policy = parse(readFileSync("data/policy.yaml", "utf8")) as { excludeCompanies: string[] };
+  // Loaded as src/profile/load.ts does: the same Policy schema, parsed from data/policy.yaml.
+  const policy = Policy.parse(parse(readFileSync("data/policy.yaml", "utf8")) ?? {});
   const exclude = policy.excludeCompanies;
+  const since = policy.h1bRequiredSince;
+  if (since === null) throw new Error("data/policy.yaml has no h1bRequiredSince: there is no H-1B year to look up");
   const { rows, pending: allPending } = readWatchlist(text);
 
   // Catalog history per employer key and per board.
@@ -295,7 +297,7 @@ async function main(): Promise<void> {
   const extra = [...byKey].filter(([k, h]) => h.mlTitle && !watched.has(k) && !pendingKeys.has(k) && !excludedBy(display.get(k)!, exclude)).map(([k]) => display.get(k)!);
   candidates.push(...extra);
 
-  if (!offline) await ensureH1b([...onList, ...candidates], counts, arg("--refresh-h1b"));
+  if (!offline) await ensureH1b([...onList, ...candidates], counts, arg("--refresh-h1b"), since);
   const filingsOf = (c: string): number | undefined => {
     const k = employerKey(c);
     return counts.get(k)?.filings ?? sponsors.get(k)?.filings;

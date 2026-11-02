@@ -41,13 +41,14 @@ describe("fetchWorkday full walk", () => {
     expect(r.outcome).toMatchObject({ ok: true, pages: 3, listed: 45, capHit: false });
   });
 
-  it("with a last-run bound, stops after two consecutive pages that are entirely '30+ Days Ago'", async () => {
-    const posts = [...Array.from({ length: 22 }, (_, i) => post(i, "Posted 2 Days Ago")), ...Array.from({ length: 80 }, (_, i) => post(100 + i, "Posted 30+ Days Ago"))];
+  it("a target posted '30+ Days Ago' behind 40 recent postings is fetched when the cap is above its page", async () => {
+    // Target at index 95 of the '30+' run, i.e. list position 135 (on the 7th of the 8 allowed pages); no date stops the walk.
+    const posts = [...Array.from({ length: 40 }, (_, i) => post(i, "Posted 2 Days Ago")), ...Array.from({ length: 100 }, (_, i) => post(100 + i, "Posted 30+ Days Ago", i === 95 ? "Data Engineer - Early Career" : `Machine Learning Engineer ${100 + i}`))];
     const { listCalls } = board(posts);
-    const r = await fetchWorkday(SITE, [], NOW, { since: "2026-10-20T00:00:00.000Z" });
-    expect(listCalls.map((c) => c.offset)).toEqual([0, 20, 40, 60]);
-    expect(r.outcome.capHit).toBe(false);
-    expect(r.outcome.note).toMatch(/older than the window/);
+    const r = await fetchWorkday(SITE, [], NOW, { pageCap: 8 });
+    expect(listCalls.map((c) => c.offset)).toEqual([0, 20, 40, 60, 80, 100, 120]);
+    expect(r.sightings.map((x) => x.title)).toContain("Data Engineer - Early Career");
+    expect(r.outcome).toMatchObject({ capHit: false, listed: 140 });
   });
 
   it("without a last-run bound, '30+ Days Ago' postings are open postings: the walk reads them to the end of the list (GM / Omnicom shape)", async () => {
@@ -61,31 +62,7 @@ describe("fetchWorkday full walk", () => {
     expect(r.outcome.note).toMatch(/end of list/);
   });
 
-  it("a long stale run in the middle of fresh postings (Adobe's real shape) does not end the walk", async () => {
-    const posts = [...Array.from({ length: 9 }, (_, i) => post(i, "Posted 3 Days Ago")), ...Array.from({ length: 23 }, (_, i) => post(100 + i, "Posted 30+ Days Ago")), ...Array.from({ length: 30 }, (_, i) => post(200 + i, "Posted Today"))];
-    const { listCalls } = board(posts);
-    const r = await fetchWorkday(SITE, [], NOW, { since: "2026-10-20T00:00:00.000Z" });
-    expect(listCalls.map((c) => c.offset)).toEqual([0, 20, 40, 60]);
-    expect(r.sightings).toHaveLength(62);
-  });
-
-  it("a single stale posting between fresh ones (pinned or reposted) does not stop the walk", async () => {
-    const posts = [post(0, "Posted Today"), post(1, "Posted 30+ Days Ago"), ...Array.from({ length: 30 }, (_, i) => post(10 + i, "Posted Yesterday"))];
-    const { listCalls } = board(posts);
-    const r = await fetchWorkday(SITE, [], NOW, { since: "2026-10-20T00:00:00.000Z" });
-    expect(listCalls).toHaveLength(2);
-    expect(r.sightings).toHaveLength(32);
-  });
-
-  it("stops on a page fully older than the last successful run", async () => {
-    const posts = [...Array.from({ length: 20 }, (_, i) => post(i, "Posted Today")), ...Array.from({ length: 60 }, (_, i) => post(100 + i, "Posted 5 Days Ago"))];
-    const { listCalls } = board(posts);
-    const r = await fetchWorkday(SITE, [], NOW, { since: "2026-11-01T00:00:00.000Z" });
-    expect(listCalls.map((c) => c.offset)).toEqual([0, 20, 40]);
-    expect(r.outcome.capHit).toBe(false);
-  });
-
-  it("without the since bound, '5 days ago' postings are still in the window", async () => {
+  it("'5 days ago' postings are read in full, not cut by age", async () => {
     const posts = Array.from({ length: 60 }, (_, i) => post(i, "Posted 5 Days Ago"));
     const { listCalls } = board(posts);
     await fetchWorkday(SITE, [], NOW);

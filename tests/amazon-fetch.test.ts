@@ -50,6 +50,20 @@ describe("fetchAmazon", () => {
     expect(offsets).toEqual([0, 100]);
   });
 
+  it("a query that hits its cap with hits left over reports capHit, as Workday does", async () => {
+    amazon(Array.from({ length: 500 }, (_, i) => job(i, `ML Engineer ${i}`)));
+    const r = await fetchAmazon(["machine learning"], NOW, 200);
+    expect(r.outcome).toMatchObject({ ok: true, capHit: true });
+    expect(r.outcome.note).toMatch(/cap 200 hit, recall bounded/);
+  });
+
+  it("a query whose hits end inside the cap does not report capHit, even when the total is exactly the cap", async () => {
+    amazon(Array.from({ length: 200 }, (_, i) => job(i, `ML Engineer ${i}`)));
+    const r = await fetchAmazon(["machine learning"], NOW, 200);
+    expect(r.outcome.capHit).toBe(false);
+    expect(r.outcome.note).not.toMatch(/recall bounded/);
+  });
+
   it("keeps only in-scope titles but still keeps an out-of-scope-for-the-candidate role that names AI (triage rejects it later)", async () => {
     amazon([job(1, "Executive Assistant, AWS AI Platforms"), job(2, "Warehouse Associate")]);
     const r = await fetchAmazon(["artificial intelligence"], NOW);

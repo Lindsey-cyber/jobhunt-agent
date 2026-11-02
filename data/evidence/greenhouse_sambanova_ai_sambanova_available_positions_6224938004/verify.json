@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -70,11 +70,22 @@
       "expected": "Yes",
       "actual": "Yes",
       "pass": true
+    },
+    {
+      "fieldId": "question_20291849004",
+      "label": "Years of ML Infrastructure experience",
+      "expected": "2",
+      "actual": "2",
+      "pass": true
+    },
+    {
+      "fieldId": "question_20291845004[]",
+      "label": "Preferred office?",
+      "expected": "San Jose, CA",
+      "actual": "San Jose, CA",
+      "pass": true
     }
   ],
-  "emptyRequired": [
-    "Years of ML Infrastructure experience",
-    "Preferred office?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

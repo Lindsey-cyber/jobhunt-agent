@@ -358,7 +358,7 @@
         ]
       }
     ],
-    "priorApplications": 0
+    "priorApplications": 1
   },
   "items": [
     {
@@ -789,7 +789,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_20291849004",
         "label": "Years of ML Infrastructure experience",
@@ -803,10 +803,16 @@
           "4"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "2",
+      "source": {
+        "type": "profile",
+        "path": "answers.yearsOfExperience"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_20291845004[]",
         "label": "Preferred office?",
@@ -819,7 +825,13 @@
           "N/A"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "San Jose, CA",
+      "source": {
+        "type": "profile",
+        "path": "contact.address.city"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

@@ -1389,7 +1389,6 @@ eightfold:
 aliases:
   GDIT: General Dynamics Information Technology
   Omnicom: Omnicom Group
-  Venmo: PayPal
   Booz Allen: Booz Allen Hamilton
 # aggregators: sites that repost other employers' jobs and are not employers themselves. Coverage sampling skips rows whose company is listed here.
 aggregators:

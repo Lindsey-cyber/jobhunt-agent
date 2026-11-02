@@ -20,11 +20,10 @@ const stubFetch = (reply: (url: string) => Response) => vi.stubGlobal("fetch", v
 afterEach(() => vi.unstubAllGlobals());
 
 describe("company aliases", () => {
-  const canon = makeCanon({ GDIT: "General Dynamics Information Technology", Omnicom: "Omnicom Group", Venmo: "PayPal" });
+  const canon = makeCanon({ GDIT: "General Dynamics Information Technology", Omnicom: "Omnicom Group" });
   it("makes both names of one employer equal, whatever the spelling or legal suffix", () => {
     expect(canon("GDIT")).toBe(canon("General Dynamics Information Technology, Inc."));
     expect(canon("Omnicom Group")).toBe(canon("omnicom"));
-    expect(canon("Venmo")).toBe(canon("PayPal Inc"));
   });
   it("leaves every other name as normCompany has it, and does not merge near names", () => {
     expect(canon("General Dynamics Mission Systems")).toBe(normCompany("General Dynamics Mission Systems"));
@@ -41,22 +40,27 @@ describe("company aliases", () => {
     const c = makeCanon(loadWatchlist().aliases);
     expect(c("GDIT")).toBe(c("General Dynamics Information Technology"));
     expect(c("Omnicom")).toBe(c("Omnicom Group"));
-    expect(c("Venmo")).toBe(c("PayPal"));
     expect(c("Booz Allen")).toBe(c("Booz Allen Hamilton"));
   });
-  it("coverage matching follows it: a GDIT catalog row answers a long-name list row, Venmo is PayPal", () => {
+  it("coverage matching follows it: a GDIT catalog row answers a long-name list row", () => {
     const idx = indexCatalog([job({ key: "workday:gdit:rq230485", company: "GDIT", title: "Data Scientist" }), job({ key: "workday:paypal:r1", company: "PayPal", title: "Data Scientist - Payments Risk" })], canon);
     expect(match(row("General Dynamics Information Technology", "Data Scientist"), idx)?.job.key).toBe("workday:gdit:rq230485");
-    expect(match(row("Venmo", "Data Scientist - Payments Risk"), idx)?.job.key).toBe("workday:paypal:r1");
+    expect(match(row("PayPal", "Data Scientist - Payments Risk"), idx)?.job.key).toBe("workday:paypal:r1");
     expect(match(row("Omnicom", "Data Scientist"), idx)).toBeUndefined();
+  });
+  it("a subsidiary is not its parent: a Venmo row does NOT match a PayPal posting, with or without the table", () => {
+    const paypal = job({ key: "workday:paypal:r1", company: "PayPal", title: "Data Scientist - Payments Risk" });
+    expect(match(row("Venmo", "Data Scientist - Payments Risk"), indexCatalog([paypal], canon))).toBeUndefined();
+    expect(match(row("Venmo", "Data Scientist - Payments Risk"), indexCatalog([paypal]))).toBeUndefined();
+    expect(makeCanon(loadWatchlist().aliases)("Venmo")).not.toBe(makeCanon(loadWatchlist().aliases)("PayPal"));
   });
   it("without the table the same rows miss (the table is what fixes it)", () => {
     const idx = indexCatalog([job({ key: "workday:gdit:rq230485", company: "GDIT", title: "Data Scientist" })]);
     expect(match(row("General Dynamics Information Technology", "Data Scientist"), idx)).toBeUndefined();
   });
   it("aggregator check and sample de-duplication use it", () => {
-    expect(isAggregator("Venmo", ["PayPal"], canon)).toBe(true);
-    expect(isAggregator("Venmo", ["PayPal"])).toBe(false);
+    expect(isAggregator("GDIT", ["General Dynamics Information Technology"], canon)).toBe(true);
+    expect(isAggregator("GDIT", ["General Dynamics Information Technology"])).toBe(false);
     expect(sampleOf([row("GDIT", "Data Scientist"), row("General Dynamics Information Technology", "Data Scientist")], 10, canon)).toHaveLength(1);
   });
 });
@@ -65,11 +69,11 @@ describe("size bands", () => {
   it.each([
     [undefined, "unknown"], [Number.NaN, "unknown"], [-1, "unknown"], [0, "small"], [19, "small"], [20, "mid"], [199, "mid"], [200, "large"], [6492, "large"],
   ] as const)("%s filings is %s", (n, b) => expect(bandOf(n)).toBe(b));
-  const canon = makeCanon({ Venmo: "PayPal" });
-  const watch = watchBands([{ company: "PayPal", band: "large" }, { company: "Acme", band: "small" }, { company: "Acme Inc", band: "mid" }, { company: "Blank" }], canon);
+  const canon = makeCanon({ GDIT: "General Dynamics Information Technology" });
+  const watch = watchBands([{ company: "General Dynamics Information Technology", band: "large" }, { company: "Acme", band: "small" }, { company: "Acme Inc", band: "mid" }, { company: "Blank" }], canon);
   const filings = (c: string) => ({ globex: 25, paypal: 9999, blank: 300 })[normCompany(c)];
   it("takes the largest band of a company that has several boards", () => expect(watch.get("acme")).toBe("mid"));
-  it("uses the watchlist band first, an alias included", () => expect(bandOfCompany("Venmo", canon, { watch, filings: () => 1 })).toBe("large"));
+  it("uses the watchlist band first, an alias included", () => expect(bandOfCompany("GDIT", canon, { watch, filings: () => 1 })).toBe("large"));
   it("falls back to filings when the watchlist band is unknown or absent", () => {
     expect(bandOfCompany("Blank", canon, { watch, filings })).toBe("large");
     expect(bandOfCompany("Globex", canon, { watch, filings })).toBe("mid");
@@ -171,8 +175,8 @@ describe("resample toward the target", () => {
   const pool = Array.from({ length: 10 }, (_, k) => row(`Co${String(k).padStart(2, "0")}`, "ML Engineer"));
   it("asks for nothing when n already meets the target", () => expect(resampleRows(pool, [], 100, 100)).toEqual([]));
   it("asks for the shortfall, skipping rows already taken (aliased names included)", () => {
-    const canon = makeCanon({ Venmo: "Co00" });
-    const more = resampleRows(pool, [row("Venmo", "ML Engineer")], 98, 100, canon);
+    const canon = makeCanon({ Zed: "Co00" });
+    const more = resampleRows(pool, [row("Zed", "ML Engineer")], 98, 100, canon);
     expect(more).toHaveLength(2);
     expect(more.map((r) => r.company)).not.toContain("Co00");
   });
@@ -223,16 +227,20 @@ describe("watched postings the checker used to call not fetched", () => {
   // Revionics: the employer's page still carries gh_jid, but its only board is Workday, read in full, and lists no such posting.
   const revionics = row("Revionics", "New Grad: Machine Learning Engineer", { url: "https://revionics.com/about/careers/open-jobs?gh_jid=7172125" });
   const wd = (titles: string[], partial = false): WatchedBoard => ({ ats: "workday", site: "aptos/revionics", titles, keys: titles.map((_, i) => `workday:aptos:jr${i}`), partial });
-  it("Revionics: a gh_jid on the employer's domain with no Greenhouse board is judged against the boards it has", () => {
-    expect(liveness(revionics, [wd(["Sr. Machine Learning Engineer", "Product Manager"])])).toBe("not_listed");
+  it("Revionics: a gh_jid on the employer's domain with no Greenhouse board is never stale: its board is Workday, not the id's", () => {
+    expect(liveness(revionics, [wd(["Product Manager", "Account Executive"])])).toBe("unknown");
     expect(liveness(revionics, [wd(["New Grad: Machine Learning Engineer"])])).toBe("live");
     expect(liveness(revionics, [wd(["Product Manager"], true)])).toBe("unknown");
     expect(liveness(revionics, [{ ats: "workday" }])).toBe("unknown");
   });
-  it("Revionics: gone from the board is stale, not 'watched, posting not fetched'", () => {
+  it("Revionics: gone from the Workday board is not stale (the link's id is not a Workday id): watched, posting not fetched", () => {
     const idx = indexCatalog([]);
-    expect(causeOf(revionics, undefined, idx, [wd(["Sr. Machine Learning Engineer"])])).toMatch(/^stale list entry/);
-    expect(causeOf(revionics, undefined, idx, [wd(["Sr. Machine Learning Engineer"], true)])).toMatch(/^watched company, posting not fetched/);
+    expect(causeOf(revionics, undefined, idx, [wd(["Product Manager", "Account Executive"])])).toMatch(/^watched company, posting not fetched/);
+    expect(causeOf(revionics, undefined, idx, [wd(["Product Manager", "Account Executive"], true)])).toMatch(/^watched company, posting not fetched/);
+  });
+  it("a gh_jid on the employer's domain with a Greenhouse board read in full and the id absent is stale", () => {
+    const gh: WatchedBoard = { ats: "greenhouse", board: "revionics", titles: ["Other"], keys: ["greenhouse:9"] };
+    expect(liveness(row("Revionics", "New Grad: Machine Learning Engineer", { url: "https://revionics.com/careers?gh_jid=7172125" }), [gh, wd(["X"])])).toBe("not_listed");
   });
   it("a gh_jid with a Greenhouse board known, or a link on greenhouse.io itself, is still judged on that board", () => {
     const gh: WatchedBoard = { ats: "greenhouse", board: "acme", titles: ["A"], keys: ["greenhouse:1"] };

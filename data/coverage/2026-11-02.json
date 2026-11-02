@@ -5,7 +5,7 @@
   "jobright-ai/2026-Software-Engineer-New-Grad",
   "vanshb03/New-Grad-2027"
  ],
- "n": 66,
+ "n": 68,
  "inCatalog": 57,
  "inCatalogNotRejected": 37,
  "misses": [
@@ -178,6 +178,13 @@
    "band": "mid"
   },
   {
+   "company": "Revionics",
+   "title": "New Grad: Machine Learning Engineer",
+   "url": "https://revionics.com/about/careers/open-jobs?gh_jid=7172125",
+   "cause": "watched company, posting not fetched (workday)",
+   "band": "small"
+  },
+  {
    "company": "SpaceX",
    "title": "AI Software Engineer, Vehicle Engineering",
    "url": "https://job-boards.greenhouse.io/spacex/jobs/8910071002",
@@ -211,6 +218,13 @@
    "url": "https://maxar.wd1.myworkdayjobs.com/Vantor/job/Remote-United-States/Junior-Data-Scientist_R24603",
    "cause": "filtered by triage rule auth.citizenship",
    "band": "small"
+  },
+  {
+   "company": "Venmo",
+   "title": "Data Scientist - Payments Risk Management & Data Analytics",
+   "url": "https://jobright.ai/jobs/info/6aaa413223b7fdf74007a362?utm_campaign=Data%20Analysis&utm_source=1103",
+   "cause": "company not on watchlist",
+   "band": "unknown"
   }
  ],
  "bands": {
@@ -225,27 +239,22 @@
    "inCatalogNotRejected": 10
   },
   "small": {
-   "n": 19,
+   "n": 20,
    "inCatalog": 16,
    "inCatalogNotRejected": 11
   },
   "unknown": {
-   "n": 1,
+   "n": 2,
    "inCatalog": 1,
    "inCatalogNotRejected": 0
   }
  },
- "staleExcluded": 3,
+ "staleExcluded": 2,
  "stale": [
   {
    "company": "Nextdoor",
    "title": "New Grad 2026: Machine Learning Engineer, Machine Learning",
    "url": "https://about.nextdoor.com/careers-list/?gh_jid=7264954"
-  },
-  {
-   "company": "Revionics",
-   "title": "New Grad: Machine Learning Engineer",
-   "url": "https://revionics.com/about/careers/open-jobs?gh_jid=7172125"
   },
   {
    "company": "SMX",

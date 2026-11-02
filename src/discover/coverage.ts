@@ -106,7 +106,7 @@ export function normCompany(s: string): string {
 }
 
 // One name per employer for identity checks (config/watchlist.yaml `aliases:`, alias -> name it stands for): "GDIT" and
-// "General Dynamics Information Technology" are one company, and Venmo is PayPal. Both sides are normalized, so
+// "General Dynamics Information Technology" are one company, and a subsidiary is not its parent (no alias for that). Both sides are normalized, so
 // spelling and legal suffixes do not matter. One hop only: an alias that points at another alias is a mistake
 // (a chain or a loop would make two names compare unequal), and it throws. This is identity, never eligibility:
 // policy exclusions still compare the names as written.
@@ -363,13 +363,14 @@ export function liveness(r: SampleRow, known: readonly WatchedBoard[]): Liveness
   const near = exact || known.some((b) => b.titles?.some((t) => similarity(t, r.title) >= FUZZY));
   if (key === undefined) return near ? "live" : "unknown";
   const ats = atsOf(key)!;
-  // The employer's site names the posting by another site's id (a Workday requisition given by its Eightfold page), or the link
-  // embeds an ATS id (gh_jid) on the employer's own domain while the employer's boards are on other ATSs (Revionics moved from
-  // Greenhouse to Workday and the old page still carries gh_jid): the id says nothing about those boards, so the posting is
-  // judged on its requisition (if known) and its title against every board, all of which must have been read in full to call it gone.
   const embedded = ats === "greenhouse" && !hostIsAts(r.url!, "greenhouse.io");
-  const elsewhere = req !== undefined || (embedded && !known.some((b) => b.ats === ats));
-  if (elsewhere) return known.every(readInFull) ? (exact ? "live" : "not_listed") : near ? "live" : "unknown";
+  // The employer's site names the posting by another site's id (a Workday requisition given by its Eightfold page): the
+  // Workday boards, all read in full, decide it, and the title otherwise. A link that embeds an ATS id (gh_jid) on the
+  // employer's own domain while the company has no board of that ATS (Revionics moved from Greenhouse to Workday and the
+  // old page still carries gh_jid) names a board nobody read: the id says nothing, so only a title proves it live and
+  // nothing proves it gone.
+  if (req !== undefined) return known.every(readInFull) ? (exact ? "live" : "not_listed") : near ? "live" : "unknown";
+  if (embedded && !known.some((b) => b.ats === ats)) return near ? "live" : "unknown";
   // The exact board the link names: a Workday site, or a Greenhouse/Lever/Ashby slug. Another board of the same company
   // says nothing about this posting. A link that names no board is judged against every board of its ATS.
   const site = ats === "workday" ? workdaySite(r.url!) : undefined;

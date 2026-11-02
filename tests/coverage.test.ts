@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { causeOf, fits, indexCatalog, match, notIndependent, parseListTable, report, sampleOf, summarize, urlsIn, type Judged, type SampleRow } from "../src/discover/coverage.ts";
 import type { Job, JobKey } from "../src/domain/job.ts";
+import { requireIndependent, type SampleList } from "../src/sources/coverage.ts";
 
 const job = (o: Partial<Job> & Pick<Job, "key" | "company" | "title">): Job =>
   ({ location: "Remote, US", url: `https://x.test/${o.key}`, official: false, publishedAt: "", description: "", sources: [], firstSeen: "", lastSeen: "", triage: { verdict: "match", rule: "role.match", reason: "" }, hints: {}, size: "unknown", ...o }) as Job;
@@ -63,6 +64,12 @@ describe("matching", () => {
   it("never counts a senior catalog row as the entry-level posting", () => {
     expect(match(row("Beta", "ML Engineer"), idx)).toBeUndefined();
   });
+  it("a row whose ATS URL names a posting not in the catalog is a miss, even with the same company and title", () => {
+    const other = indexCatalog([job({ key: "greenhouse:999" as JobKey, company: "Acme", title: "ML Engineer", official: true })]);
+    const r = row("Acme", "ML Engineer", { url: "https://boards.greenhouse.io/acme/jobs/123" });
+    expect(match(r, other)).toBeUndefined();
+    expect(causeOf(r, undefined, other, [])).toBe("watched company, posting not fetched (greenhouse)");
+  });
 });
 
 describe("causes", () => {
@@ -110,5 +117,18 @@ describe("the coverage file", () => {
   });
   it("summarizes in one paragraph", () => {
     expect(summarize(r)).toContain("2/3 sampled postings are in the catalog");
+  });
+});
+
+describe("independence check before fetching", () => {
+  const list = (name: string, url: string, raw: string): SampleList => ({ name, url, raw });
+  const watch = urlsIn("- { name: SimplifyJobs/New-Grad-Positions, url: 'https://github.com/SimplifyJobs/New-Grad-Positions', raw: 'https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/x.json' }");
+  it("refuses a sample list whose repo appears in the watchlist text", () => {
+    const same = list("SimplifyJobs/New-Grad-Positions", "https://github.com/SimplifyJobs/New-Grad-Positions", "https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/main/README.md");
+    expect(() => requireIndependent([same], watch)).toThrow(/refused: SimplifyJobs\/New-Grad-Positions/);
+  });
+  it("passes when no sample list's repo is in the watchlist", () => {
+    const other = list("vanshb03/New-Grad-2027", "https://github.com/vanshb03/New-Grad-2027", "https://raw.githubusercontent.com/vanshb03/New-Grad-2027/dev/README.md");
+    expect(() => requireIndependent([other], watch)).not.toThrow();
   });
 });

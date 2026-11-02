@@ -6,8 +6,8 @@
   "vanshb03/New-Grad-2027"
  ],
  "n": 100,
- "inCatalog": 70,
- "inCatalogNotRejected": 53,
+ "inCatalog": 67,
+ "inCatalogNotRejected": 50,
  "misses": [
   {
    "company": "66 Degrees",
@@ -178,6 +178,12 @@
    "cause": "company not on watchlist"
   },
   {
+   "company": "Nextdoor",
+   "title": "New Grad 2026: Machine Learning Engineer, Machine Learning",
+   "url": "https://about.nextdoor.com/careers-list/?gh_jid=7264954",
+   "cause": "watched company, posting not fetched (greenhouse)"
+  },
+  {
    "company": "Northeastern University",
    "title": "Research Engineer",
    "url": "https://northeastern.wd1.myworkdayjobs.com/careers/job/Boston-MA-Main-Campus/Research-Engineer_R143103",
@@ -238,6 +244,12 @@
    "cause": "filtered by triage rule role.research_not_ml"
   },
   {
+   "company": "Revionics",
+   "title": "New Grad: Machine Learning Engineer",
+   "url": "https://revionics.com/about/careers/open-jobs?gh_jid=7172125",
+   "cause": "company not on watchlist"
+  },
+  {
    "company": "Salesforce",
    "title": "AI Forward Deployed Engineer (Early Career)",
    "url": "",
@@ -253,6 +265,12 @@
    "company": "Sixtyfour (X25)",
    "title": "Founding Engineer, AI Research Agents (Full-Stack) 🇺🇸",
    "url": "",
+   "cause": "company not on watchlist"
+  },
+  {
+   "company": "SMX",
+   "title": "Junior Data Scientist",
+   "url": "https://www.smxtech.com/careers/?gh_jid=7498313003",
    "cause": "company not on watchlist"
   },
   {

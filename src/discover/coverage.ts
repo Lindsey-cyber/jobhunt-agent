@@ -161,8 +161,12 @@ const candidate = (j: Job) => !tooSenior(j.title) && j.triage.rule !== "location
 export function match(r: SampleRow, idx: CatalogIndex): Matched | undefined {
   if (r.url) {
     const k = jobKey(r.url);
-    const byKey = atsOf(k) ? idx.byKey.get(k) : undefined;
-    if (byKey) return { job: byKey, how: "key" };
+    // An ATS URL that names a posting decides alone: if that posting is not in the catalog, it is a miss,
+    // even when the catalog holds another posting with the same company and title.
+    if (atsOf(k)) {
+      const byKey = idx.byKey.get(k);
+      return byKey ? { job: byKey, how: "key" } : undefined;
+    }
   }
   const cand = (idx.byCompany.get(normCompany(r.company)) ?? []).filter(candidate);
   const exact = cand.find((j) => normTitle(j.title) === normTitle(r.title));

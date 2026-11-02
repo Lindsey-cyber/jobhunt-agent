@@ -93,7 +93,7 @@ describe("causes", () => {
   });
   it("calls a list entry stale only when its own id is missing from a complete board of its ATS", () => {
     const withId = row("Acme", "Vision Engineer", { url: "https://job-boards.greenhouse.io/acme/jobs/999" });
-    expect(cause(withId, [{ ats: "greenhouse", titles: ["Chef"], keys: ["greenhouse:123"] }])).toMatch(/^stale list entry/);
+    expect(cause(withId, [{ ats: "greenhouse", board: "acme", titles: ["Chef"], keys: ["greenhouse:123"] }])).toMatch(/^stale list entry/);
   });
   it("never calls a list entry stale on its title alone, however the board reads", () => {
     expect(cause(row("Acme", "Vision Engineer"), [{ ats: "greenhouse", titles: ["Chef"], keys: [] }])).not.toMatch(/^stale/);
@@ -138,7 +138,7 @@ describe("independence check before fetching", () => {
 });
 
 describe("stale list entries", () => {
-  const board = (ats: string, o: Partial<WatchedBoard> = {}): WatchedBoard => ({ ats, titles: ["Chef"], keys: [], ...o });
+  const board = (ats: string, o: Partial<WatchedBoard> = {}): WatchedBoard => ({ ats, board: "acme", titles: ["Chef"], keys: [], ...o });
   const ghRow = (id: number, title = "Vision Engineer") => row("Acme", title, { url: `https://job-boards.greenhouse.io/acme/jobs/${id}` });
   const wdSite = "nvidia/nvidiaexternalcareersite";
   const wdUrl = "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Deep-Learning-Engineer_JR2028177";
@@ -173,8 +173,8 @@ describe("stale list entries", () => {
       expect(liveness(ghRow(999), [board("greenhouse", { keys: [], partial: true })])).toBe("unknown");
       expect(liveness(ghRow(999), [board("greenhouse", { keys: undefined })])).toBe("unknown");
     });
-    it("unknown when a board of that ATS is read but another of its boards for the company is not", () => {
-      expect(liveness(ghRow(999), [board("greenhouse", { keys: ["greenhouse:1"] }), { ats: "greenhouse" }])).toBe("unknown");
+    it("the link's own board read in full proves it gone, whatever another board of the company did not read", () => {
+      expect(liveness(ghRow(999), [board("greenhouse", { keys: ["greenhouse:1"] }), { ats: "greenhouse", board: "other" }])).toBe("not_listed");
     });
     it("a partial read can still prove a posting live, by title", () => {
       expect(liveness(row("NVIDIA", "Deep Learning Engineer"), [wdBoard(["Deep Learning Engineer"], [], { partial: true })])).toBe("live");

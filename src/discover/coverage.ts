@@ -15,6 +15,8 @@ export interface SampleRow {
   list: string;
   // The apply link the list gave: an ATS URL gives a JobKey, anything else is matched by name.
   url?: string | undefined;
+  // The list itself marks the posting closed (🔒 in the link column): history, not an opening.
+  closed?: boolean | undefined;
 }
 
 export interface Miss {
@@ -69,10 +71,23 @@ export const urlsIn = (text: string): string[] => text.match(/https?:\/\/[^\s'"<
 
 // ---- names ----------------------------------------------------------------------------------------
 
-export const normCompany = (s: string): string =>
+// Plain text normalization (titles): lowercase, "&" as "and", legal words and punctuation dropped.
+const normText = (s: string): string =>
   s.toLowerCase().replace(/&/g, " and ").replace(/\b(inc|llc|ltd|corp|corporation|co|company|the)\b\.?/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+
+// Legal-form words only, dropped from the END of a name: "Acme, LLC" is "Acme". Every other word is meaningful:
+// "General Motors" is not "General", "Bank of America" is not "Bank of".
+const LEGAL_SUFFIX = new Set(["inc", "llc", "ltd", "corp", "corporation", "co", "plc", "gmbh", "lp", "llp"]);
+
+// Company names: accents, dots and parentheticals dropped, "&" as "and", lowercase, a trailing legal suffix dropped.
+export function normCompany(s: string): string {
+  const base = s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/\([^)]*\)/g, " ").replace(/\./g, "");
+  const words = base.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim().split(" ").filter(Boolean);
+  while (words.length > 1 && LEGAL_SUFFIX.has(words.at(-1)!)) words.pop();
+  return words.join(" ");
+}
 export const normTitle = (s: string): string =>
-  normCompany(s.replace(/\(.*?\)|\[.*?\]/g, " ").replace(/\b(new (college )?grad(uate)?|early career|university grad(uate)?|campus|2026|2027|full[- ]time)\b/gi, " "));
+  normText(s.replace(/\(.*?\)|\[.*?\]/g, " ").replace(/\b(new (college )?grad(uate)?|early career|university grad(uate)?|campus|2026|2027|full[- ]time)\b/gi, " "));
 const tokens = (s: string) => new Set(normTitle(s).split(" ").filter((t) => t.length > 1));
 export function similarity(a: string, b: string): number {
   const x = tokens(a);
@@ -111,7 +126,7 @@ export function parseListTable(list: string, md: string): SampleRow[] {
     let company = cellText(c[0]!);
     if (company.startsWith("↳")) company = prev;
     else prev = company;
-    out.push({ company, title: cellText(c[1]!), location: cellText(c[2]!), date: cellText(c[c.length - 1]!), list, url: cellLink(c[3]!) ?? cellLink(c[1]!) });
+    out.push({ company, title: cellText(c[1]!), location: cellText(c[2]!), date: cellText(c[c.length - 1]!), list, url: cellLink(c[3]!) ?? cellLink(c[1]!), ...(c[3]!.includes("🔒") ? { closed: true } : {}) });
   }
   return out;
 }
@@ -126,6 +141,7 @@ const ABROAD = /united kingdom|canada|india|germany|australia|new zealand/i;
 // US, early-career, ML/AI/data title, listed within `maxAgeDays`, and not out under her policy.
 export function fits(r: SampleRow, policy: Parameters<typeof policyExcludes>[2] & Pick<Policy, "excludeSeniorTitles">, now: Date, maxAgeDays = 30): boolean {
   const d = parseListDate(r.date, now);
+  if (r.closed) return false;
   if (!d || now.getTime() - d.getTime() > maxAgeDays * 864e5) return false;
   if (!FIT.test(r.title) || NOT_ENTRY.test(r.title) || !US.test(r.location) || ABROAD.test(r.location)) return false;
   if (policy.excludeSeniorTitles && tooSenior(r.title)) return false;
@@ -195,10 +211,28 @@ export interface WatchedBoard {
   partial?: boolean | undefined;
   // Workday only: "tenant/site" of the career site this board is (see workdaySite). A link on another site is not this board's.
   site?: string | undefined;
+  // Greenhouse/Lever/Ashby: the board slug (see boardOf). A link naming another slug is not this board's.
+  board?: string | undefined;
 }
 
 // A board read in full: its titles and its ids are both known, and nothing was cut short.
 export const readInFull = (b: WatchedBoard): boolean => b.titles !== undefined && b.keys !== undefined && !b.partial;
+
+// The board slug an ATS apply link names, lowercase: greenhouse/<slug>/jobs/<id>, jobs.lever.co/<slug>/<id>,
+// jobs.ashbyhq.com/<slug>/<id>, or a Greenhouse embed with ?for=<slug>. Undefined when the link names none.
+export function boardOf(url: string): string | undefined {
+  let u: URL;
+  try {
+    u = new URL(url);
+  } catch {
+    return undefined;
+  }
+  const host = u.hostname.toLowerCase();
+  const parts = u.pathname.split("/").filter(Boolean).map((p) => p.toLowerCase());
+  if (host.endsWith("greenhouse.io")) return u.searchParams.get("for")?.toLowerCase() || (parts[1] === "jobs" ? parts[0] : undefined);
+  if (host === "jobs.lever.co" || host === "jobs.eu.lever.co" || host === "jobs.ashbyhq.com") return parts[0];
+  return undefined;
+}
 
 // "tenant/site" of a Workday job link or career-site URL (a locale segment such as en-US is skipped); undefined otherwise.
 export function workdaySite(url: string): string | undefined {
@@ -218,23 +252,27 @@ export function workdaySite(url: string): string | undefined {
 export type Liveness = "live" | "not_listed" | "unknown";
 
 // Is a sampled posting still on its employer's official board(s)? Live: a board lists its job id (when the list's
-// link names one) or its title (exact, or near). Not listed (stale) only when the posting's own id is known from its
-// link, and every board of that ATS for the company (the same Workday site, for Workday) was read in full, and none
-// lists the id. A title alone never proves a posting gone; neither does a link without an ATS id, nor a board of that
-// ATS that was not read. Everything else is unknown.
+// link names one), or lists its title. When the link names the id and every board of that ATS for the company (the
+// same Workday site, for Workday) was read in full without it, the id is gone: only the identical title (a repost
+// under a new id) keeps the entry live, a merely near title never does (Nextdoor's "Machine Learning Engineer, Machine
+// Learning" is not "Machine Learning Engineer - Ads"). Without such a complete read, or without an id in the link, a
+// title (exact, or near) proves live and nothing proves gone. Everything else is unknown.
 export function liveness(r: SampleRow, known: readonly WatchedBoard[]): Liveness {
   if (known.length === 0) return "unknown";
   const named = r.url ? jobKey(r.url) : undefined;
   const key = named && atsOf(named) ? named : undefined;
-  const live = known.some(
-    (b) => (key !== undefined && b.keys?.includes(key)) || b.titles?.some((t) => normTitle(t) === normTitle(r.title) || similarity(t, r.title) >= FUZZY),
-  );
-  if (live) return "live";
-  if (key === undefined) return "unknown";
+  if (key !== undefined && known.some((b) => b.keys?.includes(key))) return "live";
+  const exact = known.some((b) => b.titles?.some((t) => normTitle(t) === normTitle(r.title)));
+  const near = exact || known.some((b) => b.titles?.some((t) => similarity(t, r.title) >= FUZZY));
+  if (key === undefined) return near ? "live" : "unknown";
   const ats = atsOf(key)!;
+  // The exact board the link names: a Workday site, or a Greenhouse/Lever/Ashby slug. Another board of the same company
+  // says nothing about this posting. A link that names no board is judged against every board of its ATS.
   const site = ats === "workday" ? workdaySite(r.url!) : undefined;
-  const same = known.filter((b) => b.ats === ats && (ats !== "workday" || b.site === site));
-  return same.length > 0 && same.every(readInFull) ? "not_listed" : "unknown";
+  const slug = ats === "workday" ? undefined : boardOf(r.url!);
+  const same = known.filter((b) => b.ats === ats && (ats !== "workday" || b.site === site) && (slug === undefined || b.board?.toLowerCase() === slug));
+  if (same.length > 0 && same.every(readInFull)) return exact ? "live" : "not_listed";
+  return near ? "live" : "unknown";
 }
 
 export const STALE_CAUSE = "stale list entry";

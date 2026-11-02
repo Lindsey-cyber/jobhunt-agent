@@ -101,6 +101,14 @@ export interface WorkdayOptions {
   perQuery?: number;
 }
 
+// Titles whose detail a Workday walk reads: the AI/ML shapes (ROLE) plus the roles the candidate put in scope on
+// 2026-10-28/11-02: data scientist, statistics and AI/data analyst titles. triage.ts holds the same two patterns
+// privately; without them here a listed "Data Scientist" was never fetched and so never reached the catalog.
+export const IN_SCOPE_TITLE = new RegExp(
+  `${ROLE.source}|data scien|biostatistic|statistician|statistical (?:data )?analyst|statistical scientist|\\b(?:ai|artificial intelligence|machine learning|ml)\\b[^,]{0,25}\\banalyst\\b`,
+  "i",
+);
+
 export const WORKDAY_PAGE = 20;
 // Workday itself serves at most 2000 postings per search (100 pages of 20).
 export const WORKDAY_PAGE_CAP = 100;
@@ -131,7 +139,7 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
       for (const p of posts) {
         if (!p.externalPath) continue;
         listed++;
-        if (ROLE.test(p.title ?? "")) paths.set(p.externalPath, { title: p.title ?? "", postedOn: p.postedOn ?? "" });
+        if (IN_SCOPE_TITLE.test(p.title ?? "")) paths.set(p.externalPath, { title: p.title ?? "", postedOn: p.postedOn ?? "" });
       }
     };
     const list = (offset: number, searchText: string) => postJson<WorkdayList>(`${api}/jobs`, { appliedFacets: {}, limit: WORKDAY_PAGE, offset, searchText }, 60000);
@@ -196,7 +204,7 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
       outcome: {
         ...base, ok: true, count: s.length, size: w.size,
         pages, capHit, listed,
-        note: `${mode}: ${pages} pages, ${listed} listed, ${paths.size} AI/ML titles, ${s.length} details read; stopped: ${stopReason}${capHit ? "; recall bounded here" : ""}`,
+        note: `${mode}: ${pages} pages, ${listed} listed, ${paths.size} in-scope titles, ${s.length} details read; stopped: ${stopReason}${capHit ? "; recall bounded here" : ""}`,
       },
     };
   } catch (e) {

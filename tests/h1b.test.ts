@@ -21,11 +21,11 @@ describe("H-1B history", () => {
   });
   it("counts the company's filings since 2023 and decides", () => {
     const html = `<table><tr><th>EMPLOYER</th></tr>${row("STRIPE INC", "09/08/2025")}${row("STRIPE INC", "03/01/2021")}${row("STRIPES GROUP LLC", "01/02/2024")}</table>`;
-    const r = recordFrom("Stripe", parseH1bTable(html), "2026-11-02");
+    const r = recordFrom("Stripe", parseH1bTable(html), "2026-11-02", 2023);
     expect(r).toMatchObject({ filings: 1, matched: ["STRIPE INC"] });
     expect(sponsorVerdict(r)).toBe("sponsor");
-    expect(sponsorVerdict(recordFrom("Ludo Robotics", [], "2026-11-02"))).toBe("none");
+    expect(sponsorVerdict(recordFrom("Ludo Robotics", [], "2026-11-02", 2023))).toBe("none");
     expect(sponsorVerdict(undefined)).toBe("unknown");
-    expect(recordFrom("S&P Global", parseH1bTable(row("S&amp;P GLOBAL INC", "05/01/2025")), "2026-11-02").filings).toBe(1);
+    expect(recordFrom("S&P Global", parseH1bTable(row("S&amp;P GLOBAL INC", "05/01/2025")), "2026-11-02", 2023).filings).toBe(1);
   });
 });

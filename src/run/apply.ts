@@ -28,6 +28,8 @@ export interface ApplyOptions {
   approved?: boolean;
   // Stage gate 1c (src/discover/gates.ts), read by the caller. Required: without a pass this run fills and holds but never submits.
   stageGate: Gate;
+  // Whether this posting is eligible now (eligibleNow in src/discover/today.ts), read by the caller. Required: an ineligible posting is filled for evidence and held, never submitted.
+  eligible: { ok: boolean; reasons: string[] };
   page?: Page;
   headed?: boolean;
   confirmTimeoutMs?: number;
@@ -108,7 +110,7 @@ export function formUrl(url: string): string {
   return url;
 }
 
-async function run(page: Page, { url, user, ledger, approved = false, stageGate, confirmTimeoutMs = 15000, job: given, resolve = Boolean(process.env.OPENAI_API_KEY) && process.env.JH_RESOLVE !== "off" }: ApplyOptions): Promise<ApplyResult> {
+async function run(page: Page, { url, user, ledger, approved = false, stageGate, eligible, confirmTimeoutMs = 15000, job: given, resolve = Boolean(process.env.OPENAI_API_KEY) && process.env.JH_RESOLVE !== "off" }: ApplyOptions): Promise<ApplyResult> {
   let job = given;
   const earlier = sameJob(ledger, url);
   if (earlier && !ledger.canStart(earlier.key)) return { outcome: "skipped", key: earlier.key, state: earlier.state };
@@ -201,9 +203,10 @@ async function run(page: Page, { url, user, ledger, approved = false, stageGate,
   const blockers = (await adapter.blockers?.(page)) ?? [];
   const decided = gate({ plan, verify, config: user.config, submittedToday, approved, blockers });
   // The one submit site enforces the stage gates: a failing 1c turns a submit into a hold.
-  const decision: GateDecision = decided.decision === "submit" && !stageGate.pass
-    ? { decision: "hold", reasons: [`stage gate 1c not passed: ${stageGate.checks.filter((c) => !c.pass).map((c) => `${c.name} (${c.value})`).join("; ") || "no gate result"}`] }
-    : decided;
+  const extra: string[] = [];
+  if (!stageGate.pass) extra.push(`stage gate 1c not passed: ${stageGate.checks.filter((c) => !c.pass).map((c) => `${c.name} (${c.value})`).join("; ") || "no gate result"}`);
+  if (!eligible.ok) extra.push(`not eligible to apply: ${eligible.reasons.join("; ") || "no reason given"}`);
+  const decision: GateDecision = decided.decision === "submit" && extra.length ? { decision: "hold", reasons: extra } : decided;
   save("gate.json", decision);
   const done = async (state: AppState) => {
     // Evidence into the repo (data/evidence) so every machine can show this application.

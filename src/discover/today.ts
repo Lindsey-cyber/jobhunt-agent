@@ -59,6 +59,15 @@ const idsOf = (j: Job): string[] => {
   return final ? [j.key, jobKey(final)] : [j.key];
 };
 
+// Whether a posting, named by any URL form (ledger key path, ATS page, third-party link), is eligible now:
+// it must be in the catalog and pass eligibility under today's rules and re-triage. Anything else is a reason not to submit.
+export function eligibleNow(url: string, posts: Posting[]): { ok: boolean; reasons: string[] } {
+  const id = jobKey(url);
+  const p = posts.find((x) => idsOf(x.job).includes(id));
+  if (!p) return { ok: false, reasons: ["not in the catalog: eligibility cannot be checked"] };
+  return { ok: p.eligibility.ok, reasons: p.eligibility.reasons };
+}
+
 // blockers: for a held application, the required questions today's rules still cannot answer
 // (undefined when unknown). A held application with none left goes back to the agent's queue.
 export function postingState(job: Job, e: Eligibility, app: AppEvent | undefined, blockers?: string[]): PostingState {

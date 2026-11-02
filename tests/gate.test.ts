@@ -38,6 +38,14 @@ describe("gate", () => {
     expect(run({ plan, config: { ...auto, allowGeneratedAnswers: true } })).toEqual({ decision: "submit" });
   });
 
+  it("holds any filled item that has no source", () => {
+    const item = greenPlan.items.find((i) => i.status === "fill")!;
+    const { source: _dropped, ...bare } = item as typeof item & { source: unknown };
+    const plan = { ...greenPlan, items: [bare as never, ...greenPlan.items.slice(1)] };
+    expect(run({ plan, approved: true })).toMatchObject({ decision: "hold" });
+    expect(JSON.stringify(run({ plan, approved: true }))).toContain("without a source");
+  });
+
   it("holds at the daily cap", () => {
     expect(run({ submittedToday: auto.dailySubmitCap }).decision).toBe("hold");
   });

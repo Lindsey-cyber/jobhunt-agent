@@ -24,3 +24,4 @@ export function form(fields: FormField[], company = "Acme Robotics"): FormSnapsh
 }
 
 export const passingGate = { pass: true, checks: [] };
+export const eligibleGate = { ok: true, reasons: [] as string[] };

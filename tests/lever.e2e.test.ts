@@ -4,7 +4,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { startFixtureServer, type FixtureServer } from "../src/dev/fixture-server.ts";
 import { apply } from "../src/run/apply.ts";
 import { Ledger } from "../src/store/ledger.ts";
-import { makeUserData, passingGate } from "./helpers.ts";
+import { eligibleGate, makeUserData, passingGate } from "./helpers.ts";
 
 // Real capture of a Lever apply page (fixtures/lever/real-14fefcf2.html, scripts
 // stripped). Lever's form is native HTML, so it fills without the page's scripts.
@@ -23,7 +23,7 @@ async function run(approved: boolean) {
   const user = makeUserData({ config: { trust: "auto", autoSubmitAts: ["lever"] } });
   const page = await browser.newPage();
   try {
-    const result = await apply({ url: `${server.origin}/lever/real-14fefcf2/apply`, user, ledger: new Ledger(join(user.dir, "ledger.jsonl")), page, approved, stageGate: passingGate, confirmTimeoutMs: 2000 });
+    const result = await apply({ url: `${server.origin}/lever/real-14fefcf2/apply`, user, ledger: new Ledger(join(user.dir, "ledger.jsonl")), page, approved, stageGate: passingGate, eligible: eligibleGate, confirmTimeoutMs: 2000 });
     if (result.outcome !== "done") throw new Error("expected a run");
     return result;
   } finally {

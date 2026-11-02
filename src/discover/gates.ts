@@ -9,7 +9,7 @@ export interface AuditRates { falseMatchRate: number | null; missRate: number | 
 export interface GateInput {
   coverage?: Coverage | undefined;
   coverageProblem?: string | undefined; // a measurement file was rejected: counts as missing
-  registry?: { status: "live" | "no_api" | "not_built" }[] | undefined;
+  registry?: readonly { status: "live" | "no_api" | "not_built" }[] | undefined;
   today: string;
   matches: { publishedAt: string }[];
   audit?: AuditRates | undefined;

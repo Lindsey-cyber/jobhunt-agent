@@ -37,15 +37,22 @@ export const isFresh = (j: Pick<Job, "publishedAt" | "firstSeen">, policy: Pick<
   return posted !== "" && posted >= freshSince(policy, today);
 };
 
+// The policy's company and title exclusions, one reason each; the only place they are read (coverage measurement asks too).
+export function policyExcludes(company: string, title: string, policy: Pick<Policy, "excludeCompanies" | "excludeTitles">): string[] {
+  const out: string[] = [];
+  const ex = excludedBy(company, policy.excludeCompanies);
+  if (ex) out.push(`excluded company (${ex})`);
+  const t = policy.excludeTitles.find((x) => title.toLowerCase().includes(x.toLowerCase()));
+  if (t) out.push(`excluded title (${t})`);
+  return out;
+}
+
 export function eligibility({ job, label, h1b, policy, payFloor, today }: EligibilityInput): Eligibility {
   const reasons: string[] = [];
   const ats = job.key.split(":")[0]!;
   if (label === "not_fit") reasons.push("you marked it not to apply");
   else if (label !== "fit" && job.triage.verdict !== "match") reasons.push(`not a match (${job.triage.rule})`);
-  const ex = excludedBy(job.company, policy.excludeCompanies);
-  if (ex) reasons.push(`excluded company (${ex})`);
-  const title = policy.excludeTitles.find((t) => job.title.toLowerCase().includes(t.toLowerCase()));
-  if (title) reasons.push(`excluded title (${title})`);
+  reasons.push(...policyExcludes(job.company, job.title, policy));
   if (policy.excludeSeniorTitles && tooSenior(job.title)) reasons.push("senior title");
   if (policy.h1bRequiredSince !== null) {
     const v = sponsorVerdict(h1b);

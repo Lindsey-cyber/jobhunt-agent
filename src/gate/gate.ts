@@ -25,6 +25,8 @@ export function gate({ plan, verify, config, submittedToday, approved, blockers 
   for (const item of plan.items) {
     if (item.status === "blocked") reasons.push(`required "${item.field.label}": ${item.reason}`);
     if (item.status !== "fill") continue;
+    // Every value sent to an employer must name where it came from (profile, answers or the resume).
+    if (!(item as { source?: unknown }).source) reasons.push(`"${item.field.label}" is filled without a source`);
     if (!approved && item.confidence < GREEN) reasons.push(`low confidence (${item.confidence.toFixed(2)}) on "${item.field.label}"`);
     if (!approved && item.source.type === "bank" && item.source.origin === "generated" && !config.allowGeneratedAnswers) {
       reasons.push(`"${item.field.label}" uses a generated answer that has not been approved`);

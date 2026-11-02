@@ -5,7 +5,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { startFixtureServer, type FixtureServer } from "../src/dev/fixture-server.ts";
 import { apply } from "../src/run/apply.ts";
 import { Ledger } from "../src/store/ledger.ts";
-import { makeUserData, passingGate } from "./helpers.ts";
+import { eligibleGate, makeUserData, passingGate } from "./helpers.ts";
 
 let server: FixtureServer;
 let browser: Browser;
@@ -27,7 +27,7 @@ async function applyTo(name: string, user: ReturnType<typeof makeUserData>, appr
   const page = await browser.newPage();
   const ledger = new Ledger(join(user.dir, "ledger.jsonl"));
   try {
-    return { ledger, result: await apply({ url: `${server.origin}/acmerobotics/jobs/${name}`, user, ledger, page, approved, stageGate: passingGate, confirmTimeoutMs: 5000 }) };
+    return { ledger, result: await apply({ url: `${server.origin}/acmerobotics/jobs/${name}`, user, ledger, page, approved, stageGate: passingGate, eligible: eligibleGate, confirmTimeoutMs: 5000 }) };
   } finally {
     await page.close();
   }

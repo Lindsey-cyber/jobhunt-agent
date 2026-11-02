@@ -196,13 +196,21 @@ export function mergeRun(prior: Map<JobKey, Job>, sightings: Sighting[], me: Can
           publishedAt: publishedOf(rep, old),
         };
     // Any source saying "closed" only counts while no official source lists it.
-    const closed = !fields.official && ss.some((s) => s.hints.closed) && !ss.some((s) => !s.hints.closed);
+    // A lookup on the employer's own API that proved the posting gone (closedEvidence)
+    // outranks the lists still showing it, and is kept until an official source lists it again.
+    const evidence = ss.find((s) => s.hints.closedEvidence)?.hints.closedEvidence ?? old?.hints.closedEvidence;
+    // An official posting kept on its old fields (keepOld) that no date ever confirmed is still closed by that proof.
+    const closed =
+      (!fields.official && ((ss.some((s) => s.hints.closed) && !ss.some((s) => !s.hints.closed)) || evidence !== undefined)) ||
+      (Boolean(keepOld) && evidence !== undefined && !old?.publishedAt);
     const hints: Sighting["hints"] = {
       ...Object.assign({}, ...ss.map((s) => s.hints)),
       closed,
       earlyCareerList: ss.some((s) => s.hints.earlyCareerList) || Boolean(old?.hints.earlyCareerList),
       unresolved: ss.every((s) => s.hints.unresolved) && !fields.official,
     };
+    if (closed && evidence) hints.closedEvidence = evidence;
+    else delete hints.closedEvidence;
     const job: Job = {
       key,
       ...fields,

@@ -25,8 +25,10 @@ export const OFFICIAL_CHANNELS: readonly Channel[] = ["official_greenhouse", "of
 // employer's "Posted 3 Days Ago", resolved against fetch time, day precision)
 // are the employer's own publication date; the rest must never be reported as
 // one. "posted_before" is only an upper bound ("Posted 30+ Days Ago": posted on
-// or before that date).
-export type DateKind = "published" | "relative_posted" | "posted_before" | "updated" | "start_date" | "list_posted" | "list_age" | "email_received" | "post_time" | "none";
+// or before that date). A third-party list's age cell is "list_age_day" when it
+// is day-level ("3d", "today", an ISO date) and "list_age" when it is coarse
+// ("2w", "1mo"; records written before the split are also "list_age").
+export type DateKind = "published" | "relative_posted" | "posted_before" | "updated" | "start_date" | "list_posted" | "list_age_day" | "list_age" | "email_received" | "post_time" | "none";
 
 export interface Sighting {
   key: JobKey;
@@ -45,6 +47,9 @@ export interface Sighting {
   dateKind: DateKind;
   hints: {
     closed?: boolean;
+    // Set only by a per-posting lookup on the employer's own API that proved the
+    // posting is gone (the API answered and the posting is absent, or 404 for it).
+    closedEvidence?: { source: string; checkedAt: string; basis: string };
     // A third party's statement about sponsorship, e.g. Simplify's field.
     sponsorship?: string;
     // The source only lists early-career roles.

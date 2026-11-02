@@ -3,7 +3,7 @@
   "company": "10a Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "abacus": {
   "company": "ABACUS",
@@ -58,19 +58,19 @@
   "company": "About You",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "accenture federal services": {
   "company": "Accenture Federal Services",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "acquire me": {
   "company": "Acquire Me",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "addepar": {
   "company": "Addepar",
@@ -95,13 +95,13 @@
   "company": "Advanced Space",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "advisorey": {
   "company": "advisorey.",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "aecom": {
   "company": "AECOM",
@@ -125,13 +125,13 @@
   "company": "AfterQuery",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "afterquery experts": {
   "company": "AfterQuery Experts",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "ahead": {
   "company": "AHEAD",
@@ -141,17 +141,23 @@
   "filings": 77,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "ai ml jobs": {
+  "company": "AI/ML jobs",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
  "ai on the hill": {
   "company": "AI on the Hill",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "ai x healthcare startup": {
   "company": "AI x Healthcare Startup",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "airbnb": {
   "company": "Airbnb",
@@ -174,7 +180,7 @@
   "company": "Akuna Capital On-Campus Interviews",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "alchemi": {
   "company": "Alchemi",
@@ -196,7 +202,7 @@
   "company": "Alloy.ai",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "amd": {
   "company": "AMD",
@@ -318,19 +324,19 @@
   "company": "Aquatic Capital Management",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "arcfield": {
   "company": "Arcfield",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "arizent": {
   "company": "Arizent",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "artera": {
   "company": "Artera",
@@ -400,7 +406,7 @@
   "company": "Asylon",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "atlas air": {
   "company": "Atlas Air",
@@ -446,7 +452,7 @@
   "company": "Avalore",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "avathon": {
   "company": "Avathon",
@@ -491,7 +497,7 @@
   "company": "Axtria - Ingenious Insights",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "bank ozk": {
   "company": "Bank OZK",
@@ -500,6 +506,12 @@
   ],
   "filings": 75,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "based on your title and location update": {
+  "company": "Based on your title and location. Update:",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "baseten": {
   "company": "Baseten",
@@ -513,7 +525,7 @@
   "company": "Becoming",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "bertram capital management": {
   "company": "Bertram Capital Management",
@@ -543,13 +555,7 @@
   "company": "Billtrust",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
- "biohub": {
-  "company": "Biohub",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "black canyon consulting": {
   "company": "Black Canyon Consulting",
@@ -563,13 +569,13 @@
   "company": " BlackEdge Capital",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "blackrock neurotech": {
   "company": "Blackrock Neurotech",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "blackstone": {
   "company": "Blackstone",
@@ -621,7 +627,7 @@
   "company": "BNY",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "booz allen hamilton": {
   "company": "Booz Allen Hamilton",
@@ -680,7 +686,7 @@
   "company": "BrightAI Corporation",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "brillio": {
   "company": "Brillio",
@@ -765,7 +771,7 @@
   "company": "CHEManager International",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "chime financial": {
   "company": "Chime Financial, Inc",
@@ -779,7 +785,7 @@
   "company": "Church & Dwight",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "cisco": {
   "company": "Cisco",
@@ -827,19 +833,19 @@
   "company": "City of San Francisco",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "clear corporate": {
   "company": "CLEAR - Corporate",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "cleveland guardians baseball operations": {
   "company": "Cleveland Guardians - Baseball Operations",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "clickhouse": {
   "company": "ClickHouse",
@@ -848,12 +854,6 @@
   ],
   "filings": 19,
   "checkedAt": "2026-11-02T02:10:57.370Z"
- },
- "cmu": {
-  "company": "Cmu",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
  },
  "cohere": {
   "company": "Cohere",
@@ -909,13 +909,13 @@
   "company": "Computer Vision & Machine Learning Engineer",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "continual research": {
   "company": "Continual Research",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "conviva": {
   "company": "Conviva",
@@ -937,7 +937,7 @@
   "company": "Country-Wide Insurance",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "crowdstrike": {
   "company": "CrowdStrike",
@@ -959,13 +959,13 @@
   "company": "Cruise Planners",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "crum and forster": {
   "company": "Crum & Forster",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "cursor anysphere": {
   "company": "Cursor (Anysphere)",
@@ -987,13 +987,13 @@
   "company": "D3 Embedded",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "dataannotation": {
   "company": "DataAnnotation",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "databricks": {
   "company": "Databricks",
@@ -1031,7 +1031,7 @@
   "company": "Deeter Analytics",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "dell technologies": {
   "company": "Dell Technologies",
@@ -1101,7 +1101,7 @@
   "company": "Dorsia",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "draper": {
   "company": "Draper",
@@ -1113,23 +1113,17 @@
   "filings": 3,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
- "drw": {
-  "company": "DRW ",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
  "dsm firmenich": {
   "company": "dsm-firmenich",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "dsp and hearing engineer": {
   "company": "DSP and Hearing Engineer",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "edmund optics": {
   "company": "Edmund Optics",
@@ -1167,7 +1161,7 @@
   "company": "Embedded Alliance",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "embedding vc": {
   "company": "Embedding VC",
@@ -1214,17 +1208,11 @@
   "filings": 18,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
- "exl": {
-  "company": "EXL",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
  "exlabora ai general purpose robot workforce": {
   "company": "exLabora AI (General Purpose Robot Workforce)",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "expedia": {
   "company": "Expedia Group",
@@ -1238,7 +1226,7 @@
   "company": "Fab2",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "faire": {
   "company": "Faire",
@@ -1273,12 +1261,6 @@
   "filings": 1,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
- "fig": {
-  "company": "Fig",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
  "figma": {
   "company": "Figma",
   "matched": [
@@ -1300,23 +1282,17 @@
   "filings": 63,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
- "fin": {
-  "company": "Fin",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
  "five rings careers": {
   "company": "Five Rings LLC - Careers",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "flowstate london uk founding engineer typescript react postgres ai": {
   "company": "Flowstate (London, UK) — Founding Engineer — TypeScript / React / Postgres / AI",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "fluidstack": {
   "company": "Fluidstack",
@@ -1330,7 +1306,7 @@
   "company": "Fonzi AI",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "fortinet": {
   "company": "Fortinet",
@@ -1344,7 +1320,7 @@
   "company": "Friant & Associates",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "frontier technology": {
   "company": "FRONTIER TECHNOLOGY",
@@ -1361,12 +1337,6 @@
   ],
   "filings": 3,
   "checkedAt": "2026-11-02T02:10:57.370Z"
- },
- "g p": {
-  "company": "G-P",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
  },
  "ge vernova": {
   "company": "GE Vernova",
@@ -1425,13 +1395,13 @@
   "company": "Go Fish Digital",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "goaly": {
   "company": "Goaly",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "goldman sachs": {
   "company": "Goldman Sachs",
@@ -1464,13 +1434,13 @@
   "company": "GoodPower",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "graviton research capital": {
   "company": "Graviton Research Capital LLP",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "gray swan": {
   "company": "Gray Swan",
@@ -1484,7 +1454,7 @@
   "company": "Greenshades Software",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "guidehouse": {
   "company": "Guidehouse",
@@ -1509,7 +1479,7 @@
   "company": "Handshake",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "harvard university": {
   "company": "Harvard University",
@@ -1523,13 +1493,13 @@
   "company": "Hatch IT",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "headlands technologies": {
   "company": "Headlands Technologies LLC",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "healthedge": {
   "company": "HealthEdge",
@@ -1544,13 +1514,13 @@
   "company": "Hebrewseniorlife",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "hedra": {
   "company": "Hedra",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "herald": {
   "company": "Herald",
@@ -1566,7 +1536,7 @@
   "company": "Hestus",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "hewlett packard enterprise": {
   "company": "Hewlett Packard Enterprise",
@@ -1680,25 +1650,25 @@
   "company": "Icfexternal",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "id me": {
   "company": "ID.me",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "idler": {
   "company": "Idler",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "ignite it": {
   "company": "Ignite IT",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "imanage": {
   "company": "iManage",
@@ -1708,23 +1678,17 @@
   "filings": 66,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
- "imc": {
-  "company": "IMC",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
  "impact com": {
   "company": "impact.com",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "infinitive": {
   "company": "Infinitive",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "infosys": {
   "company": "Infosys",
@@ -1743,7 +1707,7 @@
   "company": "InnoVet Health",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "interdigital": {
   "company": "InterDigital, Inc.",
@@ -1757,7 +1721,7 @@
   "company": "Internet Brands",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "intersystems": {
   "company": "InterSystems",
@@ -1802,13 +1766,13 @@
   "company": "Jobs Onsemi",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "johns hopkins applied physics laboratory": {
   "company": "Johns Hopkins Applied Physics Laboratory",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "jp morgan chase": {
   "company": "JP Morgan Chase",
@@ -1839,19 +1803,13 @@
   "company": "Jump Trading",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
- "k1": {
-  "company": "K1",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "kalman and": {
   "company": "Kalman & Company",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "kargo": {
   "company": "Kargo",
@@ -1862,12 +1820,6 @@
   ],
   "filings": 26,
   "checkedAt": "2026-11-02T02:10:57.370Z"
- },
- "kbr": {
-  "company": "KBR",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
  },
  "kensho": {
   "company": "Kensho",
@@ -1891,12 +1843,6 @@
    "KLAVIYO INC"
   ],
   "filings": 145,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
- "ksb": {
-  "company": "KSB",
-  "matched": [],
-  "filings": 0,
   "checkedAt": "2026-11-02T02:19:46.662Z"
  },
  "labelbox": {
@@ -1972,25 +1918,25 @@
   "company": "LiteLLM",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "liveflow": {
   "company": "LiveFlow",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "lokker com": {
   "company": "Lokker.com",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "love freedom solution": {
   "company": "Love Freedom Solution",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "lpl financial": {
   "company": "LPL Financial Holdings",
@@ -2026,7 +1972,7 @@
   "company": "Luminai",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "mach9": {
   "company": "Mach9",
@@ -2040,7 +1986,7 @@
   "company": "Machine Learning Engineer, Applied",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "magna": {
   "company": "Magna",
@@ -2076,19 +2022,7 @@
   "company": "Makai Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
- "man": {
-  "company": "Man Group",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
- "map": {
-  "company": "MAP",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "mariana minerals": {
   "company": "Mariana Minerals",
@@ -2154,7 +2088,7 @@
   "company": "Mentor Talent Acquisition",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "meta": {
   "company": "Meta",
@@ -2193,7 +2127,7 @@
   "company": "Milwaukee Tool",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "miratech": {
   "company": "Miratech",
@@ -2217,13 +2151,13 @@
   "company": "ML Engineer",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "moab": {
   "company": "Moab",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "modal": {
   "company": "Modal",
@@ -2271,13 +2205,13 @@
   "company": "Mount Sinai Morningside",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "mozilla thunderbird thunderbolt": {
   "company": "Mozilla / Thunderbird / Thunderbolt",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "nationsbenefits": {
   "company": "NationsBenefits",
@@ -2309,7 +2243,7 @@
   "company": "Neuraci Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "neuralink": {
   "company": "Neuralink",
@@ -2332,7 +2266,7 @@
   "company": "NewRocket",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "newsbreak": {
   "company": "NewsBreak",
@@ -2379,7 +2313,7 @@
   "company": "Noblis",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "node": {
   "company": "Node",
@@ -2393,7 +2327,7 @@
   "company": "Node.Digital",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "northmark strategies": {
   "company": "NorthMark Strategies",
@@ -2447,7 +2381,7 @@
   "company": "NYC Department of Health and Mental Hygiene",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "nyu langone health": {
   "company": "NYU Langone Health",
@@ -2461,31 +2395,31 @@
   "company": "Oakwell Hampton Group",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "oligo space": {
   "company": "Oligo Space",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "onechronos": {
   "company": "OneChronos",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "onyx staffing": {
   "company": "Onyx Staffing",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "open data jobs": {
   "company": "OPEN Data Jobs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "openai": {
   "company": "OpenAI",
@@ -2536,7 +2470,7 @@
   "company": "Orenda, Inc",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "oscar health": {
   "company": "Oscar Health",
@@ -2550,7 +2484,7 @@
   "company": "Oscilar.com",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "osf healthcare": {
   "company": "OSF HealthCare",
@@ -2580,13 +2514,13 @@
   "company": "PAM Health",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "pangram labs": {
   "company": "Pangram Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "path robotics": {
   "company": "Path Robotics",
@@ -2617,7 +2551,7 @@
   "company": "PENFED Credit Union",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "peraton": {
   "company": "Peraton",
@@ -2631,15 +2565,19 @@
  },
  "peraton labs": {
   "company": "Peraton Labs",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "matched": [
+   "PERATON ENTERPRISE SOLUTIONS LLC",
+   "PERATON STATE & LOCAL INC",
+   "PERATON TECHNOLOGY SERVICES INC (FKA PERSPECTA ENGINEERING INC & FKA VENCORE INC)"
+  ],
+  "filings": 12,
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "perfectserve": {
   "company": "PerfectServe",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "periodic labs": {
   "company": "Periodic Labs",
@@ -2653,7 +2591,7 @@
   "company": "Perpay - Career's Page",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "perplexity": {
   "company": "Perplexity",
@@ -2667,7 +2605,7 @@
   "company": "Petra Security",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "pfizer": {
   "company": "Pfizer",
@@ -2697,7 +2635,7 @@
   "company": "PlanetScale",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "playstation": {
   "company": "PlayStation Global",
@@ -2722,19 +2660,19 @@
   "company": "Pond AI",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "posthog": {
   "company": "PostHog",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "prairielearn remote full stack software engineer typescript postgres": {
   "company": "PrairieLearn (Remote US) — Full-Stack Software Engineer — TypeScript / Postgres ",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "precisely": {
   "company": "Precisely",
@@ -2756,25 +2694,25 @@
   "company": "Primis",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "prior labs": {
   "company": "Prior Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "procter and gamble": {
   "company": "Procter & Gamble",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "propel labs": {
   "company": "Propel Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "providertrust": {
   "company": "ProviderTrust",
@@ -2841,7 +2779,7 @@
   "company": "Radley James",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "ramp": {
   "company": "Ramp",
@@ -2855,13 +2793,13 @@
   "company": "Rangein",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "red ventures": {
   "company": "Red Ventures",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "reddit": {
   "company": "Reddit, Inc.",
@@ -2875,7 +2813,7 @@
   "company": "Redhorse Corporation",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "redwood materials": {
   "company": "Redwood Materials",
@@ -2889,13 +2827,13 @@
   "company": "Referment",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "relativity space": {
   "company": "Relativity Space",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "relx": {
   "company": "RELX",
@@ -2917,7 +2855,7 @@
   "company": "Research Engineer",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "robinhood": {
   "company": "Robinhood",
@@ -2957,7 +2895,7 @@
   "company": "Root Access",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "rosaiclabs": {
   "company": "RosaicLabs",
@@ -2971,13 +2909,13 @@
   "company": "S&P Global",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "s tire": {
   "company": "America's Tire",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "saic": {
   "company": "SAIC",
@@ -3049,7 +2987,7 @@
   "company": "Schumacher Homes",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sciemo": {
   "company": "Sciemo",
@@ -3071,13 +3009,13 @@
   "company": "Selby Jennings",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sentient labs": {
   "company": "Sentient Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sentilink": {
   "company": "SentiLink",
@@ -3177,7 +3115,7 @@
   "company": "Silna Health",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "simmons bank": {
   "company": "Simmons Bank",
@@ -3191,7 +3129,7 @@
   "company": "SimVentions",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sirenopt": {
   "company": "SirenOpt",
@@ -3223,13 +3161,13 @@
   "company": "Smarter Agent",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "smith nephew": {
   "company": "Smith+Nephew",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "snap": {
   "company": "Snap",
@@ -3279,19 +3217,19 @@
   "company": "Solace Health",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sopra steria i2s": {
   "company": "Sopra Steria I2S",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sosi": {
   "company": "SOSi",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sourcegraph": {
   "company": "Sourcegraph",
@@ -3313,7 +3251,7 @@
   "company": "SpaceXSI",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "spade": {
   "company": "Spade",
@@ -3335,13 +3273,13 @@
   "company": "Squarepoint Capital",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "staac professional e learning": {
   "company": "STAAC Professional E-Learning LTD",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "starburst": {
   "company": "Starburst",
@@ -3356,31 +3294,31 @@
   "company": "State Employees' Credit Union",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "steampunk": {
   "company": "Steampunk",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "steerbridge": {
   "company": "SteerBridge",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "sticker pack": {
   "company": "Sticker Pack, INC",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "storm3": {
   "company": "Storm3",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "strategic innovation": {
   "company": "Strategic Innovation Group",
@@ -3405,7 +3343,7 @@
   "company": "Study.com",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "suno": {
   "company": "Suno",
@@ -3429,13 +3367,13 @@
   "company": "Surge AI",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "synhawk": {
   "company": "Synhawk",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "tabs": {
   "company": "Tabs",
@@ -3459,7 +3397,7 @@
   "company": "TechOp",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "teledyne": {
   "company": "Teledyne",
@@ -3512,7 +3450,7 @@
   "company": "Teso Life",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "tessera labs": {
   "company": "Tessera Labs",
@@ -3526,7 +3464,7 @@
   "company": "Tether",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "texas instruments": {
   "company": "Texas Instruments",
@@ -3597,7 +3535,7 @@
   "company": "Torentify",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "tower research capital": {
   "company": "Tower Research Capital",
@@ -3678,7 +3616,7 @@
   "company": "Twin Prime",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "two sigma": {
   "company": "Two Sigma",
@@ -3695,31 +3633,31 @@
   "company": "Two Six Technologies",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "typesafe ai": {
   "company": "typesafe ai",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "typify dev": {
   "company": "Typify.dev",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "typify dev https typify dev": {
   "company": "Typify.dev ( https://typify.dev )",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "umai consultancy": {
   "company": "UMAI Consultancy",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "uncountable": {
   "company": "Uncountable",
@@ -3741,7 +3679,7 @@
   "company": "Unlocking Tech",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "upstart": {
   "company": "Upstart",
@@ -3838,12 +3776,6 @@
   "filings": 3,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
- "vtg": {
-  "company": "VTG",
-  "matched": [],
-  "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
- },
  "walt disney": {
   "company": "Walt Disney",
   "matched": [
@@ -3865,31 +3797,31 @@
   "company": "WEBXLOO",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "weekday": {
   "company": "Weekday",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "weekday 1": {
   "company": "Weekday 1",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "weride ai": {
   "company": "WeRide.ai",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "west 4th strategy": {
   "company": "West 4th Strategy",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "west monroe": {
   "company": "West Monroe",
@@ -3922,7 +3854,7 @@
   "company": "Within",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "wonderschool": {
   "company": "Wonderschool",
@@ -3945,7 +3877,7 @@
   "company": "Wynd Labs",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "xaira therapeutics": {
   "company": "Xaira Therapeutics",
@@ -3983,7 +3915,7 @@
   "company": "ZincFive",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  },
  "zocdoc": {
   "company": "Zocdoc",
@@ -3997,6 +3929,6 @@
   "company": "Zone 5 Technologies",
   "matched": [],
   "filings": 0,
-  "checkedAt": "2026-11-02T02:19:46.662Z"
+  "checkedAt": "2026-11-02T04:00:23.192Z"
  }
 }

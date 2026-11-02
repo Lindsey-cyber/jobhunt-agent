@@ -1,7 +1,37 @@
 [
   {
+    "company": "Hedra",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Research Scientist",
+        "url": "https://jobs.ashbyhq.com/hedra/0558c340-1810-4a6f-8f23-8a46952f488d",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      },
+      {
+        "title": "Research Engineer",
+        "url": "https://jobs.ashbyhq.com/hedra/b99b5901-84ff-4d39-a50f-77ef9767ddd3",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      },
+      {
+        "title": "Inference Optimization Engineer",
+        "url": "https://jobs.ashbyhq.com/hedra/f28645f7-2bed-4754-9da2-a3aaa7d6aa27",
+        "verdict": "match",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Hedra team,\n\nI came across the Inference Optimization Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Somana",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Somana | Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time",
@@ -10,16 +40,16 @@
         "location": "Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time"
       },
       {
-        "title": "Somana | Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time",
+        "title": "Staff SWE - Networking",
         "url": "https://jobs.ashbyhq.com/somana.tech/175024db-746b-44fa-8815-3b7607ea6b4e",
         "verdict": "reject",
-        "location": "Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time"
+        "location": "San Francisco; New York City; United States"
       },
       {
-        "title": "Somana | Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time",
+        "title": "FE Product Engineer",
         "url": "https://jobs.ashbyhq.com/somana.tech/b3b7856f-3183-4233-9c9a-ccf88413ab5c",
         "verdict": "reject",
-        "location": "Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time"
+        "location": "New York City; United States"
       }
     ],
     "hiringPosts": [
@@ -31,18 +61,54 @@
       {
         "url": "https://jobs.ashbyhq.com/somana.tech/175024db-746b-44fa-8815-3b7607ea6b4e (linked from HN post)",
         "date": "2026-10-02T15:58:21.000Z",
-        "excerpt": "Somana | Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time\nSomana is a well-funded stealth team building HW + SW for the world of Physical AI. Our core group has earned their stripes at Tesla, GOOG, SpaceX, Palantir, K-Scale and Zipline. We like to work togeth"
+        "excerpt": "Employment type: FullTime\nSTAFF SWE - NETWORKING\n\nSomana is a generative robotics company. We founded the company because the incredible advances in the modeling layer have no way to access a fragmented physical world. We're building the connective tissue that brings physical AI "
       },
       {
         "url": "https://jobs.ashbyhq.com/somana.tech/b3b7856f-3183-4233-9c9a-ccf88413ab5c (linked from HN post)",
         "date": "2026-10-02T15:58:21.000Z",
-        "excerpt": "Somana | Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time\nSomana is a well-funded stealth team building HW + SW for the world of Physical AI. Our core group has earned their stripes at Tesla, GOOG, SpaceX, Palantir, K-Scale and Zipline. We like to work togeth"
+        "excerpt": "Employment type: FullTime\nFE Product Engineer\n\nSomana is a generative robotics company. We founded the company because the incredible advances in the modeling layer have no way to access a fragmented physical world. We're building the connective tissue that brings physical AI int"
       }
     ],
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Somana team,\n\nI came across the Somana | Product Eng, Staff SWE Eng, FDE HW+SW | SF + NYC | Hybrid | Full-time opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Tessera Labs",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data Platform Engineer",
+        "url": "https://jobs.ashbyhq.com/tessera-labs/0b3dd840-8942-4f28-9452-b30f3698500a",
+        "verdict": "match",
+        "location": "Remote in the U.S.; San Jose Office (HQ); United States"
+      },
+      {
+        "title": "Research Scientist",
+        "url": "https://jobs.ashbyhq.com/tessera-labs/311051b8-2af1-4f80-ad5b-be2b854305d7",
+        "verdict": "review",
+        "location": "San Jose Office (HQ); United States"
+      },
+      {
+        "title": "Research Engineer",
+        "url": "https://jobs.ashbyhq.com/tessera-labs/bd40274a-9f0f-489a-a92f-653007550eb3",
+        "verdict": "review",
+        "location": "San Jose Office (HQ); New York City Office; United States"
+      },
+      {
+        "title": "AI Engineer",
+        "url": "https://jobs.ashbyhq.com/tessera-labs/eb150714-eeb2-44b4-8a23-c893be972bed",
+        "verdict": "review",
+        "location": "San Jose Office (HQ); New York City Office; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Tessera Labs team,\n\nI came across the Data Platform Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -82,6 +148,36 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Checkly",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Support Engineer (DevTools & AI Reliability, remote)",
+        "url": "https://jobs.ashbyhq.com/checkly/0d236bb0-f860-4317-bc1c-84fed94d0f5a",
+        "verdict": "review",
+        "location": "Eastern Time zone; Boston; Atlanta; Tampa; Philadelphia; United States"
+      },
+      {
+        "title": "Checkly | https://www.checklyhq.com | Senior Product Engineer, Product Manager, Senior Sales Engineer, Solutions Engineer | REMOTE (Europe / US Eastern) | Full-time",
+        "url": "https://jobs.ashbyhq.com/checkly",
+        "verdict": "reject",
+        "location": "https://www.checklyhq.com | Senior Product Engineer, Product Manager, Senior Sales Engineer, Solutions Engineer | REMOTE (Europe / US Eastern) | Full-time"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/checkly (linked from HN post)",
+        "date": "2026-10-01T15:13:49.000Z",
+        "excerpt": "Checkly | https://www.checklyhq.com | Senior Product Engineer, Product Manager, Senior Sales Engineer, Solutions Engineer | REMOTE (Europe / US Eastern) | Full-time\nThe best developers don't wait for a customer to tell them something's broken. They catch it first, in the pull req"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Checkly team,\n\nI came across the Support Engineer (DevTools & AI Reliability, remote) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Fuel Cycle",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -104,10 +200,10 @@
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [
       {
-        "title": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services",
+        "title": "Member of Technical Staff, Robotics Engineer",
         "url": "https://jobs.ashbyhq.com/runway-ml/0f1c42db-8bbf-4e69-a17c-b6f45244605d",
         "verdict": "reject",
-        "location": "Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world."
+        "location": "New York, NY; United States"
       },
       {
         "title": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services",
@@ -116,10 +212,10 @@
         "location": "Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world."
       },
       {
-        "title": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services",
+        "title": "Member of Technical Staff, Backend Engineer, API",
         "url": "https://jobs.ashbyhq.com/runway-ml/8489a08a-f0cf-4418-968c-c7c803d538bc",
         "verdict": "reject",
-        "location": "Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world."
+        "location": "Remote; United States"
       },
       {
         "title": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services",
@@ -128,17 +224,17 @@
         "location": "Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world."
       },
       {
-        "title": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services",
+        "title": "Engineering Manager, API",
         "url": "https://jobs.ashbyhq.com/runway-ml/b5d136bb-4143-400b-914a-0ae7377ad8ed",
         "verdict": "reject",
-        "location": "Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world."
+        "location": "Remote; United States"
       }
     ],
     "hiringPosts": [
       {
         "url": "https://jobs.ashbyhq.com/runway-ml/0f1c42db-8bbf-4e69-a17c-b6f45244605d (linked from HN post)",
         "date": "2026-10-02T05:16:41.000Z",
-        "excerpt": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services built on-top of this intelligence to empower individuals and organizations to d"
+        "excerpt": "Employment type: FullTime\nWe are building AI to simulate the world through merging art and science.\n\nWe believe that world models are at the frontier of progress in artificial intelligence. Language models alone won’t solve the world’s hardest problems – robotics, disease, scient"
       },
       {
         "url": "https://jobs.ashbyhq.com/runway-ml/1045dd51-cdaa-4d3f-9d25-bebce9f40a44 (linked from HN post)",
@@ -148,7 +244,7 @@
       {
         "url": "https://jobs.ashbyhq.com/runway-ml/8489a08a-f0cf-4418-968c-c7c803d538bc (linked from HN post)",
         "date": "2026-10-02T05:16:41.000Z",
-        "excerpt": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services built on-top of this intelligence to empower individuals and organizations to d"
+        "excerpt": "Employment type: FullTime\nWe are building AI to simulate the world through merging art and science.\n\nWe believe that world models are at the frontier of progress in artificial intelligence. Language models alone won’t solve the world’s hardest problems – robotics, disease, scient"
       },
       {
         "url": "https://jobs.ashbyhq.com/runway-ml/90a95d63-ce92-42c4-a3dc-51f0f7cd281b (linked from HN post)",
@@ -158,13 +254,203 @@
       {
         "url": "https://jobs.ashbyhq.com/runway-ml/b5d136bb-4143-400b-914a-0ae7377ad8ed (linked from HN post)",
         "date": "2026-10-02T05:16:41.000Z",
-        "excerpt": "Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services built on-top of this intelligence to empower individuals and organizations to d"
+        "excerpt": "Employment type: FullTime\nWe are building AI to simulate the world through merging art and science.\n\nWe believe that world models are at the frontier of progress in artificial intelligence. Language models alone won’t solve the world’s hardest problems – robotics, disease, scient"
       }
     ],
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Runway team,\n\nI came across the Runway | Remote (see below) | Full-time | https://runway.com/ Runway is building foundational Real-World Intelligence that can understand, simulate and act in the world. We offer products and services opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi Runway team,\n\nI came across the Member of Technical Staff, Robotics Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Bags",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Reinforcement Learning Engineer",
+        "url": "https://jobs.ashbyhq.com/bagsfm/13dc6d90-9a4a-478a-8b31-cc6a6d78cec7",
+        "verdict": "review",
+        "location": "New York"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Bags team,\n\nI came across the Reinforcement Learning Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Twin Prime",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Researcher",
+        "url": "https://jobs.ashbyhq.com/twinprime/1447a998-50c5-48b3-83ab-e927b6e9d8c9",
+        "verdict": "review",
+        "location": "New York City, USA; United States"
+      },
+      {
+        "title": "AI Engineer",
+        "url": "https://jobs.ashbyhq.com/twinprime/7b46d12f-9538-4da6-8b20-775c7a19c067",
+        "verdict": "review",
+        "location": "New York City, USA; Athens, Greece; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Twin Prime team,\n\nI came across the AI Researcher opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "LiveKit",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Software Engineer, Agents",
+        "url": "https://jobs.ashbyhq.com/livekit/1757f49e-7e19-4c45-85f7-e4637dff66fb",
+        "verdict": "reject",
+        "location": "North America; APJ; EMEA; NAMER"
+      },
+      {
+        "title": "Senior Product Engineer",
+        "url": "https://jobs.ashbyhq.com/livekit/463e2769-bb85-4429-96a3-3a175eb228cd",
+        "verdict": "reject",
+        "location": "North America; APJ; San Francisco, CA (Hybrid); EMEA; NAMER"
+      },
+      {
+        "title": "Research Engineer (Reinforcement Learning)",
+        "url": "https://jobs.ashbyhq.com/livekit/b0c02c3f-790f-4cd8-960d-220800d35367",
+        "verdict": "review",
+        "location": "North America; APJ; EMEA; NAMER"
+      },
+      {
+        "title": "Forward Deployed Engineer",
+        "url": "https://jobs.ashbyhq.com/livekit/b889ef16-4d5d-4b71-b0a9-682026a0a1ee",
+        "verdict": "reject",
+        "location": "New York, NY (Remote); San Francisco, CA (Remote); Seattle, WA (Remote); United States (Remote); United States of America"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/livekit/1757f49e-7e19-4c45-85f7-e4637dff66fb?departmentId=3f867ed5-acad-4eee-bf8a-68d5af0be363 (linked from HN post)",
+        "date": "2026-10-07T18:55:51.000Z",
+        "excerpt": "Employment type: FullTime\nABOUT LIVEKIT\n\nLiveKit is building the infrastructure layer for the agentic era of computing. Our platform gives developers everything they need to build, test, deploy, scale, and observe AI agents in production. Founded in 2021, LiveKit powers voice and"
+      },
+      {
+        "url": "https://jobs.ashbyhq.com/livekit/463e2769-bb85-4429-96a3-3a175eb228cd?departmentId=3f867ed5-acad-4eee-bf8a-68d5af0be363 (linked from HN post)",
+        "date": "2026-10-07T18:55:51.000Z",
+        "excerpt": "Employment type: FullTime\nABOUT LIVEKIT\n\nLiveKit is building the infrastructure layer for the agentic era of computing. Our platform gives developers everything they need to build, test, deploy, scale, and observe AI agents in production. Founded in 2021, LiveKit powers voice and"
+      },
+      {
+        "url": "https://jobs.ashbyhq.com/livekit/b889ef16-4d5d-4b71-b0a9-682026a0a1ee?departmentId=e848df71-417e-4c31-8944-32d6e70c8b4c (linked from HN post)",
+        "date": "2026-10-07T18:55:51.000Z",
+        "excerpt": "Employment type: FullTime\nABOUT LIVEKIT\n\nLiveKit is building the infrastructure layer for the agentic era of computing. Our platform gives developers everything they need to build, test, deploy, scale, and observe AI agents in production. Founded in 2021, LiveKit powers voice and"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi LiveKit team,\n\nI came across the Software Engineer, Agents opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Hipp Health",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Agent Engineer — Compliance",
+        "url": "https://jobs.ashbyhq.com/hipp/187a2916-d529-4a4d-ac28-30b6e7669102",
+        "verdict": "review",
+        "location": "United States; United States"
+      },
+      {
+        "title": "AI Agent Engineer — Patient Intake",
+        "url": "https://jobs.ashbyhq.com/hipp/65b0c62e-42bf-4817-85eb-7f1adee3c8cd",
+        "verdict": "review",
+        "location": "United States; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Hipp Health team,\n\nI came across the AI Agent Engineer — Compliance opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Distyl",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Applied AI Researcher, Multi-Agent Systems",
+        "url": "https://jobs.ashbyhq.com/distyl/1a44c296-a732-4374-9f8c-a613b17ae37b",
+        "verdict": "review",
+        "location": "San Francisco; New York; USA"
+      },
+      {
+        "title": "Applied AI Researcher, Post-Training",
+        "url": "https://jobs.ashbyhq.com/distyl/4d08070a-2a80-4eaa-b702-04d80dc2ac59",
+        "verdict": "review",
+        "location": "San Francisco; New York; USA"
+      },
+      {
+        "title": "Applied AI Researcher, System Discovery",
+        "url": "https://jobs.ashbyhq.com/distyl/99c4f016-1172-4a69-9478-3833502bd701",
+        "verdict": "review",
+        "location": "San Francisco; New York; USA"
+      },
+      {
+        "title": "Applied AI Researcher, AI Systems",
+        "url": "https://jobs.ashbyhq.com/distyl/9af1e81f-34be-47ac-80b9-051d80c040ce",
+        "verdict": "review",
+        "location": "San Francisco; New York; USA"
+      },
+      {
+        "title": "Applied AI Researcher, Benchmarking",
+        "url": "https://jobs.ashbyhq.com/distyl/cf166cd0-c30f-41c8-8e43-fa38e323014d",
+        "verdict": "review",
+        "location": "San Francisco; New York; USA"
+      },
+      {
+        "title": "Applied AI Researcher, System Self-Construction",
+        "url": "https://jobs.ashbyhq.com/distyl/f907031f-c88f-45e3-8ae4-17c88a3858ab",
+        "verdict": "review",
+        "location": "San Francisco; New York; USA"
+      },
+      {
+        "title": "Applied AI Researcher, System Self-Improvement",
+        "url": "https://jobs.ashbyhq.com/distyl/f94707a5-3563-49f4-8414-ec3bb8918d03",
+        "verdict": "review",
+        "location": "San Francisco; New York; USA"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Distyl team,\n\nI came across the Applied AI Researcher, Multi-Agent Systems opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Engramme",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Research Scientist",
+        "url": "https://jobs.ashbyhq.com/engramme/1b7c8769-5ab8-4867-b13f-4bbd7165afde",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Engramme team,\n\nI came across the Research Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -228,14 +514,80 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Droyd Robotics",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Researcher",
+        "url": "https://jobs.ashbyhq.com/droyd/20da644a-f3c7-4c8b-8998-4ad24662bee9",
+        "verdict": "review",
+        "location": "San Francisco, CA; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Droyd Robotics team,\n\nI came across the Machine Learning Researcher opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Generalist",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Software Engineer: ML Infra",
+        "url": "https://jobs.ashbyhq.com/generalist/20e8ffcf-0834-48ac-b94f-c1f3d441d6b8",
+        "verdict": "review",
+        "location": "San Francisco Bay Area (San Mateo) or Boston (Somerville); United States"
+      },
+      {
+        "title": "Software Engineer: ML Optimization",
+        "url": "https://jobs.ashbyhq.com/generalist/2837706a-640c-41dc-a061-b17c6acea971",
+        "verdict": "review",
+        "location": "San Francisco Bay Area (San Mateo) or Boston (Somerville); United States"
+      },
+      {
+        "title": "Research Scientist: Pretraining",
+        "url": "https://jobs.ashbyhq.com/generalist/9871bd5a-6c1a-40b3-98cb-62d38b61a3fe",
+        "verdict": "review",
+        "location": "San Francisco Bay Area (San Mateo) or Boston (Somerville); United States"
+      },
+      {
+        "title": "Applied Scientist",
+        "url": "https://jobs.ashbyhq.com/generalist/c3dd1d5e-3189-4a20-bba0-7ae45b91bc95",
+        "verdict": "review",
+        "location": "San Francisco Bay Area (San Mateo) or Boston (Somerville); United States"
+      },
+      {
+        "title": "Research Scientist: Post-Training",
+        "url": "https://jobs.ashbyhq.com/generalist/f08058fd-3aaf-45e7-8240-28193f65b822",
+        "verdict": "review",
+        "location": "San Francisco Bay Area (San Mateo) or Boston (Somerville); United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Generalist team,\n\nI came across the Software Engineer: ML Infra opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Overjoyed to partner with Menlo Research's brilliant founders to recruit foundin",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Overjoyed to partner with Menlo Research's brilliant founders to recruit founding engineers for our open-source humanoid startup! We're delighted to build Asimov in public with a global developer ecos",
         "url": "https://jobs.ashbyhq.com/menlo/2a6e8b38-80c2-4886-b863-ef44cced0057",
         "verdict": "reject",
         "location": ""
+      },
+      {
+        "title": "Robotics AI Engineer",
+        "url": "https://jobs.ashbyhq.com/menlo/da98653d-8d51-4aaa-8500-6af9927f9716",
+        "verdict": "review",
+        "location": "Singapore; Palo Alto; Singapore"
       }
     ],
     "hiringPosts": [
@@ -257,8 +609,38 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Coinflow",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "ML Ops Engineer",
+        "url": "https://jobs.ashbyhq.com/coinflow/2aafaa5c-11db-4dde-b567-39709479e0cc",
+        "verdict": "review",
+        "location": "Chicago; United States"
+      },
+      {
+        "title": "Fraud Data Scientist",
+        "url": "https://jobs.ashbyhq.com/coinflow/c463c363-b2e2-425f-bc7f-332a53955ded",
+        "verdict": "review",
+        "location": "Chicago; United States"
+      },
+      {
+        "title": "Machine Learning Engineer - Fraud",
+        "url": "https://jobs.ashbyhq.com/coinflow/cfcb2581-87c7-4db1-9679-0364eea1e23c",
+        "verdict": "review",
+        "location": "Chicago; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Coinflow team,\n\nI came across the ML Ops Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Hiya",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Hiya | Senior Backend Software Engineer | Seattle, WA | HYBRID (3 days/week in office) | Full-time | $113K–$197K + equity",
@@ -282,13 +664,13 @@
   },
   {
     "company": "Thunder Compute (YC S24)",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
-        "title": "Thunder Compute (YC S24) | C++ Systems, Infrastructure, BizOps | San Francisco (Onsite) | Full-time | https://www.thundercompute.com",
+        "title": "Software Engineer (C++ Systems)",
         "url": "https://jobs.ashbyhq.com/thundercompute/2efae53b-817c-43e7-9da3-72694813f608",
         "verdict": "reject",
-        "location": "C++ Systems, Infrastructure, BizOps | San Francisco (Onsite) | Full-time | https://www.thundercompute.com"
+        "location": "San Francisco; United States"
       },
       {
         "title": "Thunder Compute (YC S24) | C++ Systems, Infrastructure, BizOps | San Francisco (Onsite) | Full-time | https://www.thundercompute.com",
@@ -307,7 +689,7 @@
       {
         "url": "https://jobs.ashbyhq.com/thundercompute/2efae53b-817c-43e7-9da3-72694813f608 (linked from HN post)",
         "date": "2026-10-01T15:18:54.000Z",
-        "excerpt": "Thunder Compute (YC S24) | C++ Systems, Infrastructure, BizOps | San Francisco (Onsite) | Full-time | https://www.thundercompute.com\nWe're building the VMware for GPUs. Most GPUs in the cloud sit idle a lot of the time because they're bolted to one machine over PCIe. We decouple "
+        "excerpt": "Employment type: FullTime\nTHE SHORT VERSION\n\nThunder Compute runs a GPU cloud on systems software we built from scratch in C++. It lets us get far more out of every GPU than the rest of the market.\n\nYou'll write the core C++ behind it, reporting directly to our CTO, Brian Model ("
       },
       {
         "url": "https://jobs.ashbyhq.com/thundercompute/4f28e418-b77b-446e-a30e-6b5bed36c093 (linked from HN post)",
@@ -323,7 +705,97 @@
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Thunder Compute (YC S24) team,\n\nI came across the Thunder Compute (YC S24) | C++ Systems, Infrastructure, BizOps | San Francisco (Onsite) | Full-time | https://www.thundercompute.com opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi Thunder Compute (YC S24) team,\n\nI came across the Software Engineer (C++ Systems) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Blissway",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Software Engineer, Machine Learning Operations",
+        "url": "https://jobs.ashbyhq.com/blissway/3048f89c-56a2-44d0-960f-2e6553f51d30",
+        "verdict": "review",
+        "location": "Denver, Colorado; United States"
+      },
+      {
+        "title": "Machine Learning Engineer",
+        "url": "https://jobs.ashbyhq.com/blissway/662f1761-5d28-421d-8b47-605cc910991d",
+        "verdict": "review",
+        "location": "Denver, Colorado; United States"
+      },
+      {
+        "title": "Computer Vision Engineer",
+        "url": "https://jobs.ashbyhq.com/blissway/97acd33b-9ce1-4663-b556-917347263bb3",
+        "verdict": "review",
+        "location": "Denver, Colorado; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Blissway team,\n\nI came across the Software Engineer, Machine Learning Operations opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Sesame",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "ML Model Serving Engineer",
+        "url": "https://jobs.ashbyhq.com/sesame/35793528-2b5c-47b3-9422-eaced2b69f63",
+        "verdict": "review",
+        "location": "San Francisco; New York ; Bellevue; United States"
+      },
+      {
+        "title": "Research Scientist",
+        "url": "https://jobs.ashbyhq.com/sesame/376d302f-f870-40aa-940f-aee951803d2b",
+        "verdict": "review",
+        "location": "San Francisco; New York ; Bellevue; United States"
+      },
+      {
+        "title": "Research Engineer",
+        "url": "https://jobs.ashbyhq.com/sesame/5e846cd7-5719-440c-b8ef-2fba501847ae",
+        "verdict": "review",
+        "location": "San Francisco; New York ; Bellevue; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Sesame team,\n\nI came across the ML Model Serving Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Dyna Robotics",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Research Scientist",
+        "url": "https://jobs.ashbyhq.com/dyna-robotics/357b1b23-0712-489e-b336-1462f186cba7",
+        "verdict": "review",
+        "location": "Redwood City, CA; United States"
+      },
+      {
+        "title": "Software Engineer, Data Infra",
+        "url": "https://jobs.ashbyhq.com/dyna-robotics/43dcc186-62b1-4641-9365-3cb9767fc653",
+        "verdict": "review",
+        "location": "Redwood City, CA; United States"
+      },
+      {
+        "title": "Research Scientist, Simulation",
+        "url": "https://jobs.ashbyhq.com/dyna-robotics/942cd530-b2b7-4141-8aaa-d844175e26ac",
+        "verdict": "review",
+        "location": "Redwood City, CA; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Dyna Robotics team,\n\nI came across the Research Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -345,12 +817,36 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Sunday Robotics",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Research Engineer/Scientist",
+        "url": "https://jobs.ashbyhq.com/sunday/38ac9ff8-2d68-40a8-9733-1709dd34023d",
+        "verdict": "review",
+        "location": "Redwood City, CA; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Sunday Robotics team,\n\nI came across the Machine Learning Research Engineer/Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Idler",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Research Scientist",
         "url": "https://jobs.ashbyhq.com/idler/3a8b02ec-c567-4f75-bf73-ec763e06d6eb",
+        "verdict": "match",
+        "location": "San Francisco; United States"
+      },
+      {
+        "title": "Research Engineer",
+        "url": "https://jobs.ashbyhq.com/idler/cce9ab39-0ab0-489d-bbf9-4df74c2baeee",
         "verdict": "match",
         "location": "San Francisco; United States"
       }
@@ -360,6 +856,30 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Idler team,\n\nI came across the Research Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Higharc",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Engineer",
+        "url": "https://jobs.ashbyhq.com/higharc/449dd0af-71ab-4198-9492-7d5b0adee171",
+        "verdict": "review",
+        "location": "Remote (New York City, NY); Remote (San Francisco, CA); United States"
+      },
+      {
+        "title": "Machine Learning Engineer",
+        "url": "https://www.linkedin.com/comm/jobs/view/4471768765",
+        "verdict": "review",
+        "location": "New York"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Higharc team,\n\nI came across the Machine Learning Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -383,6 +903,12 @@
         "url": "https://jobs.ashbyhq.com/liveflow/e1ba2bad-030a-4bc2-9bbd-f1375f712a57",
         "verdict": "review",
         "location": "San Francisco; United States"
+      },
+      {
+        "title": "Graduate Engineer - AI Agents",
+        "url": "https://go.vansh.nyc/13R",
+        "verdict": "match",
+        "location": "San Francisco, CA"
       }
     ],
     "hiringPosts": [],
@@ -390,6 +916,54 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi LiveFlow team,\n\nI came across the Software Engineer - AI Agents opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Build AI",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data Scientist, Marketplace Incentives",
+        "url": "https://jobs.ashbyhq.com/build-ai/493a31c5-edd4-4bd2-8ea3-5cbad3d38e47",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      },
+      {
+        "title": "ML Engineer, Inference Optimization",
+        "url": "https://jobs.ashbyhq.com/build-ai/5ca509d2-a037-4295-9cca-a5c6f5b57718",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Build AI team,\n\nI came across the Data Scientist, Marketplace Incentives opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Luminai",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Applied AI Engineer",
+        "url": "https://jobs.ashbyhq.com/luminai/4b580dd6-0675-4f55-86c7-6d694285b6d8",
+        "verdict": "review",
+        "location": "SF Bay Area; New York; United States"
+      },
+      {
+        "title": "Applied AI Engineer",
+        "url": "https://www.linkedin.com/comm/jobs/view/4394312789",
+        "verdict": "review",
+        "location": "New York"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Luminai team,\n\nI came across the Applied AI Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -459,6 +1033,129 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "DuckDuckGo - we are looking for candidates that are excited to join us on a miss",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Senior Backend Engineer",
+        "url": "https://jobs.ashbyhq.com/duck-duck-go/53022b02-da3d-4fda-8273-c897d27ed50d",
+        "verdict": "reject",
+        "location": "USA (Remote); Slovakia (Remote); Spain (Remote); Czechia (Remote); Switzerland (Remote); Estonia (Remote); Mexico (Remote); Israel (Remote); Bulgaria (Remote); Austria (Remote); Iceland (Remote); Croatia (Remote); Hungary (Remote); Ireland (Remote); Canada (Remote); South Africa (Remote); Brazil (Remote); Finland (Remote); UK (Remote); Cyprus (Remote); Malta (Remote); Latvia (Remote); Argentina (Remote); Poland (Remote); Uruguay (Remote); United States"
+      },
+      {
+        "title": "Senior Product Partnerships Manager (Remote within USA or Canada)",
+        "url": "https://jobs.ashbyhq.com/duck-duck-go/dc1027ae-8f6a-44eb-b116-f945d2f95fad",
+        "verdict": "reject",
+        "location": "USA (Remote); Canada (Remote); United States"
+      },
+      {
+        "title": "Director, Paid Marketing - Subscription (US Remote)",
+        "url": "https://jobs.ashbyhq.com/duck-duck-go/f8570953-8ea3-4955-bfbf-dd67a56df5f5",
+        "verdict": "reject",
+        "location": "United States (Remote); United States"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/duck-duck-go/53022b02-da3d-4fda-8273-c897d27ed50d (linked from HN post)",
+        "date": "2026-10-01T17:37:37.000Z",
+        "excerpt": "Employment type: FullTime\nWHO WE ARE \n\nHi, we're DuckDuckGo, the online protection company and remote-first team of 400+ on a mission to raise the standard of trust online. Founded in 2008 and profitable since 2014, our annual revenue is in the hundreds of millions USD and millio"
+      },
+      {
+        "url": "https://jobs.ashbyhq.com/duck-duck-go/dc1027ae-8f6a-44eb-b116-f945d2f95fad (linked from HN post)",
+        "date": "2026-10-01T17:37:37.000Z",
+        "excerpt": "Employment type: FullTime\nWHO WE ARE\n\nHi, we're DuckDuckGo, the online protection company and remote-first team of 400+ on a mission to raise the standard of trust online. Founded in 2008 and profitable since 2014, our annual revenue is in the hundreds of millions USD and million"
+      },
+      {
+        "url": "https://jobs.ashbyhq.com/duck-duck-go/f8570953-8ea3-4955-bfbf-dd67a56df5f5 (linked from HN post)",
+        "date": "2026-10-01T17:37:37.000Z",
+        "excerpt": "Employment type: FullTime\nWHO WE ARE\n\nHi, we're DuckDuckGo, the online protection company and remote-first team of 400+ on a mission to raise the standard of trust online. Founded in 2008 and profitable since 2014, our annual revenue is in the hundreds of millions USD and million"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi DuckDuckGo - we are looking for candidates that are excited to join us on a miss team,\n\nI came across the Senior Backend Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Mastra",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Engineer",
+        "url": "https://jobs.ashbyhq.com/mastra/531a3fe8-556f-4b83-bee7-20374f67f980",
+        "verdict": "review",
+        "location": "Remote"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/mastra/531a3fe8-556f-4b83-bee7-20374f67f980 (linked from HN post)",
+        "date": "2026-10-07T16:59:27.000Z",
+        "excerpt": "Employment type: FullTime\nWe’re looking for an AI engineer. You’ll work on features that help developers understand their agents’ behavior, evaluate their performance, and improve them over time.\n\nThis is a hands-on engineering role. You’ll move between experiments, benchmarks, a"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Mastra team,\n\nI came across the AI Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "adaption",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Research Scientist",
+        "url": "https://jobs.ashbyhq.com/adaption/5635dd7e-a0ca-414d-b738-71500502dba9",
+        "verdict": "review",
+        "location": "United States; New York; United Kingdom; Mexico; France; India; Ireland; Germany; Netherlands; Brazil; Argentina; Canada; United States"
+      },
+      {
+        "title": "Inference Engineer",
+        "url": "https://jobs.ashbyhq.com/adaption/8dae2814-dcde-4dd4-ae08-720825b8ae7e",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi adaption team,\n\nI came across the Research Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Rebar",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Software Engineer, Product",
+        "url": "https://jobs.ashbyhq.com/rebar/5ab49c2d-9a70-4723-9217-7704a455155c",
+        "verdict": "reject",
+        "location": "New York City; United States"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/rebar/5ab49c2d-9a70-4723-9217-7704a455155c (linked from HN post)",
+        "date": "2026-10-02T15:21:04.000Z",
+        "excerpt": "Employment type: FullTime\nABOUT REBAR\n\nRebar is building the AI operating system for commercial HVAC, Electrical, and Plumbing.\n\nOver the past year our quoting platform has processed tens of thousands of projects across North America and we’re continuing that growth. Our customer"
+      }
+    ],
+    "publicContacts": [
+      {
+        "value": "john@withrebar.ai",
+        "source": "https://jobs.ashbyhq.com/rebar/5ab49c2d-9a70-4723-9217-7704a455155c"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "Address printed in a public HN hiring post; that the poster speaks for the company is not verified.",
+    "draft": "Hi Rebar team,\n\nI came across the Software Engineer, Product opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Arizent",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -474,41 +1171,6 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Arizent team,\n\nI came across the Data & AI Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
-    "company": "River",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
-    "roles": [
-      {
-        "title": "River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4",
-        "url": "https://jobs.ashbyhq.com/river/610f652b-bdb9-4d82-9973-680babe16a07",
-        "verdict": "reject",
-        "location": "Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4"
-      },
-      {
-        "title": "River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4",
-        "url": "https://jobs.ashbyhq.com/river",
-        "verdict": "reject",
-        "location": "Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4"
-      }
-    ],
-    "hiringPosts": [
-      {
-        "url": "https://jobs.ashbyhq.com/river/610f652b-bdb9-4d82-9973-680babe16a07 (linked from HN post)",
-        "date": "2026-10-01T15:30:44.000Z",
-        "excerpt": "River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4\nI'm Alex, founder and CEO of River. I also wrote the first line of code and still ship PRs.\nRiver is a client-fir"
-      },
-      {
-        "url": "https://jobs.ashbyhq.com/river (linked from HN post)",
-        "date": "2026-10-01T15:30:44.000Z",
-        "excerpt": "River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4\nI'm Alex, founder and CEO of River. I also wrote the first line of code and still ship PRs.\nRiver is a client-fir"
-      }
-    ],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi River team,\n\nI came across the River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4 opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -536,6 +1198,66 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Kled AI",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Fraud/ML Engineer",
+        "url": "https://jobs.ashbyhq.com/kled-ai/68d5c6f6-a22c-4b81-a0f1-bcc28de93144",
+        "verdict": "review",
+        "location": "United States; United States"
+      },
+      {
+        "title": "Research Scientist, Benchmarks & Evals",
+        "url": "https://jobs.ashbyhq.com/kled-ai/6e94d99f-fc21-4253-883a-32679b2e31ab",
+        "verdict": "review",
+        "location": "United States; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Kled AI team,\n\nI came across the Fraud/ML Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Root Access",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Engineer (Physics-based)",
+        "url": "https://jobs.ashbyhq.com/root-access/6ab61b1c-b92d-4189-86fc-9dc98d5a69ce",
+        "verdict": "review",
+        "location": "New York City; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Root Access team,\n\nI came across the Machine Learning Engineer (Physics-based) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Julius AI",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Finance Researcher (MBA Student)",
+        "url": "https://jobs.ashbyhq.com/julius/6c6bd21d-b784-4d3a-964f-090c6289bb12",
+        "verdict": "review",
+        "location": "Remote"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Julius AI team,\n\nI came across the AI Finance Researcher (MBA Student) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "LiteLLM",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -554,6 +1276,60 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Percepta",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Embedded Research Scientist",
+        "url": "https://jobs.ashbyhq.com/percepta/6f1b97bd-14c4-4bfd-85a1-bc501d37ddc1",
+        "verdict": "review",
+        "location": "New York City; Boston; United States"
+      },
+      {
+        "title": "Research Scientist – World Modeling",
+        "url": "https://jobs.ashbyhq.com/percepta/909e2fcb-98e3-4c6b-9b76-6c5409184567",
+        "verdict": "review",
+        "location": "New York City; Boston; United States"
+      },
+      {
+        "title": "AI Infrastructure Engineer",
+        "url": "https://jobs.ashbyhq.com/percepta/927e3ea3-4f07-4385-bddd-ae6aaa9836b2",
+        "verdict": "review",
+        "location": "New York City; United States"
+      },
+      {
+        "title": "Applied AI Engineer",
+        "url": "https://jobs.ashbyhq.com/percepta/bbfe8035-2364-419b-bb36-500aaa542fb2",
+        "verdict": "review",
+        "location": "New York City; United States"
+      },
+      {
+        "title": "Research Scientist – Optimization",
+        "url": "https://jobs.ashbyhq.com/percepta/cd0fa989-61e4-4f51-98b9-77d0b45faed6",
+        "verdict": "review",
+        "location": "New York City; Boston; United States"
+      },
+      {
+        "title": "Research Scientist – Reinforcement Learning (RL)",
+        "url": "https://jobs.ashbyhq.com/percepta/e2dd1d63-dcc1-463e-8564-40a3106f6847",
+        "verdict": "review",
+        "location": "New York City; Boston; United States"
+      },
+      {
+        "title": "Research Scientist – Reinforcement Learning (RL)",
+        "url": "https://www.linkedin.com/comm/jobs/view/4367628028",
+        "verdict": "review",
+        "location": "New York, NY"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Percepta team,\n\nI came across the Embedded Research Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Tabs",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -569,6 +1345,60 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Tabs team,\n\nI came across the Research Engineer, AI/ML opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Medra",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Research Engineer, Post-training",
+        "url": "https://jobs.ashbyhq.com/medraai/7b68aa54-c168-41c8-a817-f80f8ff16119",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Medra team,\n\nI came across the Research Engineer, Post-training opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Trace Labs",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Engineer, Applied",
+        "url": "https://jobs.ashbyhq.com/tracelabs/84f1786a-1f06-4798-892c-682a6ab07ba5",
+        "verdict": "review",
+        "location": "United States; Remote; NYC; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Trace Labs team,\n\nI came across the Machine Learning Engineer, Applied opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Continual Research",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Researcher",
+        "url": "https://jobs.ashbyhq.com/continualresearch/85ad961e-5c00-43fd-b994-914c50b86728",
+        "verdict": "match",
+        "location": "New York City; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Continual Research team,\n\nI came across the AI Researcher opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -591,7 +1421,7 @@
   },
   {
     "company": "Tenki Cloud by Luxor Tech",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Tenki Cloud by Luxor Tech | San Francisco, CA | Founding Sales | Full-time | SF-based preferred | https://tenki.cloud/",
@@ -614,6 +1444,24 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Pylon",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Software Engineer, AI",
+        "url": "https://jobs.ashbyhq.com/pylon-labs/8d8264b7-8094-4a55-8991-7876796487ae",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Pylon team,\n\nI came across the Software Engineer, AI opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Silna Health",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -632,27 +1480,129 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "HavocAI",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Embedded Perception Engineer",
+        "url": "https://jobs.ashbyhq.com/havocai/8f48e92d-c46b-48d0-8d0b-d80fe89bc8f0",
+        "verdict": "review",
+        "location": "Remote ; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi HavocAI team,\n\nI came across the Embedded Perception Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Parafin",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data Scientist, Underwriting",
+        "url": "https://jobs.ashbyhq.com/parafin/92807f0c-0c67-4516-bbf2-dc809516de14",
+        "verdict": "review",
+        "location": "San Francisco, CA; USA"
+      },
+      {
+        "title": "Data Analytics Engineer",
+        "url": "https://jobs.ashbyhq.com/parafin/b6fbdb8d-aa25-4216-a0bb-9af06607bd96",
+        "verdict": "match",
+        "location": "San Francisco, CA; USA"
+      },
+      {
+        "title": "Data Scientist",
+        "url": "https://jobs.ashbyhq.com/parafin/cb15e569-764f-4304-a2cd-41a11fe9e008",
+        "verdict": "review",
+        "location": "San Francisco, CA; USA"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Parafin team,\n\nI came across the Data Analytics Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Prior Labs",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "ML Engineer, Forward Deployed",
+        "url": "https://jobs.ashbyhq.com/prior-labs/928de80c-278f-4f38-aeb2-e4d10b79f38e",
+        "verdict": "review",
+        "location": "New York; Berlin; United States"
+      },
+      {
+        "title": "Research Engineer, Foundation Model",
+        "url": "https://jobs.ashbyhq.com/prior-labs/a1d005f1-732d-41c1-bd23-4e37b4ecdc7b",
+        "verdict": "review",
+        "location": "Berlin; Freiburg; New York; Germany"
+      },
+      {
+        "title": "Research Scientist, Foundation Model",
+        "url": "https://jobs.ashbyhq.com/prior-labs/b37463f2-775d-42e0-8c58-4ec26927534b",
+        "verdict": "review",
+        "location": "Freiburg; Berlin; New York; Germany"
+      },
+      {
+        "title": "ML Engineer, Infrastructure",
+        "url": "https://jobs.ashbyhq.com/prior-labs/bd4fe067-0e99-4268-b5ad-d1f8e36c6976",
+        "verdict": "review",
+        "location": "Berlin; Freiburg; New York; Germany"
+      },
+      {
+        "title": "Research Scientist, Foundational Data Science",
+        "url": "https://jobs.ashbyhq.com/prior-labs/f3b358fd-7cc8-417c-9181-c02213935e54",
+        "verdict": "review",
+        "location": "Berlin; Freiburg; New York; Germany"
+      },
+      {
+        "title": "Prior Labs | Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack",
+        "url": "https://jobs.ashbyhq.com/prior-labs",
+        "verdict": "review",
+        "location": "Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/prior-labs (linked from HN post)",
+        "date": "2026-10-02T16:34:45.000Z",
+        "excerpt": "Prior Labs | Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack\nWe build foundation models for tabular data. Deep learning transformed text and images but mostly skipped tables, which are still the data behind mos"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Prior Labs team,\n\nI came across the ML Engineer, Forward Deployed opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "ClickHouse",
     "sizeBasis": "posts in HN Who is hiring (size not established)",
     "roles": [
       {
-        "title": "ClickHouse | Remote | Full-time | https://clickhouse.com/",
+        "title": "Database Research Scientist",
         "url": "https://jobs.ashbyhq.com/clickhouse/962f45f3-d8d3-4073-add2-af763f7c3ffb",
-        "verdict": "reject",
-        "location": "Remote | Full-time | https://clickhouse.com/"
+        "verdict": "review",
+        "location": "United States; Canada; United Kingdom; Germany; The Netherlands; United States"
       }
     ],
     "hiringPosts": [
       {
         "url": "https://jobs.ashbyhq.com/clickhouse/962f45f3-d8d3-4073-add2-af763f7c3ffb (linked from HN post)",
         "date": "2026-10-02T18:30:07.000Z",
-        "excerpt": "ClickHouse | Remote | Full-time | https://clickhouse.com/\nClickHouse Labs is an applied research group that works closely with engineering teams to identify challenging problems in database systems and develop novel solutions. Our goal is to advance the state of the art and trans"
+        "excerpt": "Employment type: FullTime\nClickHouse Labs is an applied research group that works closely with engineering teams to identify challenging problems in database systems and develop novel solutions. Our goal is to advance the state of the art and translate research ideas into real-wo"
       }
     ],
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi ClickHouse team,\n\nI came across the ClickHouse | Remote | Full-time | https://clickhouse.com/ opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi ClickHouse team,\n\nI came across the Database Research Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -680,6 +1630,42 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Sola",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Software Engineer, Windows AI Automation",
+        "url": "https://jobs.ashbyhq.com/sola/9a9c39a9-6a15-4b76-b538-f7d219fdb92e",
+        "verdict": "review",
+        "location": "Remote; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Sola team,\n\nI came across the Software Engineer, Windows AI Automation opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Solace Health",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data Scientist",
+        "url": "https://jobs.ashbyhq.com/Solace/9dc2497a-d836-4331-9040-3d9108be8563",
+        "verdict": "match",
+        "location": "United States; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Solace Health team,\n\nI came across the Data Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Makai Labs",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -688,6 +1674,12 @@
         "url": "https://jobs.ashbyhq.com/makai-labs/a350e730-8d80-4528-9d41-497acbd01223",
         "verdict": "match",
         "location": "New York; California; Massachusetts; Texas; New Jersey; North Carolina; United States"
+      },
+      {
+        "title": "Forward Deployed AI Analyst",
+        "url": "https://go.vansh.nyc/NR",
+        "verdict": "review",
+        "location": "New York, NY"
       }
     ],
     "hiringPosts": [],
@@ -695,6 +1687,59 @@
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
     "draft": "Hi Makai Labs team,\n\nI came across the AI Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Middesk",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Forward Deployed Engineer",
+        "url": "https://jobs.ashbyhq.com/middesk/a72b1048-1001-49b1-92bd-9c44574f939b",
+        "verdict": "reject",
+        "location": "San Francisco; New York; USA"
+      },
+      {
+        "title": "Software Engineer, Infrastructure",
+        "url": "https://jobs.ashbyhq.com/middesk/aed2c535-cd58-4920-9618-a0cbbb62851e",
+        "verdict": "reject",
+        "location": "San Francisco; USA"
+      }
+    ],
+    "hiringPosts": [
+      {
+        "url": "https://jobs.ashbyhq.com/middesk/a72b1048-1001-49b1-92bd-9c44574f939b (linked from HN post)",
+        "date": "2026-10-02T19:53:53.000Z",
+        "excerpt": "Employment type: FullTime\nABOUT MIDDESK:\n\nMiddesk is building the data and intelligence infrastructure that helps businesses work together with confidence. We started by creating a comprehensive platform for understanding businesses, bringing together authoritative and proprietar"
+      },
+      {
+        "url": "https://jobs.ashbyhq.com/middesk/aed2c535-cd58-4920-9618-a0cbbb62851e (linked from HN post)",
+        "date": "2026-10-02T19:53:53.000Z",
+        "excerpt": "Employment type: FullTime\nABOUT MIDDESK:\n\nMiddesk is building the data and intelligence infrastructure that helps businesses work together with confidence. We started by creating a comprehensive platform for understanding businesses, bringing together authoritative and proprietar"
+      }
+    ],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Middesk team,\n\nI came across the Forward Deployed Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Verne Robotics",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Robotics Data Infrastructure Engineer",
+        "url": "https://jobs.ashbyhq.com/Verne%20Robotics/a7d1d847-b050-4ed8-92d6-7c224b3d3041",
+        "verdict": "match",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Verne Robotics team,\n\nI came across the Robotics Data Infrastructure Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -716,27 +1761,117 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "Sheer Health ( https://www.sheerhealth.com )",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "company": "Sentient Labs",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
-        "title": "Sheer Health ( https://www.sheerhealth.com ) | New York, NY | Full-Time | ONSITE",
+        "title": "Applied ML Engineer",
+        "url": "https://jobs.ashbyhq.com/sentient/c8354f11-556c-496c-8ef4-d6bd336a8f2d",
+        "verdict": "review",
+        "location": "Remote - APAC ( Singapore ); SF Only; Remote - APAC ( Hong Kong ) ; Remote - EMEA ( UK ); Austin; Singapore"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Sentient Labs team,\n\nI came across the Applied ML Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Koah",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data Scientist",
+        "url": "https://jobs.ashbyhq.com/koahlabs/ccbb05f9-2a89-46c2-b54d-b56288521f9a",
+        "verdict": "review",
+        "location": "San Francisco; United States; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Koah team,\n\nI came across the Data Scientist opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Sheer Health ( https://www.sheerhealth.com )",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Automation Engineer",
         "url": "https://jobs.ashbyhq.com/sheerhealth/ccd28cff-eac8-4970-beb4-becc3a12c9f5",
         "verdict": "reject",
-        "location": "New York, NY | Full-Time | ONSITE"
+        "location": "New York City; United States"
       }
     ],
     "hiringPosts": [
       {
         "url": "https://jobs.ashbyhq.com/sheerhealth/ccd28cff-eac8-4970-beb4-becc3a12c9f5 (linked from HN post)",
         "date": "2026-10-01T19:19:13.000Z",
-        "excerpt": "Sheer Health ( https://www.sheerhealth.com ) | New York, NY | Full-Time | ONSITE\nIf you or a loved one has ever suffered from confusing/egregious medical bills or insurance communications, this is your chance to give the power back to others in a similar situation.\nOur mission is"
+        "excerpt": "Employment type: FullTime\nCOMPANY OVERVIEW\n\nSheer Health is a New York City based company providing individuals and families with a better healthcare experience. Our mission is to demystify health insurance, healthcare and medical billing. By utilizing cutting-edge technology and"
       }
     ],
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Sheer Health ( https://www.sheerhealth.com ) team,\n\nI came across the Sheer Health ( https://www.sheerhealth.com ) | New York, NY | Full-Time | ONSITE opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi Sheer Health ( https://www.sheerhealth.com ) team,\n\nI came across the Automation Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Greptile",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Research Engineer",
+        "url": "https://jobs.ashbyhq.com/greptile/ce47ec13-9aa2-4313-908d-8cfdb1e621be",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Greptile team,\n\nI came across the Research Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Veritus",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Voice AI QA Analyst",
+        "url": "https://jobs.ashbyhq.com/veritus/d891044d-2a3e-4d9c-9106-4ea963fbf3b5",
+        "verdict": "review",
+        "location": "San Francisco; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Veritus team,\n\nI came across the Voice AI QA Analyst opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Collinear AI",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "MTS - AI Physics & Simulations",
+        "url": "https://jobs.ashbyhq.com/collinear-ai/e1a733d5-2b9c-41d2-a1e3-2e0df1aabae4",
+        "verdict": "review",
+        "location": "San Francisco, CA; Sunnyvale, California; United States"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Collinear AI team,\n\nI came across the MTS - AI Physics & Simulations opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -766,6 +1901,12 @@
         "url": "https://jobs.ashbyhq.com/goaly/ff6ec280-f5c6-4151-8bfd-e75ff8004c89",
         "verdict": "match",
         "location": "Palo Alto, CA, USA; United States"
+      },
+      {
+        "title": "Applied AI Engineer",
+        "url": "https://go.vansh.nyc/13P",
+        "verdict": "match",
+        "location": "Palo Alto, CA"
       }
     ],
     "hiringPosts": [],
@@ -1944,6 +3085,24 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "SEP",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Data Engineer (in person)",
+        "url": "https://jobs.lever.co/sep/2eb79283-b3fd-4316-9e93-e80dbebfba05",
+        "verdict": "review",
+        "location": "Westfield, IN (US)"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi SEP team,\n\nI came across the Data Engineer (in person) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Belvedere Trading",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -1993,48 +3152,67 @@
   },
   {
     "company": "Curai",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
-        "title": "Curai | Remote (US) | Full-time | https://curaihealth.com",
+        "title": "Senior Software Engineer, Full-Stack",
         "url": "https://jobs.lever.co/curai/46e0dd2f-c1dd-4ca2-9095-5b45f477b656",
         "verdict": "reject",
-        "location": "Remote (US) | Full-time | https://curaihealth.com"
+        "location": "Remote (US)"
       },
       {
-        "title": "Curai | Remote (US) | Full-time | https://curaihealth.com",
+        "title": "Senior Software Engineer, Marketing Platform",
         "url": "https://jobs.lever.co/curai/b157298e-4dc7-4594-a9c4-29f0dec4bfa4",
         "verdict": "reject",
-        "location": "Remote (US) | Full-time | https://curaihealth.com"
-      },
-      {
-        "title": "Curai | Remote (US) | Full-time | https://curaihealth.com",
-        "url": "https://jobs.lever.co/curai/cd31b67b-d83c-466a-ac55-cfa4c2ec4237",
-        "verdict": "reject",
-        "location": "Remote (US) | Full-time | https://curaihealth.com"
+        "location": "Remote (US)"
       }
     ],
     "hiringPosts": [
       {
         "url": "https://jobs.lever.co/curai/46e0dd2f-c1dd-4ca2-9095-5b45f477b656 (linked from HN post)",
         "date": "2026-10-01T18:02:35.000Z",
-        "excerpt": "Curai | Remote (US) | Full-time | https://curaihealth.com\nWe're building AI agents to expand access to affordable, and high quality healthcare. We run a vertically integrated primary and urgent care clinic and are actively building an agentic platform focused improving longitudin"
+        "excerpt": "At Curai, we believe that access to high-quality healthcare is a fundamental human right, not a privilege. Our mission is to radically transform healthcare by harnessing the power of artificial intelligence and clinical expertise to make care more affordable, accessible, and effe"
       },
       {
         "url": "https://jobs.lever.co/curai/b157298e-4dc7-4594-a9c4-29f0dec4bfa4 (linked from HN post)",
         "date": "2026-10-01T18:02:35.000Z",
-        "excerpt": "Curai | Remote (US) | Full-time | https://curaihealth.com\nWe're building AI agents to expand access to affordable, and high quality healthcare. We run a vertically integrated primary and urgent care clinic and are actively building an agentic platform focused improving longitudin"
-      },
-      {
-        "url": "https://jobs.lever.co/curai/cd31b67b-d83c-466a-ac55-cfa4c2ec4237 (linked from HN post)",
-        "date": "2026-10-01T18:02:35.000Z",
-        "excerpt": "Curai | Remote (US) | Full-time | https://curaihealth.com\nWe're building AI agents to expand access to affordable, and high quality healthcare. We run a vertically integrated primary and urgent care clinic and are actively building an agentic platform focused improving longitudin"
+        "excerpt": "At Curai, we believe that access to high-quality healthcare is a fundamental human right, not a privilege. Our mission is to radically transform healthcare by harnessing the power of artificial intelligence and clinical expertise to make care more affordable, accessible, and effe"
       }
     ],
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Curai team,\n\nI came across the Curai | Remote (US) | Full-time | https://curaihealth.com opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi Curai team,\n\nI came across the Senior Software Engineer, Full-Stack opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Applied Underwriters",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Engineer - Infrustructure",
+        "url": "https://jobs.lever.co/auw/515a3498-4257-4e68-91ff-cf82e854f12d",
+        "verdict": "match",
+        "location": "New York City, NY"
+      },
+      {
+        "title": "AI Engineer - Data Science",
+        "url": "https://jobs.lever.co/auw/6f317af6-4362-4dea-accc-e86ec1d102a5",
+        "verdict": "match",
+        "location": "New York City, NY"
+      },
+      {
+        "title": "AI Engineer - Application Development",
+        "url": "https://jobs.lever.co/auw/9234d6e2-f306-48d9-9cd6-9192d34d889c",
+        "verdict": "match",
+        "location": "New York City, NY"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Applied Underwriters team,\n\nI came across the AI Engineer - Infrustructure opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -2140,6 +3318,24 @@
     "status": "draft_not_sent"
   },
   {
+    "company": "Perr&Knight",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Statistical Analyst",
+        "url": "https://jobs.lever.co/perrknight/d3f06fd0-88b7-47fc-bce0-9d411ed5f048",
+        "verdict": "review",
+        "location": "U.S. Remote or Hybrid (CA, FL, NJ, NC) (US)"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Perr&Knight team,\n\nI came across the Statistical Analyst opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
     "company": "Artera",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
@@ -2158,30 +3354,84 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "10a Labs",
+    "company": "Skydance",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Machine Learning Engineer",
-        "url": "https://www.linkedin.com/comm/jobs/view/4458448360?lipi=urn%3Ali%3Apage%3Aemail_email_jobs_viewed_job_reminder_01%3BFZpTmgGKS6KgyFNfruEB5g%3D%3D&midToken=AQFhYVd-MC16XQ&midSig=1gb4lCTgM7PIs1&eid=mrnm3y-mvdbm9j4-zl&otpToken=MjczNzQ2MzVjMDM1NzY2YzdmMDdmZDc2ZmUxZjkzMTI5MTlkNmNmMGE2YzZiNGQ4OWM5YWI2NjVmNzM0MjRjMWIwN2NiOWEyZGQ5YzFiNzAzYWY2YWZmYWU4ZWIwZjhlZTA4Yzk5YmJjZWM1MDc2YTRjNTUzNWJhMWVmNWEyZGZhMWU3NGIxZGZmYzEyMDgzLDIsMQ%3D%3D",
+        "url": "https://www.linkedin.com/comm/jobs/view/4408503712",
         "verdict": "review",
-        "location": "United States"
+        "location": "10036"
       }
     ],
     "hiringPosts": [],
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi 10a Labs team,\n\nI came across the Machine Learning Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi Skydance team,\n\nI came across the Machine Learning Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
-    "company": "Kargo",
+    "company": "Cinder",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI/ML Engineer",
+        "url": "https://www.linkedin.com/comm/jobs/view/4459887933",
+        "verdict": "review",
+        "location": "New York"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Cinder team,\n\nI came across the AI/ML Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Dorsia",
     "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Machine Learning Engineer",
-        "url": "https://www.linkedin.com/comm/jobs/view/4483753691?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BhMdi1vaFT7m%2FjCxWYVhRtA%3D%3D&midToken=AQFhYVd-MC16XQ&midSig=2GRCjZf37f1sw1&eid=mrnm3y-mvrhqgk5-z5&otpToken=NTJiODkzNzgyODUwNGM2ZDk4YjVlNzM2NTUyMDg2ZWU1Zjg5OTk0Yjg2YzhiNjRhNmFkOGY4YWIwNGIxMWU1MmVjZDJiNTA4YzQ0NGZiZGYyZGM2MWNhNTU1YTk5YjU2M2I4ZDkxOGViMDFmNWMwYTVjNmZmOGQ3OTM2YjJhZmMzN2U0NzA3ZjljZDgyYTczLDIsMQ%3D%3D",
+        "url": "https://www.linkedin.com/comm/jobs/view/4463475665",
+        "verdict": "review",
+        "location": "New York"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Dorsia team,\n\nI came across the Machine Learning Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Orenda, Inc",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "Machine Learning Engineer",
+        "url": "https://www.linkedin.com/comm/jobs/view/4478486502",
+        "verdict": "review",
+        "location": "New York"
+      }
+    ],
+    "hiringPosts": [],
+    "publicContacts": [],
+    "confidence": "low",
+    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
+    "draft": "Hi Orenda, Inc team,\n\nI came across the Machine Learning Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "status": "draft_not_sent"
+  },
+  {
+    "company": "Edra",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
+    "roles": [
+      {
+        "title": "AI Research Engineer (New York)",
+        "url": "https://www.linkedin.com/comm/jobs/view/4483083859",
         "verdict": "review",
         "location": "New York, NY"
       }
@@ -2190,7 +3440,7 @@
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Kargo team,\n\nI came across the Machine Learning Engineer opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi Edra team,\n\nI came across the AI Research Engineer (New York) opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
@@ -2218,32 +3468,8 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "Checkly",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
-    "roles": [
-      {
-        "title": "Checkly | https://www.checklyhq.com | Senior Product Engineer, Product Manager, Senior Sales Engineer, Solutions Engineer | REMOTE (Europe / US Eastern) | Full-time",
-        "url": "https://jobs.ashbyhq.com/checkly",
-        "verdict": "reject",
-        "location": "https://www.checklyhq.com | Senior Product Engineer, Product Manager, Senior Sales Engineer, Solutions Engineer | REMOTE (Europe / US Eastern) | Full-time"
-      }
-    ],
-    "hiringPosts": [
-      {
-        "url": "https://jobs.ashbyhq.com/checkly (linked from HN post)",
-        "date": "2026-10-01T15:13:49.000Z",
-        "excerpt": "Checkly | https://www.checklyhq.com | Senior Product Engineer, Product Manager, Senior Sales Engineer, Solutions Engineer | REMOTE (Europe / US Eastern) | Full-time\nThe best developers don't wait for a customer to tell them something's broken. They catch it first, in the pull req"
-      }
-    ],
-    "publicContacts": [],
-    "confidence": "low",
-    "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Checkly team,\n\nI came across the Checkly | https://www.checklyhq.com | Senior Product Engineer, Product Manager, Senior Sales Engineer, Solutions Engineer | REMOTE (Europe / US Eastern) | Full-time opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
-    "status": "draft_not_sent"
-  },
-  {
     "company": "Fig",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Fig | Founding Engineer | San Francisco | ONSITE (hybrid) | Full-time | $180K-$270K + .5 - 2% equity | https://www.growfig.ai",
@@ -2267,7 +3493,7 @@
   },
   {
     "company": "Oscilar.com",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Oscilar.com | Sr/Staff Software Engineers, Data Scientist, FDE, PM| REMOTE (US/Canada/Brazil/Poland/UK/India)",
@@ -2290,32 +3516,32 @@
     "status": "draft_not_sent"
   },
   {
-    "company": "Prior Labs",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "company": "River",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
-        "title": "Prior Labs | Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack",
-        "url": "https://jobs.ashbyhq.com/prior-labs",
-        "verdict": "review",
-        "location": "Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack"
+        "title": "River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4",
+        "url": "https://jobs.ashbyhq.com/river",
+        "verdict": "reject",
+        "location": "Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4"
       }
     ],
     "hiringPosts": [
       {
-        "url": "https://jobs.ashbyhq.com/prior-labs (linked from HN post)",
-        "date": "2026-10-02T16:34:45.000Z",
-        "excerpt": "Prior Labs | Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack\nWe build foundation models for tabular data. Deep learning transformed text and images but mostly skipped tables, which are still the data behind mos"
+        "url": "https://jobs.ashbyhq.com/river (linked from HN post)",
+        "date": "2026-10-01T15:30:44.000Z",
+        "excerpt": "River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4\nI'm Alex, founder and CEO of River. I also wrote the first line of code and still ship PRs.\nRiver is a client-fir"
       }
     ],
     "publicContacts": [],
     "confidence": "low",
     "confidenceNote": "No published contact; apply through the posting or find a named recruiter by hand.",
-    "draft": "Hi Prior Labs team,\n\nI came across the Prior Labs | Berlin, Freiburg, NYC | ONSITE | Full-time | Technical PM, ML Infra, Research Scientist/Engineer, Backend, Full Stack opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
+    "draft": "Hi River team,\n\nI came across the River | Staff Engineers (Elixir) | NYC or REMOTE (US, Europe, South America) | Full-Time | $200K-$250K + equity | https://jobs.ashbyhq.com/river?utm_source=Zp9nJyqvd4 opening and wanted to reach out directly. I'm Lindsey Ma; I completed a Master of Science in Statistics at Columbia University (May 2026) and I'm looking for a new-grad role in machine learning / AI engineering.\n\n[Add one project from the resume that fits this team, in your own words. Nothing here may go beyond the resume.]\n\nWould you be open to a short conversation, or could you point me to the right person for this role?\n\nThank you,\nLindsey Ma\nhttps://www.linkedin.com/in/lindsey-ma/ · https://github.com/Lindsey-cyber · https://www.lindseyma.com/",
     "status": "draft_not_sent"
   },
   {
     "company": "Tolmo",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Tolmo | multiple roles | San Francisco, Ca, USA | ONSITE | Full time",
@@ -2339,7 +3565,7 @@
   },
   {
     "company": "Vola Dynamics",
-    "sizeBasis": "posts in HN Who is hiring (size not established)",
+    "sizeBasis": "≤30 open postings on its official board (proxy, not headcount)",
     "roles": [
       {
         "title": "Vola Dynamics | Software Engineers (C++, Python) | NYC / CT | HYBRID | Full-time",

@@ -1,0 +1,10 @@
+channel,sightings,postings,exclusive,shared,duplicateRate,matches,exclusiveMatches,published7d,published30d,matchesPublished7d,matchesPublished30d,unknownPublished
+github_newgrad,6348,5362,4489,873,0.15532451165721484,669,548,61,251,6,27,4506
+gmail_glassdoor,256,183,183,0,0.28515625,1,1,0,0,0,0,183
+gmail_handshake,27,27,27,0,0,0,0,0,0,0,0,27
+gmail_linkedin,426,318,318,0,0.2535211267605634,1,1,0,0,0,0,318
+hn_hiring,318,318,293,25,0,2,2,0,1,0,0,293
+official_ashby,5134,5134,5011,123,0,114,67,516,1950,8,25,0
+official_greenhouse,59878,59878,59211,667,0,121,72,4713,16325,5,17,26
+official_lever,2336,2336,2250,86,0,19,2,91,585,0,5,0
+official_workday,732,732,711,21,0,15,7,0,0,0,0,732

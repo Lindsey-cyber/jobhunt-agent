@@ -46,6 +46,18 @@ describe("gate", () => {
     expect(JSON.stringify(run({ plan, approved: true }))).toContain("without a source");
   });
 
+  it("holds an unapproved unsourced fill with only the source reason, without throwing", () => {
+    const item = greenPlan.items.find((i) => i.status === "fill")!;
+    const { source: _dropped, ...bare } = item as typeof item & { source: unknown };
+    const plan = { ...greenPlan, items: [bare as never, ...greenPlan.items.slice(1)] };
+    let result: ReturnType<typeof gate> | undefined;
+    expect(() => {
+      result = run({ plan, approved: false });
+    }).not.toThrow();
+    expect(result).toMatchObject({ decision: "hold" });
+    expect((result as { reasons: string[] }).reasons).toEqual([`"${item.field.label}" is filled without a source`]);
+  });
+
   it("holds at the daily cap", () => {
     expect(run({ submittedToday: auto.dailySubmitCap }).decision).toBe("hold");
   });

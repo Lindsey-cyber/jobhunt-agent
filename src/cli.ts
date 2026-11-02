@@ -7,6 +7,10 @@ import { loadUserData } from "./profile/load.ts";
 import { apply, sameJob } from "./run/apply.ts";
 import { excludedBy } from "./discover/exclude.ts";
 import { tooSenior } from "./discover/seniority.ts";
+import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
+import { lookupH1b } from "./sources/h1b.ts";
+import { pool } from "./sources/http.ts";
+import { readH1b, writeH1b } from "./store/h1b.ts";
 import type { JobKey } from "./domain/job.ts";
 import { labelFrom, regressions, scoreEval } from "./discover/evalset.ts";
 import { triage } from "./discover/triage.ts";
@@ -83,6 +87,8 @@ const { positionals, values } = parseArgs({
     code: { type: "string" },
     port: { type: "string", default: "8787" },
     limit: { type: "string" },
+    list: { type: "boolean", default: false },
+    refresh: { type: "boolean", default: false },
     out: { type: "string" },
   },
 });
@@ -156,6 +162,26 @@ switch (command) {
     console.log(`${n} distinct questions hold applications; see jh pending and answer with jh answer <id> <text>`);
     break;
   }
+  case "h1b": {
+    // Looks up H-1B history for every company in the approved pool (read-only, cached in data/h1b).
+    const u = user();
+    const catalog = readCatalog(paths(u.dir).catalog);
+    const latest = new Map(readLabels(u.dir).map((l) => [l.key, l]));
+    const companies = [...new Set([...latest.values()].filter((l) => l.label === "fit").map((l) => catalog.get(l.key as JobKey)?.company).filter((c): c is string => Boolean(c)))];
+    const h1b = readH1b(u.dir);
+    const todo = companies.filter((c) => values.refresh || !h1b.has(employerKey(c)));
+    console.log(`${companies.length} companies in the approved pool; looking up ${todo.length}`);
+    const at = new Date().toISOString();
+    let done = 0;
+    await pool(todo, 3, async (c) => {
+      try { const r = await lookupH1b(c, at); h1b.set(employerKey(c), r); } catch (e) { console.error(`h1b lookup failed for ${c}: ${String(e).slice(0, 120)}`); }
+      if (++done % 25 === 0) { writeH1b(u.dir, h1b); console.log(`${done}/${todo.length}`); }
+    });
+    writeH1b(u.dir, h1b);
+    const v = companies.map((c) => sponsorVerdict(h1b.get(employerKey(c))));
+    console.log(`sponsor ${v.filter((x) => x === "sponsor").length}, no filings ${v.filter((x) => x === "none").length}, not looked up ${v.filter((x) => x === "unknown").length}`);
+    break;
+  }
   case "apply-approved": {
     const u = user();
     const ledger = ledgerOf(u.dir);
@@ -187,6 +213,13 @@ switch (command) {
         const rest = reasons.filter((r) => !/legal attestations need the candidate/.test(r) && !signed.some((l) => l && r === `required "${l}" is empty after filling`));
         return !(last?.state === "held" && signed.length > 0 && rest.length === 0);
       });
+    // The candidate (2026-11-02): only employers with H-1B filings since 2023 (jh h1b looks them up);
+    // no record, or a name no filer matches, stays in the catalog unapplied.
+    const h1b = readH1b(u.dir);
+    const verdicts = new Map(ready.map((j) => [j.key, sponsorVerdict(h1b.get(employerKey(j.company)))]));
+    const skipped = { none: ready.filter((j) => verdicts.get(j.key) === "none").length, unknown: ready.filter((j) => verdicts.get(j.key) === "unknown").length };
+    ready.splice(0, ready.length, ...ready.filter((j) => verdicts.get(j.key) === "sponsor"));
+    console.log(`H-1B filter: skipped ${skipped.none} with no filings since 2023, ${skipped.unknown} not yet looked up (run jh h1b)`);
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
     console.log(`${ready.length} ${auto ? "approved or matched" : "approved"} postings with an adapter are not yet applied to; trying up to ${limit}`);
     // The candidate (2026-10-29): never several applications to one company at once.
@@ -197,6 +230,10 @@ switch (command) {
     const fresh = ready.filter((j) => !sameJob(ledger, j.url)).sort((a, b) => posted(b).localeCompare(posted(a)));
     const retries = ready.filter((j) => sameJob(ledger, j.url));
     const order = [...interleaveByCompany(fresh), ...interleaveByCompany(retries)].slice(0, limit);
+    if (values.list) {
+      for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${(j.publishedAt ?? j.firstSeen ?? "").slice(0, 10) || "no date   "}  ${sameJob(ledger, j.url) ? "retry" : "new  "}  ${j.company} · ${j.title}`);
+      break;
+    }
     const lastAt = new Map<string, number>();
     for (const j of order) {
       if (ledger.submittedOn(new Date().toISOString().slice(0, 10)) >= u.config.dailySubmitCap) break;

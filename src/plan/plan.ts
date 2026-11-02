@@ -105,6 +105,9 @@ function planField(field: FormField, form: FormSnapshot, profile: Profile, bank:
   // A compensation range list that offers not disclosing: decline it (her range spans several buckets).
   const declineComp = veto === COMPENSATION_VETO && field.options.length > 1 ? field.options.filter((o) => DECLINE.test(normalize(o))) : [];
   if (declineComp.length === 1) return { status: "fill", field, value: declineComp[0]!, source: { type: "profile", path: "salaryExpectation" }, confidence: 1, sensitive: false };
+  // The candidate (2026-11-02): "Are your salary expectations in line with the posted range?" Yes (her range is $100K–$150K).
+  const inLine = veto === COMPENSATION_VETO && /\b(in line|aligned?|align|within|consistent|comfortable)\b.{0,40}\b(range|posted|listed|stated)\b/.test(label) && !SALARY_HISTORY.test(label) ? field.options.filter((o) => /^yes\b/i.test(o.trim())) : [];
+  if (inLine.length === 1) return { status: "fill", field, value: inLine[0]!, source: { type: "profile", path: "salaryExpectation" }, confidence: 1, sensitive: false };
   if (veto) return unanswered(field, veto.reason);
   // A checkbox whose only choices are "I acknowledge" / "I agree" is an attestation,
   // unless the candidate answered this exact question in the answer bank.

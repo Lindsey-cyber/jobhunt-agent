@@ -44,7 +44,7 @@ const COUNTRIES: { name: string; pattern: RegExp }[] = [
 
 // "the country where the job is located" names no country; the posting does.
 // Block: "the location posted for this position"; Stripe: "the location(s) you selected" (the job's country, filled before).
-const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you are applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry where the (job|position|role) (you are applying for |you applied for )?is (located|based)\b|\bcountry you are applying (to|for|in)\b|\bcountry (for which|where) you are applying\b|\bin the country for this (job|position|role)\b|\bcountry (in which|where) (this|the) (job|position|role) is (located|posted|based)\b/;
+const JOB_COUNTRY = /\b(country|countries) (where|in which) (the|this) (job|position|role) is (located|based)\b|\bcountry in which you( a|)re applying\b|\blocation posted for this (position|role|job)\b|\blocations? (s )?you selected\b|\bpositions? (s )?country\b|\b(work|employed) in this (location|country)\b|\bcountry to which you are applying\b|\bcountry where the (job|position|role) (you are applying for |you applied for )?is (located|based)\b|\bcountry you are applying (to|for|in)\b|\bcountry (for which|where) you are applying\b|\bin the country for this (job|position|role)\b|\bcountry (in which|where) (this|the) (job|position|role) is (located|posted|based)\b/;
 
 function countryIn(label: string, ctx: RuleContext): string | undefined {
   return COUNTRIES.find((c) => c.pattern.test(label))?.name ?? (JOB_COUNTRY.test(label) ? ctx.jobCountry : undefined);
@@ -113,6 +113,25 @@ function yearsAnswer(options: string[] | undefined): string | undefined {
 
 export const PROFILE_RULES: ProfileRule[] = [
   // ---- The candidate's standing answers (2026-11-01) ----
+  // ---- The candidate's answers of 2026-11-02 ----
+  // Start date: November 15, 2026; a list of months takes November 2026, else the earliest choice.
+  {
+    path: "answers.startDate",
+    pattern: /\b(anticipated|earliest|expected|desired|available|availability)\b.{0,20}\bstart( date)?\b|^when (can|could|would) you start\b|^start date$/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (_p, _l, ctx) => { const o = ctx.options ?? []; return o.find((x) => /\bnov(ember)?\.? ?(15,? )?2026\b|\b11\/(15\/)?2026\b/i.test(x)) ?? o.find((x) => /^(available now|asap|immediately)/i.test(x.trim())) ?? o[0]; },
+  },
+  // She has worked only where her resume says: "Have you ever worked for a Sony company previously?" No.
+  {
+    path: "workHistory",
+    pattern: /^(?!.*\b(startup|start up|small|early stage|similar|company like|for any length of time)\b)have you (ever )?(previously )?(worked|been employed) (for|at|by) (a |an |any )?(.{2,60}?)( company| companies| subsidiary| affiliate)?( previously| before| in the past)?$/,
+    kinds: ["select", "radio", "combobox"],
+    resolve: (p, label) => { const named = /(?:worked|employed) (?:for|at|by) (?:a |an |any )?(.+?)(?: company| companies| subsidiary| affiliate)?(?: previously| before| in the past)?$/.exec(label)?.[1] ?? ""; return yesNo(p.workHistory.some((w) => named && (w.employer.toLowerCase().includes(named) || named.includes(w.employer.toLowerCase().split(" ")[0]!)))); },
+  },
+  { path: "workArrangement", pattern: /\bcomfortable (working )?(hybrid|in (the |our )?office|on ?site)\b|\bwork(ing)? hybrid\b/, kinds: ["select", "radio", "combobox"], resolve: (p) => (p.workArrangement?.onsite ? "Yes" : undefined) },
+  { path: "answers.accommodation", pattern: /\b(require|need|request)s? (any )?(reasonable )?accommodations?\b/, resolve: (_p, _l, ctx) => ((ctx.options ?? []).length ? (ctx.options ?? []).find((o) => /^no\b/i.test(o.trim())) : "No") },
+  { path: "answers.certifications", pattern: /^([a-z0-9 ]{2,40} )?certifications?$/, resolve: (_p, _l, ctx) => ((ctx.options ?? []).length ? (ctx.options ?? []).find((o) => /^(no|none)\b/i.test(o.trim())) : "None") },
+  { path: "contact.address.state", pattern: /^(the )?state (you will be|you ll be|you are) working from$|^which state will you (be )?work(ing)? (from|in)$/, resolve: (p, _l, ctx) => usStateName(p.contact.address.state, ctx.options) },
   // Residence country, permanent address, clearance, transcripts, on-site work: from her profile.
   { path: "contact.address.country", pattern: /^(what|which) country (are you currently a resident of|do you (currently )?(live|reside) in)$|^country of residence$/, resolve: (p, _l, ctx) => (ctx.options ?? []).find((o) => /^(united states|usa|us)\b/i.test(o.trim())) ?? p.contact.address.country },
   { path: "contact.address", pattern: /^permanent (legal )?address$/, kinds: ["text", "textarea"], resolve: (p) => { const a = p.contact.address; return [a.line1, a.line2, a.city, `${a.state} ${a.postalCode ?? ""}`.trim(), a.country].filter(Boolean).join(", "); } },
@@ -346,7 +365,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   },
   {
     path: "workAuthorization.authorizedCountries",
-    pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|(currently )?eligible to work|right to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
+    pattern: /\b(legally authori[sz]ed|authori[sz]ed to (lawfully |legally )?work|(currently )?eligible to work|right to work|legally allowed to work)\b|^(u s|us|united states) work authori[sz]ation$|\bhave (legal )?work authori[sz]ation in the country\b|\bunrestricted work authori[sz]ation\b/,
     resolve: (p, label, ctx) => {
       // "... in the country you currently reside in": hers, not the job's.
       // Stripe: "the location(s) you selected" when the posting names none ("N/A"): the earlier answer chose her residence country.
@@ -531,12 +550,20 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): location answers say New York. "Do you have a location preference?" among the posting's offices.
     path: "contact.address.city",
-    pattern: /\bmetropolitan area\b.{0,30}\b(closest|nearest)\b.{0,40}\bresidence\b|^(do you have a )?(preferred|location preference|preferred (work |office )?location)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b|^what is your preferred (work |office )?location$/,
+    pattern: /\bmetropolitan area\b.{0,30}\b(closest|nearest)\b.{0,40}\bresidence\b|^(do you have a )?(preferred|location preference|preferred (work |office )?location|preferred office)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b|^what is your preferred (work |office )?location$/,
     kinds: ["select", "radio", "combobox", "checkbox"],
-    resolve: (p, _l, ctx) => {
+    resolve: (p, label, ctx) => {
+      const opts = ctx.options ?? [];
+      // The candidate (2026-11-02): a preferred office goes Boston, then the Bay Area, then New York.
+      if (!/\bresidence\b/.test(label)) {
+        for (const re of [/\bboston\b|\bcambridge, ?ma\b/i, /\b(san francisco|bay area|palo alto|mountain view|san mateo|menlo park|sunnyvale|san jose|oakland|redwood city|santa clara|cupertino|emeryville|berkeley|foster city|burlingame)\b/i, /\bnew york\b|\bnyc\b/i]) {
+          const hit = opts.find((o) => re.test(o));
+          if (hit) return hit;
+        }
+      }
       const metro = p.contact.address.state?.toUpperCase() === "NY" ? "new york" : normalize(p.contact.address.city ?? "");
-      const hit = (ctx.options ?? []).filter((o) => normalize(o).startsWith(metro));
-      return hit.length === 1 ? hit[0] : (ctx.options ?? []).find((o) => /^(no preference|either|any|open to any)\b/i.test(o.trim()));
+      const hit = opts.filter((o) => normalize(o).startsWith(metro));
+      return hit.length === 1 ? hit[0] : opts.find((o) => /^(no preference|either|any|open to any)\b/i.test(o.trim()));
     },
   },
   {

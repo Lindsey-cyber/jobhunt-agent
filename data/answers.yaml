@@ -28,6 +28,8 @@ answers:
     aliases:
       - Current city
       - In which city do you currently reside?
+      - Please provide your City
+      - Please provide your city
       - What city do you currently live in?
       - City of residence
     answer: New York

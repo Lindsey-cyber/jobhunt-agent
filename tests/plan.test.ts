@@ -273,6 +273,15 @@ describe("buildPlan", () => {
     expect(one("How many years of experience do you have using data analytics tools (i.e. Tableau, Looker, BigQuery, AWS)", ["0-1", "1-3", "3-5", "5+"])).toMatchObject({ value: "1-3" });
     expect(one("Years of ML Infrastructure experience", [], "text")).toMatchObject({ value: "2" });
     expect(one("What country are you currently a resident of?", ["Canada", "United States"])).toMatchObject({ value: "United States" });
+    // 2026-11-02
+    expect(one("What is your anticipated start date for this role?", ["Available now / ASAP", "October 2026", "November 2026", "December 2026"])).toMatchObject({ value: "November 2026" });
+    expect(one("Are your salary expectations in line with the salary range posted in the job description?")).toMatchObject({ value: "Yes" });
+    expect(one("Have you ever worked for a Sony company previously?")).toMatchObject({ value: "No" });
+    expect(one("Anthropic Certifications?")).toMatchObject({ value: "No" });
+    expect(one("Are you legally allowed to work in the United States?*")).toMatchObject({ value: "Yes" });
+    expect(one("Preferred office?", ["San Jose, CA", "Austin, TX", "Remote - US", "N/A"])).toMatchObject({ value: "San Jose, CA" });
+    expect(one("Preferred office?", ["New York, NY", "Boston, MA", "San Francisco, CA"])).toMatchObject({ value: "Boston, MA" });
+    expect(one("State you will be working from", ["California", "New York", "Texas"])).toMatchObject({ value: "New York" });
     expect(one("Do you hold a security clearance?")).toMatchObject({ value: "No" });
     expect(one("Are you willing to share your academic transcripts?")).toMatchObject({ value: "Yes" });
     const onsite = { ...user.profile, workArrangement: { onsite: true, relocate: true } };
@@ -485,7 +494,8 @@ describe("buildPlan", () => {
   it("prefers her metro among a posting's offices", () => {
     const p = { ...user.profile, contact: { ...user.profile.contact, address: { ...user.profile.contact.address, city: "Flushing", state: "NY" } } };
     const f = field("Do you have a location preference?", { kind: "combobox", options: ["New York", "San Francisco", "Remote", "No preference"] });
-    expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: "New York" });
+    // The candidate (2026-11-02): offices go Boston, then the Bay Area, then New York.
+    expect(buildPlan(form([f]), p, user.bank).items[0]).toMatchObject({ value: "San Francisco" });
   });
 
   it("declines race through the Hispanic question when a Greenhouse board requires race", () => {

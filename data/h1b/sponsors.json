@@ -684,6 +684,14 @@
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
  },
+ "bedrock robotics": {
+  "company": "Bedrock Robotics",
+  "matched": [
+   "BEDROCK ROBOTICS INC"
+  ],
+  "filings": 7,
+  "checkedAt": "2026-11-02T07:06:48.018Z"
+ },
  "behaviorai": {
   "company": "BehaviorAI",
   "matched": [],
@@ -1676,6 +1684,14 @@
   "filings": 1,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "field ai": {
+  "company": "Field AI",
+  "matched": [
+   "FIELD AI INC"
+  ],
+  "filings": 30,
+  "checkedAt": "2026-11-02T07:06:48.018Z"
+ },
  "figma": {
   "company": "Figma",
   "matched": [
@@ -2198,6 +2214,14 @@
   "filings": 22766,
   "checkedAt": "2026-11-02T02:10:57.370Z"
  },
+ "innodata": {
+  "company": "Innodata Inc.",
+  "matched": [
+   "INNODATA INC"
+  ],
+  "filings": 2,
+  "checkedAt": "2026-11-02T07:06:48.018Z"
+ },
  "innovet health": {
   "company": "InnoVet Health",
   "matched": [],
@@ -2671,6 +2695,14 @@
   ],
   "filings": 8,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "matx": {
+  "company": "MatX",
+  "matched": [
+   "MATX INC"
+  ],
+  "filings": 6,
+  "checkedAt": "2026-11-02T07:06:48.018Z"
  },
  "may mobility": {
   "company": "May Mobility",
@@ -3260,6 +3292,14 @@
   "matched": [],
   "filings": 0,
   "checkedAt": "2026-11-02T04:00:23.192Z"
+ },
+ "parafin": {
+  "company": "Parafin",
+  "matched": [
+   "PARAFIN INC"
+  ],
+  "filings": 6,
+  "checkedAt": "2026-11-02T07:06:48.018Z"
  },
  "parsons": {
   "company": "Parsons",
@@ -4862,6 +4902,12 @@
   ],
   "filings": 248,
   "checkedAt": "2026-11-02T02:10:57.370Z"
+ },
+ "verne robotics": {
+  "company": "Verne Robotics",
+  "matched": [],
+  "filings": 0,
+  "checkedAt": "2026-11-02T07:06:48.018Z"
  },
  "verneek": {
   "company": "Verneek",

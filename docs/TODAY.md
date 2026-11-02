@@ -1,25 +1,25 @@
 # 今日 · 2026-11-02
 
-规则来自 `data/policy.yaml`：最近 30 天发布（2026-10-03 起）、有 H-1B 记录、不是纯高级岗。下面的数字都经过自检：各状态之和等于总数，agent 待投与投递命令的队列一致。
+规则来自 `data/policy.yaml`：有 H-1B 记录、不是纯高级岗。最近 30 天发布的（2026-10-03 起）先投，更早的照样投、排在后面。下面的数字都经过自检：各状态之和等于总数，agent 待投与投递命令的队列一致。
 
-**最近 30 天的岗位**：已投出 40，已提交未确认 3，还没投出的 537，待复核 24，不投 31047。
+**库里全部 90018 个岗位**：已投出 166，已提交未确认 14，还没投出的 685（最近 30 天 531，更早 154），待复核 86，不投 89067。
 
 ## 还没投出的岗位：谁来投 × 档位
 
 | 谁来投 | A | B | C | 合计 |
 |---|---|---|---|---|
-| agent 待投 | 1 | 0 | 13 | 14 |
-| agent 已填、等你答题 | 6 | 4 | 4 | 14 |
-| 你投 · company site | 18 | 90 | 148 | 256 |
-| 你投 · workday | 27 | 34 | 48 | 109 |
+| agent 待投 | 0 | 0 | 11 | 11 |
+| agent 已填、等你答题 | 40 | 23 | 20 | 83 |
+| 你投 · company site | 18 | 90 | 147 | 255 |
+| 你投 · workday | 27 | 34 | 45 | 106 |
+| 你投 · ashby | 43 | 27 | 22 | 92 |
 | 你投 · workday（已开始、等你答题） | 18 | 13 | 47 | 78 |
-| 你投 · ashby | 18 | 12 | 7 | 37 |
-| 你投 · ashby（已开始、等你答题） | 5 | 6 | 4 | 15 |
-| 你投 · lever | 1 | 0 | 6 | 7 |
-| 你投 · lever（已开始、等你答题） | 3 | 0 | 1 | 4 |
+| 你投 · ashby（已开始、等你答题） | 20 | 10 | 5 | 35 |
+| 你投 · lever | 5 | 3 | 7 | 15 |
+| 你投 · lever（已开始、等你答题） | 4 | 1 | 2 | 7 |
 | 你投 · greenhouse（已开始、等你答题） | 0 | 0 | 2 | 2 |
 | 你投 · greenhouse | 0 | 1 | 0 | 1 |
-| **合计** | 97 | 160 | 280 | 537 |
+| **合计** | 175 | 202 | 308 | 685 |
 
 ## 一、今天投出的（12）
 
@@ -36,40 +36,10 @@
 - Alpha Financial Markets Consulting · Consultant - Data Engineering (Snowflake)
 - Addepar · Software Engineer - Customer Facing Applied AI
 
-## 二、你的待办（按能放行的申请数排序，共 49 项，只列前 30 项）
+## 二、你的待办（按能放行的申请数排序，共 0 项）
 
-- **放行 4 份**：Have you ever been convicted of, plead guilty or no contest to, or entered into a pretrial diversion or similar program concerning, any criminal offense (e.g., （Axos Bank · JBATA - AI Automation Developer；Axos Bank · Data Engineer；Axos Bank · JBATA - AI Engineer）
-- **放行 4 份**：Do you know of any reason(s) why you may not be bondable?（Axos Bank · JBATA - AI Automation Developer；Axos Bank · Data Engineer；Axos Bank · JBATA - AI Engineer）
-- **放行 4 份**：How Did You Hear About Us?（GE Vernova · Data Scientist；GE Vernova · AI Engineer；GE Vernova · GE Vernova AI Engineer）
-- **放行 3 份**：In addition to the role you are applying for, do you consent to GE Vernova retaining your Candidate profile* to assess your suitability for roles for which you （GE Vernova · AI Engineer；GE Vernova · Data Scientist）
-- **放行 3 份**：Which communication method would you like us to use when contacting you throughout the recruiting process? (SMS is currently supported in Australia, Canada, Fra（GE Vernova · AI Engineer；GE Vernova · Data Scientist）
-- **放行 2 份**：To help us prevent automated job applications, solve for X: 1 + X = 3（Orbis · Research Engineer, AI (Entry-Level)；Orbis · Research Engineer, AI）
-- **放行 2 份**：Have you previously worked within the Motional ecosphere? (ex. Motional, Ottomatika, Aptiv, nuTonomy, or Hyundai Motor Company)（Motional · Perception Engineer）
-- **放行 1 份**：为 Quora 写一段：Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? H（Quora · Machine Learning Engineer, New Grad - Quora (Remote)）
-- **放行 1 份**：I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” （Quora · Machine Learning Engineer, New Grad - Quora (Remote)）
-- **放行 1 份**：为 Astera Institute 写一段：Describe a robotics system you helped take from model development to a physical robot.（Astera Institute · Full-Stack Robotics & AI Engineer）
-- **放行 1 份**：为 Astera Institute 写一段：Tell us about a difficult failure you diagnosed in a robot or deployed ML system.（Astera Institute · Full-Stack Robotics & AI Engineer）
-- **放行 1 份**：为 Lila Sciences 写一段：Why Lila, why this role, and why at this moment in your life?（Lila Sciences · Research Scientist / Research Engineer, Automated Safety）
-- **放行 1 份**：I have read and understand the Export Control statement included in the job description above.（Tenstorrent · Datacenter & Agentic AI Workload Performance Optimization Engineer）
-- **放行 1 份**：Will you need relocation assistance to work at this role's specified location?（PlayStation Global · Software Engineer, AI/ML）
-- **放行 1 份**：为 Wonderschool 写一段：In 1–2 sentences, what makes you a fit for this role?（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：What was the main reason for a short tenure in a prior role?（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：Has software you built or helped build generated more than $100 in sales?（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：为 Wonderschool 写一段：Describe customer discovery that led you to ship an AI system, including adoption and outcome.（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：Which AI development tools have you used? Link to a work sample if you can share one.（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：What types of early childhood experience do you have?（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：Which of these fields have you worked in?（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：Are you currently a Motional employee? (If yes, please apply via Greenhouse internal Job Board)（Motional · Perception Engineer）
-- **放行 1 份**：Have you worked at DoorDash?（DoorDash USA · Software Engineer, Data and AI Platform）
-- **放行 1 份**：Does the deemed export rule affect your employment by Everpure ?（Everpure · Data Scientist Engineer, Digital Experience）
-- **放行 1 份**：In what countries do you have the unrestricted right to work?（Elastic · Analytics Engineer, HR Analytics）
-- **放行 1 份**：为 Elastic 写一段：Describe a specific project in three parts: (1) What HR or talent data source did you work with directly, and what was your role in extracting or （Elastic · Analytics Engineer, HR Analytics）
-- **放行 1 份**：Where did you gain your GCP experience? Please list the company and role(s), approximate dates, and the specific GCP tools you used (for example, BigQuery, dbt,（Elastic · Analytics Engineer, HR Analytics）
-- **放行 1 份**：How should we communicate with you?（Elastic · Analytics Engineer, HR Analytics）
-- **放行 1 份**：Which of the following have you personally done in a professional role? (select all that apply)（Elastic · Analytics Engineer, HR Analytics）
-- **放行 1 份**：Which of the following have you personally Built, extended, or substantially modified in a production environment? (select all that apply)（Elastic · Analytics Engineer, HR Analytics）
 
-## 三、还没投出的岗位（档位优先，同档按发布时间从新到旧）
+## 三、还没投出的岗位（最近 30 天的在前；各自档位优先，同档按发布时间从新到旧）
 
 | 档 | 发布 | 公司 · 岗位 | 地点 | 谁来投 | 链接 |
 |---|---|---|---|---|---|
@@ -115,7 +85,7 @@
 | A | 2026-10-29 | Harvey · Research Engineer / Scientist, Reinforcement Learning | New York; USA | 你投 · ashby | https://jobs.ashbyhq.com/harvey/db7a2623-bc3c-4db9-b1e3-500c2622d194 |
 | A | 2026-10-29 | Motional · Perception Engineer | Boston, Massachusetts, United States; Re | agent 已填、等你答题 | https://job-boards.greenhouse.io/motional/jobs/8081593003 |
 | A | 2026-10-28 | Shield AI · Autonomy & Perception Software Engineer (R5911) | San Diego, California | 你投 · ashby | https://jobs.ashbyhq.com/f7d8749a-72d6-407c-bf98-292ea630c73a/596dd745-67e3-4a12-becb-7d6480261bf7 |
-| A | 2026-10-28 | Twilio · Machine Learning Engineer 2 | Remote - US | agent 待投 | https://job-boards.greenhouse.io/twilio/jobs/8240487 |
+| A | 2026-10-28 | Twilio · Machine Learning Engineer 2 | Remote - US | agent 已填、等你答题 | https://job-boards.greenhouse.io/twilio/jobs/8240487 |
 | A | 2026-10-28 | Upstart · Applied Scientist | United States / Remote | agent 已填、等你答题 | https://careers.upstart.com/jobs/applied-scientist-2c3d9721-6483-4bac-a2d4-1afea9261338?gh_jid=8329488 |
 | A | 2026-10-28 | Matroid · Deep Learning Engineer, Multimodal Vision Platform | Palo Alto, CA (Onsite) | 你投 · company site | https://mail.google.com/mail/#all/1a16613607010819 |
 | A | 2026-10-28 | Periodic Labs · Research Scientist/Research Engineer, Midtraining | Menlo Park, CA (Onsite) | 你投 · company site | https://mail.google.com/mail/#all/1a17ad37c3fcbcac |
@@ -461,7 +431,7 @@
 | C | 2026-10-28 | ABACUS · Data Engineer | Remote - USA | agent 待投 | https://abacustechnology.com/about/careers/current-vacancies/?gh_jid=8006961003 |
 | C | 2026-10-28 | Roku · Software Engineer - AI/UI | San Jose, CA | agent 待投 | https://www.weareroku.com/jobs/software-engineer-early-careers-ai-ui-san-jose-california-united-states?gh_jid=8188704 |
 | C | 2026-10-28 | Quantifind · Associate Data Scientist | Palo Alto, CA | agent 待投 | https://www.quantifind.com/open-positions/?gh_jid=8241359 |
-| C | 2026-10-28 | Robinhood · AI Operations Engineer | Bellevue, WA; Menlo Park, CA; New York,  | agent 待投 | https://job-boards.greenhouse.io/robinhood/jobs/8305772 |
+| C | 2026-10-28 | Robinhood · AI Operations Engineer | Bellevue, WA; Menlo Park, CA; New York,  | agent 已填、等你答题 | https://job-boards.greenhouse.io/robinhood/jobs/8305772 |
 | C | 2026-10-28 | Applied Underwriters · AI Engineer - Infrustructure | New York City, NY | 你投 · lever | https://jobs.lever.co/auw/515a3498-4257-4e68-91ff-cf82e854f12d |
 | C | 2026-10-28 | Applied Underwriters · AI Engineer - Data Science | New York City, NY | 你投 · lever | https://jobs.lever.co/auw/6f317af6-4362-4dea-accc-e86ec1d102a5 |
 | C | 2026-10-28 | Applied Underwriters · AI Engineer - Application Development | New York City, NY | 你投 · lever | https://jobs.lever.co/auw/9234d6e2-f306-48d9-9cd6-9192d34d889c |
@@ -603,21 +573,170 @@
 | C | 2026-10-13 | DoorDash USA · Software Engineer, Data and AI Platform | San Francisco, CA; Sunnyvale, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/doordashusa/jobs/8192187 |
 | C | 2026-10-12 | Brillio · AI Engineer | Dallas, Texas, United States (US) | 你投 · lever（已开始、等你答题） | https://jobs.lever.co/brillio-2/3de75f8b-9ddc-4908-b67d-d6e91bafd9e2 |
 | C | 2026-10-06 | Commure · Software Engineer, AI Integrations | Mountain View, CA; USA | 你投 · ashby | https://jobs.ashbyhq.com/Commure/39e07152-a3d2-47c0-8c5b-36e8b3a6cdf5 |
-| C | 2026-10-05 | Engineers Gate · Quantitative Researcher | New York | agent 待投 | https://job-boards.greenhouse.io/engineersgate/jobs/8256064 |
-| C | 2026-11-01 | Cigna · The Cigna Group's Technology Development Program - Data & Analytics Engineering Track Summer... | Bloomfield, CT | 你投 · workday | https://cigna.wd5.myworkdayjobs.com/cignacareers/job/Bloomfield-CT/The-Cigna-Group-s-Technology-Development-Program---Data---Analytics-Engineering-Track-Summer-Internship_26009533 |
-| C | 2026-11-01 | eBay · AI Analytics Engineer - Traffic | Austin; United States of America | 你投 · workday | https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/AI-Analytics-Engineer---Traffic_R0076601 |
-| C | 2026-10-28 | Skanska · Data Analytics Engineer | Charlotte, NC +2 | 你投 · company site | https://careers-skanska.icims.com/jobs/9292/data-analytics-engineer/job |
-| C | 2026-10-28 | American Electric Power · TSOE Tools & Analytics Engineer | Corpus Christi, TX; New Albany, OH | 你投 · workday | https://aep.wd1.myworkdayjobs.com/AEPCareerSite/job/New-Albany-OH/TSOE-Tools---Analytics-Engineer_R19939 |
-| C | 2026-10-09 | PointClickCare · Marketing Data Analytics Engineer (US) | Remote, USA (US) | 你投 · lever | https://jobs.lever.co/pointclickcare/96d77b19-2396-4f9e-9513-59471b3e28ed |
-| C | 2026-10-05 | Elastic · Analytics Engineer, HR Analytics | United States | agent 已填、等你答题 | https://jobs.elastic.co/jobs/human-resources/united-states/analytics-engineer-hr-analytics/8244449?gh_jid=8244449 |
+| C | 2026-10-05 | Engineers Gate · Quantitative Researcher | New York | agent 已填、等你答题 | https://job-boards.greenhouse.io/engineersgate/jobs/8256064 |
+| A | 2026-10-01 | Brain Co. · AI/ML Engineer, 2027 New Grad | San Francisco Bay Area; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/brainco/4c9f8f00-0caf-4927-80da-02a3e53cb0cd |
+| A | 2026-10-01 | Mach9 · ML Engineer, Product | San Francisco; USA | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/mach9/622a014b-ff77-45bd-9caa-61a6506884ed |
+| A | 2026-09-30 | Brain Co. · Machine Learning Engineer, Applied AI | New York City, NY; United States | 你投 · ashby | https://jobs.ashbyhq.com/brainco/0d74048b-e0e7-4f2d-bc9f-3660f3545ac2 |
+| A | 2026-09-30 | Periodic Labs · Research Scientist/Research Engineer, Midtraining | Menlo Park, CA; United States | 你投 · ashby | https://jobs.ashbyhq.com/periodic-labs/168dbf20-2230-49a0-9f00-f2ff58dad5c8 |
+| A | 2026-09-30 | Brain Co. · Machine Learning Engineer, Platform | New York City, NY; United States | 你投 · ashby | https://jobs.ashbyhq.com/brainco/61b10a68-9cf6-47d9-b19b-ca9b817fc264 |
+| A | 2026-09-29 | Niantic Spatial · AI Automation Engineer, Real-World Test Lab | San Francisco, CA; United States | 你投 · ashby | https://jobs.ashbyhq.com/niantic-spatial/1f60cda2-34e1-4b17-a17c-2489bc2c1788 |
+| A | 2026-09-29 | Torc Robotics · Machine Learning Engineer II - Learned Planning (Reinforcement Learning) | Remote - US, Ann Arbor, MI | agent 已填、等你答题 | https://job-boards.greenhouse.io/torcrobotics/jobs/8852888002 |
+| A | 2026-09-29 | Laminar · (Jr) Machine Learning (ML) Developer | Boston, MA | 你投 · lever（已开始、等你答题） | https://jobs.lever.co/runlaminar/827f30da-67cd-4274-91e7-87fb12019a23 |
+| A | 2026-09-25 | Quora · Software Engineer New Grad, Machine Learning Platform - Quora (Remote) | Remote - Multiple Locations; United Stat | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/quora/cf34f80e-fe5c-454d-bc9a-4c59993ffda0 |
+| A | 2026-09-14 | Appian Corporation · AI Security Engineer | McLean, Virginia | agent 已填、等你答题 | https://job-boards.greenhouse.io/appian/jobs/8201099 |
+| A | 2026-09-04 | Decagon · Research Engineer, Audio and Speech | San Francisco; New York City; United Sta | 你投 · ashby | https://jobs.ashbyhq.com/decagon/69fd28a8-0de2-45a5-9b98-33725515add4 |
+| A | 2026-09-04 | Decagon · Research Engineer, Safety | San Francisco; New York City; United Sta | 你投 · ashby | https://jobs.ashbyhq.com/decagon/f84db19b-8de3-49d6-a954-c9ee2e365956 |
+| A | 2026-09-03 | Snowflake · AI Research Scientist, New Grad – Agents & Reinforcement Learning | US-WA-Bellevue; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/snowflake/1bad12df-f443-426f-9d09-e96fc780d698 |
+| A | 2026-08-28 | ElevenLabs · Research Engineer - Inference | United Kingdom; United States; Poland; B | 你投 · ashby | https://jobs.ashbyhq.com/elevenlabs/2d7f9a7c-a9e6-4877-bb38-34e4d989054c |
+| A | 2026-08-25 | Descript · Applied Research Scientist, AI Research | San Francisco, CA or Remote, US | agent 已填、等你答题 | https://job-boards.greenhouse.io/descript/jobs/7967440003 |
+| A | 2026-08-23 | Deepgram · Research Engineer, Machine Learning Systems | USA - Remote; San Francisco, CA; Ann Arb | 你投 · ashby | https://jobs.ashbyhq.com/deepgram/9a030b32-d671-43e0-a221-4653bb73ba29 |
+| A | 2026-08-22 | Applied Intuition · Research Scientist - Humanoid Robotics | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/4cd7cf1d-717c-4887-93b4-520a40a906b1 |
+| A | 2026-08-14 | Applied Intuition · Research Engineer - New Grad (2027) | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/45fc41cd-8280-4010-ba1f-def6114b3e39 |
+| A | 2026-08-11 | CHAOS Industries · Software Engineer, Applied AI | San Francisco, California, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/chaosindustries/jobs/5209420007 |
+| A | 2026-08-05 | Field AI · Robotics AI Engineer, Sensor Calibration | Irvine, CA (US) | 你投 · lever | https://jobs.lever.co/field-ai/1ff2ae13-b4a7-4800-a52e-d1c858924861 |
+| A | 2026-08-03 | Brain Co. · Machine Learning Engineer, Platform | San Francisco Bay Area; United States | 你投 · ashby | https://jobs.ashbyhq.com/brainco/936df0bf-e4dc-46bb-bb48-b1efcc3cce80 |
+| A | 2026-07-29 | Applied Intuition · Machine Learning Engineer - Behavior and Planning | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/129325ce-77e6-4d2a-a24a-6726acb53749 |
+| A | 2026-07-25 | Periodic Labs · Research Scientist, Data | Menlo Park, CA; Montreal, Canada; United | 你投 · ashby | https://jobs.ashbyhq.com/periodic-labs/d039ec58-a97d-47e1-b1e5-db003d772f77 |
+| A | 2026-07-24 | Applied Intuition · Research Scientist - 3D Vision and Generation, Self-Driving | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/5f15c171-ae5a-496b-a8eb-c6a351d55b6b |
+| A | 2026-07-24 | LG Electronics · AI Researcher (Efficient AI) | Santa Clara, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/lgelectronics/jobs/5369431008 |
+| A | 2026-07-23 | Elastic · Agentic AI Engineer | United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/elastic/jobs/8079636 |
+| A | 2026-07-22 | Decagon · Research Engineer | San Francisco; New York City; United Sta | 你投 · ashby | https://jobs.ashbyhq.com/decagon/9231a1ba-d9f5-4ddd-b398-158297ea7db9 |
+| A | 2026-07-06 | Notion · Software Engineer, Early Career (AI) | San Francisco, California; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/notion/85947779-6b87-466a-98bc-30a640448c28 |
+| A | 2026-06-26 | Jumio · Research Engineer – Machine Learning & Robotics | Lenexa, Kansas | agent 已填、等你答题 | https://job-boards.greenhouse.io/jumio/jobs/4709633005 |
+| A | 2026-06-26 | Samsara · AI Engineer, Customer Success | Remote - US | agent 已填、等你答题 | https://job-boards.greenhouse.io/samsara/jobs/8024110 |
+| A | 2026-06-24 | NewsBreak · AI Engineer, Agentic Ad Creative (Multimodal) | Mountain View, California, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/newsbreak/jobs/4691989006 |
+| A | 2026-06-12 | Toast · Data Scientist II | Remote, USA | agent 已填、等你答题 | https://careers.toasttab.com/jobs/data-scientist-ii-remote-united-states?gh_jid=7984730 |
+| A | 2026-06-10 | Mariana Minerals · Machine Learning Engineer | Ann Arbor, MI; Houston, TX; San Francisc | 你投 · ashby | https://jobs.ashbyhq.com/marianaminerals/44c92dd6-55f2-4e44-9360-bf4676466dac |
+| A | 2026-06-10 | NewsBreak · Machine Learning Engineer, LLM Post-Training | Mountain View, California, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/newsbreak/jobs/4688409006 |
+| A | 2026-06-08 | Chime Financial, Inc · AI/ML Engineer | Chicago, IL, USA; New York, NY, USA; San | agent 已填、等你答题 | https://job-boards.greenhouse.io/chime/jobs/8569366002 |
+| A | 2026-06-03 | Mach9 · ML Engineer, Research | San Francisco; USA | 你投 · ashby | https://jobs.ashbyhq.com/mach9/51061973-9726-4e8e-bba4-4bfa9e3ef004 |
+| A | 2026-06-03 | Skild AI · Computer Vision AI & ML Engineer | San Mateo, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/skildai-careers/jobs/5239930008 |
+| A | 2026-05-15 | Cerebras · AI Engineer, Model Quality and Performance | Sunnyvale, CA; United States | 你投 · ashby | https://jobs.ashbyhq.com/cerebras/864698cd-da36-42b6-bbcc-fc39d22010f0 |
+| A | 2026-05-04 | Xaira Therapeutics · AI Scientist - Biomedical Multimodal Modeling | South San Francisco, California, United  | agent 已填、等你答题 | https://job-boards.greenhouse.io/xairatherapeutics/jobs/5036777007 |
+| A | 2026-04-29 | The Allen Institute for Artificial Intelligence · Research Scientist, Robotics | Seattle, WA | agent 已填、等你答题 | https://job-boards.greenhouse.io/thealleninstitute/jobs/7848623 |
+| A | 2026-04-28 | Lila Sciences · ML Scientist, Foundation Models for Life Sciences | San Francisco, CA USA | agent 已填、等你答题 | https://job-boards.greenhouse.io/lilasciences/jobs/4222051009 |
+| A | 2026-04-23 | Baseten · Software Engineer - Voice AI (Inference Runtime) | San Francisco; Toronto; New York; Montre | 你投 · ashby | https://jobs.ashbyhq.com/baseten/6e396eb7-acb3-436a-89ec-05e755c477f2 |
+| A | 2026-04-21 | Humble Robotics · Data Engineer | San Francisco (US) | 你投 · lever | https://jobs.lever.co/humble-robotics/f187c481-ece9-4ea5-8cce-3bcd96f7001e |
+| A | 2026-04-13 | Labelbox · Forward Deployed Research Scientist | San Francisco Bay Area | agent 已填、等你答题 | https://job-boards.greenhouse.io/labelbox/jobs/5101375007 |
+| A | 2026-04-01 | The Allen Institute for Artificial Intelligence · Research Scientist, Asta | Seattle, WA | agent 已填、等你答题 | https://job-boards.greenhouse.io/thealleninstitute/jobs/7723570 |
+| A | 2026-03-31 | Xaira Therapeutics · BioMedical AI Research Engineer | South San Francisco, California, United  | agent 已填、等你答题 | https://job-boards.greenhouse.io/xairatherapeutics/jobs/5005200007 |
+| A | 2026-03-25 | Applied Intuition · Software Engineer - AI Engineering | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/981054d6-d6d9-4553-9db8-38e56939d3b8 |
+| A | 2026-03-23 | Baseten · Post-Training Research Engineer | San Francisco; United States | 你投 · ashby | https://jobs.ashbyhq.com/baseten/68328a94-f785-463b-a3d7-b0dfc11839b5 |
+| A | 2026-02-25 | Astera Institute · Research Scientist/Engineer | Emeryville HQ; United States | 你投 · ashby | https://jobs.ashbyhq.com/astera/1dd75b2d-8562-4411-9d22-ac35415debcf |
+| A | 2026-02-25 | Astera Institute · Research Scientist: Hierarchical RL Agents | Emeryville HQ; United States | 你投 · ashby | https://jobs.ashbyhq.com/astera/642a99d7-8cbd-4568-ae86-8844d3db5f48 |
+| A | 2026-02-25 | Astera Institute · Research Scientist: Energy Based Models | Emeryville HQ; United States | 你投 · ashby | https://jobs.ashbyhq.com/astera/6574807b-68f1-4eab-89d7-302467b5c77c |
+| A | 2026-02-25 | Astera Institute · Research Scientist: Hierarchical Sensorimotor Perception | Emeryville HQ; United States | 你投 · ashby | https://jobs.ashbyhq.com/astera/b13d16fa-415c-42fc-b624-7228c65ed0d3 |
+| A | 2026-02-13 | Applied Intuition · Research Engineer - Reinforcement Learning, Self-Driving | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/36a49d01-e60f-4c01-8c8c-5a7f79347f51 |
+| A | 2026-02-13 | Applied Intuition · Research Engineer - 3D Vision and Generation, Self-Driving | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/8da87c90-49ff-4b75-97c5-337882f63a00 |
+| A | 2026-02-03 | Lila Sciences · Machine Learning Engineer, Physical Sciences AI | Cambridge, MA USA; San Francisco, CA USA | agent 已填、等你答题 | https://job-boards.greenhouse.io/lilasciences/jobs/4116513009 |
+| A | 2026-01-31 | Bedrock Robotics · Machine Learning Engineer: Evaluation | San Francisco, CA; New York, NY; United  | 你投 · ashby | https://jobs.ashbyhq.com/bedrock-robotics/5c2c834d-61f1-4ec9-812b-8665a9f5024d |
+| A | 2026-01-26 | Xaira Therapeutics · AI Scientist, BioMedical AI | South San Francisco, California, United  | agent 已填、等你答题 | https://job-boards.greenhouse.io/xairatherapeutics/jobs/4987432007 |
+| A | 2025-11-21 | Gusto, Inc. · Enterprise Application AI Engineer | San Francisco, CA - Hybrid | agent 已填、等你答题 | https://job-boards.greenhouse.io/gusto/jobs/7369003 |
+| A | 2025-11-05 | Humble Robotics · ML Software Engineer | San Francisco (US) | 你投 · lever | https://jobs.lever.co/humble-robotics/3aeb08a7-2164-464d-b3da-e84fa4463808 |
+| A | 2025-10-28 | Snorkel AI · Research Scientist | New York City, NY (Hybrid); San Francisc | agent 已填、等你答题 | https://job-boards.greenhouse.io/snorkelai/jobs/5690608004 |
+| A | 2025-09-16 | Goodfire · Forward Deployed Research Scientist, Life Sciences | San Francisco, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/goodfire/jobs/4924131008 |
+| A | 2025-09-12 | Skild AI · Machine Learning Engineer | San Mateo, Pittsburgh | agent 已填、等你答题 | https://job-boards.greenhouse.io/skildai-careers/jobs/4919028008 |
+| A | 2025-08-20 | Avride · Data Scientist – AV Metrics & Evaluation Analytics | Austin, Texas | agent 已填、等你答题 | https://job-boards.greenhouse.io/avride/jobs/4012771009 |
+| A | 2025-08-20 | Avride · Machine Learning Engineer – Motion Planning & Prediction | Austin, Texas | agent 已填、等你答题 | https://job-boards.greenhouse.io/avride/jobs/4013016009 |
+| A | 2025-08-20 | Avride · Machine Learning Engineer | Austin, Texas | agent 已填、等你答题 | https://job-boards.greenhouse.io/avride/jobs/4013230009 |
+| A | 2025-08-19 | Applied Intuition · Research Scientist (Research) | Sunnyvale; United States | 你投 · ashby | https://jobs.ashbyhq.com/applied/39846b2a-1f0e-4f97-b463-75fd37f217ce |
+| A | 2025-08-19 | Applied Intuition · Research Engineer - Robotic Hardware, Simulation and Data | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/4cb44794-7b3b-46fc-9408-104a6d0f379e |
+| A | 2025-08-19 | Applied Intuition · Research Scientist - World-Action Foundation Model, Robotics | Sunnyvale; United States | 你投 · ashby | https://jobs.ashbyhq.com/applied/a6c99f37-545a-46f2-8222-02ad43c1e2c3 |
+| A | 2025-08-19 | Applied Intuition · Research Engineer - Robot Learning | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/e725018e-2577-4ff6-8dbd-69206272d9af |
+| A | 2025-08-12 | Field AI · Sensor & Perception Engineer, Robotics Hardware | Irvine, CA (US) | 你投 · lever | https://jobs.lever.co/field-ai/0c026e5f-99c5-419d-9458-1f2db08fcb8f |
+| A | 2025-08-01 | Brain Co. · Machine Learning Engineer, Applied AI | San Francisco Bay Area; United States | 你投 · ashby | https://jobs.ashbyhq.com/brainco/58cff031-5b0b-4b92-a1ea-2ebf2495d89d |
+| A | 2024-11-14 | Skild AI · Research Engineer | Pittsburgh, San Mateo | agent 已填、等你答题 | https://job-boards.greenhouse.io/skildai-careers/jobs/4407015008 |
+| A | 2024-11-14 | Skild AI · Deep Learning Manipulation Engineer | Pittsburgh, San Mateo | agent 已填、等你答题 | https://job-boards.greenhouse.io/skildai-careers/jobs/4408092008 |
+| A | 2024-09-19 | Skild AI · Research Scientist | Pittsburgh, San Mateo | agent 已填、等你答题 | https://job-boards.greenhouse.io/skildai-careers/jobs/4133795008 |
+| A | 2024-09-17 | Applied Intuition · Research Engineer - AI/RL Infrastructure | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/091ed808-95c9-420b-8061-0ff2eb9342bc |
+| A | 2024-09-17 | Applied Intuition · Research Scientist - Reinforcement Learning, Robotics | Sunnyvale; United States | 你投 · ashby | https://jobs.ashbyhq.com/applied/52a070cf-4e1b-4fcc-bf73-727da8fb6d46 |
+| A | 2024-09-11 | Skild AI · Machine Learning Engineer, Reinforcement Learning | Pittsburgh, San Mateo | agent 已填、等你答题 | https://job-boards.greenhouse.io/skildai-careers/jobs/4125333008 |
+| A | 2023-06-29 | Neuralink · Machine Learning Engineer | Austin, Texas, United States; South San  | agent 已填、等你答题 | https://job-boards.greenhouse.io/neuralink/jobs/5663271003 |
+| B | 2026-10-01 | Brain Co. · AI Security Engineer, 2027 New Grad | San Francisco Bay Area; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/brainco/32c4e1c9-ccd1-4dca-a68b-31ad1b868030 |
+| B | 2026-10-01 | SirenOpt · Metrology Data Scientist | San Leandro, California, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/sirenopt/jobs/4430491009 |
+| B | 2026-10-01 | Tenstorrent · Datacenter & Agentic AI Workload Performance Analysis Engineer | Santa Clara, California, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/tenstorrent/jobs/5253844007 |
+| B | 2026-09-29 | Collaborative Robotics · Mechanical Engineer, AI Data Collection | Santa Clara; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/cobot/f060d83e-3b73-4a41-b8e1-c19359d572b4 |
+| B | 2026-09-29 | PingWind · Data Scientist I | Remote (US) | 你投 · lever（已开始、等你答题） | https://jobs.lever.co/pingwind/6929b4ea-eb16-47be-b83d-8ea5a02a7864 |
+| B | 2026-09-28 | Cerebras · ML Algorithm Mapping and Performance Engineer, Core ML | Sunnyvale, CA; United States | 你投 · ashby | https://jobs.ashbyhq.com/cerebras/fe581188-2bc1-4fce-856d-2df0936a7f56 |
+| B | 2026-09-25 | Black Canyon Consulting · Data Engineer | Bethesda, MD | agent 已填、等你答题 | https://job-boards.greenhouse.io/blackcanyonconsulting/jobs/8005648003 |
+| B | 2026-09-24 | Laminar · ML Infrastructure Engineer | Boston, MA | 你投 · lever | https://jobs.lever.co/runlaminar/fb28b563-9ede-4845-802a-b1c505c7f7da |
+| B | 2026-09-23 | Perplexity · Member of Technical Staff, AI Products (Early Career - Industry) | San Francisco; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/perplexity/daa9120e-94ff-46e0-b4bd-4d2d290cb409 |
+| B | 2026-09-21 | Cerebras · AI Datacenter Infra engineer | Toronto, CAN; Remote (US); Sunnyvale, CA | 你投 · ashby | https://jobs.ashbyhq.com/cerebras/3a943706-87b4-4a0f-b1ac-70d1ff3d00e2 |
+| B | 2026-09-08 | Goodfire · Forward Deployed Research Scientist | San Francisco, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/goodfire/jobs/5409981008 |
+| B | 2026-09-03 | Torc Robotics · Software Engineer, I - Data Engineering | Ann Arbor, MI, Blacksburg, VA | agent 已填、等你答题 | https://job-boards.greenhouse.io/torcrobotics/jobs/8649372002 |
+| B | 2026-08-31 | PlayStation Global · Data Scientist II - Decision Science | United States, San Mateo, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/sonyinteractiveentertainmentglobal/jobs/6149266004 |
+| B | 2026-08-27 | Global Lending Services · Data Scientist - December 2026 - May 2027 Grads | Greenville, South Carolina (US) | 你投 · lever | https://jobs.lever.co/glsllc/d81bfc16-2ba1-41ca-ab21-7d8cffac9e07 |
+| B | 2026-08-26 | Embedding VC · AI Engineer (Early Career) | San Francisco Bay Area; United States | 你投 · ashby | https://jobs.ashbyhq.com/embedding-vc/5c8433ea-c7e6-4350-bbd5-2889e7fdb2b1 |
+| B | 2026-08-25 | Notion · Data Scientist, Growth | San Francisco, California; United States | 你投 · ashby | https://jobs.ashbyhq.com/notion/9fc52821-c394-4a80-85ba-5f1d7c36fb2b |
+| B | 2026-08-24 | Sciemo · Data Scientist | New York City; United States; Raleigh-Du | 你投 · ashby | https://jobs.ashbyhq.com/sciemo/208da924-4a08-4be7-a20c-a420f08e77d2 |
+| B | 2026-08-15 | Iambic Therapeutics · Research Scientist II/Senior, Computational Chemistry | San Diego HQ; Remote - US; United States | 你投 · ashby | https://jobs.ashbyhq.com/iambic-therapeutics/6236b729-9139-4971-8a31-3f5a9add1ed4 |
+| B | 2026-07-28 | Ramp · Software Engineer, Forward Deployed AI Solutions | New York, NY (HQ); USA | 你投 · ashby | https://jobs.ashbyhq.com/ramp/b614563f-3ce6-4dca-b5ba-0e5a6c8bda27 |
+| B | 2026-07-15 | Bracebridge Capital · Machine Learning Analyst | Boston, MA | agent 已填、等你答题 | https://job-boards.greenhouse.io/bracebridgecapital/jobs/4715042005 |
+| B | 2026-06-24 | Ramp · Applied AI Engineer, Fullstack | New York, NY (HQ); San Francisco, CA; US | 你投 · ashby | https://jobs.ashbyhq.com/ramp/6a7e382f-240a-4952-b9e5-7fe2b3856bc9 |
+| B | 2026-05-27 | Snowflake · Software Engineer (AI-Native), Database Engineering | US-CA-Menlo Park; United States | 你投 · ashby | https://jobs.ashbyhq.com/snowflake/073c91f2-0758-4544-9297-3f48a81fb04d |
+| B | 2026-05-11 | Motional · Machine Learning Systems Engineer | Boston, Massachusetts, United States; La | agent 已填、等你答题 | https://job-boards.greenhouse.io/motional/jobs/7730596003 |
+| B | 2026-04-01 | Avride · Software Engineer – ML Platform | Austin, Texas | agent 已填、等你答题 | https://job-boards.greenhouse.io/avride/jobs/4205615009 |
+| B | 2026-03-29 | Astera Institute · Machine Learning Researcher - Springtail | Emeryville HQ; United States | 你投 · ashby | https://jobs.ashbyhq.com/astera/62476521-abff-42eb-9b23-61d5a5fd0aed |
+| B | 2026-03-18 | Baseten · Data Engineer | San Francisco; New York; United States | 你投 · ashby | https://jobs.ashbyhq.com/baseten/c2ba6c50-d282-4478-98e9-668f94facde8 |
+| B | 2026-03-11 | Axon · Research Scientist II | Ho Chi Minh City, Ho Chi Minh City, Viet | agent 已填、等你答题 | https://job-boards.greenhouse.io/axon/jobs/7661097003 |
+| B | 2026-03-10 | Everpure · AI Software Engineer, Security | Santa Clara, California | agent 已填、等你答题 | https://job-boards.greenhouse.io/purestorage/jobs/7681034 |
+| B | 2026-03-07 | Applied Intuition · Software Engineer - Systems Engineering AI Tooling | Sunnyvale; United States | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/applied/6cce20b1-2250-4350-9952-9691f58fb074 |
+| B | 2026-02-06 | Oscar Health · Data Scientist II | New York, New York, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/oscar/jobs/7592301 |
+| B | 2026-02-05 | Cerebras · AI Inference Core - Software Integration Engineer | United States and Canada | 你投 · ashby | https://jobs.ashbyhq.com/cerebras/90879967-1071-4d05-9180-6e18023ed887 |
+| B | 2026-01-27 | Cursor (Anysphere) · Software Engineer, ML Research | San Francisco; New York; United States | 你投 · ashby | https://jobs.ashbyhq.com/cursor/0aa0650b-f93c-416e-9e2f-4fdf1556fd14 |
+| B | 2026-01-19 | Uncountable · LLM Applications Engineer | New York, San Francisco, Munich or Londo | 你投 · ashby | https://jobs.ashbyhq.com/uncountable/c88f8550-635e-4bdd-9280-1cd40b7212c0 |
+| B | 2025-11-04 | Herald · Software Engineer - AI Products | New York, NY | agent 已填、等你答题 | https://job-boards.greenhouse.io/heraldapi/jobs/4976239008 |
+| B | 2025-10-24 | Xaira Therapeutics · AI Scientist, Computational Protein Design | South San Francisco, California, United  | agent 已填、等你答题 | https://job-boards.greenhouse.io/xairatherapeutics/jobs/4957313007 |
+| B | 2025-10-14 | Atomic Machines · Generative AI CAD Engineer | Emeryville, California | agent 已填、等你答题 | https://job-boards.greenhouse.io/atomicmachines/jobs/4038127009 |
+| B | 2025-06-02 | Goodfire · Research Scientist | San Francisco, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/goodfire/jobs/4746990008 |
+| B | 2025-03-31 | AHEAD · Associate AI Engineer | Chicago, Illinois (US) | 你投 · lever | https://jobs.lever.co/thinkahead/1ebcedcb-82ba-4d19-ac88-aa73a812dd81 |
+| B | 2025-02-10 | Wonderschool · Early Career Software Engineer – Applied AI | San Francisco | agent 已填、等你答题 | https://job-boards.greenhouse.io/wonderschool/jobs/6359139003 |
+| B | 2025-01-07 | Scale AI · Software Engineer, Enterprise AI | New York, NY; San Francisco, CA | agent 已填、等你答题 | https://job-boards.greenhouse.io/scaleai/jobs/4513943005 |
+| B | 2024-07-09 | Baseten · Software Engineer - Dedicated Inference | San Francisco; Toronto; New York; Montre | 你投 · ashby | https://jobs.ashbyhq.com/baseten/fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde |
+| B | 2024-01-09 | Stripe · Data Scientist | N/A | agent 已填、等你答题 | https://job-boards.greenhouse.io/stripe/jobs/5601879 |
+| C | 2026-10-01 | Brex · Data Scientist II, Applied ML | San Francisco, California, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/brex/jobs/8783482002 |
+| C | 2026-09-29 | Snowflake · Software Engineer - SnowConvert AI | US-CA-Menlo Park; Sydney, Australia; Uni | 你投 · ashby | https://jobs.ashbyhq.com/snowflake/2a928b93-a5d4-4285-a92c-032fb389faa2 |
+| C | 2026-09-25 | RosaicLabs · AI Accelerator RTL Microarchitecture/Design Engineer - Full Time | Santa Clara, CA; Austin, TX; remote-indi | 你投 · lever（已开始、等你答题） | https://jobs.lever.co/rosaiclabs/261df0f6-b4c6-4711-a5ee-a0bb67bcb840 |
+| C | 2026-09-24 | Block · Data Scientist, Payments | Bay Area, CA, United States of America | agent 已填、等你答题 | https://block.xyz/careers/jobs/5214784008?gh_jid=5214784008 |
+| C | 2026-09-24 | Discord · Data Scientist - Client Platform | San Francisco Bay Area | agent 已填、等你答题 | https://job-boards.greenhouse.io/discord/jobs/8840756002 |
+| C | 2026-09-23 | Commure · Software Engineer, Scribe AI | Mountain View, CA; USA | 你投 · ashby（已开始、等你答题） | https://jobs.ashbyhq.com/Commure/259988fe-0389-461f-823c-36d81840d465 |
+| C | 2026-09-22 | MatX · Software Engineer, AI Tooling | Mountain View | 你投 · ashby | https://jobs.ashbyhq.com/matx/4d6a4a63-2430-4ada-86b7-4c17cecad6b5 |
+| C | 2026-09-22 | MatX · Infrastructure Engineer, AI Tooling | Mountain View (HQ) or Remote; United Sta | 你投 · ashby | https://jobs.ashbyhq.com/matx/f63c692f-297c-4bf1-955d-cc0e808289bf |
+| C | 2026-09-09 | Embedding VC · Software Engineer, Enterprise AI Platform | San Francisco Bay Area; United States | 你投 · ashby | https://jobs.ashbyhq.com/embedding-vc/b49531ff-4850-4bab-8fbf-72a8ec299e60 |
+| C | 2026-09-05 | FanDuel · Data Scientist, Market Making | Jersey City, New Jersey, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/fanduel/jobs/8181013 |
+| C | 2026-08-31 | Everpure · Fullstack Software Engineer, AI Infra | Santa Clara, California | agent 已填、等你答题 | https://job-boards.greenhouse.io/purestorage/jobs/8166226 |
+| C | 2026-08-28 | MatX · NPI Manufacturing Engineer - AI Compute Hardware | Mountain View (HQ) or Remote; United Sta | 你投 · ashby | https://jobs.ashbyhq.com/matx/a1af6f19-d5ce-4876-92f1-a457bef22604 |
+| C | 2026-08-28 | Block · Software Engineer, Data Platform | Bay Area, CA, United States of America | agent 已填、等你答题 | https://job-boards.greenhouse.io/block/jobs/5381381008 |
+| C | 2026-08-14 | Klaviyo · Software Engineer II - Recommendations | Boston, MA | agent 已填、等你答题 | https://www.klaviyo.com/careers/jobs/7855798003?gh_jid=7855798003 |
+| C | 2026-08-11 | Blend · Software Engineer - AI Native (Full Stack) | Raleigh, NC | agent 已填、等你答题 | https://job-boards.greenhouse.io/blend/jobs/6141420004 |
+| C | 2026-07-28 | Embedding VC · Software Engineer, Applied AI / Product | San Francisco Bay Area; United States | 你投 · ashby | https://jobs.ashbyhq.com/embedding-vc/4b7b35d9-6a2c-43a2-8c36-2bf6974e3b0f |
+| C | 2026-06-26 | Yes Energy · Data Engineer II | Boulder, Colorado, United States | agent 已填、等你答题 | https://job-boards.greenhouse.io/yesenergy/jobs/5284694008 |
+| C | 2026-06-25 | FanDuel · Data Scientist, Experimentation | New York City | agent 已填、等你答题 | https://www.fanduel.careers/jobs/fanduel/data-scientist-experimentation/?gh_jid=8028963 |
+| C | 2026-06-13 | Brain Co. · AI Product Engineer | New York City, NY; United States | 你投 · ashby | https://jobs.ashbyhq.com/brainco/39660079-dc7e-4974-8ab1-900c45198bcf |
+| C | 2026-05-22 | InterSystems · Junior Sales Engineer - Healthcare Interoperability & AI Solutions | Darmstadt | agent 已填、等你答题 | https://job-boards.greenhouse.io/intersystems/jobs/7746768003 |
+| C | 2026-05-14 | Cohere · Software Engineer, Data Infrastructure | New York; San Francisco; Canada; United  | 你投 · ashby | https://jobs.ashbyhq.com/cohere/6aa3cb2b-ee8b-4c92-b505-3a7509f80d7f |
+| C | 2026-03-24 | WisdomTree · AI Solutions Analyst | Hybrid - New York, NY (US) | 你投 · lever | https://jobs.lever.co/wisdomtree/621718c3-779f-4e9c-9681-be75dafc427e |
+| C | 2026-02-23 | Modal · Forward Deployed Engineer - ML | New York; San Francisco; United States | 你投 · ashby | https://jobs.ashbyhq.com/modal/9fadb51f-ce11-41b1-84d5-470e66cc8ee9 |
+| C | 2026-02-17 | Cerebras · ML Software Tool Development Engineer | United States and Canada | 你投 · ashby | https://jobs.ashbyhq.com/cerebras/0471b24c-013d-4e9c-a1dd-b11beadb95c7 |
+| C | 2026-01-27 | Cursor (Anysphere) · Software Engineer, ML Infrastructure | San Francisco; New York; United States | 你投 · ashby | https://jobs.ashbyhq.com/cursor/c66cde5e-9cb6-4a2e-a330-9323e1edf2a9 |
+| C | 2025-10-28 | Brain Co. · Software Enginer, AI Platform (Backend) | San Francisco Bay Area; United States | 你投 · ashby | https://jobs.ashbyhq.com/brainco/0b8c4f13-c8bd-4987-b3b3-0c1adb57c6d8 |
+| C | 2025-10-22 | Herald · Frontend Engineer - AI Products | New York City | agent 已填、等你答题 | https://job-boards.greenhouse.io/heraldapi/jobs/4962979008 |
+| C | 2025-06-26 | Brain Co. · AI Product Engineer | San Francisco Bay Area; United States | 你投 · ashby | https://jobs.ashbyhq.com/brainco/4866bc74-52fa-4819-a9d0-3a5e73c31951 |
+| C | 2025-06-02 | Figma · Software Engineer - Data Infrastructure | San Francisco, CA • New York, NY • Unite | agent 已填、等你答题 | https://job-boards.greenhouse.io/figma/jobs/5551686004 |
+| C | 2025-04-21 | Uncountable · Platform Engineer - Generative AI | New York, San Francisco, Munich or Londo | 你投 · ashby | https://jobs.ashbyhq.com/uncountable/677487ff-7923-4be1-97ab-bab17ee7f9fb |
+| C | 2025-04-10 | Canonical · MLOps Field Engineer | Home based - Worldwide | agent 已填、等你答题 | https://job-boards.greenhouse.io/canonical/jobs/6783943 |
+| C | 2024-04-11 | Canonical · Python and Kubernetes Software Engineer - Data, Workflows, AI/ML & Analytics | Home based - Worldwide | agent 已填、等你答题 | https://job-boards.greenhouse.io/canonical/jobs/5703396 |
+| C | 2023-06-10 | Uncountable · Scientific Data Engineer | San Francisco, New York | 你投 · ashby | https://jobs.ashbyhq.com/uncountable/48cbdfbc-c377-49bd-b39b-4c2d77357135 |
+| C | 2022-10-10 | AHEAD · Associate Data Engineer | Chicago, Illinois (US) | 你投 · lever | https://jobs.lever.co/thinkahead/14fefcf2-720f-4333-8bcc-ff3ba62d3b8e |
 
-## 四、没投的原因（最近 30 天）
+## 四、没投的原因（最近 30 天发布的）
 
-- 30457 个：not a match
-- 17746 个：H-1B history not looked up yet
+- 30456 个：not a match
+- 17684 个：H-1B history not looked up yet
 - 13179 个：senior title
 - 2400 个：no H-1B filings since 2023
 - 1398 个：excluded company
 - 131 个：you marked it not to apply
+- 54 个：excluded title
 - 48 个：posting closed
 - 23 个：pay tops out below her range

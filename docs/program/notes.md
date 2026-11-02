@@ -1,6 +1,6 @@
 # 总协调追踪（program tracker）
 
-任何接手的总 agent 先读这份，再读 `docs/decisions.tsv` 最后 20 行。本文件只由总 agent 写。
+任何接手的 agent 先读 `docs/HANDOFF-v4.md`，再读这份，再读 `docs/decisions.tsv` 最后 20 行。本文件只由总 agent 写。
 
 ## 目标（候选人原话的要点）
 一个能完全自动投简历、她不用逐条检查就能信任的系统：多 agent 分层监督；中大型美国公司 New Grad / Entry-Level AI/ML 岗位规模化海投，小公司收集招聘线索供她外联。阶段：1a 搜全 → 1b 筛对 → 1c 投出；2 外联；3 跟进。

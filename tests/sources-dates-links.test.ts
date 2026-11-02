@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { JobKey, Sighting } from "../src/domain/job.ts";
-import { locationsCompatible, mergeRun } from "../src/discover/merge.ts";
+import { locationsCompatible, mergeRun, US_STATES } from "../src/discover/merge.ts";
 import { parseWorkdayDetail, parseWorkdayPostedOn } from "../src/discover/parse.ts";
 import { reportMarkdown, type ReportData } from "../src/discover/render.ts";
 import { SOURCE_REGISTRY } from "../src/discover/sources.ts";
@@ -21,6 +21,7 @@ describe("source registry", () => {
   it("marks no_api only for sources with no public API, and never calls an unbuilt API source no_api", () => {
     const status = Object.fromEntries(SOURCE_REGISTRY.map((r) => [r.id, r.status]));
     expect(status.direct_job_boards).toBe("no_api");
+    expect(status.wellfound).toBe("no_api");
     expect(status.brave_tavily).toBe("not_built");
     expect(status.vc_portfolio).toBe("not_built");
     expect(status.official_workday).toBe("live");
@@ -157,5 +158,36 @@ describe("alert-only postings", () => {
     expect(locationsCompatible("Portland, OR", "Portland, ME")).toBe(false);
     expect(locationsCompatible("", "New York, NY")).toBe(false);
     expect(locationsCompatible("New York, NY", "")).toBe(false);
+  });
+
+  it("never links San Francisco to South San Francisco, and reads states both ways", () => {
+    expect(locationsCompatible("San Francisco, CA", "Austin, Texas; South San Francisco, California")).toBe(false);
+    expect(locationsCompatible("San Francisco, CA", "San Francisco, California")).toBe(true);
+    expect(locationsCompatible("San Francisco, CA", "South San Francisco, California, United States")).toBe(false);
+    expect(locationsCompatible("Austin, TX", "Austin, Texas, United States")).toBe(true);
+    expect(locationsCompatible("Austin, Texas", "Austin, TX")).toBe(true);
+    expect(locationsCompatible("Austin, TX", "Dallas, Texas")).toBe(false);
+    expect(locationsCompatible("San Francisco, CA", "San Francisco")).toBe(false);
+  });
+
+  it("accepts a city written without its state, and New York City as New York", () => {
+    expect(locationsCompatible("New York", "New York City, NY")).toBe(true);
+    expect(locationsCompatible("Austin", "Austin, Texas, United States")).toBe(true);
+  });
+
+  it("links a remote line only to remote-only official text", () => {
+    expect(locationsCompatible("Remote", "Seattle, WA")).toBe(false);
+    expect(locationsCompatible("Remote", "Remote - US")).toBe(true);
+    expect(locationsCompatible("Remote", "Austin, TX (Remote)")).toBe(false);
+    expect(locationsCompatible("Seattle, WA", "Remote - US")).toBe(false);
+  });
+
+  it("maps all 50 states and DC between code and name", () => {
+    expect(US_STATES).toHaveLength(51);
+    for (const [code, name] of US_STATES) {
+      expect(locationsCompatible(`Springfield, ${code}`, `Springfield, ${name}`)).toBe(true);
+      expect(locationsCompatible(`Springfield, ${name}`, `Springfield, ${code}`)).toBe(true);
+      expect(locationsCompatible(`Springfield, ${code}`, `Springfield, ${US_STATES.find(([c]) => c !== code)![1]}`)).toBe(false);
+    }
   });
 });

@@ -39,23 +39,71 @@ const COMPANY_SUFFIX = /\b(inc|incorporated|llc|ltd|limited|corp|corporation|co|
 export const normCompany = (s: string) => s.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9 ]+/g, " ").replace(COMPANY_SUFFIX, " ").replace(/\s+/g, " ").trim();
 export const normTitle = (s: string) => s.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9+# ]+/g, " ").replace(/\s+/g, " ").trim();
 
-const REMOTE = /\bremote\b/i;
+// The fifty states and DC, code and name. Both spellings of a state compare equal.
+export const US_STATES: readonly [string, string][] = [
+  ["AL", "Alabama"], ["AK", "Alaska"], ["AZ", "Arizona"], ["AR", "Arkansas"], ["CA", "California"],
+  ["CO", "Colorado"], ["CT", "Connecticut"], ["DE", "Delaware"], ["FL", "Florida"], ["GA", "Georgia"],
+  ["HI", "Hawaii"], ["ID", "Idaho"], ["IL", "Illinois"], ["IN", "Indiana"], ["IA", "Iowa"],
+  ["KS", "Kansas"], ["KY", "Kentucky"], ["LA", "Louisiana"], ["ME", "Maine"], ["MD", "Maryland"],
+  ["MA", "Massachusetts"], ["MI", "Michigan"], ["MN", "Minnesota"], ["MS", "Mississippi"], ["MO", "Missouri"],
+  ["MT", "Montana"], ["NE", "Nebraska"], ["NV", "Nevada"], ["NH", "New Hampshire"], ["NJ", "New Jersey"],
+  ["NM", "New Mexico"], ["NY", "New York"], ["NC", "North Carolina"], ["ND", "North Dakota"], ["OH", "Ohio"],
+  ["OK", "Oklahoma"], ["OR", "Oregon"], ["PA", "Pennsylvania"], ["RI", "Rhode Island"], ["SC", "South Carolina"],
+  ["SD", "South Dakota"], ["TN", "Tennessee"], ["TX", "Texas"], ["UT", "Utah"], ["VT", "Vermont"],
+  ["VA", "Virginia"], ["WA", "Washington"], ["WV", "West Virginia"], ["WI", "Wisconsin"], ["WY", "Wyoming"],
+  ["DC", "District of Columbia"],
+];
+const STATE_CODE_BY_KEY = new Map<string, string>([
+  ...US_STATES.map(([code]) => [code.toLowerCase(), code] as const),
+  ...US_STATES.map(([code, name]) => [name.toLowerCase(), code] as const),
+]);
+const US_CODES = new Set(US_STATES.map(([code]) => code));
 
-// The alert's city (or "remote") must appear in the official location text; if
-// the alert names a state code, the official text must not name only other states.
+// Region words that may stand in for "anywhere in the US" on a remote line.
+const REMOTE_REGION = new Set(["us", "usa", "u s", "united states", "united states of america", "america", "north america", "canada", "anywhere", "emea", "apac", "worldwide", "global", "uk", "united kingdom", "europe"]);
+
+const plain = (s: string) => s.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+
+// A remote line names remote and at most a region: "Remote", "Remote - US".
+// "Austin, TX (Remote)" names a city and is not remote.
+function isRemoteText(text: string): boolean {
+  if (!/\bremote\b/i.test(text)) return false;
+  const rest = text.replace(/\bremote\b/gi, " ").replace(/\b(in|based)\b/gi, " ");
+  return rest.split(/[,\-–—()|/;]+/).map((x) => x.replace(/\./g, "").trim().toLowerCase().replace(/\s+/g, " ")).filter(Boolean).every((x) => REMOTE_REGION.has(x));
+}
+
+// "city, state, country" → exact city phrase and state key. A state is a US code
+// or a US state name, both spellings mapped to the code; anything else is kept as
+// written (so "Karnataka" or "Ontario" still have to agree).
+function parseLocation(text: string): { city: string; state: string } {
+  const parts = text.split(",").map((p) => p.trim()).filter(Boolean);
+  const cityRaw = plain(parts[0] ?? "");
+  const city = cityRaw === "new york city" ? "new york" : cityRaw;
+  const keys = parts.slice(1).map((p) => {
+    const k = plain(p.replace(/\./g, ""));
+    return STATE_CODE_BY_KEY.get(k) ?? k;
+  });
+  const state = keys.find((k) => US_CODES.has(k)) ?? keys[0] ?? "";
+  return { city, state };
+}
+
+// The alert's location must be the official location: a remote line matches only
+// remote-only official text; a city matches an official location whose city is
+// that exact phrase (so "South San Francisco" never matches "San Francisco") and,
+// when the alert names a state, whose state is the same state. Official text that
+// names no state does not satisfy an alert that does: when in doubt, no link.
 export function locationsCompatible(alert: string, official: string): boolean {
   const a = alert.trim();
-  const o = official.toLowerCase();
-  if (!a || !o.trim()) return false;
-  if (REMOTE.test(a) && REMOTE.test(o)) return true;
-  const [city = "", rest = ""] = a.split(",").map((x) => x.trim());
-  const c = city.toLowerCase().replace(/[^a-z ]+/g, " ").replace(/\s+/g, " ").trim();
-  if (!c || REMOTE.test(c)) return false;
-  const cityHit = new RegExp(`(^|[^a-z])${c.replace(/ /g, "[ ,.-]+")}([^a-z]|$)`).test(o);
-  if (!cityHit) return false;
-  const state = /^[A-Za-z]{2}\b/.exec(rest)?.[0]?.toLowerCase();
-  const officialStates = [...o.matchAll(/,\s*([a-z]{2})\b/g)].map((m) => m[1]!);
-  return !state || officialStates.length === 0 || officialStates.includes(state);
+  const entries = official.split(/[;|]/).map((x) => x.trim()).filter(Boolean);
+  if (!a || entries.length === 0) return false;
+  if (isRemoteText(a)) return entries.every(isRemoteText);
+  const want = parseLocation(a);
+  if (!want.city) return false;
+  return entries.some((e) => {
+    if (isRemoteText(e)) return false;
+    const got = parseLocation(e);
+    return got.city === want.city && (!want.state || got.state === want.state);
+  });
 }
 
 export const isAlertOnly = (j: Job) => !j.official && j.sources.length > 0 && j.sources.every((s) => ALERT_CHANNELS.has(s.channel)) && !j.key.startsWith("lead:");

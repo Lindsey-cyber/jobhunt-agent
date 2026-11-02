@@ -131,16 +131,18 @@ export function linkAlertJobs(jobs: Map<JobKey, Job>): Map<JobKey, Job> {
 
 // ── Re-keying old catalog entries ───────────────────────────────────────────
 // Entries written before an ATS had its own JobKey sit under `url:` keys. When
-// the entry's own URL now yields an `amazon:<id>` key, the entry moves there;
-// several old entries for one id (www, bare and account hosts) fold into one:
-// official over third-party, then the longer description; sources are unioned
-// with the earliest first sighting and the latest last sighting.
+// the entry's own URL now yields an `amazon:<id>` or `icims:<host>:<id>` key, the
+// entry moves there; several old entries for one id (www, bare and account hosts,
+// or a slug and a bare /job link) fold into one: official over third-party, then
+// the longer description; sources are unioned with the earliest first sighting
+// and the latest last sighting. An id already keyed in the catalog absorbs them.
+const REKEYED_ATS = ["amazon:", "icims:"];
 export function rekeyPrior(prior: Map<JobKey, Job>): Map<JobKey, Job> {
   const out = new Map<JobKey, Job>();
   const moved = new Map<JobKey, Job[]>();
   for (const [k, j] of prior) {
     const nk = k.startsWith("url:") ? jobKey(j.url) : k;
-    if (nk !== k && nk.startsWith("amazon:")) moved.set(nk, [...(moved.get(nk) ?? []), { ...j, key: nk }]);
+    if (nk !== k && REKEYED_ATS.some((p) => nk.startsWith(p))) moved.set(nk, [...(moved.get(nk) ?? []), { ...j, key: nk }]);
     else out.set(k, j);
   }
   for (const [nk, js] of moved) {

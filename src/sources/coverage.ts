@@ -351,7 +351,8 @@ const readCounts = (path: string): Counts => {
 // policy year from data/h1b (the watchlist's own counts first, then the lookup cache). `since` is the policy year: a count
 // taken since another year is not comparable and is ignored.
 export function loadSizeSources(dataDir: string, since: number | null, wl: Watchlist = loadWatchlist(), canon: Canon = makeCanon(wl.aliases)): SizeSources {
-  const entries = [...wl.greenhouse, ...wl.lever, ...wl.ashby, ...wl.workday, ...wl.smartrecruiters, ...wl.oracleHcm, ...wl.eightfold, ...wl.pending];
+  // Every section that carries a company and a band. atlassian and ibm carry only a size, so they have no band to read here.
+  const entries = [...wl.greenhouse, ...wl.lever, ...wl.ashby, ...wl.workday, ...wl.smartrecruiters, ...wl.oracleHcm, ...wl.eightfold, ...wl.jibe, ...wl.pending];
   const own = readCounts(join(dataDir, "h1b", "watchlist-counts.json"));
   const cache = readCounts(join(dataDir, "h1b", "sponsors.json"));
   const count = (c: Counts[string], checkSince: boolean): number | undefined =>

@@ -5,7 +5,7 @@
 //   --dry          print the report, write nothing
 // Read-only toward employers (public board APIs and h1bdata.info); never opens an application form.
 // Its H-1B counts go to data/h1b/watchlist-counts.json, never to the shared data/h1b/sponsors.json (that cache belongs to jh h1b and
-// eligibility). sponsors.json is read only as a fallback when a company has no count of its own. Keeps workdayQueries, github, hn, skipped as they are.
+// eligibility). sponsors.json is read only as a fallback when a company has no count of its own. Only greenhouse, lever, ashby, workday and pending are rewritten; every other section is kept verbatim.
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { parse } from "yaml";
 import { employerKey, filerName, parseH1bTable, recordFrom, type H1bFiling } from "../src/discover/h1b.ts";
@@ -101,6 +101,52 @@ export function slugGuesses(company: string): string[] {
   const k = employerKey(company).replace(/[^a-z0-9 ]/g, "");
   const words = k.split(" ").filter(Boolean);
   return [...new Set([words.join(""), words.join("-"), words[0] ?? ""].filter((s) => s.length >= 3))];
+}
+
+// Top-level sections of the watchlist file. A comment or blank line goes with the section below it, unless an indented
+// line follows it, in which case it stays in the section above: joining every section back gives the text exactly.
+export interface Section { key: string | null; lines: string[] }
+const TOP_KEY = /^([A-Za-z_]\w*):/;
+export function splitSections(text: string): Section[] {
+  const blocks: Section[] = [{ key: null, lines: [] }];
+  let held: string[] = [];
+  for (const line of text.split("\n")) {
+    const m = TOP_KEY.exec(line);
+    if (m) {
+      blocks.push({ key: m[1]!, lines: [...held, line] });
+      held = [];
+    } else if (line.trim() === "" || line.startsWith("#")) held.push(line);
+    else {
+      blocks.at(-1)!.lines.push(...held, line);
+      held = [];
+    }
+  }
+  blocks.at(-1)!.lines.push(...held);
+  return blocks;
+}
+
+// Rewrites the sections named in `regenerated` (the body lines under each key) and copies every other section verbatim, in
+// its place. A regenerated section with no lines is dropped; a regenerated section the file lacks is appended at the end.
+export function assembleWatchlist(text: string, regenerated: Record<string, string[]>): string {
+  const blocks = splitSections(text);
+  const present = new Set(blocks.map((b) => b.key));
+  const out: string[] = [];
+  for (const b of blocks) {
+    if (b.key === null || !(b.key in regenerated)) {
+      out.push(...b.lines);
+      continue;
+    }
+    const body = regenerated[b.key]!;
+    if (body.length === 0) continue;
+    const at = b.lines.findIndex((l) => TOP_KEY.test(l));
+    out.push(...b.lines.slice(0, at), b.lines[at]!, ...body);
+  }
+  const extra = Object.entries(regenerated).filter(([k, body]) => !present.has(k) && body.length > 0).flatMap(([k, body]) => [`${k}:`, ...body]);
+  if (extra.length) {
+    if (out.at(-1) === "") out.pop();
+    out.push(...extra, "");
+  }
+  return out.join("\n");
 }
 
 // ---------- data ----------
@@ -371,26 +417,27 @@ async function main(): Promise<void> {
     }
   }
 
-  // Write the file: company sections regenerated, the rest kept verbatim.
-  const lines = text.split("\n");
-  const at = (re: RegExp) => lines.findIndex((l) => re.test(l));
-  const iQueries = at(/^workdayQueries:/), iWorkday = at(/^workday:/), iGithub = at(/^github:/), iPending = at(/^pending:/);
-  const queries = lines.slice(iQueries, iWorkday).join("\n");
-  const tail = lines.slice(iGithub, iPending > iGithub ? iPending : undefined).join("\n").trimEnd();
+  // Write the file: greenhouse, lever, ashby and workday regenerated; every other section (pending included) kept verbatim.
+  // Pending: every row keeps the line as written, except one this run placed on a board; a new row is rendered.
   const all = [...kept.map((r) => ({ ...r })), ...added];
-  const section = (k: Kind) => all.filter((r) => r.kind === k).map((r) => renderEntry({ ...r, kind: k })).join("\n");
-  const out = [
-    "# Long-running watchlist of official ATS boards, rebuilt by scripts/rebuild-watchlist.ts (rerun it; do not hand-edit counts).",
-    "# size: medium_large when the employer filed >= 20 H-1B LCAs since 2023 (band large >= 200, mid 20-199), else unknown (band small < 20,",
-    "# unknown = not looked up). h1b is the filing count from data/h1b/watchlist-counts.json. ai: true marks AI-first companies.",
-    "# Kept: a triage match in the last 180 days, or large/mid with an ML/AI/data title in catalog history. Dropped only with no match ever,",
-    "# no ML/AI/data title ever, and not large/mid; excluded companies (data/policy.yaml) are not watched.",
-    "# pending: big sponsors whose board is on an ATS with no adapter yet (another workstream adds adapters).",
-    "greenhouse:", section("greenhouse"), "lever:", section("lever"), "ashby:", section("ashby"),
-    queries.trimEnd(), "workday:", section("workday"), tail,
-    ...(pending.length ? ["pending:", ...pending.map(renderPending)] : []),
-    "",
-  ].join("\n");
+  const section = (k: Kind) => all.filter((r) => r.kind === k).map((r) => renderEntry({ ...r, kind: k }));
+  const written: [string, string][] = [];
+  for (const l of splitSections(text).find((b) => b.key === "pending")?.lines ?? []) {
+    if (/^\s*- /.test(l)) written.push([employerKey((parse(l.trim()) as [{ company: string }])[0]!.company), l]);
+  }
+  const writtenKeys = new Set(written.map(([k]) => k));
+  const placedKeys = new Set(added.map((r) => employerKey(r.company)));
+  const pendingLines = [
+    ...written.filter(([k]) => !placedKeys.has(k)).map(([, l]) => l),
+    ...pending.filter((p) => !writtenKeys.has(employerKey(p.company)) && !placedKeys.has(employerKey(p.company))).map(renderPending),
+  ];
+  const out = assembleWatchlist(text, {
+    greenhouse: section("greenhouse"),
+    lever: section("lever"),
+    ashby: section("ashby"),
+    workday: section("workday"),
+    pending: pendingLines,
+  });
   if (!dry) {
     writeFileSync(WATCHLIST, out);
     writeCounts(counts);

@@ -185,6 +185,58 @@ export function parseOracleHcm(item: OracleHcmItem | OracleHcmDetail, host: stri
   });
 }
 
+// ── Eightfold (public career-site JSON the page itself calls; no login) ────
+// Two shapes exist. Netflix-style tenants serve /api/apply/v2/jobs (snake_case,
+// seconds timestamps); Eaton-style tenants serve /api/pcsx/search and
+// /api/pcsx/position_details (camelCase). Both normalise to this one item.
+
+export interface EightfoldItem {
+  id?: number | string;
+  name?: string;
+  posting_name?: string;
+  location?: string;
+  locations?: string[];
+  standardizedLocations?: string[];
+  t_create?: number;
+  postedTs?: number;
+  creationTs?: number;
+  department?: string;
+  work_location_option?: string;
+  workLocationOption?: string;
+  job_description?: string;
+  jobDescription?: string;
+}
+
+// Eightfold timestamps are Unix seconds; a value that is already milliseconds is kept.
+const eightfoldDate = (t: unknown) => (typeof t === "number" && t > 0 ? iso(t < 1e11 ? t * 1000 : t) : "");
+
+const EIGHTFOLD_US = /(?:^|[\s,;(])(?:US|USA|United States(?: of America)?)\s*$/i;
+
+// Every location the posting lists; one US location is enough for a US posting.
+export const eightfoldInUS = (item: EightfoldItem): boolean => [...(item.standardizedLocations ?? []), ...(item.locations ?? []), item.location ?? ""].some((l) => EIGHTFOLD_US.test(l.trim()));
+
+export function parseEightfold(item: EightfoldItem, host: string, company: string, seenAt: string): Sighting | undefined {
+  const title = (item.posting_name || item.name || "").trim();
+  const id = item.id === undefined ? "" : String(item.id).trim();
+  if (!/^\d+$/.test(id) || !title) return undefined;
+  // postedTs is the employer's posting time; t_create / creationTs the ATS record's creation.
+  const date = eightfoldDate(item.postedTs) || eightfoldDate(item.t_create) || eightfoldDate(item.creationTs);
+  const locs = item.locations?.length ? item.locations : item.standardizedLocations ?? [];
+  return sighting({
+    channel: "official_eightfold",
+    source: `https://${host}/careers`,
+    url: `https://${host}/careers/job/${id}`,
+    seenAt,
+    official: true,
+    company,
+    title,
+    location: [(locs.length ? locs.join("; ") : item.location) ?? "", item.work_location_option || item.workLocationOption || ""].filter((x) => x && x !== "onsite").join("; "),
+    description: [item.department ? `Department: ${item.department}` : "", htmlToText(item.job_description || item.jobDescription || "")].filter(Boolean).join("\n"),
+    date,
+    dateKind: kindOf(date, "published"),
+  });
+}
+
 // ── Amazon (amazon.jobs/en/search.json, the career site's own public search) ──
 
 export interface AmazonJob { id_icims?: string; title?: string; job_path?: string; posted_date?: string; normalized_location?: string; location?: string; country_code?: string; description?: string; basic_qualifications?: string; preferred_qualifications?: string; job_schedule_type?: string; job_category?: string }

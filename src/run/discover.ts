@@ -12,7 +12,7 @@ import { alertChannel, parseAlert, type AlertMessage } from "../discover/parse.t
 import { triage, type CandidateFacts } from "../discover/triage.ts";
 import type { Profile } from "../profile/schema.ts";
 import { probe, pool } from "../sources/http.ts";
-import { fetchAmazon, fetchBoard, fetchGithub, fetchHn, fetchOracleHcm, fetchPostings, fetchSmartRecruiters, fetchWorkday, LOOKUP_KINDS, type BoardKind, type LookupKind, type LookupTarget, type Fetched, type SourceOutcome, type Watchlist } from "../sources/fetch.ts";
+import { fetchAmazon, fetchBoard, fetchEightfold, fetchGithub, fetchHn, fetchOracleHcm, fetchPostings, fetchSmartRecruiters, fetchWorkday, LOOKUP_KINDS, type BoardKind, type LookupKind, type LookupTarget, type Fetched, type SourceOutcome, type Watchlist } from "../sources/fetch.ts";
 import { readModelVerdicts } from "../store/modelverdicts.ts";
 import { readCatalog, writeCatalog } from "../store/catalog.ts";
 
@@ -108,6 +108,7 @@ export async function discover(opts: DiscoverOptions): Promise<DiscoverResult> {
   if (want("workday")) for (const s of w.workday) tasks.push(() => fetchWorkday(s, w.workdayQueries, startedAt));
   if (want("smartrecruiters")) for (const c of w.smartrecruiters) tasks.push(() => fetchSmartRecruiters(c, w.workdayQueries, startedAt));
   if (want("oracle_hcm")) for (const o of w.oracleHcm) tasks.push(() => fetchOracleHcm(o, w.workdayQueries, startedAt));
+  if (want("eightfold")) for (const e of w.eightfold) tasks.push(() => fetchEightfold(e, w.workdayQueries, startedAt));
   if (want("amazon") && w.amazon) tasks.push(() => fetchAmazon(w.amazon!.queries, startedAt));
   if (want("github")) for (const g of w.github) tasks.push(() => fetchGithub(g, startedAt));
   if (want("hn")) tasks.push(() => fetchHn(w.hn.commentLimit, startedAt));

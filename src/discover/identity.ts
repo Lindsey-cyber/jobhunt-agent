@@ -56,6 +56,9 @@ export function jobKey(raw: string): JobKey {
   if (host === "jobs.smartrecruiters.com" && /^\d+/.test(parts[1] ?? "")) {
     return key(`smartrecruiters:${parts[1]!.split("-")[0]}`);
   }
+  // Eightfold career sites live on tenant.eightfold.ai or a custom domain, always at /careers/job/<id>;
+  // the id is a long numeric position id, scoped to the host.
+  if (parts[0] === "careers" && parts[1] === "job" && /^\d{9,}$/.test(parts[2] ?? "")) return key(`eightfold:${host}:${parts[2]}`);
   if (host === "amazon.jobs" || host.endsWith(".amazon.jobs")) {
     // /en/jobs/N/slug, /jobs/N/slug, /en/jobs/N, account.amazon.jobs/jobs/N/apply, with or without a locale.
     const i = parts.indexOf("jobs");

@@ -37,6 +37,12 @@ export const SOURCE_REGISTRY: readonly SourceRow[] = [
     note: "招聘站自己调用的 hcmRestApi（无需登录），按关键词有界搜索、仅美国；带发布日期。首次实测 16 家 255 条 AI/ML 标题，31 条符合（26 条库里没有）",
   },
   {
+    id: "official_eightfold",
+    name: "官方 Eightfold",
+    status: "live",
+    note: "招聘站自己调用的公开 JSON（无需登录）：Netflix 走 /api/apply/v2/jobs，Eaton 走 /api/pcsx/search，按关键词有界搜索、仅美国；带发布时间。首次实测 Netflix 36 条、Eaton 4 条 AI/ML 标题（美国）。BNY 的 Eightfold 域名从本环境不可达，已由其 Oracle HCM 站覆盖",
+  },
+  {
     id: "official_icims",
     name: "官方 iCIMS",
     status: "deferred",

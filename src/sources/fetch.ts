@@ -4,7 +4,7 @@ import { z } from "zod";
 import type { Channel, JobKey, Sighting, SizeBand } from "../domain/job.ts";
 import { jobKey } from "../discover/identity.ts";
 import { ROLE } from "../discover/triage.ts";
-import { parseAmazon, parseAshby, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
+import { parseAmazon, parseAshby, parseEightfold, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, eightfoldInUS, type EightfoldItem, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
 import { getJson, getText, HttpError, pool, postJson } from "./http.ts";
 
 const Board = z.object({ board: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ai: z.boolean().default(false) });
@@ -18,6 +18,10 @@ export const Watchlist = z.object({
   // Oracle HCM Candidate Experience). Searched with workdayQueries, US only.
   smartrecruiters: z.array(z.object({ id: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
   oracleHcm: z.array(z.object({ host: z.string(), site: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  // Eightfold career sites: `api` picks the JSON family the tenant serves (see fetchEightfold).
+  eightfold: z.array(z.object({ host: z.string(), domain: z.string(), api: z.enum(["apply_v2", "pcsx"]).default("apply_v2"), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  // Job aggregators and boards that are not employers; coverage sampling skips rows named here.
+  aggregators: z.array(z.string()).default([]),
   // Amazon's career site JSON search (no ATS board exists): AND-matched keyword queries, US only.
   amazon: z.object({ queries: z.array(z.string()) }).optional(),
   github: z.array(z.object({ name: z.string(), url: z.url(), raw: z.url(), format: z.enum(["simplify-json", "markdown"]) })).default([]),
@@ -272,6 +276,52 @@ export async function fetchOracleHcm(o: Watchlist["oracleHcm"][number], queries:
     return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: o.size, note: `${queries.length} searches, ${listed} US results, ${hits.size} AI/ML titles` } };
   } catch (e) {
     return fail(base, e);
+  }
+}
+
+interface EfApplyList { count?: number; positions?: EightfoldItem[] }
+interface EfPcsxList { data?: { count?: number; positions?: EightfoldItem[] } }
+interface EfPcsxDetail { data?: EightfoldItem }
+
+// Eightfold career sites (tenant.eightfold.ai or a custom domain), public JSON the
+// page itself calls, no login. `apply_v2` (Netflix) is /api/apply/v2/jobs and
+// `pcsx` (Eaton) is /api/pcsx/search; some tenants answer 403 on the other family.
+// The server fixes the page size (10), so paging advances by what came back, capped
+// at perQuery results per search. Sequential per tenant. US postings only.
+export async function fetchEightfold(e: Watchlist["eightfold"][number], queries: string[], seenAt: string, perQuery = 100): Promise<Fetched> {
+  const base = { name: e.company, channel: "official_eightfold" as Channel, url: `https://${e.host}/careers` };
+  const root = `https://${e.host}/api`;
+  const dom = encodeURIComponent(e.domain);
+  try {
+    const hits = new Map<string, EightfoldItem>();
+    let listed = 0;
+    for (const q of queries) {
+      for (let start = 0; start < perQuery; ) {
+        const qs = `domain=${dom}&start=${start}&query=${encodeURIComponent(q)}&location=${encodeURIComponent("United States")}`;
+        const page = e.api === "pcsx" ? (await getJson<EfPcsxList>(`${root}/pcsx/search?${qs}`, 60000)).data : await getJson<EfApplyList>(`${root}/apply/v2/jobs?${qs}&num=10`, 60000);
+        const items = page?.positions ?? [];
+        for (const p of items) {
+          if (!eightfoldInUS(p)) continue;
+          listed++;
+          if (p.id !== undefined && ROLE.test(p.posting_name || p.name || "")) hits.set(String(p.id), p);
+        }
+        start += items.length;
+        if (items.length === 0 || start >= (page?.count ?? 0)) break;
+      }
+    }
+    const details = await pool([...hits.values()], 4, async (item) => {
+      try {
+        const id = encodeURIComponent(String(item.id));
+        const d = e.api === "pcsx" ? (await getJson<EfPcsxDetail>(`${root}/pcsx/position_details?position_id=${id}&domain=${dom}&hl=en`, 60000)).data : await getJson<EightfoldItem>(`${root}/apply/v2/jobs/${id}?domain=${dom}`, 60000);
+        return parseEightfold({ ...item, ...(d ?? {}) }, e.host, e.company, seenAt);
+      } catch {
+        return parseEightfold(item, e.host, e.company, seenAt);
+      }
+    });
+    const s = details.filter((d): d is Sighting => Boolean(d));
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: e.size, note: `${queries.length} searches, ${listed} US results, ${hits.size} AI/ML titles` } };
+  } catch (err) {
+    return fail(base, err);
   }
 }
 

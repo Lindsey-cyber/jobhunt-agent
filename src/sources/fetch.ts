@@ -1,7 +1,8 @@
 import { readFileSync } from "node:fs";
 import { parse } from "yaml";
 import { z } from "zod";
-import type { Channel, Sighting, SizeBand } from "../domain/job.ts";
+import type { Channel, JobKey, Sighting, SizeBand } from "../domain/job.ts";
+import { jobKey } from "../discover/identity.ts";
 import { ROLE } from "../discover/triage.ts";
 import { parseAmazon, parseAshby, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
 import { getJson, getText, HttpError, pool, postJson } from "./http.ts";
@@ -335,47 +336,75 @@ export function hostedBoard(url: string): { kind: "greenhouse" | "lever"; board:
   return undefined;
 }
 
-export interface LookupTarget { url: string; company: string }
+export interface LookupTarget { url: string; company: string; key?: string }
 
-// A 4xx other than rate limiting means the API does not know the posting.
+// A lookup that proves the posting is gone from its official source yields a
+// closed sighting carrying the evidence (merge turns it into hints.closed).
+// Proof is only: the API answered and the posting is absent from its answer, or
+// the posting's own endpoint says 404/410. A timeout, 4xx/5xx, a malformed or
+// empty-handed answer proves nothing and yields no sighting.
+function closedSighting(kind: LookupKind, t: LookupTarget, seenAt: string, basis: string): Sighting {
+  return {
+    key: (t.key ?? jobKey(t.url)) as JobKey, channel: `official_${kind}` as Channel, source: `lookup:${kind}`, url: t.url, seenAt, official: false,
+    company: t.company, title: "", location: "", description: "", date: "", dateKind: "none",
+    hints: { closed: true, closedEvidence: { source: `lookup:${kind}`, checkedAt: seenAt, basis } },
+  };
+}
+
+const isGone = (e: unknown) => e instanceof HttpError && (e.status === 404 || e.status === 410);
+
+// Any other 4xx (not rate limiting) means the API does not give us this posting; nothing is claimed.
 const unknownPosting = (e: unknown): [] => {
   if (e instanceof HttpError && e.status >= 400 && e.status < 500 && e.status !== 429) return [];
   throw e;
 };
 
 async function lookupOne(kind: LookupKind, t: LookupTarget, seenAt: string): Promise<Sighting[]> {
+  const gone = (basis: string) => [closedSighting(kind, t, seenAt, basis)];
   try {
     if (kind === "smartrecruiters") {
       const parts = new URL(t.url).pathname.split("/").filter(Boolean);
       const id = /^\d+/.exec(parts[1] ?? "")?.[0];
       if (!parts[0] || !id) return [];
-      const s = parseSmartRecruiters(await getJson<SmartRecruitersDetail>(`https://api.smartrecruiters.com/v1/companies/${encodeURIComponent(parts[0])}/postings/${id}`, 60000), parts[0], t.company, seenAt);
+      let body: SmartRecruitersDetail;
+      try { body = await getJson<SmartRecruitersDetail>(`https://api.smartrecruiters.com/v1/companies/${encodeURIComponent(parts[0])}/postings/${id}`, 60000); }
+      catch (e) { if (isGone(e)) return gone(`posting endpoint answered ${(e as HttpError).status}`); throw e; }
+      const s = parseSmartRecruiters(body, parts[0], t.company, seenAt);
       return s ? [s] : [];
     }
     if (kind === "amazon") {
       const id = /\/jobs\/(\d+)/.exec(new URL(t.url).pathname)?.[1];
       if (!id) return [];
       const body = await getJson<{ jobs?: Parameters<typeof parseAmazon>[0]["jobs"] }>(`https://www.amazon.jobs/en/search.json?base_query=${id}&result_limit=10`, 60000);
-      return parseAmazon(body, seenAt).filter((s) => s.key === `amazon:${id}`);
+      const found = parseAmazon(body, seenAt).filter((s) => s.key === `amazon:${id}`);
+      if (found.length === 0 && Array.isArray(body.jobs) && body.jobs.length === 0) return gone("search by id answered with no jobs");
+      return found;
     }
     if (kind === "greenhouse" || kind === "lever") {
       const h = hostedBoard(t.url);
       if (!h || h.kind !== kind) return [];
-      if (kind === "greenhouse") {
-        const job = await getJson<NonNullable<Parameters<typeof parseGreenhouse>[0]["jobs"]>[number]>(`https://boards-api.greenhouse.io/v1/boards/${h.board}/jobs/${h.id}?content=true`, 60000);
-        return parseGreenhouse({ jobs: [job] }, h.board, t.company, seenAt);
+      try {
+        if (kind === "greenhouse") {
+          const job = await getJson<NonNullable<Parameters<typeof parseGreenhouse>[0]["jobs"]>[number]>(`https://boards-api.greenhouse.io/v1/boards/${h.board}/jobs/${h.id}?content=true`, 60000);
+          return parseGreenhouse({ jobs: [job] }, h.board, t.company, seenAt);
+        }
+        const job = await getJson<Parameters<typeof parseLever>[0][number]>(`https://api.lever.co/v0/postings/${h.board}/${h.id}`, 60000);
+        return parseLever([job], h.board, t.company, seenAt);
+      } catch (e) {
+        if (isGone(e)) return gone(`${kind} job endpoint answered ${(e as HttpError).status}`);
+        throw e;
       }
-      const job = await getJson<Parameters<typeof parseLever>[0][number]>(`https://api.lever.co/v0/postings/${h.board}/${h.id}`, 60000);
-      return parseLever([job], h.board, t.company, seenAt);
     }
     const w = workdayRef(t.url);
     if (!w) return [];
     const api = `https://${w.host}/wday/cxs/${w.tenant}/${w.site}`;
-    // The list is searched by requisition id; a posting no longer listed is closed.
+    // The list is searched by requisition id. An answer that lists postings (even none)
+    // without this requisition means it is closed; a 4xx on the search itself, or an
+    // answer without a posting list, proves nothing.
     const list = await postJson<WorkdayList>(`${api}/jobs`, { appliedFacets: {}, limit: 20, offset: 0, searchText: w.req }, 60000);
     const req = w.req.toLowerCase();
     const hit = (list.jobPostings ?? []).find((p) => { const x = (p.externalPath ?? "").toLowerCase(); return x.endsWith(`_${req}`); });
-    if (!hit?.externalPath) return [];
+    if (!hit?.externalPath) return Array.isArray(list.jobPostings) && typeof list.total === "number" && list.jobPostings.length >= list.total ? gone(`workday search for ${w.req} answered ${list.jobPostings.length} of ${list.total} postings, none this requisition`) : []; // a partial page (more hits than shown) proves nothing
     const d = parseWorkdayDetail(await getJson<WorkdayDetail>(api + hit.externalPath, 60000), `https://${w.host}/${w.site}`, hit.externalPath, t.company, seenAt, hit.postedOn);
     return d ? [d] : [];
   } catch (e) {
@@ -383,8 +412,9 @@ async function lookupOne(kind: LookupKind, t: LookupTarget, seenAt: string): Pro
   }
 }
 
-// Looks up each target on its ATS: the official sightings found, and one outcome
-// saying how many were asked, found, no longer listed, and failed.
+// Looks up each target on its ATS: the official sightings found, a closed sighting for
+// each posting proved gone, and one outcome saying how many were asked, found, gone,
+// not found for no proof, and failed.
 export async function fetchPostings(kind: LookupKind, targets: LookupTarget[], seenAt: string): Promise<Fetched> {
   const base = { name: `${kind} postings found through lists`, channel: `official_${kind}` as Channel, url: `lookup:${kind}` };
   let failed = 0;
@@ -397,7 +427,9 @@ export async function fetchPostings(kind: LookupKind, targets: LookupTarget[], s
     }
   });
   const s = found.flat();
-  return { sightings: s, outcome: { ...base, ok: failed < targets.length || targets.length === 0, count: s.length, note: `${targets.length} postings looked up, ${s.length} found on the employer's API, ${targets.length - s.length - failed} not found or no longer listed, ${failed} failed` } };
+  const closed = s.filter((x) => x.hints.closed).length;
+  const live = s.length - closed;
+  return { sightings: s, outcome: { ...base, ok: failed < targets.length || targets.length === 0, count: live, note: `${targets.length} postings looked up, ${live} found on the employer's API, ${closed} proved gone (marked closed), ${targets.length - s.length - failed} not found without proof, ${failed} failed` } };
 }
 
 export async function fetchGithub(g: Watchlist["github"][number], seenAt: string): Promise<Fetched> {

@@ -9,12 +9,13 @@ export interface Coverage { date: string; n: number; inCatalog: number; inCatalo
 export interface AuditRates { falseMatchRate: number | null; missRate: number | null; matchJudged: number; rejectJudged: number }
 
 // A match is dated when the employer's own page says when it was published, or a
-// list that carries the posting says so (dateKind list_posted). Bounds ("30d+",
-// posted_before), email receipt and HN post time never count.
+// list that carries the posting says so (list_posted) or gives a day-level age
+// ("3d", "today": list_age_day). Coarse ages ("2w", "1mo": list_age), bounds
+// ("30d+", posted_before), email receipt and HN post time never count.
 export interface DatedMatch { publishedAt: string; sources?: readonly { dateKind: DateKind; date: string }[] }
 export function isDated(m: DatedMatch): boolean {
   if (m.publishedAt.trim() !== "") return true;
-  return (m.sources ?? []).some((s) => s.dateKind === "list_posted" && s.date.trim() !== "");
+  return (m.sources ?? []).some((s) => (s.dateKind === "list_posted" || s.dateKind === "list_age_day") && s.date.trim() !== "");
 }
 
 export interface GateInput {

@@ -96,8 +96,9 @@ describe("1a dated: which matches count as dated", () => {
   it("does not count a list_posted row with no date", () => {
     expect(isDated({ publishedAt: "", sources: src("list_posted", "") })).toBe(false);
   });
-  it("does not count a list_age: the stored date cannot tell a day-level age from a coarse one", () => {
-    // Known gap: parseListAge emits list_age for "2d" and for "1mo" alike. Until the kind separates them, list_age stays uncounted.
+  it("counts a day-level list age, never a coarse one", () => {
+    expect(isDated({ publishedAt: "", sources: src("list_age_day") })).toBe(true);
+    expect(isDated({ publishedAt: "", sources: src("list_age_day", "") })).toBe(false);
     expect(isDated({ publishedAt: "", sources: src("list_age") })).toBe(false);
   });
   it("the gate names the 90% rule as official or list-stated dates", () => {

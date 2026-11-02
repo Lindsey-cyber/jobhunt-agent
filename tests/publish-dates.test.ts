@@ -85,21 +85,27 @@ describe("GitHub list dates", () => {
   const table = (age: string) =>
     ["| Company | Role | Location | Posting | Age |", "|---|---|---|---|---|", `| **Acme** | ML Engineer | NYC | <a href="https://acme.com/jobs/1">Apply</a> | ${age} |`].join("\n");
 
-  it("resolves an age cell to a day and keeps it labelled list_age", () => {
+  it("resolves an age cell to a day and keeps it labelled list_age_day", () => {
     const [s] = parseMarkdownJobTable(table("2d"), "https://github.com/x/y", NOW);
-    expect(s).toMatchObject({ date: "2026-10-31T00:00:00.000Z", dateKind: "list_age" });
+    expect(s).toMatchObject({ date: "2026-10-31T00:00:00.000Z", dateKind: "list_age_day" });
+    expect(parseMarkdownJobTable(table("2w"), "https://github.com/x/y", NOW)[0]).toMatchObject({ dateKind: "list_age" });
   });
   it("a list age is never an employer publish date: merge leaves publishedAt empty", () => {
     const sightings = parseMarkdownJobTable(table("2d"), "https://github.com/x/y", NOW);
     const job = [...mergeRun(new Map(), sightings, me).values()][0]!;
     expect(job.publishedAt).toBe("");
-    expect(job.sources[0]).toMatchObject({ dateKind: "list_age" });
+    expect(job.sources[0]).toMatchObject({ dateKind: "list_age_day" });
   });
   it("parseListAge handles every cell shape the lists use", () => {
-    expect(parseListAge("today", NOW)).toEqual({ date: "2026-11-02T00:00:00.000Z", dateKind: "list_age" });
+    expect(parseListAge("today", NOW)).toEqual({ date: "2026-11-02T00:00:00.000Z", dateKind: "list_age_day" });
+    expect(parseListAge("0d", NOW)).toEqual({ date: "2026-11-02T00:00:00.000Z", dateKind: "list_age_day" });
+    expect(parseListAge("Yesterday", NOW)).toEqual({ date: "2026-11-01T00:00:00.000Z", dateKind: "list_age_day" });
+    expect(parseListAge("3 days", NOW)).toMatchObject({ dateKind: "list_age_day" });
+    expect(parseListAge("45d", NOW).dateKind).toBe("list_age_day");
+    expect(parseListAge("2 weeks", NOW).dateKind).toBe("list_age");
     expect(parseListAge("1w", NOW)).toEqual({ date: "2026-10-26T00:00:00.000Z", dateKind: "list_age" });
     expect(parseListAge("2mo", NOW)).toEqual({ date: "2026-09-03T00:00:00.000Z", dateKind: "list_age" });
-    expect(parseListAge("2026-08-20", NOW)).toEqual({ date: "2026-08-20T00:00:00.000Z", dateKind: "list_age" });
+    expect(parseListAge("2026-08-20", NOW)).toEqual({ date: "2026-08-20T00:00:00.000Z", dateKind: "list_age_day" });
     expect(parseListAge("30d+", NOW).dateKind).toBe("posted_before");
     expect(parseListAge("30+ days", NOW).dateKind).toBe("posted_before");
     expect(parseListAge("Date unknown", NOW)).toEqual({ date: "", dateKind: "none" });

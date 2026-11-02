@@ -54,14 +54,31 @@ describe("fetchPostings: workday", () => {
   it("finds nothing when the requisition is no longer listed, and never matches a different requisition", async () => {
     workdayStub([{ externalPath: "/job/Austin-TX/Other_R-1234", postedOn: "Posted Today" }]);
     const r = await fetchPostings("workday", [WD], NOW);
-    expect(r.sightings).toEqual([]);
+    expect(r.sightings).toHaveLength(1);
+    expect(r.sightings[0]).toMatchObject({ key: "workday:acme:r-123", official: false, hints: { closed: true, closedEvidence: { source: "lookup:workday", checkedAt: NOW } } });
     expect(r.outcome).toMatchObject({ ok: true, count: 0 });
+    expect(r.outcome.note).toMatch(/1 proved gone/);
   });
   it("a posting whose detail is refused (403) is closed, not an error", async () => {
     workdayStub([{ externalPath: "/job/Austin-TX/ML-Engineer_R-123", postedOn: "Posted Today" }], 403);
     const r = await fetchPostings("workday", [WD], NOW);
     expect(r.sightings).toEqual([]);
     expect(r.outcome.note).toMatch(/0 failed/);
+  });
+  it("Workday: an ambiguous answer is not proof (no posting list, partial page, 404 on the search, network error)", async () => {
+    const cases: (() => Response)[] = [() => json({}), () => json({ total: 50, jobPostings: [{ externalPath: "/job/x/Other_R-9", postedOn: "Posted Today" }] }), () => json({}, 404)];
+    for (const c of cases) {
+      vi.stubGlobal("fetch", vi.fn(async () => c()));
+      expect((await fetchPostings("workday", [WD], NOW)).sightings).toEqual([]);
+    }
+    vi.stubGlobal("fetch", vi.fn(async () => { throw new TypeError("fetch failed"); }));
+    const r = await fetchPostings("workday", [WD], NOW);
+    expect(r.sightings).toEqual([]);
+    expect(r.outcome.note).toMatch(/1 failed/);
+  }, 30000);
+  it("Workday: listed but detail refused is not claimed closed", async () => {
+    workdayStub([{ externalPath: "/job/Austin-TX/ML-Engineer_R-123", postedOn: "Posted Today" }], 404);
+    expect((await fetchPostings("workday", [WD], NOW)).sightings).toEqual([]);
   });
   it("a server error is counted as failed and does not abort the other targets", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => json({}, 400)));
@@ -70,6 +87,8 @@ describe("fetchPostings: workday", () => {
     expect(r.outcome.ok).toBe(true);
   });
 });
+
+const LEVER = { url: "https://jobs.lever.co/auw/515a3498-4257-4e68-91ff-cf82e854f12d", company: "AUW" };
 
 describe("fetchPostings: other ATS", () => {
   it("SmartRecruiters: the release date is a publication date", async () => {
@@ -86,11 +105,39 @@ describe("fetchPostings: other ATS", () => {
     expect(r.sightings.map((s) => s.key)).toEqual(["amazon:111"]);
     expect(r.sightings[0]!.dateKind).toBe("published");
   });
-  it("Lever: a 404 means the posting is gone; no sighting", async () => {
+  it("Lever: a 404 for the job proves it gone", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => json({ ok: false, error: "Document not found" }, 404)));
-    const r = await fetchPostings("lever", [{ url: "https://jobs.lever.co/auw/515a3498-4257-4e68-91ff-cf82e854f12d", company: "AUW" }], NOW);
-    expect(r.sightings).toEqual([]);
-    expect(r.outcome.note).toMatch(/1 not found/);
+    const r = await fetchPostings("lever", [LEVER], NOW);
+    expect(r.sightings).toHaveLength(1);
+    expect(r.sightings[0]).toMatchObject({ hints: { closed: true, closedEvidence: { source: "lookup:lever" } } });
+    expect(r.outcome.note).toMatch(/1 proved gone/);
+  });
+  it("Greenhouse: 404 and 410 prove it gone, 403 and 400 do not", async () => {
+    const gh = { url: "https://job-boards.greenhouse.io/acme/jobs/123", company: "Acme" };
+    for (const [status, closed] of [[404, true], [410, true], [403, false], [400, false]] as const) {
+      vi.stubGlobal("fetch", vi.fn(async () => json({}, status)));
+      expect((await fetchPostings("greenhouse", [gh], NOW)).sightings.length).toBe(closed ? 1 : 0);
+    }
+  });
+  it("a network error or a server error never marks a posting closed", async () => {
+    for (const f of [vi.fn(async () => { throw new TypeError("fetch failed"); }), vi.fn(async () => json({}, 503))]) {
+      vi.stubGlobal("fetch", f);
+      const r = await fetchPostings("lever", [LEVER], NOW);
+      expect(r.sightings).toEqual([]);
+      expect(r.outcome.note).toMatch(/1 failed/);
+    }
+  }, 30000);
+  it("SmartRecruiters: 404 proves it gone", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => json({}, 404)));
+    const r = await fetchPostings("smartrecruiters", [{ url: "https://jobs.smartrecruiters.com/AbbVie/3743990016070676", company: "AbbVie" }], NOW);
+    expect(r.sightings[0]?.hints.closed).toBe(true);
+  });
+  it("Amazon: an answer with no jobs proves it gone; an answer with only other jobs is not claimed", async () => {
+    const t = [{ url: "https://www.amazon.jobs/jobs/111/apply", company: "Amazon" }];
+    vi.stubGlobal("fetch", vi.fn(async () => json({ hits: 0, jobs: [] })));
+    expect((await fetchPostings("amazon", t, NOW)).sightings[0]?.hints.closed).toBe(true);
+    vi.stubGlobal("fetch", vi.fn(async () => json({ hits: 1 })));
+    expect((await fetchPostings("amazon", t, NOW)).sightings).toEqual([]);
   });
   it("Greenhouse: a link without a hosted board is not looked up at all", async () => {
     const stub = vi.fn(async () => json({}));
@@ -104,7 +151,7 @@ describe("fetchPostings: other ATS", () => {
 describe("lookupTargets", () => {
   const sg = (key: string, url: string, over: Partial<Sighting> = {}): Sighting => ({
     channel: "github_newgrad", source: "list", url, key: key as JobKey, seenAt: NOW, official: false, company: "Acme",
-    title: "Machine Learning Engineer, New Grad", location: "New York, NY", description: "", date: "3d", dateKind: "list_age", hints: {}, ...over,
+    title: "Machine Learning Engineer, New Grad", location: "New York, NY", description: "", date: "3d", dateKind: "list_age_day", hints: {}, ...over,
   });
   const WDK = "workday:acme:r-123";
   const flat = (m: ReturnType<typeof lookupTargets>) => [...m.values()].flat().map((t) => t.key);
@@ -135,11 +182,33 @@ describe("lookupTargets", () => {
 
 describe("a looked-up posting dates the list entry through merge", () => {
   it("the official sighting turns the list-only match into a dated one", () => {
-    const list: Sighting = { channel: "github_newgrad", source: "list", url: "https://jobs.smartrecruiters.com/A/9", key: "smartrecruiters:9" as JobKey, seenAt: NOW, official: false, company: "A", title: "Machine Learning Engineer, New Grad", location: "New York, NY", description: "", date: "3d", dateKind: "list_age", hints: {} };
+    const list: Sighting = { channel: "github_newgrad", source: "list", url: "https://jobs.smartrecruiters.com/A/9", key: "smartrecruiters:9" as JobKey, seenAt: NOW, official: false, company: "A", title: "Machine Learning Engineer, New Grad", location: "New York, NY", description: "", date: "2w", dateKind: "list_age", hints: {} };
     expect(isDated([...mergeRun(new Map(), [list], me).values()][0]!)).toBe(false);
     const official: Sighting = { ...list, channel: "official_smartrecruiters", source: "https://jobs.smartrecruiters.com/A", official: true, date: "2026-10-20T00:00:00.000Z", dateKind: "published" };
     const merged = [...mergeRun(new Map(), [list, official], me).values()][0]!;
     expect(merged.official).toBe(true);
     expect(isDated(merged)).toBe(true);
+  });
+});
+
+describe("a posting proved gone leaves the matches", () => {
+  const list: Sighting = { channel: "github_newgrad", source: "list", url: "https://jobs.smartrecruiters.com/A/9", key: "smartrecruiters:9" as JobKey, seenAt: NOW, official: false, company: "A", title: "Machine Learning Engineer, New Grad", location: "New York, NY", description: "", date: "2026-10-30T00:00:00.000Z", dateKind: "list_age_day", hints: {} };
+  const gone: Sighting = { ...list, source: "lookup:smartrecruiters", channel: "official_smartrecruiters", title: "", date: "", dateKind: "none", hints: { closed: true, closedEvidence: { source: "lookup:smartrecruiters", checkedAt: NOW, basis: "404" } } };
+  it("triage rejects it as source.closed and keeps the evidence, though a list still shows it", () => {
+    expect([...mergeRun(new Map(), [list], me).values()][0]!.triage.verdict).toBe("match");
+    const j = [...mergeRun(new Map(), [list, gone], me).values()][0]!;
+    expect(j.triage).toMatchObject({ verdict: "reject", rule: "source.closed" });
+    expect(j.hints.closedEvidence).toMatchObject({ source: "lookup:smartrecruiters", checkedAt: NOW });
+    expect(j.title).toBe(list.title);
+  });
+  it("stays closed next run from the list alone, and reopens when an official source lists it", () => {
+    const first = mergeRun(new Map(), [list, gone], me);
+    const again = [...mergeRun(first, [{ ...list, seenAt: "2026-11-03T00:00:00.000Z" }], me).values()][0]!;
+    expect(again.triage.rule).toBe("source.closed");
+    const official: Sighting = { ...list, channel: "official_smartrecruiters", official: true, source: "sr:A", date: "2026-10-20T00:00:00.000Z", dateKind: "published" };
+    const back = [...mergeRun(first, [list, official], me).values()][0]!;
+    expect(back.hints.closed).toBe(false);
+    expect(back.hints.closedEvidence).toBeUndefined();
+    expect(back.triage.verdict).toBe("match");
   });
 });

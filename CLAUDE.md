@@ -1,6 +1,6 @@
 # jobhunt-agent
 
-Applies to jobs for one candidate, and submits only what it can prove is correct. Read ARCHITECTURE.md before changing src/.
+Applies to jobs for one candidate, and submits only what it can prove is correct. Start with docs/HANDOFF-v3.md, then ARCHITECTURE.md before changing src/. Work through `/poteto-mode` (pstack, in .claude/skills).
 
 ## Rules
 

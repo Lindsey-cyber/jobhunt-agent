@@ -3,3 +3,4 @@ data/runs/
 data/inbox/
 data/discovery/catalog.jsonl
 .scratch/
+.claude/worktrees/

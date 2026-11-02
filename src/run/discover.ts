@@ -11,7 +11,7 @@ import { alertChannel, parseAlert, type AlertMessage } from "../discover/parse.t
 import { triage, type CandidateFacts } from "../discover/triage.ts";
 import type { Profile } from "../profile/schema.ts";
 import { probe, pool } from "../sources/http.ts";
-import { fetchBoard, fetchGithub, fetchHn, fetchWorkday, type BoardKind, type Fetched, type SourceOutcome, type Watchlist } from "../sources/fetch.ts";
+import { fetchAmazon, fetchBoard, fetchGithub, fetchHn, fetchOracleHcm, fetchSmartRecruiters, fetchWorkday, type BoardKind, type Fetched, type SourceOutcome, type Watchlist } from "../sources/fetch.ts";
 import { readModelVerdicts } from "../store/modelverdicts.ts";
 import { readCatalog, writeCatalog } from "../store/catalog.ts";
 
@@ -81,6 +81,9 @@ export async function discover(opts: DiscoverOptions): Promise<DiscoverResult> {
   if (want("lever")) for (const b of w.lever) tasks.push(() => fetchBoard("lever", b, startedAt));
   if (want("ashby")) for (const b of w.ashby) tasks.push(() => fetchBoard("ashby", b, startedAt));
   if (want("workday")) for (const s of w.workday) tasks.push(() => fetchWorkday(s, w.workdayQueries, startedAt));
+  if (want("smartrecruiters")) for (const c of w.smartrecruiters) tasks.push(() => fetchSmartRecruiters(c, w.workdayQueries, startedAt));
+  if (want("oracle_hcm")) for (const o of w.oracleHcm) tasks.push(() => fetchOracleHcm(o, w.workdayQueries, startedAt));
+  if (want("amazon") && w.amazon) tasks.push(() => fetchAmazon(w.amazon!.queries, startedAt));
   if (want("github")) for (const g of w.github) tasks.push(() => fetchGithub(g, startedAt));
   if (want("hn")) tasks.push(() => fetchHn(w.hn.commentLimit, startedAt));
 

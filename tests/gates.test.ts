@@ -28,6 +28,18 @@ describe("stage gates", () => {
     expect(fails({ ...good, coverage: { ...good.coverage!, n: 49, inCatalog: 47 } }, "1a")).toHaveLength(1);
     expect(fails({ ...good, coverage: { ...good.coverage!, inCatalog: 47 } }, "1a")).toHaveLength(1);
   });
+  it("1a: a deferred row is accounted for only with a reason, and is listed", () => {
+    const withReason = { ...good, registry: [{ id: "yc", status: "deferred" as const, reason: "83% of hiring companies have 50 people or fewer" }, { status: "live" as const }] };
+    const g = stageGates(withReason)["1a"];
+    expect(g.checks.filter((c) => !c.pass)).toHaveLength(0);
+    expect(g.checks.find((c) => c.name.includes("推迟"))?.value).toContain("yc");
+    for (const reason of [undefined, "", "   "]) {
+      const bad = stageGates({ ...good, registry: [{ id: "yc", status: "deferred" as const, reason }, { status: "live" as const }] })["1a"];
+      expect(bad.pass).toBe(false);
+      expect(bad.checks.find((c) => !c.pass)?.value).toContain("yc");
+    }
+  });
+
   it("1a: the registry must exist and have no not_built", () => {
     expect(stageGates({ ...good, registry: undefined })["1a"].checks.find((c) => !c.pass)?.value).toBe("来源登记表未建");
     expect(fails({ ...good, registry: [{ status: "not_built" }] }, "1a")).toHaveLength(1);

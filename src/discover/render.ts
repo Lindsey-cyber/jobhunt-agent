@@ -124,9 +124,9 @@ export function reportMarkdown(d: ReportData): string {
 
   L.push("## 来源登记表", "");
   const rc = registryCounts();
-  L.push(`她要求的每个渠道一行。已接入 ${rc.live}，无授权接口跳过 ${rc.no_api}，未做 ${rc.not_built}。`, "");
+  L.push(`她要求的每个渠道一行。已接入 ${rc.live}，无授权接口跳过 ${rc.no_api}，推迟 ${rc.deferred}，未做 ${rc.not_built}。`, "");
   L.push("| 渠道 | 状态 | 说明 |", "| --- | --- | --- |");
-  for (const r of SOURCE_REGISTRY) L.push(`| ${md(r.name)} | ${statusZh(r.status)} | ${md(r.note)} |`);
+  for (const r of SOURCE_REGISTRY) L.push(`| ${md(r.name)} | ${statusZh(r.status)} | ${md(r.note)}${r.reason && (r.status === "deferred" || r.status === "no_api") ? `<br>理由：${md(r.reason)}` : ""} |`);
   L.push("");
 
   L.push("## 来源覆盖", "");

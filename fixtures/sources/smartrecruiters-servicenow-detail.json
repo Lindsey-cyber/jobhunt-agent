@@ -1,0 +1,135 @@
+{
+ "id": "744000159054169",
+ "name": "Senior Content Designer",
+ "uuid": "be4651c3-03d1-4375-a638-5b2ab7e41703",
+ "jobId": "9746005a-f09c-44e5-9122-42a21706c1a0",
+ "jobAdId": "b7dfc698-2d44-441c-98d0-99462deee1b0",
+ "defaultJobAd": true,
+ "refNumber": "JB0076141",
+ "company": {
+  "name": "ServiceNow",
+  "identifier": "ServiceNow"
+ },
+ "location": {
+  "city": "Bangalore",
+  "region": "Karnataka",
+  "country": "in",
+  "address": "Pine Valley 1st Floor, Survey No. 2/4 & 4, Off Intermediate Ring Rd Embassy Golf Links Business Park, Domlur",
+  "postalCode": "560071",
+  "remote": false,
+  "hybrid": true,
+  "fullLocation": "Bangalore, Karnataka, India"
+ },
+ "customField": [
+  {
+   "fieldId": "60345fa28b4ba8595bef1863",
+   "fieldLabel": "Recruiting Team",
+   "valueId": "professional",
+   "valueLabel": "Professional"
+  },
+  {
+   "fieldId": "60345e1a0b24a127cbdfa148",
+   "fieldLabel": "Employee Type",
+   "valueId": "0082f6cbe6154da19322cbab1f6aa5af",
+   "valueLabel": "Regular"
+  },
+  {
+   "fieldId": "5f63a78f1dae5c5c4e54ba2b",
+   "fieldLabel": "Department",
+   "valueId": "2907670",
+   "valueLabel": "User Experience Design"
+  },
+  {
+   "fieldId": "COUNTRY",
+   "fieldLabel": "Country/Region",
+   "valueId": "in",
+   "valueLabel": "India"
+  },
+  {
+   "fieldId": "5f63a78f1dae5c5c4e54ba2a",
+   "fieldLabel": "Brands",
+   "valueId": "default",
+   "valueLabel": "ServiceNow"
+  },
+  {
+   "fieldId": "60345d5c5165a31b17288279",
+   "fieldLabel": "Region",
+   "valueId": "858884996eea4a49baa6231279f39054",
+   "valueLabel": "APAC - Asia Pacific"
+  },
+  {
+   "fieldId": "603462175165a31b1728827d",
+   "fieldLabel": "Cost Center",
+   "valueId": "CC6504",
+   "valueLabel": "6504 Specialty Design"
+  },
+  {
+   "fieldId": "6034601b43915a29a4b3389b",
+   "fieldLabel": "Job Location",
+   "valueId": "L_BLR006",
+   "valueLabel": "1st Floor, Survey No. 2/4 & 4, Off Intermediate Ring Rd, Bangalore, Karnataka, 560071, India(L_BLR006)"
+  },
+  {
+   "fieldId": "618ed92b8f5e5f110e5bfb95",
+   "fieldLabel": "Work Persona",
+   "valueId": "bf7551c6-9b06-4e7c-8217-3baf43edd060",
+   "valueLabel": "Flexible"
+  },
+  {
+   "fieldId": "690cc0e8c682c3dbadaa7d73",
+   "fieldLabel": "Job Posting Type",
+   "valueId": "professional",
+   "valueLabel": "Professional"
+  }
+ ],
+ "releasedDate": "2026-11-02T06:04:04.606Z",
+ "postingUrl": "https://jobs.smartrecruiters.com/ServiceNow/744000159054169-senior-content-designer",
+ "applyUrl": "https://jobs.smartrecruiters.com/ServiceNow/744000159054169-senior-content-designer?oga=true",
+ "jobAd": {
+  "sections": {
+   "companyDescription": {
+    "title": "Company Description",
+    "text": "<p>It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company that could do that for everyone\u2014freeing people from busywork so they could focus on meaningful work. Today, ServiceNow is the AI control tower for business reinvention. Our ServiceNow AI platform brings together any AI, any data, and any workflow\u2014 helping 85% of the Fortune 500\u00ae work smarter, faster, and better. We're building an AI-native culture where technology and talent are unstoppable together. And we're just getting started.</p><p>Join us to put AI to work for people.</p><p>&#xa0;</p>"
+   },
+   "jobDescription": {
+    "title": "Job Description",
+    "text": "<p><strong>Team &amp; Role:</strong><br>\nAt ServiceNow, we embrace representation in and from all professional and personal backgrounds and cultures. This diversity inspires passion and creativity among our teams and propels innovation in our products. &#xa0;<br>\n&#xa0;<br>\nIn the experience design organization at ServiceNow, content design is a core part of product design. We shape not just the words but also mental models, information structure, clarity, and overall usability of complex enterprise workflows. We do this not alone but in close collaboration with interaction designers, researchers, product managers, technical writers, engineers, and more. Our team is diverse in expertise and opinions, and we\u2019re united by our mission to create experiences our users love.&#xa0;&#xa0;</p><p>Learn more about our team here: <a href=\"https://www.linkedin.com/company/servicenow/life/userexperience/\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.linkedin.com/company/servicenow/life/userexperience/</a>&#xa0; &#xa0;<br>\n&#xa0;<br>\n<strong>What you get to do in this role:&#xa0;&#xa0;</strong></p><ul><li><p>Start from the user problem: Ground content in research and feedback, make it accessible and inclusive, and tie it to real improvements in experience quality.&#xa0;</p></li></ul><ul><li><p>Shape experiences, not just words: Design clear informational structures, hierarchies, and flows that make complex enterprise products easy to use.&#xa0;</p></li></ul><ul><li><p>Build foundations that scale: Extend company content standards with guidelines, terminology, and patterns for your product area.&#xa0;</p></li></ul><ul><li><p>Collaborate across functions: Work side-by-side with designers, product managers, researchers, and engineers to shape features from concept to release.&#xa0;</p></li></ul><ul><li><p>Bring clarity to complexity: Translate technical concepts into intuitive content and patterns that guide users with confidence.&#xa0;</p></li></ul><ul><li><p>Design for AI: Shape conversational experiences for finding and understanding data. Create content systems that make AI-driven features transparent and trustworthy.&#xa0;</p></li></ul><ul><li><p>Design with AI: Use AI tools to work at scale, for example to audit content, synthesize research, and prototype ideas. Help turn content standards into resources that AI tools can apply consistently.&#xa0;</p></li></ul><p>&#xa0;</p>"
+   },
+   "qualifications": {
+    "title": "Qualifications",
+    "text": "<p><strong>Basic Qualifications:&#xa0;</strong></p><ul><li><p>5-10&#xa0;years of experience in content design, UX writing, or content strategy for software products&#xa0;</p></li></ul><ul><li><p>A portfolio that shows how you approach problems in complex products, not just final copy&#xa0;</p></li></ul><ul><li><p>Experience with B2B or technical products, such as admin, configuration, developer, or data tools&#xa0;</p></li></ul><ul><li><p>Expert writing and editing skills, with the judgment to know when content isn\u2019t the solution&#xa0;</p></li></ul><ul><li><p>Experience working across functions through the product development lifecycle&#xa0;</p></li></ul><ul><li><p>Experience using AI in your work, or thinking critically about how to integrate it into work processes, decision-making, or problem-solving. This may include using AI-powered tools, automating workflows, analyzing AI-driven insights, or exploring AI\u2019s potential impact on the function or industry.&#xa0;</p></li></ul><p>&#xa0;</p><p><strong>Preferred Qualifications:&#xa0;</strong></p><ul><li><p>Experience designing conversational or AI-powered experiences&#xa0;</p></li></ul><ul><li><p>Experience contributing to content standards, terminology systems, or design systems&#xa0;</p></li></ul><ul><li><p>Hands-on use of AI in content work, such as writing prompts, building agents or skills, or setting up automated content checks. Comfort with Markdown or Git is a plus.&#xa0;</p></li></ul><ul><li><p>Experience working with distributed teams across time zones&#xa0;</p></li></ul><ul><li><p>Working knowledge of tools such as Figma, Miro, and AI prototyping tools&#xa0;</p></li></ul><ul><li><p>Bachelor\u2019s degree in English, Journalism, Communications, Human-Computer Interaction, or another relevant field, or equivalent experience&#xa0;</p></li></ul><p>&#xa0;</p>"
+   },
+   "additionalInformation": {
+    "title": "Additional Information",
+    "text": "<p><strong>Work Personas</strong></p><p>We approach our distributed world of work with flexibility and trust. Work personas (flexible, remote, or required in office) are categories that are assigned to ServiceNow employees depending on the nature of their work and their assigned work location. <a href=\"https://careers.servicenow.com/life-at-servicenow#workpersonas\" rel=\"noopener noreferrer\"><u>Learn more here</u></a>. To determine eligibility for a work persona, ServiceNow may confirm the distance between your primary residence and the closest ServiceNow office using a third-party service.</p><p><strong>Equal Opportunity Employer</strong></p><p>ServiceNow is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, national origin, age, disability, gender identity,&#xa0; veteran status, or any other category protected by law. In addition, all qualified applicants with arrest or conviction records will be considered for employment in accordance with legal requirements.\u202f&#xa0;</p><p><strong>Accommodations</strong></p><p>We strive to create an accessible and inclusive experience for all candidates. If you require a reasonable accommodation to complete any part of the application process, or are unable to use this online application and need an alternative method to apply, please contact <a href=\"mailto:globaltalentss@servicenow.com\" rel=\"noopener noreferrer\">globaltalentss@servicenow.com </a>for assistance.&#xa0;</p><p><strong>Export Control Regulations</strong></p><p>For positions requiring access to controlled technology subject to export control regulations, including the U.S. Export Administration Regulations (EAR), ServiceNow may be required to obtain export control approval from government authorities for certain individuals. All employment is contingent upon ServiceNow obtaining any export license or other approval that may be required by relevant export control authorities.&#xa0;</p><p>From Fortune. \u00a92026 Fortune Media IP Limited. All rights reserved. Used under license.</p>"
+   }
+  }
+ },
+ "active": true,
+ "visibility": "PUBLIC",
+ "industry": {
+  "id": "it_and_services",
+  "label": "Information Technology And Services"
+ },
+ "function": {
+  "id": "engineering",
+  "label": "Engineering"
+ },
+ "department": {
+  "id": 2907670,
+  "label": "User Experience Design"
+ },
+ "experienceLevel": {
+  "id": "not_applicable",
+  "label": "Not Applicable"
+ },
+ "typeOfEmployment": {
+  "id": "permanent",
+  "label": "Full-time"
+ },
+ "language": {
+  "code": "en",
+  "label": "English",
+  "labelNative": "English (US)"
+ }
+}

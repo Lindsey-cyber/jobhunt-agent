@@ -1364,3 +1364,43 @@ pending:
   - { company: 'Symbotic', ats: 'unknown', careers: 'https://www.google.com/search?q=Symbotic%20careers', band: large, h1b: 354 }
   - { company: 'The Hartford', ats: 'unknown', careers: 'https://www.google.com/search?q=The%20Hartford%20careers', band: large, h1b: 951 }
   - { company: 'Zoetis', ats: 'unknown', careers: 'https://www.google.com/search?q=Zoetis%20careers', band: large, h1b: 645 }
+
+# Added by W6 (2026-11-02): public job-list APIs of two more ATS families, for companies
+# that already appear in the catalog through alert emails / new-grad lists. Each entry was
+# fetched live with the same bounded workdayQueries (US only) before being listed.
+# smartrecruiters: id is the company identifier in api.smartrecruiters.com/v1/companies/{id}/postings.
+smartrecruiters:
+  - { id: 'ServiceNow', company: 'ServiceNow', size: medium_large }
+  - { id: 'AbbVie', company: 'AbbVie', size: medium_large }
+  - { id: 'AECOM', company: 'AECOM', size: medium_large }
+  - { id: 'WesternDigital', company: 'Western Digital', size: medium_large }
+  - { id: 'BoschGroup', company: 'Bosch', size: medium_large }
+  - { id: 'FannieMae1SB', company: 'Fannie Mae', size: medium_large }
+  - { id: 'AccentureFederalServices', company: 'Accenture Federal Services', size: medium_large }
+  - { id: 'RenesasElectronics', company: 'Renesas Electronics', size: medium_large }
+  - { id: 'Wabtec', company: 'Wabtec', size: medium_large }
+  - { id: 'LLNL', company: 'Lawrence Livermore National Laboratory', size: medium_large }
+  - { id: 'HarvardUniversity', company: 'Harvard University', size: medium_large }
+  - { id: 'Dominos', company: "Domino's", size: medium_large }
+  - { id: 'Cricut', company: 'Cricut', size: unknown }
+# oracleHcm: host and site (CX site number) from the company's candidate-experience URL.
+oracleHcm:
+  - { host: 'egug.fa.us2.oraclecloud.com', site: 'CX_1', company: 'American Express', size: medium_large }
+  - { host: 'edbz.fa.us2.oraclecloud.com', site: 'CX', company: 'Texas Instruments', size: medium_large }
+  - { host: 'jpmc.fa.oraclecloud.com', site: 'CX_1001', company: 'JPMorgan Chase', size: medium_large }
+  - { host: 'edel.fa.us2.oraclecloud.com', site: 'CX_2001', company: 'Fortinet', size: medium_large }
+  - { host: 'eofe.fa.us2.oraclecloud.com', site: 'CX_1001', company: 'BNY', size: medium_large }
+  - { host: 'hdjq.fa.us2.oraclecloud.com', site: 'CX_1', company: 'Emerson', size: medium_large }
+  - { host: 'iawmqy.fa.ocs.oraclecloud.com', site: 'careers', company: 'Dell Technologies', size: medium_large }
+  - { host: 'eihu.fa.us8.oraclecloud.com', site: 'CX', company: 'SAIC', size: medium_large }
+  - { host: 'fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com', site: 'CX_1', company: 'Nokia', size: medium_large }
+  - { host: 'eeho.fa.us2.oraclecloud.com', site: 'jobsearch', company: 'Oracle', size: medium_large }
+  - { host: 'fa-espx-saasfaprod1.fa.ocs.oraclecloud.com', site: 'CX_1', company: 'Cummins', size: medium_large }
+  - { host: 'hdpc.fa.us2.oraclecloud.com', site: 'LateralHiring', company: 'Goldman Sachs', size: medium_large }
+  - { host: 'ibqbjb.fa.ocs.oraclecloud.com', site: 'Honeywell', company: 'Honeywell', size: medium_large }
+  - { host: 'eedu.fa.em3.oraclecloud.com', site: 'CX_1003', company: 'WTW', size: medium_large }
+  - { host: 'ejhp.fa.us6.oraclecloud.com', site: 'CX_2', company: 'Sherwin-Williams', size: medium_large }
+  - { host: 'fa-euyk-saasfaprod1.fa.ocs.oraclecloud.com', site: 'CX_3', company: 'Penske', size: medium_large }
+# amazon: amazon.jobs/en/search.json has no ATS board; queries are AND-matched, so "university graduate" style phrases return nothing.
+amazon:
+  queries: ['machine learning', 'applied scientist', 'research scientist', 'data scientist', 'deep learning', 'artificial intelligence', 'ML engineer', 'university']

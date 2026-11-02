@@ -56,6 +56,11 @@ export function jobKey(raw: string): JobKey {
   if (host === "jobs.smartrecruiters.com" && /^\d+/.test(parts[1] ?? "")) {
     return key(`smartrecruiters:${parts[1]!.split("-")[0]}`);
   }
+  if (host === "amazon.jobs" || host.endsWith(".amazon.jobs")) {
+    // /en/jobs/N/slug, /jobs/N/slug, /en/jobs/N, account.amazon.jobs/jobs/N/apply, with or without a locale.
+    const i = parts.indexOf("jobs");
+    if (i >= 0 && /^\d+$/.test(parts[i + 1] ?? "")) return key(`amazon:${parts[i + 1]}`);
+  }
   if (host.endsWith("linkedin.com")) {
     const i = parts.indexOf("view");
     const m = /(\d{6,})$/.exec(parts[i + 1] ?? "") ?? /^(\d{6,})$/.exec(q("currentJobId") ?? "");

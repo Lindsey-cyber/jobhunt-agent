@@ -13,7 +13,7 @@ describe("source registry", () => {
   it("has one row for each channel the candidate asked for, with ids unique", () => {
     const ids = SOURCE_REGISTRY.map((r) => r.id);
     expect(new Set(ids).size).toBe(ids.length);
-    for (const id of ["official_greenhouse", "official_lever", "official_ashby", "official_workday", "official_other_ats", "github_newgrad", "gmail_alerts", "direct_job_boards", "yc", "wellfound", "vc_portfolio", "hn_hiring", "ai_ml_boards", "network", "brave_tavily"]) {
+    for (const id of ["official_greenhouse", "official_lever", "official_ashby", "official_workday", "official_smartrecruiters", "official_oracle_hcm", "official_icims", "official_workable", "official_amazon", "official_career_pages", "github_newgrad", "gmail_alerts", "direct_job_boards", "yc", "wellfound", "vc_portfolio", "hn_hiring", "ai_ml_boards", "network", "brave_tavily"]) {
       expect(ids).toContain(id);
     }
   });
@@ -22,8 +22,8 @@ describe("source registry", () => {
     const status = Object.fromEntries(SOURCE_REGISTRY.map((r) => [r.id, r.status]));
     expect(status.direct_job_boards).toBe("no_api");
     expect(status.wellfound).toBe("no_api");
-    expect(status.brave_tavily).toBe("not_built");
-    expect(status.vc_portfolio).toBe("not_built");
+    expect(status.brave_tavily).toBe("deferred");
+    expect(status.vc_portfolio).toBe("no_api");
     expect(status.official_workday).toBe("live");
   });
 

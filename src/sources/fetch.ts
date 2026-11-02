@@ -3,8 +3,8 @@ import { parse } from "yaml";
 import { z } from "zod";
 import type { Channel, Sighting, SizeBand } from "../domain/job.ts";
 import { ROLE } from "../discover/triage.ts";
-import { parseAmazon, parseAshby, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
-import { getJson, getText, pool, postJson } from "./http.ts";
+import { parseAmazon, parseAshby, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
+import { getJson, getText, HttpError, pool, postJson } from "./http.ts";
 
 const Board = z.object({ board: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ai: z.boolean().default(false) });
 export const Watchlist = z.object({
@@ -36,6 +36,10 @@ export interface SourceOutcome {
   count: number;
   error?: string;
   note?: string;
+  // Workday full walk: list pages fetched, postings listed, and whether recall is still bounded (cap hit or fallback).
+  pages?: number;
+  listed?: number;
+  capHit?: boolean;
   size?: SizeBand;
   // Set for boards found through a third-party listing rather than the watchlist.
   discoveredFrom?: string;
@@ -78,10 +82,39 @@ export async function fetchBoard(kind: BoardKind, b: { board: string; company: s
 }
 
 interface WorkdayList { total?: number; jobPostings?: { title?: string; externalPath?: string; postedOn?: string }[] }
+type WorkdayPosting = NonNullable<WorkdayList["jobPostings"]>[number];
 
-// Workday has no list-everything API, so each site is searched with bounded
-// queries; only titles that look like AI/ML roles get their detail fetched.
-export async function fetchWorkday(w: Watchlist["workday"][number], queries: string[], seenAt: string, perQuery = 60): Promise<Fetched> {
+export interface WorkdayOptions {
+  // Hard cap on list pages per board (20 postings each), so one huge board cannot starve the rest.
+  pageCap?: number;
+  // ISO time of the last successful run for this board: postings dated before it are stale.
+  since?: string;
+  // Consecutive pages made up entirely of stale postings that end the walk. Pages, not postings:
+  // Adobe lists a run of 20+ "30+ Days Ago" postings in the middle of fresh ones.
+  stalePages?: number;
+  // Per-query depth of the keyword fallback, in postings.
+  perQuery?: number;
+}
+
+export const WORKDAY_PAGE = 20;
+// Workday itself serves at most 2000 postings per search (100 pages of 20).
+export const WORKDAY_PAGE_CAP = 100;
+
+// A posting is stale when it is older than the window: "30+ days" is always
+// outside it, and so is anything dated before the last successful run.
+function workdayStale(postedOn: string | undefined, seenAt: string, since?: string): boolean {
+  const r = parseWorkdayPostedOn(postedOn, seenAt);
+  if (!r) return false;
+  if (r.dateKind === "posted_before") return true;
+  return since !== undefined && r.date < since;
+}
+
+// Workday lists postings newest first, so a board is read in full but
+// incrementally: empty search, page by page, until the postings are older than
+// the window. Keyword search is only the fallback for a board that rejects an
+// empty search. Only titles that look like AI/ML roles get their detail fetched.
+export async function fetchWorkday(w: Watchlist["workday"][number], queries: string[], seenAt: string, opts: WorkdayOptions = {}): Promise<Fetched> {
+  const { pageCap = WORKDAY_PAGE_CAP, since, stalePages = 2, perQuery = 60 } = opts;
   const u = new URL(w.site);
   const tenant = u.hostname.split(".")[0]!;
   const api = `https://${u.hostname}/wday/cxs/${tenant}${u.pathname.replace(/\/$/, "")}`;
@@ -89,16 +122,61 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
   try {
     const paths = new Map<string, { title: string; postedOn: string }>();
     let listed = 0;
-    for (const q of queries) {
-      for (let offset = 0; offset < perQuery; offset += 20) {
-        const page = await postJson<WorkdayList>(`${api}/jobs`, { appliedFacets: {}, limit: 20, offset, searchText: q }, 60000);
-        for (const p of page.jobPostings ?? []) {
-          if (!p.externalPath) continue;
-          listed++;
-          if (ROLE.test(p.title ?? "")) paths.set(p.externalPath, { title: p.title ?? "", postedOn: p.postedOn ?? "" });
-        }
-        if (offset + 20 >= (page.total ?? 0)) break;
+    const take = (posts: WorkdayPosting[]) => {
+      for (const p of posts) {
+        if (!p.externalPath) continue;
+        listed++;
+        if (ROLE.test(p.title ?? "")) paths.set(p.externalPath, { title: p.title ?? "", postedOn: p.postedOn ?? "" });
       }
+    };
+    const list = (offset: number, searchText: string) => postJson<WorkdayList>(`${api}/jobs`, { appliedFacets: {}, limit: WORKDAY_PAGE, offset, searchText }, 60000);
+
+    let mode = "full";
+    let pages = 0;
+    let capHit = false;
+    let stopReason = "";
+    let first: WorkdayList | undefined;
+    try {
+      first = await list(0, "");
+    } catch (e) {
+      // 4xx other than rate limiting means the board refuses an empty search.
+      if (!(e instanceof HttpError) || e.status >= 500 || e.status === 429) throw e;
+    }
+    if (first) {
+      pages = 1;
+      let page: WorkdayList = first;
+      const total = first.total ?? 0;
+      let stale = 0;
+      for (let offset = 0; ; offset += WORKDAY_PAGE) {
+        const posts = page.jobPostings ?? [];
+        if (posts.length === 0) { stopReason = "end of list"; break; }
+        take(posts);
+        stale = posts.every((p) => workdayStale(p.postedOn, seenAt, since)) ? stale + 1 : 0;
+        if (stale >= stalePages) { stopReason = "reached postings older than the window"; break; }
+        // total is reported on the first page only; later pages may say 0.
+        if (offset + WORKDAY_PAGE >= total || posts.length < WORKDAY_PAGE) { stopReason = "end of list"; break; }
+        if (pages >= pageCap) { capHit = true; stopReason = `page cap ${pageCap}`; break; }
+        try {
+          page = await list(offset + WORKDAY_PAGE, "");
+        } catch (e) {
+          stopReason = `error after ${pages} pages: ${e instanceof Error ? e.message : String(e)}`;
+          capHit = true; // recall is bounded here as surely as by the cap
+          break;
+        }
+        pages++;
+      }
+    } else {
+      mode = "keyword fallback";
+      for (const q of queries) {
+        for (let offset = 0; offset < perQuery; offset += WORKDAY_PAGE) {
+          const page = await list(offset, q);
+          pages++;
+          take(page.jobPostings ?? []);
+          if (offset + WORKDAY_PAGE >= (page.total ?? 0)) break;
+        }
+      }
+      capHit = true; // keyword search never covers the whole board
+      stopReason = `${queries.length} keyword searches`;
     }
     const details = await pool([...paths.keys()], 4, async (path) => {
       try {
@@ -110,7 +188,11 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
     const s = details.filter((d): d is Sighting => Boolean(d));
     return {
       sightings: s,
-      outcome: { ...base, ok: true, count: s.length, size: w.size, note: `${queries.length} searches, ${listed} results, ${paths.size} AI/ML titles, ${s.length} details read` },
+      outcome: {
+        ...base, ok: true, count: s.length, size: w.size,
+        pages, capHit, listed,
+        note: `${mode}: ${pages} pages, ${listed} listed, ${paths.size} AI/ML titles, ${s.length} details read; stopped: ${stopReason}${capHit ? "; recall bounded here" : ""}`,
+      },
     };
   } catch (e) {
     return fail(base, e);

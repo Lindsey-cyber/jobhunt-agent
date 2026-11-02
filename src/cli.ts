@@ -228,7 +228,7 @@ switch (command) {
     // Interleave companies, and leave two minutes between submissions to the same one.
     // Postings never tried go first; retries of held ones after them.
     // The candidate (2026-11-01): newest postings first (employer's publish date, else when we first saw it).
-    const posted = (j: (typeof ready)[number]) => j.publishedAt ?? j.firstSeen ?? "";
+    const posted = (j: (typeof ready)[number]) => j.publishedAt || j.firstSeen || "";
     // The candidate (2026-11-02): only postings from the last 30 days, unless --since says otherwise.
     const since = values.since ?? new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
     ready.splice(0, ready.length, ...ready.filter((j) => posted(j).slice(0, 10) >= since));

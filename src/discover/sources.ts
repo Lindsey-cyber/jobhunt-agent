@@ -15,7 +15,7 @@ export interface SourceRow {
   name: string;
   status: SourceStatus;
   note: string;
-  // Required when status is "deferred".
+  // Required when status is "deferred" or "no_api" for a source that blocks non-browser clients.
   reason?: string;
 }
 
@@ -69,7 +69,7 @@ export const SOURCE_REGISTRY: readonly SourceRow[] = [
   {
     id: "yc",
     name: "YC（Work at a Startup）",
-    status: "deferred",
+    status: "no_api",
     reason: "Work at a Startup 对非浏览器请求直接 406（账号登录后才有岗位），不抓取；YC 公开目录镜像 1504 家在招公司里 1243 家（83%）不超过 50 人，中大型的 261 家绝大多数（Stripe、DoorDash、Instacart 等）已在监控名单；增量是小型初创，属第二阶段外联",
     note: "目录里的公司仍可经其官方 ATS 进监控名单",
   },
@@ -78,6 +78,7 @@ export const SOURCE_REGISTRY: readonly SourceRow[] = [
     id: "vc_portfolio",
     name: "VC 投资组合招聘页",
     status: "no_api",
+    reason: "Getro 板的搜索接口对非浏览器请求返回 406，Consider 板接口需页面 CSRF 令牌（412 INVALID_CSRF），均阻止非浏览器客户端且没有授权接口，不绕过",
     note: "已逐个探测：Getro 板（Khosla、Insight、8VC 等）的搜索接口对非浏览器请求返回 406，页面服务端只带前 20 条；Consider 板（Sequoia、LSVP、BVP、USV 等）接口需页面 CSRF 令牌（412 INVALID_CSRF）；a16z 是自建站。均无公开/授权接口，不绕过；且投资组合以小型初创为主，属第二阶段外联",
   },
   { id: "hn_hiring", name: "Hacker News Who is hiring", status: "live", note: "Firebase 公开接口，当月帖子的顶层评论" },

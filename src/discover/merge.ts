@@ -2,6 +2,7 @@
 // Jobs merge only on JobKey (ATS id or official link). A posting keeps every
 // source that ever reported it, with the first and last time each one did.
 import type { Job, JobKey, Sighting, SourceRecord } from "../domain/job.ts";
+import { jobKey } from "./identity.ts";
 import { applyExclusions } from "./exclude.ts";
 import { applyModelVerdict, type ModelVerdict } from "./modeltriage.ts";
 import { triage, type CandidateFacts } from "./triage.ts";
@@ -128,10 +129,38 @@ export function linkAlertJobs(jobs: Map<JobKey, Job>): Map<JobKey, Job> {
   return out;
 }
 
+// ── Re-keying old catalog entries ───────────────────────────────────────────
+// Entries written before an ATS had its own JobKey sit under `url:` keys. When
+// the entry's own URL now yields an `amazon:<id>` key, the entry moves there;
+// several old entries for one id (www, bare and account hosts) fold into one:
+// official over third-party, then the longer description; sources are unioned
+// with the earliest first sighting and the latest last sighting.
+export function rekeyPrior(prior: Map<JobKey, Job>): Map<JobKey, Job> {
+  const out = new Map<JobKey, Job>();
+  const moved = new Map<JobKey, Job[]>();
+  for (const [k, j] of prior) {
+    const nk = k.startsWith("url:") ? jobKey(j.url) : k;
+    if (nk !== k && nk.startsWith("amazon:")) moved.set(nk, [...(moved.get(nk) ?? []), { ...j, key: nk }]);
+    else out.set(k, j);
+  }
+  for (const [nk, js] of moved) {
+    const all = out.has(nk) ? [out.get(nk)!, ...js] : js;
+    const best = [...all].sort((a, b) => Number(b.official) - Number(a.official) || b.description.length - a.description.length)[0]!;
+    const sources = new Map<string, SourceRecord>();
+    for (const r of all.flatMap((j) => j.sources)) {
+      const was = sources.get(sourceId(r));
+      sources.set(sourceId(r), was ? { ...r, firstSeen: was.firstSeen < r.firstSeen ? was.firstSeen : r.firstSeen, lastSeen: was.lastSeen > r.lastSeen ? was.lastSeen : r.lastSeen } : r);
+    }
+    const srcs = [...sources.values()].sort((a, b) => a.firstSeen.localeCompare(b.firstSeen));
+    out.set(nk, { ...best, key: nk, sources: srcs, firstSeen: srcs[0]?.firstSeen ?? best.firstSeen, lastSeen: srcs.reduce((m, r) => (r.lastSeen > m ? r.lastSeen : m), best.lastSeen), hints: { ...best.hints, earlyCareerList: all.some((j) => j.hints.earlyCareerList) } });
+  }
+  return out;
+}
+
 export function mergeRun(prior: Map<JobKey, Job>, sightings: Sighting[], me: CandidateFacts, exclude: readonly string[] = [], verdicts: ReadonlyMap<string, ModelVerdict> = new Map()): Map<JobKey, Job> {
   const byKey = new Map<JobKey, Sighting[]>();
   for (const s of sightings) byKey.set(s.key, [...(byKey.get(s.key) ?? []), s]);
-  const out = new Map(prior);
+  const out = rekeyPrior(prior);
 
   for (const [key, ss] of byKey) {
     const old = out.get(key);

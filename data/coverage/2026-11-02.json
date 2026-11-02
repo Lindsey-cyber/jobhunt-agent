@@ -5,9 +5,9 @@
   "jobright-ai/2026-Software-Engineer-New-Grad",
   "vanshb03/New-Grad-2027"
  ],
- "n": 72,
- "inCatalog": 55,
- "inCatalogNotRejected": 42,
+ "n": 70,
+ "inCatalog": 56,
+ "inCatalogNotRejected": 34,
  "misses": [
   {
    "company": "66 Degrees",
@@ -58,16 +58,22 @@
    "cause": "company not on watchlist"
   },
   {
-   "company": "BNY",
-   "title": "2027 BNY Analyst Program - Engineering (Data Science) - New York, NY",
-   "url": "https://jobright.ai/jobs/info/6aaa9bd78e1bf0f764af55ba?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "watched company, posting not fetched (url)"
+   "company": "Booz Allen Hamilton",
+   "title": "Data Scientist",
+   "url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/McLean-VA/Data-Scientist_R0229815-1",
+   "cause": "filtered by triage rule experience.too_senior"
   },
   {
    "company": "Booz Allen Hamilton",
    "title": "University - Data Scientist",
    "url": "https://jobright.ai/jobs/info/6a8f5ea1d7c91d0cf446ef68?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "watched company, posting not fetched (workday/workday)"
+  },
+  {
+   "company": "Booz Allen",
+   "title": "New Grad 2027: Data Scientist 🇺🇸",
+   "url": "https://bah.wd1.myworkdayjobs.com/Confidential/job/McLean-VA/University---Data-Scientist_R0252610",
+   "cause": "filtered by triage rule auth.citizenship"
   },
   {
    "company": "Capgemini",
@@ -91,13 +97,19 @@
    "company": "Eaton",
    "title": "Data Scientist - Cleared (Multiple Levels) - Chantilly, VA",
    "url": "https://jobright.ai/jobs/info/6ae5508577c09cb3bd4b30ae?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "watched company, posting not fetched (eightfold)"
+  },
+  {
+   "company": "GE Vernova",
+   "title": "Data Scientist 🛂",
+   "url": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Greenville/GE-Vernova-Data-Scientist_R5057035-2",
+   "cause": "filtered by triage rule auth.no_sponsorship"
   },
   {
    "company": "GE Vernova",
    "title": "GE Vernova Data Scientist",
-   "url": "https://jobright.ai/jobs/info/6ae0d9f667c31ab34899dcd1?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "watched company, posting not fetched (workday/workday)"
+   "url": "https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Greenville/GE-Vernova-Data-Scientist_R5057035-1",
+   "cause": "filtered by triage rule auth.no_sponsorship"
   },
   {
    "company": "GE Vernova",
@@ -118,6 +130,12 @@
    "cause": "filtered by triage rule role.non_engineering"
   },
   {
+   "company": "Guidehouse",
+   "title": "Data Scientist",
+   "url": "https://guidehouse.wd1.myworkdayjobs.com/External/job/US---MD-Bethesda/Data-Scientist_44617",
+   "cause": "filtered by triage rule auth.citizenship"
+  },
+  {
    "company": "Johns Hopkins Applied Physics Laboratory",
    "title": "New Grad 2027: Signal Processing/Computer Science/Algorithm Development/AI-ML",
    "url": "https://go.vansh.nyc/TN",
@@ -130,16 +148,28 @@
    "cause": "company not on watchlist"
   },
   {
-   "company": "Military Spouse Jobs",
-   "title": "Data Scientist - Cleared (Multiple Levels) - Chantilly, VA",
-   "url": "https://jobright.ai/jobs/info/6ae556a9eab1f96730981033?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
-  },
-  {
    "company": "Northeastern University",
    "title": "Research Engineer",
    "url": "https://northeastern.wd1.myworkdayjobs.com/careers/job/Boston-MA-Main-Campus/Research-Engineer_R143103",
    "cause": "filtered by triage rule role.research_not_ml"
+  },
+  {
+   "company": "Northrop Grumman",
+   "title": "Associate Data Scientist - Pathways - Aurora CO",
+   "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Aurora/Associate-Data-Scientist---Pathways---Aurora-CO_R10258253-1",
+   "cause": "filtered by triage rule auth.citizenship"
+  },
+  {
+   "company": "Northrop Grumman",
+   "title": "Associate Data Scientist 🇺🇸",
+   "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Aurora/Associate-Data-Scientist---Pathways---Aurora-CO_R10258253-1",
+   "cause": "filtered by triage rule auth.citizenship"
+  },
+  {
+   "company": "NVIDIA",
+   "title": "Applied Machine Learning Engineer, AI for VLSI Design (Master's)",
+   "url": "https://jobs.nvidia.com/careers/job/893397927110",
+   "cause": "watched company, posting not fetched (workday)"
   },
   {
    "company": "Omnicom",
@@ -157,13 +187,7 @@
    "company": "Revionics",
    "title": "New Grad: Machine Learning Engineer",
    "url": "https://revionics.com/about/careers/open-jobs?gh_jid=7172125",
-   "cause": "company not on watchlist"
-  },
-  {
-   "company": "SMX",
-   "title": "Junior Data Scientist",
-   "url": "https://www.smxtech.com/careers/?gh_jid=7498313003",
-   "cause": "company not on watchlist"
+   "cause": "watched company, posting not fetched (workday)"
   },
   {
    "company": "SpaceX",
@@ -178,10 +202,22 @@
    "cause": "company not on watchlist"
   },
   {
+   "company": "The Aerospace Corporation",
+   "title": "2026 Data Scientist",
+   "url": "https://aero.wd5.myworkdayjobs.com/External/job/Colorado-Springs-CO/XMLNAME-2026-Data-Scientist_R015833",
+   "cause": "filtered by triage rule auth.citizenship"
+  },
+  {
    "company": "Torentify",
    "title": "Data Scientist - USA / Remote",
    "url": "https://jobright.ai/jobs/info/6ae8306ca2a252e219425877?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
+  },
+  {
+   "company": "Vantor",
+   "title": "Junior Data Scientist",
+   "url": "https://maxar.wd1.myworkdayjobs.com/Vantor/job/Remote-United-States/Junior-Data-Scientist_R24603",
+   "cause": "filtered by triage rule auth.citizenship"
   },
   {
    "company": "Venmo",
@@ -190,12 +226,17 @@
    "cause": "company not on watchlist"
   }
  ],
- "staleExcluded": 1,
+ "staleExcluded": 2,
  "stale": [
   {
    "company": "Nextdoor",
    "title": "New Grad 2026: Machine Learning Engineer, Machine Learning",
    "url": "https://about.nextdoor.com/careers-list/?gh_jid=7264954"
+  },
+  {
+   "company": "SMX",
+   "title": "Junior Data Scientist",
+   "url": "https://www.smxtech.com/careers/?gh_jid=7498313003"
   }
  ]
 }

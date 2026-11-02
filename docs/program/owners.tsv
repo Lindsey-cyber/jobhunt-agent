@@ -5,7 +5,6 @@ src/profile	platform
 src/dev	platform
 src/sources	search
 src/discover/sources.ts	search
-src/discover/coverage.ts	search
 src/discover/identity.ts	search
 src/discover/parse.ts	search
 src/discover/merge.ts	search
@@ -18,4 +17,3 @@ src/ats	apply
 src/run/apply.ts	apply
 src/run	ops
 src/store	ops
-src/org	ops

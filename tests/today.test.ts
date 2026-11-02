@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { agentQueue, applicationIndex, postingIdOf, postings, renderToday } from "../src/discover/today.ts";
+import { agentQueue, applicationIndex, gapOf, postingIdOf, postings, renderToday } from "../src/discover/today.ts";
 import { Policy } from "../src/profile/schema.ts";
 
 const policy = Policy.parse({ freshDays: 30, h1bRequiredSince: 2023, agentAts: ["greenhouse"] });
@@ -47,6 +47,14 @@ describe("one identity and one state per posting", () => {
     const md = renderToday({ jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: ps, appliedToday: [], blockers: [], tierOf: () => "A", queueSize: 2 });
     expect(md).toContain("还没投出的 2（最近 30 天 1，更早 1）");
     expect(md.indexOf("greenhouse:new")).toBeLessThan(md.indexOf("greenhouse:old"));
+  });
+  it("tabulates each ATS and says what a held application last stopped on", () => {
+    const apps = applicationIndex([{ key: "greenhouse:job-boards.greenhouse.io/acme/jobs/7", state: "held", at: "2026-11-01T00:00:00Z", detail: { reasons: ["required \"Pronouns\": no answer in profile or answer bank", "required \"Pronouns\" is empty after filling", "trust level is draft: every application waits for review"] } }]);
+    const ps = postings({ jobs: [job("greenhouse:7"), job("workday:acme:9")], labels: new Map(), apps, h1b: new Map([["acme", sponsor]]), policy, today: "2026-11-02" });
+    expect(gapOf(ps[0]!)).toBe("上次（11-01）卡在：Pronouns（可能已被新规则解决）");
+    const md = renderToday({ jobs: [], labels: new Map(), apps, h1b: new Map(), policy, today: "2026-11-02", posts: ps, appliedToday: [], blockers: [], tierOf: () => "A", queueSize: 0 });
+    expect(md).toMatch(/\| greenhouse \| 0 \| 0 \| 1 \| 0 \| 0 \|/);
+    expect(md).toMatch(/\| workday \| 0 \| 0 \| 0 \| 0 \| 1 \|/);
   });
   it("ranks to-dos by how many applications they unblock", () => {
     const md = renderToday({ jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: [], appliedToday: [], tierOf: () => "A", queueSize: 0, blockers: [

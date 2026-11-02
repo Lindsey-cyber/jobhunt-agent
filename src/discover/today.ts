@@ -12,6 +12,20 @@ export interface AppEvent {
   key: string; // ledger key ("greenhouse:job-boards.greenhouse.io/acme/jobs/123")
   state: string; // planned | verified | submitted | confirmed | unconfirmed | held | ...
   at: string;
+  detail?: unknown; // the gate's decision for a held application: { reasons: string[] }
+}
+
+// The fields a held application stopped on, read from its ledger entry, as of the hold (the rules may have
+// answered some since; only a re-plan of its form says what still blocks it).
+export function lastHoldFields(app: AppEvent | undefined): string[] {
+  const reasons = (app?.detail as { reasons?: unknown } | undefined)?.reasons;
+  if (app?.state !== "held" || !Array.isArray(reasons)) return [];
+  const out = new Set<string>();
+  for (const r of reasons) {
+    if (typeof r !== "string" || /^trust level|is not in autoSubmitAts/.test(r)) continue;
+    out.add(/^(?:required|readback mismatch on) "([^"]*)"/.exec(r)?.[1] ?? r.slice(0, 80));
+  }
+  return [...out];
 }
 
 // The posting's own id for a ledger entry: the ledger keys applications by page path,
@@ -99,7 +113,33 @@ export function atsOf(j: Job): string {
   const k = j.key.split(":")[0]!;
   if (["greenhouse", "workday", "ashby", "lever"].includes(k)) return k;
   const u = j.link?.finalUrl || j.url;
-  return /myworkdayjobs/.test(u) ? "workday" : /greenhouse|gh_jid/.test(u) ? "greenhouse" : /ashbyhq/.test(u) ? "ashby" : /lever\.co/.test(u) ? "lever" : "company site";
+  return /myworkday(jobs|site)/.test(u) ? "workday" : /greenhouse|gh_jid/.test(u) ? "greenhouse" : /ashbyhq/.test(u) ? "ashby" : /lever\.co/.test(u) ? "lever"
+    : /oraclecloud/.test(u) ? "oracle" : /icims/.test(u) ? "icims" : /smartrecruiters/.test(u) ? "smartrecruiters" : /linkedin\.com|glassdoor\.com|indeed\.com/.test(u) ? "linkedin/glassdoor/indeed" : "company site";
+}
+
+// Why the agent does not apply on each ATS today, with the evidence (2026-11-02). One row per ATS atsOf returns.
+const ATS_GAP: Record<string, string> = {
+  greenhouse: "agent 投。卡住的只差你答题（见待办）",
+  workday: "你的 policy 里 agent 只投 greenhouse；适配器能提交（3 次提交 3 次确认），但每日投递命令关着 Workday；卡住多因缺答案、下拉框读回不一致",
+  ashby: "不在 agent 名单；页面有隐形 reCAPTCHA Enterprise；7 次提交 1 次邮件确认、6 次没查",
+  lever: "不在 agent 名单；hCaptcha 绑在提交按钮上；从没提交过",
+  oracle: "没有适配器（Oracle HCM）",
+  icims: "没有适配器",
+  smartrecruiters: "没有适配器",
+  "linkedin/glassdoor/indeed": "只有聚合站链接，还没找到官方申请页；这些站按规则不自动操作",
+  "company site": "没有适配器（公司自建页或少见的 ATS）",
+};
+
+// What stands between a live posting and a submitted application, one line.
+export function gapOf(p: Posting): string {
+  if (p.state === "agent_queue") return "等下一次投递";
+  if (p.state === "held") {
+    if (p.blockers?.length) return `答不了：${p.blockers.slice(0, 2).join("；")}${p.blockers.length > 2 ? " 等" : ""}`;
+    const last = lastHoldFields(p.app);
+    return last.length ? `上次（${p.app!.at.slice(5, 10)}）卡在：${last.slice(0, 2).join("；")}${last.length > 2 ? ` 等 ${last.length} 项` : ""}（可能已被新规则解决）` : "卡住，原因没有记录";
+  }
+  if (p.state === "yours") return ATS_GAP[atsOf(p.job)] ?? "";
+  return "";
 }
 
 // Who acts next on a live posting, for the overview table.
@@ -142,6 +182,23 @@ export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocke
   for (const [k, r] of [...who].sort((a, b) => order(a[0]) - order(b[0]) || (b[1].A + b[1].B + b[1].C) - (a[1].A + a[1].B + a[1].C))) { L.push(`| ${k} | ${r.A} | ${r.B} | ${r.C} | ${r.A + r.B + r.C} |`); tA += r.A; tB += r.B; tC += r.C; }
   L.push(`| **合计** | ${tA} | ${tB} | ${tC} | ${tA + tB + tC} |`, "");
   if (tA + tB + tC !== open.length) throw new Error("today: the overview table does not add up to the open postings");
+  // Per ATS: what got through and what each lane still lacks.
+  const live: PostingState[] = ["applied", "unconfirmed", "held", "agent_queue", "yours"];
+  const byAts = new Map<string, Record<PostingState, number>>();
+  for (const p of i.posts) if (live.includes(p.state)) { const k = atsOf(p.job); const r = byAts.get(k) ?? { applied: 0, unconfirmed: 0, held: 0, agent_queue: 0, yours: 0, skipped: 0, review: 0 }; r[p.state]++; byAts.set(k, r); }
+  L.push("## 按 ATS：投了多少、差在哪", "", "| ATS | 已投出 | 已提交未确认 | 已填、等你答题 | agent 待投 | 你投 | 差在哪 |", "|---|---|---|---|---|---|---|");
+  for (const [k, r] of [...byAts].sort((a, b) => (b[1].applied + b[1].held + b[1].yours) - (a[1].applied + a[1].held + a[1].yours))) L.push(`| ${k} | ${r.applied} | ${r.unconfirmed} | ${r.held} | ${r.agent_queue} | ${r.yours} | ${ATS_GAP[k] ?? ""} |`);
+  L.push("");
+  for (const s of live) if ([...byAts.values()].reduce((n, r) => n + r[s], 0) !== count(s)) throw new Error(`today: the ATS table does not add up for ${s}`);
+  // Every application ever recorded, by ATS and latest state (data/ledger.jsonl), independent of the catalog.
+  const ledger = new Map<string, Map<string, number>>();
+  for (const [id, e] of i.apps) { const m = ledger.get(id.split(":")[0]!) ?? new Map<string, number>(); m.set(e.state, (m.get(e.state) ?? 0) + 1); ledger.set(id.split(":")[0]!, m); }
+  const ledgerStates = ["confirmed", "submitted", "unconfirmed", "held", "verified", "planned"];
+  L.push("投递记录（全部时间、每份申请的最新状态，直接来自投递记录，含库里已没有的岗位）：", "", `| ATS | ${ledgerStates.join(" | ")} | 合计 |`, `|---|${ledgerStates.map(() => "---|").join("")}---|`);
+  let ledgerTotal = 0;
+  for (const [k, m] of ledger) { const n = [...m.values()].reduce((a, b) => a + b, 0); ledgerTotal += n; L.push(`| ${k} | ${ledgerStates.map((s) => m.get(s) ?? 0).join(" | ")} | ${n} |`); }
+  L.push("");
+  if (ledgerTotal !== i.apps.size) throw new Error("today: the ledger table does not add up to the applications");
   if (i.pending?.trim()) L.push("## 等你决定的事", "", i.pending.trim(), "");
 
   L.push(`## 一、今天投出的（${i.appliedToday.length}）`, "");
@@ -157,12 +214,14 @@ export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocke
   }
   const todos = [...byQ].sort((a, b) => b[1].length - a[1].length);
   L.push(`## 二、你的待办（按能放行的申请数排序，共 ${todos.length} 项${todos.length > 30 ? "，只列前 30 项" : ""}）`, "");
+  const unknown = i.posts.filter((p) => p.state === "held" && p.blockers === undefined).length;
+  if (unknown) L.push(`> ${unknown} 份卡住的申请没有表单记录可按今天的规则重算（运行记录不在这台机器上），不在下面的待办里；它们上次卡在哪见第三节“差在哪”。`, "");
   for (const [q, bs] of todos.slice(0, 30)) L.push(`- **放行 ${bs.length} 份**：${cell(q).slice(0, 160)}（${[...new Set(bs.map((b) => `${b.company} · ${b.title}`))].map(cell).slice(0, 4).join("；")}${bs.length > 4 ? " 等" : ""}）`);
   L.push("");
 
-  L.push(`## 三、还没投出的岗位（最近 ${i.policy.freshDays} 天的在前；各自档位优先，同档按发布时间从新到旧）`, "", "| 档 | 发布 | 公司 · 岗位 | 地点 | 谁来投 | 链接 |", "|---|---|---|---|---|---|");
+  L.push(`## 三、还没投出的岗位（最近 ${i.policy.freshDays} 天的在前；各自档位优先，同档按发布时间从新到旧）`, "", "| 档 | 发布 | 公司 · 岗位 | 地点 | 谁来投 | 差在哪 | 链接 |", "|---|---|---|---|---|---|---|");
   const ordered = applyOrder(open.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen })), i.policy, i.today, (p) => i.tierOf(p));
-  for (const p of ordered) L.push(`| ${i.tierOf(p)} | ${postedOn(p.job) || "—"} | ${cell(p.job.company)} · ${cell(p.job.title)} | ${cell(p.job.location).slice(0, 40)} | ${whoOf(p)} | ${p.job.link?.finalUrl || p.job.url} |`);
+  for (const p of ordered) L.push(`| ${i.tierOf(p)} | ${postedOn(p.job) || "—"} | ${cell(p.job.company)} · ${cell(p.job.title)} | ${cell(p.job.location).slice(0, 40)} | ${whoOf(p)} | ${cell(gapOf(p))} | ${p.job.link?.finalUrl || p.job.url} |`);
   L.push("");
 
   const why = new Map<string, number>();

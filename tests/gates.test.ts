@@ -6,70 +6,72 @@ import type { DateKind } from "../src/domain/job.ts";
 
 const dated = (n: number, of: number) => Array.from({ length: of }, (_, i) => ({ publishedAt: i < n ? "2026-10-30" : "" }));
 const good: GateInput = {
-  coverage: { date: "2026-10-26", n: 50, inCatalog: 48, inCatalogNotRejected: 46 },
   registry: [{ status: "live" }, { status: "no_api" }],
   today: "2026-11-02",
   matches: dated(9, 10),
   audit: { falseMatchRate: 0.1, missRate: 0.1, matchJudged: 15, rejectJudged: 15 },
 };
 const fails = (i: GateInput, g: "1a" | "1b" | "1c") => stageGates(i)[g].checks.filter((c) => !c.pass).map((c) => c.name);
+const COMPLETENESS = "每家目标公司的官方招聘板今天读完";
+const WRONG_REJECT = "在库但被规则误拒";
 
 describe("stage gates", () => {
-  it("passes exactly on every boundary", () => {
+  it("per-company completeness is unmeasured, so with every other input perfect 1a, 1b and 1c still fail", () => {
     const g = stageGates(good);
-    expect(g["1a"].pass && g["1b"].pass && g["1c"].pass).toBe(true);
+    expect(fails(good, "1a")).toEqual([COMPLETENESS]);
+    expect(fails(good, "1b")).toEqual([WRONG_REJECT]);
+    expect(g["1a"].checks.find((c) => c.name === COMPLETENESS)?.value).toBe("未测量: per-company completeness not built yet");
+    expect(g["1a"].pass || g["1b"].pass || g["1c"].pass).toBe(false);
+    expect(fails(good, "1c")).toEqual(["1a 搜全通过", "1b 筛对通过"]);
+  });
+  it("a data/coverage file cannot unblock it: the gate takes no coverage input", () => {
+    const withLegacy = { ...good, coverage: { date: "2026-11-02", n: 100, inCatalog: 100, inCatalogNotRejected: 100 } } as unknown as GateInput;
+    expect(stageGates(withLegacy)["1c"].pass).toBe(false);
   });
 
-  it("1a: coverage must be at most 7 days old", () => {
-    expect(fails({ ...good, coverage: { ...good.coverage!, date: "2026-10-25" } }, "1a")).toHaveLength(1);
-    expect(fails({ ...good, coverage: { ...good.coverage!, date: "2026-11-03" } }, "1a")).toHaveLength(1);
-  });
-  it("1a: n at least 50 and in-catalog at least 95%", () => {
-    expect(fails({ ...good, coverage: { ...good.coverage!, n: 49, inCatalog: 47 } }, "1a")).toHaveLength(1);
-    expect(fails({ ...good, coverage: { ...good.coverage!, inCatalog: 47 } }, "1a")).toHaveLength(1);
-  });
   it("1a: a deferred row is accounted for only with a reason, and is listed", () => {
     const withReason = { ...good, registry: [{ id: "yc", status: "deferred" as const, reason: "83% of hiring companies have 50 people or fewer" }, { status: "live" as const }] };
     const g = stageGates(withReason)["1a"];
-    expect(g.checks.filter((c) => !c.pass)).toHaveLength(0);
+    expect(g.checks.filter((c) => !c.pass).map((c) => c.name)).toEqual([COMPLETENESS]);
     expect(g.checks.find((c) => c.name.includes("推迟"))?.value).toContain("yc");
     for (const reason of [undefined, "", "   "]) {
       const bad = stageGates({ ...good, registry: [{ id: "yc", status: "deferred" as const, reason }, { status: "live" as const }] })["1a"];
       expect(bad.pass).toBe(false);
-      expect(bad.checks.find((c) => !c.pass)?.value).toContain("yc");
+      expect(bad.checks.find((c) => c.name.includes("推迟"))?.value).toContain("yc");
     }
   });
 
   it("1a: the registry must exist and have no not_built", () => {
-    expect(stageGates({ ...good, registry: undefined })["1a"].checks.find((c) => !c.pass)?.value).toBe("来源登记表未建");
-    expect(fails({ ...good, registry: [{ status: "not_built" }] }, "1a")).toHaveLength(1);
-    expect(fails({ ...good, registry: [] }, "1a")).toHaveLength(1);
+    expect(stageGates({ ...good, registry: undefined })["1a"].checks.find((c) => c.name.includes("推迟"))?.value).toBe("来源登记表未建");
+    expect(fails({ ...good, registry: [{ status: "not_built" }] }, "1a")).toHaveLength(2);
+    expect(fails({ ...good, registry: [] }, "1a")).toHaveLength(2);
   });
   it("1a: at least 90% of matches dated", () => {
-    expect(fails({ ...good, matches: dated(89, 100) }, "1a")).toHaveLength(1);
-    expect(fails({ ...good, matches: dated(90, 100) }, "1a")).toHaveLength(0);
-    expect(fails({ ...good, matches: [] }, "1a")).toHaveLength(1);
+    expect(fails({ ...good, matches: dated(89, 100) }, "1a")).toHaveLength(2);
+    expect(fails({ ...good, matches: dated(90, 100) }, "1a")).toHaveLength(1);
+    expect(fails({ ...good, matches: [] }, "1a")).toHaveLength(2);
   });
   it("1b: audit rates at most 10% with n at least 15", () => {
-    expect(fails({ ...good, audit: { ...good.audit!, falseMatchRate: 0.101 } }, "1b")).toHaveLength(1);
-    expect(fails({ ...good, audit: { ...good.audit!, missRate: 0.101 } }, "1b")).toHaveLength(1);
-    expect(fails({ ...good, audit: { ...good.audit!, matchJudged: 14 } }, "1b")).toHaveLength(1);
-    expect(fails({ ...good, audit: { ...good.audit!, rejectJudged: 14 } }, "1b")).toHaveLength(1);
+    expect(fails({ ...good, audit: { ...good.audit!, falseMatchRate: 0.101 } }, "1b")).toHaveLength(2);
+    expect(fails({ ...good, audit: { ...good.audit!, missRate: 0.101 } }, "1b")).toHaveLength(2);
+    expect(fails({ ...good, audit: { ...good.audit!, matchJudged: 14 } }, "1b")).toHaveLength(2);
+    expect(fails({ ...good, audit: { ...good.audit!, rejectJudged: 14 } }, "1b")).toHaveLength(2);
   });
-  it("1b: wrongly rejected share at most 5% of in-catalog", () => {
-    expect(fails({ ...good, coverage: { ...good.coverage!, inCatalog: 40, inCatalogNotRejected: 38 } }, "1b")).toHaveLength(0);
-    expect(fails({ ...good, coverage: { ...good.coverage!, inCatalog: 40, inCatalogNotRejected: 37 } }, "1b")).toHaveLength(1);
-  });
-
   it("a missing input fails its check and says it is missing", () => {
     const g = stageGates({ today: "2026-11-02", matches: [] });
     for (const k of ["1a", "1b", "1c"] as const) expect(g[k].pass).toBe(false);
-    expect(g["1a"].checks[0]!.value).toContain("没有");
+    expect(g["1a"].checks[0]!.value).toContain("未测量");
+    expect(g["1a"].checks.at(-1)!.value).toContain("没有");
     expect(g["1b"].checks[0]!.value).toContain("没有");
   });
-  it("1c passes only when 1a and 1b both pass", () => {
-    expect(stageGates({ ...good, registry: undefined })["1c"].pass).toBe(false);
+  it("1c is blocked while 1a is blocked, whatever else holds", () => {
+    expect(stageGates(good)["1c"].checks.find((c) => c.name === "1a 搜全通过")?.pass).toBe(false);
     expect(stageGates({ ...good, audit: undefined })["1c"].pass).toBe(false);
+  });
+  it("apply refuses at gate 1c: jh apply and jh apply-approved both pass the 1c gate on, and apply holds when it fails", () => {
+    const cli = readFileSync(join(import.meta.dirname, "..", "src", "cli.ts"), "utf8");
+    expect(cli.match(/stageGate: gatesOf\(u, w\)\["1c"\]/g)?.length).toBe(1);
+    expect(cli.match(/stageGate: gates\["1c"\]/g)?.length).toBe(1);
   });
 
   it("apply-approved checks the gate before it gathers any queue or applies", () => {

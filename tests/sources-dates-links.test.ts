@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import type { JobKey, Sighting } from "../src/domain/job.ts";
 import { locationsCompatible, mergeRun, US_STATES } from "../src/discover/merge.ts";
 import { parseWorkdayDetail, parseWorkdayPostedOn } from "../src/discover/parse.ts";
-import { reportMarkdown, type ReportData } from "../src/discover/render.ts";
 import { SOURCE_REGISTRY } from "../src/discover/sources.ts";
 import type { CandidateFacts } from "../src/discover/triage.ts";
 
@@ -25,13 +24,6 @@ describe("source registry", () => {
     expect(status.brave_tavily).toBe("deferred");
     expect(status.vc_portfolio).toBe("no_api");
     expect(status.official_workday).toBe("live");
-  });
-
-  it("is rendered as a table in the report", () => {
-    const d = { generatedAt: NOW, runStartedAt: NOW, runFinishedAt: NOW, runDir: "", trust: "t", jobs: [], sightings: 0, channels: [], outcomes: [], skipped: [], stage: {}, outreach: [], inboxMessages: 0, pending: [] } as unknown as ReportData;
-    const md = reportMarkdown(d);
-    expect(md).toContain("## 来源登记表");
-    for (const r of SOURCE_REGISTRY) expect(md).toContain(`| ${r.name} |`);
   });
 });
 

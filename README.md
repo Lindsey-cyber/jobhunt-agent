@@ -17,14 +17,13 @@ npm run -s jh -- pending                                 # 哪些卡住了，各
 ## 找岗位（第一阶段）
 
 ```bash
-npm run -s jh -- daily --inbox data/inbox/<日期>   # 总管：多渠道发现、筛选、审计抽样、待批准队列、Outreach、报告
-npm run -s jh -- audit score <verdicts.jsonl>      # 独立审核 agent 盲评后打分，自动调整筛选环节信任等级
-npm run -s jh -- pending                           # 每日清单：待你批准的岗位、审计分歧、失败来源
+npm run -s jh -- discover --inbox data/inbox/<日期> # 只搜索：抓取、解析、合并、筛选、写岗位库（data/discovery/）
+npm run -s jh -- pending                           # 每日清单：待你批准的岗位、失败来源
 npm run -s jh -- label <清单 id> fit|not_fit        # 你的批准/驳回，存成评测集
 npm run -s jh -- eval                              # 改规则前后在评测集上跑分，不降才上线
 ```
 
-监控名单在 `config/watchlist.yaml`，报告和 Dashboard 在 `docs/reports/<日期>/`。流程见 `.claude/skills/daily-discovery/SKILL.md`。
+监控名单在 `config/watchlist.yaml`。流程见 `.claude/skills/daily-discovery/SKILL.md`；多 agent 组织规则见 `docs/program/ORG.md`。
 
 ## 它保证什么
 

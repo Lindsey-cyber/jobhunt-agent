@@ -15,7 +15,7 @@ export function serve(dataDir: string, port = 8787): Server {
       res.writeHead(status, { "content-type": type, "cache-control": "no-store" });
       res.end(body);
     };
-    if (!latest) return send(404, TYPES.md!, "No discovery run yet. Run jh daily.");
+    if (!latest) return send(404, TYPES.md!, "No discovery run yet. Run jh discover.");
     const path = new URL(req.url ?? "/", "http://localhost").pathname;
     if (path === "/") return send(200, TYPES.html!, `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">${readFileSync(join(latest.reportDir, "dashboard.html"), "utf8")}`);
     if (path === "/pending") {

@@ -69,7 +69,7 @@ describe("rebuild-watchlist leaves the shared H-1B cache alone", () => {
 });
 
 describe("config/watchlist.yaml", () => {
-  // A numeric board name (YAML reads it as a number) once broke jh daily before any fetch ran.
+  // A numeric board name (YAML reads it as a number) once broke jh discover before any fetch ran.
   it("parses, with unique Greenhouse boards", () => {
     const w = loadWatchlist();
     const boards = w.greenhouse.map((g) => g.board.toLowerCase());

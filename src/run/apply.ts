@@ -8,7 +8,7 @@ import { jobKey } from "../discover/identity.ts";
 import { gmailConfigured, waitForEmailLink, waitForSecurityCode } from "../sources/gmail.ts";
 import type { FormSnapshot } from "../domain/form.ts";
 import { accountFor } from "./accounts.ts";
-import { draftable, draftSources, resolveQuestion, UNANSWERED } from "../org/drafter.ts";
+import { draftable, draftSources, resolveQuestion, UNANSWERED } from "./drafter.ts";
 import { archiveEvidence } from "./evidence.ts";
 import { readCatalog } from "../store/catalog.ts";
 import { paths } from "../store/state.ts";

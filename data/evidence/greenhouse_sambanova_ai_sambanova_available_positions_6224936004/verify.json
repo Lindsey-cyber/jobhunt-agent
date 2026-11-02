@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -77,10 +77,15 @@
       "expected": "2",
       "actual": "2",
       "pass": true
+    },
+    {
+      "fieldId": "question_20291833004[]",
+      "label": "Preferred office?",
+      "expected": "San Jose, CA",
+      "actual": "San Jose, CA",
+      "pass": true
     }
   ],
-  "emptyRequired": [
-    "Preferred office?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

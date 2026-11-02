@@ -9,7 +9,8 @@ import { apply, sameJob } from "./run/apply.ts";
 import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
 import { postedOn } from "./discover/eligibility.ts";
 import { fitOf } from "./discover/fit.ts";
-import { agentQueue, applicationIndex, postings, renderToday, type Blocker } from "./discover/today.ts";
+import { SOURCE_REGISTRY } from "./discover/sources.ts";
+import { agentQueue, applicationIndex, eligibleNow, postings, renderToday, type Blocker } from "./discover/today.ts";
 import { factSheet, type QuestionMapping } from "./plan/facts.ts";
 import { normalize } from "./plan/text.ts";
 import { lookupH1b } from "./sources/h1b.ts";
@@ -130,11 +131,10 @@ function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
 }
 
 // Every posting's one state (src/discover/today.ts), shared by jh today, apply-approved and facts-map.
-// The source registry does not exist yet (W4): until it does, gate 1a fails on it.
 function gatesOf(u: ReturnType<typeof user>, w: ReturnType<typeof gather>) {
   return stageGates({
     ...(({ coverage, problem }) => ({ coverage, coverageProblem: problem }))(readCoverage(u.dir)),
-    registry: undefined,
+    registry: SOURCE_REGISTRY,
     today: w.today,
     matches: [...w.catalog.values()].filter((j) => j.triage?.verdict === "match"),
     audit: readTrust(u.dir).triage.audits.at(-1),
@@ -165,7 +165,8 @@ switch (command) {
   case "apply": {
     if (!url) throw new Error("usage: jh apply <url>");
     const u = user();
-    const result = await apply({ url, user: u, ledger: ledgerOf(u.dir), approved: values.approve, headed: values.headed, stageGate: gatesOf(u, gather(u))["1c"] });
+    const w = gather(u);
+    const result = await apply({ url, user: u, ledger: ledgerOf(u.dir), approved: values.approve, headed: values.headed, stageGate: gatesOf(u, w)["1c"], eligible: eligibleNow(url, w.posts) });
     if (result.outcome === "skipped") {
       console.log(`${result.key} is already ${result.state}; nothing to do.`);
       break;
@@ -292,6 +293,8 @@ switch (command) {
   case "h1b": {
     // Looks up H-1B history for every company in the approved pool (read-only, cached in data/h1b).
     const u = user();
+    const since = u.search.h1bRequiredSince;
+    if (since === null) throw new Error("data/policy.yaml has no h1bRequiredSince: there is no H-1B year to look up");
     const catalog = readCatalog(paths(u.dir).catalog);
     const latest = new Map(readLabels(u.dir).map((l) => [l.key, l]));
     // Every approved posting's company, and every current match of any age (age only orders applying).
@@ -303,7 +306,7 @@ switch (command) {
     const at = new Date().toISOString();
     let done = 0;
     await pool(todo, 3, async (c) => {
-      try { const r = await lookupH1b(c, at); h1b.set(employerKey(c), r); } catch (e) { console.error(`h1b lookup failed for ${c}: ${String(e).slice(0, 120)}`); }
+      try { const r = await lookupH1b(c, at, since); h1b.set(employerKey(c), r); } catch (e) { console.error(`h1b lookup failed for ${c}: ${String(e).slice(0, 120)}`); }
       if (++done % 25 === 0) { writeH1b(u.dir, h1b); console.log(`${done}/${todo.length}`); }
     });
     writeH1b(u.dir, h1b);
@@ -342,7 +345,7 @@ switch (command) {
       const wait = (lastAt.get(j.company) ?? 0) + SAME_COMPANY_GAP_MS - Date.now();
       if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       try {
-        const r = await apply({ url: j.url, user: u, ledger, approved: true, stageGate: gates["1c"], job: { company: j.company, title: j.title, location: j.location } });
+        const r = await apply({ url: j.url, user: u, ledger, approved: true, stageGate: gates["1c"], eligible: eligibleNow(j.url, w.posts), job: { company: j.company, title: j.title, location: j.location } });
         if (r.state === "submitted" || r.state === "confirmed" || r.state === "unconfirmed") lastAt.set(j.company, Date.now());
         console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
       } catch (e) {

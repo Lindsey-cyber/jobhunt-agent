@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { applyOrder, eligibility } from "../src/discover/eligibility.ts";
-import { Policy } from "../src/profile/schema.ts";
+import { loadUserData } from "../src/profile/load.ts";
+import { Policy, Profile } from "../src/profile/schema.ts";
 
 const policy = Policy.parse({ excludeCompanies: ["Jane Street"], freshDays: 30, excludeSeniorTitles: true, h1bRequiredSince: 2023, agentAts: ["greenhouse"], excludeTitles: ["analytics engineer"] });
 const sponsor = { company: "Acme", matched: ["ACME INC"], filings: 3, checkedAt: "2026-11-02" };
@@ -35,5 +36,18 @@ describe("eligibility (data/policy.yaml)", () => {
     const j = (title: string, publishedAt: string, tier: "A" | "B" | "C") => ({ title, publishedAt, firstSeen: "", tier });
     const jobs = [j("old A", "2026-09-01", "A"), j("fresh C", "2026-11-01", "C"), j("undated A", "", "A"), j("fresh A older", "2026-10-10", "A"), j("fresh A newer", "2026-10-30", "A"), j("old C", "2026-09-20", "C"), j("edge A", "2026-10-03", "A")];
     expect(applyOrder(jobs, policy, "2026-11-02", (x) => x.tier).map((x) => x.title)).toEqual(["fresh A newer", "fresh A older", "edge A", "fresh C", "old A", "undated A", "old C"]);
+  });
+});
+
+describe("strict schemas", () => {
+  it("reject a stale or unknown key instead of ignoring it", () => {
+    expect(() => Policy.parse({ windowDays: 30 })).toThrow();
+    expect(() => Policy.parse({ fit: { applyLast: [] } })).toThrow();
+    expect(() => Profile.parse({ ...loadUserData().profile, eeo: { genderIfRequired: "x" } })).toThrow(/genderIfRequired|unrecognized/i);
+  });
+  it("still load the candidate's real policy.yaml and profile.yaml", () => {
+    const u = loadUserData();
+    expect(u.search.h1bRequiredSince).toBe(2023);
+    expect(u.profile.identity.firstName).toBeTruthy();
   });
 });

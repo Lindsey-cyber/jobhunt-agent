@@ -3,8 +3,6 @@
 // h1bdata.info). An employer with no record, or a name that matches no filer, is kept in the
 // catalog but not applied to.
 
-export const SINCE_YEAR = 2023;
-
 export interface H1bFiling {
   employer: string;
   submitted: string; // YYYY-MM-DD
@@ -12,7 +10,7 @@ export interface H1bFiling {
 
 export interface H1bRecord {
   company: string;
-  // Filer names that matched the company, and their filings since SINCE_YEAR.
+  // Filer names that matched the company, and their filings since the policy year.
   matched: string[];
   filings: number;
   checkedAt: string;
@@ -89,9 +87,9 @@ export function filerName(company: string): string {
   return FILER_ALIASES[k] ?? FILER_ALIASES[k.replace(/ global$/, "")] ?? k;
 }
 
-export function recordFrom(company: string, filings: H1bFiling[], checkedAt: string): H1bRecord {
+export function recordFrom(company: string, filings: H1bFiling[], checkedAt: string, since: number): H1bRecord {
   const filer = filerName(company);
-  const mine = filings.filter((f) => matchesCompany(f.employer, filer) && Number(f.submitted.slice(0, 4)) >= SINCE_YEAR);
+  const mine = filings.filter((f) => matchesCompany(f.employer, filer) && Number(f.submitted.slice(0, 4)) >= since);
   return { company, matched: [...new Set(mine.map((f) => f.employer))], filings: mine.length, checkedAt };
 }
 

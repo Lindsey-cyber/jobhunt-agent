@@ -3,7 +3,7 @@
 // command in src/cli.ts. The file format is fixed: docs/program/notes.md (W1 reads it).
 import type { Job, JobKey } from "../domain/job.ts";
 import type { Policy } from "../profile/schema.ts";
-import { excludedBy } from "./exclude.ts";
+import { policyExcludes } from "./eligibility.ts";
 import { atsOf, jobKey } from "./identity.ts";
 import { tooSenior } from "./seniority.ts";
 
@@ -115,13 +115,12 @@ const US = /\b(United States|USA|US|Remote|[A-Z][a-z]+(?: [A-Z][a-z]+)*, (?:A[KL
 const ABROAD = /united kingdom|canada|india|germany|australia|new zealand/i;
 
 // US, early-career, ML/AI/data title, listed within `maxAgeDays`, and not out under her policy.
-export function fits(r: SampleRow, policy: Pick<Policy, "excludeCompanies" | "excludeTitles" | "excludeSeniorTitles">, now: Date, maxAgeDays = 30): boolean {
+export function fits(r: SampleRow, policy: Parameters<typeof policyExcludes>[2] & Pick<Policy, "excludeSeniorTitles">, now: Date, maxAgeDays = 30): boolean {
   const d = parseListDate(r.date, now);
   if (!d || now.getTime() - d.getTime() > maxAgeDays * 864e5) return false;
   if (!FIT.test(r.title) || NOT_ENTRY.test(r.title) || !US.test(r.location) || ABROAD.test(r.location)) return false;
   if (policy.excludeSeniorTitles && tooSenior(r.title)) return false;
-  if (excludedBy(r.company, policy.excludeCompanies)) return false;
-  return !policy.excludeTitles.some((t) => r.title.toLowerCase().includes(t.toLowerCase()));
+  return policyExcludes(r.company, r.title, policy).length === 0;
 }
 
 // Unique by company+title, then at most `max` evenly spaced over the sorted rows (deterministic).

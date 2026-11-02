@@ -35,4 +35,3 @@ export function readCoverage(dataDir: string): CoverageRead {
   return why ? { problem: `${newest} 被拒绝：${why}` } : { coverage: parsed as Coverage };
 }
 
-export const readLatestCoverage = (dataDir: string): Coverage | undefined => readCoverage(dataDir).coverage;

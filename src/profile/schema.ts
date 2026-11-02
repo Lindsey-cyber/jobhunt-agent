@@ -4,16 +4,16 @@ import { z } from "zod";
 // "I am not a protected veteran"; anything else must match an option's text.
 const EeoChoice = z.string().default("decline");
 
-export const Profile = z.object({
-  identity: z.object({
+export const Profile = z.strictObject({
+  identity: z.strictObject({
     firstName: z.string().min(1),
     lastName: z.string().min(1),
     preferredName: z.string().optional(),
   }),
-  contact: z.object({
+  contact: z.strictObject({
     email: z.email(),
     phone: z.string().min(7),
-    address: z.object({
+    address: z.strictObject({
       line1: z.string().min(1),
       line2: z.string().optional(),
       city: z.string().min(1),
@@ -26,7 +26,7 @@ export const Profile = z.object({
   }),
   citizenship: z.array(z.string().min(1)).min(1),
   links: z
-    .object({
+    .strictObject({
       linkedin: z.url().optional(),
       github: z.url().optional(),
       website: z.url().optional(),
@@ -34,7 +34,7 @@ export const Profile = z.object({
     .default({}),
   education: z
     .array(
-      z.object({
+      z.strictObject({
         school: z.string().min(1),
         degree: z.string().min(1),
         major: z.string().min(1),
@@ -57,7 +57,7 @@ export const Profile = z.object({
   // The candidate (2026-10-29): consents to AI resume screening and AI job matching.
   consentAiScreening: z.boolean().optional(),
   // The candidate (2026-10-28): on-site (five days or hybrid) and relocation anywhere in the US.
-  workArrangement: z.object({ onsite: z.boolean().optional(), relocate: z.boolean().optional() }).optional(),
+  workArrangement: z.strictObject({ onsite: z.boolean().optional(), relocate: z.boolean().optional() }).optional(),
   // The candidate (2026-10-28): no relatives at any employer she applies to.
   relativesAtEmployers: z.boolean().optional(),
   // The candidate lets the agent tick "I have read the privacy policy" boxes.
@@ -76,25 +76,25 @@ export const Profile = z.object({
   // or past pay and range dropdowns still go to her.
   salaryExpectation: z.string().min(1).optional(),
   // Employers from the resume, for "have you worked for X before?" questions.
-  workHistory: z.array(z.object({ employer: z.string().min(1), title: z.string().optional(), start: z.string().optional(), end: z.string().optional() })).default([]),
-  workAuthorization: z.object({
+  workHistory: z.array(z.strictObject({ employer: z.string().min(1), title: z.string().optional(), start: z.string().optional(), end: z.string().optional() })).default([]),
+  workAuthorization: z.strictObject({
     authorizedCountries: z.array(z.string().min(1)),
     needsSponsorship: z.boolean(),
     // Her current status in the forms' words, e.g. "F-1 OPT".
     status: z.string().optional(),
   }),
   eeo: z
-    .object({
+    .strictObject({
       gender: EeoChoice,
       hispanicLatino: EeoChoice,
       race: EeoChoice,
       veteran: EeoChoice,
       disability: EeoChoice,
       // The answer when the choices offer no way to decline (gender, race and pronouns).
-      ifNoDecline: z.object({ gender: z.string().optional(), race: z.string().optional(), pronouns: z.string().optional() }).default({}),
+      ifNoDecline: z.strictObject({ gender: z.string().optional(), race: z.string().optional(), pronouns: z.string().optional() }).default({}),
     })
     .default({ gender: "decline", hispanicLatino: "decline", race: "decline", veteran: "decline", disability: "decline", ifNoDecline: {} }),
-  documents: z.object({
+  documents: z.strictObject({
     resume: z.string().min(1),
     // Filled by the loader from data/cover-letters/<company>.pdf: one letter per employer,
     // used only where a form requires a cover letter.
@@ -103,7 +103,7 @@ export const Profile = z.object({
 });
 export type Profile = z.infer<typeof Profile>;
 
-export const AnswerEntry = z.object({
+export const AnswerEntry = z.strictObject({
   id: z.string().min(1),
   question: z.string().min(1),
   aliases: z.array(z.string()).default([]),
@@ -118,13 +118,13 @@ export const AnswerEntry = z.object({
 });
 export type AnswerEntry = z.infer<typeof AnswerEntry>;
 
-export const AnswerBank = z.object({ answers: z.array(AnswerEntry).default([]) });
+export const AnswerBank = z.strictObject({ answers: z.array(AnswerEntry).default([]) });
 export type AnswerBank = z.infer<typeof AnswerBank>;
 
 export const TrustLevel = z.enum(["draft", "auto"]);
 export type TrustLevel = z.infer<typeof TrustLevel>;
 
-export const Config = z.object({
+export const Config = z.strictObject({
   trust: TrustLevel.default("draft"),
   autoSubmitAts: z.array(z.enum(["greenhouse", "lever", "ashby", "workday"])).default([]),
   allowGeneratedAnswers: z.boolean().default(false),
@@ -133,7 +133,7 @@ export const Config = z.object({
 export type Config = z.infer<typeof Config>;
 
 // data/policy.yaml: the candidate's decisions on what to apply to (see the file's comments).
-export const Policy = z.object({
+export const Policy = z.strictObject({
   excludeCompanies: z.array(z.string().min(1)).default([]),
   // Postings whose title contains one of these (any case) are never applied to.
   excludeTitles: z.array(z.string().min(1)).default([]),
@@ -145,7 +145,7 @@ export const Policy = z.object({
   // Every match within the policy counts as approved (no per-posting confirmation).
   approveMatches: z.boolean().default(false),
   // Closeness to her background: terms read in title and description (src/discover/fit.ts).
-  fit: z.object({
+  fit: z.strictObject({
     strong: z.array(z.string()).default([]),
     good: z.array(z.string()).default([]),
     weak: z.array(z.string()).default([]),

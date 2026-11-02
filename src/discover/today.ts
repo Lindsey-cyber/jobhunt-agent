@@ -4,7 +4,7 @@
 import type { Job } from "../domain/job.ts";
 import type { Policy } from "../profile/schema.ts";
 import { renderGates, type stageGates } from "./gates.ts";
-import { applyOrder, eligibility, freshSince, isFresh, postedOn, type Eligibility } from "./eligibility.ts";
+import { applyOrder, eligibility, freshSince, isFresh, type Eligibility } from "./eligibility.ts";
 import type { H1bRecord } from "./h1b.ts";
 import { employerKey } from "./h1b.ts";
 import { jobKey } from "./identity.ts";
@@ -171,6 +171,13 @@ const STATE_LABEL: Record<PostingState, string> = {
 
 const cell = (s: string) => s.replace(/\|/g, "/").replace(/\s+/g, " ").trim();
 
+// The 发布 column: the employer's publish date when one is recorded; otherwise the
+// day we first saw the posting, labelled as such, never presented as the posted date.
+export function postedCell(j: Pick<Job, "publishedAt" | "firstSeen">): string {
+  if (j.publishedAt) return j.publishedAt.slice(0, 10);
+  return j.firstSeen ? `首见 ${j.firstSeen.slice(0, 10)}` : "—";
+}
+
 export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocker[]; appliedToday: Posting[]; tierOf: (p: Posting) => "A" | "B" | "C"; queueSize: number; pending?: string | undefined; notes?: string[]; gates?: ReturnType<typeof stageGates> }): string {
   const since = freshSince(i.policy, i.today);
   const fresh = (p: Posting) => isFresh(p.job, i.policy, i.today);
@@ -232,7 +239,7 @@ export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocke
 
   L.push(`## 三、还没投出的岗位（最近 ${i.policy.freshDays} 天的在前；各自档位优先，同档按发布时间从新到旧）`, "", "| 档 | 发布 | 公司 · 岗位 | 地点 | 谁来投 | 差在哪 | 链接 |", "|---|---|---|---|---|---|---|");
   const ordered = applyOrder(open.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen })), i.policy, i.today, (p) => i.tierOf(p));
-  for (const p of ordered) L.push(`| ${i.tierOf(p)} | ${postedOn(p.job) || "—"} | ${cell(p.job.company)} · ${cell(p.job.title)} | ${cell(p.job.location).slice(0, 40)} | ${whoOf(p)} | ${cell(gapOf(p))} | ${p.job.link?.finalUrl || p.job.url} |`);
+  for (const p of ordered) L.push(`| ${i.tierOf(p)} | ${postedCell(p.job)} | ${cell(p.job.company)} · ${cell(p.job.title)} | ${cell(p.job.location).slice(0, 40)} | ${whoOf(p)} | ${cell(gapOf(p))} | ${p.job.link?.finalUrl || p.job.url} |`);
   L.push("");
 
   const why = new Map<string, number>();

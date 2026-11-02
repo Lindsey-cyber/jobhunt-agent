@@ -117,4 +117,16 @@ describe("merge keeps a recorded publish date", () => {
     const second = mergeRun(first, [bare!], me);
     expect([...second.values()][0]!.publishedAt).toBe("2026-08-30T05:31:25.211Z");
   });
+  it("a later sighting with no date keeps the source record's earlier date and kind", () => {
+    const [full] = parseAshby({ jobs: [{ id: "a", title: "ML Engineer", jobUrl: "https://jobs.ashbyhq.com/acme/11111111-1111-1111-1111-111111111111", publishedAt: "2026-08-30T05:31:25.211Z" }] }, "acme", "Acme", NOW);
+    const [bare] = parseAshby({ jobs: [{ id: "a", title: "ML Engineer", jobUrl: "https://jobs.ashbyhq.com/acme/11111111-1111-1111-1111-111111111111" }] }, "acme", "Acme", "2026-11-03T15:30:00.000Z");
+    const second = mergeRun(mergeRun(new Map(), [full!], me), [bare!], me);
+    expect([...second.values()][0]!.sources[0]).toMatchObject({ date: "2026-08-30T05:31:25.211Z", dateKind: "published" });
+  });
+  it("a later sighting with a date still replaces the source record's date", () => {
+    const [full] = parseAshby({ jobs: [{ id: "a", title: "ML Engineer", jobUrl: "https://jobs.ashbyhq.com/acme/11111111-1111-1111-1111-111111111111", publishedAt: "2026-08-30T05:31:25.211Z" }] }, "acme", "Acme", NOW);
+    const [moved] = parseAshby({ jobs: [{ id: "a", title: "ML Engineer", jobUrl: "https://jobs.ashbyhq.com/acme/11111111-1111-1111-1111-111111111111", publishedAt: "2026-09-01T00:00:00.000Z" }] }, "acme", "Acme", "2026-11-03T15:30:00.000Z");
+    const second = mergeRun(mergeRun(new Map(), [full!], me), [moved!], me);
+    expect([...second.values()][0]!.sources[0]).toMatchObject({ date: "2026-09-01T00:00:00.000Z", dateKind: "published" });
+  });
 });

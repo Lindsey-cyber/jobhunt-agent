@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { agentQueue, applicationIndex, gapOf, postingIdOf, postings, renderToday } from "../src/discover/today.ts";
+import { agentQueue, applicationIndex, gapOf, postedCell, postingIdOf, postings, renderToday } from "../src/discover/today.ts";
 import { Policy } from "../src/profile/schema.ts";
 
 const policy = Policy.parse({ freshDays: 30, h1bRequiredSince: 2023, agentAts: ["greenhouse"] });
@@ -63,5 +63,17 @@ describe("one identity and one state per posting", () => {
       { company: "Acme", title: "C", question: "Pronouns" },
     ] });
     expect(md.indexOf("放行 2 份")).toBeLessThan(md.indexOf("放行 1 份"));
+  });
+});
+
+describe("the 发布 column never presents a first-seen day as the posted date", () => {
+  it("shows the employer's publish day when one is recorded", () => {
+    expect(postedCell({ publishedAt: "2026-08-30T05:31:25.211Z", firstSeen: "2026-11-02T10:00:00.000Z" })).toBe("2026-08-30");
+  });
+  it("labels the first-seen day when there is no publish date", () => {
+    expect(postedCell({ publishedAt: "", firstSeen: "2026-10-31T09:00:00.000Z" })).toBe("首见 2026-10-31");
+  });
+  it("is a dash when neither date is known", () => {
+    expect(postedCell({ publishedAt: "", firstSeen: "" })).toBe("—");
   });
 });

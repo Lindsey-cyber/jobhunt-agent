@@ -141,13 +141,15 @@ export function mergeRun(prior: Map<JobKey, Job>, sightings: Sighting[], me: Can
     for (const s of ss) {
       const id = sourceId(s);
       const was = sources.get(id);
+      // A later sighting that carries no date must not erase the date this source gave earlier.
+      const keepDate = !s.date && !!was?.date;
       sources.set(id, {
         channel: s.channel,
         source: s.source,
         url: s.url,
         official: s.official,
-        date: s.date,
-        dateKind: s.dateKind,
+        date: keepDate ? was!.date : s.date,
+        dateKind: keepDate ? was!.dateKind : s.dateKind,
         firstSeen: was ? (was.firstSeen < s.seenAt ? was.firstSeen : s.seenAt) : s.seenAt,
         lastSeen: was && was.lastSeen > s.seenAt ? was.lastSeen : s.seenAt,
       });

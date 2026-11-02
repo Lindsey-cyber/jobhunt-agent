@@ -1,7 +1,8 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { stageGates, type GateInput } from "../src/discover/gates.ts";
+import { isDated, stageGates, type GateInput } from "../src/discover/gates.ts";
+import type { DateKind } from "../src/domain/job.ts";
 
 const dated = (n: number, of: number) => Array.from({ length: of }, (_, i) => ({ publishedAt: i < n ? "2026-10-30" : "" }));
 const good: GateInput = {
@@ -66,5 +67,29 @@ describe("stage gates", () => {
     expect(gate).toBeGreaterThan(at);
     expect(gate).toBeLessThan(cli.indexOf("w.queue.filter", at));
     expect(gate).toBeLessThan(cli.indexOf("values.list", at));
+  });
+});
+
+describe("1a dated: which matches count as dated", () => {
+  const src = (dateKind: DateKind, date = "2026-10-30") => [{ dateKind, date }];
+  it("counts an employer publishedAt", () => {
+    expect(isDated({ publishedAt: "2026-10-30T00:00:00.000Z" })).toBe(true);
+  });
+  it("counts a GitHub-list list_posted date", () => {
+    expect(isDated({ publishedAt: "", sources: src("list_posted") })).toBe(true);
+  });
+  it("does not count bounds, email receipt or HN post time", () => {
+    for (const k of ["posted_before", "email_received", "post_time", "start_date", "updated", "none"] as const) expect(isDated({ publishedAt: "", sources: src(k) })).toBe(false);
+  });
+  it("does not count a list_posted row with no date", () => {
+    expect(isDated({ publishedAt: "", sources: src("list_posted", "") })).toBe(false);
+  });
+  it("does not count a list_age: the stored date cannot tell a day-level age from a coarse one", () => {
+    // Known gap: parseListAge emits list_age for "2d" and for "1mo" alike. Until the kind separates them, list_age stays uncounted.
+    expect(isDated({ publishedAt: "", sources: src("list_age") })).toBe(false);
+  });
+  it("the gate names the 90% rule as official or list-stated dates", () => {
+    const g = stageGates({ today: "2026-11-02", matches: [{ publishedAt: "", sources: [{ dateKind: "list_posted", date: "2026-10-30T00:00:00.000Z" }] }] });
+    expect(g["1a"].checks.find((c) => c.name.startsWith("当前匹配岗位有发布日期"))).toMatchObject({ name: "当前匹配岗位有发布日期（官方或列表注明的日期）≥ 90.0%", pass: true });
   });
 });

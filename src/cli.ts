@@ -1,4 +1,5 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { buildPlan } from "./plan/plan.ts";
 import { join } from "node:path";
 import { queueQuestions } from "./store/questions.ts";
 import { parseArgs } from "node:util";
@@ -228,7 +229,21 @@ switch (command) {
     // The candidate (2026-11-01): newest postings first (employer's publish date, else when we first saw it).
     const posted = (j: (typeof ready)[number]) => j.publishedAt ?? j.firstSeen ?? "";
     const fresh = ready.filter((j) => !sameJob(ledger, j.url)).sort((a, b) => posted(b).localeCompare(posted(a)));
-    const retries = ready.filter((j) => sameJob(ledger, j.url));
+    // Retry a held application only when today's rules fill every required field of its last form
+    // (questions waiting on the candidate would only hold it again); newest postings first.
+    let waiting = 0;
+    const retries = ready.filter((j) => {
+      const prior = sameJob(ledger, j.url);
+      if (!prior) return false;
+      const runDir = ledger.history(prior.key).at(-1)?.runDir;
+      const planFile = runDir ? `${runDir}/plan.json` : "";
+      if (!planFile || !existsSync(planFile)) return true;
+      const plan = buildPlan(JSON.parse(readFileSync(planFile, "utf8")).form, u.profile, u.bank);
+      const blocked = plan.items.some((i) => i.field.required && i.status === "blocked");
+      if (blocked) waiting++;
+      return !blocked;
+    }).sort((a, b) => posted(b).localeCompare(posted(a)));
+    console.log(`${fresh.length} never tried; ${retries.length} held ones now fully answerable; ${waiting} still waiting on questions for the candidate`);
     const order = [...interleaveByCompany(fresh), ...interleaveByCompany(retries)].slice(0, limit);
     if (values.list) {
       for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${(j.publishedAt ?? j.firstSeen ?? "").slice(0, 10) || "no date   "}  ${sameJob(ledger, j.url) ? "retry" : "new  "}  ${j.company} · ${j.title}`);

@@ -19,5 +19,5 @@ Applies to jobs for one candidate, and submits only what it can prove is correct
 
 - `apply-to-job` applies to one posting and resolves holds.
 - `verify-apply` drives the pipeline and collects evidence; its `features/` is the ATS map.
-- `daily-discovery` runs the coordinator, the Gmail copy and the blind triage audit, and reports.
+- `daily-discovery` runs the search pass (`jh discover`, with the Gmail copy) and reports.
 - `add-ats-adapter` adds or fixes an ATS from a captured page.

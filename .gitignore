@@ -4,4 +4,3 @@ data/inbox/
 data/discovery/catalog.jsonl
 .scratch/
 .claude/worktrees/
-data/coverage/link-cache.json

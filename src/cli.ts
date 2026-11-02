@@ -23,7 +23,6 @@ import { draftAnswers } from "./run/drafter.ts";
 import { authUrl, fetchAlerts, finishAuth, gmailConfigured, recentHeaders } from "./sources/gmail.ts";
 import { receiptFor } from "./verify/reconcile.ts";
 import { candidateFacts, discover } from "./run/discover.ts";
-import { serve } from "./run/serve.ts";
 import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { appendAnswer } from "./store/answerlog.ts";
@@ -60,7 +59,6 @@ const USAGE = `jh <command>
   answer <review-id> <text>            record your answer to a question on the review list
   eval [--record]                      score triage rules on your labels; fails if worse than the baseline
   trust [promote <stage>]              stage trust levels; promotion is yours to make
-  serve [--port <n>]                   dashboard, report and review list on 127.0.0.1 (default port 8787)
   status                               latest state of every application
   pending                              today's review list: held applications, matches to approve, questions
   doctor                               check the data directory and the browser`;
@@ -82,7 +80,6 @@ const { positionals, values } = parseArgs({
     record: { type: "boolean", default: false },
     model: { type: "string" },
     code: { type: "string" },
-    port: { type: "string", default: "8787" },
     limit: { type: "string" },
     list: { type: "boolean", default: false },
     refresh: { type: "boolean", default: false },
@@ -416,11 +413,6 @@ switch (values.help ? undefined : command) {
       const dir = values.inbox ?? join(user().dir, "inbox", new Date().toISOString().slice(0, 10));
       console.log(`saved ${(await fetchAlerts(dir)).saved} messages to ${dir}`);
     } else throw new Error("usage: jh gmail auth [--code <address>] | jh gmail fetch [--inbox <dir>]");
-    break;
-  }
-  case "serve": {
-    serve(user().dir, Number(values.port));
-    console.log(`serving on http://127.0.0.1:${values.port}`);
     break;
   }
   case "label": {

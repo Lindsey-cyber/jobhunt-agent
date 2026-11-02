@@ -9,7 +9,7 @@ import { apply, sameJob } from "./run/apply.ts";
 import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
 import { applyOrder, eligibility, postedOn } from "./discover/eligibility.ts";
 import { fitOf } from "./discover/fit.ts";
-import { applicationIndex, postings, renderToday, type Blocker } from "./discover/today.ts";
+import { agentQueue, applicationIndex, postings, renderToday, type Blocker } from "./discover/today.ts";
 import { factSheet, type QuestionMapping } from "./plan/facts.ts";
 import { normalize } from "./plan/text.ts";
 import { lookupH1b } from "./sources/h1b.ts";
@@ -121,6 +121,26 @@ function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
   return out;
 }
 
+// Every posting's one state (src/discover/today.ts), shared by jh today, apply-approved and facts-map.
+function gather(u: ReturnType<typeof user>, since?: string) {
+  const ledger = ledgerOf(u.dir);
+  const catalog = readCatalog(paths(u.dir).catalog);
+  const h1b = readH1b(u.dir);
+  const today = new Date().toISOString().slice(0, 10);
+  const policy = since ? { ...u.search, windowDays: Math.max(1, Math.ceil((Date.parse(today) - Date.parse(since)) / 86400000)) } : u.search;
+  const blockersOf = (app: { key: string }) => {
+    const runDir = ledger.history(app.key as Parameters<typeof ledger.history>[0]).at(-1)?.runDir;
+    if (!runDir || !existsSync(`${runDir}/plan.json`)) return undefined;
+    const plan = buildPlan(JSON.parse(readFileSync(`${runDir}/plan.json`, "utf8")).form, u.profile, u.bank);
+    return plan.items.filter((it) => it.field.required && it.status === "blocked").map((it) => it.field.label);
+  };
+  const input = { jobs: catalog.values(), labels: new Map(readLabels(u.dir).map((l) => [l.key, l.label])), apps: applicationIndex(ledger.latest()), h1b, policy, payFloor: expectationFloor(u.profile.salaryExpectation), today, blockersOf };
+  const posts = postings(input);
+  const tierOfJob = (j: { company: string; title: string; description: string }) => fitOf(j, policy, h1b.get(employerKey(j.company))).tier;
+  const tierOf = (p: { job: { company: string; title: string; description: string } }) => tierOfJob(p.job);
+  return { ledger, catalog, h1b, today, policy, input, posts, tierOf, tierOfJob, queue: agentQueue(posts, policy, tierOf) };
+}
+
 switch (command) {
   case "apply": {
     if (!url) throw new Error("usage: jh apply <url>");
@@ -215,24 +235,12 @@ switch (command) {
   case "today": {
     // The candidate's daily page: every posting's one state, her to-dos ranked by what they unblock.
     const u = user();
-    const ledger = ledgerOf(u.dir);
-    const catalog = readCatalog(paths(u.dir).catalog);
-    const labels = new Map(readLabels(u.dir).map((l) => [l.key, l.label]));
-    const today = new Date().toISOString().slice(0, 10);
-    const input = { jobs: catalog.values(), labels, apps: applicationIndex(ledger.latest()), h1b: readH1b(u.dir), policy: u.search, payFloor: expectationFloor(u.profile.salaryExpectation), today };
-    const posts = postings(input);
-    const blockers: Blocker[] = [];
-    for (const p of posts) {
-      if (p.state !== "held" || !p.app) continue;
-      const runDir = ledger.history(p.app.key as Parameters<typeof ledger.history>[0]).at(-1)?.runDir;
-      const planFile = runDir ? `${runDir}/plan.json` : "";
-      if (!planFile || !existsSync(planFile)) continue;
-      const plan = buildPlan(JSON.parse(readFileSync(planFile, "utf8")).form, u.profile, u.bank);
-      for (const it of plan.items) if (it.field.required && it.status === "blocked") blockers.push({ company: p.job.company, title: p.job.title, question: it.field.label });
-    }
-    const appliedToday = [...new Map(posts.filter((p) => p.app && ["submitted", "confirmed", "unconfirmed"].includes(p.app.state) && p.app.at.slice(0, 10) === today).map((p) => [p.app!.key, p])).values()];
-    const md = renderToday({ ...input, posts, blockers, appliedToday });
-    const out = join("docs", "today", `${today}.md`);
+    const w = gather(u);
+    const blockers: Blocker[] = w.posts.filter((p) => p.state === "held").flatMap((p) => (p.blockers ?? []).map((question) => ({ company: p.job.company, title: p.job.title, question })));
+    const appliedToday = [...new Map(w.posts.filter((p) => p.app && ["submitted", "confirmed", "unconfirmed"].includes(p.app.state) && p.app.at.slice(0, 10) === w.today).map((p) => [p.app!.key, p])).values()];
+    const pendingFile = join("docs", "pending-decisions.md");
+    const md = renderToday({ ...w.input, posts: w.posts, blockers, appliedToday, tierOf: w.tierOf, queueSize: w.queue.length, pending: existsSync(pendingFile) ? readFileSync(pendingFile, "utf8") : undefined });
+    const out = join("docs", "today", `${w.today}.md`);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, md);
     writeFileSync(join("docs", "TODAY.md"), md);
@@ -263,66 +271,21 @@ switch (command) {
     break;
   }
   case "apply-approved": {
+    // Runs the agent's queue from the same state model as docs/TODAY.md (src/discover/today.ts).
     const u = user();
-    const ledger = ledgerOf(u.dir);
-    const catalog = readCatalog(paths(u.dir).catalog);
-    const labels = new Map(readLabels(u.dir).map((l) => [l.key, l]));
-    // One eligibility answer per posting, from data/policy.yaml (src/discover/eligibility.ts).
-    const fit = [...labels.values()].filter((l) => l.label === "fit");
-    // Triage promoted to auto (by the candidate, jh trust promote triage): every
-    // current match counts as approved too, unless she labeled it not_fit.
-    const auto = readTrust(u.dir).triage.level === "auto" || u.search.approveMatches;
-    const matched = auto ? [...catalog.values()].filter((j) => j.triage?.verdict === "match") : [];
-    const h1b = readH1b(u.dir);
-    const today = new Date().toISOString().slice(0, 10);
-    const policy = values.since ? { ...u.search, windowDays: Math.max(1, Math.ceil((Date.parse(today) - Date.parse(values.since)) / 86400000)) } : u.search;
-    const payFloor = expectationFloor(u.profile.salaryExpectation);
-    const why = new Map<string, number>();
-    const ready = [...new Set([...fit.map((l) => l.key as JobKey), ...matched.map((j) => j.key)])]
-      .map((k) => catalog.get(k))
-      .filter((j): j is NonNullable<typeof j> => Boolean(j))
-      .filter((j) => {
-        const e = eligibility({ job: j, label: labels.get(j.key)?.label, h1b: h1b.get(employerKey(j.company)), policy, payFloor, today });
-        for (const r of e.reasons) { const k = r.replace(/posted .*/, "posted outside the window").replace(/\(.*\)/, "").trim(); why.set(k, (why.get(k) ?? 0) + 1); }
-        const adapter = j.key.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(j.key)) || (WORKDAY_READY && j.key.startsWith("workday:"));
-        return e.ok && adapter;
-      })
-      .filter((j) => {
-        const prior = sameJob(ledger, j.url);
-        if (!prior) return true;
-        if (!ledger.canStart(prior.key)) return false;
-        // Held only on something the candidate must sign: a rerun cannot change it.
-        const last = ledger.history(prior.key).at(-1);
-        const reasons = ((last?.detail as { reasons?: string[] } | undefined)?.reasons ?? []).filter((r) => !/trust level|autoSubmitAts|low confidence|generated answer/.test(r));
-        const signed = reasons.filter((r) => /legal attestations need the candidate/.test(r)).map((r) => /^required "(.+?)":/.exec(r)?.[1]);
-        const rest = reasons.filter((r) => !/legal attestations need the candidate/.test(r) && !signed.some((l) => l && r === `required "${l}" is empty after filling`));
-        return !(last?.state === "held" && signed.length > 0 && rest.length === 0);
-      });
-    console.log(`not eligible: ${[...why].sort((x, y) => y[1] - x[1]).map(([k, n]) => `${n} ${k}`).join("; ") || "none"}`);
+    const w = gather(u, values.since);
+    const ledger = w.ledger;
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
-    console.log(`${ready.length} eligible postings on the agent's ATS not yet applied to; trying up to ${limit}`);
+    const adapter = (k: string) => k.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(k)) || (WORKDAY_READY && k.startsWith("workday:"));
+    const queue = w.queue.filter((p) => adapter(p.job.key));
+    const fresh = queue.filter((p) => !p.app).map((p) => p.job);
+    const retries = queue.filter((p) => p.app).map((p) => p.job);
+    console.log(`agent queue: ${fresh.length} never tried, ${retries.length} held ones today's rules now fully answer; trying up to ${limit}`);
     // The candidate (2026-10-29): never several applications to one company at once.
     // Interleave companies, and leave two minutes between submissions to the same one.
-    // Never-tried postings first, newest first (policy.applyLast at the end); then held ones that
-    // today's rules can now fully answer (questions waiting on the candidate would only hold them again).
-    const tierOf = (j: (typeof ready)[number]) => fitOf(j, policy, h1b.get(employerKey(j.company))).tier;
-    const fresh = applyOrder(ready.filter((j) => !sameJob(ledger, j.url)), policy, tierOf);
-    let waiting = 0;
-    const retries = applyOrder(ready.filter((j) => {
-      const prior = sameJob(ledger, j.url);
-      if (!prior) return false;
-      const runDir = ledger.history(prior.key).at(-1)?.runDir;
-      const planFile = runDir ? `${runDir}/plan.json` : "";
-      if (!planFile || !existsSync(planFile)) return true;
-      const plan = buildPlan(JSON.parse(readFileSync(planFile, "utf8")).form, u.profile, u.bank);
-      const blocked = plan.items.some((i) => i.field.required && i.status === "blocked");
-      if (blocked) waiting++;
-      return !blocked;
-    }), policy, tierOf);
-    console.log(`${fresh.length} never tried; ${retries.length} held ones now fully answerable; ${waiting} still waiting on questions for the candidate`);
     const order = [...interleaveByCompany(fresh), ...interleaveByCompany(retries)].slice(0, limit);
     if (values.list) {
-      for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${tierOf(j)}  ${postedOn(j) || "no date   "}  ${sameJob(ledger, j.url) ? "retry" : "new  "}  ${j.company} · ${j.title}`);
+      for (const [i, j] of order.entries()) console.log(`${String(i + 1).padStart(3)}. ${w.tierOfJob(j)}  ${postedOn(j) || "no date   "}  ${retries.includes(j) ? "retry" : "new  "}  ${j.company} · ${j.title}`);
       break;
     }
     const lastAt = new Map<string, number>();

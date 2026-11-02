@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applicationIndex, postingIdOf, postings, renderToday } from "../src/discover/today.ts";
+import { agentQueue, applicationIndex, postingIdOf, postings, renderToday } from "../src/discover/today.ts";
 import { Policy } from "../src/profile/schema.ts";
 
 const policy = Policy.parse({ windowDays: 30, h1bRequiredSince: 2023, agentAts: ["greenhouse"] });
@@ -26,8 +26,22 @@ describe("one identity and one state per posting", () => {
     const ps = postings({ jobs: [job("greenhouse:1", { triage: { verdict: "review", rule: "level.unclear", reason: "" } }), job("greenhouse:2", { title: "Senior ML Engineer" })], labels: new Map(), apps: new Map(), h1b: new Map([["acme", sponsor]]), policy, today: "2026-11-02" });
     expect(ps.map((p) => p.state)).toEqual(["review", "skipped"]);
   });
+  it("puts a held application back in the agent's queue once nothing blocks it", () => {
+    const apps = applicationIndex([{ key: "greenhouse:job-boards.greenhouse.io/acme/jobs/7", state: "held", at: "2026-10-31T00:00:00Z" }]);
+    const base = { jobs: [job("greenhouse:7")], labels: new Map(), apps, h1b: new Map([["acme", sponsor]]), policy, today: "2026-11-02" };
+    expect(postings({ ...base, blockersOf: () => ["Why Acme?"] })[0]!.state).toBe("held");
+    const ps = postings({ ...base, blockersOf: () => [] });
+    expect(ps[0]!.state).toBe("agent_queue");
+    expect(agentQueue(ps, policy, () => "A").map((p) => p.job.key)).toEqual(["greenhouse:7"]);
+  });
+  it("refuses to print numbers that do not reconcile with the apply queue", () => {
+    const ps = postings({ jobs: [job("greenhouse:9")], labels: new Map(), apps: new Map(), h1b: new Map([["acme", sponsor]]), policy, today: "2026-11-02" });
+    const args = { jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: ps, appliedToday: [], blockers: [], tierOf: () => "A" as const };
+    expect(() => renderToday({ ...args, queueSize: 0 })).toThrow(/apply-approved's queue/);
+    expect(renderToday({ ...args, queueSize: 1 })).toContain("| agent 待投 | 1 | 0 | 0 | 1 |");
+  });
   it("ranks to-dos by how many applications they unblock", () => {
-    const md = renderToday({ jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: [], appliedToday: [], blockers: [
+    const md = renderToday({ jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: [], appliedToday: [], tierOf: () => "A", queueSize: 0, blockers: [
       { company: "Skild AI", title: "A", question: "Why do you want to work at Skild AI?" },
       { company: "Skild AI", title: "B", question: "Why do you want to work at Skild AI?" },
       { company: "Acme", title: "C", question: "Pronouns" },

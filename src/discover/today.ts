@@ -35,6 +35,7 @@ export interface Posting {
   state: PostingState;
   eligibility: Eligibility;
   app?: AppEvent | undefined;
+  blockers?: string[] | undefined;
 }
 
 // A posting found through a third-party link resolves to its official id through the link check.
@@ -43,11 +44,13 @@ const idsOf = (j: Job): string[] => {
   return final ? [j.key, jobKey(final)] : [j.key];
 };
 
-export function postingState(job: Job, e: Eligibility, app: AppEvent | undefined): PostingState {
+// blockers: for a held application, the required questions today's rules still cannot answer
+// (undefined when unknown). A held application with none left goes back to the agent's queue.
+export function postingState(job: Job, e: Eligibility, app: AppEvent | undefined, blockers?: string[]): PostingState {
   if (app?.state === "confirmed" || app?.state === "submitted") return "applied";
   if (app?.state === "unconfirmed") return "unconfirmed";
   // A held application counts only while the posting is still one to apply to.
-  if (app?.state === "held") return e.ok ? "held" : "skipped";
+  if (app?.state === "held") return !e.ok ? "skipped" : blockers?.length === 0 && e.lane === "agent" ? "agent_queue" : "held";
   if (e.ok) return e.lane === "agent" ? "agent_queue" : "yours";
   if (job.triage.verdict === "review" && e.reasons.every((r) => r.startsWith("not a match"))) return "review";
   return "skipped";
@@ -61,6 +64,8 @@ export interface TodayInput {
   policy: Policy;
   payFloor?: number | undefined;
   today: string;
+  // For a held application: the required questions today's rules cannot answer (read from its last form).
+  blockersOf?: ((app: AppEvent) => string[] | undefined) | undefined;
 }
 
 export function postings(i: TodayInput): Posting[] {
@@ -68,9 +73,19 @@ export function postings(i: TodayInput): Posting[] {
   for (const job of i.jobs) {
     const app = idsOf(job).map((id) => i.apps.get(id)).find(Boolean);
     const e = eligibility({ job, label: i.labels.get(job.key), h1b: i.h1b.get(employerKey(job.company)), policy: i.policy, payFloor: i.payFloor, today: i.today });
-    out.push({ job, state: postingState(job, e, app), eligibility: e, app });
+    const blockers = app?.state === "held" && e.ok ? i.blockersOf?.(app) : undefined;
+    out.push({ job, state: postingState(job, e, app, blockers), eligibility: e, app, blockers });
   }
   return out;
+}
+
+// The agent's work list, the one apply-approved runs: never-tried postings and held ones
+// today's rules now fully answer, on the agent's lane, best tier first, newest first.
+export function agentQueue(posts: Posting[], policy: Policy, tierOf: (p: Posting) => "A" | "B" | "C"): Posting[] {
+  const q = posts.filter((p) => p.state === "agent_queue");
+  const keyed = q.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen }));
+  const order = (xs: typeof keyed) => applyOrder(xs, policy, (x) => tierOf(x));
+  return [...order(keyed.filter((p) => !p.app)), ...order(keyed.filter((p) => p.app))];
 }
 
 // What a held application is waiting on: one line per required question the rules cannot answer.
@@ -78,6 +93,20 @@ export interface Blocker {
   company: string;
   title: string;
   question: string;
+}
+
+export function atsOf(j: Job): string {
+  const k = j.key.split(":")[0]!;
+  if (["greenhouse", "workday", "ashby", "lever"].includes(k)) return k;
+  const u = j.link?.finalUrl || j.url;
+  return /myworkdayjobs/.test(u) ? "workday" : /greenhouse|gh_jid/.test(u) ? "greenhouse" : /ashbyhq/.test(u) ? "ashby" : /lever\.co/.test(u) ? "lever" : "company site";
+}
+
+// Who acts next on a live posting, for the overview table.
+export function whoOf(p: Posting): string {
+  if (p.state === "agent_queue") return "agent 待投";
+  if (p.state === "held") return p.eligibility.lane === "agent" ? "agent 已填、等你答题" : `你投 · ${atsOf(p.job)}（已开始、等你答题）`;
+  return `你投 · ${atsOf(p.job)}`;
 }
 
 const STATE_LABEL: Record<PostingState, string> = {
@@ -92,18 +121,28 @@ const STATE_LABEL: Record<PostingState, string> = {
 
 const cell = (s: string) => s.replace(/\|/g, "/").replace(/\s+/g, " ").trim();
 
-export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocker[]; appliedToday: Posting[]; notes?: string[] }): string {
+export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocker[]; appliedToday: Posting[]; tierOf: (p: Posting) => "A" | "B" | "C"; queueSize: number; pending?: string | undefined; notes?: string[] }): string {
   const since = new Date(Date.parse(`${i.today}T00:00:00Z`) - i.policy.windowDays * 86400000).toISOString().slice(0, 10);
-  const live = i.posts.filter((p) => postedOn(p.job) >= since && ["agent_queue", "yours", "held", "applied", "unconfirmed"].includes(p.state));
-  const count = (s: PostingState) => i.posts.filter((p) => p.state === s && postedOn(p.job) >= since).length;
-  const L: string[] = [`# 今日 · ${i.today}`, "", `规则来自 \`data/policy.yaml\`：最近 ${i.policy.windowDays} 天发布、有 H-1B 记录、不是纯高级岗。`, ""];
+  const inWindow = i.posts.filter((p) => postedOn(p.job) >= since);
+  const live = inWindow.filter((p) => ["agent_queue", "yours", "held", "applied", "unconfirmed"].includes(p.state));
+  const open = inWindow.filter((p) => ["agent_queue", "yours", "held"].includes(p.state));
+  const count = (s: PostingState) => inWindow.filter((p) => p.state === s).length;
+  // Self-checks: the page refuses to print numbers that do not reconcile.
+  const states: PostingState[] = ["applied", "unconfirmed", "held", "agent_queue", "yours", "review", "skipped"];
+  if (states.reduce((n, s) => n + count(s), 0) !== inWindow.length) throw new Error("today: posting states do not add up to the postings in the window");
+  if (count("agent_queue") + i.posts.filter((p) => p.state === "agent_queue" && postedOn(p.job) < since).length !== i.queueSize) throw new Error(`today: ${count("agent_queue")} agent_queue postings but apply-approved's queue has ${i.queueSize}`);
+  const L: string[] = [`# 今日 · ${i.today}`, "", `规则来自 \`data/policy.yaml\`：最近 ${i.policy.windowDays} 天发布（${since} 起）、有 H-1B 记录、不是纯高级岗。下面的数字都经过自检：各状态之和等于总数，agent 待投与投递命令的队列一致。`, ""];
   if (i.notes?.length) L.push(...i.notes.map((n) => `> ${n}`), "");
-  L.push(
-    "| 已投出 | 未确认 | 卡住 | agent 待投 | 你投 | 待复核 |",
-    "|---|---|---|---|---|---|",
-    `| ${count("applied")} | ${count("unconfirmed")} | ${count("held")} | ${count("agent_queue")} | ${count("yours")} | ${count("review")} |`,
-    "",
-  );
+  L.push(`**最近 ${i.policy.windowDays} 天的岗位**：已投出 ${count("applied")}，已提交未确认 ${count("unconfirmed")}，还没投出的 ${open.length}，待复核 ${count("review")}，不投 ${count("skipped")}。`, "");
+  const who = new Map<string, Record<"A" | "B" | "C", number>>();
+  for (const p of open) { const k = whoOf(p); const r = who.get(k) ?? { A: 0, B: 0, C: 0 }; r[i.tierOf(p)]++; who.set(k, r); }
+  const order = (k: string) => (k.startsWith("agent 待投") ? 0 : k.startsWith("agent 已填") ? 1 : 2);
+  L.push("## 还没投出的岗位：谁来投 × 档位", "", "| 谁来投 | A | B | C | 合计 |", "|---|---|---|---|---|");
+  let tA = 0, tB = 0, tC = 0;
+  for (const [k, r] of [...who].sort((a, b) => order(a[0]) - order(b[0]) || (b[1].A + b[1].B + b[1].C) - (a[1].A + a[1].B + a[1].C))) { L.push(`| ${k} | ${r.A} | ${r.B} | ${r.C} | ${r.A + r.B + r.C} |`); tA += r.A; tB += r.B; tC += r.C; }
+  L.push(`| **合计** | ${tA} | ${tB} | ${tC} | ${tA + tB + tC} |`, "");
+  if (tA + tB + tC !== open.length) throw new Error("today: the overview table does not add up to the open postings");
+  if (i.pending?.trim()) L.push("## 等你决定的事", "", i.pending.trim(), "");
 
   L.push(`## 一、今天投出的（${i.appliedToday.length}）`, "");
   for (const p of i.appliedToday) L.push(`- ${cell(p.job.company)} · ${cell(p.job.title)}${p.state === "unconfirmed" ? "（未确认）" : ""}`);
@@ -121,9 +160,9 @@ export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocke
   for (const [q, bs] of todos.slice(0, 30)) L.push(`- **放行 ${bs.length} 份**：${cell(q).slice(0, 160)}（${[...new Set(bs.map((b) => `${b.company} · ${b.title}`))].map(cell).slice(0, 4).join("；")}${bs.length > 4 ? " 等" : ""}）`);
   L.push("");
 
-  L.push(`## 三、可投岗位（最近 ${i.policy.windowDays} 天，按发布时间从新到旧）`, "", "| 发布 | 公司 · 岗位 | 地点 | 状态 | 链接 |", "|---|---|---|---|---|");
-  const ordered = applyOrder(live.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen })), i.policy);
-  for (const p of ordered) L.push(`| ${postedOn(p.job) || "—"} | ${cell(p.job.company)} · ${cell(p.job.title)} | ${cell(p.job.location).slice(0, 40)} | ${STATE_LABEL[p.state]} | ${p.job.link?.finalUrl || p.job.url} |`);
+  L.push(`## 三、还没投出的岗位（档位优先，同档按发布时间从新到旧）`, "", "| 档 | 发布 | 公司 · 岗位 | 地点 | 谁来投 | 链接 |", "|---|---|---|---|---|---|");
+  const ordered = applyOrder(open.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen })), i.policy, (p) => i.tierOf(p));
+  for (const p of ordered) L.push(`| ${i.tierOf(p)} | ${postedOn(p.job) || "—"} | ${cell(p.job.company)} · ${cell(p.job.title)} | ${cell(p.job.location).slice(0, 40)} | ${whoOf(p)} | ${p.job.link?.finalUrl || p.job.url} |`);
   L.push("");
 
   const why = new Map<string, number>();

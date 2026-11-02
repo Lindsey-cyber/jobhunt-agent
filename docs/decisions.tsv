@@ -1,0 +1,4 @@
+ts	phase	decision	why	evidence	result
+2026-11-02T06:38:27Z	start	new run: make every number on docs/TODAY.md trustworthy	candidate asked for numbers she can trust without checking by hand	session c219b761	open
+2026-11-02T06:38:27Z	frame	done = apply-approved and jh today share one state model; today asserts its counts add up; agent queue on the page equals what apply-approved would try; page shows who-applies x tier table and pending decisions	her request 2026-11-02; numbers 691 vs 538 and 11 vs 0 disagreed	docs/eligible-2026-11-02.md, chat	open
+2026-11-02T06:41:52Z	build	apply-approved and jh today now read one state model (gather + agentQueue); old candidate logic deleted; today throws when states do not add up or its agent queue differs from apply-approved's	two code paths gave 11 vs 0	tests/today.test.ts; jh today vs apply-approved --list: 14 = 11 + 3	verified

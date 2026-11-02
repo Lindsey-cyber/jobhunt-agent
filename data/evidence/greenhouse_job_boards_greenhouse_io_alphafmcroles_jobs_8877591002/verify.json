@@ -1,0 +1,126 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38799007002",
+      "label": "Are you legally authorized to work for any US Employer at the time of application?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38799008002",
+      "label": "Will you now or in the future require any kind of sponsorship for employment?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38799010002",
+      "label": "If hired, what is the earliest date you would be available to start?",
+      "expected": "November 15, 2026",
+      "actual": "November 15, 2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38799011002",
+      "label": "Are you able and willing to work onsite full-time in the Colombia Missouri area?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38799012002",
+      "label": "Please share your target compensation - this can be a range, or a specific amount.",
+      "expected": "$100K–$150K",
+      "actual": "$100K–$150K",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38799013002",
+      "label": "Please share your LinkedIn profile hyperlink.",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38799014002",
+      "label": "How did you hear about this position or Alpha FMC?",
+      "expected": "LinkedIn",
+      "actual": "LinkedIn",
+      "pass": true
+    },
+    {
+      "fieldId": "4000943002",
+      "label": "What is your sexual orientation?",
+      "expected": "Prefer not to disclose",
+      "actual": "Prefer not to disclose",
+      "pass": true
+    },
+    {
+      "fieldId": "4000945002",
+      "label": "Do you have any children?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "4000949002",
+      "label": "What best describes your ethnicity?",
+      "expected": "Prefer not to disclose",
+      "actual": "Prefer not to disclose",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

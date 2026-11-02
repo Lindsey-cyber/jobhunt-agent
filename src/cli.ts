@@ -1,6 +1,6 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { buildPlan } from "./plan/plan.ts";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { queueQuestions } from "./store/questions.ts";
 import { parseArgs } from "node:util";
 import { chromium } from "playwright";
@@ -8,6 +8,7 @@ import { loadUserData } from "./profile/load.ts";
 import { apply, sameJob } from "./run/apply.ts";
 import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
 import { applyOrder, eligibility, postedOn } from "./discover/eligibility.ts";
+import { applicationIndex, postings, renderToday, type Blocker } from "./discover/today.ts";
 import { lookupH1b } from "./sources/h1b.ts";
 import { pool } from "./sources/http.ts";
 import { readH1b, writeH1b } from "./store/h1b.ts";
@@ -161,6 +162,33 @@ switch (command) {
     const u = user();
     const n = queueQuestions(ledgerOf(u.dir), new ReviewList(paths(u.dir).review));
     console.log(`${n} distinct questions hold applications; see jh pending and answer with jh answer <id> <text>`);
+    break;
+  }
+  case "today": {
+    // The candidate's daily page: every posting's one state, her to-dos ranked by what they unblock.
+    const u = user();
+    const ledger = ledgerOf(u.dir);
+    const catalog = readCatalog(paths(u.dir).catalog);
+    const labels = new Map(readLabels(u.dir).map((l) => [l.key, l.label]));
+    const today = new Date().toISOString().slice(0, 10);
+    const input = { jobs: catalog.values(), labels, apps: applicationIndex(ledger.latest()), h1b: readH1b(u.dir), policy: u.search, payFloor: expectationFloor(u.profile.salaryExpectation), today };
+    const posts = postings(input);
+    const blockers: Blocker[] = [];
+    for (const p of posts) {
+      if (p.state !== "held" || !p.app) continue;
+      const runDir = ledger.history(p.app.key as Parameters<typeof ledger.history>[0]).at(-1)?.runDir;
+      const planFile = runDir ? `${runDir}/plan.json` : "";
+      if (!planFile || !existsSync(planFile)) continue;
+      const plan = buildPlan(JSON.parse(readFileSync(planFile, "utf8")).form, u.profile, u.bank);
+      for (const it of plan.items) if (it.field.required && it.status === "blocked") blockers.push({ company: p.job.company, title: p.job.title, question: it.field.label });
+    }
+    const appliedToday = [...new Map(posts.filter((p) => p.app && ["submitted", "confirmed", "unconfirmed"].includes(p.app.state) && p.app.at.slice(0, 10) === today).map((p) => [p.app!.key, p])).values()];
+    const md = renderToday({ ...input, posts, blockers, appliedToday });
+    const out = join("docs", "today", `${today}.md`);
+    mkdirSync(dirname(out), { recursive: true });
+    writeFileSync(out, md);
+    writeFileSync(join("docs", "TODAY.md"), md);
+    console.log(`wrote ${out} (and docs/TODAY.md)`);
     break;
   }
   case "h1b": {

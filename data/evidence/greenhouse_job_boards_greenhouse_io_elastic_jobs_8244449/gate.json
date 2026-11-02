@@ -1,0 +1,17 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"In what countries do you have the unrestricted right to work?\": no answer in profile or answer bank",
+    "required \"Describe a specific project in three parts: (1) What HR or talent data source did you work with directly, and what was your role in extracting or building on it? (2) Which teams or stakeholders did this work support? (3) What decision or outcome did it enable?\": no answer in profile or answer bank",
+    "required \"Where did you gain your GCP experience? Please list the company and role(s), approximate dates, and the specific GCP tools you used (for example, BigQuery, dbt, Cloud Composer, Dataflow).\": no answer in profile or answer bank",
+    "required \"How should we communicate with you?\": no answer in profile or answer bank",
+    "required \"Which of the following have you personally done in a professional role? (select all that apply)\": no answer in profile or answer bank",
+    "required \"Which of the following have you personally Built, extended, or substantially modified in a production environment? (select all that apply)\": no answer in profile or answer bank",
+    "required \"In what countries do you have the unrestricted right to work?\" is empty after filling",
+    "required \"Describe a specific project in three parts: (1) What HR or talent data source did you work with directly, and what was your role in extracting or building on it? (2) Which teams or stakeholders did this work support? (3) What decision or outcome did it enable?\" is empty after filling",
+    "required \"Where did you gain your GCP experience? Please list the company and role(s), approximate dates, and the specific GCP tools you used (for example, BigQuery, dbt, Cloud Composer, Dataflow).\" is empty after filling",
+    "required \"How should we communicate with you?\" is empty after filling",
+    "required \"Which of the following have you personally done in a professional role? (select all that apply)\" is empty after filling",
+    "required \"Which of the following have you personally Built, extended, or substantially modified in a production environment? (select all that apply)\" is empty after filling"
+  ]
+}

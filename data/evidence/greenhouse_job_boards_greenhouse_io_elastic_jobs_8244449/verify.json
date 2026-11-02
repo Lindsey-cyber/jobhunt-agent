@@ -1,0 +1,147 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "first_name",
+      "label": "First Name",
+      "expected": "Lanxin",
+      "actual": "Lanxin",
+      "pass": true
+    },
+    {
+      "fieldId": "last_name",
+      "label": "Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "preferred_name",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "country",
+      "label": "Country",
+      "expected": "United States",
+      "actual": "United States",
+      "pass": true
+    },
+    {
+      "fieldId": "phone",
+      "label": "Phone",
+      "expected": "9786681426",
+      "actual": "(978) 668-1426",
+      "pass": true
+    },
+    {
+      "fieldId": "candidate-location",
+      "label": "Location (City)",
+      "expected": "New York, New York, United States",
+      "actual": "New York, New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "resume",
+      "label": "Resume/CV",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "school--0",
+      "label": "School",
+      "expected": "Columbia University",
+      "actual": "Columbia University",
+      "pass": true
+    },
+    {
+      "fieldId": "degree--0",
+      "label": "Degree",
+      "expected": "Master's Degree",
+      "actual": "Master's Degree",
+      "pass": true
+    },
+    {
+      "fieldId": "discipline--0",
+      "label": "Discipline",
+      "expected": "Statistics & Decision Theory",
+      "actual": "Statistics & Decision Theory",
+      "pass": true
+    },
+    {
+      "fieldId": "start-year--0",
+      "label": "Start date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "end-year--0",
+      "label": "End date year",
+      "expected": "2026",
+      "actual": "2026",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69548931",
+      "label": "Professional Profile (LinkedIn, Github, Website, etc)",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69548932",
+      "label": "Will you require Elastic's sponsorship to continue or extend your work authorization status?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_69548935",
+      "label": "By selecting 'I acknowledge' and submitting this application, you confirm that you have read Elastic's Candidate Privacy Statement and understand how your data will be processed to evaluate your candidacy. In jurisdictions where consent is legally required, your submission constitutes express consent to the processing of your personal data for recruitment purposes.",
+      "expected": "I acknowledge",
+      "actual": "I acknowledge",
+      "pass": true
+    },
+    {
+      "fieldId": "gender",
+      "label": "Gender",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "hispanic_ethnicity",
+      "label": "Are you Hispanic/Latino?",
+      "expected": "Decline To Self Identify",
+      "actual": "Decline To Self Identify",
+      "pass": true
+    },
+    {
+      "fieldId": "veteran_status",
+      "label": "Veteran Status",
+      "expected": "I am not a protected veteran",
+      "actual": "I am not a protected veteran",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "In what countries do you have the unrestricted right to work?",
+    "Describe a specific project in three parts: (1) What HR or talent data source did you work with directly, and what was your role in extracting or building on it? (2) Which teams or stakeholders did this work support? (3) What decision or outcome did it enable?",
+    "Where did you gain your GCP experience? Please list the company and role(s), approximate dates, and the specific GCP tools you used (for example, BigQuery, dbt, Cloud Composer, Dataflow).",
+    "How should we communicate with you?",
+    "Which of the following have you personally done in a professional role? (select all that apply)",
+    "Which of the following have you personally Built, extended, or substantially modified in a production environment? (select all that apply)"
+  ],
+  "fillErrors": []
+}

@@ -32,7 +32,9 @@
 | W3 | 2 监控名单不对 | `config/watchlist.yaml` 每家有规模；去掉与目标无关的公司；按 H-1B 申请量 + AI/ML 招聘补全美国中大型科技公司；附重建脚本可重跑 | — | — | 待派 |
 | W4 | 3 来源没逐项落地 | 来源登记表（代码里一张表，报告逐行显示）；Workday 岗位有发布日期；邮件提醒只有标题的岗位找到官方页或标明找不到 | — | — | 待派 |
 | W6 | 3 来源没逐项落地（新来源） | 登记表里每个"未做"的来源接入或证明没有可用接口：VC 投资组合招聘页、YC、AI/ML 专业招聘平台、同行/竞品/融资网络、Brave/Tavily 补漏 | — | — | 等 W4 的登记表合入后派 |
-| W5 | 4 信任金字塔倒置 | 盘点 CLAUDE.md、交接文档、聊天里的文字规则，列出每条能否/如何变成测试或类型；只读，交清单 | — | — | 待派 |
+| W5 | 4 信任金字塔倒置 | 盘点文字规则，列出每条能否/如何变成测试或类型；只读，交清单 | sonnet | 总 agent 抽查 3 条 | **通过**：55 条规则，约 30 条可变成检查；抽查 3/3 属实 |
+| W7 | 4 信任金字塔倒置（落地） | 按 W5 清单优先级：投递唯一入口（src/run/apply.ts）提交前再问 eligibility 和阶段门（**已证实：`jh apply <url>` 现在完全不看 policy**）；每个填入的值必须带来源，否则不提交；policy/profile schema 严格（未知字段报错）；H-1B 起始年份只留 policy 一处；structure 测试禁止别处过滤、禁止发现阶段碰投递代码；`jh selftest` 跑固定测试页并纳入 check。每条一个测试 | — | — | 等 W1 合入后派 |
+| W8 | 4（文档与代码矛盾） | W5 列出的 11 处矛盾/过时：交接文档、skills、ARCHITECTURE、DESIGN 与现行代码一致；过时文档列出后删除 | — | — | 等 W1–W4 合入后派 |
 
 覆盖率测量文件格式（W1 读、W2 写）：`data/coverage/<YYYY-MM-DD>.json` = `{ "date": "YYYY-MM-DD", "sources": string[], "n": number, "inCatalog": number, "inCatalogNotRejected": number, "misses": [{ "company": string, "title": string, "url": string, "cause": string }] }`。
 
@@ -41,6 +43,7 @@
 
 | 日期 | 工作流 | 工人模型 | 审核模型 | 结论 | 返工 | 缺陷 |
 |---|---|---|---|---|---|---|
+| 2026-11-02 | W5 | sonnet | 总 agent 抽查 | 通过 | 0 | 0（抽查 3 条全部属实） |
 
 ## 等候选人决定的事
 无。

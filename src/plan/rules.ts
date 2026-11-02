@@ -915,25 +915,33 @@ export const PROFILE_RULES: ProfileRule[] = [
     },
   },
   { path: "eeo.hispanicLatino", pattern: /\b(hispanic|latino)\b/, resolve: (p) => p.eeo.hispanicLatino },
-  // DoorDash: "Do you identify as transgender?" follows the gender choice (decline).
   // DoorDash: "Do you identify as transgender?" The candidate gave no answer: decline.
-  // Pronouns follow her gender choice: undisclosed where the list lets her decline.
-  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation|lgbtq?i?a?)\b|^(your )?pronouns?$|^what are your (preferred )?(personal )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
+  { path: "eeo.gender", pattern: /\b(transgender|sexual orientation|lgbtq?i?a?)\b/, kinds: ["select", "radio", "combobox"], resolve: () => "decline" },
+  { path: "eeo.ifNoDecline.pronouns", pattern: /^(your )?pronouns?$|^what are your (preferred )?(personal )?pronouns$/, kinds: ["select", "radio", "combobox"], resolve: (p, _l, ctx) => declineOr(p, "pronouns", "decline", ctx.options) },
   // Chime: a bare "I identify as:" whose choices are cisgender / transgender is the same question: decline.
   { path: "eeo.gender", pattern: /^i identify as:?$/, kinds: ["select", "radio", "combobox"], resolve: (_p, _l, ctx) => ((ctx.options ?? []).some((o) => /\b(cis|trans)gender\b/i.test(o)) ? "decline" : undefined) },
-  // The candidate (2026-10-29): decline when the form lets her; when it requires a choice, her genderIfRequired.
   {
     path: "eeo.gender",
     pattern: /^(gender|sex)$|^your (gender|sex)$|\b(indicate|select|describe|identify) your (gender|sex)\b|^gender identity$|\bidentify my gender\b|^what is your (gender|sex)$/,
-    resolve: (p, _label, ctx) => {
-      const opts = ctx.options ?? [];
-      if (p.eeo.gender !== "decline" || !opts.length || opts.some((o) => DECLINE.test(normalize(o)))) return p.eeo.gender;
-      return p.eeo.genderIfRequired ?? p.eeo.gender;
-    },
+    resolve: (p, _label, ctx) => declineOr(p, "gender", p.eeo.gender, ctx.options),
   },
-  { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|^race\b|\byour (race|ethnicity)\b|\brace ?\/? ?ethnic|\bethnic group\b|\bracial ethnic background\b|\bidentify my ethnicity\b/, resolve: (p) => p.eeo.race },
+  { path: "eeo.race", pattern: /^(race|ethnicity|race ethnicity)$|^race\b|\byour (race|ethnicity)\b|\brace ?\/? ?ethnic|\bethnic group\b|\bracial ethnic background\b|\bidentify my ethnicity\b/, resolve: (p, _label, ctx) => declineOr(p, "race", p.eeo.race, ctx.options) },
   { path: "eeo.veteran", pattern: /\bveterans?\b/, resolve: (p) => p.eeo.veteran },
   { path: "eeo.disability", pattern: /\bdisability\b/, resolve: (p) => p.eeo.disability },
 ];
+
+// The candidate (2026-10-29, 2026-11-02): decline gender, race and pronouns when the choices allow it;
+// only when they offer no way to decline, her eeo.ifNoDecline answer, as the one choice that spells it
+// ("Asian" picks "Asian (Not Hispanic or Latino)", never "Asian Indian"). No unique choice: no answer.
+function declineOr(p: Profile, key: keyof Profile["eeo"]["ifNoDecline"], answer: string, options: string[] = []): string | undefined {
+  if (answer !== "decline" || !options.length || options.some((o) => DECLINE.test(normalize(o)))) return answer;
+  const want = p.eeo.ifNoDecline[key]?.toLowerCase().replace(/\s*\/\s*/g, "/");
+  if (!want) return undefined;
+  const hits = options.filter((o) => {
+    const rest = o.toLowerCase().replace(/\s*\/\s*/g, "/").trim();
+    return rest.startsWith(want) && /^($|\s*[(/,-])/.test(rest.slice(want.length));
+  });
+  return hits.length === 1 ? hits[0] : undefined;
+}
 
 export const RESUME = /\b(resume|cv)\b/;

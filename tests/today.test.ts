@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { agentQueue, applicationIndex, postingIdOf, postings, renderToday } from "../src/discover/today.ts";
 import { Policy } from "../src/profile/schema.ts";
 
-const policy = Policy.parse({ windowDays: 30, h1bRequiredSince: 2023, agentAts: ["greenhouse"] });
+const policy = Policy.parse({ freshDays: 30, h1bRequiredSince: 2023, agentAts: ["greenhouse"] });
 const sponsor = { company: "Acme", matched: ["ACME INC"], filings: 3, checkedAt: "2026-11-02" };
 const job = (key: string, over: Record<string, unknown> = {}) => ({ key, company: "Acme", title: "ML Engineer, New Grad", location: "New York, NY", url: `https://x/${key}`, description: "", publishedAt: "2026-10-30", firstSeen: "2026-10-30", triage: { verdict: "match", rule: "match", reason: "" }, ...over }) as never;
 
@@ -32,13 +32,21 @@ describe("one identity and one state per posting", () => {
     expect(postings({ ...base, blockersOf: () => ["Why Acme?"] })[0]!.state).toBe("held");
     const ps = postings({ ...base, blockersOf: () => [] });
     expect(ps[0]!.state).toBe("agent_queue");
-    expect(agentQueue(ps, policy, () => "A").map((p) => p.job.key)).toEqual(["greenhouse:7"]);
+    expect(agentQueue(ps, policy, "2026-11-02", () => "A").map((p) => p.job.key)).toEqual(["greenhouse:7"]);
   });
   it("refuses to print numbers that do not reconcile with the apply queue", () => {
     const ps = postings({ jobs: [job("greenhouse:9")], labels: new Map(), apps: new Map(), h1b: new Map([["acme", sponsor]]), policy, today: "2026-11-02" });
     const args = { jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: ps, appliedToday: [], blockers: [], tierOf: () => "A" as const };
     expect(() => renderToday({ ...args, queueSize: 0 })).toThrow(/apply-approved's queue/);
     expect(renderToday({ ...args, queueSize: 1 })).toContain("| agent 待投 | 1 | 0 | 0 | 1 |");
+  });
+  it("queues and counts older postings after fresh ones instead of dropping them", () => {
+    const ps = postings({ jobs: [job("greenhouse:old", { publishedAt: "2026-08-01", firstSeen: "2026-08-01" }), job("greenhouse:new")], labels: new Map(), apps: new Map(), h1b: new Map([["acme", sponsor]]), policy, today: "2026-11-02" });
+    expect(ps.map((p) => p.state)).toEqual(["agent_queue", "agent_queue"]);
+    expect(agentQueue(ps, policy, "2026-11-02", () => "A").map((p) => p.job.key)).toEqual(["greenhouse:new", "greenhouse:old"]);
+    const md = renderToday({ jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: ps, appliedToday: [], blockers: [], tierOf: () => "A", queueSize: 2 });
+    expect(md).toContain("还没投出的 2（最近 30 天 1，更早 1）");
+    expect(md.indexOf("greenhouse:new")).toBeLessThan(md.indexOf("greenhouse:old"));
   });
   it("ranks to-dos by how many applications they unblock", () => {
     const md = renderToday({ jobs: [], labels: new Map(), apps: new Map(), h1b: new Map(), policy, today: "2026-11-02", posts: [], appliedToday: [], tierOf: () => "A", queueSize: 0, blockers: [

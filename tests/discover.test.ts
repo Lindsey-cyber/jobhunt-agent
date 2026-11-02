@@ -153,7 +153,7 @@ describe("triage", () => {
     expect(triage(job("ML Engineer, New Grad", { description: "We are unable to sponsor visas for this role." }), me).rule).toBe("auth.no_sponsorship");
     expect(triage(job("ML Engineer, New Grad", { description: "Visa sponsorship is available." }), me).verdict).toBe("match");
     const mine = { ...me, schools: ["Columbia University", "Renmin University of China"] };
-    expect(triage(job("Analytics Engineer"), me).rule).not.toBe("role.out_of_scope");
+    expect(triage(job("Analytics Engineer"), me).rule).toBe("role.out_of_scope");
     expect(triage(job("Biostatistician I"), me).rule).not.toBe("role.out_of_scope");
     expect(triage(job("Statistical Data Analyst, Infectious Diseases"), me).rule).not.toBe("role.out_of_scope");
     expect(triage(job("Associate Data Engineer (UMiami Only)"), mine).rule).toBe("eligibility.school_only");

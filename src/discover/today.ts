@@ -3,7 +3,7 @@
 // and this module decides each posting's state and renders the page.
 import type { Job } from "../domain/job.ts";
 import type { Policy } from "../profile/schema.ts";
-import { applyOrder, eligibility, postedOn, type Eligibility } from "./eligibility.ts";
+import { applyOrder, eligibility, freshSince, isFresh, postedOn, type Eligibility } from "./eligibility.ts";
 import type { H1bRecord } from "./h1b.ts";
 import { employerKey } from "./h1b.ts";
 import { jobKey } from "./identity.ts";
@@ -80,11 +80,11 @@ export function postings(i: TodayInput): Posting[] {
 }
 
 // The agent's work list, the one apply-approved runs: never-tried postings and held ones
-// today's rules now fully answer, on the agent's lane, best tier first, newest first.
-export function agentQueue(posts: Posting[], policy: Policy, tierOf: (p: Posting) => "A" | "B" | "C"): Posting[] {
+// today's rules now fully answer, on the agent's lane, in apply order (applyOrder).
+export function agentQueue(posts: Posting[], policy: Policy, today: string, tierOf: (p: Posting) => "A" | "B" | "C"): Posting[] {
   const q = posts.filter((p) => p.state === "agent_queue");
   const keyed = q.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen }));
-  const order = (xs: typeof keyed) => applyOrder(xs, policy, (x) => tierOf(x));
+  const order = (xs: typeof keyed) => applyOrder(xs, policy, today, (x) => tierOf(x));
   return [...order(keyed.filter((p) => !p.app)), ...order(keyed.filter((p) => p.app))];
 }
 
@@ -122,18 +122,18 @@ const STATE_LABEL: Record<PostingState, string> = {
 const cell = (s: string) => s.replace(/\|/g, "/").replace(/\s+/g, " ").trim();
 
 export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocker[]; appliedToday: Posting[]; tierOf: (p: Posting) => "A" | "B" | "C"; queueSize: number; pending?: string | undefined; notes?: string[] }): string {
-  const since = new Date(Date.parse(`${i.today}T00:00:00Z`) - i.policy.windowDays * 86400000).toISOString().slice(0, 10);
-  const inWindow = i.posts.filter((p) => postedOn(p.job) >= since);
-  const live = inWindow.filter((p) => ["agent_queue", "yours", "held", "applied", "unconfirmed"].includes(p.state));
-  const open = inWindow.filter((p) => ["agent_queue", "yours", "held"].includes(p.state));
-  const count = (s: PostingState) => inWindow.filter((p) => p.state === s).length;
+  const since = freshSince(i.policy, i.today);
+  const fresh = (p: Posting) => isFresh(p.job, i.policy, i.today);
+  const open = i.posts.filter((p) => ["agent_queue", "yours", "held"].includes(p.state));
+  const count = (s: PostingState) => i.posts.filter((p) => p.state === s).length;
   // Self-checks: the page refuses to print numbers that do not reconcile.
   const states: PostingState[] = ["applied", "unconfirmed", "held", "agent_queue", "yours", "review", "skipped"];
-  if (states.reduce((n, s) => n + count(s), 0) !== inWindow.length) throw new Error("today: posting states do not add up to the postings in the window");
-  if (count("agent_queue") + i.posts.filter((p) => p.state === "agent_queue" && postedOn(p.job) < since).length !== i.queueSize) throw new Error(`today: ${count("agent_queue")} agent_queue postings but apply-approved's queue has ${i.queueSize}`);
-  const L: string[] = [`# 今日 · ${i.today}`, "", `规则来自 \`data/policy.yaml\`：最近 ${i.policy.windowDays} 天发布（${since} 起）、有 H-1B 记录、不是纯高级岗。下面的数字都经过自检：各状态之和等于总数，agent 待投与投递命令的队列一致。`, ""];
+  if (states.reduce((n, s) => n + count(s), 0) !== i.posts.length) throw new Error("today: posting states do not add up to the postings");
+  if (count("agent_queue") !== i.queueSize) throw new Error(`today: ${count("agent_queue")} agent_queue postings but apply-approved's queue has ${i.queueSize}`);
+  const openFresh = open.filter(fresh).length;
+  const L: string[] = [`# 今日 · ${i.today}`, "", `规则来自 \`data/policy.yaml\`：有 H-1B 记录、不是纯高级岗。最近 ${i.policy.freshDays} 天发布的（${since} 起）先投，更早的照样投、排在后面。下面的数字都经过自检：各状态之和等于总数，agent 待投与投递命令的队列一致。`, ""];
   if (i.notes?.length) L.push(...i.notes.map((n) => `> ${n}`), "");
-  L.push(`**最近 ${i.policy.windowDays} 天的岗位**：已投出 ${count("applied")}，已提交未确认 ${count("unconfirmed")}，还没投出的 ${open.length}，待复核 ${count("review")}，不投 ${count("skipped")}。`, "");
+  L.push(`**库里全部 ${i.posts.length} 个岗位**：已投出 ${count("applied")}，已提交未确认 ${count("unconfirmed")}，还没投出的 ${open.length}（最近 ${i.policy.freshDays} 天 ${openFresh}，更早 ${open.length - openFresh}），待复核 ${count("review")}，不投 ${count("skipped")}。`, "");
   const who = new Map<string, Record<"A" | "B" | "C", number>>();
   for (const p of open) { const k = whoOf(p); const r = who.get(k) ?? { A: 0, B: 0, C: 0 }; r[i.tierOf(p)]++; who.set(k, r); }
   const order = (k: string) => (k.startsWith("agent 待投") ? 0 : k.startsWith("agent 已填") ? 1 : 2);
@@ -160,14 +160,14 @@ export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocke
   for (const [q, bs] of todos.slice(0, 30)) L.push(`- **放行 ${bs.length} 份**：${cell(q).slice(0, 160)}（${[...new Set(bs.map((b) => `${b.company} · ${b.title}`))].map(cell).slice(0, 4).join("；")}${bs.length > 4 ? " 等" : ""}）`);
   L.push("");
 
-  L.push(`## 三、还没投出的岗位（档位优先，同档按发布时间从新到旧）`, "", "| 档 | 发布 | 公司 · 岗位 | 地点 | 谁来投 | 链接 |", "|---|---|---|---|---|---|");
-  const ordered = applyOrder(open.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen })), i.policy, (p) => i.tierOf(p));
+  L.push(`## 三、还没投出的岗位（最近 ${i.policy.freshDays} 天的在前；各自档位优先，同档按发布时间从新到旧）`, "", "| 档 | 发布 | 公司 · 岗位 | 地点 | 谁来投 | 链接 |", "|---|---|---|---|---|---|");
+  const ordered = applyOrder(open.map((p) => ({ ...p, title: p.job.title, publishedAt: p.job.publishedAt, firstSeen: p.job.firstSeen })), i.policy, i.today, (p) => i.tierOf(p));
   for (const p of ordered) L.push(`| ${i.tierOf(p)} | ${postedOn(p.job) || "—"} | ${cell(p.job.company)} · ${cell(p.job.title)} | ${cell(p.job.location).slice(0, 40)} | ${whoOf(p)} | ${p.job.link?.finalUrl || p.job.url} |`);
   L.push("");
 
   const why = new Map<string, number>();
-  for (const p of i.posts) if (p.state === "skipped" && postedOn(p.job) >= since) for (const r of p.eligibility.reasons) { const k = r.replace(/\(.*\)/, "").replace(/^posted .*/, "超出时间窗口").trim(); why.set(k, (why.get(k) ?? 0) + 1); }
-  L.push(`## 四、没投的原因（最近 ${i.policy.windowDays} 天）`, "");
+  for (const p of i.posts) if (p.state === "skipped" && fresh(p)) for (const r of p.eligibility.reasons) { const k = r.replace(/\(.*\)/, "").trim(); why.set(k, (why.get(k) ?? 0) + 1); }
+  L.push(`## 四、没投的原因（最近 ${i.policy.freshDays} 天发布的）`, "");
   for (const [k, n] of [...why].sort((a, b) => b[1] - a[1])) L.push(`- ${n} 个：${k}`);
   L.push("");
   return L.join("\n");

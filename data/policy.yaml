@@ -2,20 +2,23 @@
 # applying) reads this one file. The candidate may edit it; the agent changes it
 # only when she asks, and notes the date.
 
-# Only postings published in the last N days (2026-11-02).
-windowDays: 30
+# Postings published in the last N days are applied to first; older postings that
+# meet every other rule are still applied to, after them (2026-11-02: "30 天不是过滤条件，是优先选项").
+freshDays: 30
 # No senior, staff, principal or lead titles; a title that also offers a junior
 # level ("Senior/Software Engineer", "[Junior / Senior]") stays (2026-11-01).
 excludeSeniorTitles: true
 # Only employers with H-1B filings since this year (DOL LCA data); no record, or
 # a name no filer matches, stays in the catalog unapplied (2026-11-02).
 h1bRequiredSince: 2023
+# Titles never applied to: a title containing one of these, in any case, is out (2026-11-02).
+excludeTitles: [analytics engineer]
 # The ATS the agent applies on; the rest go on her own list (2026-10-30).
 agentAts: [greenhouse]
 # Every match within these rules is applied to without a per-posting approval (2026-11-02).
 approveMatches: true
 # How close a posting is to her background, from her resume (2026-11-02). Orders applying
-# (tier A first, then B, then C); it never excludes. Title hits count 3x, description 1x.
+# within fresh and within older postings (tier A first, then B, then C); it never excludes. Title hits count 3x, description 1x.
 fit:
   strong: [computer vision, vision, perception, multimodal, multi-modal, foundation model, foundation models, representation learning, self-supervised, contrastive, image, video, imaging, robotics, robot, autonomous, autonomy, embodied, deep learning, research engineer, applied scientist, research scientist, machine learning engineer, ml engineer, evaluation, benchmark, agents, agentic, ai agent]
   good: [machine learning, pytorch, llm, llms, generative, training, inference, model, models, data scientist, statistics, statistical, modeling, python, ai engineer, new grad, entry level, early career]
@@ -23,8 +26,6 @@ fit:
   h1bVolume: 20
   tierA: 18
   tierB: 8
-# Titles applied to after everything else (2026-11-02).
-applyLast: [analytics engineer]
 
 # Postings from these employers are recorded but never matched, queued or
 # applied to. A name matches the employer's name as a whole word, so "Google"

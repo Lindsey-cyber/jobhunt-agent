@@ -27,6 +27,16 @@ export interface EligibilityInput {
 
 export const postedOn = (j: Pick<Job, "publishedAt" | "firstSeen">): string => (j.publishedAt || j.firstSeen || "").slice(0, 10);
 
+// The first day that still counts as fresh: age orders applying, it never excludes (2026-11-02).
+export const freshSince = (policy: Pick<Policy, "freshDays">, today: string): string =>
+  new Date(Date.parse(`${today}T00:00:00Z`) - policy.freshDays * 86400000).toISOString().slice(0, 10);
+
+// Posted within the policy's fresh window. An unknown date is not fresh.
+export const isFresh = (j: Pick<Job, "publishedAt" | "firstSeen">, policy: Pick<Policy, "freshDays">, today: string): boolean => {
+  const posted = postedOn(j);
+  return posted !== "" && posted >= freshSince(policy, today);
+};
+
 export function eligibility({ job, label, h1b, policy, payFloor, today }: EligibilityInput): Eligibility {
   const reasons: string[] = [];
   const ats = job.key.split(":")[0]!;
@@ -34,10 +44,9 @@ export function eligibility({ job, label, h1b, policy, payFloor, today }: Eligib
   else if (label !== "fit" && job.triage.verdict !== "match") reasons.push(`not a match (${job.triage.rule})`);
   const ex = excludedBy(job.company, policy.excludeCompanies);
   if (ex) reasons.push(`excluded company (${ex})`);
+  const title = policy.excludeTitles.find((t) => job.title.toLowerCase().includes(t.toLowerCase()));
+  if (title) reasons.push(`excluded title (${title})`);
   if (policy.excludeSeniorTitles && tooSenior(job.title)) reasons.push("senior title");
-  const since = new Date(Date.parse(`${today}T00:00:00Z`) - policy.windowDays * 86400000).toISOString().slice(0, 10);
-  const posted = postedOn(job);
-  if (!posted || posted < since) reasons.push(`posted ${posted || "on an unknown date"}, before ${since}`);
   if (policy.h1bRequiredSince !== null) {
     const v = sponsorVerdict(h1b);
     if (v === "none") reasons.push(`no H-1B filings since ${policy.h1bRequiredSince}`);
@@ -48,9 +57,9 @@ export function eligibility({ job, label, h1b, policy, payFloor, today }: Eligib
   return { ok: reasons.length === 0, lane: policy.agentAts.includes(ats) ? "agent" : "you", reasons };
 }
 
-// Apply order: fit tier (A, B, C) when a scorer is given, then titles the policy puts last, then newest first.
-export function applyOrder<T extends Pick<Job, "title" | "publishedAt" | "firstSeen">>(jobs: T[], policy: Policy, tierOf?: (j: T) => "A" | "B" | "C"): T[] {
-  const last = (j: T) => (policy.applyLast.some((t) => j.title.toLowerCase().includes(t.toLowerCase())) ? 1 : 0);
+// Apply order: fresh postings before older ones, then fit tier (A, B, C) when a scorer is given, then newest first.
+export function applyOrder<T extends Pick<Job, "publishedAt" | "firstSeen">>(jobs: T[], policy: Pick<Policy, "freshDays">, today: string, tierOf?: (j: T) => "A" | "B" | "C"): T[] {
+  const stale = (j: T) => (isFresh(j, policy, today) ? 0 : 1);
   const tier = (j: T) => (tierOf ? tierOf(j) : "A");
-  return [...jobs].sort((a, b) => tier(a).localeCompare(tier(b)) || last(a) - last(b) || postedOn(b).localeCompare(postedOn(a)));
+  return [...jobs].sort((a, b) => stale(a) - stale(b) || tier(a).localeCompare(tier(b)) || postedOn(b).localeCompare(postedOn(a)));
 }

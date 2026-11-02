@@ -30,8 +30,8 @@ const ML_WORDS = /video generation|world models?|neural|multimodal|speech|robot 
 const ML_WORK = /deep learning|neural net|\bllms?\b|large language model|reinforcement learning|computer vision|\bnlp\b|natural language processing|transformers?\b|pytorch|tensorflow|\bjax\b|(?:train|training|fine-tun\w*|evaluat\w*|deploy\w*)\s+(?:\w+\s+){0,3}models?|(?:ml|machine learning|generative|foundation|multimodal|vision|language) models?/i;
 // In scope by the candidate's decision (2026-10-28): data scientist roles and
 // AI/data analyst roles count like ML roles.
-// The candidate (2026-11-02): analytics engineers and statistics roles (her M.S. is in statistics) too.
-const DATA_SCIENCE = /data scien|analytics engineer|biostatistic|statistician|statistical (?:data )?analyst|statistical scientist/i;
+// The candidate (2026-11-02): statistics roles too (her M.S. is in statistics).
+const DATA_SCIENCE = /data scien|biostatistic|statistician|statistical (?:data )?analyst|statistical scientist/i;
 const AI_ANALYST = /\b(?:ai|artificial intelligence|machine learning|ml)\b[^,]{0,25}\banalyst\b/i;
 // Adjacent to the target; shown for review, not matched.
 const ADJACENT = /\bquantitative researcher\b/i;

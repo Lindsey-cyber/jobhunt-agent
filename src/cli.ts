@@ -7,7 +7,7 @@ import { chromium } from "playwright";
 import { loadUserData } from "./profile/load.ts";
 import { apply, sameJob } from "./run/apply.ts";
 import { employerKey, sponsorVerdict } from "./discover/h1b.ts";
-import { applyOrder, eligibility, postedOn } from "./discover/eligibility.ts";
+import { postedOn } from "./discover/eligibility.ts";
 import { fitOf } from "./discover/fit.ts";
 import { agentQueue, applicationIndex, postings, renderToday, type Blocker } from "./discover/today.ts";
 import { factSheet, type QuestionMapping } from "./plan/facts.ts";
@@ -30,6 +30,8 @@ import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { appendAnswer } from "./store/answerlog.ts";
 import { readCatalog } from "./store/catalog.ts";
+import { readModelVerdicts } from "./store/modelverdicts.ts";
+import { retriage } from "./discover/merge.ts";
 import { expectationFloor } from "./discover/pay.ts";
 import { tallyHolds } from "./verify/holds.ts";
 import { Ledger } from "./store/ledger.ts";
@@ -122,12 +124,13 @@ function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
 }
 
 // Every posting's one state (src/discover/today.ts), shared by jh today, apply-approved and facts-map.
-function gather(u: ReturnType<typeof user>, since?: string) {
+function gather(u: ReturnType<typeof user>) {
   const ledger = ledgerOf(u.dir);
-  const catalog = readCatalog(paths(u.dir).catalog);
+  // Today's rules over the whole catalog: a posting no source re-listed still carries the verdict of the rules it was last triaged under.
+  const catalog = new Map(retriage(readCatalog(paths(u.dir).catalog).values(), candidateFacts(u.profile), u.search.excludeCompanies, readModelVerdicts(u.dir)).map((j) => [j.key, j]));
   const h1b = readH1b(u.dir);
   const today = new Date().toISOString().slice(0, 10);
-  const policy = since ? { ...u.search, windowDays: Math.max(1, Math.ceil((Date.parse(today) - Date.parse(since)) / 86400000)) } : u.search;
+  const policy = u.search;
   const blockersOf = (app: { key: string }) => {
     const runDir = ledger.history(app.key as Parameters<typeof ledger.history>[0]).at(-1)?.runDir;
     if (!runDir || !existsSync(`${runDir}/plan.json`)) return undefined;
@@ -138,7 +141,7 @@ function gather(u: ReturnType<typeof user>, since?: string) {
   const posts = postings(input);
   const tierOfJob = (j: { company: string; title: string; description: string }) => fitOf(j, policy, h1b.get(employerKey(j.company))).tier;
   const tierOf = (p: { job: { company: string; title: string; description: string } }) => tierOfJob(p.job);
-  return { ledger, catalog, h1b, today, policy, input, posts, tierOf, tierOfJob, queue: agentQueue(posts, policy, tierOf) };
+  return { ledger, catalog, h1b, today, policy, input, posts, tierOf, tierOfJob, queue: agentQueue(posts, policy, today, tierOf) };
 }
 
 switch (command) {
@@ -252,10 +255,9 @@ switch (command) {
     const u = user();
     const catalog = readCatalog(paths(u.dir).catalog);
     const latest = new Map(readLabels(u.dir).map((l) => [l.key, l]));
-    // Every approved posting's company, and every current match inside the policy window.
-    const since = new Date(Date.now() - u.search.windowDays * 86400000).toISOString().slice(0, 10);
-    const inWindow = [...catalog.values()].filter((j) => j.triage?.verdict === "match" && postedOn(j) >= since).map((j) => j.company);
-    const companies = [...new Set([...inWindow, ...[...latest.values()].filter((l) => l.label === "fit").map((l) => catalog.get(l.key as JobKey)?.company)].filter((c): c is string => Boolean(c)))];
+    // Every approved posting's company, and every current match of any age (age only orders applying).
+    const matched = [...catalog.values()].filter((j) => j.triage?.verdict === "match").map((j) => j.company);
+    const companies = [...new Set([...matched, ...[...latest.values()].filter((l) => l.label === "fit").map((l) => catalog.get(l.key as JobKey)?.company)].filter((c): c is string => Boolean(c)))];
     const h1b = readH1b(u.dir);
     const todo = companies.filter((c) => values.refresh || !h1b.has(employerKey(c)));
     console.log(`${companies.length} companies in the approved pool; looking up ${todo.length}`);
@@ -273,11 +275,12 @@ switch (command) {
   case "apply-approved": {
     // Runs the agent's queue from the same state model as docs/TODAY.md (src/discover/today.ts).
     const u = user();
-    const w = gather(u, values.since);
+    const w = gather(u);
     const ledger = w.ledger;
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
     const adapter = (k: string) => k.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(k)) || (WORKDAY_READY && k.startsWith("workday:"));
-    const queue = w.queue.filter((p) => adapter(p.job.key));
+    // --since YYYY-MM-DD: only postings published on or after that day.
+    const queue = w.queue.filter((p) => adapter(p.job.key) && (!values.since || postedOn(p.job) >= values.since));
     const fresh = queue.filter((p) => !p.app).map((p) => p.job);
     const retries = queue.filter((p) => p.app).map((p) => p.job);
     console.log(`agent queue: ${fresh.length} never tried, ${retries.length} held ones today's rules now fully answer; trying up to ${limit}`);

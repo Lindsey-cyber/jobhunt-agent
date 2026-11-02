@@ -216,11 +216,23 @@ describe("buildPlan", () => {
   });
 
   it("declines gender where the form allows it and uses the required-answer fallback otherwise", () => {
-    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline", genderIfRequired: "Female" } };
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline", ifNoDecline: { gender: "Female" } } };
     const one = (options: string[]) => buildPlan(form([field("Gender", { kind: "select", options })]), p, user.bank).items[0]!;
     expect(one(["Female", "Male", "I don't wish to answer"])).toMatchObject({ status: "fill", value: "I don't wish to answer" });
     expect(one(["Female", "Male", "Non-Binary"])).toMatchObject({ status: "fill", value: "Female" });
     expect(one(["Female", "Male", "Non-Binary", "Not declared"])).toMatchObject({ status: "fill", value: "Not declared" });
+  });
+
+  it("declines race and pronouns where the choices allow it; otherwise Asian and She/Her (the candidate, 2026-11-02)", () => {
+    const p = { ...user.profile, eeo: { ...user.profile.eeo, gender: "decline", race: "decline", ifNoDecline: { gender: "Female", race: "Asian", pronouns: "She/Her" } } };
+    const one = (label: string, options: string[]) => buildPlan(form([field(label, { kind: "select", options })]), p, user.bank).items[0]!;
+    expect(one("Race", ["Asian", "White", "I don't wish to answer"])).toMatchObject({ status: "fill", value: "I don't wish to answer" });
+    expect(one("Race", ["White", "Asian (Not Hispanic or Latino)", "Black or African American"])).toMatchObject({ status: "fill", value: "Asian (Not Hispanic or Latino)" });
+    expect(one("Race", ["White", "Asian Indian", "Chinese"])).toMatchObject({ status: "blocked" });
+    expect(one("Pronouns", ["He/Him", "She/Her", "They/Them", "Prefer not to say"])).toMatchObject({ status: "fill", value: "Prefer not to say" });
+    expect(one("Pronouns", ["He / Him / His", "She / Her / Hers", "They / Them / Theirs"])).toMatchObject({ status: "fill", value: "She / Her / Hers" });
+    expect(one("Gender", ["Male", "Female", "Non-binary"])).toMatchObject({ status: "fill", value: "Female" });
+    expect(one("Do you identify as transgender?", ["Yes", "No", "Decline to self-identify"])).toMatchObject({ status: "fill", value: "Decline to self-identify" });
   });
 
   it("answers Workday's veteran list with the plain not-a-veteran option", () => {

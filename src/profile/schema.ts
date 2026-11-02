@@ -86,14 +86,14 @@ export const Profile = z.object({
   eeo: z
     .object({
       gender: EeoChoice,
-      // Used when a form requires a gender and offers no way to decline.
-      genderIfRequired: z.string().optional(),
       hispanicLatino: EeoChoice,
       race: EeoChoice,
       veteran: EeoChoice,
       disability: EeoChoice,
+      // The answer when the choices offer no way to decline (gender, race and pronouns).
+      ifNoDecline: z.object({ gender: z.string().optional(), race: z.string().optional(), pronouns: z.string().optional() }).default({}),
     })
-    .default({ gender: "decline", hispanicLatino: "decline", race: "decline", veteran: "decline", disability: "decline" }),
+    .default({ gender: "decline", hispanicLatino: "decline", race: "decline", veteran: "decline", disability: "decline", ifNoDecline: {} }),
   documents: z.object({
     resume: z.string().min(1),
     // Filled by the loader from data/cover-letters/<company>.pdf: one letter per employer,
@@ -135,11 +135,13 @@ export type Config = z.infer<typeof Config>;
 // data/policy.yaml: the candidate's decisions on what to apply to (see the file's comments).
 export const Policy = z.object({
   excludeCompanies: z.array(z.string().min(1)).default([]),
-  windowDays: z.number().int().positive().default(30),
+  // Postings whose title contains one of these (any case) are never applied to.
+  excludeTitles: z.array(z.string().min(1)).default([]),
+  // Postings this many days old or newer are applied to first; older ones still count (2026-11-02).
+  freshDays: z.number().int().positive().default(30),
   excludeSeniorTitles: z.boolean().default(true),
   h1bRequiredSince: z.number().int().nullable().default(null),
   agentAts: z.array(z.string()).default(["greenhouse"]),
-  applyLast: z.array(z.string()).default([]),
   // Every match within the policy counts as approved (no per-posting confirmation).
   approveMatches: z.boolean().default(false),
   // Closeness to her background: terms read in title and description (src/discover/fit.ts).

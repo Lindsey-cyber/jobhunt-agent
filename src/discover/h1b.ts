@@ -43,6 +43,10 @@ export const FILER_ALIASES: Record<string, string> = {
   "schr dinger": "SCHRODINGER",
   "klaviyo campus": "KLAVIYO",
   elevenlabs: "ELEVEN LABS",
+  clear: "ALCLEAR",
+  "clear corporate": "ALCLEAR",
+  "invisible tech": "INVISIBLE TECHNOLOGIES",
+  "66 degrees": "66DEGREES",
 };
 
 export function employerKey(name: string): string {

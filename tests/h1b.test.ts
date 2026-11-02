@@ -26,5 +26,6 @@ describe("H-1B history", () => {
     expect(sponsorVerdict(r)).toBe("sponsor");
     expect(sponsorVerdict(recordFrom("Ludo Robotics", [], "2026-11-02"))).toBe("none");
     expect(sponsorVerdict(undefined)).toBe("unknown");
+    expect(recordFrom("S&P Global", parseH1bTable(row("S&amp;P GLOBAL INC", "05/01/2025")), "2026-11-02").filings).toBe(1);
   });
 });

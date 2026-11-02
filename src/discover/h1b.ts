@@ -47,6 +47,8 @@ export const FILER_ALIASES: Record<string, string> = {
   "clear corporate": "ALCLEAR",
   "invisible tech": "INVISIBLE TECHNOLOGIES",
   "66 degrees": "66DEGREES",
+  "expedia group": "EXPEDIA",
+  "peraton labs": "PERATON",
 };
 
 export function employerKey(name: string): string {
@@ -72,7 +74,7 @@ export function matchesCompany(employer: string, company: string): boolean {
 export function parseH1bTable(html: string): H1bFiling[] {
   const out: H1bFiling[] = [];
   for (const row of html.matchAll(/<tr>([\s\S]*?)<\/tr>/g)) {
-    const cells = [...row[1]!.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => m[1]!.replace(/<[^>]+>/g, "").trim());
+    const cells = [...row[1]!.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => m[1]!.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#0?39;|&apos;/g, "'").replace(/&quot;/g, '"').trim());
     if (cells.length < 5) continue;
     const d = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(cells[4]!);
     if (!d) continue;

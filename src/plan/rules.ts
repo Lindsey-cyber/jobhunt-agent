@@ -937,6 +937,8 @@ function declineOr(p: Profile, key: keyof Profile["eeo"]["ifNoDecline"], answer:
   if (answer !== "decline" || !options.length || options.some((o) => DECLINE.test(normalize(o)))) return answer;
   const want = p.eeo.ifNoDecline[key]?.toLowerCase().replace(/\s*\/\s*/g, "/");
   if (!want) return undefined;
+  const exact = options.find((o) => o.toLowerCase().replace(/\s*\/\s*/g, "/").trim() === want);
+  if (exact) return exact;
   const hits = options.filter((o) => {
     const rest = o.toLowerCase().replace(/\s*\/\s*/g, "/").trim();
     return rest.startsWith(want) && /^($|\s*[(/,-])/.test(rest.slice(want.length));

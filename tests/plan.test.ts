@@ -229,6 +229,10 @@ describe("buildPlan", () => {
     expect(one("Race", ["Asian", "White", "I don't wish to answer"])).toMatchObject({ status: "fill", value: "I don't wish to answer" });
     expect(one("Race", ["White", "Asian (Not Hispanic or Latino)", "Black or African American"])).toMatchObject({ status: "fill", value: "Asian (Not Hispanic or Latino)" });
     expect(one("Race", ["White", "Asian Indian", "Chinese"])).toMatchObject({ status: "blocked" });
+    expect(one("Race", ["Asian", "Asian (Not Hispanic or Latino)", "White"])).toMatchObject({ status: "fill", value: "Asian" });
+    expect(one("Race", ["Asian", "White", "Rather not say"])).toMatchObject({ status: "fill", value: "Rather not say" });
+    expect(one("Pronouns", ["She/Her", "He/Him", "I don't want to answer"])).toMatchObject({ status: "fill", value: "I don't want to answer" });
+    expect(one("Gender", ["Female", "Male", "Undisclosed"])).toMatchObject({ status: "fill", value: "Undisclosed" });
     expect(one("Pronouns", ["He/Him", "She/Her", "They/Them", "Prefer not to say"])).toMatchObject({ status: "fill", value: "Prefer not to say" });
     expect(one("Pronouns", ["He / Him / His", "She / Her / Hers", "They / Them / Theirs"])).toMatchObject({ status: "fill", value: "She / Her / Hers" });
     expect(one("Gender", ["Male", "Female", "Non-binary"])).toMatchObject({ status: "fill", value: "Female" });

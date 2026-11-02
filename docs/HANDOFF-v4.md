@@ -24,6 +24,10 @@
 Anduril 拒信（Software Engineer- Machine Learning，greenhouse 5248869007，11-02 02:39 UTC 投出）："Based on your responses to the export control/security clearance questionnaire … cannot move forward"。答案本身如实：出口管制"U.S. person"题按 `src/plan/rules.ts` 的 export-control 规则答"都不是"，安全许可资格答"否"（她是中国籍、F-1 OPT）。问题是系统投了一个注定被拒的岗位：Anduril 共投出 9 份（10-28 至 11-02，均在 v4 之前），其余大概率同样被拒。
 建议（需她拍板）：表单或岗位原文要求"U.S. person / 出口管制许可 / 安全许可资格"时，判为不可投（eligibility 一条原因，进"不投"），而不是如实填完照投。实现位置：`src/discover/eligibility.ts` + triage 读岗位原文；表单层面在 `src/run/apply.ts` 提交前，若计划里有这类题且答案为否，改为 hold 并标记岗位不可投。
 
+## 一点六、10-27 以来的拒信（候选人邮箱，2026-11-02 核对）
+共 20 封、17 家。值得注意的：Waymo"已达申请数上限"（系统投了 7 份，最后一份未被审）；Anduril 两封出口管制/安全许可（共投 9 份）；iTradeNetwork"只要公民/绿卡、不办签证"；BlackEdge Capital"不提供签证协助"（有 H-1B 记录也不代表该岗位办签证）；Accenture Federal Services"根据岗位要求"（联邦承包商，系统投了 14 份）；CHAOS Industries（国防，投 2 份，通用措辞）。Apple 那封是她自己投的，模板措辞问题，与本系统无关。其余 13 封为常规拒信。
+三个系统性问题，交给下一个 agent：(1) 要求美国身份的岗位（国防、联邦承包商、明确不办签证）没被拦，应在 eligibility 里成为不投原因；(2) 同一公司投递数没有上限，应在 policy 里设每家公司上限（Waymo 触发了对方上限）；(3) 公司有 H-1B 记录 ≠ 岗位办签证，需读岗位原文与表单题。
+
 ## 二、这一轮哪里做错了（按代价从大到小）
 
 1. **优化了尺子，没有优化目标。** 第 1 步用第三方列表抽样测覆盖率，6 轮在 67%–87% 之间来回跳（67→74→80→87→76）。多数轮次在修测量方法（过期条目、已关闭标记、跳转链接、规模分档、样本量），而不是搜索本身。尺子不稳，指标就不收敛。

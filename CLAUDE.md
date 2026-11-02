@@ -1,6 +1,6 @@
 # jobhunt-agent
 
-Applies to jobs for one candidate, and submits only what it can prove is correct. Start with docs/HANDOFF-v3.md, then ARCHITECTURE.md before changing src/. Work through `/poteto-mode` (pstack, in .claude/skills).
+Applies to jobs for one candidate, and submits only what it can prove is correct. This repo is run by a multi-agent organization: read docs/program/ORG.md first, then docs/program/notes.md (current state), then docs/REWRITE.md (why). The main session is the coordinator: it never writes code in the main checkout (a hook blocks it); workers write code in git worktrees and a verifier on another model passes each unit before it merges into `v3`.
 
 ## Rules
 

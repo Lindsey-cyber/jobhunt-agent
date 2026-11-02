@@ -75,15 +75,15 @@ export const urlsIn = (text: string): string[] => text.match(/https?:\/\/[^\s'"<
 const normText = (s: string): string =>
   s.toLowerCase().replace(/&/g, " and ").replace(/\b(inc|llc|ltd|corp|corporation|co|company|the)\b\.?/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
 
-// Words that only say what kind of entity a company is, never which one: dropped from the END of a name, so that
-// "Omnicom" and "Omnicom Group", "American Honda" and "American Honda Motor Company, Inc." are one company.
-const ENTITY_WORD = new Set(["inc", "incorporated", "llc", "llp", "lp", "ltd", "limited", "plc", "corp", "corporation", "co", "company", "companies", "group", "holdings", "holding", "gmbh", "ag", "sa", "nv", "bv", "motor", "motors", "usa", "us", "america", "americas", "international", "worldwide"]);
+// Legal-form words only, dropped from the END of a name: "Acme, LLC" is "Acme". Every other word is meaningful:
+// "General Motors" is not "General", "Bank of America" is not "Bank of".
+const LEGAL_SUFFIX = new Set(["inc", "llc", "ltd", "corp", "corporation", "co", "plc", "gmbh", "lp", "llp"]);
 
+// Company names: accents, dots and parentheticals dropped, "&" as "and", lowercase, a trailing legal suffix dropped.
 export function normCompany(s: string): string {
   const base = s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/\([^)]*\)/g, " ").replace(/\./g, "");
-  const words = normText(base).split(" ").filter(Boolean);
-  // A name that is nothing but entity words ("Global Group") keeps them.
-  while (words.length > 1 && ENTITY_WORD.has(words.at(-1)!)) words.pop();
+  const words = base.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim().split(" ").filter(Boolean);
+  while (words.length > 1 && LEGAL_SUFFIX.has(words.at(-1)!)) words.pop();
   return words.join(" ");
 }
 export const normTitle = (s: string): string =>
@@ -211,10 +211,28 @@ export interface WatchedBoard {
   partial?: boolean | undefined;
   // Workday only: "tenant/site" of the career site this board is (see workdaySite). A link on another site is not this board's.
   site?: string | undefined;
+  // Greenhouse/Lever/Ashby: the board slug (see boardOf). A link naming another slug is not this board's.
+  board?: string | undefined;
 }
 
 // A board read in full: its titles and its ids are both known, and nothing was cut short.
 export const readInFull = (b: WatchedBoard): boolean => b.titles !== undefined && b.keys !== undefined && !b.partial;
+
+// The board slug an ATS apply link names, lowercase: greenhouse/<slug>/jobs/<id>, jobs.lever.co/<slug>/<id>,
+// jobs.ashbyhq.com/<slug>/<id>, or a Greenhouse embed with ?for=<slug>. Undefined when the link names none.
+export function boardOf(url: string): string | undefined {
+  let u: URL;
+  try {
+    u = new URL(url);
+  } catch {
+    return undefined;
+  }
+  const host = u.hostname.toLowerCase();
+  const parts = u.pathname.split("/").filter(Boolean).map((p) => p.toLowerCase());
+  if (host.endsWith("greenhouse.io")) return u.searchParams.get("for")?.toLowerCase() || (parts[1] === "jobs" ? parts[0] : undefined);
+  if (host === "jobs.lever.co" || host === "jobs.eu.lever.co" || host === "jobs.ashbyhq.com") return parts[0];
+  return undefined;
+}
 
 // "tenant/site" of a Workday job link or career-site URL (a locale segment such as en-US is skipped); undefined otherwise.
 export function workdaySite(url: string): string | undefined {
@@ -248,8 +266,11 @@ export function liveness(r: SampleRow, known: readonly WatchedBoard[]): Liveness
   const near = exact || known.some((b) => b.titles?.some((t) => similarity(t, r.title) >= FUZZY));
   if (key === undefined) return near ? "live" : "unknown";
   const ats = atsOf(key)!;
+  // The exact board the link names: a Workday site, or a Greenhouse/Lever/Ashby slug. Another board of the same company
+  // says nothing about this posting. A link that names no board is judged against every board of its ATS.
   const site = ats === "workday" ? workdaySite(r.url!) : undefined;
-  const same = known.filter((b) => b.ats === ats && (ats !== "workday" || b.site === site));
+  const slug = ats === "workday" ? undefined : boardOf(r.url!);
+  const same = known.filter((b) => b.ats === ats && (ats !== "workday" || b.site === site) && (slug === undefined || b.board?.toLowerCase() === slug));
   if (same.length > 0 && same.every(readInFull)) return exact ? "live" : "not_listed";
   return near ? "live" : "unknown";
 }

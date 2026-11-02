@@ -1,8 +1,8 @@
-import { mkdtempSync, readFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { fits, indexCatalog, liveness, match, normCompany, parseListTable, sampleOf, type SampleRow, type WatchedBoard } from "../src/discover/coverage.ts";
+import { boardOf, causeOf, fits, indexCatalog, liveness, match, normCompany, parseListTable, sampleOf, type SampleRow, type WatchedBoard } from "../src/discover/coverage.ts";
 import type { Job, JobKey } from "../src/domain/job.ts";
 import { followRedirects, resolveLinks } from "../src/sources/coverage.ts";
 import { fetchWorkday, IN_SCOPE_TITLE } from "../src/sources/fetch.ts";
@@ -16,31 +16,42 @@ const POLICY = { excludeCompanies: [], excludeTitles: [], excludeSeniorTitles: t
 afterEach(() => vi.unstubAllGlobals());
 
 describe("company names", () => {
+  // Only legal-form words go, and only from the end; a parenthetical goes; everything else is part of the name.
   it.each([
-    ["Omnicom", "Omnicom Group"],
-    ["American Honda Motor Company, Inc.", "American Honda"],
-    ["American Honda Motor", "American Honda"],
+    ["Acme, LLC", "Acme"],
+    ["Acme Corporation", "Acme"],
     ["Acme Corp.", "ACME"],
-    ["Acme, LLC", "Acme Inc"],
-    ["The Acme Company", "Acme"],
+    ["Acme Ltd.", "acme"],
+    ["Acme GmbH", "acme"],
+    ["Acme PLC", "Acme"],
+    ["Acme LP", "Acme"],
+    ["Acme LLP", "Acme"],
+    ["Acme Co", "Acme"],
+    ["Acme, Inc.", "Acme Inc"],
     ["Sixtyfour (X25)", "Sixtyfour"],
     ["L.E.K. Consulting", "LEK Consulting"],
-    ["Nestlé Holdings, Inc.", "Nestle"],
     ["AT&T", "AT & T"],
   ])("%s is %s", (a, b) => expect(normCompany(a)).toBe(normCompany(b)));
 
-  it("keeps companies apart that only share a first word, and keeps a name made only of entity words", () => {
-    expect(normCompany("American Express")).not.toBe(normCompany("American Honda"));
-    expect(normCompany("Capital One")).not.toBe(normCompany("Capital Group"));
-    expect(normCompany("Booz Allen")).not.toBe(normCompany("Booz Allen Hamilton")); // no prefix guessing: the watchlist names both
-    expect(normCompany("Global Group")).toBe("global");
+  it("keeps meaningful words: 'General Motors' is not 'General', 'Bank of America' is not 'Bank of'", () => {
+    expect(normCompany("General Motors")).toBe("general motors");
+    expect(normCompany("General")).toBe("general");
+    expect(normCompany("General Motors")).not.toBe(normCompany("General"));
+    expect(normCompany("Bank of America")).toBe("bank of america");
+    expect(normCompany("Bank of America")).not.toBe(normCompany("Bank of"));
+    expect(normCompany("American Honda Motor Company, Inc.")).toBe("american honda motor company");
+    expect(normCompany("American Honda Motor Company, Inc.")).not.toBe(normCompany("American Honda"));
+    expect(normCompany("Omnicom Group")).not.toBe(normCompany("Omnicom"));
+    expect(normCompany("Global Group")).toBe("global group");
     expect(normCompany("Group")).toBe("group");
+    expect(normCompany("Capital One")).not.toBe(normCompany("Capital Group"));
     expect(normCompany("")).toBe("");
   });
 
-  it("a catalog row under 'Omnicom Group' answers a list row for 'Omnicom'", () => {
+  it("a catalog row under 'Omnicom Group' does not answer a list row for 'Omnicom': a different company name is a miss, not a guess", () => {
     const idx = indexCatalog([job({ key: "workday:interpublic:r1" as JobKey, company: "Omnicom Group", title: "Data Science and Analytics" })]);
-    expect(match(row("Omnicom", "Data Science and Analytics"), idx)?.how).toBe("title");
+    expect(match(row("Omnicom", "Data Science and Analytics"), idx)).toBeUndefined();
+    expect(match(row("Omnicom Group", "Data Science and Analytics"), idx)?.how).toBe("title");
   });
 });
 
@@ -82,6 +93,30 @@ describe("liveness: a known id gone from a complete board", () => {
     const r = row("Nextdoor", "Machine Learning Engineer, Machine Learning", { url: link(7264954) });
     expect(liveness(r, [{ ats: "greenhouse", titles: ["Machine Learning Engineer - Ads"], keys: ["greenhouse:6005888"], partial: true }])).toBe("live");
     expect(liveness(row("Nextdoor", "Chef", { url: link(7264954) }), [{ ats: "greenhouse", titles: ["Cook"], keys: [], partial: true }])).toBe("unknown");
+  });
+});
+
+describe("liveness: only the exact board the link names can prove a posting gone", () => {
+  // Astera Labs posts early-career roles on its own Greenhouse board, asteraearlycareer2027, not on asteralabs.
+  const link = "https://job-boards.greenhouse.io/asteraearlycareer2027/jobs/4731594005";
+  const astera = row("Astera Labs", "Machine Learning Engineer, Early Career 2027", { url: link });
+  const main: WatchedBoard = { ats: "greenhouse", board: "asteralabs", titles: ["Chef"], keys: ["greenhouse:1"], partial: false };
+  const early: WatchedBoard = { ats: "greenhouse", board: "asteraearlycareer2027", titles: ["Chef"], keys: ["greenhouse:2"], partial: false };
+
+  it("the link's board names the slug", () => {
+    expect(boardOf(link)).toBe("asteraearlycareer2027");
+    expect(boardOf("https://jobs.lever.co/Acme/0d1b1f1e-1111-4222-8333-944444444444")).toBe("acme");
+    expect(boardOf("https://jobright.ai/jobs/info/1")).toBeUndefined();
+  });
+  it("another complete board of the same company does not prove the posting gone: unknown, so a miss", () => {
+    expect(liveness(astera, [main])).toBe("unknown");
+    expect(causeOf(astera, undefined, indexCatalog([]), [main])).toBe("watched company, posting not fetched (greenhouse)");
+  });
+  it("the link's own board, read in full without the id, does prove it gone", () => {
+    expect(liveness(astera, [main, early])).toBe("not_listed");
+  });
+  it("the link's own board not read in full keeps it unknown, whatever the other boards say", () => {
+    expect(liveness(astera, [main, { ...early, partial: true }])).toBe("unknown");
   });
 });
 
@@ -163,6 +198,34 @@ describe("following list links", () => {
     expect(match(r!, idx)?.how).toBe("key");
     const board: WatchedBoard = { ats: "workday", site: "nvidia/nvidiaexternalcareersite", titles: ["Chef"], keys: ["workday:nvidia:jr1"], partial: false };
     expect(liveness(r!, [board])).toBe("not_listed");
+  });
+  it("does not remember a chain that ended in a 5xx: it is used for this run and asked again next run", async () => {
+    web({ "https://go.x.test/a": [302, "https://a.test/2"], "https://a.test/2": [503] });
+    const o = opts();
+    const rows = [row("A", "T", { url: "https://go.x.test/a" })];
+    expect((await resolveLinks(rows, o))[0]!.url).toBe("https://a.test/2");
+    expect(existsSync(o.cachePath)).toBe(false);
+    const again = web({ "https://go.x.test/a": [302, GH] });
+    expect((await resolveLinks(rows, o))[0]!.url).toBe(GH);
+    expect(again).toHaveLength(1);
+  });
+  it("does not remember a chain that ended in a network error or a 429", async () => {
+    for (const end of ["down", 429] as const) {
+      vi.stubGlobal("fetch", vi.fn(async (url: string) => {
+        if (String(url) === "https://go.x.test/a") return new Response(null, { status: 302, headers: { location: "https://a.test/2" } });
+        if (end === "down") throw new Error("down");
+        return new Response(null, { status: 429 });
+      }));
+      const o = opts();
+      await resolveLinks([row("A", "T", { url: "https://go.x.test/a" })], o);
+      expect(existsSync(o.cachePath)).toBe(false);
+    }
+  });
+  it("remembers a complete chain that ended at the employer's own page", async () => {
+    web({ "https://go.x.test/a": [302, "https://careers.acme.test/jobs/9"] });
+    const o = opts();
+    await resolveLinks([row("A", "T", { url: "https://go.x.test/a" })], o);
+    expect(JSON.parse(readFileSync(o.cachePath, "utf8"))).toEqual({ "https://go.x.test/a": "https://careers.acme.test/jobs/9" });
   });
 });
 

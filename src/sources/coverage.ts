@@ -71,30 +71,37 @@ async function hop(url: string): Promise<{ status: number; location: string | nu
 // Follows redirects hop by hop to the employer's own URL. Stops at the first URL that names an ATS posting (that page is
 // never requested: the id is already in the link), at a page that is not a redirect, at a login or bot wall, at a loop or
 // after MAX_HOPS. Undefined when nothing better than the link we started with was reached.
-export async function followRedirects(start: string, wait: (host: string) => Promise<void> = async () => undefined): Promise<string | undefined> {
+// `transient` is set when the walk ended at a network error, a 429 or a 5xx: that answer says nothing about the link.
+async function walk(start: string, wait: (host: string) => Promise<void>): Promise<{ to: string | undefined; transient: boolean }> {
   let cur = start;
   const seen = new Set([start]);
+  const end = (transient = false) => ({ to: cur === start ? undefined : cur, transient });
   for (let i = 0; i < MAX_HOPS; i++) {
-    if (hasAtsId(cur)) return cur === start ? undefined : cur;
+    if (hasAtsId(cur)) return end();
     let r: { status: number; location: string | null };
     try {
       await wait(new URL(cur).hostname);
       r = await hop(cur);
     } catch {
-      return cur === start ? undefined : cur;
+      return end(true);
     }
-    if (r.status < 300 || r.status >= 400 || !r.location) return cur === start ? undefined : cur;
+    if (r.status === 429 || r.status >= 500) return end(true);
+    if (r.status < 300 || r.status >= 400 || !r.location) return end();
     let next: string;
     try {
       next = new URL(r.location, cur).toString();
     } catch {
-      return cur === start ? undefined : cur;
+      return end();
     }
-    if (WALL.test(new URL(next).pathname + new URL(next).search) || seen.has(next)) return cur === start ? undefined : cur;
+    if (WALL.test(new URL(next).pathname + new URL(next).search) || seen.has(next)) return end();
     seen.add(next);
     cur = next;
   }
-  return cur === start ? undefined : cur;
+  return end();
+}
+
+export async function followRedirects(start: string, wait: (host: string) => Promise<void> = async () => undefined): Promise<string | undefined> {
+  return (await walk(start, wait)).to;
 }
 
 function loadCache(path: string | undefined): Record<string, string> {
@@ -119,17 +126,18 @@ export async function resolveLinks(rows: readonly SampleRow[], opts: ResolveOpti
     last.set(host, at);
     if (at > Date.now()) await new Promise((r) => setTimeout(r, at - Date.now()));
   };
-  const pending = new Map<string, Promise<string | undefined>>();
+  const pending = new Map<string, ReturnType<typeof walk>>();
   const out = await pool([...rows], 4, async (r) => {
     const u = r.url;
     if (!u || !/^https?:/i.test(u) || hasAtsId(u)) return r;
     const cached = cache[u];
     if (cached) return { ...r, url: cached };
     let p = pending.get(u);
-    if (!p) pending.set(u, (p = followRedirects(u, wait)));
-    const to = await p;
+    if (!p) pending.set(u, (p = walk(u, wait)));
+    const { to, transient } = await p;
     if (!to) return r;
-    cache[u] = to;
+    // A chain that ended in a transient error may be cut short: used for this run, never remembered.
+    if (!transient) cache[u] = to;
     return { ...r, url: to };
   });
   if (cachePath && Object.keys(cache).length > 0) {
@@ -235,9 +243,9 @@ export async function readBoard(kind: BoardKind, board: string): Promise<Watched
     const jobs = await boardJobs(kind, board);
     const keys = jobs.map((j) => jobKey(hostedUrl[kind](board, j.id)));
     if (keys.some((k) => atsOf(k) !== kind)) throw new Error(`${kind} ${board}: ids not readable`);
-    return { ats: kind, titles: jobs.map((j) => j.title), keys };
+    return { ats: kind, board, titles: jobs.map((j) => j.title), keys };
   } catch {
-    return { ats: kind };
+    return { ats: kind, board };
   }
 }
 

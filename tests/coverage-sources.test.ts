@@ -77,12 +77,12 @@ describe("Workday enumeration", () => {
 describe("official board reads", () => {
   it("reads every Greenhouse id from the board API, before any filtering", async () => {
     stubFetch(() => answer({ jobs: [{ id: 123, title: "ML Engineer" }, { id: 456, title: "Chef" }] }));
-    expect(await readBoard("greenhouse", "acme")).toEqual({ ats: "greenhouse", titles: ["ML Engineer", "Chef"], keys: ["greenhouse:123", "greenhouse:456"] });
+    expect(await readBoard("greenhouse", "acme")).toEqual({ ats: "greenhouse", board: "acme", titles: ["ML Engineer", "Chef"], keys: ["greenhouse:123", "greenhouse:456"] });
   });
 
   it("is unread when the Greenhouse answer has no job list (an empty list would prove every posting gone)", async () => {
     stubFetch(() => answer({ error: "rate limited" }));
-    expect(await readBoard("greenhouse", "acme")).toEqual({ ats: "greenhouse" });
+    expect(await readBoard("greenhouse", "acme")).toEqual({ ats: "greenhouse", board: "acme" });
   });
 
   it("reads Ashby ids and treats an unlisted-flag board as read", async () => {
@@ -99,6 +99,6 @@ describe("official board reads", () => {
     expect(b.titles).toHaveLength(251);
     expect(b.keys).toHaveLength(251);
     stubFetch((url) => (new URL(url).searchParams.get("skip") === "250" ? answer({}, 400) : answer(lever(0))));
-    expect(await readBoard("lever", "acme")).toEqual({ ats: "lever" });
+    expect(await readBoard("lever", "acme")).toEqual({ ats: "lever", board: "acme" });
   });
 });

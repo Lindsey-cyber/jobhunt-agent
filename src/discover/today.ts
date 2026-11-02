@@ -3,6 +3,7 @@
 // and this module decides each posting's state and renders the page.
 import type { Job } from "../domain/job.ts";
 import type { Policy } from "../profile/schema.ts";
+import { renderGates, type stageGates } from "./gates.ts";
 import { applyOrder, eligibility, freshSince, isFresh, postedOn, type Eligibility } from "./eligibility.ts";
 import type { H1bRecord } from "./h1b.ts";
 import { employerKey } from "./h1b.ts";
@@ -161,7 +162,7 @@ const STATE_LABEL: Record<PostingState, string> = {
 
 const cell = (s: string) => s.replace(/\|/g, "/").replace(/\s+/g, " ").trim();
 
-export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocker[]; appliedToday: Posting[]; tierOf: (p: Posting) => "A" | "B" | "C"; queueSize: number; pending?: string | undefined; notes?: string[] }): string {
+export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocker[]; appliedToday: Posting[]; tierOf: (p: Posting) => "A" | "B" | "C"; queueSize: number; pending?: string | undefined; notes?: string[]; gates?: ReturnType<typeof stageGates> }): string {
   const since = freshSince(i.policy, i.today);
   const fresh = (p: Posting) => isFresh(p.job, i.policy, i.today);
   const open = i.posts.filter((p) => ["agent_queue", "yours", "held"].includes(p.state));
@@ -173,6 +174,7 @@ export function renderToday(i: TodayInput & { posts: Posting[]; blockers: Blocke
   const openFresh = open.filter(fresh).length;
   const L: string[] = [`# 今日 · ${i.today}`, "", `规则来自 \`data/policy.yaml\`：有 H-1B 记录、不是纯高级岗。最近 ${i.policy.freshDays} 天发布的（${since} 起）先投，更早的照样投、排在后面。下面的数字都经过自检：各状态之和等于总数，agent 待投与投递命令的队列一致。`, ""];
   if (i.notes?.length) L.push(...i.notes.map((n) => `> ${n}`), "");
+  if (i.gates) L.push(...renderGates(i.gates));
   L.push(`**库里全部 ${i.posts.length} 个岗位**：已投出 ${count("applied")}，已提交未确认 ${count("unconfirmed")}，还没投出的 ${open.length}（最近 ${i.policy.freshDays} 天 ${openFresh}，更早 ${open.length - openFresh}），待复核 ${count("review")}，不投 ${count("skipped")}。`, "");
   const who = new Map<string, Record<"A" | "B" | "C", number>>();
   for (const p of open) { const k = whoOf(p); const r = who.get(k) ?? { A: 0, B: 0, C: 0 }; r[i.tierOf(p)]++; who.set(k, r); }

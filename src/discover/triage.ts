@@ -35,6 +35,9 @@ const DATA_SCIENCE = /data scien|biostatistic|statistician|statistical (?:data )
 const AI_ANALYST = /\b(?:ai|artificial intelligence|machine learning|ml)\b[^,]{0,25}\banalyst\b/i;
 // Adjacent to the target; shown for review, not matched.
 const ADJACENT = /\bquantitative researcher\b/i;
+// The title scope: what triage does not reject as out of scope. Every fetcher's title pre-filter is this
+// predicate, so a fetcher can never drop a title triage would have kept.
+export const inScopeTitle = (title: string): boolean => ROLE.test(title) || DATA_SCIENCE.test(title) || AI_ANALYST.test(title) || ADJACENT.test(title);
 const SENIOR = /\b(senior|sr\.?|staff|principal|lead|director|manager|head of|distinguished|architect|vp|vice president|chief|founding)\b|\b(engineer|scientist|developer)\s+(iii|iv|3|4)\b|\b(l[5-9]|e[5-9]|ic[4-9])\b/i;
 const INTERN = /\bintern(ship)?s?\b|\bco-?op\b|summer 20\d\d|\bapprentice/i;
 const ENGINEERING = /\bengineer(ing)?\b|scientist|researcher|\bdeveloper\b|\bswe\b|\bmts\b|member of technical staff|programmer/i;

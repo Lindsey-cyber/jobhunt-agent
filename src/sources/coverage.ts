@@ -3,7 +3,7 @@
 // Never opens an application form: a link is only followed hop by hop for its Location header (HEAD), never rendered.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { normCompany, notIndependent, parseListTable, urlsIn, workdaySite, type SampleRow, type WatchedBoard } from "../discover/coverage.ts";
+import { isAggregator, normCompany, notIndependent, parseListTable, urlsIn, workdaySite, type SampleRow, type WatchedBoard } from "../discover/coverage.ts";
 import { atsOf, jobKey } from "../discover/identity.ts";
 import { loadWatchlist, WORKDAY_PAGE, WORKDAY_PAGE_CAP, type BoardKind } from "./fetch.ts";
 import { getJson, getText, pool, postJson } from "./http.ts";
@@ -30,12 +30,13 @@ export function requireIndependent(lists: readonly SampleList[], watched: readon
   if (bad.length) throw new Error(`refused: ${bad.map((l) => l.name).join(", ")} appear in config/watchlist.yaml, so a sample from them would not be independent`);
 }
 
-export async function fetchSample(lists: readonly SampleList[]): Promise<{ rows: SampleRow[]; failed: string[] }> {
+// Rows whose company is in config/watchlist.yaml `aggregators:` are left out: they repost other employers' jobs.
+export async function fetchSample(lists: readonly SampleList[], aggregators: readonly string[] = loadWatchlist().aggregators): Promise<{ rows: SampleRow[]; failed: string[] }> {
   const rows: SampleRow[] = [];
   const failed: string[] = [];
   for (const l of lists) {
     try {
-      rows.push(...parseListTable(l.name, await getText(l.raw, 120000)));
+      rows.push(...parseListTable(l.name, await getText(l.raw, 120000)).filter((r) => !isAggregator(r.company, aggregators)));
     } catch (e) {
       failed.push(`${l.name}: ${e instanceof Error ? e.message : String(e)}`);
     }

@@ -3,7 +3,7 @@ import { parse } from "yaml";
 import { z } from "zod";
 import type { Channel, JobKey, Sighting, SizeBand } from "../domain/job.ts";
 import { jobKey } from "../discover/identity.ts";
-import { ROLE } from "../discover/triage.ts";
+import { inScopeTitle } from "../discover/triage.ts";
 import { parseAmazon, parseAshby, parseEightfold, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, eightfoldInUS, type EightfoldItem, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
 import { getJson, getText, HttpError, pool, postJson } from "./http.ts";
 
@@ -101,14 +101,6 @@ export interface WorkdayOptions {
   perQuery?: number;
 }
 
-// Titles whose detail a Workday walk reads: the AI/ML shapes (ROLE) plus the roles the candidate put in scope on
-// 2026-10-28/11-02: data scientist, statistics and AI/data analyst titles. triage.ts holds the same two patterns
-// privately; without them here a listed "Data Scientist" was never fetched and so never reached the catalog.
-export const IN_SCOPE_TITLE = new RegExp(
-  `${ROLE.source}|data scien|biostatistic|statistician|statistical (?:data )?analyst|statistical scientist|\\b(?:ai|artificial intelligence|machine learning|ml)\\b[^,]{0,25}\\banalyst\\b`,
-  "i",
-);
-
 export const WORKDAY_PAGE = 20;
 // Workday itself serves at most 2000 postings per search (100 pages of 20).
 export const WORKDAY_PAGE_CAP = 100;
@@ -139,7 +131,7 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
       for (const p of posts) {
         if (!p.externalPath) continue;
         listed++;
-        if (IN_SCOPE_TITLE.test(p.title ?? "")) paths.set(p.externalPath, { title: p.title ?? "", postedOn: p.postedOn ?? "" });
+        if (inScopeTitle(p.title ?? "")) paths.set(p.externalPath, { title: p.title ?? "", postedOn: p.postedOn ?? "" });
       }
     };
     const list = (offset: number, searchText: string) => postJson<WorkdayList>(`${api}/jobs`, { appliedFacets: {}, limit: WORKDAY_PAGE, offset, searchText }, 60000);
@@ -228,7 +220,7 @@ export async function fetchSmartRecruiters(c: Watchlist["smartrecruiters"][numbe
         const page = await getJson<SrList>(`${api}?limit=100&offset=${offset}&country=us&q=${encodeURIComponent(q)}`, 60000);
         for (const p of page.content ?? []) {
           listed++;
-          if (ROLE.test(p.name ?? "")) hits.set(p.id, p);
+          if (inScopeTitle(p.name ?? "")) hits.set(p.id, p);
         }
         if (offset + 100 >= (page.totalFound ?? 0)) break;
       }
@@ -266,7 +258,7 @@ export async function fetchOracleHcm(o: Watchlist["oracleHcm"][number], queries:
         for (const p of top?.requisitionList ?? []) {
           if (p.PrimaryLocationCountry !== "US") continue;
           listed++;
-          if (ROLE.test(p.Title ?? "")) hits.set(p.Id, p);
+          if (inScopeTitle(p.Title ?? "")) hits.set(p.Id, p);
         }
         if (offset + 25 >= (top?.TotalJobsCount ?? 0)) break;
       }
@@ -311,7 +303,7 @@ export async function fetchEightfold(e: Watchlist["eightfold"][number], queries:
         for (const p of items) {
           if (!eightfoldInUS(p)) continue;
           listed++;
-          if (p.id !== undefined && ROLE.test(p.posting_name || p.name || "")) hits.set(String(p.id), p);
+          if (p.id !== undefined && inScopeTitle(p.posting_name || p.name || "")) hits.set(String(p.id), p);
         }
         start += items.length;
         if (items.length === 0 || start >= (page?.count ?? 0)) break;
@@ -345,7 +337,7 @@ export async function fetchAmazon(queries: string[], seenAt: string, perQuery = 
         const body = await getJson<{ hits?: number; jobs?: Parameters<typeof parseAmazon>[0]["jobs"] }>(`https://www.amazon.jobs/en/search.json?base_query=${encodeURIComponent(q)}&country%5B%5D=USA&result_limit=100&offset=${offset}&sort=recent`, 60000);
         const page = parseAmazon(body, seenAt);
         listed += page.length;
-        for (const s of page) if (ROLE.test(s.title)) seen.set(s.key, s);
+        for (const s of page) if (inScopeTitle(s.title)) seen.set(s.key, s);
         if (offset + 100 >= (body.hits ?? 0)) break;
       }
     }

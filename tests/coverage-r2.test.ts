@@ -5,7 +5,9 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { boardOf, causeOf, fits, indexCatalog, liveness, match, normCompany, parseListTable, sampleOf, type SampleRow, type WatchedBoard } from "../src/discover/coverage.ts";
 import type { Job, JobKey } from "../src/domain/job.ts";
 import { followRedirects, resolveLinks } from "../src/sources/coverage.ts";
-import { fetchWorkday, IN_SCOPE_TITLE } from "../src/sources/fetch.ts";
+import { inScopeTitle as IN_SCOPE_TITLE_FN } from "../src/discover/triage.ts";
+import { fetchWorkday } from "../src/sources/fetch.ts";
+const IN_SCOPE_TITLE = { test: IN_SCOPE_TITLE_FN };
 
 const job = (o: Partial<Job> & Pick<Job, "key" | "company" | "title">): Job =>
   ({ location: "Remote, US", url: `https://x.test/${o.key}`, official: false, publishedAt: "", description: "", sources: [], firstSeen: "", lastSeen: "", triage: { verdict: "match", rule: "role.match", reason: "" }, hints: {}, size: "unknown", ...o }) as Job;

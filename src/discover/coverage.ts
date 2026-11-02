@@ -148,6 +148,13 @@ export function fits(r: SampleRow, policy: Parameters<typeof policyExcludes>[2] 
   return policyExcludes(r.company, r.title, policy).length === 0;
 }
 
+// True when the row's company is a listed aggregator (a site that reposts other employers' jobs): its rows are
+// not an employer's postings, so the sample leaves them out.
+export function isAggregator(company: string, aggregators: readonly string[]): boolean {
+  const c = normCompany(company);
+  return c !== "" && aggregators.some((a) => normCompany(a) === c);
+}
+
 // Unique by company+title, then at most `max` evenly spaced over the sorted rows (deterministic).
 export function sampleOf(rows: readonly SampleRow[], max: number): SampleRow[] {
   const seen = new Set<string>();

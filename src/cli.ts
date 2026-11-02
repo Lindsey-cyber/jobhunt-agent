@@ -233,7 +233,9 @@ switch (command) {
     const since = values.since ?? new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
     ready.splice(0, ready.length, ...ready.filter((j) => posted(j).slice(0, 10) >= since));
     console.log(`only postings since ${since}`);
-    const fresh = ready.filter((j) => !sameJob(ledger, j.url)).sort((a, b) => posted(b).localeCompare(posted(a)));
+    // The candidate (2026-11-02): analytics-engineer roles after everything else.
+    const later = (j: (typeof ready)[number]) => (/analytics engineer/i.test(j.title) ? 1 : 0);
+    const fresh = ready.filter((j) => !sameJob(ledger, j.url)).sort((a, b) => later(a) - later(b) || posted(b).localeCompare(posted(a)));
     // Retry a held application only when today's rules fill every required field of its last form
     // (questions waiting on the candidate would only hold it again); newest postings first.
     let waiting = 0;

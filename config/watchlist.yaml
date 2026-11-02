@@ -666,6 +666,94 @@ lever:
   - { board: spotify, company: 'Spotify', size: medium_large }
   - { board: zoox, company: 'Zoox', size: medium_large, ai: true }
   - { board: shieldai, company: 'Shield AI', size: medium_large, ai: true }
+  # From the new-grad lists and catalog links: every Lever board they reference, verified live 2026-11-02 (candidate: cover Workday/Ashby/Lever companies too).
+  - { board: 'AIFund', company: 'AI Fund', size: unknown }
+  - { board: 'Farcast', company: 'Farcast', size: unknown }
+  - { board: 'Ketch', company: 'Ketch', size: unknown }
+  - { board: 'ModernIntelligence', company: 'Modern Intelligence', size: unknown }
+  - { board: 'agile-defense', company: 'Agile Defense', size: unknown }
+  - { board: 'algorex', company: 'N1 Health', size: unknown }
+  - { board: 'alloy', company: 'Alloy.ai', size: unknown }
+  - { board: 'appen-2', company: 'Appen', size: unknown }
+  - { board: 'artera', company: 'Artera', size: unknown }
+  - { board: 'artera-2', company: 'Artera', size: unknown }
+  - { board: 'auw', company: 'Applied Underwriters', size: unknown }
+  - { board: 'belvederetrading', company: 'Belvedere Trading', size: unknown }
+  - { board: 'bloomon', company: 'Bloom & Wild Group', size: unknown }
+  - { board: 'brillio-2', company: 'Brillio', size: unknown }
+  - { board: 'cgsfederal', company: 'CGS Federal (Contact Government Services)', size: unknown }
+  - { board: 'crestoperations', company: 'Crest Industries', size: unknown }
+  - { board: 'crosscountry-consulting', company: 'CrossCountry Consulting', size: unknown }
+  - { board: 'curai', company: 'Curai', size: unknown }
+  - { board: 'datalabusa', company: 'DataLab USA', size: unknown }
+  - { board: 'deepgenomics', company: 'Deep Genomics', size: unknown }
+  - { board: 'economicmodeling', company: 'Lightcast', size: unknown }
+  - { board: 'ekimetrics', company: 'Ekimetrics', size: unknown }
+  - { board: 'erg', company: 'Eastern Research Group', size: unknown }
+  - { board: 'field-ai', company: 'Field AI', size: unknown }
+  - { board: 'galatea-associates', company: 'Galatea Associates', size: unknown }
+  - { board: 'glsllc', company: 'Global Lending Services', size: unknown }
+  - { board: 'gmo', company: 'GMO', size: unknown }
+  - { board: 'hatchit', company: 'Hatch IT', size: unknown }
+  - { board: 'hive', company: 'Hive', size: unknown }
+  - { board: 'humble-robotics', company: 'Humble Robotics', size: unknown }
+  - { board: 'ion', company: 'ION Group', size: unknown }
+  - { board: 'jupiterintel', company: 'Jupiter Intelligence', size: unknown }
+  - { board: 'kitware', company: 'Kitware', size: unknown }
+  - { board: 'layup', company: 'Layup Parts', size: unknown }
+  - { board: 'leversys', company: 'Leversys', size: unknown }
+  - { board: 'lumaril-corporation', company: 'Lumaril', size: unknown }
+  - { board: 'lumotive', company: 'Lumotive', size: unknown }
+  - { board: 'matchgroup', company: 'Match Group', size: unknown }
+  - { board: 'mendix', company: 'Mendix', size: unknown }
+  - { board: 'metergysolutions', company: 'Metergy Solutions', size: unknown }
+  - { board: 'mytos', company: 'Mytos', size: unknown }
+  - { board: 'nationaljournal', company: 'National Journal', size: unknown }
+  - { board: 'nio-usa', company: 'Nio', size: unknown }
+  - { board: 'nuvacore', company: 'NUVACORE', size: unknown }
+  - { board: 'openx', company: 'OpenX Technologies', size: unknown }
+  - { board: 'optionmetrics', company: 'OptionMetrics', size: unknown }
+  - { board: 'pditechnologies', company: 'PDI Technologies', size: unknown }
+  - { board: 'pentagrp', company: 'Penta Group', size: unknown }
+  - { board: 'perrknight', company: 'Perr&Knight', size: unknown }
+  - { board: 'pibenchmark', company: 'PredictX', size: unknown }
+  - { board: 'pingwind', company: 'PingWind', size: unknown }
+  - { board: 'plus-2', company: 'PlusAI', size: unknown }
+  - { board: 'pointclickcare', company: 'PointClickCare', size: unknown }
+  - { board: 'project-healthy-minds', company: 'Project Healthy Minds', size: unknown }
+  - { board: 'promiserobotics', company: 'Promise Robotics', size: unknown }
+  - { board: 'pyka', company: 'Pyka', size: unknown }
+  - { board: 'rainfocus', company: 'RainFocus', size: unknown }
+  - { board: 'redhorsecorp', company: 'Redhorse Corporation', size: unknown }
+  - { board: 'regal', company: 'Regal', size: unknown }
+  - { board: 'revenueanalytics', company: 'Revenue Analytics', size: unknown }
+  - { board: 'riverdale', company: 'Riverdale Country School', size: unknown }
+  - { board: 'rosaiclabs', company: 'RosaicLabs', size: unknown }
+  - { board: 'rover', company: 'Rover', size: unknown }
+  - { board: 'runlaminar', company: 'Laminar', size: unknown }
+  - { board: 'rws', company: 'RWS', size: unknown }
+  - { board: 'salesdemo-jr', company: 'Parkdepot', size: unknown }
+  - { board: 'sep', company: 'SEP', size: unknown }
+  - { board: 'shyftlabs', company: 'ShyftLabs', size: unknown }
+  - { board: 'significanceinc', company: 'Significance', size: unknown }
+  - { board: 'simulmedia', company: 'Simulmedia', size: unknown }
+  - { board: 'sonarsource', company: 'Sonar', size: unknown }
+  - { board: 'sprymethods', company: 'Spry Methods', size: unknown }
+  - { board: 'steerbridge', company: 'SteerBridge', size: unknown }
+  - { board: 'synergyecp', company: 'Synergy ECP', size: unknown }
+  - { board: 'thinkahead', company: 'AHEAD', size: unknown }
+  - { board: 'upscale-ai', company: 'Upscale AI', size: unknown }
+  - { board: 'valkyrietrading', company: 'Valkyrie Trading', size: unknown }
+  - { board: 'veepee', company: 'Veepee', size: unknown }
+  - { board: 'veeva', company: 'Veeva Systems', size: unknown }
+  - { board: 'vitana-pediatric', company: 'Vitana Pediatric & Orthodontic Partners', size: unknown }
+  - { board: 'wachter', company: 'Wachter', size: unknown }
+  - { board: 'weloglobal', company: 'Welo Global', size: unknown }
+  - { board: 'weride', company: 'WeRide.ai', size: unknown }
+  - { board: 'wintermute-trading', company: 'Wintermute', size: unknown }
+  - { board: 'wisdomtree', company: 'WisdomTree', size: unknown }
+  - { board: 'worldscape-technology', company: 'Worldscape Technology', size: unknown }
+  - { board: 'wyetechllc', company: 'Wyetech', size: unknown }
 ashby:
   - { board: applied, company: 'Applied Intuition', size: medium_large, ai: true }
   - { board: quora, company: 'Quora', size: medium_large }
@@ -691,6 +779,240 @@ ashby:
   - { board: plaid, company: 'Plaid', size: medium_large }
   - { board: brainco, company: 'Brain Co.', size: unknown, ai: true }
 # Workday has no full-board API; each site is searched with these bounded queries.
+  # From the new-grad lists and catalog links: every Ashby board they reference, verified live 2026-11-02 (candidate: cover Workday/Ashby/Lever companies too).
+  - { board: '1x', company: '1X', size: unknown }
+  - { board: '2ndwave', company: '2ndWave', size: unknown }
+  - { board: 'Abound', company: 'Abound', size: unknown }
+  - { board: 'Commure', company: 'Commure', size: unknown }
+  - { board: 'FSH', company: 'FSH Technologies', size: unknown }
+  - { board: 'Lightfield', company: 'Lightfield', size: unknown }
+  - { board: 'NorthwoodSpace', company: 'Northwood Space', size: unknown }
+  - { board: 'Ontic', company: 'Ontic', size: unknown }
+  - { board: 'Preference-Model', company: 'Preference Model', size: unknown }
+  - { board: 'Roadrunner', company: 'RoadRunner', size: unknown }
+  - { board: 'Solace', company: 'Solace Health', size: unknown }
+  - { board: 'Valon', company: 'Valon', size: unknown }
+  - { board: 'Verne%20Robotics', company: 'Verne Robotics', size: unknown }
+  - { board: 'Watershed', company: 'Watershed', size: unknown }
+  - { board: 'abridge', company: 'Abridge', size: unknown }
+  - { board: 'aescape', company: 'Aescape', size: unknown }
+  - { board: 'agave', company: 'Agave', size: unknown }
+  - { board: 'aiprise', company: 'AiPrise', size: unknown }
+  - { board: 'alchemi', company: 'Alchemi', size: unknown }
+  - { board: 'ambral', company: 'Ambral', size: unknown }
+  - { board: 'amplitude', company: 'Amplitude', size: unknown }
+  - { board: 'anima', company: 'Anima', size: unknown }
+  - { board: 'anori', company: 'Anori', size: unknown }
+  - { board: 'anysignal', company: 'AnySignal', size: unknown }
+  - { board: 'apex-technology-inc', company: 'Apex Technology', size: unknown }
+  - { board: 'arizent', company: 'Arizent', size: unknown }
+  - { board: 'astera', company: 'Astera Institute', size: unknown }
+  - { board: 'atominvest', company: 'Atominvest', size: unknown }
+  - { board: 'aurelian', company: 'Aurelian', size: unknown }
+  - { board: 'aurora-operations-inc', company: 'Aurora Innovation', size: unknown }
+  - { board: 'automat', company: 'Automat', size: unknown }
+  - { board: 'backbone', company: 'Backbone Systems', size: unknown }
+  - { board: 'bagsfm', company: 'Bags', size: unknown }
+  - { board: 'barnes', company: 'Barnes & Thornburg', size: unknown }
+  - { board: 'base-power', company: 'Base Power', size: unknown }
+  - { board: 'bild-ai', company: 'Bild AI', size: unknown }
+  - { board: 'blissway', company: 'Blissway', size: unknown }
+  - { board: 'bobyard', company: 'Bobyard', size: unknown }
+  - { board: 'bridger', company: 'Bridger', size: unknown }
+  - { board: 'build-ai', company: 'Build AI', size: unknown }
+  - { board: 'careers.mural', company: 'Mural', size: unknown }
+  - { board: 'cerebras', company: 'Cerebras', size: unknown }
+  - { board: 'chalk', company: 'Chalk', size: unknown }
+  - { board: 'charge-robotics', company: 'Charge Robotics', size: unknown }
+  - { board: 'check-technologies', company: 'Check', size: unknown }
+  - { board: 'checkly', company: 'Checkly', size: unknown }
+  - { board: 'cheiron', company: 'Cheiron', size: unknown }
+  - { board: 'clickhouse', company: 'ClickHouse', size: unknown }
+  - { board: 'cobot', company: 'Collaborative Robotics', size: unknown }
+  - { board: 'cogent-security', company: 'Cogent Security', size: unknown }
+  - { board: 'coinflow', company: 'Coinflow', size: unknown }
+  - { board: 'collinear-ai', company: 'Collinear AI', size: unknown }
+  - { board: 'color-health', company: 'Color', size: unknown }
+  - { board: 'composio', company: 'Composio', size: unknown }
+  - { board: 'concourse', company: 'Concourse', size: unknown }
+  - { board: 'cylake-inc', company: 'Cylake', size: unknown }
+  - { board: 'deeter-analytics', company: 'Deeter Analytics', size: unknown }
+  - { board: 'dipper', company: 'Dipper', size: unknown }
+  - { board: 'discernis', company: 'Discernis', size: unknown }
+  - { board: 'dome-systems-inc', company: 'Dome Systems Inc', size: unknown }
+  - { board: 'droyd', company: 'Droyd Robotics', size: unknown }
+  - { board: 'duck-duck-go', company: 'DuckDuckGo - we are looking for candidates that are excited to join us on a miss', size: unknown }
+  - { board: 'dyna-robotics', company: 'Dyna Robotics', size: unknown }
+  - { board: 'ellipsislabs', company: 'Ellipsis Labs', size: unknown }
+  - { board: 'elveo', company: 'Elveo', size: unknown }
+  - { board: 'ema', company: 'Ema', size: unknown }
+  - { board: 'embedding-vc', company: 'Embedding VC', size: unknown }
+  - { board: 'emerald-ai', company: 'Emerald AI', size: unknown }
+  - { board: 'endeavorai', company: 'endeavorai.com', size: unknown }
+  - { board: 'engramme', company: 'Engramme', size: unknown }
+  - { board: 'f7d8749a-72d6-407c-bf98-292ea630c73a', company: 'Shield AI', size: unknown }
+  - { board: 'fab2', company: 'Fab2', size: unknown }
+  - { board: 'faros-ai', company: 'Faros AI', size: unknown }
+  - { board: 'feathery', company: 'Feathery', size: unknown }
+  - { board: 'fellowai', company: 'Fellow', size: unknown }
+  - { board: 'fireworks', company: 'Fireworks AI', size: unknown }
+  - { board: 'focused', company: 'Focused', size: unknown }
+  - { board: 'footprint', company: 'Footprint', size: unknown }
+  - { board: 'fortell', company: 'Fortell', size: unknown }
+  - { board: 'foundationhealthcareers', company: 'Foundation Health', size: unknown }
+  - { board: 'fractile', company: 'Fractile', size: unknown }
+  - { board: 'fs-studio', company: 'FS Studio', size: unknown }
+  - { board: 'fuel-cycle', company: 'Fuel Cycle', size: unknown }
+  - { board: 'generalist', company: 'Generalist', size: unknown }
+  - { board: 'generate', company: 'Generate Capital', size: unknown }
+  - { board: 'goaly', company: 'Goaly', size: unknown }
+  - { board: 'gradientrobotics', company: 'Gradient Robotics', size: unknown }
+  - { board: 'greptile', company: 'Greptile', size: unknown }
+  - { board: 'growfig', company: 'Fig', size: unknown }
+  - { board: 'handshake', company: 'Handshake', size: unknown }
+  - { board: 'harperinsure', company: 'Harper Group', size: unknown }
+  - { board: 'havocai', company: 'HavocAI', size: unknown }
+  - { board: 'hedra', company: 'Hedra', size: unknown }
+  - { board: 'hipp', company: 'Hipp Health', size: unknown }
+  - { board: 'hiya', company: 'Hiya', size: unknown }
+  - { board: 'hooglee', company: 'Hooglee', size: unknown }
+  - { board: 'humanoid', company: 'Humanoid', size: unknown }
+  - { board: 'hyphenate', company: 'Hyphenate', size: unknown }
+  - { board: 'iambic-therapeutics', company: 'Iambic Therapeutics', size: unknown }
+  - { board: 'iceye', company: 'ICEYE', size: unknown }
+  - { board: 'icon', company: 'Icon', size: unknown }
+  - { board: 'idler', company: 'Idler', size: unknown }
+  - { board: 'incident', company: 'incident.io', size: unknown }
+  - { board: 'inductive-automation-llc', company: 'Inductive Automation', size: unknown }
+  - { board: 'inworld-ai', company: 'Inworld AI', size: unknown }
+  - { board: 'isembard', company: 'Isembard', size: unknown }
+  - { board: 'jampack-ai', company: 'Jampack AI', size: unknown }
+  - { board: 'jerry.ai', company: 'Jerry', size: unknown }
+  - { board: 'julius', company: 'Julius AI', size: unknown }
+  - { board: 'jupus', company: 'JUPUS', size: unknown }
+  - { board: 'kaluza', company: 'Kaluza', size: unknown }
+  - { board: 'kantiv', company: 'Kantiv', size: unknown }
+  - { board: 'kled-ai', company: 'Kled AI', size: unknown }
+  - { board: 'koahlabs', company: 'Koah', size: unknown }
+  - { board: 'krakentech', company: 'Kraken Tech', size: unknown }
+  - { board: 'lendable', company: 'Lendable', size: unknown }
+  - { board: 'lilt-production', company: 'Lilt', size: unknown }
+  - { board: 'liquid', company: 'Liquid', size: unknown }
+  - { board: 'litellm', company: 'LiteLLM', size: unknown }
+  - { board: 'liveflow', company: 'LiveFlow', size: unknown }
+  - { board: 'livekit', company: 'LiveKit', size: unknown }
+  - { board: 'lucidcomputing', company: 'Lucid Computing', size: unknown }
+  - { board: 'lumos', company: 'Lumos', size: unknown }
+  - { board: 'luxor', company: 'Tenki Cloud by Luxor Tech', size: unknown }
+  - { board: 'mach9', company: 'Mach9', size: unknown }
+  - { board: 'madhive', company: 'Madhive', size: unknown }
+  - { board: 'makai-labs', company: 'Makai Labs', size: unknown }
+  - { board: 'marianaminerals', company: 'Mariana Minerals', size: unknown }
+  - { board: 'mastra', company: 'Mastra', size: unknown }
+  - { board: 'matx', company: 'MatX', size: unknown }
+  - { board: 'medraai', company: 'Medra', size: unknown }
+  - { board: 'menlo', company: 'Overjoyed to partner with Menlo Research''s brilliant founders to recruit foundin', size: unknown }
+  - { board: 'meow', company: 'Meow', size: unknown }
+  - { board: 'metaview', company: 'Metaview', size: unknown }
+  - { board: 'meticulous', company: 'Meticulous', size: unknown }
+  - { board: 'middesk', company: 'Middesk', size: unknown }
+  - { board: 'moab', company: 'Moab', size: unknown }
+  - { board: 'monogram', company: 'Monogram', size: unknown }
+  - { board: 'morse-micro', company: 'Morse Micro', size: unknown }
+  - { board: 'n1', company: 'N1', size: unknown }
+  - { board: 'netic', company: 'Cybernetic Labs', size: unknown }
+  - { board: 'nevoya', company: 'Nevoya', size: unknown }
+  - { board: 'newxel', company: 'Newxel', size: unknown }
+  - { board: 'nexttoken', company: 'NextToken', size: unknown }
+  - { board: 'nexus-intelligence', company: 'Nexus Intelligence', size: unknown }
+  - { board: 'niantic-spatial', company: 'Niantic Spatial', size: unknown }
+  - { board: 'nooks', company: 'Nooks', size: unknown }
+  - { board: 'normalcomputing', company: 'Normal Computing', size: unknown }
+  - { board: 'northwoodspace', company: 'northwoodspace', size: unknown }
+  - { board: 'nova-talent', company: 'Nova Talent', size: unknown }
+  - { board: 'ntt-data-aivista', company: 'NTT DATA AIVista', size: unknown }
+  - { board: 'observable-space', company: 'Observable Space', size: unknown }
+  - { board: 'odysseyml', company: 'Odyssey', size: unknown }
+  - { board: 'oligo', company: 'Oligo Space', size: unknown }
+  - { board: 'options-it', company: 'Options Technology', size: unknown }
+  - { board: 'oscilar', company: 'Oscilar.com', size: unknown }
+  - { board: 'osmo', company: 'Osmo', size: unknown }
+  - { board: 'pangramlabs', company: 'Pangram Labs', size: unknown }
+  - { board: 'parafin', company: 'Parafin', size: unknown }
+  - { board: 'parker', company: 'Parker', size: unknown }
+  - { board: 'pelico', company: 'Pelico', size: unknown }
+  - { board: 'people-culture-talent', company: 'People Culture Talent', size: unknown }
+  - { board: 'periodic-labs', company: 'Periodic Labs', size: unknown }
+  - { board: 'petra-security', company: 'Petra Security', size: unknown }
+  - { board: 'pocket', company: 'Open Vision Engineering', size: unknown }
+  - { board: 'prelim', company: 'Prelim', size: unknown }
+  - { board: 'prior-labs', company: 'Prior Labs', size: unknown }
+  - { board: 'proxima-fusion', company: 'Proxima Fusion', size: unknown }
+  - { board: 'pureapp', company: 'Pure', size: unknown }
+  - { board: 'pylon-labs', company: 'Pylon', size: unknown }
+  - { board: 'quantcast', company: 'Quantcast', size: unknown }
+  - { board: 'quantum', company: 'Quantum', size: unknown }
+  - { board: 'qumulo', company: 'Qumulo', size: unknown }
+  - { board: 'realmalliance', company: 'Realm', size: unknown }
+  - { board: 'rebar', company: 'Rebar', size: unknown }
+  - { board: 'regent', company: 'REGENT', size: unknown }
+  - { board: 'reliable-robotics', company: 'Reliable Robotics Corporation', size: unknown }
+  - { board: 'relling', company: 'Relling', size: unknown }
+  - { board: 'resonance', company: 'Resonance', size: unknown }
+  - { board: 'resurgent-industries', company: 'Resurgent Industries', size: unknown }
+  - { board: 'retell-ai', company: 'Retell AI', size: unknown }
+  - { board: 'rhoda-ai', company: 'Rhoda AI', size: unknown }
+  - { board: 'river', company: 'River', size: unknown }
+  - { board: 'rivianvw.tech', company: 'Rivian', size: unknown }
+  - { board: 'rollout', company: 'Rollout', size: unknown }
+  - { board: 'runway-ml', company: 'Runway', size: unknown }
+  - { board: 'sampura', company: 'Sampura Research', size: unknown }
+  - { board: 'saronic', company: 'Saronic', size: unknown }
+  - { board: 'sciemo', company: 'Sciemo', size: unknown }
+  - { board: 'sela', company: 'Sela AI', size: unknown }
+  - { board: 'sentilink', company: 'SentiLink', size: unknown }
+  - { board: 'sheerhealth', company: 'Sheer Health ( https://www.sheerhealth.com )', size: unknown }
+  - { board: 'silnahealth.com', company: 'Silna Health', size: unknown }
+  - { board: 'sim', company: 'Sim', size: unknown }
+  - { board: 'smarkets', company: 'Smarkets ( https://www.smarkets.com )', size: unknown }
+  - { board: 'sola', company: 'Sola', size: unknown }
+  - { board: 'solace', company: 'Solace Health', size: unknown }
+  - { board: 'somana.tech', company: 'Somana', size: unknown }
+  - { board: 'spaitial', company: 'SpAItial', size: unknown }
+  - { board: 'spectral%20labs', company: 'Spectral Labs', size: unknown }
+  - { board: 'spruceid', company: 'SpruceID', size: unknown }
+  - { board: 'standardsubsea', company: 'Standard Subsea', size: unknown }
+  - { board: 'stradahq', company: 'Strada', size: unknown }
+  - { board: 'sunday', company: 'Sunday Robotics', size: unknown }
+  - { board: 'surge-ai', company: 'Surge AI', size: unknown }
+  - { board: 'swarmaero', company: 'Swarm Aero', size: unknown }
+  - { board: 'switchboard', company: 'Switchboard Hiring', size: unknown }
+  - { board: 'synhawk', company: 'Synhawk', size: unknown }
+  - { board: 'tabs', company: 'Tabs', size: unknown }
+  - { board: 'takt', company: 'Takt', size: unknown }
+  - { board: 'teya', company: 'Teya', size: unknown }
+  - { board: 'thumbtack', company: 'Thumbtack', size: unknown }
+  - { board: 'thundercompute', company: 'Thunder Compute (YC S24)', size: unknown }
+  - { board: 'tolmo', company: 'Tolmo', size: unknown }
+  - { board: 'tracelabs', company: 'Trace Labs', size: unknown }
+  - { board: 'trading212', company: 'Trading212', size: unknown }
+  - { board: 'trm-labs', company: 'TRM Labs', size: unknown }
+  - { board: 'trunk%20tools', company: 'Trunk Tools', size: unknown }
+  - { board: 'uncountable', company: 'Uncountable', size: unknown }
+  - { board: 'unlimitedindustries', company: 'Unlimited', size: unknown }
+  - { board: 'valinor', company: 'Valinor', size: unknown }
+  - { board: 'valon', company: 'Valon Tech', size: unknown }
+  - { board: 'veritus', company: 'Veritus', size: unknown }
+  - { board: 'versemedical', company: 'Verse Medical', size: unknown }
+  - { board: 'viggle', company: 'Viggle AI', size: unknown }
+  - { board: 'vmax', company: 'Vmax AI Corp', size: unknown }
+  - { board: 'voladynamics', company: 'Vola Dynamics', size: unknown }
+  - { board: 'voyant-photonics', company: 'Voyant Photonics', size: unknown }
+  - { board: 'wealth-com', company: 'Wealth.com', size: unknown }
+  - { board: 'within.ai', company: 'Within', size: unknown }
+  - { board: 'xapien', company: 'Xapien', size: unknown }
+  - { board: 'xterra%20ai', company: 'Xterra AI', size: unknown }
+  - { board: 'zefr', company: 'Zefr', size: unknown }
 workdayQueries: [new grad, new college grad, university graduate, entry level, machine learning, AI engineer, applied scientist, research engineer]
 workday:
   - { site: 'https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite', company: 'NVIDIA', size: medium_large }
@@ -718,6 +1040,510 @@ workday:
   - { site: 'https://micron.wd1.myworkdayjobs.com/External', company: 'Micron', size: medium_large }
   - { site: 'https://blackrock.wd1.myworkdayjobs.com/BlackRock_Professional', company: 'BlackRock', size: medium_large }
   - { site: 'https://crowe.wd12.myworkdayjobs.com/external_careers', company: 'Crowe', size: medium_large }
+  # From the new-grad lists and catalog links: every Workday board they reference, verified live 2026-11-02 (candidate: cover Workday/Ashby/Lever companies too).
+  - { site: 'https://2020companies.wd1.myworkdayjobs.com/external_careers', company: '2020 Companies', size: unknown }
+  - { site: 'https://3m.wd1.myworkdayjobs.com/Search', company: '3M', size: unknown }
+  - { site: 'https://abb.wd3.myworkdayjobs.com/external_career_page', company: 'ABB', size: unknown }
+  - { site: 'https://abbott.wd5.myworkdayjobs.com/abbottcareers', company: 'Abbott', size: unknown }
+  - { site: 'https://abbott.wd5.myworkdayjobs.com/abbottcareers2', company: 'Abbott', size: unknown }
+  - { site: 'https://abglobal.wd1.myworkdayjobs.com/abcampuscareers', company: 'AllianceBernstein', size: unknown }
+  - { site: 'https://abglobal.wd1.myworkdayjobs.com/alliancebernsteincareers', company: 'AllianceBernstein', size: unknown }
+  - { site: 'https://accenture.wd103.myworkdayjobs.com/AccentureCareers', company: 'Accenture', size: unknown }
+  - { site: 'https://accuray.wd5.myworkdayjobs.com/external', company: 'Accuray', size: unknown }
+  - { site: 'https://ace.wd5.myworkdayjobs.com/careers', company: 'Automobile Club of Southern California', size: unknown }
+  - { site: 'https://acxiomllc.wd5.myworkdayjobs.com/AcxiomUSA', company: 'Acxiom', size: unknown }
+  - { site: 'https://aep.wd1.myworkdayjobs.com/AEPCareerSite', company: 'American Electric Power', size: unknown }
+  - { site: 'https://aero.wd5.myworkdayjobs.com/external', company: 'The Aerospace Corporation', size: unknown }
+  - { site: 'https://agilent.wd5.myworkdayjobs.com/Agilent_Student_Careers', company: 'Agilent Technologies', size: unknown }
+  - { site: 'https://aig.wd1.myworkdayjobs.com/aig', company: 'AIG', size: unknown }
+  - { site: 'https://aksteel.wd1.myworkdayjobs.com/careers', company: 'Cleveland-Cliffs', size: unknown }
+  - { site: 'https://alation.wd503.myworkdayjobs.com/ExternalSite', company: 'Alation', size: unknown }
+  - { site: 'https://allegion.wd5.myworkdayjobs.com/careers', company: 'Allegion', size: unknown }
+  - { site: 'https://allegion.wd5.myworkdayjobs.com/earlytalent_careers', company: 'Allegion', size: unknown }
+  - { site: 'https://allegromicro.wd5.myworkdayjobs.com/allegrocareers', company: 'Allegro MicroSystems', size: unknown }
+  - { site: 'https://alliance.wd3.myworkdayjobs.com/nissanjobs', company: 'Nissan', size: unknown }
+  - { site: 'https://alliedsolutions.wd501.myworkdayjobs.com/Allied_External', company: 'Allied Solutions', size: unknown }
+  - { site: 'https://allstate.wd5.myworkdayjobs.com/allstate_careers', company: 'Allstate', size: unknown }
+  - { site: 'https://altera.wd1.myworkdayjobs.com/altera', company: 'Altera Corporation', size: unknown }
+  - { site: 'https://amat.wd1.myworkdayjobs.com/External', company: 'Applied Materials', size: unknown }
+  - { site: 'https://amat.wd1.myworkdayjobs.com/external', company: 'Applied Materials', size: unknown }
+  - { site: 'https://ambarella.wd108.myworkdayjobs.com/ambarella', company: 'Ambarella', size: unknown }
+  - { site: 'https://ameren.wd1.myworkdayjobs.com/External', company: 'Ameren', size: unknown }
+  - { site: 'https://american.wd1.myworkdayjobs.com/au', company: 'American University', size: unknown }
+  - { site: 'https://americanredcross.wd1.myworkdayjobs.com/american_red_cross_careers', company: 'americanredcross', size: unknown }
+  - { site: 'https://amgen.wd1.myworkdayjobs.com/careers', company: 'Amgen', size: unknown }
+  - { site: 'https://ancestry.wd501.myworkdayjobs.com/Careers', company: 'Ancestry', size: unknown }
+  - { site: 'https://ankura.wd5.myworkdayjobs.com/ankura', company: 'Ankura', size: unknown }
+  - { site: 'https://aoins.wd5.myworkdayjobs.com/AutoOwners', company: 'Auto-Owners Insurance', size: unknown }
+  - { site: 'https://aptiv.wd5.myworkdayjobs.com/aptiv_careers', company: 'Aptiv', size: unknown }
+  - { site: 'https://aresmgmt.wd1.myworkdayjobs.com/external', company: 'Ares Management', size: unknown }
+  - { site: 'https://argonne.wd1.myworkdayjobs.com/Argonne_Careers', company: 'Argonne National Laboratory', size: unknown }
+  - { site: 'https://argonne.wd1.myworkdayjobs.com/argonne_careers', company: 'Argonne National Laboratory', size: unknown }
+  - { site: 'https://arlo.wd12.myworkdayjobs.com/External_Careers', company: 'Arlo Technologies', size: unknown }
+  - { site: 'https://ascensushr.wd1.myworkdayjobs.com/ascensuscareers', company: 'Ascensus', size: unknown }
+  - { site: 'https://aspentech.wd5.myworkdayjobs.com/aspentech', company: 'AspenTech', size: unknown }
+  - { site: 'https://assetmark.wd5.myworkdayjobs.com/AssetMark_Careers', company: 'AssetMark', size: unknown }
+  - { site: 'https://astrazeneca.wd3.myworkdayjobs.com/careers', company: 'AstraZeneca', size: unknown }
+  - { site: 'https://autostore.wd3.myworkdayjobs.com/autostore', company: 'AutoStore', size: unknown }
+  - { site: 'https://avav.wd1.myworkdayjobs.com/AVAV', company: 'AeroVironment', size: unknown }
+  - { site: 'https://avav.wd1.myworkdayjobs.com/avav', company: 'AeroVironment', size: unknown }
+  - { site: 'https://aveva.wd3.myworkdayjobs.com/AVEVA_careers', company: 'AVEVA', size: unknown }
+  - { site: 'https://aveva.wd3.myworkdayjobs.com/aveva_careers', company: 'AVEVA', size: unknown }
+  - { site: 'https://avisbudget.wd1.myworkdayjobs.com/abg_careers', company: 'Avis Budget Group', size: unknown }
+  - { site: 'https://awac.wd108.myworkdayjobs.com/alliedworld_careers', company: 'Allied World', size: unknown }
+  - { site: 'https://axcelis.wd1.myworkdayjobs.com/axcelis', company: 'Axcelis Technologies', size: unknown }
+  - { site: 'https://axos.wd5.myworkdayjobs.com/Axos', company: 'Axos Bank', size: unknown }
+  - { site: 'https://axos.wd5.myworkdayjobs.com/axos', company: 'Axos Bank', size: unknown }
+  - { site: 'https://badgermeter.wd5.myworkdayjobs.com/US_CareerSite', company: 'Badger Meter', size: unknown }
+  - { site: 'https://badgermeter.wd5.myworkdayjobs.com/us_careersite', company: 'Badger Meter', size: unknown }
+  - { site: 'https://bah.wd1.myworkdayjobs.com/BAH_Jobs', company: 'Booz Allen Hamilton', size: unknown }
+  - { site: 'https://bah.wd1.myworkdayjobs.com/Confidential', company: 'Booz Allen', size: unknown }
+  - { site: 'https://bah.wd1.myworkdayjobs.com/bah_jobs', company: 'Booz Allen Hamilton', size: unknown }
+  - { site: 'https://baird.wd1.myworkdayjobs.com/careers', company: 'Baird', size: unknown }
+  - { site: 'https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays', company: 'Barclays', size: unknown }
+  - { site: 'https://basspro.wd1.myworkdayjobs.com/careers', company: 'basspro', size: unknown }
+  - { site: 'https://bbinsurance.wd1.myworkdayjobs.com/careers', company: 'Brown & Brown', size: unknown }
+  - { site: 'https://bcbsaz.wd1.myworkdayjobs.com/bcbsazcareers', company: 'Blue Cross Blue Shield of Arizona', size: unknown }
+  - { site: 'https://bcbst.wd1.myworkdayjobs.com/external', company: 'BlueCross BlueShield of Tennessee', size: unknown }
+  - { site: 'https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA', company: 'Becton Dickinson', size: unknown }
+  - { site: 'https://bdx.wd1.myworkdayjobs.com/external_career_site_usa', company: 'Becton Dickinson and Company', size: unknown }
+  - { site: 'https://blackline.wd108.myworkdayjobs.com/BlackLineCareers', company: 'BlackLine', size: unknown }
+  - { site: 'https://blackstone.wd1.myworkdayjobs.com/Blackstone_Campus_Careers', company: 'Blackstone', size: unknown }
+  - { site: 'https://blackstone.wd1.myworkdayjobs.com/blackstone_campus_careers', company: 'Blackstone', size: unknown }
+  - { site: 'https://blackstone.wd1.myworkdayjobs.com/blackstone_careers', company: 'Blackstone', size: unknown }
+  - { site: 'https://bloomberg.wd1.myworkdayjobs.com/bloombergindustrygroup_external_career_site', company: 'Bloomberg Industry Group', size: unknown }
+  - { site: 'https://blueorigin.wd5.myworkdayjobs.com/BlueOrigin', company: 'Blue Origin', size: unknown }
+  - { site: 'https://blueorigin.wd5.myworkdayjobs.com/blueorigin', company: 'Blue Origin', size: unknown }
+  - { site: 'https://bmo.wd3.myworkdayjobs.com/External', company: 'Bank of Montreal', size: unknown }
+  - { site: 'https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS', company: 'Boeing', size: unknown }
+  - { site: 'https://boeing.wd1.myworkdayjobs.com/external_careers', company: 'Boeing', size: unknown }
+  - { site: 'https://boeing.wd1.myworkdayjobs.com/external_recall', company: 'Boeing', size: unknown }
+  - { site: 'https://boeing.wd1.myworkdayjobs.com/external_subsidiary', company: 'The Boeing Company', size: unknown }
+  - { site: 'https://boydcorp.wd12.myworkdayjobs.com/Boyd_Careers', company: 'Boyd', size: unknown }
+  - { site: 'https://brambles.wd5.myworkdayjobs.com/Brambles_Careers', company: 'CHEP', size: unknown }
+  - { site: 'https://bristolmyerssquibb.wd5.myworkdayjobs.com/bms', company: 'Bristol Myers Squibb', size: unknown }
+  - { site: 'https://broadcom.wd1.myworkdayjobs.com/external_career', company: 'Broadcom', size: unknown }
+  - { site: 'https://broadridge.wd5.myworkdayjobs.com/careers', company: 'Broadridge', size: unknown }
+  - { site: 'https://caci.wd1.myworkdayjobs.com/external', company: 'CACI', size: unknown }
+  - { site: 'https://cadence.wd1.myworkdayjobs.com/External_Careers', company: 'Cadence Design Systems', size: unknown }
+  - { site: 'https://cadence.wd1.myworkdayjobs.com/Univ_Careers', company: 'Cadence Design Systems', size: unknown }
+  - { site: 'https://cadence.wd1.myworkdayjobs.com/University_Talent', company: 'Cadence Design Systems', size: unknown }
+  - { site: 'https://cadence.wd1.myworkdayjobs.com/University_Talent_NCG', company: 'Cadence Design Systems', size: unknown }
+  - { site: 'https://cae.wd3.myworkdayjobs.com/career', company: 'CAE', size: unknown }
+  - { site: 'https://calistacorp.wd1.myworkdayjobs.com/yulista', company: 'Yulista', size: unknown }
+  - { site: 'https://cambridgeassociates.wd5.myworkdayjobs.com/cambridge_associates', company: 'Cambridge Associates', size: unknown }
+  - { site: 'https://cambridgeassociates.wd5.myworkdayjobs.com/handshake', company: 'Cambridge Associates', size: unknown }
+  - { site: 'https://canadiantirecorporation.wd3.myworkdayjobs.com/Enterprise_External_Careers_Site', company: 'Canadian Tire', size: unknown }
+  - { site: 'https://caresource.wd1.myworkdayjobs.com/caresource', company: 'CareSource', size: unknown }
+  - { site: 'https://carmax.wd1.myworkdayjobs.com/External', company: 'CarMax', size: unknown }
+  - { site: 'https://carters.wd1.myworkdayjobs.com/carterscareers', company: 'Carter’s', size: unknown }
+  - { site: 'https://cat.wd5.myworkdayjobs.com/CaterpillarCareers', company: 'Caterpillar', size: unknown }
+  - { site: 'https://cat.wd5.myworkdayjobs.com/caterpillarcareers', company: 'Caterpillar', size: unknown }
+  - { site: 'https://cdk.wd1.myworkdayjobs.com/CDK', company: 'CDK Global', size: unknown }
+  - { site: 'https://cenovus.wd3.myworkdayjobs.com/careers', company: 'Cenovus Energy', size: unknown }
+  - { site: 'https://centific.wd1.myworkdayjobs.com/Centific_Global', company: 'Centific', size: unknown }
+  - { site: 'https://centrica.wd3.myworkdayjobs.com/Centrica', company: 'Centrica', size: unknown }
+  - { site: 'https://cgg.wd103.myworkdayjobs.com/viridiencareers', company: 'Viridien', size: unknown }
+  - { site: 'https://cgm.wd3.myworkdayjobs.com/cgm', company: 'CompuGroup Medical SE & Co. KGaA', size: unknown }
+  - { site: 'https://chevron.wd5.myworkdayjobs.com/University', company: 'Chevron Corporation', size: unknown }
+  - { site: 'https://choicehotels.wd5.myworkdayjobs.com/external', company: 'Choice Hotels', size: unknown }
+  - { site: 'https://churchdwight.wd1.myworkdayjobs.com/chdcareers', company: 'Church & Dwight', size: unknown }
+  - { site: 'https://ciena.wd5.myworkdayjobs.com/Careers', company: 'Ciena', size: unknown }
+  - { site: 'https://cincinnatichildrens.wd5.myworkdayjobs.com/careersatcincinnatichildrens', company: 'Cincinnati Children’s Hospital and Medical Center', size: unknown }
+  - { site: 'https://cisco.wd5.myworkdayjobs.com/Cisco_Careers', company: 'Cisco', size: unknown }
+  - { site: 'https://cisco.wd5.myworkdayjobs.com/cisco_careers', company: 'Cisco', size: unknown }
+  - { site: 'https://citi.wd5.myworkdayjobs.com/2', company: 'Citi', size: unknown }
+  - { site: 'https://clarioclinical.wd1.myworkdayjobs.com/clarioclinical_careers', company: 'Clairo', size: unknown }
+  - { site: 'https://clearwateranalytics.wd1.myworkdayjobs.com/Clearwater_Analytics_Careers', company: 'Clearwater Analytics', size: unknown }
+  - { site: 'https://clearwateranalytics.wd1.myworkdayjobs.com/clearwater_analytics_careers', company: 'Clearwater Analytics', size: unknown }
+  - { site: 'https://cmu.wd115.myworkdayjobs.com/cmu', company: 'Carnegie Mellon University', size: unknown }
+  - { site: 'https://collectorsuniverse.wd1.myworkdayjobs.com/collectors', company: 'Collectors', size: unknown }
+  - { site: 'https://collegeboard.wd1.myworkdayjobs.com/careers', company: 'College Board', size: unknown }
+  - { site: 'https://collegeboard.wd1.myworkdayjobs.com/cbcareers', company: 'College Board', size: unknown }
+  - { site: 'https://coloradomesa.wd501.myworkdayjobs.com/cmustudentjobs', company: 'Colorado Mesa University', size: unknown }
+  - { site: 'https://compassion.wd5.myworkdayjobs.com/compassioncareers', company: 'Compassion International', size: unknown }
+  - { site: 'https://comscore.wd5.myworkdayjobs.com/External', company: 'Comscore', size: unknown }
+  - { site: 'https://connect.wd1.myworkdayjobs.com/ztsystemscareers', company: 'ZT Systems', size: unknown }
+  - { site: 'https://conocophillips.wd1.myworkdayjobs.com/External', company: 'ConocoPhillips', size: unknown }
+  - { site: 'https://copart.wd12.myworkdayjobs.com/copart', company: 'Copart', size: unknown }
+  - { site: 'https://costar.wd1.myworkdayjobs.com/CoStarCareers', company: 'CoStar Group', size: unknown }
+  - { site: 'https://costar.wd1.myworkdayjobs.com/Costar_Campus', company: 'CoStar Group', size: unknown }
+  - { site: 'https://costar.wd1.myworkdayjobs.com/costar_campus', company: 'CoStar Group', size: unknown }
+  - { site: 'https://cranecompany.wd5.myworkdayjobs.com/Careers', company: 'Crane Co.', size: unknown }
+  - { site: 'https://crescentenergyco.wd108.myworkdayjobs.com/crescent_energy_careers', company: 'Crescent Energy', size: unknown }
+  - { site: 'https://crownholdings.wd501.myworkdayjobs.com/crownholdings', company: 'Crown Holdings', size: unknown }
+  - { site: 'https://curtisswright.wd1.myworkdayjobs.com/cw_external_career_site', company: 'Curtiss-Wright', size: unknown }
+  - { site: 'https://cvshealth.wd1.myworkdayjobs.com/cvs_health_careers', company: 'CVS Health', size: unknown }
+  - { site: 'https://cw.wd1.myworkdayjobs.com/external', company: 'Cushman & Wakefield', size: unknown }
+  - { site: 'https://danaher.wd1.myworkdayjobs.com/danaherjobs', company: 'Danaher', size: unknown }
+  - { site: 'https://davita.wd1.myworkdayjobs.com/DKC_External', company: 'DaVita', size: unknown }
+  - { site: 'https://davita.wd1.myworkdayjobs.com/dkc_external', company: 'DaVita Kidney Care', size: unknown }
+  - { site: 'https://dealertire.wd5.myworkdayjobs.com/DealerTireLLC-Careers', company: 'Dealer Tire', size: unknown }
+  - { site: 'https://deluxe.wd5.myworkdayjobs.com/USA_CAN', company: 'Deluxe', size: unknown }
+  - { site: 'https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL', company: 'Dentsu', size: unknown }
+  - { site: 'https://dentsuaegis.wd3.myworkdayjobs.com/dan_global', company: 'dentsu', size: unknown }
+  - { site: 'https://dimensional.wd5.myworkdayjobs.com/dfa_careers', company: 'Dimensional Fund Advisors', size: unknown }
+  - { site: 'https://directsupply.wd501.myworkdayjobs.com/direct-supply-careers', company: 'Direct Supply', size: unknown }
+  - { site: 'https://disney.wd5.myworkdayjobs.com/disneycareerdc', company: 'Walt Disney', size: unknown }
+  - { site: 'https://dmainc.wd5.myworkdayjobs.com/dma', company: 'DuCharme, McMillen & Associates', size: unknown }
+  - { site: 'https://dowjones.wd1.myworkdayjobs.com/Dow_Jones_Career', company: 'Dow Jones', size: unknown }
+  - { site: 'https://draftkings.wd1.myworkdayjobs.com/Campus_Career_Portal', company: 'DraftKings', size: unknown }
+  - { site: 'https://draftkings.wd1.myworkdayjobs.com/Employee_Referral_Portal', company: 'DraftKings', size: unknown }
+  - { site: 'https://draftkings.wd1.myworkdayjobs.com/draftkings', company: 'DraftKings', size: unknown }
+  - { site: 'https://draftkings.wd1.myworkdayjobs.com/employee_referral_portal', company: 'DraftKings', size: unknown }
+  - { site: 'https://draper.wd5.myworkdayjobs.com/Draper_Careers', company: 'Draper', size: unknown }
+  - { site: 'https://dxctechnology.wd1.myworkdayjobs.com/dxcjobs', company: 'DXC Technology', size: unknown }
+  - { site: 'https://ebi.wd5.myworkdayjobs.com/ebadcareers', company: 'Ensign-Bickford Aerospace & Defense Company', size: unknown }
+  - { site: 'https://ebi.wd5.myworkdayjobs.com/ebicareers', company: 'Ensign-Bickford Industries', size: unknown }
+  - { site: 'https://ecu.wd12.myworkdayjobs.com/everwise_careers', company: 'Everwise Credit Union', size: unknown }
+  - { site: 'https://eisneramper.wd1.myworkdayjobs.com/EisnerAmperEarlyCareers', company: 'EisnerAmper', size: unknown }
+  - { site: 'https://elanco.wd5.myworkdayjobs.com/external_career', company: 'Elanco', size: unknown }
+  - { site: 'https://equifax.wd5.myworkdayjobs.com/External', company: 'Equifax', size: unknown }
+  - { site: 'https://equifax.wd5.myworkdayjobs.com/UR_External', company: 'Equifax', size: unknown }
+  - { site: 'https://equifax.wd5.myworkdayjobs.com/external', company: 'Equifax', size: unknown }
+  - { site: 'https://ercot.wd1.myworkdayjobs.com/ercot_careers', company: 'Electric Reliability Council of Texas', size: unknown }
+  - { site: 'https://essc.wd501.myworkdayjobs.com/essc_careers', company: 'Easterseals Southern California', size: unknown }
+  - { site: 'https://evergreenix.wd1.myworkdayjobs.com/external-careers2', company: 'Everfox', size: unknown }
+  - { site: 'https://eversource.wd1.myworkdayjobs.com/ExternalSite', company: 'Eversource Energy', size: unknown }
+  - { site: 'https://exelixis.wd1.myworkdayjobs.com/exel', company: 'Exelixis', size: unknown }
+  - { site: 'https://expedia.wd108.myworkdayjobs.com/private', company: 'Expedia Group', size: unknown }
+  - { site: 'https://extraspace.wd5.myworkdayjobs.com/ess_external', company: 'Extra Space Storage', size: unknown }
+  - { site: 'https://fermilab.wd5.myworkdayjobs.com/FermilabCareers', company: 'Fermilab', size: unknown }
+  - { site: 'https://ffive.wd5.myworkdayjobs.com/f5jobs', company: 'F5', size: unknown }
+  - { site: 'https://fis.wd5.myworkdayjobs.com/searchjobs', company: 'FIS', size: unknown }
+  - { site: 'https://fiserv.wd5.myworkdayjobs.com/ext', company: 'Fiserv', size: unknown }
+  - { site: 'https://flexerasoftware.wd1.myworkdayjobs.com/FlexeraSoftware', company: 'Flexera', size: unknown }
+  - { site: 'https://flextronics.wd1.myworkdayjobs.com/Careers', company: 'Flextronics International', size: unknown }
+  - { site: 'https://flir.wd1.myworkdayjobs.com/flircareers', company: 'Teledyne', size: unknown }
+  - { site: 'https://fmr.wd1.myworkdayjobs.com/targeted', company: 'Fidelity Investments', size: unknown }
+  - { site: 'https://fnbcorp.wd501.myworkdayjobs.com/FNBCORP', company: 'First National Bank', size: unknown }
+  - { site: 'https://freddiemac.wd5.myworkdayjobs.com/external', company: 'Freddie Mac', size: unknown }
+  - { site: 'https://frostbank.wd5.myworkdayjobs.com/External', company: 'Frost', size: unknown }
+  - { site: 'https://gartner.wd5.myworkdayjobs.com/EXT', company: 'Gartner', size: unknown }
+  - { site: 'https://gdit.wd5.myworkdayjobs.com/external_career_site', company: 'GDIT', size: unknown }
+  - { site: 'https://gdit.wd5.myworkdayjobs.com/gdit_empl_ref', company: 'GDIT', size: unknown }
+  - { site: 'https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite', company: 'GE Healthcare', size: unknown }
+  - { site: 'https://generac.wd5.myworkdayjobs.com/external', company: 'Generac', size: unknown }
+  - { site: 'https://generalmotors.wd5.myworkdayjobs.com/Careers_GM', company: 'General Motors', size: unknown }
+  - { site: 'https://generalmotors.wd5.myworkdayjobs.com/careers_gm', company: 'General Motors', size: unknown }
+  - { site: 'https://gentex.wd5.myworkdayjobs.com/Gentex', company: 'Gentex Corporation', size: unknown }
+  - { site: 'https://gevernova.wd5.myworkdayjobs.com/only_confidential_executive_recruiting', company: 'GE Vernova', size: unknown }
+  - { site: 'https://gevernova.wd5.myworkdayjobs.com/vernova_externalsite', company: 'GE Vernova', size: unknown }
+  - { site: 'https://ghr.wd1.myworkdayjobs.com/lateral-us', company: 'Bank of America', size: unknown }
+  - { site: 'https://ghr.wd1.myworkdayjobs.com/us-emplsv', company: 'Bank of America', size: unknown }
+  - { site: 'https://globalhr.wd5.myworkdayjobs.com/Private_Posting_No_TMP', company: 'RTX', size: unknown }
+  - { site: 'https://globalhr.wd5.myworkdayjobs.com/rec_rtx_ext_gateway', company: 'RTX', size: unknown }
+  - { site: 'https://globusmedical.wd5.myworkdayjobs.com/GMED_Careers', company: 'Globus Medical', size: unknown }
+  - { site: 'https://globusmedical.wd5.myworkdayjobs.com/gmed_careers', company: 'Globus Medical', size: unknown }
+  - { site: 'https://groundswell.wd12.myworkdayjobs.com/groundswell', company: 'Groundswell', size: unknown }
+  - { site: 'https://gsk.wd5.myworkdayjobs.com/GSKCareers', company: 'GSK', size: unknown }
+  - { site: 'https://guidehouse.wd1.myworkdayjobs.com/External', company: 'Guidehouse', size: unknown }
+  - { site: 'https://guidehouse.wd1.myworkdayjobs.com/external', company: 'Guidehouse', size: unknown }
+  - { site: 'https://guidewire.wd5.myworkdayjobs.com/external', company: 'Guidewire', size: unknown }
+  - { site: 'https://haier.wd3.myworkdayjobs.com/ge_appliances', company: 'GE Appliances', size: unknown }
+  - { site: 'https://halma.wd3.myworkdayjobs.com/halma', company: 'Halma', size: unknown }
+  - { site: 'https://harriscomputer.wd3.myworkdayjobs.com/GBS', company: 'Harriscomputer', size: unknown }
+  - { site: 'https://hcmportal.wd5.myworkdayjobs.com/Search', company: 'United Parcel Service (UPS)', size: unknown }
+  - { site: 'https://healthresearch.wd1.myworkdayjobs.com/hri_careers', company: 'Health Research', size: unknown }
+  - { site: 'https://hebrewseniorlife.wd501.myworkdayjobs.com/HebrewSeniorLifeCareers', company: 'Hebrewseniorlife', size: unknown }
+  - { site: 'https://heidelberg.wd502.myworkdayjobs.com/careersheidelberg', company: 'Heidelberg', size: unknown }
+  - { site: 'https://heinz.wd1.myworkdayjobs.com/KraftHeinz_Careers_BC', company: 'Kraft Heinz', size: unknown }
+  - { site: 'https://hntb.wd5.myworkdayjobs.com/hntb_careers', company: 'HNTB', size: unknown }
+  - { site: 'https://hntb.wd5.myworkdayjobs.com/hntb_university_careers', company: 'HNTB', size: unknown }
+  - { site: 'https://homedepot.wd5.myworkdayjobs.com/careerdepot', company: 'The Home Depot', size: unknown }
+  - { site: 'https://horizonmedia.wd1.myworkdayjobs.com/CareerOpportunities', company: 'Horizon media', size: unknown }
+  - { site: 'https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite', company: 'Hewlett Packard', size: unknown }
+  - { site: 'https://hp.wd5.myworkdayjobs.com/exteu-ac-careersite', company: 'HP', size: unknown }
+  - { site: 'https://hpe.wd5.myworkdayjobs.com/Jobsathpe', company: 'HPE', size: unknown }
+  - { site: 'https://hpe.wd5.myworkdayjobs.com/acjobsite', company: 'Hewlett Packard Enterprise', size: unknown }
+  - { site: 'https://hpe.wd5.myworkdayjobs.com/jobsathpe', company: 'Hewlett Packard Enterprise', size: unknown }
+  - { site: 'https://hpe.wd5.myworkdayjobs.com/wfmathpe', company: 'Hewlett Packard Enterprise', size: unknown }
+  - { site: 'https://hrhub.wd3.myworkdayjobs.com/Euronext_Career_Page', company: 'Euronext', size: unknown }
+  - { site: 'https://humana.wd5.myworkdayjobs.com/Humana_External_Career_Site', company: 'Humana', size: unknown }
+  - { site: 'https://huntington.wd12.myworkdayjobs.com/hnbcareers', company: 'Huntington Bank', size: unknown }
+  - { site: 'https://huron.wd1.myworkdayjobs.com/huroncareers', company: 'Huron', size: unknown }
+  - { site: 'https://hyperiongrp.wd3.myworkdayjobs.com/Hyperion_External', company: 'Howden', size: unknown }
+  - { site: 'https://iberdrola.wd3.myworkdayjobs.com/iberdrola', company: 'Iberdrola Group', size: unknown }
+  - { site: 'https://icf.wd5.myworkdayjobs.com/icfexternal_career_site', company: 'Icfexternal', size: unknown }
+  - { site: 'https://idexx.wd115.myworkdayjobs.com/idexx', company: 'IDEXX', size: unknown }
+  - { site: 'https://ilitch.wd5.myworkdayjobs.com/detroit-tigers', company: 'Detroit Tigers', size: unknown }
+  - { site: 'https://illuminateusa.wd503.myworkdayjobs.com/Illuminate_Careers', company: 'Illuminate USA', size: unknown }
+  - { site: 'https://imf.wd5.myworkdayjobs.com/IMF', company: 'International Monetary Fund', size: unknown }
+  - { site: 'https://imh.wd108.myworkdayjobs.com/intermountaincareers', company: 'Intermountain Health', size: unknown }
+  - { site: 'https://impactadvisors.wd501.myworkdayjobs.com/impactadvisors', company: 'Impact Advisors', size: unknown }
+  - { site: 'https://insitu.wd1.myworkdayjobs.com/careers', company: 'Insitu', size: unknown }
+  - { site: 'https://insperity.wd12.myworkdayjobs.com/nsp', company: 'Insperity', size: unknown }
+  - { site: 'https://intactfc.wd3.myworkdayjobs.com/intactfc', company: 'Intact', size: unknown }
+  - { site: 'https://interdigital.wd5.myworkdayjobs.com/InterDigital_Career', company: 'Interdigital', size: unknown }
+  - { site: 'https://interpublic.wd5.myworkdayjobs.com/omc', company: 'Omnicom Group', size: unknown }
+  - { site: 'https://invenergyllc.wd1.myworkdayjobs.com/invenergycareers', company: 'Invenergy', size: unknown }
+  - { site: 'https://invesco.wd1.myworkdayjobs.com/IVZ', company: 'Invesco', size: unknown }
+  - { site: 'https://iqvia.wd1.myworkdayjobs.com/iqvia', company: 'IQVIA', size: unknown }
+  - { site: 'https://isu.wd1.myworkdayjobs.com/IowaStateJobs', company: 'Iowa State University', size: unknown }
+  - { site: 'https://itron.wd5.myworkdayjobs.com/Early_Careers', company: 'Itron', size: unknown }
+  - { site: 'https://itron.wd5.myworkdayjobs.com/Itron', company: 'Itron', size: unknown }
+  - { site: 'https://itron.wd5.myworkdayjobs.com/early_careers', company: 'Itron', size: unknown }
+  - { site: 'https://itron.wd5.myworkdayjobs.com/itron', company: 'Itron', size: unknown }
+  - { site: 'https://ivytech.wd1.myworkdayjobs.com/ivy_tech_careers', company: 'Ivy Tech Community College', size: unknown }
+  - { site: 'https://jabil.wd5.myworkdayjobs.com/Jabil_Careers', company: 'Jabil', size: unknown }
+  - { site: 'https://jadeglobal.wd5.myworkdayjobs.com/jade_careers', company: 'Jade Global', size: unknown }
+  - { site: 'https://jainglobal.wd5.myworkdayjobs.com/ExternalSite', company: 'Jain Global', size: unknown }
+  - { site: 'https://jcdecaux.wd3.myworkdayjobs.com/ExternalSiteJCDUK', company: 'JCDecaux', size: unknown }
+  - { site: 'https://jci.wd5.myworkdayjobs.com/JCI', company: 'Johnson Controls', size: unknown }
+  - { site: 'https://jci.wd5.myworkdayjobs.com/jci', company: 'Johnson Controls', size: unknown }
+  - { site: 'https://jd.wd103.myworkdayjobs.com/Campus_Career_Site', company: 'JD.com', size: unknown }
+  - { site: 'https://jda.wd5.myworkdayjobs.com/jda_careers', company: 'Blue Yonder', size: unknown }
+  - { site: 'https://jda.wd5.myworkdayjobs.com/university', company: 'Blue Yonder', size: unknown }
+  - { site: 'https://jeffersonhealth.wd5.myworkdayjobs.com/thomasjeffersonexternal', company: 'Jefferson Health', size: unknown }
+  - { site: 'https://kbr.wd5.myworkdayjobs.com/Frazer_Nash_Careers', company: 'Frazer-Nash Consultancy', size: unknown }
+  - { site: 'https://kbr.wd5.myworkdayjobs.com/KBR_Careers', company: 'KBR', size: unknown }
+  - { site: 'https://kbr.wd5.myworkdayjobs.com/kbr_careers', company: 'KBR', size: unknown }
+  - { site: 'https://keybank.wd5.myworkdayjobs.com/External_Career_Site', company: 'KeyBank', size: unknown }
+  - { site: 'https://keybank.wd5.myworkdayjobs.com/external_career_site', company: 'KeyBank', size: unknown }
+  - { site: 'https://kla.wd1.myworkdayjobs.com/Search', company: 'KLA', size: unknown }
+  - { site: 'https://kla.wd1.myworkdayjobs.com/UR', company: 'KLA', size: unknown }
+  - { site: 'https://kla.wd1.myworkdayjobs.com/annarbor', company: 'KLA', size: unknown }
+  - { site: 'https://kla.wd1.myworkdayjobs.com/search', company: 'KLA', size: unknown }
+  - { site: 'https://kla.wd1.myworkdayjobs.com/ur', company: 'KLA', size: unknown }
+  - { site: 'https://ksb.wd3.myworkdayjobs.com/ksb_externalcareersite', company: 'KSB', size: unknown }
+  - { site: 'https://kyndryl.wd5.myworkdayjobs.com/KyndrylEarlyCareers', company: 'Kyndryl', size: unknown }
+  - { site: 'https://kyndryl.wd5.myworkdayjobs.com/KyndrylProfessionalCareers', company: 'Kyndryl', size: unknown }
+  - { site: 'https://latticesemi.wd5.myworkdayjobs.com/latticesemiconductorscareers', company: 'Lattice Semiconductor', size: unknown }
+  - { site: 'https://lbg.wd3.myworkdayjobs.com/graduate_careers', company: 'Lloyds Banking Group', size: unknown }
+  - { site: 'https://learfield.wd5.myworkdayjobs.com/amplify', company: 'Learfield Amplify', size: unknown }
+  - { site: 'https://learfield.wd5.myworkdayjobs.com/learfield', company: 'Learfield', size: unknown }
+  - { site: 'https://leidos.wd5.myworkdayjobs.com/External', company: 'Leidos', size: unknown }
+  - { site: 'https://leidos.wd5.myworkdayjobs.com/external', company: 'Leidos', size: unknown }
+  - { site: 'https://lendingclub.wd1.myworkdayjobs.com/external', company: 'LendingClub', size: unknown }
+  - { site: 'https://leonardocompany.wd3.myworkdayjobs.com/LeonardoCareerSite', company: 'Leonardo', size: unknown }
+  - { site: 'https://litera.wd12.myworkdayjobs.com/Litera_Careers', company: 'Litera', size: unknown }
+  - { site: 'https://lnw.wd5.myworkdayjobs.com/lightwonderexternalcareers', company: 'Light & Wonder', size: unknown }
+  - { site: 'https://lowes.wd5.myworkdayjobs.com/LWS_External_CS', company: 'Lowe''s', size: unknown }
+  - { site: 'https://lowes.wd5.myworkdayjobs.com/lws_external_cs', company: 'Lowe’s', size: unknown }
+  - { site: 'https://lplfinancial.wd1.myworkdayjobs.com/university', company: 'LPL Financial Holdings', size: unknown }
+  - { site: 'https://lseg.wd3.myworkdayjobs.com/Careers', company: 'LSEG', size: unknown }
+  - { site: 'https://lseg.wd3.myworkdayjobs.com/Graduate_Careers', company: 'LSEG', size: unknown }
+  - { site: 'https://lseg.wd3.myworkdayjobs.com/careers', company: 'LSEG', size: unknown }
+  - { site: 'https://lsu.wd1.myworkdayjobs.com/lsuwaiver', company: 'Louisiana State University', size: unknown }
+  - { site: 'https://lthc.wd1.myworkdayjobs.com/cdphpcareers', company: 'CDPHP', size: unknown }
+  - { site: 'https://lthc.wd1.myworkdayjobs.com/excellusbcbscareers', company: 'Excellus BCBS', size: unknown }
+  - { site: 'https://lthc.wd1.myworkdayjobs.com/univerahealthcarecareers', company: 'Univera Healthcare', size: unknown }
+  - { site: 'https://magna.wd3.myworkdayjobs.com/magna', company: 'Magna', size: unknown }
+  - { site: 'https://manh.wd5.myworkdayjobs.com/campus', company: 'Manhattan Associates', size: unknown }
+  - { site: 'https://manulife.wd3.myworkdayjobs.com/MFCJH_adminJobs', company: 'Manulife Financial', size: unknown }
+  - { site: 'https://marvell.wd1.myworkdayjobs.com/MarvellCareers2', company: 'Marvell', size: unknown }
+  - { site: 'https://massgeneralbrigham.wd1.myworkdayjobs.com/mgbexternal', company: 'Mass General Brigham', size: unknown }
+  - { site: 'https://maxar.wd1.myworkdayjobs.com/Vantor', company: 'Vantor', size: unknown }
+  - { site: 'https://mbda.wd3.myworkdayjobs.com/MBDA-UK', company: 'MBDA', size: unknown }
+  - { site: 'https://mbda.wd3.myworkdayjobs.com/virtual-posting', company: 'MBDA', size: unknown }
+  - { site: 'https://mdtkangaroo.wd108.myworkdayjobs.com/minimedcareers', company: 'MiniMed', size: unknown }
+  - { site: 'https://meijer.wd5.myworkdayjobs.com/Meijer', company: 'Meijer', size: unknown }
+  - { site: 'https://michelinhr.wd3.myworkdayjobs.com/Michelin', company: 'Michelin', size: unknown }
+  - { site: 'https://mimecast.wd5.myworkdayjobs.com/Mimecast-Careers', company: 'Mimecast', size: unknown }
+  - { site: 'https://mitel.wd3.myworkdayjobs.com/mitelcareers', company: 'Mitel Networks', size: unknown }
+  - { site: 'https://mjhlifesciences.wd1.myworkdayjobs.com/Careers', company: 'MJH Life Sciences', size: unknown }
+  - { site: 'https://mlcv.wd1.myworkdayjobs.com/mlcv_external_careers', company: 'Grand Casino', size: unknown }
+  - { site: 'https://mmc.wd1.myworkdayjobs.com/careers', company: 'Marsh McLennan', size: unknown }
+  - { site: 'https://mmc.wd1.myworkdayjobs.com/mmc', company: 'Marsh', size: unknown }
+  - { site: 'https://moog.wd5.myworkdayjobs.com/moog_external_career_site', company: 'Moog', size: unknown }
+  - { site: 'https://morningstar.wd5.myworkdayjobs.com/Morningstar', company: 'Morningstar', size: unknown }
+  - { site: 'https://morningstar.wd5.myworkdayjobs.com/MorningstarDBRS', company: 'Morningstar', size: unknown }
+  - { site: 'https://morningstar.wd5.myworkdayjobs.com/confidential', company: 'Morningstar', size: unknown }
+  - { site: 'https://mpc.wd1.myworkdayjobs.com/MPCCareers', company: 'Marathon Petroleum', size: unknown }
+  - { site: 'https://ms.wd5.myworkdayjobs.com/External', company: 'Morgan Stanley', size: unknown }
+  - { site: 'https://ms.wd5.myworkdayjobs.com/external', company: 'Morgan Stanley', size: unknown }
+  - { site: 'https://mtb.wd5.myworkdayjobs.com/Campus', company: 'M&T Bank', size: unknown }
+  - { site: 'https://mtb.wd5.myworkdayjobs.com/mtb', company: 'M&T Bank', size: unknown }
+  - { site: 'https://mufgub.wd3.myworkdayjobs.com/mufg-careers', company: 'Mitsubishi UFG', size: unknown }
+  - { site: 'https://mufgub.wd3.myworkdayjobs.com/mufg-earlycareers', company: 'MUFG', size: unknown }
+  - { site: 'https://myhrabc.wd5.myworkdayjobs.com/Global', company: 'Cencora', size: unknown }
+  - { site: 'https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site', company: 'Nasdaq', size: unknown }
+  - { site: 'https://nationalindemnity.wd5.myworkdayjobs.com/bhhc', company: 'National Indemnity', size: unknown }
+  - { site: 'https://nationalindemnity.wd5.myworkdayjobs.com/nico', company: 'National Indemnity', size: unknown }
+  - { site: 'https://nc.wd108.myworkdayjobs.com/NC_Careers', company: 'State of North Carolina', size: unknown }
+  - { site: 'https://ncr.wd1.myworkdayjobs.com/ext_non_us', company: 'NCR Voyix', size: unknown }
+  - { site: 'https://ncr.wd1.myworkdayjobs.com/ext_us', company: 'NCR', size: unknown }
+  - { site: 'https://ncratleos.wd1.myworkdayjobs.com/ext_atleos_us', company: 'NCR Atleos', size: unknown }
+  - { site: 'https://ncsecu.wd1.myworkdayjobs.com/secu', company: 'State Employees'' Credit Union', size: unknown }
+  - { site: 'https://newchartertech.wd12.myworkdayjobs.com/newchartertechnologies', company: 'New Charter Technologies', size: unknown }
+  - { site: 'https://newrez.wd1.myworkdayjobs.com/NRZ', company: 'Newrez', size: unknown }
+  - { site: 'https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site', company: 'Northrop Grumman', size: unknown }
+  - { site: 'https://ngc.wd1.myworkdayjobs.com/northrop_grumman_external_site', company: 'Northrop Grumman', size: unknown }
+  - { site: 'https://nidec.wd1.myworkdayjobs.com/nidec', company: 'Nidec', size: unknown }
+  - { site: 'https://nordstrom.wd501.myworkdayjobs.com/nordstrom_careers', company: 'Nordstrom', size: unknown }
+  - { site: 'https://northeastern.wd1.myworkdayjobs.com/careers', company: 'Northeastern University', size: unknown }
+  - { site: 'https://northmark.wd108.myworkdayjobs.com/nms', company: 'NorthMark Strategies', size: unknown }
+  - { site: 'https://novanta.wd5.myworkdayjobs.com/Novanta-Careers', company: 'Novanta', size: unknown }
+  - { site: 'https://novartis.wd3.myworkdayjobs.com/internal_careers_for_acquired_entities', company: 'Novartis', size: unknown }
+  - { site: 'https://novartis.wd3.myworkdayjobs.com/novartis_careers', company: 'Novartis', size: unknown }
+  - { site: 'https://nrel.wd5.myworkdayjobs.com/NLR', company: 'National Laboratory of the Rockies', size: unknown }
+  - { site: 'https://ntst.wd1.myworkdayjobs.com/careers', company: 'Netsmart', size: unknown }
+  - { site: 'https://nwis.wd12.myworkdayjobs.com/NW', company: 'Nightwing Intelligence Solutions', size: unknown }
+  - { site: 'https://nwis.wd12.myworkdayjobs.com/nw', company: 'Nightwing', size: unknown }
+  - { site: 'https://nxp.wd3.myworkdayjobs.com/careers', company: 'NXP Semiconductors', size: unknown }
+  - { site: 'https://ochsner.wd1.myworkdayjobs.com/ochsner', company: 'Ochsner Health', size: unknown }
+  - { site: 'https://oclc.wd1.myworkdayjobs.com/OCLC_Careers', company: 'OCLC', size: unknown }
+  - { site: 'https://okgov.wd1.myworkdayjobs.com/okgovjobs', company: 'Oklahoma State Government', size: unknown }
+  - { site: 'https://onehealthineers.wd3.myworkdayjobs.com/SHSJB', company: 'Varian', size: unknown }
+  - { site: 'https://onto.wd1.myworkdayjobs.com/onto_careers', company: 'Onto Innovation', size: unknown }
+  - { site: 'https://oreillyauto.wd1.myworkdayjobs.com/oreilly', company: 'O''Reilly Auto Parts', size: unknown }
+  - { site: 'https://orionsteel.wd5.myworkdayjobs.com/externalcareers', company: 'Orion Steel', size: unknown }
+  - { site: 'https://oshkoshcorporation.wd5.myworkdayjobs.com/Oshkosh', company: 'Oshkosh', size: unknown }
+  - { site: 'https://otis.wd504.myworkdayjobs.com/rec_ext_gateway', company: 'Otis', size: unknown }
+  - { site: 'https://oumedicine.wd5.myworkdayjobs.com/OUHealthCareers', company: 'OU Health', size: unknown }
+  - { site: 'https://oxford.wd5.myworkdayjobs.com/tommybahamaus', company: 'Tommy Bahama', size: unknown }
+  - { site: 'https://pae.wd1.myworkdayjobs.com/amentum_careers', company: 'Amentum', size: unknown }
+  - { site: 'https://paloaltonetworks.wd5.myworkdayjobs.com/panwexternalcareers', company: 'Palo Alto Networks', size: unknown }
+  - { site: 'https://parexel.wd1.myworkdayjobs.com/parexel_external_careers', company: 'Parexel', size: unknown }
+  - { site: 'https://parsons.wd5.myworkdayjobs.com/search', company: 'Parsons', size: unknown }
+  - { site: 'https://pentair.wd5.myworkdayjobs.com/pentair_careers', company: 'Pentair', size: unknown }
+  - { site: 'https://pg.wd5.myworkdayjobs.com/1000', company: 'Procter & Gamble', size: unknown }
+  - { site: 'https://pjtpartners.wd1.myworkdayjobs.com/Careers', company: 'PJT Partners', size: unknown }
+  - { site: 'https://pnc.wd5.myworkdayjobs.com/External', company: 'PNC Financial Services', size: unknown }
+  - { site: 'https://polaris.wd5.myworkdayjobs.com/PolarisJobs', company: 'Polaris', size: unknown }
+  - { site: 'https://ppg.wd5.myworkdayjobs.com/PPG_CAREERS', company: 'PPG Industries', size: unknown }
+  - { site: 'https://ppg.wd5.myworkdayjobs.com/ppg_careers', company: 'PPG Industries', size: unknown }
+  - { site: 'https://pra.wd1.myworkdayjobs.com/pra_careers', company: 'PRA Group', size: unknown }
+  - { site: 'https://premierinc.wd1.myworkdayjobs.com/External_Professional', company: 'Premierinc', size: unknown }
+  - { site: 'https://priceline.wd1.myworkdayjobs.com/Priceline', company: 'Priceline', size: unknown }
+  - { site: 'https://psu.wd1.myworkdayjobs.com/PSU_Staff', company: 'Pennsylvania State University', size: unknown }
+  - { site: 'https://psu.wd1.myworkdayjobs.com/psu_staff', company: 'Penn State', size: unknown }
+  - { site: 'https://ptc.wd1.myworkdayjobs.com/ptc', company: 'PTC', size: unknown }
+  - { site: 'https://pwc.wd3.myworkdayjobs.com/us_entry_level_careers', company: 'PwC', size: unknown }
+  - { site: 'https://pwc.wd3.myworkdayjobs.com/us_experienced_careers', company: 'PwC', size: unknown }
+  - { site: 'https://quantiphi.wd1.myworkdayjobs.com/careers_at_quantiphi', company: 'Quantiphi', size: unknown }
+  - { site: 'https://quickenloans.wd5.myworkdayjobs.com/rocket_careers', company: 'Rocket Companies', size: unknown }
+  - { site: 'https://r1rcm.wd1.myworkdayjobs.com/R1RCM', company: 'R1 RCM', size: unknown }
+  - { site: 'https://raymondjames.wd1.myworkdayjobs.com/raymondjamescareers', company: 'Raymond James', size: unknown }
+  - { site: 'https://rbi.wd3.myworkdayjobs.com/rbi_external_career_site', company: 'Restaurant Brands International', size: unknown }
+  - { site: 'https://recar.wd108.myworkdayjobs.com/slatecareers', company: 'Recar', size: unknown }
+  - { site: 'https://regeneron.wd1.myworkdayjobs.com/careers', company: 'Regeneron', size: unknown }
+  - { site: 'https://reliaquest.wd5.myworkdayjobs.com/ReliaQuest_Careers', company: 'ReliaQuest', size: unknown }
+  - { site: 'https://relx.wd3.myworkdayjobs.com/RiskSolutions', company: 'LexisNexis Risk Solutions', size: unknown }
+  - { site: 'https://relx.wd3.myworkdayjobs.com/lexisnexislegal', company: 'LexisNexis', size: unknown }
+  - { site: 'https://relx.wd3.myworkdayjobs.com/relx', company: 'RELX', size: unknown }
+  - { site: 'https://relx.wd3.myworkdayjobs.com/risksolutions', company: 'LexisNexis Risk Solutions', size: unknown }
+  - { site: 'https://republic.wd5.myworkdayjobs.com/republic', company: 'Republic', size: unknown }
+  - { site: 'https://resmed.wd3.myworkdayjobs.com/resmed_external_careers', company: 'ResMed', size: unknown }
+  - { site: 'https://rfcuny.wd108.myworkdayjobs.com/RFCUNY', company: 'RFCUNY', size: unknown }
+  - { site: 'https://rit.wd12.myworkdayjobs.com/careers', company: 'Rochester Institute of Technology', size: unknown }
+  - { site: 'https://roche.wd3.myworkdayjobs.com/rog-a2o-gene', company: 'Genentech', size: unknown }
+  - { site: 'https://rochester.wd5.myworkdayjobs.com/UR_Staff', company: 'University of Rochester', size: unknown }
+  - { site: 'https://rochester.wd5.myworkdayjobs.com/ur_staff', company: 'University of Rochester', size: unknown }
+  - { site: 'https://rockwellautomation.wd1.myworkdayjobs.com/external_rockwell_automation', company: 'Rockwell Automation', size: unknown }
+  - { site: 'https://rsm.wd1.myworkdayjobs.com/RSMCareers', company: 'RSM', size: unknown }
+  - { site: 'https://rsm.wd1.myworkdayjobs.com/rsmcareers', company: 'RSM', size: unknown }
+  - { site: 'https://rumcsi.wd5.myworkdayjobs.com/rumc', company: 'Richmond University Medical Center', size: unknown }
+  - { site: 'https://ryan.wd1.myworkdayjobs.com/RyanCareers', company: 'Ryan', size: unknown }
+  - { site: 'https://saabusa.wd1.myworkdayjobs.com/saab_careers', company: 'Saab', size: unknown }
+  - { site: 'https://salesforce.wd12.myworkdayjobs.com/Futureforce_NewGradRoles', company: 'Salesforce', size: unknown }
+  - { site: 'https://sanofi.wd3.myworkdayjobs.com/sanoficareers', company: 'Sanofi', size: unknown }
+  - { site: 'https://sbdinc.wd1.myworkdayjobs.com/Stanley_Black_Decker_Career_Site', company: 'Stanley Black & Decker', size: unknown }
+  - { site: 'https://schreiberfoods.wd115.myworkdayjobs.com/schreiber_careers', company: 'Schreiber Foods', size: unknown }
+  - { site: 'https://sci.wd5.myworkdayjobs.com/sci', company: 'SCI - Service Corporation International', size: unknown }
+  - { site: 'https://selinc.wd1.myworkdayjobs.com/SEL', company: 'Schweitzer Engineering Laboratories', size: unknown }
+  - { site: 'https://semtech.wd1.myworkdayjobs.com/SemtechCareers', company: 'Semtech', size: unknown }
+  - { site: 'https://sentryinsurance.wd1.myworkdayjobs.com/SentryCareers', company: 'Sentry Insurance', size: unknown }
+  - { site: 'https://servco.wd5.myworkdayjobs.com/servco_careers', company: 'Servco Pacific', size: unknown }
+  - { site: 'https://servicetitan.wd1.myworkdayjobs.com/servicetitan', company: 'ServiceTitan', size: unknown }
+  - { site: 'https://shi.wd12.myworkdayjobs.com/shicareers', company: 'SHI', size: unknown }
+  - { site: 'https://sierraspace.wd1.myworkdayjobs.com/Sierra_Space_External_Career_Site', company: 'Sierra Space', size: unknown }
+  - { site: 'https://sierraspace.wd1.myworkdayjobs.com/sierra_space_external_career_site', company: 'Sierra Space', size: unknown }
+  - { site: 'https://signetjewelers.wd1.myworkdayjobs.com/SignetCorporateCareers', company: 'Signet Jewelers', size: unknown }
+  - { site: 'https://silabs.wd1.myworkdayjobs.com/SiliconlabsCareers', company: 'Silicon Laboratories', size: unknown }
+  - { site: 'https://simmonsbank.wd5.myworkdayjobs.com/simmonscareers', company: 'Simmons Bank', size: unknown }
+  - { site: 'https://skechers.wd5.myworkdayjobs.com/One-career-site', company: 'Skechers', size: unknown }
+  - { site: 'https://slihrms.wd3.myworkdayjobs.com/careers', company: 'AtkinsRéalis', size: unknown }
+  - { site: 'https://smithnephew.wd5.myworkdayjobs.com/external', company: 'Smith+Nephew', size: unknown }
+  - { site: 'https://snapchat.wd1.myworkdayjobs.com/sourced', company: 'Snap', size: unknown }
+  - { site: 'https://snapfinance.wd1.myworkdayjobs.com/snap_external_careers', company: 'Snap Finance', size: unknown }
+  - { site: 'https://snc.wd1.myworkdayjobs.com/snc_external_career_site', company: 'Sierra Nevada Corporation', size: unknown }
+  - { site: 'https://son.wd108.myworkdayjobs.com/NebraskaStateCareers', company: 'State of Nebraska', size: unknown }
+  - { site: 'https://sonyglobal.wd1.myworkdayjobs.com/SonyGlobalCareers', company: 'Sony', size: unknown }
+  - { site: 'https://spgi.wd5.myworkdayjobs.com/SPGI_Careers', company: 'S&P Global', size: unknown }
+  - { site: 'https://spgi.wd5.myworkdayjobs.com/kensho_careers', company: 'Kensho', size: unknown }
+  - { site: 'https://spgi.wd5.myworkdayjobs.com/spgi_careers', company: 'S&P Global', size: unknown }
+  - { site: 'https://starfish.wd501.myworkdayjobs.com/Careers', company: 'Starfish', size: unknown }
+  - { site: 'https://starfish.wd501.myworkdayjobs.com/careers', company: 'Torch Technologies', size: unknown }
+  - { site: 'https://statestreet.wd1.myworkdayjobs.com/Global', company: 'State Street', size: unknown }
+  - { site: 'https://statestreet.wd1.myworkdayjobs.com/equest', company: 'State Street', size: unknown }
+  - { site: 'https://statestreet.wd1.myworkdayjobs.com/global', company: 'State Street', size: unknown }
+  - { site: 'https://sterlingmets.wd5.myworkdayjobs.com/Mets', company: 'New York Mets', size: unknown }
+  - { site: 'https://stout.wd5.myworkdayjobs.com/stout-careers', company: 'Stout', size: unknown }
+  - { site: 'https://stryker.wd1.myworkdayjobs.com/StrykerCareers', company: 'Stryker', size: unknown }
+  - { site: 'https://suddath.wd5.myworkdayjobs.com/suddath', company: 'Suddath', size: unknown }
+  - { site: 'https://talentmanagementsolution.wd3.myworkdayjobs.com/perseus-careers', company: 'Perseus Group', size: unknown }
+  - { site: 'https://tamus.wd1.myworkdayjobs.com/System-wide_External', company: 'Texas A&M University System', size: unknown }
+  - { site: 'https://tamus.wd1.myworkdayjobs.com/pvamu_external', company: 'Prairie View A&M University', size: unknown }
+  - { site: 'https://tamus.wd1.myworkdayjobs.com/tamuct_external', company: 'Texas AM University - Central Texas', size: unknown }
+  - { site: 'https://tandemdiabetes.wd12.myworkdayjobs.com/tandemdiabetes', company: 'Tandem Diabetes Care', size: unknown }
+  - { site: 'https://taylor.wd1.myworkdayjobs.com/external', company: 'Taylor Corporation', size: unknown }
+  - { site: 'https://tcbrands.wd1.myworkdayjobs.com/travismathew-careers', company: 'TravisMathew', size: unknown }
+  - { site: 'https://td.wd3.myworkdayjobs.com/TD_Bank_Careers', company: 'TD Bank', size: unknown }
+  - { site: 'https://tdwilliamson.wd1.myworkdayjobs.com/TDWCareers', company: 'T.D. Williamson', size: unknown }
+  - { site: 'https://terminix.wd1.myworkdayjobs.com/ambius', company: 'Rentokil', size: unknown }
+  - { site: 'https://thales.wd3.myworkdayjobs.com/Careers', company: 'Thales', size: unknown }
+  - { site: 'https://thales.wd3.myworkdayjobs.com/equest', company: 'Thales', size: unknown }
+  - { site: 'https://theaccessgroup.wd103.myworkdayjobs.com/Access_Group_External_Careers', company: 'The Access Group', size: unknown }
+  - { site: 'https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers', company: 'Thermo Fisher Scientific', size: unknown }
+  - { site: 'https://thermofisher.wd5.myworkdayjobs.com/thermofishercareers', company: 'Thermo Fisher Scientific', size: unknown }
+  - { site: 'https://thisisglobal.wd3.myworkdayjobs.com/Global', company: 'Global', size: unknown }
+  - { site: 'https://thomsonreuters.wd5.myworkdayjobs.com/external_career_site', company: 'Thomson Reuters', size: unknown }
+  - { site: 'https://thrivent.wd5.myworkdayjobs.com/external', company: 'Thrivent', size: unknown }
+  - { site: 'https://tjx.wd1.myworkdayjobs.com/tjx_external', company: 'TJX', size: unknown }
+  - { site: 'https://tjx.wd1.myworkdayjobs.com/tjx_private_postings', company: 'TJX', size: unknown }
+  - { site: 'https://tmobile.wd1.myworkdayjobs.com/External', company: 'T-Mobile', size: unknown }
+  - { site: 'https://toyota.wd503.myworkdayjobs.com/tmna', company: 'Toyota', size: unknown }
+  - { site: 'https://toyota.wd503.myworkdayjobs.com/tmna_professional', company: 'Toyota', size: unknown }
+  - { site: 'https://tranetechnologies.wd12.myworkdayjobs.com/trane_technologies_careers', company: 'Trane Technologies', size: unknown }
+  - { site: 'https://transunion.wd5.myworkdayjobs.com/transunion', company: 'TransUnion', size: unknown }
+  - { site: 'https://travelers.wd5.myworkdayjobs.com/External', company: 'Travelers', size: unknown }
+  - { site: 'https://travelers.wd5.myworkdayjobs.com/external', company: 'Travelers', size: unknown }
+  - { site: 'https://treehouse.wd1.myworkdayjobs.com/treehousecareers', company: 'TreeHouse Foods', size: unknown }
+  - { site: 'https://trendmicro.wd3.myworkdayjobs.com/External', company: 'Trend Micro', size: unknown }
+  - { site: 'https://troweprice.wd5.myworkdayjobs.com/TRowePrice', company: 'T. Rowe Price', size: unknown }
+  - { site: 'https://troweprice.wd5.myworkdayjobs.com/troweprice', company: 'T. Rowe Price', size: unknown }
+  - { site: 'https://trustage.wd1.myworkdayjobs.com/TruStage', company: 'TruStage', size: unknown }
+  - { site: 'https://tsc.wd12.myworkdayjobs.com/TSC-Careers', company: 'TSC', size: unknown }
+  - { site: 'https://ttc.wd1.myworkdayjobs.com/Toro_External_Careers', company: 'The Toro Company', size: unknown }
+  - { site: 'https://tti.wd1.myworkdayjobs.com/Milwaukee', company: 'Milwaukee Tool', size: unknown }
+  - { site: 'https://tti.wd1.myworkdayjobs.com/milwaukee', company: 'Milwaukee Tool', size: unknown }
+  - { site: 'https://tti.wd1.myworkdayjobs.com/tti_pe', company: 'Techtronic Industries (TTI)', size: unknown }
+  - { site: 'https://tysonfoods.wd5.myworkdayjobs.com/TSN', company: 'Tyson Foods', size: unknown }
+  - { site: 'https://tysonfoods.wd5.myworkdayjobs.com/tsn', company: 'Tyson Foods', size: unknown }
+  - { site: 'https://uasys.wd5.myworkdayjobs.com/uasys', company: 'University of Arkansas', size: unknown }
+  - { site: 'https://ucar.wd5.myworkdayjobs.com/UCAR_Careers', company: 'University Corporation for Atmospheric Research', size: unknown }
+  - { site: 'https://uhaul.wd1.myworkdayjobs.com/uhauljobs', company: 'U-Haul', size: unknown }
+  - { site: 'https://upenn.wd1.myworkdayjobs.com/careers-at-penn', company: 'University of Pennsylvania', size: unknown }
+  - { site: 'https://usaa.wd1.myworkdayjobs.com/USAAJOBSWD', company: 'USAA', size: unknown }
+  - { site: 'https://usbank.wd1.myworkdayjobs.com/US_Bank_Careers', company: 'Usbank', size: unknown }
+  - { site: 'https://usc.wd5.myworkdayjobs.com/ExternalUSCCareers', company: 'University of Southern California', size: unknown }
+  - { site: 'https://utaustin.wd1.myworkdayjobs.com/UTstaff', company: 'University of Texas at Austin', size: unknown }
+  - { site: 'https://utaustin.wd1.myworkdayjobs.com/utstaff', company: 'University of Texas at Austin', size: unknown }
+  - { site: 'https://utaustin.wd1.myworkdayjobs.com/utstudent', company: 'University of Texas at Austin', size: unknown }
+  - { site: 'https://uw.wd5.myworkdayjobs.com/uwhires', company: 'University of Washington', size: unknown }
+  - { site: 'https://vanguard.wd5.myworkdayjobs.com/vanguard_external', company: 'Vanguard', size: unknown }
+  - { site: 'https://varsitybrands.wd503.myworkdayjobs.com/externalcareersite', company: 'Varsity Brands', size: unknown }
+  - { site: 'https://verily.wd1.myworkdayjobs.com/verily_careers', company: 'Verily', size: unknown }
+  - { site: 'https://vermeer.wd5.myworkdayjobs.com/externalcareersite', company: 'Vermeer', size: unknown }
+  - { site: 'https://viavisolutions.wd1.myworkdayjobs.com/careers', company: 'Viavi Solutions', size: unknown }
+  - { site: 'https://visa.wd5.myworkdayjobs.com/Visa', company: 'Visa', size: unknown }
+  - { site: 'https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers', company: 'Visa', size: unknown }
+  - { site: 'https://vizient.wd1.myworkdayjobs.com/Vizient_Careers', company: 'Vizient', size: unknown }
+  - { site: 'https://vrtx.wd501.myworkdayjobs.com/vertex_careers', company: 'Vertex', size: unknown }
+  - { site: 'https://walmart.wd504.myworkdayjobs.com/WalmartExternal', company: 'Walmart', size: unknown }
+  - { site: 'https://walmart.wd504.myworkdayjobs.com/non-workdayinternal', company: 'Walmart', size: unknown }
+  - { site: 'https://walmart.wd504.myworkdayjobs.com/walmartexternal', company: 'Walmart', size: unknown }
+  - { site: 'https://wattswater.wd5.myworkdayjobs.com/external', company: 'Watts Water', size: unknown }
+  - { site: 'https://welocalize.wd1.myworkdayjobs.com/welocalize', company: 'Welocalize', size: unknown }
+  - { site: 'https://wgu.wd5.myworkdayjobs.com/external', company: 'WGU - Western Governors University', size: unknown }
+  - { site: 'https://williams.wd5.myworkdayjobs.com/External', company: 'Williams', size: unknown }
+  - { site: 'https://wustl.wd1.myworkdayjobs.com/external', company: 'Wash U', size: unknown }
+  - { site: 'https://xcelenergy.wd1.myworkdayjobs.com/external', company: 'Xcel Energy', size: unknown }
+  - { site: 'https://zebra.wd501.myworkdayjobs.com/zebra_careers', company: 'Zebra Technologies', size: unknown }
+  - { site: 'https://zelis.wd115.myworkdayjobs.com/zeliscareers', company: 'Zelis', size: unknown }
+  - { site: 'https://zoom.wd5.myworkdayjobs.com/zoom', company: 'Zoom', size: unknown }
+  - { site: 'https://zrsmanagement.wd5.myworkdayjobs.com/zrs_careers', company: 'ZRS Management', size: unknown }
 github:
   - { name: SimplifyJobs/New-Grad-Positions, url: 'https://github.com/SimplifyJobs/New-Grad-Positions', raw: 'https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json', format: simplify-json }
   - { name: speedyapply/2027-AI-College-Jobs, url: 'https://github.com/speedyapply/2027-AI-College-Jobs/blob/main/NEW_GRAD_USA.md', raw: 'https://raw.githubusercontent.com/speedyapply/2027-AI-College-Jobs/main/NEW_GRAD_USA.md', format: markdown }

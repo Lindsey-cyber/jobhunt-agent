@@ -3,6 +3,11 @@ import type { JobKey } from "../domain/job.ts";
 const TRACKING = /^(utm_.*|ref|refid|source|src|gh_src|lever-source.*|trk.*|trackingid|embed|mode)$/i;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
+// Career sites on iCIMS Jibe whose public posting pages are /jobs/<id>. Each host
+// must also be a `jibe` entry in the watchlist (data/watchlist.yaml), which
+// tests/jibe-identity.test.ts enforces.
+export const JIBE_HOSTS: readonly string[] = ["careers.amd.com"];
+
 // Unwraps link-protection wrappers (Proofpoint URL Defense) to the destination.
 export function unwrap(url: string): string {
   const m = /^https?:\/\/urldefense(?:\.proofpoint)?\.com\/v3\/__(.+?)(?:__;.*)?$/.exec(url);
@@ -72,6 +77,9 @@ export function jobKey(raw: string): JobKey {
   }
   // iCIMS Jibe career sites (careers.amd.com/careers-home/jobs/<id>): the id is scoped to the host.
   if (parts[0] === "careers-home" && parts[1] === "jobs" && /^\d+$/.test(parts[2] ?? "")) return key(`jibe:${host}:${parts[2]}`);
+  // The same Jibe postings as the careers site serves them to a visitor: /jobs/<id>, with or without a query
+  // (?icims=1, ?lang=en-us). Only hosts in JIBE_HOSTS; the same path on any other site stays a plain URL.
+  if (JIBE_HOSTS.includes(host) && parts.length === 2 && parts[0] === "jobs" && /^\d+$/.test(parts[1]!)) return key(`jibe:${host}:${parts[1]}`);
   // IBM's career site: one global numeric jobId, with or without a locale segment.
   if (host === "careers.ibm.com" && /^\d+$/.test(q("jobId") ?? "")) return key(`ibm:${q("jobId")}`);
   if (host.endsWith("linkedin.com")) {

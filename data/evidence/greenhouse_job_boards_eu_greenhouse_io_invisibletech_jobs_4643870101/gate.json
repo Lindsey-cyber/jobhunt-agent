@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What level of travel are you open to for this role?\": no answer in profile or answer bank",
+    "required \"This position is available in multiple locations. Please indicate which location(s) you would be interested in working from (Select all that apply):\": no answer in profile or answer bank",
+    "required \"What level of travel are you open to for this role?\" is empty after filling",
+    "required \"This position is available in multiple locations. Please indicate which location(s) you would be interested in working from (Select all that apply):\" is empty after filling"
+  ]
+}

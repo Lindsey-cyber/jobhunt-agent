@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -79,6 +79,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_18745003008",
+      "label": "What location do you intend to work out of?",
+      "expected": "New York",
+      "actual": "New York",
+      "pass": true
+    },
+    {
       "fieldId": "question_18745004008",
       "label": "Will you now or in the future require sponsorship for employment visa status?",
       "expected": "Yes",
@@ -114,8 +121,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "What location do you intend to work out of?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

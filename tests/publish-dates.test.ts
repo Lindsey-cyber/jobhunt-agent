@@ -136,3 +136,11 @@ describe("merge keeps a recorded publish date", () => {
     expect([...second.values()][0]!.sources[0]).toMatchObject({ date: "2026-09-01T00:00:00.000Z", dateKind: "published" });
   });
 });
+
+describe("only day-level cells are list_age_day", () => {
+  it("'new' and 'just posted' stay coarse list_age", () => {
+    expect(parseListAge("New", NOW).dateKind).toBe("list_age");
+    expect(parseListAge("Just posted", NOW).dateKind).toBe("list_age");
+    expect(parseListAge("0d", NOW).dateKind).toBe("list_age_day");
+  });
+});

@@ -253,8 +253,8 @@ export function parseSimplifyListings(body: SimplifyListing[], source: string, s
 // The "Age" / "Posted" cell of a markdown list: "today", "2d", "3w", "1mo", or
 // an ISO date. It is resolved against fetch time to a UTC day so it sorts, but it
 // is the list's age for the row, not the employer's date. Day-level cells ("today",
-// "yesterday", "Nd", an ISO date) are dateKind list_age_day; coarse ones ("Nw",
-// "Nmo") stay list_age. "30d+" style cells are only a bound (posted_before);
+// "yesterday", "Nd", an ISO date) are dateKind list_age_day; coarse ones ("new",
+// "just posted", "Nw", "Nmo") stay list_age. "30d+" style cells are only a bound (posted_before);
 // "Date unknown" is nothing.
 export function parseListAge(text: string | undefined, seenAt: string): { date: string; dateKind: DateKind } {
   const t = (text ?? "").trim().toLowerCase();
@@ -265,7 +265,8 @@ export function parseListAge(text: string | undefined, seenAt: string): { date: 
     const d = new Date(now);
     return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - daysAgo)).toISOString();
   };
-  if (/^(today|just posted|new)$/.test(t)) return { date: dayStart(0), dateKind: "list_age_day" };
+  if (t === "today") return { date: dayStart(0), dateKind: "list_age_day" };
+  if (t === "new" || t === "just posted") return { date: dayStart(0), dateKind: "list_age" };
   if (t === "yesterday") return { date: dayStart(1), dateKind: "list_age_day" };
   if (/^\d{4}-\d{2}-\d{2}$/.test(t)) return { date: iso(`${t}T00:00:00.000Z`), dateKind: iso(`${t}T00:00:00.000Z`) ? "list_age_day" : "none" };
   // "2d", "30d+", "3 weeks", "30+ days"

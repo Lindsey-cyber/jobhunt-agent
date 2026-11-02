@@ -6,6 +6,7 @@ import { join } from "node:path";
 import type { Job, Sighting } from "../domain/job.ts";
 import { atsOf } from "../discover/identity.ts";
 import { classifyLink } from "../discover/links.ts";
+import { isDated } from "../discover/gates.ts";
 import { mergeRun } from "../discover/merge.ts";
 import { alertChannel, parseAlert, type AlertMessage } from "../discover/parse.ts";
 import { triage, type CandidateFacts } from "../discover/triage.ts";
@@ -74,8 +75,9 @@ export function lookupTargets(sightings: readonly Sighting[], prior: ReadonlyMap
   for (const s of sightings) {
     const kind = atsOf(s.key) as LookupKind | undefined;
     if (s.official || !kind || !LOOKUP_KINDS.includes(kind) || official.has(s.key) || seen.has(s.key)) continue;
+    // A match already dated (by the catalog or by this sighting) needs no lookup; the cap is for undated ones.
     const was = prior.get(s.key);
-    if (was?.official && was.publishedAt) continue;
+    if (isDated({ publishedAt: was?.publishedAt ?? "", sources: [...(was?.sources ?? []), { dateKind: s.dateKind, date: s.date }] })) continue;
     if (triage({ ...s, description: "" }, facts).verdict === "reject") continue;
     seen.add(s.key);
     if (n++ >= limit) continue;

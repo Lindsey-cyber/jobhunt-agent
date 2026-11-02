@@ -151,7 +151,7 @@ describe("fetchPostings: other ATS", () => {
 describe("lookupTargets", () => {
   const sg = (key: string, url: string, over: Partial<Sighting> = {}): Sighting => ({
     channel: "github_newgrad", source: "list", url, key: key as JobKey, seenAt: NOW, official: false, company: "Acme",
-    title: "Machine Learning Engineer, New Grad", location: "New York, NY", description: "", date: "3d", dateKind: "list_age_day", hints: {}, ...over,
+    title: "Machine Learning Engineer, New Grad", location: "New York, NY", description: "", date: "", dateKind: "none", hints: {}, ...over,
   });
   const WDK = "workday:acme:r-123";
   const flat = (m: ReturnType<typeof lookupTargets>) => [...m.values()].flat().map((t) => t.key);
@@ -177,6 +177,11 @@ describe("lookupTargets", () => {
   it("caps the number of lookups", () => {
     const many = Array.from({ length: 10 }, (_, i) => sg(`smartrecruiters:${i + 1}`, `https://jobs.smartrecruiters.com/A/${i + 1}`));
     expect(flat(lookupTargets(many, new Map(), me, 4))).toHaveLength(4);
+  });
+  it("skips matches already dated under isDated, so the cap goes to undated ones", () => {
+    const dated = Array.from({ length: 3 }, (_, i) => sg(`smartrecruiters:${i + 1}`, `https://jobs.smartrecruiters.com/A/${i + 1}`, { date: "3d", dateKind: "list_age_day" }));
+    const undated = Array.from({ length: 3 }, (_, i) => sg(`smartrecruiters:${i + 10}`, `https://jobs.smartrecruiters.com/A/${i + 10}`));
+    expect(flat(lookupTargets([...dated, ...undated], new Map(), me, 3)).sort()).toEqual(undated.map((s) => s.key).sort());
   });
 });
 
@@ -210,5 +215,24 @@ describe("a posting proved gone leaves the matches", () => {
     expect(back.hints.closed).toBe(false);
     expect(back.hints.closedEvidence).toBeUndefined();
     expect(back.triage.verdict).toBe("match");
+  });
+});
+
+describe("a lookup proof of an undated official posting", () => {
+  const WDK = "workday:acme:r-321" as JobKey;
+  const base = { channel: "official_workday", source: "https://acme.wd1.myworkdayjobs.com", url: "https://acme.wd1.myworkdayjobs.com/job/x", key: WDK, seenAt: NOW, company: "Acme", title: "ML Engineer", location: "Austin, TX", description: "", hints: {} } as const;
+  const official: Sighting = { ...base, official: true, date: "", dateKind: "none" };
+  const gone: Sighting = { ...base, channel: "github_newgrad", source: "lookup:workday", official: false, title: "", date: "", dateKind: "none", hints: { closed: true, closedEvidence: { source: "lookup:workday", checkedAt: NOW, basis: "404" } } };
+  it("closes an official, undated job that the employer API proves gone, and an official listing reopens it", () => {
+    const first = mergeRun(new Map(), [official], me);
+    expect([...first.values()][0]!.hints.closed).toBe(false);
+    const closed = [...mergeRun(first, [gone], me).values()][0]!;
+    expect(closed.official).toBe(true);
+    expect(closed.hints.closed).toBe(true);
+    expect(closed.hints.closedEvidence).toMatchObject({ source: "lookup:workday" });
+    expect(closed.triage.verdict).toBe("reject");
+    const back = [...mergeRun(first, [gone, official], me).values()][0]!;
+    expect(back.hints.closed).toBe(false);
+    expect(back.hints.closedEvidence).toBeUndefined();
   });
 });

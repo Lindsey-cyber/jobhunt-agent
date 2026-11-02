@@ -784,7 +784,7 @@
         "options": [],
         "maxLength": 255
       },
-      "value": "Yes",
+      "value": "No",
       "source": {
         "type": "profile",
         "path": "workAuthorization.authorizedCountries"
@@ -832,7 +832,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_38731354002",
         "label": "Are you currently employed by a client, partner, or competitor of Addepar?",
@@ -844,7 +844,13 @@
           "Not sure"
         ]
       },
-      "reason": "no answer in profile or answer bank"
+      "value": "No",
+      "source": {
+        "type": "profile",
+        "path": "answers.employerRelationship"
+      },
+      "confidence": 1,
+      "sensitive": false
     },
     {
       "status": "fill",

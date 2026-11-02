@@ -1,0 +1,7 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What location do you intend to work out of?\": no answer in profile or answer bank",
+    "required \"What location do you intend to work out of?\" is empty after filling"
+  ]
+}

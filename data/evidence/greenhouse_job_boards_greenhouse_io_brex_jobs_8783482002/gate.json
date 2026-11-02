@@ -1,0 +1,13 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"What country are you based in?\": no answer in profile or answer bank",
+    "required \"Are you authorized to work in the stated location of this role?\": sensitive question with no exact answer",
+    "required \"This role requires in-office work three days per week (Mon, Wed, Thurs). Do you acknowledge and agree to this requirement?\": no answer in profile or answer bank",
+    "required \"Do you currently, or have you previously, worked at Capital One or a company acquired by Capital One as an employee, contractor, consultant, or temp? (For example Capital One Bank, N.A., Capital One Services, Inc., Chevy Chase Bank, Discover, Hibernia, ING Direct, North Fork Bank)\": sensitive question with no exact answer",
+    "required \"What country are you based in?\" is empty after filling",
+    "required \"Are you authorized to work in the stated location of this role?\" is empty after filling",
+    "required \"This role requires in-office work three days per week (Mon, Wed, Thurs). Do you acknowledge and agree to this requirement?\" is empty after filling",
+    "required \"Do you currently, or have you previously, worked at Capital One or a company acquired by Capital One as an employee, contractor, consultant, or temp? (For example Capital One Bank, N.A., Capital One Services, Inc., Chevy Chase Bank, Discover, Hibernia, ING Direct, North Fork Bank)\" is empty after filling"
+  ]
+}

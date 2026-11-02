@@ -133,7 +133,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   { path: "answers.certifications", pattern: /^([a-z0-9 ]{2,40} )?certifications?$/, resolve: (_p, _l, ctx) => ((ctx.options ?? []).length ? (ctx.options ?? []).find((o) => /^(no|none)\b/i.test(o.trim())) : "None") },
   { path: "contact.address.state", pattern: /^(the )?state (you will be|you ll be|you are) working from$|^which state will you (be )?work(ing)? (from|in)$/, resolve: (p, _l, ctx) => usStateName(p.contact.address.state, ctx.options) },
   // Residence country, permanent address, clearance, transcripts, on-site work: from her profile.
-  { path: "contact.address.country", pattern: /^(what|which) country (are you currently a resident of|do you (currently )?(live|reside) in)$|^country of residence$/, resolve: (p, _l, ctx) => (ctx.options ?? []).find((o) => /^(united states|usa|us)\b/i.test(o.trim())) ?? p.contact.address.country },
+  { path: "contact.address.country", pattern: /^(what|which) country (are you currently a resident of|do you (currently )?(live|reside) in|are you (currently )?based in)$|^country of residence$/, resolve: (p, _l, ctx) => (ctx.options ?? []).find((o) => /^(united states|usa|us)\b/i.test(o.trim())) ?? p.contact.address.country },
   { path: "contact.address", pattern: /^permanent (legal )?address$/, kinds: ["text", "textarea"], resolve: (p) => { const a = p.contact.address; return [a.line1, a.line2, a.city, `${a.state} ${a.postalCode ?? ""}`.trim(), a.country].filter(Boolean).join(", "); } },
   // She is on F-1 OPT and has never held a U.S. security clearance.
   { path: "workAuthorization.status", pattern: /^do you (currently )?(hold|have) (an? )?(active |current )?(u ?s )?security clearance$/, kinds: ["select", "radio", "combobox"], resolve: (_p, _l, ctx) => (ctx.options ?? []).find((o) => /^(no|none)\b/i.test(o.trim())) ?? "No" },
@@ -550,7 +550,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // The candidate (2026-10-28): location answers say New York. "Do you have a location preference?" among the posting's offices.
     path: "contact.address.city",
-    pattern: /\bmetropolitan area\b.{0,30}\b(closest|nearest)\b.{0,40}\bresidence\b|^(do you have a )?(preferred|location preference|preferred (work |office )?location|preferred office)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b|^what is your preferred (work |office )?location$/,
+    pattern: /\bmetropolitan area\b.{0,30}\b(closest|nearest)\b.{0,40}\bresidence\b|^(do you have a )?(preferred|location preference|preferred (work |office )?location|preferred office)$|^what location do you intend to work (out of|from)$|^do you have a location preference$|^which (office|location) (would you prefer|do you prefer)\b|^what is your preferred (work |office )?location$/,
     kinds: ["select", "radio", "combobox", "checkbox"],
     resolve: (p, label, ctx) => {
       const opts = ctx.options ?? [];

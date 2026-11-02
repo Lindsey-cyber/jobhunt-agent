@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -46,6 +46,13 @@
     {
       "fieldId": "question_12991410007",
       "label": "If you are not local to Colorado, are you willing to relocate?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "question_12991411007",
+      "label": "Are you willing to share your academic transcripts?",
       "expected": "Yes",
       "actual": "Yes",
       "pass": true
@@ -163,8 +170,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Are you willing to share your academic transcripts?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

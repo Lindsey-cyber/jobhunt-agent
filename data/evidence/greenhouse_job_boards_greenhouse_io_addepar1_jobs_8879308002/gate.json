@@ -1,7 +1,3 @@
 {
-  "decision": "hold",
-  "reasons": [
-    "required \"Are you currently employed by a client, partner, or competitor of Addepar?\": no answer in profile or answer bank",
-    "required \"Are you currently employed by a client, partner, or competitor of Addepar?\" is empty after filling"
-  ]
+  "decision": "submit"
 }

@@ -866,7 +866,7 @@
       "sensitive": false
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_9643787101",
         "label": "Consent for contacting about future job openings",
@@ -876,7 +876,13 @@
           "I agree"
         ]
       },
-      "reason": "acknowledgements and consents need the candidate"
+      "value": "I agree",
+      "source": {
+        "type": "profile",
+        "path": "acceptApplicationAttestations"
+      },
+      "confidence": 1,
+      "sensitive": false
     }
   ]
 }

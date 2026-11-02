@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -93,6 +93,13 @@
       "pass": true
     },
     {
+      "fieldId": "question_20124194004",
+      "label": "Your authorization to work in the country where you live:",
+      "expected": "I am authorized to work in the US based on a valid work permit and require a company to sponsor my visa.",
+      "actual": "I am authorized to work in the US based on a valid work permit and require a company to sponsor my visa.",
+      "pass": true
+    },
+    {
       "fieldId": "question_20124195004",
       "label": "Where do you currently reside? (City, State)",
       "expected": "New York, NY",
@@ -135,8 +142,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Your authorization to work in the country where you live:"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

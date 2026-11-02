@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -63,10 +63,15 @@
       "expected": "I have read, understood and agreed with the terms of Privacy Policy for Job Applicants",
       "actual": "I have read, understood and agreed with the terms of Privacy Policy for Job Applicants",
       "pass": true
+    },
+    {
+      "fieldId": "question_9643787101",
+      "label": "Consent for contacting about future job openings",
+      "expected": "I agree",
+      "actual": "I agree",
+      "pass": true
     }
   ],
-  "emptyRequired": [
-    "Consent for contacting about future job openings"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

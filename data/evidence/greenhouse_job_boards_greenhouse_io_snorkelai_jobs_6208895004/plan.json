@@ -434,7 +434,7 @@
         ]
       }
     ],
-    "priorApplications": 0
+    "priorApplications": 1
   },
   "items": [
     {
@@ -929,7 +929,7 @@
       "sensitive": true
     },
     {
-      "status": "blocked",
+      "status": "fill",
       "field": {
         "id": "question_20124194004",
         "label": "Your authorization to work in the country where you live:",
@@ -942,7 +942,13 @@
           "I am not authorized to work in the US and require visa support."
         ]
       },
-      "reason": "sensitive question with no exact answer"
+      "value": "I am authorized to work in the US based on a valid work permit and require a company to sponsor my visa.",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.status"
+      },
+      "confidence": 1,
+      "sensitive": true
     },
     {
       "status": "fill",

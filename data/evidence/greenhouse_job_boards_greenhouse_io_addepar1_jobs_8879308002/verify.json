@@ -1,5 +1,5 @@
 {
-  "ok": false,
+  "ok": true,
   "checks": [
     {
       "fieldId": "first_name",
@@ -53,8 +53,8 @@
     {
       "fieldId": "question_38731351002",
       "label": "Are you authorized to work in the United States without Visa Sponsorship or EAD?",
-      "expected": "Yes",
-      "actual": "Yes",
+      "expected": "No",
+      "actual": "No",
       "pass": true
     },
     {
@@ -69,6 +69,13 @@
       "label": "LinkedIn Profile",
       "expected": "https://www.linkedin.com/in/lindsey-ma/",
       "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "question_38731354002",
+      "label": "Are you currently employed by a client, partner, or competitor of Addepar?",
+      "expected": "No",
+      "actual": "No",
       "pass": true
     },
     {
@@ -100,8 +107,6 @@
       "pass": true
     }
   ],
-  "emptyRequired": [
-    "Are you currently employed by a client, partner, or competitor of Addepar?"
-  ],
+  "emptyRequired": [],
   "fillErrors": []
 }

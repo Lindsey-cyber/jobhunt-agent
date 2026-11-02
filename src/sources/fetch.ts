@@ -112,13 +112,16 @@ export const WORKDAY_PAGE = 20;
 // Workday itself serves at most 2000 postings per search (100 pages of 20).
 export const WORKDAY_PAGE_CAP = 100;
 
-// A posting is stale when it is older than the window: "30+ days" is always
-// outside it, and so is anything dated before the last successful run.
+// A posting is stale only against a last successful run (`since`): it is older than that run, or "30+ days"
+// old (a run within the last 30 days already saw everything newer than that). With no `since` nothing is
+// stale: "30+ days" postings are still open, and a board whose list is not date-ordered (General Motors,
+// Omnicom) keeps its early-career postings behind them; stopping at them dropped those postings.
 function workdayStale(postedOn: string | undefined, seenAt: string, since?: string): boolean {
+  if (since === undefined) return false;
   const r = parseWorkdayPostedOn(postedOn, seenAt);
   if (!r) return false;
   if (r.dateKind === "posted_before") return true;
-  return since !== undefined && r.date < since;
+  return r.date < since;
 }
 
 // Workday lists postings newest first, so a board is read in full but
@@ -333,8 +336,11 @@ export async function fetchEightfold(e: Watchlist["eightfold"][number], queries:
 }
 
 // amazon.jobs/en/search.json: the endpoint the public search page calls; no login.
-// Newest first, so a bounded page count keeps the recent postings of each query.
-export async function fetchAmazon(queries: string[], seenAt: string, perQuery = 200): Promise<Fetched> {
+// Newest first. Each query is read to the end of its hits (the server reports the total), up to a safety
+// cap: a cap of a few hundred cut "machine learning" (2000+ hits) to its newest tenth, which is how
+// postings such as "Data Engineer I, Fire TV" were never fetched.
+export const AMAZON_PER_QUERY = 3000;
+export async function fetchAmazon(queries: string[], seenAt: string, perQuery = AMAZON_PER_QUERY): Promise<Fetched> {
   const base = { name: "Amazon", channel: "official_amazon" as Channel, url: "https://www.amazon.jobs/en/search" };
   try {
     const seen = new Map<string, Sighting>();

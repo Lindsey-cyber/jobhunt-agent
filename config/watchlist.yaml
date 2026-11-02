@@ -1232,7 +1232,6 @@ workday:
   - { site: 'https://zoom.wd5.myworkdayjobs.com/zoom', company: 'Zoom', size: medium_large, band: large, h1b: 1296 }
   - { site: 'https://centene.wd5.myworkdayjobs.com/Centene_External', company: 'Centene', size: medium_large, band: large, h1b: 467 }
   - { site: 'https://wf.wd1.myworkdayjobs.com/WellsFargoJobs', company: 'Wells Fargo', size: medium_large, band: large, h1b: 2097 }
-  - { site: 'https://qualcomm.wd12.myworkdayjobs.com/External', company: 'Qualcomm', size: medium_large, band: large, h1b: 8295 }
   - { site: 'https://nike.wd1.myworkdayjobs.com/nke', company: 'Nike', size: medium_large, band: large, h1b: 1143 }
   - { site: 'https://comcast.wd115.myworkdayjobs.com/Comcast_Careers', company: 'Comcast', size: medium_large, band: large, h1b: 2077 }
   - { site: 'https://aptos.wd108.myworkdayjobs.com/Revionics', company: 'Revionics', size: unknown, band: small, h1b: 0 }
@@ -1384,6 +1383,8 @@ oracleHcm:
 eightfold:
   - { host: 'explore.jobs.netflix.net', domain: 'netflix.com', api: apply_v2, company: 'Netflix', size: medium_large }
   - { host: 'eaton.eightfold.ai', domain: 'eaton.com', api: pcsx, company: 'Eaton', size: medium_large }
+  # Qualcomm: its Workday site (qualcomm.wd12 /External) answers total 0 to every search; the postings are on careers.qualcomm.com (Eightfold pcsx).
+  - { host: 'careers.qualcomm.com', domain: 'qualcomm.com', api: pcsx, company: 'Qualcomm', size: medium_large, band: large, h1b: 8295 }
 # aliases: one name per employer for identity checks (coverage matching, board lookups): alias -> the name it stands for. One hop only.
 # Not used for policy exclusions (data/policy.yaml compares names as written).
 aliases:
@@ -1404,5 +1405,6 @@ aggregators:
   - 'CareerBuilder'
   - 'Snagajob'
 # amazon: amazon.jobs/en/search.json has no ATS board; queries are AND-matched, so "university graduate" style phrases return nothing.
+# Each query is read to the end of its hits. Every ROLE title family needs its own query ("data engineer" is not found by "machine learning" past the first pages).
 amazon:
-  queries: ['machine learning', 'applied scientist', 'research scientist', 'data scientist', 'deep learning', 'artificial intelligence', 'ML engineer', 'university', 'Annapurna Labs']
+  queries: ['machine learning', 'applied scientist', 'research scientist', 'data scientist', 'data engineer', 'deep learning', 'artificial intelligence', 'ML engineer', 'university', 'Annapurna Labs']

@@ -17,6 +17,25 @@ export function coverageProblem(c: unknown): string | undefined {
   if ((inCatalogNotRejected as number) > (inCatalog as number)) return "inCatalogNotRejected 大于 inCatalog";
   const stale = (c as Record<string, unknown>).staleExcluded;
   if (stale !== undefined && !(typeof stale === "number" && Number.isInteger(stale) && stale >= 0)) return "staleExcluded 不是非负整数";
+  const bands = (c as Record<string, unknown>).bands;
+  if (bands !== undefined) {
+    if (!bands || typeof bands !== "object" || Array.isArray(bands)) return "bands 不是对象";
+    const b = bands as Record<string, unknown>;
+    let sum = 0;
+    for (const k of ["large", "mid", "small", "unknown"]) {
+      const v = b[k] as Record<string, unknown> | undefined;
+      if (!v || typeof v !== "object") return `bands.${k} 缺失`;
+      const { n: bn, inCatalog: bi, inCatalogNotRejected: br } = v;
+      if (![bn, bi, br].every((x) => typeof x === "number" && Number.isInteger(x) && x >= 0)) return `bands.${k} 的计数不是非负整数`;
+      if ((bi as number) > (bn as number)) return `bands.${k}.inCatalog 大于 n`;
+      if ((br as number) > (bi as number)) return `bands.${k}.inCatalogNotRejected 大于 inCatalog`;
+      sum += bn as number;
+    }
+    const total = (k: "inCatalog" | "inCatalogNotRejected") => ["large", "mid", "small", "unknown"].reduce((a, x) => a + ((b[x] as Record<string, number>)[k] ?? 0), 0);
+    if (sum !== n) return "bands 的 n 之和不等于 n";
+    if (total("inCatalog") !== inCatalog) return "bands 的 inCatalog 之和不等于 inCatalog";
+    if (total("inCatalogNotRejected") !== inCatalogNotRejected) return "bands 的 inCatalogNotRejected 之和不等于 inCatalogNotRejected";
+  }
   return undefined;
 }
 

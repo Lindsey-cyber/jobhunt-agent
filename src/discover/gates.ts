@@ -1,11 +1,15 @@
 // Stage gates (docs/program/notes.md): 1a search is complete, 1b screening is accurate,
 // 1c applying is allowed only when both hold. Pure: the CLI reads the files.
 import type { DateKind } from "../domain/job.ts";
+import { bigCounts, type BandCounts } from "./coverage.ts";
 
 export interface Check { name: string; value: string; pass: boolean }
-export interface Gate { pass: boolean; checks: Check[] }
+// notes are shown on the page and never decide the gate.
+export interface Gate { pass: boolean; checks: Check[]; notes?: string[] }
 
-export interface Coverage { date: string; n: number; inCatalog: number; inCatalogNotRejected: number }
+// bands (optional): the same counts split by employer size. When present, gate 1a judges large + mid rows only
+// (the candidate: search resources are not to go mostly to small startups); small and unknown are reported.
+export interface Coverage { date: string; n: number; inCatalog: number; inCatalogNotRejected: number; bands?: BandCounts }
 export interface AuditRates { falseMatchRate: number | null; missRate: number | null; matchJudged: number; rejectJudged: number }
 
 // A match is dated when the employer's own page says when it was published, or a
@@ -39,7 +43,10 @@ export function stageGates(i: GateInput): Record<"1a" | "1b" | "1c", Gate> {
   const c = i.coverage;
   const NO_COVERAGE = i.coverageProblem ? `覆盖率测量文件不可用：${i.coverageProblem}` : "没有覆盖率测量文件";
   const age = c ? days(c.date, i.today) : NaN;
-  const share = c && c.n > 0 ? c.inCatalog / c.n : NaN;
+  // The rows gate 1a counts: large + mid employers when the file splits by size, else every row (older files).
+  const g = c ? (c.bands ? bigCounts(c.bands) : { n: c.n, inCatalog: c.inCatalog }) : undefined;
+  const share = g && g.n > 0 ? g.inCatalog / g.n : NaN;
+  const scope = c?.bands ? "大中型雇主" : "";
   const notBuilt = i.registry?.filter((r) => r.status === "not_built").length;
   const deferred = i.registry?.filter((r) => r.status === "deferred") ?? [];
   const noReason = deferred.filter((r) => !(r.reason ?? "").trim());
@@ -54,13 +61,15 @@ export function stageGates(i: GateInput): Record<"1a" | "1b" | "1c", Gate> {
   const a = i.audit;
   const wrong = c && c.inCatalog > 0 ? (c.inCatalog - c.inCatalogNotRejected) / c.inCatalog : NaN;
 
+  const sizeNote = (label: string, k: "small" | "unknown") => `${label}雇主：${c!.bands![k].inCatalog}/${c!.bands![k].n} 在库（只报告，不设门）`;
   const g1a = gate([
     { name: `覆盖率测量在 ${GATE_LIMITS.coverageDays} 天内`, value: c ? `${c.date}（${age} 天前）` : NO_COVERAGE, pass: !!c && age >= 0 && age <= GATE_LIMITS.coverageDays },
-    { name: `覆盖率样本 n ≥ ${GATE_LIMITS.coverageN}`, value: c ? `n=${c.n}` : NO_COVERAGE, pass: !!c && c.n >= GATE_LIMITS.coverageN },
-    { name: `样本在库内 ≥ ${pct(GATE_LIMITS.inCatalog)}`, value: c ? (c.n > 0 ? `${c.inCatalog}/${c.n} = ${pct(share)}` : "n=0") : NO_COVERAGE, pass: share >= GATE_LIMITS.inCatalog },
+    { name: `覆盖率样本${scope} n ≥ ${GATE_LIMITS.coverageN}`, value: c ? `n=${g!.n}` : NO_COVERAGE, pass: !!g && g.n >= GATE_LIMITS.coverageN },
+    { name: `${scope}样本在库内 ≥ ${pct(GATE_LIMITS.inCatalog)}`, value: c ? (g!.n > 0 ? `${g!.inCatalog}/${g!.n} = ${pct(share)}` : "n=0") : NO_COVERAGE, pass: share >= GATE_LIMITS.inCatalog },
     { name: "来源登记表没有“未做”，推迟的都有理由", value: registryValue, pass: registryOk },
     { name: `当前匹配岗位有发布日期（官方或列表注明的日期）≥ ${pct(GATE_LIMITS.dated)}`, value: i.matches.length ? `${dated}/${i.matches.length} = ${pct(datedShare)}` : "没有当前匹配岗位", pass: datedShare >= GATE_LIMITS.dated },
   ]);
+  if (c?.bands) g1a.notes = [sizeNote("小型", "small"), sizeNote("规模未知", "unknown")];
   const g1b = gate([
     { name: `盲审误选率 ≤ ${pct(GATE_LIMITS.auditRate)}（n ≥ ${GATE_LIMITS.auditN}）`, value: a ? `${rate(a.falseMatchRate)}，n=${a.matchJudged}` : "没有盲审记录", pass: !!a && a.falseMatchRate != null && a.matchJudged >= GATE_LIMITS.auditN && a.falseMatchRate <= GATE_LIMITS.auditRate },
     { name: `盲审漏选率 ≤ ${pct(GATE_LIMITS.auditRate)}（n ≥ ${GATE_LIMITS.auditN}）`, value: a ? `${rate(a.missRate)}，n=${a.rejectJudged}` : "没有盲审记录", pass: !!a && a.missRate != null && a.rejectJudged >= GATE_LIMITS.auditN && a.missRate <= GATE_LIMITS.auditRate },
@@ -79,6 +88,7 @@ export function renderGates(g: ReturnType<typeof stageGates>): string[] {
   for (const k of ["1a", "1b", "1c"] as const) {
     L.push(`**${names[k]}：${g[k].pass ? "✓ 通过" : "✗ 未通过"}**`, "");
     for (const c of g[k].checks) L.push(`- ${c.pass ? "✓" : "✗"} ${c.name}：${c.value}`);
+    for (const n of g[k].notes ?? []) L.push(`- ℹ ${n}`);
     L.push("");
   }
   return L;

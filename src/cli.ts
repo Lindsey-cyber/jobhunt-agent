@@ -31,8 +31,8 @@ import { writeApplicationsPage } from "./run/applications.ts";
 import { loadWatchlist } from "./sources/fetch.ts";
 import { appendAnswer } from "./store/answerlog.ts";
 import { readCatalog } from "./store/catalog.ts";
-import { normCompany, causeOf, fits, indexCatalog, match, report as coverageReport, sampleOf, summarize, type Judged } from "./discover/coverage.ts";
-import { fetchSample, requireIndependent, resolveShortLinks, SAMPLE_LISTS, watchedBoards, watchlistUrls } from "./sources/coverage.ts";
+import { bandOfCompany, causeOf, fits, indexCatalog, isBig, isStale, makeCanon, match, report as coverageReport, resampleRows, sampleOf, summarize, RESAMPLE_TARGET, type Judged, type SampleRow, type WatchedBoard } from "./discover/coverage.ts";
+import { fetchSample, loadSizeSources, requireIndependent, resolveRequisitions, resolveShortLinks, SAMPLE_LISTS, watchedBoards, watchlistUrls } from "./sources/coverage.ts";
 import { readModelVerdicts } from "./store/modelverdicts.ts";
 import { retriage } from "./discover/merge.ts";
 import { expectationFloor } from "./discover/pay.ts";
@@ -202,13 +202,33 @@ switch (command) {
     requireIndependent(SAMPLE_LISTS, watchlistUrls());
     const now = new Date();
     const date = now.toISOString().slice(0, 10);
-    const { rows, failed } = await fetchSample(SAMPLE_LISTS);
+    const wl = loadWatchlist();
+    const canon = makeCanon(wl.aliases);
+    const since = u.search.h1bRequiredSince;
+    const size = loadSizeSources(u.dir, since, wl, canon);
+    const { rows, failed } = await fetchSample(SAMPLE_LISTS, wl.aggregators, canon);
     for (const f of failed) console.error(`source failed: ${f}`);
-    const sampled = await resolveShortLinks(sampleOf(rows.filter((r) => fits(r, u.search, now)), Number(values.limit ?? 100)));
-    const idx = indexCatalog(retriage(readCatalog(paths(u.dir).catalog).values(), candidateFacts(u.profile), u.search.excludeCompanies, readModelVerdicts(u.dir)));
-    const found = sampled.map((row) => ({ row, found: match(row, idx) }));
-    const boards = await watchedBoards(found.filter((f) => !f.found).map((f) => f.row.company));
-    const judged: Judged[] = found.map((f) => ({ ...f, cause: causeOf(f.row, f.found, idx, boards.get(normCompany(f.row.company)) ?? []) }));
+    const fitting = rows.filter((r) => fits(r, u.search, now));
+    const idx = indexCatalog(retriage(readCatalog(paths(u.dir).catalog).values(), candidateFacts(u.profile), u.search.excludeCompanies, readModelVerdicts(u.dir)), canon);
+    const boardsOf = new Map<string, WatchedBoard[]>();
+    const judgeRows = async (batch: SampleRow[]): Promise<Judged[]> => {
+      const sampled = await resolveRequisitions(await resolveShortLinks(batch), wl);
+      const found = sampled.map((row) => ({ row, found: match(row, idx) }));
+      const unread = [...new Set(found.filter((f) => !f.found).map((f) => f.row.company))].filter((c) => !boardsOf.has(canon(c)));
+      for (const [c, b] of await watchedBoards(unread, wl)) boardsOf.set(c, b);
+      return found.map((f) => ({ ...f, cause: causeOf(f.row, f.found, idx, boardsOf.get(canon(f.row.company)) ?? []), band: bandOfCompany(f.row.company, canon, size) }));
+    };
+    // Gate 1a counts large + mid employers: top up from the lists until that many real postings (stale ones do not count)
+    // are measured, or the lists run out. The first sample spans every size so small and unknown are still reported.
+    const taken = sampleOf(fitting, Number(values.limit ?? 100), canon);
+    const judged = await judgeRows(taken);
+    const bigPool = fitting.filter((r) => isBig(bandOfCompany(r.company, canon, size)));
+    for (let round = 0; round < 8; round++) {
+      const more = resampleRows(bigPool, taken, judged.filter((j) => !isStale(j.cause) && isBig(j.band)).length, RESAMPLE_TARGET, canon);
+      if (more.length === 0) break;
+      taken.push(...more);
+      judged.push(...(await judgeRows(more)));
+    }
     const sources = SAMPLE_LISTS.map((l) => l.name).filter((n) => !failed.some((f) => f.startsWith(`${n}:`)));
     const r = coverageReport(date, sources, judged);
     const out = join("data", "coverage", `${date}.json`);

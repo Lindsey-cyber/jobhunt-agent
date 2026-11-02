@@ -662,6 +662,11 @@ greenhouse:
   - { board: 'scm', company: 'scm', size: unknown }
   - { board: 'divergent', company: 'Divergent', size: unknown }
   - { board: 'theweathercompany', company: 'The Weather Company', size: unknown }
+  # Official boards of companies in her job-alert emails, verified live 2026-11-02.
+  - { board: 'advancedspace', company: 'Advanced Space', size: unknown }
+  - { board: 'dorsia', company: 'Dorsia', size: unknown }
+  - { board: 'orenda', company: 'Orenda, Inc', size: unknown }
+  - { board: 'schrdinger', company: 'Schrödinger', size: unknown }
 lever:
   - { board: spotify, company: 'Spotify', size: medium_large }
   - { board: zoox, company: 'Zoox', size: medium_large, ai: true }
@@ -725,7 +730,6 @@ lever:
   - { board: 'pyka', company: 'Pyka', size: unknown }
   - { board: 'rainfocus', company: 'RainFocus', size: unknown }
   - { board: 'redhorsecorp', company: 'Redhorse Corporation', size: unknown }
-  - { board: 'regal', company: 'Regal', size: unknown }
   - { board: 'revenueanalytics', company: 'Revenue Analytics', size: unknown }
   - { board: 'riverdale', company: 'Riverdale Country School', size: unknown }
   - { board: 'rosaiclabs', company: 'RosaicLabs', size: unknown }
@@ -754,6 +758,8 @@ lever:
   - { board: 'wisdomtree', company: 'WisdomTree', size: unknown }
   - { board: 'worldscape-technology', company: 'Worldscape Technology', size: unknown }
   - { board: 'wyetechllc', company: 'Wyetech', size: unknown }
+  # Official boards of companies in her job-alert emails, verified live 2026-11-02.
+  - { board: 'skydance', company: 'Skydance', size: unknown }
 ashby:
   - { board: applied, company: 'Applied Intuition', size: medium_large, ai: true }
   - { board: quora, company: 'Quora', size: medium_large }
@@ -1013,6 +1019,28 @@ ashby:
   - { board: 'xapien', company: 'Xapien', size: unknown }
   - { board: 'xterra%20ai', company: 'Xterra AI', size: unknown }
   - { board: 'zefr', company: 'Zefr', size: unknown }
+  # Official boards of companies in her job-alert emails, verified live 2026-11-02.
+  - { board: 'afterquery', company: 'AfterQuery', size: unknown }
+  - { board: 'bedrock-robotics', company: 'Bedrock Robotics', size: unknown }
+  - { board: 'cinder', company: 'Cinder', size: unknown }
+  - { board: 'continualresearch', company: 'Continual Research', size: unknown }
+  - { board: 'distyl', company: 'Distyl', size: unknown }
+  - { board: 'edra', company: 'Edra', size: unknown }
+  - { board: 'fluidstack', company: 'Fluidstack', size: unknown }
+  - { board: 'higharc', company: 'Higharc', size: unknown }
+  - { board: 'langchain', company: 'LangChain', size: unknown }
+  - { board: 'luminai', company: 'Luminai', size: unknown }
+  - { board: 'percepta', company: 'Percepta', size: unknown }
+  - { board: 'primeintellect', company: 'Prime Intellect', size: unknown }
+  - { board: 'root-access', company: 'Root Access', size: unknown }
+  - { board: 'sandbar', company: 'Sandbar', size: unknown }
+  - { board: 'sentient', company: 'Sentient Labs', size: unknown }
+  - { board: 'sesame', company: 'Sesame', size: unknown }
+  - { board: 'tessera-labs', company: 'Tessera Labs', size: unknown }
+  - { board: 'twinprime', company: 'Twin Prime', size: unknown }
+  - { board: 'vals-ai', company: 'Vals AI', size: unknown }
+  - { board: 'wynd-labs', company: 'Wynd Labs', size: unknown }
+  - { board: 'adaption', company: 'adaption', size: unknown }
 workdayQueries: [new grad, new college grad, university graduate, entry level, machine learning, AI engineer, applied scientist, research engineer]
 workday:
   - { site: 'https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite', company: 'NVIDIA', size: medium_large }

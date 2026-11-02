@@ -1,0 +1,128 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/generalist/c3dd1d5e-3189-4a20-bba0-7ae45b91bc95/application",
+    "company": "Generalist",
+    "jobTitle": "Applied Scientist",
+    "jobLocation": "San Francisco Bay Area (San Mateo) or Boston (Somerville)",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "73e0b7bd-e3d4-4302-9e99-5948ee478663",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "dccec37c-dc85-4e46-9e57-2c883a068d58",
+        "label": "Anything Else",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "73e0b7bd-e3d4-4302-9e99-5948ee478663",
+        "label": "LinkedIn URL",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "dccec37c-dc85-4e46-9e57-2c883a068d58",
+        "label": "Anything Else",
+        "kind": "textarea",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    }
+  ]
+}

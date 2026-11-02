@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "73e0b7bd-e3d4-4302-9e99-5948ee478663",
+      "label": "LinkedIn URL",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

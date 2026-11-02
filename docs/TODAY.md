@@ -4,10 +4,12 @@
 
 | 已投出 | 未确认 | 卡住 | agent 待投 | 你投 | 待复核 |
 |---|---|---|---|---|---|
-| 40 | 1 | 115 | 11 | 535 | 27 |
+| 40 | 3 | 116 | 11 | 410 | 24 |
 
-## 一、今天投出的（10）
+## 一、今天投出的（12）
 
+- Harvey · Research Engineer / Scientist, Reinforcement Learning（未确认）
+- Generalist · Applied Scientist（未确认）
 - Coherent Solutions · ML Engineer
 - Anduril Industries · Software Engineer- Machine Learning
 - Starburst · AI Agent Engineer
@@ -19,27 +21,22 @@
 - Alpha Financial Markets Consulting · Consultant - Data Engineering (Snowflake)
 - Addepar · Software Engineer - Customer Facing Applied AI
 
-## 二、你的待办（按能放行的申请数排序，共 76 项，只列前 30 项）
+## 二、你的待办（按能放行的申请数排序，共 49 项，只列前 30 项）
 
 - **放行 4 份**：Have you ever been convicted of, plead guilty or no contest to, or entered into a pretrial diversion or similar program concerning, any criminal offense (e.g., （Axos Bank · JBATA - AI Automation Developer；Axos Bank · Data Engineer；Axos Bank · JBATA - AI Engineer）
 - **放行 4 份**：Do you know of any reason(s) why you may not be bondable?（Axos Bank · JBATA - AI Automation Developer；Axos Bank · Data Engineer；Axos Bank · JBATA - AI Engineer）
 - **放行 4 份**：How Did You Hear About Us?（GE Vernova · Data Scientist；GE Vernova · AI Engineer；GE Vernova · GE Vernova AI Engineer）
 - **放行 3 份**：In addition to the role you are applying for, do you consent to GE Vernova retaining your Candidate profile* to assess your suitability for roles for which you （GE Vernova · AI Engineer；GE Vernova · Data Scientist）
 - **放行 3 份**：Which communication method would you like us to use when contacting you throughout the recruiting process? (SMS is currently supported in Australia, Canada, Fra（GE Vernova · AI Engineer；GE Vernova · Data Scientist）
-- **放行 3 份**：Do you need to provide a notice period to your current employer?（TransUnion · Data Scientist；TransUnion · Data Scientist - Financial Services Consulting）
-- **放行 2 份**：Are you legally eligible to be employed in the United States?（Orbis · Research Engineer, AI (Entry-Level)；Orbis · Research Engineer, AI）
 - **放行 2 份**：To help us prevent automated job applications, solve for X: 1 + X = 3（Orbis · Research Engineer, AI (Entry-Level)；Orbis · Research Engineer, AI）
-- **放行 2 份**：Orbis maintains a zero-tolerance policy on unauthorized assistance throughout the recruitment process. During all interviews and assessments, you may not use AI（Orbis · Research Engineer, AI (Entry-Level)；Orbis · Research Engineer, AI）
 - **放行 2 份**：Have you previously worked within the Motional ecosphere? (ex. Motional, Ottomatika, Aptiv, nuTonomy, or Hyundai Motor Company)（Motional · Perception Engineer）
-- **放行 2 份**：Personal Information Policy（Everpure · Data Scientist Engineer, Digital Experience；Everpure · AI Enablement Engineer）
 - **放行 1 份**：为 Quora 写一段：Describe the most interesting thing you’ve built with an LLM. What does it do, and why did you build it? What was the hardest part to get working? H（Quora · Machine Learning Engineer, New Grad - Quora (Remote)）
 - **放行 1 份**：I understand that all employees for this position will be expected to be available for meetings and impromptu communication during Quora's “coordination hours” （Quora · Machine Learning Engineer, New Grad - Quora (Remote)）
-- **放行 1 份**：Are you legally authorized to work in that country?（Quora · Machine Learning Engineer, New Grad - Quora (Remote)）
+- **放行 1 份**：为 Astera Institute 写一段：Describe a robotics system you helped take from model development to a physical robot.（Astera Institute · Full-Stack Robotics & AI Engineer）
+- **放行 1 份**：为 Astera Institute 写一段：Tell us about a difficult failure you diagnosed in a robot or deployed ML system.（Astera Institute · Full-Stack Robotics & AI Engineer）
 - **放行 1 份**：为 Lila Sciences 写一段：Why Lila, why this role, and why at this moment in your life?（Lila Sciences · Research Scientist / Research Engineer, Automated Safety）
 - **放行 1 份**：I have read and understand the Export Control statement included in the job description above.（Tenstorrent · Datacenter & Agentic AI Workload Performance Optimization Engineer）
 - **放行 1 份**：Will you need relocation assistance to work at this role's specified location?（PlayStation Global · Software Engineer, AI/ML）
-- **放行 1 份**：Are you currently located in the United States?（PlayStation Global · Software Engineer, AI/ML）
-- **放行 1 份**：Are you a protected veteran?（PlayStation Global · Software Engineer, AI/ML）
 - **放行 1 份**：为 Wonderschool 写一段：In 1–2 sentences, what makes you a fit for this role?（Wonderschool · Forward Deployed Engineer – Applied AI）
 - **放行 1 份**：What was the main reason for a short tenure in a prior role?（Wonderschool · Forward Deployed Engineer – Applied AI）
 - **放行 1 份**：Has software you built or helped build generated more than $100 in sales?（Wonderschool · Forward Deployed Engineer – Applied AI）
@@ -47,10 +44,15 @@
 - **放行 1 份**：Which AI development tools have you used? Link to a work sample if you can share one.（Wonderschool · Forward Deployed Engineer – Applied AI）
 - **放行 1 份**：What types of early childhood experience do you have?（Wonderschool · Forward Deployed Engineer – Applied AI）
 - **放行 1 份**：Which of these fields have you worked in?（Wonderschool · Forward Deployed Engineer – Applied AI）
-- **放行 1 份**：Current / Most Recent Employer（Motional · Perception Engineer）
 - **放行 1 份**：Are you currently a Motional employee? (If yes, please apply via Greenhouse internal Job Board)（Motional · Perception Engineer）
 - **放行 1 份**：Have you worked at DoorDash?（DoorDash USA · Software Engineer, Data and AI Platform）
 - **放行 1 份**：Does the deemed export rule affect your employment by Everpure ?（Everpure · Data Scientist Engineer, Digital Experience）
+- **放行 1 份**：In what countries do you have the unrestricted right to work?（Elastic · Analytics Engineer, HR Analytics）
+- **放行 1 份**：为 Elastic 写一段：Describe a specific project in three parts: (1) What HR or talent data source did you work with directly, and what was your role in extracting or （Elastic · Analytics Engineer, HR Analytics）
+- **放行 1 份**：Where did you gain your GCP experience? Please list the company and role(s), approximate dates, and the specific GCP tools you used (for example, BigQuery, dbt,（Elastic · Analytics Engineer, HR Analytics）
+- **放行 1 份**：How should we communicate with you?（Elastic · Analytics Engineer, HR Analytics）
+- **放行 1 份**：Which of the following have you personally done in a professional role? (select all that apply)（Elastic · Analytics Engineer, HR Analytics）
+- **放行 1 份**：Which of the following have you personally Built, extended, or substantially modified in a production environment? (select all that apply)（Elastic · Analytics Engineer, HR Analytics）
 
 ## 三、可投岗位（最近 30 天，按发布时间从新到旧）
 
@@ -131,40 +133,6 @@
 | 2026-11-01 | Penske · Data Scientist | Reading, PA, United States | 你投 | https://fa-euyk-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/2612946 |
 | 2026-11-01 | Morningstar · Associate Software Engineer, Central Tech AI | Chicago, IL | 你投 | https://morningstar.wd5.myworkdayjobs.com/Morningstar/job/Chicago/Associate-Software-Engineer--Central-Tech-AI-_REQ-059108 |
 | 2026-11-01 | NVIDIA · Applied Machine Learning Engineer, AI for VLSI Design (Master's) | Santa Clara, CA | 你投 | https://jobs.nvidia.com/careers/job/893397927110 |
-| 2026-11-01 | ByteDance · New Grad 2027: Research Scientist, Seed Model - AI Foundation Model Infrastructure | Seattle, WA +2 | 你投 | https://joinbytedance.com/search/7623552015124154629 |
-| 2026-11-01 | ByteDance · New Grad 2027: Research Scientist, Seed Model - AI Foundation Model Infrastructure | San Jose, CA | 你投 | https://joinbytedance.com/search/7673268418623293749 |
-| 2026-11-01 | ByteDance · New Grad 2027: Research Scientist (Seed Model - LLM) | San Jose, CA | 你投 | https://joinbytedance.com/search/7623536303630469381 |
-| 2026-11-01 | ByteDance · New Grad 2027: Machine Learning Engineer, AML-Engine-Orchestration | Seattle, WA | 你投 | https://joinbytedance.com/search/7672383576726276405 |
-| 2026-11-01 | ByteDance · New Grad 2027: Multi-Cloud CDN Data Platform Engineer, CDN Platform | Seattle, WA | 你投 | https://joinbytedance.com/search/7670355647603984693 |
-| 2026-11-01 | ByteDance · New Grad 2027: Machine Learning Engineer, E-Commerce Risk Control | Seattle, WA +2 | 你投 | https://joinbytedance.com/search/7675477254315428149 |
-| 2026-11-01 | ByteDance · New Grad 2027: Machine Learning Backend Engineer (AML MLDev) | San Jose, CA | 你投 | https://joinbytedance.com/search/7669791940490168629 |
-| 2026-11-01 | ByteDance · New Grad 2027: Research Scientist, Seed Model - Vision | San Jose, CA | 你投 | https://joinbytedance.com/search/7623543228228536581 |
-| 2026-11-01 | ByteDance · New Grad 2027: Machine Learning Engineer, E-Commerce Risk Control | San Jose, CA | 你投 | https://joinbytedance.com/search/7675477660855781637 |
-| 2026-11-01 | ByteDance · New Grad 2027: Backend Inference Runtime Engineer (AML Inference) | San Jose, CA | 你投 | https://joinbytedance.com/search/7669789046777940229 |
-| 2026-11-01 | ByteDance · New Grad 2027: Machine Learning System Scheduling Engineer (Applied Machine Learning) | San Jose, CA | 你投 | https://joinbytedance.com/search/7667727006294214965 |
-| 2026-11-01 | ByteDance · New Grad 2027: Visual Generation & Multimodal Evaluation Machine Learning Engineer | San Jose, CA +2 | 你投 | https://joinbytedance.com/search/7671102043532462389 |
-| 2026-11-01 | ByteDance · New Grad 2027: Research Scientist (Seed Model - Multimodal Interaction & World Model) | San Jose, CA | 你投 | https://joinbytedance.com/search/7623545710681016581 |
-| 2026-11-01 | ByteDance · New Grad 2027: Multi-Cloud CDN Data Platform Engineer, CDN Platform (Master's) | San Jose, CA | 你投 | https://joinbytedance.com/search/7673632479987992837 |
-| 2026-11-01 | ByteDance · New Grad 2027: Software Engineer - AI Agent Infra (Security Engineering) | San Jose, CA | 你投 | https://joinbytedance.com/search/7667976924430633269 |
-| 2026-11-01 | ByteDance · New Grad 2027: Backend Inference Framework Engineer (AML Inference) | San Jose, CA | 你投 | https://joinbytedance.com/search/7669670735275526453 |
-| 2026-11-01 | ByteDance · New Grad 2027: Multi-Cloud CDN Data Platform Engineer, CDN Platform (Master's) | Seattle, WA | 你投 | https://joinbytedance.com/search/7673630747427719429 |
-| 2026-11-01 | ByteDance · New Grad 2027: Data Lake Infrastructure & Data Analytics Research Engineer (AML-Ark-US) | Seattle, WA +2 | 你投 | https://go.vansh.nyc/154 |
-| 2026-11-01 | ByteDance · New Grad 2027: Research Scientist (Seed Model - Speech) | San Jose, CA | 你投 | https://joinbytedance.com/search/7623548379708197125 |
-| 2026-11-01 | ByteDance · New Grad 2027: Large Language Model Inference System Engineer (Applied Machine Learning) | San Jose, CA | 你投 | https://joinbytedance.com/search/7667726338627356933 |
-| 2026-11-01 | ByteDance · New Grad 2027: Dev AI Software Engineer (Dev Infra US) | San Jose, CA | 你投 | https://joinbytedance.com/search/7667901772678302005 |
-| 2026-11-01 | ByteDance · New Grad 2027: Research Scientist (ML Recommendation Systems) | San Jose, CA | 你投 | https://joinbytedance.com/search/7670850283815160069 |
-| 2026-11-01 | ByteDance · New Grad 2027: Software Engineer (AI Infrastructure — Compute Efficiency & Scheduling) | San Jose, CA | 你投 | https://joinbytedance.com/search/7668799019359357237 |
-| 2026-11-01 | ByteDance · New Grad 2027: Visual Generation & Multimodal Evaluation Machine Learning Engineer | Seattle, WA | 你投 | https://joinbytedance.com/search/7672392998189959429 |
-| 2026-11-01 | ByteDance · New Grad 2027: Agent Evaluation & Evolution Machine Learning Engineer | Seattle, WA +2 | 你投 | https://joinbytedance.com/search/7672391016194066693 |
-| 2026-11-01 | ByteDance · New Grad 2027: AI Agent Security Software Engineer (Security Engineering) | San Jose, CA | 你投 | https://joinbytedance.com/search/7668614787018393909 |
-| 2026-11-01 | ByteDance · New Grad 2027: Agent Evaluation & Evolution Machine Learning Engineer | San Jose, CA | 你投 | https://joinbytedance.com/search/7670932427485186309 |
-| 2026-11-01 | ByteDance · New Grad 2027: Software Engineer (AI Infrastructure-Compute Efficiency & Scheduling) | Seattle, WA | 你投 | https://joinbytedance.com/search/7668799020705679669 |
-| 2026-11-01 | ByteDance · New Grad 2027: LLM Backend Engineer (Applied Machine Learning) | San Jose, CA | 你投 | https://joinbytedance.com/search/7667730992538585349 |
-| 2026-11-01 | ByteDance · New Grad 2027: Large Language Model Training System Engineer (Applied Machine Learning) | San Jose, CA | 你投 | https://joinbytedance.com/search/7667685712993650997 |
-| 2026-11-01 | ByteDance · New Grad 2027: Software Engineer, AI Infra Compute (Master's) | Seattle, WA | 你投 | https://joinbytedance.com/search/7667303429264115973 |
-| 2026-11-01 | ByteDance · New Grad 2027: Machine Learning Engineer (AML-Engine-Orchestration) | San Jose, CA | 你投 | https://joinbytedance.com/search/7671141679848933685 |
-| 2026-11-01 | ByteDance · New Grad 2027: Data Lake Infrastructure & Data Analytics Research Engineer (AML-Ark-US) | San Jose, CA | 你投 | https://go.vansh.nyc/15s |
-| 2026-11-01 | ByteDance · New Grad 2027: LLM/AI Ops Development Engineer (Data Center Networking) | San Jose, CA | 你投 | https://joinbytedance.com/search/7670773781477394741 |
 | 2026-11-01 | GlobalFoundries · New Grad 2027: AI/ML Systems Engineer | Richardson, TX | 已投出 | https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/USA---Texas---Richardson/AI-ML-Systems-Engineer--2027-New-College-Graduate-_JR-2604163 |
 | 2026-11-01 | GlobalFoundries · New Grad 2027: AI Software Engineer | Santa Clara, CA; Richardson, TX | 已投出 | https://globalfoundries.wd1.myworkdayjobs.com/External/job/USA---California---Santa-Clara/AI-Software-Engineer--2027-New-College-Graduate-_JR-2604055 |
 | 2026-11-01 | Brain Co. · New Grad 2027: AI Security Engineer | San Francisco, CA | 卡住 | https://jobs.ashbyhq.com/brainco/32c4e1c9-ccd1-4dca-a68b-31ad1b868030/application |
@@ -238,10 +206,6 @@
 | 2026-11-01 | Amazon · Frontend Engineer - AI Business Automation - Prime Video | Seattle, WA | 你投 | https://www.amazon.jobs/en/jobs/10586228/frontend-engineer-ai-business-automation-prime-video |
 | 2026-11-01 | Amazon · Software Development Engineer - Audible AI Voice Production | Culver City, CA | 你投 | https://www.amazon.jobs/en/jobs/10592978/software-development-engineer-audible-ai-voice-production |
 | 2026-11-01 | Nimble · Outbound AI Engineer | New York City, NY | 你投 | https://www.nimbleway.com/open-position?commercial-account-executive&outbound-ai-engineer&senior-infrastructure-engineer---proxy-network&senior-solution-consultant&uid=54.270&uid=63.F68&uid=A4.C62&uid=B5.073 |
-| 2026-11-01 | ByteDance · Large Language Model Inference System Engineer Graduate (Applied Machine Learning) - 2027 Start | San Jose, California | 你投 | https://zapply.jobs/jobs/ |
-| 2026-11-01 | ByteDance · Machine Learning System Scheduling Engineer Graduate (Applied Machine Learning) - 2027 Start | San Jose, California | 你投 | https://zapply.jobs/jobs/ |
-| 2026-11-01 | ByteDance · Machine Learning Backend Engineer Graduate (AML MLDev) - 2027 Start | San Jose, California | 你投 | https://zapply.jobs/jobs/ |
-| 2026-11-01 | ByteDance · Research Engineer, Data Lake Infrastructure & Data Analytics Graduate (AML-Ark-US) - 2027 Start... | Seattle, Washington | 你投 | https://zapply.jobs/l/d/bytedance-7672398686110910773?s=gh-new-grad-data-science-jobs-2027 |
 | 2026-11-01 | Micron · New College Grad - Data Scientist, AI for Business Functions | Boise, Idaho, United States of... | 你投 | https://micron.eightfold.ai/careers/job/45096301 |
 | 2026-11-01 | CLEAR · Forward Deployed AI Engineer I | New York, NY, United States | 已投出 | https://job-boards.greenhouse.io/clear/jobs/8259786 |
 | 2026-11-01 | Torc Robotics · Software Engineer, I - Data Engineering | Ann Arbor, MI, Blacksburg, VA | 卡住 | https://job-boards.greenhouse.io/torcrobotics/jobs/8649372002 |
@@ -285,7 +249,7 @@
 | 2026-11-01 | ServiceTitan · AI Engineer | Remote - USA | 你投 | https://servicetitan.wd1.myworkdayjobs.com/en-US/servicetitan/job/US-Remote/AI-Engineer_JR116391 |
 | 2026-11-01 | Zoom · AI Engineer | Seattle (WA); United States of America | 你投 | https://zoom.wd5.myworkdayjobs.com/Zoom/job/Seattle-WA/AI-Engineer_R19823-1 |
 | 2026-10-31 | Chime Financial, Inc · Software Engineer, Jade - AI Financial Partner | San Francisco, CA, USA | 已投出 | https://job-boards.greenhouse.io/chime/jobs/8868948002 |
-| 2026-10-30 | Harvey · Research Engineer / Scientist, Reinforcement Learning | Remote; United States | 你投 | https://jobs.ashbyhq.com/harvey/30df72cf-ee68-4194-864e-47745ca8b6e0 |
+| 2026-10-30 | Harvey · Research Engineer / Scientist, Reinforcement Learning | Remote; United States | 已提交，未确认 | https://jobs.ashbyhq.com/harvey/30df72cf-ee68-4194-864e-47745ca8b6e0 |
 | 2026-10-30 | Harvey · Research Engineer / Scientist, Data & Evals | Remote; United States | 你投 | https://jobs.ashbyhq.com/harvey/6c87b165-99ad-484e-b34b-1cf2ab0c92d5 |
 | 2026-10-30 | Harvey · Research Engineer, Infrastructure | Remote; United States | 你投 | https://jobs.ashbyhq.com/harvey/9b63e15d-2d43-4c4a-94be-75908e942ea7 |
 | 2026-10-30 | Path Robotics · Machine Learning Engineer, Perception | Columbus, Ohio or Remote | 已投出 | https://job-boards.greenhouse.io/pathrobotics/jobs/8925919002 |
@@ -302,7 +266,7 @@
 | 2026-10-29 | Zocdoc · Data Scientist | New York, NY | 卡住 | https://job-boards.greenhouse.io/zocdoc/jobs/8335345 |
 | 2026-10-28 | Applied Intuition · Software Engineer - Dana for Physical AI | Sunnyvale; United States | 你投 | https://jobs.ashbyhq.com/applied/2f3f027d-9f9e-4469-955b-229b04db1141 |
 | 2026-10-28 | Shield AI · Autonomy & Perception Software Engineer (R5911) | San Diego, California | 你投 | https://jobs.ashbyhq.com/f7d8749a-72d6-407c-bf98-292ea630c73a/596dd745-67e3-4a12-becb-7d6480261bf7 |
-| 2026-10-28 | Generalist · Applied Scientist | San Francisco Bay Area (San Mateo) or Bo | 你投 | https://jobs.ashbyhq.com/generalist/c3dd1d5e-3189-4a20-bba0-7ae45b91bc95 |
+| 2026-10-28 | Generalist · Applied Scientist | San Francisco Bay Area (San Mateo) or Bo | 已提交，未确认 | https://jobs.ashbyhq.com/generalist/c3dd1d5e-3189-4a20-bba0-7ae45b91bc95 |
 | 2026-10-28 | Cohu · Researcher- Applied AI and Machine Learning | Remote | 你投 | https://www.glassdoor.com/partner/jobListing.htm?pos=110&ao=1136043&s=58&guid=000001a153adf93b8449675114a1fde3&t=MJA&vt=e&ja=434335790&uido=B584549837010EE7973294E037A34D0B&ea=1&cs=1_20aed7f6&cb=1792405684228&jobListingId=1010288495895&jrtk=5-yul1-0-1k59r8fpvgqq0800-c2e5198ecab6292a&tgt=GD_JOB_VIEW&ja=434335790 |
 | 2026-10-28 | University of Michigan · Applied AI Engineer | Ann Arbor, MI | 你投 | https://www.glassdoor.com/partner/jobListing.htm?pos=109&ao=1136043&s=58&guid=000001a14e8737d88df773e705344ddf&t=MJA&vt=e&ja=434335790&uido=B584549837010EE7973294E037A34D0B&cs=1_f272b86e&cb=1792319278682&jobListingId=1010294088623&jrtk=5-yul1-0-1k578rjd6l51v800-22063a225ac83a34&tgt=GD_JOB_VIEW&ja=434335790 |
 | 2026-10-28 | Thales · AI Engineer - Graduate | Orlando, FL | 你投 | https://www.glassdoor.com/partner/jobListing.htm?pos=101&ao=1110586&s=58&guid=000001a144327a4eb946d5729735233a&t=MJA&vt=e&ja=434335790&uido=B584549837010EE7973294E037A34D0B&cs=1_852bbf23&cb=1792145555510&jobListingId=1010294768001&cpc=AC285F3A3ECA6BB0&jrtk=5-yul1-0-1k5235vs4h71e800-b9064ea2d5c80779---6NYlbfkN0BHJpXzCTjNc0btZuSq203HR0wfNynnp5DhUbxT5tmh9edY953jkZrpsxzz5r1NmW9z26kSnsYMdI4nC4DGJHS6aD1A3k1Hp3XTz4EtAL9rA5M-SnLwMDKymzGwfD13yP_JwrElMK2RVh-fVShN8xsvtyk3m9NyfCv2zq_a539lGYZ1ROSPJtCfXp6OZJApcqYHpERi-RGU2K75Tx3AI3uUdB-y1ksctKzxyHiqM04URcqSZLe8GgJdsT2FDRW8SmN4HE-nuEEgr0AAlr7P2eY0Y-A3Dqs6gMcQwPmgcbE5jKKDH105RitUspyR0GxMCYMy-yt4J-gS3bDs9UtcNdOn3z3pXpx-uiB12THLHfwjcYgC9y_4K_-otMQ5d5d5yeKPKcqDGGdE_3vMXMAyhBZHJbgo-73W3Zuzc6EWfoevn3DC2_yOWQJCTGOqqrSCryH8umHxet7tYxVd3TwU3G27zP69y1_n0qdOOKqNVTa_GSIvJ2QmPeRFR9Ayyz6HQeWAep1oqc-j16My_1yWNDCXYuvNtcbljfZ-yrKlcJJhtyHiPkg88u7YcNgSNdDNTF_wV198Ol4p6JVEBaDANxsMUvxeucbIhYtHHoHNnir9uP5YAodbz1tnguGX6uwUL4yXsl0hRyWxm-su30zOXMIkH9s5SncUko6tKURq8QSk3SdpOEY3s1vHUlZL68GXSPZqER5cwyVGpKT9UbkzzW0Jzw-UTt7J9OhwUmTDAOHlLi-e613T-1Oq7eVAbnKkLOCndfaQyKtbtaEs6EeALYARw4CxjJOO4rHcjceZ_wsJI-eDthuRrWwHaFDmAPIu9RlH3wqKYYe1YWsAhIznC50vJoXNVLi9k7eWhDyg55CqRS1XddUaruNkqPCJEVKwO6ss0aF6WBLaIWIoadVQuJuwyvYNjrVHQk44d-oTo5mSotmeJoFZXj-kBjuUH46ZhiFBXFzbMIgSW25X6TSEEl5LOiWxK8lapkziX8cVUuQQtUwaWhcy2KS97zGb0za9BRY6VncYU54-auw-BGHEtwM0uoX1tu79w3M%3D&tgt=GD_JOB_VIEW&ja=434335790 |
@@ -428,7 +392,6 @@
 | 2026-10-28 | Teserac · AI Engineer | Santa Clara, CA | 你投 | https://apply.workable.com/teserac-inc/j/01F1C3E218/apply |
 | 2026-10-28 | ASSA ABLOY · AI Scientist | Austin, TX; Palm Beach Gardens, FL | 你投 | https://assaabloy.jobs2web.com/job/Austin-AI-Scientist-TX-78753/1441539933?ats=successfactors |
 | 2026-10-28 | Asure · Associate AI Software Engineer | Addison, TX | 你投 | https://asuresoftware.bamboohr.com/careers/1058 |
-| 2026-10-28 | ByteDance · Agent Evaluation & Evolution Machine Learning Engineer Graduate (AML-Ark-US) - 2027 Start | Bellevue, WA | 你投 | https://bandana.com/jobs/32a7741a-5220-430e-aef1-3556bf55c62e |
 | 2026-10-28 | Capgemini · Associate Data Scientist | — | 你投 | https://career5.successfactors.eu/careers?company=capgemitecP3&career_ns=job_listing&career_job_req_id=547051 |
 | 2026-10-28 | Bluehawk · Exploitation Specialist - Data Scientist | Springfield, VA | 你投 | https://careers-bluehawk.icims.com/jobs/2898/job?mobile=true&needsRedirect=false |
 | 2026-10-28 | FRONTIER TECHNOLOGY · Early Career Associate Data Scientist | Norfolk, VA | 你投 | https://careers-ftidefense.icims.com/jobs/7093/early-career-associate-data-scientist/job |
@@ -483,88 +446,6 @@
 | 2026-10-28 | Dell Technologies · AI Performance Engineer | Austin, TX | 你投 | https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/300865 |
 | 2026-10-28 | iManage · Applied AI Engineer New Grad | Chicago, IL | 你投 | https://imanagecom.applytojob.com/apply/2sEdqwy08T/Applied-AI-Engineer-New-Or-Recent-Grad |
 | 2026-10-28 | SentiLink · SentiLink / https://www.sentilink.com/ / Engineering & Data Science / REMOTE, HYBRID, and ONSITE (UNITED STATES ONLY) / Full Time | https://www.sentilink.com/ / Engineering | 你投 | https://jobs.ashbyhq.com/sentilink |
-| 2026-10-28 | ByteDance · Research Scientist - Seed Model - Vision | San Jose, CA | 你投 | https://joinbytedance.com/search/7362026100950321459 |
-| 2026-10-28 | ByteDance · AI/LLM Network Software Development Engineer Graduate - High Speed Network | San Jose, CA | 你投 | https://joinbytedance.com/search/7509262740803930376 |
-| 2026-10-28 | ByteDance · Graduate Research Scientist - Video Quality Analysis&Coding Strategy | San Jose, CA | 你投 | https://joinbytedance.com/search/7538946858355476743 |
-| 2026-10-28 | ByteDance · Graduate Research Scientist - Applied Machine Learning - ML System | San Jose, CA | 你投 | https://joinbytedance.com/search/7540109673547581703 |
-| 2026-10-28 | ByteDance · Graduate Research Scientist - 3D/4D Reconstruction/Generation/Relighting | San Jose, CA | 你投 | https://joinbytedance.com/search/7564547210038380853 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Security Flow | San Jose, CA | 你投 | https://joinbytedance.com/search/7582010220022106421 |
-| 2026-10-28 | ByteDance · Graduate Research Scientist - 3D/4D Generation | San Jose, CA | 你投 | https://joinbytedance.com/search/7585034854077778181 |
-| 2026-10-28 | ByteDance · Research Scientist in Large Language Model - Seed - Large Language Model | San Jose, CA | 你投 | https://joinbytedance.com/search/7623525222555961605 |
-| 2026-10-28 | ByteDance · Research Scientist - Seed Large Language Model | San Jose, CA | 你投 | https://joinbytedance.com/search/7623536303630469381 |
-| 2026-10-28 | ByteDance · Research Scientist Vision Foundation Model - Seed | San Jose, CA | 你投 | https://joinbytedance.com/search/7623540885834107189 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Seed Vision Foundation Model | San Jose, CA | 你投 | https://joinbytedance.com/search/7623543228228536581 |
-| 2026-10-28 | ByteDance · Research Scientist in Multimodal Interaction and World Model | San Jose, CA | 你投 | https://joinbytedance.com/search/7623543401908848949 |
-| 2026-10-28 | ByteDance · Research Scientist in Multimodal Interaction and World Model – Graduates - Seed | San Jose, CA | 你投 | https://joinbytedance.com/search/7623545710681016581 |
-| 2026-10-28 | ByteDance · Research Scientist in Speech Foundation Model - Seed | San Jose, CA | 你投 | https://joinbytedance.com/search/7623545981743286533 |
-| 2026-10-28 | ByteDance · Research Scientist in Speech Foundation Model – Graduates - Multiple Teams | San Jose, CA | 你投 | https://joinbytedance.com/search/7623548379708197125 |
-| 2026-10-28 | ByteDance · Research Scientist - Seed AI Foundation Model Infrastructure | Seattle, WA | 你投 | https://joinbytedance.com/search/7623552015124154629 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Video Codec Algorithm | San Diego, CA | 你投 | https://joinbytedance.com/search/7626928937260665093 |
-| 2026-10-28 | ByteDance · Research Scientist - Compute AI Infra - Global Frontier Tech Recruitment Program | Seattle, WA | 你投 | https://joinbytedance.com/search/7629125488116451637 |
-| 2026-10-28 | ByteDance · Research Scientist - Compute AI Infra - Global Frontier Tech Recruitment Program | San Jose, CA | 你投 | https://joinbytedance.com/search/7629126608919382277 |
-| 2026-10-28 | ByteDance · Research Scientist - AI Agent Memory Infrastructure - Global Frontier Tech Recruitment Program | San Jose, CA | 你投 | https://joinbytedance.com/search/7629126645119650101 |
-| 2026-10-28 | ByteDance · Graduate Research Scientist - Multiple Teams | San Jose, CA | 你投 | https://joinbytedance.com/search/7629136672475040053 |
-| 2026-10-28 | ByteDance · Graduate Research Scientist - Multimedia Standards - Global Tech Research Program | San Diego, CA | 你投 | https://joinbytedance.com/search/7629137778379557173 |
-| 2026-10-28 | ByteDance · Software Development Engineer-AI/LLM Network-Global Frontier Tech Recruitment Program | San Jose, CA | 你投 | https://joinbytedance.com/search/7629215845797218613 |
-| 2026-10-28 | ByteDance · Research Scientist - AI Infra | San Jose, CA | 你投 | https://joinbytedance.com/search/7629789975396124981 |
-| 2026-10-28 | ByteDance · Research Scientist – Generative AI Graduate - Intelligent Creation | San Jose, CA | 你投 | https://joinbytedance.com/search/7629855646167091509 |
-| 2026-10-28 | ByteDance · Research Scientist New Grad - Multi-modal Agentic Databases | Seattle, WA | 你投 | https://joinbytedance.com/search/7665104241446652213 |
-| 2026-10-28 | ByteDance · Research Scientist New Grad - Infrastructure System Lab | San Jose, CA | 你投 | https://joinbytedance.com/search/7665108869591140613 |
-| 2026-10-28 | ByteDance · Research Scientist New Grad - Computational Imaging | San Jose, CA | 你投 | https://joinbytedance.com/search/7665836153219959093 |
-| 2026-10-28 | ByteDance · Research Scientist New Grad - AI for Infrastructure | San Jose, CA | 你投 | https://joinbytedance.com/search/7667291055662811445 |
-| 2026-10-28 | ByteDance · Software Engineer New Grad - AI Infra Compute | Seattle, WA | 你投 | https://joinbytedance.com/search/7667303429264115973 |
-| 2026-10-28 | ByteDance · Software Engineer Graduate - AI Infrastructure Compute | San Jose, CA | 你投 | https://joinbytedance.com/search/7667334059728341253 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - AI Infra Compute | San Jose, CA | 你投 | https://joinbytedance.com/search/7667334521286035765 |
-| 2026-10-28 | ByteDance · Research Scientist | San Jose, CA | 你投 | https://joinbytedance.com/search/7667645514462480645 |
-| 2026-10-28 | ByteDance · Large Language Model Inference System Engineer New Grad - Applied Machine Learning | San Jose, CA | 你投 | https://joinbytedance.com/search/7667726338627356933 |
-| 2026-10-28 | ByteDance · LLM Backend Engineer Graduate - Applied Machine Learning | San Jose, CA | 你投 | https://joinbytedance.com/search/7667730992538585349 |
-| 2026-10-28 | ByteDance · Artificial Intelligence Software Engineer - Development Infrastructure | San Jose, CA | 你投 | https://joinbytedance.com/search/7667901772678302005 |
-| 2026-10-28 | ByteDance · Software Engineer AI Agent Infrastructure - Security Engineering | San Jose, CA | 你投 | https://joinbytedance.com/search/7667976924430633269 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Data-Intelligent Creation-Vision and Graphics-Global GenAI | San Jose, CA | 你投 | https://joinbytedance.com/search/7668208806895831349 |
-| 2026-10-28 | ByteDance · Research Scientist New Grad - Distributed NoSQL Database Systems | Seattle, WA | 你投 | https://joinbytedance.com/search/7668365143156721973 |
-| 2026-10-28 | ByteDance · Computer Vision Research Engineer Graduate | San Jose, CA | 你投 | https://joinbytedance.com/search/7668433722454935861 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Quantum Chemistry and Machine Learning | San Jose, CA | 你投 | https://joinbytedance.com/search/7668595575944186117 |
-| 2026-10-28 | ByteDance · Software Engineer New Grad - AI Infrastructure-Compute Efficiency & Scheduling | Seattle, WA | 你投 | https://joinbytedance.com/search/7668799020705679669 |
-| 2026-10-28 | ByteDance · Backend Inference Framework Engineer - AML Inference | San Jose, CA | 你投 | https://joinbytedance.com/search/7669670735275526453 |
-| 2026-10-28 | ByteDance · Backend Inference Runtime Engineer New Grad - AML Inference | San Jose, CA | 你投 | https://joinbytedance.com/search/7669789046777940229 |
-| 2026-10-28 | ByteDance · Machine Learning Backend Engineer Graduate - AML MLDev | San Jose, CA | 你投 | https://joinbytedance.com/search/7669791940490168629 |
-| 2026-10-28 | ByteDance · Graduate Software Engineer - Data-Intelligent Creation-AI Platform-Global Vision Engineering | San Jose, CA | 你投 | https://joinbytedance.com/search/7669859743775000885 |
-| 2026-10-28 | ByteDance · Graduate AI Model Optimization Engineer - Data Speech Product R&D Engineering | San Jose, CA | 你投 | https://joinbytedance.com/search/7669899962768165173 |
-| 2026-10-28 | ByteDance · Video/Image AI/ML Software Engineer Graduate - Multimedia | San Diego, CA | 你投 | https://joinbytedance.com/search/7670354624860703029 |
-| 2026-10-28 | ByteDance · Multi-Cloud CDN Data Platform Engineer Graduate - CDN Platform | Seattle, WA | 你投 | https://joinbytedance.com/search/7670355647603984693 |
-| 2026-10-28 | ByteDance · Research Scientist New Grad - Video and Edge - Multimedia Lab | San Jose, CA | 你投 | https://joinbytedance.com/search/7670374385110599989 |
-| 2026-10-28 | ByteDance · AI Molecular Dynamics Algorithm Researcher Graduate - Seed AI for Science - Atomistic AI | Seattle, WA | 你投 | https://joinbytedance.com/search/7670550401380878645 |
-| 2026-10-28 | ByteDance · LLM/AI Operations Development Engineer Graduate - Data Center Networking | San Jose, CA | 你投 | https://joinbytedance.com/search/7670773781477394741 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - ML Recommendation Systems | San Jose, CA | 你投 | https://joinbytedance.com/search/7670850283815160069 |
-| 2026-10-28 | ByteDance · Machine Learning Engineer Graduate - Agent Evaluation & Evolution | San Jose, CA | 你投 | https://joinbytedance.com/search/7670932427485186309 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Multimodal Interaction and World Model | San Jose, CA | 你投 | https://joinbytedance.com/search/7671026650366183685 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Foundation Model - Generative AI | San Jose, CA | 你投 | https://joinbytedance.com/search/7671030761623177477 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Foundation Model-Speech-Interaction & Learning | San Jose, CA | 你投 | https://joinbytedance.com/search/7671032227920431413 |
-| 2026-10-28 | ByteDance · Research Scientist - LLM | San Jose, CA | 你投 | https://joinbytedance.com/search/7671033602288912645 |
-| 2026-10-28 | ByteDance · Agent Evaluation & Evolution Researcher Graduate - Applied Machine Learning Ark | San Jose, CA | 你投 | https://joinbytedance.com/search/7671095905295075637 |
-| 2026-10-28 | ByteDance · Visual Generation & Multimodal Evaluation Machine Learning Engineer Graduate - Applied Machine Learning Ark | San Jose, CA | 你投 | https://joinbytedance.com/search/7671102043532462389 |
-| 2026-10-28 | ByteDance · Visual Generation & Multimodal Evaluation Researcher Graduate - Applied Machine Learning Ark | San Jose, CA | 你投 | https://joinbytedance.com/search/7671103763276663045 |
-| 2026-10-28 | ByteDance · Data Lake Infrastructure & Data Analytics Research Engineer Graduate - Applied Machine Learning Ark | San Jose, CA | 你投 | https://joinbytedance.com/search/7671107540954777861 |
-| 2026-10-28 | ByteDance · Data Lake Infrastructure & Data Analytics Research Engineer Graduate - Applied Machine Learning Ark | San Jose, CA | 你投 | https://joinbytedance.com/search/7671108456554432773 |
-| 2026-10-28 | ByteDance · Agent Evaluation and Evolution Machine Learning Engineer Graduate - Applied Machine Learning Ark | Seattle, WA | 你投 | https://joinbytedance.com/search/7672391016194066693 |
-| 2026-10-28 | ByteDance · Agent Evaluation & Evolution Researcher Graduate - Applied Machine Learning Ark | Seattle, WA | 你投 | https://joinbytedance.com/search/7672391176102676741 |
-| 2026-10-28 | ByteDance · Visual Generation & Multimodal Evaluation Machine Learning Engineer Graduate | Seattle, WA | 你投 | https://joinbytedance.com/search/7672392998189959429 |
-| 2026-10-28 | ByteDance · Data Lake Infrastructure & Data Analytics Research Engineer Graduate - AML-ARK | Seattle, WA | 你投 | https://joinbytedance.com/search/7672395094280063285 |
-| 2026-10-28 | ByteDance · Research Engineer | Seattle, WA | 你投 | https://joinbytedance.com/search/7672398686110910773 |
-| 2026-10-28 | ByteDance · Research Scientist Graduate - Seed AI Foundation Model Infrastructure | San Jose, CA | 你投 | https://joinbytedance.com/search/7673268418623293749 |
-| 2026-10-28 | ByteDance · Multi-Cloud CDN Data Platform Engineer Graduate - CDN Platform | Seattle, WA | 你投 | https://joinbytedance.com/search/7673630747427719429 |
-| 2026-10-28 | ByteDance · Multi-Cloud CDN Data Platform Engineer Graduate - CDN Platform | San Jose, CA | 你投 | https://joinbytedance.com/search/7673632479987992837 |
-| 2026-10-28 | ByteDance · Research Scientist - DPU & AI Infrastructure | Seattle, WA | 你投 | https://joinbytedance.com/search/7673946040656267573 |
-| 2026-10-28 | ByteDance · Machine Learning Engineer Graduate - E-Commerce Risk Control | Seattle, WA | 你投 | https://joinbytedance.com/search/7675472998912051461 |
-| 2026-10-28 | ByteDance · Machine Learning Engineer Graduate - E-Commerce Risk Control | Seattle, WA | 你投 | https://joinbytedance.com/search/7675477254315428149 |
-| 2026-10-28 | ByteDance · Machine Learning Engineer Graduate - E-Commerce Risk Control | San Jose, CA | 你投 | https://joinbytedance.com/search/7675477660855781637 |
-| 2026-10-28 | ByteDance · Graduate Software Engineer - AI Compute | Seattle, WA | 你投 | https://joinbytedance.com/search/7686732729746950405 |
-| 2026-10-28 | ByteDance · Software Engineer - AI Compute | San Jose, CA | 你投 | https://joinbytedance.com/search/7686733097398290693 |
-| 2026-10-28 | ByteDance · Research Scientist | San Jose, CA | 你投 | https://joinbytedance.com/search/7698902624003229957 |
-| 2026-10-28 | ByteDance · Research Scientist | San Jose, CA | 你投 | https://joinbytedance.com/search/7698902624389482757 |
-| 2026-10-28 | ByteDance · Research Engineer Graduate (AI Infra ... | San Jose, CA +4 | 你投 | https://joinbytedance.com/search/7667334521286035765 |
-| 2026-10-28 | ByteDance · Large Language Model Inference System Engineer Graduate (Applied Machine Learning) - 2027 Start | San Jose, CA +2 | 你投 | https://joinbytedance.com/search/7667726338627356933 |
-| 2026-10-28 | ByteDance · Research Engineer Graduate (AI Traini... | San Jose, CA | 你投 | https://joinbytedance.com/search/7671034858089040181 |
 | 2026-10-28 | JPMorgan Chase · Data Scientist – Process Intelligence Analytics | Plano, TX, United States | 你投 | https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210800587 |
 | 2026-10-28 | JP Morgan Chase · Data and Artificial Intelligence Analyst | Palo Alto, CA; Newark, DE; Plano, TX; Ch | 你投 | https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210773954 |
 | 2026-10-28 | NationsBenefits · Data Engineer I | Plantation, FL | 你投 | https://nationsbenefits.breezy.hr/p/d667fdca1c59-data-engineer-i |
@@ -586,7 +467,6 @@
 | 2026-10-28 | Magna · Junior AI Engineer | Troy, Michigan, US; United States of Ame | 你投 | https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Troy-Michigan-US/Junior-AI-Enigneer_R00266828-1 |
 | 2026-10-28 | VSolvit · DATA SCIENTIST I-FINANCIAL & TIME SERIES FORECASTING | Norco, CA | 你投 | https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=267cfc8f-e6d3-499b-8a38-c6abe8ee3d82&jobId=584947 |
 | 2026-10-28 | Peraton · Artificial Intelligence/Machine Learning (AI/ML) Engineer 1 | MD | 你投 | https://www.careers.peraton.com/jobs/artificial-intelligence-machine-learning-ai-ml-engineer-1-laurel-maryland-171011-jobs--cms-scientific-research-analysis-- |
-| 2026-10-28 | Bytedance · LLM Backend Engineer Graduate (Applied Machine Learning) - 2027 Start Bachelor/Master Graduate [...] | San Jose, CA | 你投 | https://www.jobleads.com/us/job/llm-backend-engineer-graduate-applied-machine-learning-2027-start-bachelor-master-graduate--san-jose--e6a9cba1d7b1d204c2368643be7e841db |
 | 2026-10-28 | Nimble · Outbound AI Engineer | New York City, NY | 你投 | https://www.nimbleway.com/open-position?outbound-ai-engineer&uid=54.270&page=2 |
 | 2026-10-28 | Nimble · Outbound AI Engineer | San Francisco, CA | 你投 | https://www.nimbleway.com/open-position?outbound-ai-engineer&uid=87.479 |
 | 2026-10-28 | Atlassian · Data Scientist, 2027 Graduate U.S. | Seattle, WA | 你投 | https://www.tealhq.com/job/data-scientist_7ea1a3b5a8d6bb49f27360e521930c7d9258f |
@@ -683,7 +563,7 @@
 | 2026-10-27 | FanDuel · Data Scientist, Risk | Jersey City, New Jersey, United States | 卡住 | https://www.fanduel.careers/jobs/fanduel/data-scientist-risk/?gh_jid=8303304 |
 | 2026-10-26 | Jerry · Associate Data Scientist | New York, New York; Chicago, Illinois; B | 卡住 | https://jobs.ashbyhq.com/jerry.ai/271b73bc-2b1a-4be6-b3dc-d72d806b8e35 |
 | 2026-10-26 | Jerry · Data Scientist | New York, New York; Chicago, Illinois; B | 卡住 | https://jobs.ashbyhq.com/jerry.ai/74b5781f-8834-4e74-be8d-8be0fe895b99 |
-| 2026-10-26 | Astera Institute · Full-Stack Robotics & AI Engineer | Emeryville HQ; United States | 你投 | https://jobs.ashbyhq.com/astera/961e401e-a633-408c-85d2-af9cdf529d6a |
+| 2026-10-26 | Astera Institute · Full-Stack Robotics & AI Engineer | Emeryville HQ; United States | 卡住 | https://jobs.ashbyhq.com/astera/961e401e-a633-408c-85d2-af9cdf529d6a |
 | 2026-10-22 | Tessera Labs · Data Platform Engineer | Remote in the U.S.; San Jose Office (HQ) | 你投 | https://jobs.ashbyhq.com/tessera-labs/0b3dd840-8942-4f28-9452-b30f3698500a |
 | 2026-10-22 | ElevenLabs · Engineering - Internal AI Transformation | London; Dublin; New York; Germany; Polan | 你投 | https://jobs.ashbyhq.com/elevenlabs/a3097257-a07a-4a7e-b9fe-b8555c1a0fa7 |
 | 2026-10-22 | Waymo · Senior Machine Learning Engineer, Scenes, Traffic Controls | Mountain View, California, United States | 已投出 | https://job-boards.greenhouse.io/waymo/jobs/8212626 |
@@ -761,11 +641,11 @@
 
 ## 四、没投的原因（最近 30 天）
 
-- 30454 个：not a match
+- 30457 个：not a match
 - 17746 个：H-1B history not looked up yet
 - 13179 个：senior title
 - 2400 个：no H-1B filings since 2023
-- 1210 个：excluded company
+- 1398 个：excluded company
 - 131 个：you marked it not to apply
 - 48 个：posting closed
 - 23 个：pay tops out below her range

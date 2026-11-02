@@ -283,6 +283,7 @@ describe("buildPlan", () => {
     expect(one("Preferred office?", ["New York, NY", "Boston, MA", "San Francisco, CA"])).toMatchObject({ value: "Boston, MA" });
     expect(one("State you will be working from", ["California", "New York", "Texas"])).toMatchObject({ value: "New York" });
     expect(one("What country are you based in?", ["Canada", "United States"])).toMatchObject({ value: "United States" });
+    expect(one("Current Legal Address", [], "text")).toMatchObject({ status: "fill" });
     expect(one("What location do you intend to work out of?", ["Alabama", "California", "New York"])).toMatchObject({ value: "New York" });
     expect(one("Do you hold a security clearance?")).toMatchObject({ value: "No" });
     expect(one("Are you willing to share your academic transcripts?")).toMatchObject({ value: "Yes" });

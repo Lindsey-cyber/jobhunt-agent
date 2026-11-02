@@ -141,3 +141,11 @@
 - [ ] Nextdoor · New Grad 2026: Machine Learning Engineer — https://about.nextdoor.com/careers-list/?gh_jid=7264954 （申请页在 Nextdoor 自己的网站上，程序出错）
 - [ ] Invisible Tech · Data Scientist — https://job-boards.eu.greenhouse.io/invisibletech/jobs/4643870101 （"出差程度"和"愿意在哪些地点工作（多选）"两题程序填不上）
 - [ ] Torc Robotics · Software Engineer, I - Data Engineering — https://job-boards.greenhouse.io/torcrobotics/jobs/8649372002 （出口管制题：问你是否为某些国家的公民，你来决定怎么答）
+
+### 2026-11-02：Ashby 试投（自动提交被验证码挡住，表单已填好，请你手动提交）
+
+点提交后页面仍停在表单，说明没投出去（Ashby 的隐形验证码）。之前 4 份"已提交、未确认"的 Ashby 很可能也没投出去，请一并检查。
+
+- [ ] Generalist · Applied Scientist — https://jobs.ashbyhq.com/generalist/c3dd1d5e-3189-4a20-bba0-7ae45b91bc95
+- [ ] Harvey · Research Engineer / Scientist, Reinforcement Learning — https://jobs.ashbyhq.com/harvey/30df72cf-ee68-4194-864e-47745ca8b6e0 （Harvey 每人 30 天最多投 4 份，同一岗位发了好几次，挑最合适的）
+- [ ] Astera Institute · Full-Stack Robotics & AI Engineer — https://jobs.ashbyhq.com/astera/961e401e-a633-408c-85d2-af9cdf529d6a （有两道经历题要你写）

@@ -1,0 +1,9 @@
+{
+  "decision": "hold",
+  "reasons": [
+    "required \"Describe a robotics system you helped take from model development to a physical robot.\": no answer in profile or answer bank",
+    "required \"Tell us about a difficult failure you diagnosed in a robot or deployed ML system.\": no answer in profile or answer bank",
+    "required \"Describe a robotics system you helped take from model development to a physical robot.\" is empty after filling",
+    "required \"Tell us about a difficult failure you diagnosed in a robot or deployed ML system.\" is empty after filling"
+  ]
+}

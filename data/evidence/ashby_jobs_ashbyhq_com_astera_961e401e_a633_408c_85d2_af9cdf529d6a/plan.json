@@ -1,0 +1,260 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/astera/961e401e-a633-408c-85d2-af9cdf529d6a/application",
+    "company": "Astera Institute",
+    "jobTitle": "Full-Stack Robotics & AI Engineer",
+    "jobLocation": "Emeryville HQ",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "98e73e87-5d9b-4634-bc49-9d5d0f79a929",
+        "label": "Pronouns",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "2637e671-c012-4ae2-98a6-bdd450d43323",
+        "label": "Supporting project material (optional)",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "48ae36f4-3789-4594-a12a-dbddf69d1070",
+        "label": "Are you legally authorized to work in the US?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "ef5305bd-01bb-4b46-8d2f-b0ce46613334",
+        "label": "Will you require sponsorship in the future?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "b59c395b-567e-4e0e-86b7-a849426f14fe",
+        "label": "Describe a robotics system you helped take from model development to a physical robot.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "7bb51c7d-4765-43b1-aee1-9292538d268d",
+        "label": "We are happy to provide accommodations for individuals with disabilities. Please let us know if you require any support during the interview process.",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "ce019682-d07c-4319-8b50-caa4feb3f7a8",
+        "label": "Tell us about a difficult failure you diagnosed in a robot or deployed ML system.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "054ce53d-6298-4cdf-a197-b2bfe921afa6",
+        "label": "GitHub, project page, or robot demo",
+        "kind": "text",
+        "required": false,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "98e73e87-5d9b-4634-bc49-9d5d0f79a929",
+        "label": "Pronouns",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "2637e671-c012-4ae2-98a6-bdd450d43323",
+        "label": "Supporting project material (optional)",
+        "kind": "file",
+        "required": false,
+        "options": []
+      },
+      "reason": "no document for this upload"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "48ae36f4-3789-4594-a12a-dbddf69d1070",
+        "label": "Are you legally authorized to work in the US?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "ef5305bd-01bb-4b46-8d2f-b0ce46613334",
+        "label": "Will you require sponsorship in the future?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "b59c395b-567e-4e0e-86b7-a849426f14fe",
+        "label": "Describe a robotics system you helped take from model development to a physical robot.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "7bb51c7d-4765-43b1-aee1-9292538d268d",
+        "label": "We are happy to provide accommodations for individuals with disabilities. Please let us know if you require any support during the interview process.",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "blocked",
+      "field": {
+        "id": "ce019682-d07c-4319-8b50-caa4feb3f7a8",
+        "label": "Tell us about a difficult failure you diagnosed in a robot or deployed ML system.",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "054ce53d-6298-4cdf-a197-b2bfe921afa6",
+        "label": "GitHub, project page, or robot demo",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "value": "https://github.com/Lindsey-cyber",
+      "source": {
+        "type": "profile",
+        "path": "links.github"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    },
+    {
+      "fieldId": "48ae36f4-3789-4594-a12a-dbddf69d1070",
+      "label": "Are you legally authorized to work in the US?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "ef5305bd-01bb-4b46-8d2f-b0ce46613334",
+      "label": "Will you require sponsorship in the future?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "054ce53d-6298-4cdf-a197-b2bfe921afa6",
+      "label": "GitHub, project page, or robot demo",
+      "expected": "https://github.com/Lindsey-cyber",
+      "actual": "https://github.com/Lindsey-cyber",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [
+    "Describe a robotics system you helped take from model development to a physical robot.",
+    "Tell us about a difficult failure you diagnosed in a robot or deployed ML system."
+  ],
+  "fillErrors": []
+}

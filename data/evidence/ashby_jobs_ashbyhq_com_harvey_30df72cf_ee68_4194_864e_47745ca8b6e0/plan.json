@@ -1,0 +1,351 @@
+{
+  "form": {
+    "ats": "ashby",
+    "url": "https://jobs.ashbyhq.com/harvey/30df72cf-ee68-4194-864e-47745ca8b6e0/application",
+    "company": "Harvey",
+    "jobTitle": "Research Engineer / Scientist, Reinforcement Learning",
+    "jobLocation": "Remote",
+    "fields": [
+      {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "29308850-b0af-4c4e-84cd-fc733973d0ac",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "82a91ce5-637a-4128-b5f7-219054e1a55a",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "f9dc83f1-4ec0-4d6c-ab49-7c9bc1c54d4b",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "a8162fdd-47bb-41f3-bfdc-a08dcd360680",
+        "label": "Current Legal Address",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "abafae23-b52e-494b-a909-fecd46c2f6c9",
+        "label": "Current or Most Recent Employer",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "eb92eb24-cfe6-43d5-9b81-2e904296d30f",
+        "label": "University or School Attended",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "8133a14e-2e95-4634-b879-a695943661d7",
+        "label": "Pronouns",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "7db4d3a3-c60e-44ad-87c8-767f975fb051",
+        "label": "Are you legally authorized to work in the United States, for any employer?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "id": "f2fca3c3-4a55-441d-b26e-e48bae89476d",
+        "label": "Will you now or will you in the future require employment visa sponsorship?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes, I will require Harvey to sponsor my employment",
+          "No, I do not require sponsorship to work in the United States"
+        ]
+      },
+      {
+        "id": "bc06be5b-da74-4160-855d-ad81134c4f4c",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      }
+    ],
+    "priorApplications": 0
+  },
+  "items": [
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_name",
+        "label": "Full Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lanxin Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.fullName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "29308850-b0af-4c4e-84cd-fc733973d0ac",
+        "label": "Preferred First Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Lindsey",
+      "source": {
+        "type": "profile",
+        "path": "identity.preferredName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "82a91ce5-637a-4128-b5f7-219054e1a55a",
+        "label": "Preferred Last Name",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Ma",
+      "source": {
+        "type": "profile",
+        "path": "identity.lastName"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_email",
+        "label": "Email",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "lm3879@columbia.edu",
+      "source": {
+        "type": "profile",
+        "path": "contact.email"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f9dc83f1-4ec0-4d6c-ab49-7c9bc1c54d4b",
+        "label": "Phone Number",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "9786681426",
+      "source": {
+        "type": "profile",
+        "path": "contact.phone"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_location",
+        "label": "Location",
+        "kind": "combobox",
+        "required": true,
+        "options": []
+      },
+      "value": "New York, New York, United States",
+      "source": {
+        "type": "bank",
+        "id": "current-location",
+        "origin": "human"
+      },
+      "confidence": 0.8,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "a8162fdd-47bb-41f3-bfdc-a08dcd360680",
+        "label": "Current Legal Address",
+        "kind": "textarea",
+        "required": true,
+        "options": []
+      },
+      "value": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "source": {
+        "type": "profile",
+        "path": "contact.address"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "abafae23-b52e-494b-a909-fecd46c2f6c9",
+        "label": "Current or Most Recent Employer",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "Arborphy AI LLC",
+      "source": {
+        "type": "profile",
+        "path": "workHistory"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "eb92eb24-cfe6-43d5-9b81-2e904296d30f",
+        "label": "University or School Attended",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "skip",
+      "field": {
+        "id": "8133a14e-2e95-4634-b879-a695943661d7",
+        "label": "Pronouns",
+        "kind": "text",
+        "required": false,
+        "options": []
+      },
+      "reason": "no answer in profile or answer bank"
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "7db4d3a3-c60e-44ad-87c8-767f975fb051",
+        "label": "Are you legally authorized to work in the United States, for any employer?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "value": "Yes",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.authorizedCountries"
+      },
+      "confidence": 1,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "f2fca3c3-4a55-441d-b26e-e48bae89476d",
+        "label": "Will you now or will you in the future require employment visa sponsorship?",
+        "kind": "radio",
+        "required": true,
+        "options": [
+          "Yes, I will require Harvey to sponsor my employment",
+          "No, I do not require sponsorship to work in the United States"
+        ]
+      },
+      "value": "Yes, I will require Harvey to sponsor my employment",
+      "source": {
+        "type": "profile",
+        "path": "workAuthorization.needsSponsorship"
+      },
+      "confidence": 0.95,
+      "sensitive": true
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "bc06be5b-da74-4160-855d-ad81134c4f4c",
+        "label": "LinkedIn",
+        "kind": "text",
+        "required": true,
+        "options": []
+      },
+      "value": "https://www.linkedin.com/in/lindsey-ma/",
+      "source": {
+        "type": "profile",
+        "path": "links.linkedin"
+      },
+      "confidence": 1,
+      "sensitive": false
+    },
+    {
+      "status": "fill",
+      "field": {
+        "id": "_systemfield_resume",
+        "label": "Resume",
+        "kind": "file",
+        "required": true,
+        "options": []
+      },
+      "value": "/home/user/jobhunt-agent/data/Lindsey_Ma_Resume.pdf",
+      "source": {
+        "type": "file",
+        "path": "documents.resume"
+      },
+      "confidence": 1,
+      "sensitive": false
+    }
+  ]
+}

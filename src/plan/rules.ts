@@ -219,7 +219,7 @@ export const PROFILE_RULES: ProfileRule[] = [
   {
     // "Legal Address", "Primary Residence Address", "Home address": the whole address on one line.
     path: "contact.address",
-    pattern: /^(legal|home|mailing|residential|permanent|primary residence|current) (street )?address$|^(full|complete) address$/,
+    pattern: /^(legal|home|mailing|residential|permanent|primary residence|current|current legal|current home) (street )?address$|^(full|complete) address$/,
     kinds: ["text", "textarea"],
     resolve: (p) => {
       const a = p.contact.address;

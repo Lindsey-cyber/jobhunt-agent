@@ -1,0 +1,91 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "fieldId": "_systemfield_name",
+      "label": "Full Name",
+      "expected": "Lanxin Ma",
+      "actual": "Lanxin Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "29308850-b0af-4c4e-84cd-fc733973d0ac",
+      "label": "Preferred First Name",
+      "expected": "Lindsey",
+      "actual": "Lindsey",
+      "pass": true
+    },
+    {
+      "fieldId": "82a91ce5-637a-4128-b5f7-219054e1a55a",
+      "label": "Preferred Last Name",
+      "expected": "Ma",
+      "actual": "Ma",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_email",
+      "label": "Email",
+      "expected": "lm3879@columbia.edu",
+      "actual": "lm3879@columbia.edu",
+      "pass": true
+    },
+    {
+      "fieldId": "f9dc83f1-4ec0-4d6c-ab49-7c9bc1c54d4b",
+      "label": "Phone Number",
+      "expected": "9786681426",
+      "actual": "9786681426",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_location",
+      "label": "Location",
+      "expected": "New York, New York, United States",
+      "actual": "New York, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "a8162fdd-47bb-41f3-bfdc-a08dcd360680",
+      "label": "Current Legal Address",
+      "expected": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "actual": "140-21 32nd Ave, Apt 3BS, Flushing, NY 11354, United States",
+      "pass": true
+    },
+    {
+      "fieldId": "abafae23-b52e-494b-a909-fecd46c2f6c9",
+      "label": "Current or Most Recent Employer",
+      "expected": "Arborphy AI LLC",
+      "actual": "Arborphy AI LLC",
+      "pass": true
+    },
+    {
+      "fieldId": "7db4d3a3-c60e-44ad-87c8-767f975fb051",
+      "label": "Are you legally authorized to work in the United States, for any employer?",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "fieldId": "f2fca3c3-4a55-441d-b26e-e48bae89476d",
+      "label": "Will you now or will you in the future require employment visa sponsorship?",
+      "expected": "Yes, I will require Harvey to sponsor my employment",
+      "actual": "Yes, I will require Harvey to sponsor my employment",
+      "pass": true
+    },
+    {
+      "fieldId": "bc06be5b-da74-4160-855d-ad81134c4f4c",
+      "label": "LinkedIn",
+      "expected": "https://www.linkedin.com/in/lindsey-ma/",
+      "actual": "https://www.linkedin.com/in/lindsey-ma/",
+      "pass": true
+    },
+    {
+      "fieldId": "_systemfield_resume",
+      "label": "Resume",
+      "expected": "Lindsey_Ma_Resume.pdf",
+      "actual": "Lindsey_Ma_Resume.pdf",
+      "pass": true
+    }
+  ],
+  "emptyRequired": [],
+  "fillErrors": []
+}

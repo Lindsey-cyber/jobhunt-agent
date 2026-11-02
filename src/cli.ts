@@ -34,7 +34,7 @@ import { readModelVerdicts } from "./store/modelverdicts.ts";
 import { retriage } from "./discover/merge.ts";
 import { expectationFloor } from "./discover/pay.ts";
 import { tallyHolds } from "./verify/holds.ts";
-import { readLatestCoverage } from "./store/coverage.ts";
+import { readCoverage } from "./store/coverage.ts";
 import { stageGates } from "./discover/gates.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
@@ -129,7 +129,7 @@ function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
 // The source registry does not exist yet (W4): until it does, gate 1a fails on it.
 function gatesOf(u: ReturnType<typeof user>, w: ReturnType<typeof gather>) {
   return stageGates({
-    coverage: readLatestCoverage(u.dir),
+    ...(({ coverage, problem }) => ({ coverage, coverageProblem: problem }))(readCoverage(u.dir)),
     registry: undefined,
     today: w.today,
     matches: [...w.catalog.values()].filter((j) => j.triage?.verdict === "match"),
@@ -161,7 +161,7 @@ switch (command) {
   case "apply": {
     if (!url) throw new Error("usage: jh apply <url>");
     const u = user();
-    const result = await apply({ url, user: u, ledger: ledgerOf(u.dir), approved: values.approve, headed: values.headed });
+    const result = await apply({ url, user: u, ledger: ledgerOf(u.dir), approved: values.approve, headed: values.headed, stageGate: gatesOf(u, gather(u))["1c"] });
     if (result.outcome === "skipped") {
       console.log(`${result.key} is already ${result.state}; nothing to do.`);
       break;
@@ -316,7 +316,7 @@ switch (command) {
       const wait = (lastAt.get(j.company) ?? 0) + SAME_COMPANY_GAP_MS - Date.now();
       if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       try {
-        const r = await apply({ url: j.url, user: u, ledger, approved: true, job: { company: j.company, title: j.title, location: j.location } });
+        const r = await apply({ url: j.url, user: u, ledger, approved: true, stageGate: gates["1c"], job: { company: j.company, title: j.title, location: j.location } });
         if (r.state === "submitted" || r.state === "confirmed" || r.state === "unconfirmed") lastAt.set(j.company, Date.now());
         console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
       } catch (e) {

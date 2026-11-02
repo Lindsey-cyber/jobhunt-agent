@@ -8,6 +8,7 @@ export interface AuditRates { falseMatchRate: number | null; missRate: number | 
 
 export interface GateInput {
   coverage?: Coverage | undefined;
+  coverageProblem?: string | undefined; // a measurement file was rejected: counts as missing
   registry?: { status: "live" | "no_api" | "not_built" }[] | undefined;
   today: string;
   matches: { publishedAt: string }[];
@@ -19,14 +20,15 @@ export const GATE_LIMITS = { coverageDays: 7, coverageN: 50, inCatalog: 0.95, da
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const rate = (x: number | null) => (x == null ? "无数据" : pct(x));
 const days = (from: string, to: string) => Math.floor((Date.parse(to) - Date.parse(from)) / 86_400_000);
-const NO_COVERAGE = "没有覆盖率测量文件";
 
 export function stageGates(i: GateInput): Record<"1a" | "1b" | "1c", Gate> {
   const gate = (checks: Check[]): Gate => ({ pass: checks.every((c) => c.pass), checks });
   const c = i.coverage;
+  const NO_COVERAGE = i.coverageProblem ? `覆盖率测量文件不可用：${i.coverageProblem}` : "没有覆盖率测量文件";
   const age = c ? days(c.date, i.today) : NaN;
   const share = c && c.n > 0 ? c.inCatalog / c.n : NaN;
   const notBuilt = i.registry?.filter((r) => r.status === "not_built").length;
+  const registryOk = !!i.registry && i.registry.length > 0 && notBuilt === 0;
   const dated = i.matches.filter((m) => m.publishedAt.trim() !== "").length;
   const datedShare = i.matches.length ? dated / i.matches.length : NaN;
   const a = i.audit;
@@ -36,7 +38,7 @@ export function stageGates(i: GateInput): Record<"1a" | "1b" | "1c", Gate> {
     { name: `覆盖率测量在 ${GATE_LIMITS.coverageDays} 天内`, value: c ? `${c.date}（${age} 天前）` : NO_COVERAGE, pass: !!c && age >= 0 && age <= GATE_LIMITS.coverageDays },
     { name: `覆盖率样本 n ≥ ${GATE_LIMITS.coverageN}`, value: c ? `n=${c.n}` : NO_COVERAGE, pass: !!c && c.n >= GATE_LIMITS.coverageN },
     { name: `样本在库内 ≥ ${pct(GATE_LIMITS.inCatalog)}`, value: c ? (c.n > 0 ? `${c.inCatalog}/${c.n} = ${pct(share)}` : "n=0") : NO_COVERAGE, pass: share >= GATE_LIMITS.inCatalog },
-    { name: "来源登记表没有“未做”", value: i.registry ? `${notBuilt} 个未做` : "来源登记表未建", pass: notBuilt === 0 },
+    { name: "来源登记表没有“未做”", value: !i.registry ? "来源登记表未建" : i.registry.length === 0 ? "来源登记表是空的" : `${notBuilt} 个未做`, pass: registryOk },
     { name: `当前匹配岗位有发布日期 ≥ ${pct(GATE_LIMITS.dated)}`, value: i.matches.length ? `${dated}/${i.matches.length} = ${pct(datedShare)}` : "没有当前匹配岗位", pass: datedShare >= GATE_LIMITS.dated },
   ]);
   const g1b = gate([

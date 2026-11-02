@@ -30,6 +30,7 @@ describe("stage gates", () => {
   it("1a: the registry must exist and have no not_built", () => {
     expect(stageGates({ ...good, registry: undefined })["1a"].checks.find((c) => !c.pass)?.value).toBe("来源登记表未建");
     expect(fails({ ...good, registry: [{ status: "not_built" }] }, "1a")).toHaveLength(1);
+    expect(fails({ ...good, registry: [] }, "1a")).toHaveLength(1);
   });
   it("1a: at least 90% of matches dated", () => {
     expect(fails({ ...good, matches: dated(89, 100) }, "1a")).toHaveLength(1);

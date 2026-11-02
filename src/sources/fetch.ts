@@ -3,7 +3,7 @@ import { parse } from "yaml";
 import { z } from "zod";
 import type { Channel, Sighting, SizeBand } from "../domain/job.ts";
 import { ROLE } from "../discover/triage.ts";
-import { parseAshby, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseSimplifyListings, parseWorkdayDetail, type HnComment, type WorkdayDetail } from "../discover/parse.ts";
+import { parseAmazon, parseAshby, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
 import { getJson, getText, pool, postJson } from "./http.ts";
 
 const Board = z.object({ board: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ai: z.boolean().default(false) });
@@ -13,6 +13,12 @@ export const Watchlist = z.object({
   ashby: z.array(Board).default([]),
   workdayQueries: z.array(z.string()).default(["new grad", "machine learning"]),
   workday: z.array(z.object({ site: z.url(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  // Public job-list APIs of two more ATS families (SmartRecruiters Posting API,
+  // Oracle HCM Candidate Experience). Searched with workdayQueries, US only.
+  smartrecruiters: z.array(z.object({ id: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  oracleHcm: z.array(z.object({ host: z.string(), site: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown") })).default([]),
+  // Amazon's career site JSON search (no ATS board exists): AND-matched keyword queries, US only.
+  amazon: z.object({ queries: z.array(z.string()) }).optional(),
   github: z.array(z.object({ name: z.string(), url: z.url(), raw: z.url(), format: z.enum(["simplify-json", "markdown"]) })).default([]),
   hn: z.object({ commentLimit: z.number().int().default(300) }).default({ commentLimit: 300 }),
   skipped: z.array(z.object({ name: z.string(), reason: z.string() })).default([]),
@@ -106,6 +112,104 @@ export async function fetchWorkday(w: Watchlist["workday"][number], queries: str
       sightings: s,
       outcome: { ...base, ok: true, count: s.length, size: w.size, note: `${queries.length} searches, ${listed} results, ${paths.size} AI/ML titles, ${s.length} details read` },
     };
+  } catch (e) {
+    return fail(base, e);
+  }
+}
+
+interface SrList { totalFound?: number; content?: SmartRecruitersItem[] }
+
+// SmartRecruiters Posting API (api.smartrecruiters.com/v1, public, no key).
+// Bounded keyword searches restricted to US postings; AI/ML-looking titles get
+// their detail read for the description.
+export async function fetchSmartRecruiters(c: Watchlist["smartrecruiters"][number], queries: string[], seenAt: string, perQuery = 100): Promise<Fetched> {
+  const base = { name: c.company, channel: "official_smartrecruiters" as Channel, url: `https://jobs.smartrecruiters.com/${c.id}` };
+  const api = `https://api.smartrecruiters.com/v1/companies/${encodeURIComponent(c.id)}/postings`;
+  try {
+    const hits = new Map<string, SmartRecruitersItem>();
+    let listed = 0;
+    for (const q of queries) {
+      for (let offset = 0; offset < perQuery; offset += 100) {
+        const page = await getJson<SrList>(`${api}?limit=100&offset=${offset}&country=us&q=${encodeURIComponent(q)}`, 60000);
+        for (const p of page.content ?? []) {
+          listed++;
+          if (ROLE.test(p.name ?? "")) hits.set(p.id, p);
+        }
+        if (offset + 100 >= (page.totalFound ?? 0)) break;
+      }
+    }
+    const details = await pool([...hits.values()], 4, async (item) => {
+      try {
+        return parseSmartRecruiters(await getJson<SmartRecruitersDetail>(`${api}/${item.id}`, 60000), c.id, c.company, seenAt);
+      } catch {
+        return parseSmartRecruiters(item, c.id, c.company, seenAt);
+      }
+    });
+    const s = details.filter((d): d is Sighting => Boolean(d));
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: c.size, note: `${queries.length} searches, ${listed} US results, ${hits.size} AI/ML titles` } };
+  } catch (e) {
+    return fail(base, e);
+  }
+}
+
+interface OracleList { items?: { requisitionList?: OracleHcmItem[]; TotalJobsCount?: number }[] }
+interface OracleDetail { items?: OracleHcmDetail[] }
+
+// Oracle HCM Candidate Experience REST (hcmRestApi, the endpoint the public
+// career site itself calls; no login). Same bounded-search shape as Workday.
+export async function fetchOracleHcm(o: Watchlist["oracleHcm"][number], queries: string[], seenAt: string, perQuery = 100): Promise<Fetched> {
+  const root = `https://${o.host}/hcmRestApi/resources/latest`;
+  const base = { name: o.company, channel: "official_oracle_hcm" as Channel, url: `https://${o.host}/hcmUI/CandidateExperience/en/sites/${o.site}` };
+  try {
+    const hits = new Map<string, OracleHcmItem>();
+    let listed = 0;
+    for (const q of queries) {
+      for (let offset = 0; offset < perQuery; offset += 25) {
+        const finder = `findReqs;siteNumber=${o.site},limit=25,offset=${offset},sortBy=POSTING_DATES_DESC,keyword="${q}"`;
+        const body = await getJson<OracleList>(`${root}/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations&finder=${encodeURIComponent(finder)}`, 60000);
+        const top = body.items?.[0];
+        for (const p of top?.requisitionList ?? []) {
+          if (p.PrimaryLocationCountry !== "US") continue;
+          listed++;
+          if (ROLE.test(p.Title ?? "")) hits.set(p.Id, p);
+        }
+        if (offset + 25 >= (top?.TotalJobsCount ?? 0)) break;
+      }
+    }
+    const details = await pool([...hits.values()], 4, async (item) => {
+      try {
+        const finder = `ById;Id="${item.Id}",siteNumber=${o.site}`;
+        const d = await getJson<OracleDetail>(`${root}/recruitingCEJobRequisitionDetails?onlyData=true&finder=${encodeURIComponent(finder)}`, 60000);
+        return parseOracleHcm({ ...item, ...(d.items?.[0] ?? {}) }, o.host, o.site, o.company, seenAt);
+      } catch {
+        return parseOracleHcm(item, o.host, o.site, o.company, seenAt);
+      }
+    });
+    const s = details.filter((d): d is Sighting => Boolean(d));
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: o.size, note: `${queries.length} searches, ${listed} US results, ${hits.size} AI/ML titles` } };
+  } catch (e) {
+    return fail(base, e);
+  }
+}
+
+// amazon.jobs/en/search.json: the endpoint the public search page calls; no login.
+// Newest first, so a bounded page count keeps the recent postings of each query.
+export async function fetchAmazon(queries: string[], seenAt: string, perQuery = 200): Promise<Fetched> {
+  const base = { name: "Amazon", channel: "official_amazon" as Channel, url: "https://www.amazon.jobs/en/search" };
+  try {
+    const seen = new Map<string, Sighting>();
+    let listed = 0;
+    for (const q of queries) {
+      for (let offset = 0; offset < perQuery; offset += 100) {
+        const body = await getJson<{ hits?: number; jobs?: Parameters<typeof parseAmazon>[0]["jobs"] }>(`https://www.amazon.jobs/en/search.json?base_query=${encodeURIComponent(q)}&country%5B%5D=USA&result_limit=100&offset=${offset}&sort=recent`, 60000);
+        const page = parseAmazon(body, seenAt);
+        listed += page.length;
+        for (const s of page) if (ROLE.test(s.title)) seen.set(s.key, s);
+        if (offset + 100 >= (body.hits ?? 0)) break;
+      }
+    }
+    const s = [...seen.values()];
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: "medium_large", note: `${queries.length} searches, ${listed} US results, ${s.length} AI/ML titles` } };
   } catch (e) {
     return fail(base, e);
   }

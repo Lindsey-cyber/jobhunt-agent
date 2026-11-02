@@ -9,7 +9,8 @@ export interface AuditRates { falseMatchRate: number | null; missRate: number | 
 export interface GateInput {
   coverage?: Coverage | undefined;
   coverageProblem?: string | undefined; // a measurement file was rejected: counts as missing
-  registry?: { status: "live" | "no_api" | "not_built" }[] | undefined;
+  // A deferred row is accounted for only with a written reason; it is listed on the page.
+  registry?: { id?: string; status: "live" | "no_api" | "deferred" | "not_built"; reason?: string | undefined }[] | undefined;
   today: string;
   matches: { publishedAt: string }[];
   audit?: AuditRates | undefined;
@@ -28,7 +29,14 @@ export function stageGates(i: GateInput): Record<"1a" | "1b" | "1c", Gate> {
   const age = c ? days(c.date, i.today) : NaN;
   const share = c && c.n > 0 ? c.inCatalog / c.n : NaN;
   const notBuilt = i.registry?.filter((r) => r.status === "not_built").length;
-  const registryOk = !!i.registry && i.registry.length > 0 && notBuilt === 0;
+  const deferred = i.registry?.filter((r) => r.status === "deferred") ?? [];
+  const noReason = deferred.filter((r) => !(r.reason ?? "").trim());
+  const registryOk = !!i.registry && i.registry.length > 0 && notBuilt === 0 && noReason.length === 0;
+  const registryValue = !i.registry
+    ? "来源登记表未建"
+    : i.registry.length === 0
+      ? "来源登记表是空的"
+      : `${notBuilt} 个未做；${deferred.length} 个推迟${noReason.length ? `，其中 ${noReason.length} 个没写理由（${noReason.map((r) => r.id ?? "?").join("、")}）` : deferred.length ? `（都有理由：${deferred.map((r) => r.id ?? "?").join("、")}）` : ""}`;
   const dated = i.matches.filter((m) => m.publishedAt.trim() !== "").length;
   const datedShare = i.matches.length ? dated / i.matches.length : NaN;
   const a = i.audit;
@@ -38,7 +46,7 @@ export function stageGates(i: GateInput): Record<"1a" | "1b" | "1c", Gate> {
     { name: `覆盖率测量在 ${GATE_LIMITS.coverageDays} 天内`, value: c ? `${c.date}（${age} 天前）` : NO_COVERAGE, pass: !!c && age >= 0 && age <= GATE_LIMITS.coverageDays },
     { name: `覆盖率样本 n ≥ ${GATE_LIMITS.coverageN}`, value: c ? `n=${c.n}` : NO_COVERAGE, pass: !!c && c.n >= GATE_LIMITS.coverageN },
     { name: `样本在库内 ≥ ${pct(GATE_LIMITS.inCatalog)}`, value: c ? (c.n > 0 ? `${c.inCatalog}/${c.n} = ${pct(share)}` : "n=0") : NO_COVERAGE, pass: share >= GATE_LIMITS.inCatalog },
-    { name: "来源登记表没有“未做”", value: !i.registry ? "来源登记表未建" : i.registry.length === 0 ? "来源登记表是空的" : `${notBuilt} 个未做`, pass: registryOk },
+    { name: "来源登记表没有“未做”，推迟的都有理由", value: registryValue, pass: registryOk },
     { name: `当前匹配岗位有发布日期 ≥ ${pct(GATE_LIMITS.dated)}`, value: i.matches.length ? `${dated}/${i.matches.length} = ${pct(datedShare)}` : "没有当前匹配岗位", pass: datedShare >= GATE_LIMITS.dated },
   ]);
   const g1b = gate([

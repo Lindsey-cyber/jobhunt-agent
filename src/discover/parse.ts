@@ -128,6 +128,89 @@ export function parseWorkdayDetail(detail: WorkdayDetail, site: string, external
   });
 }
 
+// ── SmartRecruiters (public Posting API, no key) ───────────────────────────
+
+export interface SmartRecruitersItem { id: string; name: string; releasedDate?: string; location?: { fullLocation?: string; city?: string; region?: string; country?: string; remote?: boolean }; typeOfEmployment?: { label?: string }; experienceLevel?: { label?: string } }
+export interface SmartRecruitersDetail extends SmartRecruitersItem { postingUrl?: string; jobAd?: { sections?: Record<string, { title?: string; text?: string }> } }
+
+export function parseSmartRecruiters(item: SmartRecruitersItem | SmartRecruitersDetail, companyId: string, company: string, seenAt: string): Sighting | undefined {
+  if (!item.id || !item.name) return undefined;
+  const d = item as SmartRecruitersDetail;
+  const sections = Object.values(d.jobAd?.sections ?? {}).map((s) => `${s.title ?? ""}\n${htmlToText(s.text ?? "")}`);
+  const loc = item.location;
+  const released = iso(item.releasedDate);
+  return sighting({
+    channel: "official_smartrecruiters",
+    source: `https://jobs.smartrecruiters.com/${companyId}`,
+    url: d.postingUrl || `https://jobs.smartrecruiters.com/${companyId}/${item.id}`,
+    seenAt,
+    official: true,
+    company,
+    title: item.name.trim(),
+    location: [loc?.fullLocation || [loc?.city, loc?.region].filter(Boolean).join(", "), loc?.remote ? "Remote" : ""].filter(Boolean).join("; "),
+    description: [item.typeOfEmployment?.label ? `Employment type: ${item.typeOfEmployment.label}` : "", item.experienceLevel?.label ? `Experience level: ${item.experienceLevel.label}` : "", ...sections].filter(Boolean).join("\n"),
+    date: released,
+    dateKind: released ? "published" : "none",
+  });
+}
+
+// ── Oracle HCM Candidate Experience (public recruitingCE REST, no login) ───
+
+export interface OracleHcmItem { Id: string; Title: string; PostedDate?: string; PrimaryLocation?: string; PrimaryLocationCountry?: string; WorkplaceType?: string }
+export interface OracleHcmDetail extends OracleHcmItem { ExternalPostedStartDate?: string; ExternalDescriptionStr?: string; ExternalResponsibilitiesStr?: string; ExternalQualificationsStr?: string; JobSchedule?: string }
+
+export function parseOracleHcm(item: OracleHcmItem | OracleHcmDetail, host: string, site: string, company: string, seenAt: string): Sighting | undefined {
+  if (!item.Id || !item.Title) return undefined;
+  const d = item as OracleHcmDetail;
+  const date = iso(d.ExternalPostedStartDate) || iso(item.PostedDate);
+  return sighting({
+    channel: "official_oracle_hcm",
+    source: `https://${host}/hcmUI/CandidateExperience/en/sites/${site}`,
+    url: `https://${host}/hcmUI/CandidateExperience/en/sites/${site}/job/${item.Id}`,
+    seenAt,
+    official: true,
+    company,
+    title: item.Title.trim(),
+    location: [item.PrimaryLocation, item.WorkplaceType].filter(Boolean).join("; "),
+    description: [d.JobSchedule ? `Employment type: ${d.JobSchedule}` : "", htmlToText(d.ExternalDescriptionStr ?? ""), htmlToText(d.ExternalResponsibilitiesStr ?? ""), htmlToText(d.ExternalQualificationsStr ?? "")].filter(Boolean).join("\n"),
+    date,
+    // The list gives a day (PostedDate); the detail an exact timestamp. Both are the employer's own.
+    dateKind: date ? "published" : "none",
+  });
+}
+
+// ── Amazon (amazon.jobs/en/search.json, the career site's own public search) ──
+
+export interface AmazonJob { id_icims?: string; title?: string; job_path?: string; posted_date?: string; normalized_location?: string; location?: string; country_code?: string; description?: string; basic_qualifications?: string; preferred_qualifications?: string; job_schedule_type?: string; job_category?: string }
+
+// "October 28, 2026" (sometimes with a double space) -> that UTC day.
+const amazonDate = (t: string | undefined) => {
+  const m = /^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/.exec((t ?? "").trim());
+  return m ? iso(Date.parse(`${m[1]} ${m[2]}, ${m[3]} UTC`)) : "";
+};
+
+export function parseAmazon(body: { jobs?: AmazonJob[] | undefined }, seenAt: string): Sighting[] {
+  return (body.jobs ?? []).flatMap((j) => {
+    if (!j.title || !j.job_path) return [];
+    const date = amazonDate(j.posted_date);
+    return [
+      sighting({
+        channel: "official_amazon",
+        source: "https://www.amazon.jobs/en/search",
+        url: `https://www.amazon.jobs${j.job_path}`,
+        seenAt,
+        official: true,
+        company: "Amazon",
+        title: j.title.trim(),
+        location: j.normalized_location || j.location || "",
+        description: [j.job_schedule_type ? `Employment type: ${j.job_schedule_type}` : "", htmlToText(j.description ?? ""), htmlToText(j.basic_qualifications ?? ""), htmlToText(j.preferred_qualifications ?? "")].filter(Boolean).join("\n"),
+        date,
+        dateKind: date ? "published" : "none",
+      }),
+    ];
+  });
+}
+
 // ── New-grad GitHub lists ──────────────────────────────────────────────────
 
 interface SimplifyListing { company_name: string; title: string; url: string; locations?: string[]; date_posted?: number; active?: boolean; is_visible?: boolean; sponsorship?: string; category?: string }

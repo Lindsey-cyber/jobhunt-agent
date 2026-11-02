@@ -9,6 +9,9 @@ export type Channel =
   | "official_lever"
   | "official_ashby"
   | "official_workday"
+  | "official_smartrecruiters"
+  | "official_oracle_hcm"
+  | "official_amazon"
   | "github_newgrad"
   | "gmail_linkedin"
   | "gmail_glassdoor"
@@ -16,7 +19,7 @@ export type Channel =
   | "gmail_indeed"
   | "hn_hiring";
 
-export const OFFICIAL_CHANNELS: readonly Channel[] = ["official_greenhouse", "official_lever", "official_ashby", "official_workday"];
+export const OFFICIAL_CHANNELS: readonly Channel[] = ["official_greenhouse", "official_lever", "official_ashby", "official_workday", "official_smartrecruiters", "official_oracle_hcm", "official_amazon"];
 
 // What a date on a sighting means. "published" and "relative_posted" (an
 // employer's "Posted 3 Days Ago", resolved against fetch time, day precision)

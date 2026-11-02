@@ -1,1 +1,2 @@
 ts	round	area	kind	metric	before	after	fixed	repeat_error_class	note
+2026-11-02T17:28:00Z	R0	platform	thing	removed superseded code (src+tests lines)	-	-3600	coverage sampling, scripted org, serve, deploy, 22 stale docs	none	first unit end to end: kickoff -> worker -> independent verifier -> rework -> merge

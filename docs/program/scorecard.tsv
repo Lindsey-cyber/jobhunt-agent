@@ -1,1 +1,2 @@
 ts	unit	area	role	worker_model	verifier_model	verdict	reworks	defects	note
+2026-11-02T17:28:00Z	C1	platform	cleanup worker	sonnet	haiku	ISSUES -> PASS	1	5	worker ~177k tokens (budget 150k + 40k rework); verifier ~131k (mostly npm ci + full test run)

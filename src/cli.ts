@@ -90,6 +90,7 @@ const { positionals, values } = parseArgs({
     limit: { type: "string" },
     list: { type: "boolean", default: false },
     refresh: { type: "boolean", default: false },
+    since: { type: "string" },
     out: { type: "string" },
   },
 });
@@ -228,6 +229,8 @@ switch (command) {
     // Postings never tried go first; retries of held ones after them.
     // The candidate (2026-11-01): newest postings first (employer's publish date, else when we first saw it).
     const posted = (j: (typeof ready)[number]) => j.publishedAt ?? j.firstSeen ?? "";
+    // --since YYYY-MM-DD (the candidate, 2026-11-02: "nothing posted before September for now").
+    if (values.since) ready.splice(0, ready.length, ...ready.filter((j) => posted(j).slice(0, 10) >= values.since!));
     const fresh = ready.filter((j) => !sameJob(ledger, j.url)).sort((a, b) => posted(b).localeCompare(posted(a)));
     // Retry a held application only when today's rules fill every required field of its last form
     // (questions waiting on the candidate would only hold it again); newest postings first.

@@ -4,15 +4,16 @@
 //   --refresh-h1b  look every company up again (default: only companies with no cached record)
 //   --dry          print the report, write nothing
 // Read-only toward employers (public board APIs and h1bdata.info); never opens an application form.
-// Writes config/watchlist.yaml and data/h1b/sponsors.json. Keeps workdayQueries, github, hn, skipped as they are.
-import { readFileSync, writeFileSync } from "node:fs";
+// Its H-1B counts go to data/h1b/watchlist-counts.json, never to the shared data/h1b/sponsors.json (that cache belongs to jh h1b and
+// eligibility). sponsors.json is read only as a fallback when a company has no count of its own. Keeps workdayQueries, github, hn, skipped as they are.
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { parse } from "yaml";
-import { employerKey, filerName, parseH1bTable, recordFrom, SINCE_YEAR, type H1bFiling, type H1bRecord } from "../src/discover/h1b.ts";
+import { employerKey, filerName, parseH1bTable, recordFrom, SINCE_YEAR, type H1bFiling } from "../src/discover/h1b.ts";
 import { excludedBy } from "../src/discover/exclude.ts";
 import { ROLE } from "../src/discover/triage.ts";
 import { getJson, getText, pool } from "../src/sources/http.ts";
 import { readCatalog } from "../src/store/catalog.ts";
-import { readH1b, writeH1b } from "../src/store/h1b.ts";
+import { readH1b } from "../src/store/h1b.ts";
 
 // ---------- pure helpers (tested in tests/watchlist.test.ts) ----------
 
@@ -107,6 +108,17 @@ export function slugGuesses(company: string): string[] {
 
 const NOW = new Date(process.env.WATCHLIST_NOW ?? Date.now());
 const WATCHLIST = "config/watchlist.yaml";
+const COUNTS = "data/h1b/watchlist-counts.json";
+
+// One count per employer key. filings === null with failed: true is a lookup that failed: unknown, never zero.
+export interface Count { filings: number | null; since: number; checkedAt: string; failed?: true }
+export function readCounts(file = COUNTS): Map<string, Count> {
+  if (!existsSync(file)) return new Map();
+  return new Map(Object.entries(JSON.parse(readFileSync(file, "utf8")) as Record<string, Count>));
+}
+export function writeCounts(counts: Map<string, Count>, file = COUNTS): void {
+  writeFileSync(file, `${JSON.stringify(Object.fromEntries([...counts].sort(([a], [b]) => a.localeCompare(b))), null, 1)}\n`);
+}
 const arg = (k: string) => process.argv.includes(k);
 
 // The 17 companies docs/research/search-coverage.md found missing (cause A), in the form their board is looked up.
@@ -162,7 +174,7 @@ function readWatchlist(text: string): { rows: Row[]; pending: Pending[] } {
 
 // ---------- H-1B (all years since 2023 summed; the site answers one year per request) ----------
 
-async function lookupAllYears(company: string, checkedAt: string): Promise<H1bRecord | undefined> {
+async function lookupAllYears(company: string, checkedAt: string): Promise<{ filings: number } | undefined> {
   const q2 = encodeURIComponent(filerName(company) || company.trim()).replace(/%20/g, "+");
   const filings: H1bFiling[] = [];
   try {
@@ -174,22 +186,31 @@ async function lookupAllYears(company: string, checkedAt: string): Promise<H1bRe
   } catch {
     return undefined;
   }
-  return recordFrom(company, filings, checkedAt);
+  return { filings: recordFrom(company, filings, checkedAt).filings };
 }
 
-async function ensureH1b(companies: string[], cache: Map<string, H1bRecord>, refresh: boolean): Promise<number> {
-  const todo = [...new Map(companies.map((c) => [employerKey(c), c])).entries()].filter(([k]) => refresh || !cache.has(k)).map(([, c]) => c);
+async function ensureH1b(companies: string[], counts: Map<string, Count>, refresh: boolean): Promise<number> {
+  // Tried again: no count yet, a failed count, or everything with --refresh-h1b.
+  const todo = [...new Map(companies.map((c) => [employerKey(c), c])).entries()]
+    .filter(([k]) => refresh || counts.get(k)?.filings === undefined || counts.get(k)?.filings === null)
+    .map(([, c]) => c);
   let done = 0, failed = 0;
   const checkedAt = NOW.toISOString();
   await pool(todo, 6, async (c) => {
+    const k = employerKey(c);
     const r = await lookupAllYears(c, checkedAt);
-    if (r) cache.set(employerKey(c), r); else failed++;
+    if (r) counts.set(k, { filings: r.filings, since: SINCE_YEAR, checkedAt });
+    else {
+      failed++;
+      // A failed refresh keeps an earlier good count; a company with none is recorded as failed.
+      if (counts.get(k)?.filings === undefined || counts.get(k)?.filings === null) counts.set(k, { filings: null, since: SINCE_YEAR, checkedAt, failed: true });
+    }
     if (++done % 100 === 0) {
-      writeH1b("data", cache);
+      writeCounts(counts);
       console.error(`h1b lookups ${done}/${todo.length} (${failed} failed)`);
     }
   });
-  writeH1b("data", cache);
+  writeCounts(counts);
   console.error(`h1b lookups done: ${todo.length} tried, ${failed} failed`);
   return failed;
 }
@@ -261,7 +282,9 @@ async function main(): Promise<void> {
     }
   }
 
-  const cache = readH1b("data");
+  // Own counts first; sponsors.json (read-only) only for a company this file has no number for.
+  const counts = readCounts();
+  const sponsors = readH1b("data");
   const onList = rows.map((r) => r.company);
   const candidates: string[] = [...COVERAGE_MISSES];
   // Companies in the catalog that hire for AI/ML but are not watched (big ones are added below).
@@ -272,8 +295,11 @@ async function main(): Promise<void> {
   const extra = [...byKey].filter(([k, h]) => h.mlTitle && !watched.has(k) && !pendingKeys.has(k) && !excludedBy(display.get(k)!, exclude)).map(([k]) => display.get(k)!);
   candidates.push(...extra);
 
-  if (!offline) await ensureH1b([...onList, ...candidates], cache, arg("--refresh-h1b"));
-  const filingsOf = (c: string): number | undefined => cache.get(employerKey(c))?.filings;
+  if (!offline) await ensureH1b([...onList, ...candidates], counts, arg("--refresh-h1b"));
+  const filingsOf = (c: string): number | undefined => {
+    const k = employerKey(c);
+    return counts.get(k)?.filings ?? sponsors.get(k)?.filings;
+  };
 
   // Keep / drop the existing boards.
   const kept: (Row & { filings: number | undefined; band: Band; why: string })[] = [];
@@ -354,7 +380,7 @@ async function main(): Promise<void> {
   const out = [
     "# Long-running watchlist of official ATS boards, rebuilt by scripts/rebuild-watchlist.ts (rerun it; do not hand-edit counts).",
     "# size: medium_large when the employer filed >= 20 H-1B LCAs since 2023 (band large >= 200, mid 20-199), else unknown (band small < 20,",
-    "# unknown = not looked up). h1b is the filing count (data/h1b/sponsors.json). ai: true marks AI-first companies.",
+    "# unknown = not looked up). h1b is the filing count from data/h1b/watchlist-counts.json. ai: true marks AI-first companies.",
     "# Kept: a triage match in the last 180 days, or large/mid with an ML/AI/data title in catalog history. Dropped only with no match ever,",
     "# no ML/AI/data title ever, and not large/mid; excluded companies (data/policy.yaml) are not watched.",
     "# pending: big sponsors whose board is on an ATS with no adapter yet (another workstream adds adapters).",
@@ -363,7 +389,10 @@ async function main(): Promise<void> {
     ...(pending.length ? ["pending:", ...pending.map(renderPending)] : []),
     "",
   ].join("\n");
-  if (!dry) writeFileSync(WATCHLIST, out);
+  if (!dry) {
+    writeFileSync(WATCHLIST, out);
+    writeCounts(counts);
+  }
 
   // Report.
   const per = (k: Kind) => ({ kept: kept.filter((r) => r.kind === k).length, dropped: dropped.filter((d) => d.row.kind === k).length, added: added.filter((r) => r.kind === k).length });

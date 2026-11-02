@@ -1,6 +1,6 @@
 # Long-running watchlist of official ATS boards, rebuilt by scripts/rebuild-watchlist.ts (rerun it; do not hand-edit counts).
 # size: medium_large when the employer filed >= 20 H-1B LCAs since 2023 (band large >= 200, mid 20-199), else unknown (band small < 20,
-# unknown = not looked up). h1b is the filing count (data/h1b/sponsors.json). ai: true marks AI-first companies.
+# unknown = not looked up). h1b is the filing count from data/h1b/watchlist-counts.json. ai: true marks AI-first companies.
 # Kept: a triage match in the last 180 days, or large/mid with an ML/AI/data title in catalog history. Dropped only with no match ever,
 # no ML/AI/data title ever, and not large/mid; excluded companies (data/policy.yaml) are not watched.
 # pending: big sponsors whose board is on an ATS with no adapter yet (another workstream adds adapters).

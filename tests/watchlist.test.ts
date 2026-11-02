@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { loadWatchlist } from "../src/sources/fetch.ts";
 import { bandOf, decide, isMlTitle, locate, renderEntry, slugGuesses, sizeOf } from "../scripts/rebuild-watchlist.ts";
@@ -49,6 +50,21 @@ describe("watchlist rebuild helpers", () => {
   it("renders an entry the loader reads back", () => {
     expect(renderEntry({ kind: "greenhouse", board: "stripe", company: "Stripe", band: "large", filings: 900 })).toBe("  - { board: stripe, company: 'Stripe', size: medium_large, band: large, h1b: 900 }");
     expect(renderEntry({ kind: "workday", site: "https://a.wd1.myworkdayjobs.com/x", company: "O'Neil", band: "unknown" })).toContain("company: 'O''Neil', size: unknown, band: unknown }");
+  });
+});
+
+describe("rebuild-watchlist leaves the shared H-1B cache alone", () => {
+  const src = readFileSync("scripts/rebuild-watchlist.ts", "utf8");
+  // data/h1b/sponsors.json drives eligibility; a rebuild that rewrote it silently dropped eligible postings.
+  it("does not import or call writeH1b", () => {
+    expect(src).not.toMatch(/writeH1b/);
+  });
+  it("never writes sponsors.json", () => {
+    expect(src.split("\n").filter((l) => /sponsors\.json/.test(l) && /write/i.test(l))).toEqual([]);
+  });
+  it("writes only its own files (config/watchlist.yaml and the counts file)", () => {
+    const writes = [...src.matchAll(/writeFileSync\(([^,)]*)/g)].map((m) => m[1]!.trim());
+    expect(writes.sort()).toEqual(["file", "WATCHLIST"].sort());
   });
 });
 

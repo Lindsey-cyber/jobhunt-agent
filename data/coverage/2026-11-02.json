@@ -5,9 +5,9 @@
   "jobright-ai/2026-Software-Engineer-New-Grad",
   "vanshb03/New-Grad-2027"
  ],
- "n": 100,
- "inCatalog": 67,
- "inCatalogNotRejected": 50,
+ "n": 72,
+ "inCatalog": 55,
+ "inCatalogNotRejected": 42,
  "misses": [
   {
    "company": "66 Degrees",
@@ -22,18 +22,6 @@
    "cause": "filtered by triage rule auth.no_sponsorship"
   },
   {
-   "company": "Adobe",
-   "title": "New Grad 2026: AI Context Engineer",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "AIG",
-   "title": "Early Career Analyst, Gen AI, Data Engineering",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
    "company": "Amazon",
    "title": "Application Builder, Blink Subs + ai",
    "url": "https://www.amazon.jobs/jobs/10514428/apply",
@@ -43,12 +31,6 @@
    "company": "American Honda Motor Company, Inc.",
    "title": "Data Scientist",
    "url": "https://jobright.ai/jobs/info/6ae49a46d45dc30fb7d30887?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
-  },
-  {
-   "company": "Annapurna Labs",
-   "title": "Silicon & AI Systems Innovation Engineer",
-   "url": "",
    "cause": "company not on watchlist"
   },
   {
@@ -62,12 +44,6 @@
    "title": "Data Scientist Fellow — Multi-Omics Analysis",
    "url": "https://job-boards.greenhouse.io/axle/jobs/5274583007",
    "cause": "filtered by triage rule model.not_fit"
-  },
-  {
-   "company": "Axle",
-   "title": "Data Scientist Fellow, Bioinformatics and Image Analysis",
-   "url": "https://job-boards.greenhouse.io/axle/jobs/5274579007",
-   "cause": "filtered by triage rule auth.citizenship"
   },
   {
    "company": "Axtria",
@@ -100,12 +76,6 @@
    "cause": "company not on watchlist"
   },
   {
-   "company": "Centene",
-   "title": "Data Engineer I",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
    "company": "Concord",
    "title": "Data Science Analyst",
    "url": "https://jobright.ai/jobs/info/6ad0fde0a4f99fef81940b62?utm_campaign=Data%20Analysis&utm_source=1103",
@@ -122,12 +92,6 @@
    "title": "Data Scientist - Cleared (Multiple Levels) - Chantilly, VA",
    "url": "https://jobright.ai/jobs/info/6ae5508577c09cb3bd4b30ae?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
-  },
-  {
-   "company": "Gauntlet",
-   "title": "New Grad: Quant Research Engineer",
-   "url": "",
-   "cause": "watched company, posting not fetched (lever)"
   },
   {
    "company": "GE Vernova",
@@ -166,22 +130,10 @@
    "cause": "company not on watchlist"
   },
   {
-   "company": "Mastercard",
-   "title": "New Grad 2027: AI Engineer 1 - Launch Program",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
    "company": "Military Spouse Jobs",
    "title": "Data Scientist - Cleared (Multiple Levels) - Chantilly, VA",
    "url": "https://jobright.ai/jobs/info/6ae556a9eab1f96730981033?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
-  },
-  {
-   "company": "Nextdoor",
-   "title": "New Grad 2026: Machine Learning Engineer, Machine Learning",
-   "url": "https://about.nextdoor.com/careers-list/?gh_jid=7264954",
-   "cause": "watched company, posting not fetched (greenhouse)"
   },
   {
    "company": "Northeastern University",
@@ -190,52 +142,10 @@
    "cause": "filtered by triage rule role.research_not_ml"
   },
   {
-   "company": "NRG Energy",
-   "title": "Data Science Analyst - Agentic AI Developer",
-   "url": "https://careers.nrgenergy.com/nrg/job/Houston-Data-Science-Analyst-Agentic-AI-Developer-TX-77010/1441481900?ats=successfactors",
-   "cause": "filtered by triage rule role.non_engineering"
-  },
-  {
-   "company": "NVIDIA",
-   "title": "New Grad 2025: AI and ML Infra Software Engineer, GPU Clusters",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "NVIDIA",
-   "title": "New Grad 2025: Deep Learning Algorithm Engineer, Dynamo",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "NVIDIA",
-   "title": "New Grad 2025: Deep Learning Software Engineer, Inference and Model Optimization",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "NVIDIA",
-   "title": "New Grad 2026: AI and ML Infra Software Engineer, GPU Clusters",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "NVIDIA",
-   "title": "New Grad 2026: Software Engineer, AI Infrastructure",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "NVIDIA",
-   "title": "New Grad 2027: Deep Learning Performance Architect",
-   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Deep-Learning-Performance-Architect---New-College-Grad-2027_JR2028177",
-   "cause": "filtered by triage rule level.senior"
-  },
-  {
    "company": "Omnicom",
    "title": "Data Science and Analytics04",
    "url": "https://jobright.ai/jobs/info/6a588b2268d16a30e2413f8e?utm_campaign=Data%20Analysis&utm_source=1103",
-   "cause": "company not on watchlist"
+   "cause": "watched company, posting not fetched (workday)"
   },
   {
    "company": "Precision Medicine Group",
@@ -247,24 +157,6 @@
    "company": "Revionics",
    "title": "New Grad: Machine Learning Engineer",
    "url": "https://revionics.com/about/careers/open-jobs?gh_jid=7172125",
-   "cause": "company not on watchlist"
-  },
-  {
-   "company": "Salesforce",
-   "title": "AI Forward Deployed Engineer (Early Career)",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday/workday)"
-  },
-  {
-   "company": "ServiceNow",
-   "title": "New Grad 2027: Software Engineer (AI/ML)",
-   "url": "https://jobs.smartrecruiters.com/ServiceNow/744000149338366",
-   "cause": "filtered by triage rule role.out_of_scope"
-  },
-  {
-   "company": "Sixtyfour (X25)",
-   "title": "Founding Engineer, AI Research Agents (Full-Stack) 🇺🇸",
-   "url": "",
    "cause": "company not on watchlist"
   },
   {
@@ -280,36 +172,30 @@
    "cause": "filtered by triage rule auth.citizenship"
   },
   {
-   "company": "Stamp",
-   "title": "Founding Machine Learning Engineer 🇺🇸",
-   "url": "",
-   "cause": "company not on watchlist"
-  },
-  {
    "company": "Tata Consultancy Services",
    "title": "Data Scientist",
    "url": "https://jobright.ai/jobs/info/6ac5efd48ff3fb9b3bc8b77f?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
   },
   {
-   "company": "Thomson Reuters",
-   "title": "AI Solutions Engineer, CoCounsel AI Applications",
-   "url": "",
-   "cause": "watched company, posting not fetched (workday)"
-  },
-  {
-   "company": "Torc Robotics",
-   "title": "Machine Learning Engineer, I, App Engine (CUDA)",
-   "url": "",
-   "cause": "watched company, posting not fetched (greenhouse)"
-  },
-  {
    "company": "Torentify",
    "title": "Data Scientist - USA / Remote",
    "url": "https://jobright.ai/jobs/info/6ae8306ca2a252e219425877?utm_campaign=Data%20Analysis&utm_source=1103",
    "cause": "company not on watchlist"
+  },
+  {
+   "company": "Venmo",
+   "title": "Data Scientist - Payments Risk Management & Data Analytics",
+   "url": "https://jobright.ai/jobs/info/6aaa413223b7fdf74007a362?utm_campaign=Data%20Analysis&utm_source=1103",
+   "cause": "company not on watchlist"
   }
  ],
- "staleExcluded": 0,
- "stale": []
+ "staleExcluded": 1,
+ "stale": [
+  {
+   "company": "Nextdoor",
+   "title": "New Grad 2026: Machine Learning Engineer, Machine Learning",
+   "url": "https://about.nextdoor.com/careers-list/?gh_jid=7264954"
+  }
+ ]
 }

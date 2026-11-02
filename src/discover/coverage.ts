@@ -15,6 +15,8 @@ export interface SampleRow {
   list: string;
   // The apply link the list gave: an ATS URL gives a JobKey, anything else is matched by name.
   url?: string | undefined;
+  // The list itself marks the posting closed (🔒 in the link column): history, not an opening.
+  closed?: boolean | undefined;
 }
 
 export interface Miss {
@@ -69,10 +71,23 @@ export const urlsIn = (text: string): string[] => text.match(/https?:\/\/[^\s'"<
 
 // ---- names ----------------------------------------------------------------------------------------
 
-export const normCompany = (s: string): string =>
+// Plain text normalization (titles): lowercase, "&" as "and", legal words and punctuation dropped.
+const normText = (s: string): string =>
   s.toLowerCase().replace(/&/g, " and ").replace(/\b(inc|llc|ltd|corp|corporation|co|company|the)\b\.?/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+
+// Words that only say what kind of entity a company is, never which one: dropped from the END of a name, so that
+// "Omnicom" and "Omnicom Group", "American Honda" and "American Honda Motor Company, Inc." are one company.
+const ENTITY_WORD = new Set(["inc", "incorporated", "llc", "llp", "lp", "ltd", "limited", "plc", "corp", "corporation", "co", "company", "companies", "group", "holdings", "holding", "gmbh", "ag", "sa", "nv", "bv", "motor", "motors", "usa", "us", "america", "americas", "international", "worldwide"]);
+
+export function normCompany(s: string): string {
+  const base = s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/\([^)]*\)/g, " ").replace(/\./g, "");
+  const words = normText(base).split(" ").filter(Boolean);
+  // A name that is nothing but entity words ("Global Group") keeps them.
+  while (words.length > 1 && ENTITY_WORD.has(words.at(-1)!)) words.pop();
+  return words.join(" ");
+}
 export const normTitle = (s: string): string =>
-  normCompany(s.replace(/\(.*?\)|\[.*?\]/g, " ").replace(/\b(new (college )?grad(uate)?|early career|university grad(uate)?|campus|2026|2027|full[- ]time)\b/gi, " "));
+  normText(s.replace(/\(.*?\)|\[.*?\]/g, " ").replace(/\b(new (college )?grad(uate)?|early career|university grad(uate)?|campus|2026|2027|full[- ]time)\b/gi, " "));
 const tokens = (s: string) => new Set(normTitle(s).split(" ").filter((t) => t.length > 1));
 export function similarity(a: string, b: string): number {
   const x = tokens(a);
@@ -111,7 +126,7 @@ export function parseListTable(list: string, md: string): SampleRow[] {
     let company = cellText(c[0]!);
     if (company.startsWith("↳")) company = prev;
     else prev = company;
-    out.push({ company, title: cellText(c[1]!), location: cellText(c[2]!), date: cellText(c[c.length - 1]!), list, url: cellLink(c[3]!) ?? cellLink(c[1]!) });
+    out.push({ company, title: cellText(c[1]!), location: cellText(c[2]!), date: cellText(c[c.length - 1]!), list, url: cellLink(c[3]!) ?? cellLink(c[1]!), ...(c[3]!.includes("🔒") ? { closed: true } : {}) });
   }
   return out;
 }
@@ -126,6 +141,7 @@ const ABROAD = /united kingdom|canada|india|germany|australia|new zealand/i;
 // US, early-career, ML/AI/data title, listed within `maxAgeDays`, and not out under her policy.
 export function fits(r: SampleRow, policy: Parameters<typeof policyExcludes>[2] & Pick<Policy, "excludeSeniorTitles">, now: Date, maxAgeDays = 30): boolean {
   const d = parseListDate(r.date, now);
+  if (r.closed) return false;
   if (!d || now.getTime() - d.getTime() > maxAgeDays * 864e5) return false;
   if (!FIT.test(r.title) || NOT_ENTRY.test(r.title) || !US.test(r.location) || ABROAD.test(r.location)) return false;
   if (policy.excludeSeniorTitles && tooSenior(r.title)) return false;
@@ -218,23 +234,24 @@ export function workdaySite(url: string): string | undefined {
 export type Liveness = "live" | "not_listed" | "unknown";
 
 // Is a sampled posting still on its employer's official board(s)? Live: a board lists its job id (when the list's
-// link names one) or its title (exact, or near). Not listed (stale) only when the posting's own id is known from its
-// link, and every board of that ATS for the company (the same Workday site, for Workday) was read in full, and none
-// lists the id. A title alone never proves a posting gone; neither does a link without an ATS id, nor a board of that
-// ATS that was not read. Everything else is unknown.
+// link names one), or lists its title. When the link names the id and every board of that ATS for the company (the
+// same Workday site, for Workday) was read in full without it, the id is gone: only the identical title (a repost
+// under a new id) keeps the entry live, a merely near title never does (Nextdoor's "Machine Learning Engineer, Machine
+// Learning" is not "Machine Learning Engineer - Ads"). Without such a complete read, or without an id in the link, a
+// title (exact, or near) proves live and nothing proves gone. Everything else is unknown.
 export function liveness(r: SampleRow, known: readonly WatchedBoard[]): Liveness {
   if (known.length === 0) return "unknown";
   const named = r.url ? jobKey(r.url) : undefined;
   const key = named && atsOf(named) ? named : undefined;
-  const live = known.some(
-    (b) => (key !== undefined && b.keys?.includes(key)) || b.titles?.some((t) => normTitle(t) === normTitle(r.title) || similarity(t, r.title) >= FUZZY),
-  );
-  if (live) return "live";
-  if (key === undefined) return "unknown";
+  if (key !== undefined && known.some((b) => b.keys?.includes(key))) return "live";
+  const exact = known.some((b) => b.titles?.some((t) => normTitle(t) === normTitle(r.title)));
+  const near = exact || known.some((b) => b.titles?.some((t) => similarity(t, r.title) >= FUZZY));
+  if (key === undefined) return near ? "live" : "unknown";
   const ats = atsOf(key)!;
   const site = ats === "workday" ? workdaySite(r.url!) : undefined;
   const same = known.filter((b) => b.ats === ats && (ats !== "workday" || b.site === site));
-  return same.length > 0 && same.every(readInFull) ? "not_listed" : "unknown";
+  if (same.length > 0 && same.every(readInFull)) return exact ? "live" : "not_listed";
+  return near ? "live" : "unknown";
 }
 
 export const STALE_CAUSE = "stale list entry";

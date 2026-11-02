@@ -1,7 +1,8 @@
 // Fetching for `jh coverage`: public lists the pipeline does not use, plus (read-only) the official
 // boards of watched companies, to tell a stale list entry from a posting the pipeline missed.
-// Never opens an application form: a short link is only followed one hop for its Location header.
-import { readFileSync } from "node:fs";
+// Never opens an application form: a link is only followed hop by hop for its Location header (HEAD), never rendered.
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { normCompany, notIndependent, parseListTable, urlsIn, workdaySite, type SampleRow, type WatchedBoard } from "../discover/coverage.ts";
 import { atsOf, jobKey } from "../discover/identity.ts";
 import { loadWatchlist, WORKDAY_PAGE, WORKDAY_PAGE_CAP, type BoardKind } from "./fetch.ts";
@@ -42,20 +43,108 @@ export async function fetchSample(lists: readonly SampleList[]): Promise<{ rows:
   return { rows, failed };
 }
 
-// A list's own redirector (go.vansh.nyc/..) points at the employer's ATS page. Only the Location header is
-// read, never the page it points to, so the posting can be matched by its JobKey.
-export async function resolveShortLinks(rows: readonly SampleRow[]): Promise<SampleRow[]> {
-  return pool([...rows], 8, async (r) => {
-    if (!r.url || new URL(r.url).hostname !== "go.vansh.nyc") return r;
-    try {
-      const res = await fetch(r.url, { redirect: "manual", signal: AbortSignal.timeout(15000), headers: { "user-agent": "jobhunt-agent/2 (personal job search; read-only)" } });
-      const to = res.headers.get("location");
-      return to ? { ...r, url: new URL(to, r.url).toString() } : r;
-    } catch {
-      return r;
-    }
-  });
+const UA = "jobhunt-agent/2 (personal job search; read-only)";
+// A hop that asks for a login, a captcha or a bot check is a wall, not a posting: never followed or passed.
+const WALL = /challenge|captcha|login|log-in|signin|sign-in|\/sso\b|security\/|verify|consent/i;
+const MAX_HOPS = 6;
+
+export interface ResolveOptions {
+  // Where resolved links are remembered between runs (a link's target does not change within a day's lists).
+  cachePath?: string;
+  // Gap between two requests to the same host, in ms.
+  hostGapMs?: number;
 }
+
+const hasAtsId = (url: string): boolean => atsOf(jobKey(url)) !== undefined;
+
+// One hop, read-only: HEAD (GET when the server refuses HEAD), redirects not followed by fetch, body never read.
+async function hop(url: string): Promise<{ status: number; location: string | null }> {
+  const go = async (method: "HEAD" | "GET") => {
+    const res = await fetch(url, { method, redirect: "manual", signal: AbortSignal.timeout(15000), headers: { "user-agent": UA, accept: "text/html,*/*" } });
+    await res.body?.cancel().catch(() => undefined);
+    return { status: res.status, location: res.headers.get("location") };
+  };
+  const head = await go("HEAD");
+  return head.status === 405 || head.status === 501 ? go("GET") : head;
+}
+
+// Follows redirects hop by hop to the employer's own URL. Stops at the first URL that names an ATS posting (that page is
+// never requested: the id is already in the link), at a page that is not a redirect, at a login or bot wall, at a loop or
+// after MAX_HOPS. Undefined when nothing better than the link we started with was reached.
+export async function followRedirects(start: string, wait: (host: string) => Promise<void> = async () => undefined): Promise<string | undefined> {
+  let cur = start;
+  const seen = new Set([start]);
+  for (let i = 0; i < MAX_HOPS; i++) {
+    if (hasAtsId(cur)) return cur === start ? undefined : cur;
+    let r: { status: number; location: string | null };
+    try {
+      await wait(new URL(cur).hostname);
+      r = await hop(cur);
+    } catch {
+      return cur === start ? undefined : cur;
+    }
+    if (r.status < 300 || r.status >= 400 || !r.location) return cur === start ? undefined : cur;
+    let next: string;
+    try {
+      next = new URL(r.location, cur).toString();
+    } catch {
+      return cur === start ? undefined : cur;
+    }
+    if (WALL.test(new URL(next).pathname + new URL(next).search) || seen.has(next)) return cur === start ? undefined : cur;
+    seen.add(next);
+    cur = next;
+  }
+  return cur === start ? undefined : cur;
+}
+
+function loadCache(path: string | undefined): Record<string, string> {
+  if (!path) return {};
+  try {
+    const v: unknown = JSON.parse(readFileSync(path, "utf8"));
+    return v && typeof v === "object" ? (v as Record<string, string>) : {};
+  } catch {
+    return {};
+  }
+}
+
+// Every row's link, followed to its final official URL (list redirectors such as go.vansh.nyc point at the ATS page), so
+// the posting is matched by its own JobKey and the stale check can read its id. Links that already name an ATS posting
+// are left alone; links behind a wall stay as they were. Politely: four at a time, a gap per host, answers cached.
+export async function resolveLinks(rows: readonly SampleRow[], opts: ResolveOptions = {}): Promise<SampleRow[]> {
+  const { cachePath = join("data", "coverage", "link-cache.json"), hostGapMs = 250 } = opts;
+  const cache = loadCache(cachePath);
+  const last = new Map<string, number>();
+  const wait = async (host: string) => {
+    const at = Math.max(Date.now(), (last.get(host) ?? 0) + hostGapMs);
+    last.set(host, at);
+    if (at > Date.now()) await new Promise((r) => setTimeout(r, at - Date.now()));
+  };
+  const pending = new Map<string, Promise<string | undefined>>();
+  const out = await pool([...rows], 4, async (r) => {
+    const u = r.url;
+    if (!u || !/^https?:/i.test(u) || hasAtsId(u)) return r;
+    const cached = cache[u];
+    if (cached) return { ...r, url: cached };
+    let p = pending.get(u);
+    if (!p) pending.set(u, (p = followRedirects(u, wait)));
+    const to = await p;
+    if (!to) return r;
+    cache[u] = to;
+    return { ...r, url: to };
+  });
+  if (cachePath && Object.keys(cache).length > 0) {
+    try {
+      mkdirSync(dirname(cachePath), { recursive: true });
+      writeFileSync(cachePath, JSON.stringify(cache, null, 1) + "\n");
+    } catch {
+      // The cache is a courtesy to the lists' hosts; a run without it is just slower.
+    }
+  }
+  return out;
+}
+
+// The name the command used before every redirector was followed.
+export const resolveShortLinks = resolveLinks;
 
 // Every posting a Workday board lists (empty search, all pages; Workday serves at most 2000 per search).
 // Titles and requisition keys only, no detail pages. The board is `partial` (it can prove a posting live, never gone)

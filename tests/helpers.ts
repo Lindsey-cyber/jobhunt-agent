@@ -22,3 +22,5 @@ export function field(label: string, over: Partial<FormField> = {}): FormField {
 export function form(fields: FormField[], company = "Acme Robotics"): FormSnapshot {
   return { ats: "greenhouse", url: "https://job-boards.greenhouse.io/acme/jobs/1", company, jobTitle: "Intern", fields };
 }
+
+export const passingGate = { pass: true, checks: [] };

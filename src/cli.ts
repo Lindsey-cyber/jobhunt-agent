@@ -34,6 +34,8 @@ import { readModelVerdicts } from "./store/modelverdicts.ts";
 import { retriage } from "./discover/merge.ts";
 import { expectationFloor } from "./discover/pay.ts";
 import { tallyHolds } from "./verify/holds.ts";
+import { readCoverage } from "./store/coverage.ts";
+import { stageGates } from "./discover/gates.ts";
 import { Ledger } from "./store/ledger.ts";
 import { ReviewList } from "./store/review.ts";
 import { appendLabel, paths, readBaseline, readLabels, readLatest, readTrust, writeBaseline, writeTrust } from "./store/state.ts";
@@ -124,6 +126,17 @@ function interleaveByCompany<T extends { company: string }>(jobs: T[]): T[] {
 }
 
 // Every posting's one state (src/discover/today.ts), shared by jh today, apply-approved and facts-map.
+// The source registry does not exist yet (W4): until it does, gate 1a fails on it.
+function gatesOf(u: ReturnType<typeof user>, w: ReturnType<typeof gather>) {
+  return stageGates({
+    ...(({ coverage, problem }) => ({ coverage, coverageProblem: problem }))(readCoverage(u.dir)),
+    registry: undefined,
+    today: w.today,
+    matches: [...w.catalog.values()].filter((j) => j.triage?.verdict === "match"),
+    audit: readTrust(u.dir).triage.audits.at(-1),
+  });
+}
+
 function gather(u: ReturnType<typeof user>) {
   const ledger = ledgerOf(u.dir);
   // Today's rules over the whole catalog: a posting no source re-listed still carries the verdict of the rules it was last triaged under.
@@ -148,7 +161,7 @@ switch (command) {
   case "apply": {
     if (!url) throw new Error("usage: jh apply <url>");
     const u = user();
-    const result = await apply({ url, user: u, ledger: ledgerOf(u.dir), approved: values.approve, headed: values.headed });
+    const result = await apply({ url, user: u, ledger: ledgerOf(u.dir), approved: values.approve, headed: values.headed, stageGate: gatesOf(u, gather(u))["1c"] });
     if (result.outcome === "skipped") {
       console.log(`${result.key} is already ${result.state}; nothing to do.`);
       break;
@@ -242,7 +255,7 @@ switch (command) {
     const blockers: Blocker[] = w.posts.filter((p) => p.state === "held").flatMap((p) => (p.blockers ?? []).map((question) => ({ company: p.job.company, title: p.job.title, question })));
     const appliedToday = [...new Map(w.posts.filter((p) => p.app && ["submitted", "confirmed", "unconfirmed"].includes(p.app.state) && p.app.at.slice(0, 10) === w.today).map((p) => [p.app!.key, p])).values()];
     const pendingFile = join("docs", "pending-decisions.md");
-    const md = renderToday({ ...w.input, posts: w.posts, blockers, appliedToday, tierOf: w.tierOf, queueSize: w.queue.length, pending: existsSync(pendingFile) ? readFileSync(pendingFile, "utf8") : undefined });
+    const md = renderToday({ ...w.input, posts: w.posts, blockers, appliedToday, tierOf: w.tierOf, queueSize: w.queue.length, gates: gatesOf(u, w), pending: existsSync(pendingFile) ? readFileSync(pendingFile, "utf8") : undefined });
     const out = join("docs", "today", `${w.today}.md`);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, md);
@@ -276,6 +289,12 @@ switch (command) {
     // Runs the agent's queue from the same state model as docs/TODAY.md (src/discover/today.ts).
     const u = user();
     const w = gather(u);
+    const gates = gatesOf(u, w);
+    if (!gates["1c"].pass) {
+      console.log("apply-approved refused: the stage gates have not passed (1a search complete, 1b screening accurate).");
+      for (const g of ["1a", "1b"] as const) for (const c of gates[g].checks.filter((c) => !c.pass)) console.log(`  ${g} ✗ ${c.name}: ${c.value}`);
+      break;
+    }
     const ledger = w.ledger;
     const limit = Number(values.limit ?? u.config.dailySubmitCap);
     const adapter = (k: string) => k.startsWith("greenhouse:") || (CAPTCHA_ATS && /^(lever|ashby):/.test(k)) || (WORKDAY_READY && k.startsWith("workday:"));
@@ -297,7 +316,7 @@ switch (command) {
       const wait = (lastAt.get(j.company) ?? 0) + SAME_COMPANY_GAP_MS - Date.now();
       if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       try {
-        const r = await apply({ url: j.url, user: u, ledger, approved: true, job: { company: j.company, title: j.title, location: j.location } });
+        const r = await apply({ url: j.url, user: u, ledger, approved: true, stageGate: gates["1c"], job: { company: j.company, title: j.title, location: j.location } });
         if (r.state === "submitted" || r.state === "confirmed" || r.state === "unconfirmed") lastAt.set(j.company, Date.now());
         console.log(`${j.company} · ${j.title}: ${r.state}${r.outcome === "done" && r.decision.decision === "hold" ? ` (${r.decision.reasons[0]})` : ""}`);
       } catch (e) {

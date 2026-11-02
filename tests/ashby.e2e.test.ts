@@ -5,7 +5,7 @@ import { startFixtureServer, type FixtureServer } from "../src/dev/fixture-serve
 import { apply } from "../src/run/apply.ts";
 import { Ledger } from "../src/store/ledger.ts";
 import { searchMatch } from "../src/verify/compare.ts";
-import { makeUserData } from "./helpers.ts";
+import { makeUserData, passingGate } from "./helpers.ts";
 
 // Real capture of an Ashby application page (fixtures/ashby/real-quora-40659fe7.html,
 // scripts stripped). Native inputs fill; the React-only widgets (yes/no buttons,
@@ -26,7 +26,7 @@ describe("apply on a real Ashby capture", { timeout: 60_000 }, () => {
     const user = makeUserData();
     const page = await browser.newPage();
     try {
-      const r = await apply({ url: `${server.origin}/ashby/real-quora-40659fe7/application`, user, ledger: new Ledger(join(user.dir, "ledger.jsonl")), page, confirmTimeoutMs: 2000 });
+      const r = await apply({ url: `${server.origin}/ashby/real-quora-40659fe7/application`, user, ledger: new Ledger(join(user.dir, "ledger.jsonl")), page, stageGate: passingGate, confirmTimeoutMs: 2000 });
       if (r.outcome !== "done") throw new Error("expected a run");
       const form = r.plan.form;
       expect(form).toMatchObject({ ats: "ashby", company: "Quora", jobTitle: expect.stringContaining("Machine Learning Engineer"), jobLocation: expect.stringContaining("United States") });

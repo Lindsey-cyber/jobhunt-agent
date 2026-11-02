@@ -11,7 +11,7 @@ import { alertChannel, parseAlert, type AlertMessage } from "../discover/parse.t
 import { triage, type CandidateFacts } from "../discover/triage.ts";
 import type { Profile } from "../profile/schema.ts";
 import { probe, pool } from "../sources/http.ts";
-import { fetchAmazon, fetchBoard, fetchGithub, fetchHn, fetchOracleHcm, fetchSmartRecruiters, fetchWorkday, type BoardKind, type Fetched, type SourceOutcome, type Watchlist } from "../sources/fetch.ts";
+import { fetchAmazon, fetchBoard, fetchGithub, fetchHn, fetchOracleHcm, fetchPostings, fetchSmartRecruiters, fetchWorkday, LOOKUP_KINDS, type BoardKind, type LookupKind, type LookupTarget, type Fetched, type SourceOutcome, type Watchlist } from "../sources/fetch.ts";
 import { readModelVerdicts } from "../store/modelverdicts.ts";
 import { readCatalog, writeCatalog } from "../store/catalog.ts";
 
@@ -32,6 +32,8 @@ export interface DiscoverOptions {
   // Directory of alert emails copied from Gmail (one JSON per message), if any.
   inboxDir?: string;
   expandLimit?: number;
+  // Most third-party postings looked up one by one on their own ATS (default 800).
+  lookupLimit?: number;
   linkCheckLimit?: number;
   only?: string[];
   log?: (s: string) => void;
@@ -59,6 +61,27 @@ function boardOf(url: string): { kind: BoardKind; board: string } | undefined {
   if (u.hostname === "jobs.lever.co") return { kind: "lever", board: first };
   if (u.hostname === "jobs.ashbyhq.com") return { kind: "ashby", board: first };
   return undefined;
+}
+
+// Third-party sightings whose posting sits on an ATS we can ask directly, but whose
+// employer record we do not hold yet (not seen from an official source this run,
+// not an official dated posting in the catalog). Pure; exported for tests.
+export function lookupTargets(sightings: readonly Sighting[], prior: ReadonlyMap<string, Job>, facts: CandidateFacts, limit = 800): Map<LookupKind, (LookupTarget & { key: string })[]> {
+  const official = new Set(sightings.filter((s) => s.official).map((s) => s.key));
+  const out = new Map<LookupKind, (LookupTarget & { key: string })[]>();
+  const seen = new Set<string>();
+  let n = 0;
+  for (const s of sightings) {
+    const kind = atsOf(s.key) as LookupKind | undefined;
+    if (s.official || !kind || !LOOKUP_KINDS.includes(kind) || official.has(s.key) || seen.has(s.key)) continue;
+    const was = prior.get(s.key);
+    if (was?.official && was.publishedAt) continue;
+    if (triage({ ...s, description: "" }, facts).verdict === "reject") continue;
+    seen.add(s.key);
+    if (n++ >= limit) continue;
+    out.set(kind, [...(out.get(kind) ?? []), { key: s.key, url: s.url, company: s.company }]);
+  }
+  return out;
 }
 
 export function readInbox(dir: string): AlertMessage[] {
@@ -143,7 +166,19 @@ export async function discover(opts: DiscoverOptions): Promise<DiscoverResult> {
   if (leads.size > expansion.length) log(`expansion capped: ${leads.size - expansion.length} boards not fetched`);
 
   const catalogPath = join(opts.dataDir, "discovery", "catalog.jsonl");
-  const merged = mergeRun(readCatalog(catalogPath), sightings, opts.facts, opts.exclude ?? [], readModelVerdicts(opts.dataDir));
+  const prior = readCatalog(catalogPath);
+
+  // Postings a list points at on an ATS whose board we do not hold: ask the employer's
+  // API for that one posting, so it carries the employer's own date and text.
+  const lookups = lookupTargets(sightings, prior, opts.facts, opts.lookupLimit);
+  const looked = await Promise.all([...lookups].map(([kind, targets]) => fetchPostings(kind, targets, startedAt)));
+  for (const f of looked) {
+    sightings.push(...f.sightings);
+    outcomes.push(f.outcome);
+    log(`${f.outcome.ok ? "ok  " : "FAIL"} ${f.outcome.channel.padEnd(20)} ${String(f.outcome.count).padStart(5)}  ${f.outcome.note}`);
+  }
+
+  const merged = mergeRun(prior, sightings, opts.facts, opts.exclude ?? [], readModelVerdicts(opts.dataDir));
 
   // Size band per job from the board that listed it, else from the watchlist by company name.
   const sizeBySource = new Map(outcomes.filter((o) => o.size).map((o) => [o.url, o.size!]));

@@ -297,6 +297,109 @@ export async function fetchAmazon(queries: string[], seenAt: string, perQuery = 
   }
 }
 
+// ── One posting by its own URL ─────────────────────────────────────────────
+// A third-party list (GitHub, an alert) points at a posting on an ATS whose
+// board is not on the watchlist. The employer's API answers for that one
+// posting: its own publication date, and its text for triage. A posting the
+// API no longer knows (closed, 4xx, absent from the list) yields nothing:
+// no date is made up for it.
+
+export type LookupKind = "workday" | "smartrecruiters" | "amazon" | "greenhouse" | "lever";
+export const LOOKUP_KINDS: readonly LookupKind[] = ["workday", "smartrecruiters", "amazon", "greenhouse", "lever"];
+
+export interface WorkdayRef { host: string; tenant: string; site: string; path: string; req: string }
+
+// https://acme.wd5.myworkdayjobs.com/en-US/Careers/job/Austin-TX/ML-Engineer_R-123
+// gives site Careers (the locale segment is not part of the site) and requisition R-123.
+export function workdayRef(url: string): WorkdayRef | undefined {
+  let u: URL;
+  try { u = new URL(url); } catch { return undefined; }
+  if (!u.hostname.endsWith(".myworkdayjobs.com")) return undefined;
+  const parts = u.pathname.split("/").filter(Boolean);
+  const i = parts.indexOf("job");
+  if (i < 1) return undefined;
+  const site = parts.slice(0, i).filter((p) => !/^[a-z]{2}-[A-Z]{2}$/.test(p)).at(-1);
+  const req = /_([A-Za-z]*-?\d[\w-]*)$/.exec(parts.at(-1) ?? "")?.[1];
+  if (!site || !req) return undefined;
+  return { host: u.hostname, tenant: u.hostname.split(".")[0]!, site, path: "/" + parts.slice(i).join("/"), req };
+}
+
+// Greenhouse and Lever hosted URLs name the board in the first path segment; an
+// employer-domain link (?gh_jid=) does not, so it cannot be looked up.
+export function hostedBoard(url: string): { kind: "greenhouse" | "lever"; board: string; id: string } | undefined {
+  let u: URL;
+  try { u = new URL(url); } catch { return undefined; }
+  const parts = u.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  if (u.hostname.endsWith("greenhouse.io") && parts[0] && parts[0] !== "embed" && parts[1] === "jobs" && /^\d+$/.test(parts[2] ?? "")) return { kind: "greenhouse", board: parts[0], id: parts[2]! };
+  if (u.hostname === "jobs.lever.co" && parts[0] && parts[1]) return { kind: "lever", board: parts[0], id: parts[1] };
+  return undefined;
+}
+
+export interface LookupTarget { url: string; company: string }
+
+// A 4xx other than rate limiting means the API does not know the posting.
+const unknownPosting = (e: unknown): [] => {
+  if (e instanceof HttpError && e.status >= 400 && e.status < 500 && e.status !== 429) return [];
+  throw e;
+};
+
+async function lookupOne(kind: LookupKind, t: LookupTarget, seenAt: string): Promise<Sighting[]> {
+  try {
+    if (kind === "smartrecruiters") {
+      const parts = new URL(t.url).pathname.split("/").filter(Boolean);
+      const id = /^\d+/.exec(parts[1] ?? "")?.[0];
+      if (!parts[0] || !id) return [];
+      const s = parseSmartRecruiters(await getJson<SmartRecruitersDetail>(`https://api.smartrecruiters.com/v1/companies/${encodeURIComponent(parts[0])}/postings/${id}`, 60000), parts[0], t.company, seenAt);
+      return s ? [s] : [];
+    }
+    if (kind === "amazon") {
+      const id = /\/jobs\/(\d+)/.exec(new URL(t.url).pathname)?.[1];
+      if (!id) return [];
+      const body = await getJson<{ jobs?: Parameters<typeof parseAmazon>[0]["jobs"] }>(`https://www.amazon.jobs/en/search.json?base_query=${id}&result_limit=10`, 60000);
+      return parseAmazon(body, seenAt).filter((s) => s.key === `amazon:${id}`);
+    }
+    if (kind === "greenhouse" || kind === "lever") {
+      const h = hostedBoard(t.url);
+      if (!h || h.kind !== kind) return [];
+      if (kind === "greenhouse") {
+        const job = await getJson<NonNullable<Parameters<typeof parseGreenhouse>[0]["jobs"]>[number]>(`https://boards-api.greenhouse.io/v1/boards/${h.board}/jobs/${h.id}?content=true`, 60000);
+        return parseGreenhouse({ jobs: [job] }, h.board, t.company, seenAt);
+      }
+      const job = await getJson<Parameters<typeof parseLever>[0][number]>(`https://api.lever.co/v0/postings/${h.board}/${h.id}`, 60000);
+      return parseLever([job], h.board, t.company, seenAt);
+    }
+    const w = workdayRef(t.url);
+    if (!w) return [];
+    const api = `https://${w.host}/wday/cxs/${w.tenant}/${w.site}`;
+    // The list is searched by requisition id; a posting no longer listed is closed.
+    const list = await postJson<WorkdayList>(`${api}/jobs`, { appliedFacets: {}, limit: 20, offset: 0, searchText: w.req }, 60000);
+    const req = w.req.toLowerCase();
+    const hit = (list.jobPostings ?? []).find((p) => { const x = (p.externalPath ?? "").toLowerCase(); return x.endsWith(`_${req}`); });
+    if (!hit?.externalPath) return [];
+    const d = parseWorkdayDetail(await getJson<WorkdayDetail>(api + hit.externalPath, 60000), `https://${w.host}/${w.site}`, hit.externalPath, t.company, seenAt, hit.postedOn);
+    return d ? [d] : [];
+  } catch (e) {
+    return unknownPosting(e);
+  }
+}
+
+// Looks up each target on its ATS: the official sightings found, and one outcome
+// saying how many were asked, found, no longer listed, and failed.
+export async function fetchPostings(kind: LookupKind, targets: LookupTarget[], seenAt: string): Promise<Fetched> {
+  const base = { name: `${kind} postings found through lists`, channel: `official_${kind}` as Channel, url: `lookup:${kind}` };
+  let failed = 0;
+  const found = await pool(targets, 4, async (t) => {
+    try {
+      return await lookupOne(kind, t, seenAt);
+    } catch {
+      failed++;
+      return [] as Sighting[];
+    }
+  });
+  const s = found.flat();
+  return { sightings: s, outcome: { ...base, ok: failed < targets.length || targets.length === 0, count: s.length, note: `${targets.length} postings looked up, ${s.length} found on the employer's API, ${targets.length - s.length - failed} not found or no longer listed, ${failed} failed` } };
+}
+
 export async function fetchGithub(g: Watchlist["github"][number], seenAt: string): Promise<Fetched> {
   const base = { name: g.name, channel: "github_newgrad" as Channel, url: g.url };
   try {

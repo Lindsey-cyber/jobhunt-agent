@@ -269,6 +269,105 @@ export function parseAmazon(body: { jobs?: AmazonJob[] | undefined }, seenAt: st
   });
 }
 
+// ── Atlassian (atlassian.com/endpoint/careers/listings, the careers page's own public JSON) ──
+
+export interface AtlassianRow { id?: number; title?: string; locations?: string[]; category?: string; overview?: string; responsibilities?: string; qualifications?: string; applyUrl?: string; portalJobPost?: { portalUrl?: string; updatedDate?: string } }
+
+const ATLASSIAN_US = /united states|\bU\.S\b|\bUSA?\b/;
+export const atlassianInUS = (r: AtlassianRow): boolean => (r.locations ?? []).some((l) => /united states/i.test(l) || ATLASSIAN_US.test(l)) || ATLASSIAN_US.test(r.title ?? "");
+
+// "2026-10-30 03:15 AM" -> that UTC instant; anything else -> "".
+const atlassianUpdated = (t: string | undefined) => {
+  const m = /^(\d{4})-(\d{2})-(\d{2}) (\d{1,2}):(\d{2}) ([AP]M)$/i.exec((t ?? "").trim());
+  if (!m) return "";
+  const h = (Number(m[4]) % 12) + (m[6]!.toUpperCase() === "PM" ? 12 : 0);
+  return iso(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]), h, Number(m[5])));
+};
+
+// The listing gives only an update time, never a publication date: dateKind "updated" does not count as dated.
+export function parseAtlassian(rows: AtlassianRow[] | undefined, seenAt: string): Sighting[] {
+  return (Array.isArray(rows) ? rows : []).flatMap((r) => {
+    const url = (r.portalJobPost?.portalUrl || r.applyUrl || "").replace(/\?mode=apply$/, "").trim();
+    const title = (r.title ?? "").trim();
+    if (!title || !/^https:\/\/[^/]+\.icims\.com\/jobs\/\d+/.test(url)) return [];
+    const date = atlassianUpdated(r.portalJobPost?.updatedDate);
+    return [
+      sighting({
+        channel: "official_atlassian",
+        source: "https://www.atlassian.com/company/careers/all-jobs",
+        url,
+        seenAt,
+        official: true,
+        company: "Atlassian",
+        title,
+        location: (r.locations ?? []).map((l) => l.replace(/\s+/g, " ").trim()).filter(Boolean).join("; "),
+        description: [r.category ? `Category: ${r.category}` : "", htmlToText(r.overview ?? ""), htmlToText(r.responsibilities ?? ""), htmlToText(r.qualifications ?? "")].filter(Boolean).join("\n"),
+        date,
+        dateKind: kindOf(date, "updated"),
+      }),
+    ];
+  });
+}
+
+// ── iCIMS Jibe career sites (careers.<company>.com/api/jobs; AMD) ──────────
+
+export interface JibeJob { data?: { slug?: string; req_id?: string; title?: string; description?: string; responsibilities?: string; qualifications?: string; employment_type?: string; country_code?: string; full_location?: string; location_name?: string; posted_date?: string; create_date?: string; hiring_organization?: string } }
+
+export function parseJibe(body: { jobs?: JibeJob[] } | undefined, host: string, company: string, seenAt: string): Sighting[] {
+  return (Array.isArray(body?.jobs) ? body!.jobs! : []).flatMap((j) => {
+    const d = j.data;
+    const id = String(d?.slug ?? d?.req_id ?? "").trim();
+    const title = (d?.title ?? "").trim();
+    if (!d || !/^\d+$/.test(id) || !title) return [];
+    const date = iso(d.posted_date);
+    return [
+      sighting({
+        channel: "official_jibe",
+        source: `https://${host}/careers-home/jobs`,
+        url: `https://${host}/careers-home/jobs/${id}`,
+        seenAt,
+        official: true,
+        company,
+        title,
+        location: d.full_location || d.location_name || d.country_code || "",
+        description: [d.employment_type ? `Employment type: ${d.employment_type}` : "", htmlToText(d.description ?? ""), htmlToText(d.responsibilities ?? ""), htmlToText(d.qualifications ?? "")].filter(Boolean).join("\n"),
+        date,
+        dateKind: kindOf(date, "published"),
+      }),
+    ];
+  });
+}
+
+// ── IBM (www-api.ibm.com/search/api/v2, the careers search page's own public API) ──
+
+export interface IbmHit { _source?: { url?: string; title?: string; description?: string; dcdate?: string; field_keyword_05?: string; field_keyword_08?: string; field_keyword_17?: string; field_keyword_19?: string } }
+
+// dcdate is the posting's date as the careers search shows and sorts it (a day, no time).
+export function parseIbm(hits: IbmHit[] | undefined, seenAt: string): Sighting[] {
+  return (Array.isArray(hits) ? hits : []).flatMap((h) => {
+    const s = h._source;
+    const title = (s?.title ?? "").trim();
+    const id = /[?&]jobId=(\d+)/.exec(s?.url ?? "")?.[1];
+    if (!s || !title || !id) return [];
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(s.dcdate ?? "") ? iso(`${s.dcdate}T00:00:00Z`) : "";
+    return [
+      sighting({
+        channel: "official_ibm",
+        source: "https://www.ibm.com/careers/search",
+        url: `https://careers.ibm.com/careers/JobDetail?jobId=${id}`,
+        seenAt,
+        official: true,
+        company: "IBM",
+        title,
+        location: [s.field_keyword_19, s.field_keyword_05, s.field_keyword_17].filter(Boolean).join("; "),
+        description: [s.field_keyword_08 ? `Category: ${s.field_keyword_08}` : "", htmlToText(s.description ?? "")].filter(Boolean).join("\n"),
+        date,
+        dateKind: kindOf(date, "published"),
+      }),
+    ];
+  });
+}
+
 // ── New-grad GitHub lists ──────────────────────────────────────────────────
 
 interface SimplifyListing { company_name: string; title: string; url: string; locations?: string[]; date_posted?: number; active?: boolean; is_visible?: boolean; sponsorship?: string; category?: string }

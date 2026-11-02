@@ -4,7 +4,7 @@ import { z } from "zod";
 import type { Channel, JobKey, Sighting, SizeBand } from "../domain/job.ts";
 import { jobKey } from "../discover/identity.ts";
 import { inScopeTitle } from "../discover/triage.ts";
-import { parseAmazon, parseAshby, parseEightfold, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, eightfoldInUS, type EightfoldItem, type HnComment, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
+import { atlassianInUS, parseAmazon, parseAshby, parseAtlassian, parseIbm, parseJibe, parseEightfold, parseGreenhouse, parseHnComment, parseLever, parseMarkdownJobTable, parseOracleHcm, parseSimplifyListings, parseSmartRecruiters, parseWorkdayDetail, parseWorkdayPostedOn, eightfoldInUS, type AtlassianRow, type EightfoldItem, type HnComment, type IbmHit, type JibeJob, type OracleHcmDetail, type OracleHcmItem, type SmartRecruitersDetail, type SmartRecruitersItem, type WorkdayDetail } from "../discover/parse.ts";
 import { getJson, getText, HttpError, pool, postJson } from "./http.ts";
 
 // Size band and H-1B filing count the watchlist was built with (scripts/rebuild-watchlist.ts); coverage reads the band.
@@ -31,6 +31,13 @@ export const Watchlist = z.object({
   aggregators: z.array(z.string()).default([]),
   // Amazon's career site JSON search (no ATS board exists): AND-matched keyword queries, US only.
   amazon: z.object({ queries: z.array(z.string()) }).optional(),
+  // Own career sites with a public, unauthenticated JSON list (no login, read-only):
+  // atlassian = atlassian.com/endpoint/careers/listings (whole list, US rows kept);
+  // jibe = iCIMS Jibe career sites, https://<host>/api/jobs, walked in full for the US;
+  // ibm = the API behind ibm.com/careers/search, walked in full for the US.
+  atlassian: z.object({ size: z.enum(["medium_large", "unknown"]).default("medium_large") }).optional(),
+  jibe: z.array(z.object({ host: z.string(), company: z.string(), size: z.enum(["medium_large", "unknown"]).default("unknown"), ...Sized })).default([]),
+  ibm: z.object({ size: z.enum(["medium_large", "unknown"]).default("medium_large") }).optional(),
   github: z.array(z.object({ name: z.string(), url: z.url(), raw: z.url(), format: z.enum(["simplify-json", "markdown"]) })).default([]),
   hn: z.object({ commentLimit: z.number().int().default(300) }).default({ commentLimit: 300 }),
   skipped: z.array(z.object({ name: z.string(), reason: z.string() })).default([]),
@@ -350,6 +357,90 @@ export async function fetchAmazon(queries: string[], seenAt: string, perQuery = 
     }
     const s = [...seen.values()];
     return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: "medium_large", note: `${queries.length} searches, ${listed} US results, ${s.length} AI/ML titles` } };
+  } catch (e) {
+    return fail(base, e);
+  }
+}
+
+// atlassian.com/endpoint/careers/listings: the JSON the careers page itself loads, the whole
+// list (a few hundred rows) in one answer. Rows are worldwide; US ones are kept.
+export async function fetchAtlassian(seenAt: string, size: "medium_large" | "unknown" = "medium_large"): Promise<Fetched> {
+  const base = { name: "Atlassian", channel: "official_atlassian" as Channel, url: "https://www.atlassian.com/company/careers/all-jobs" };
+  try {
+    const rows = await getJson<AtlassianRow[]>("https://www.atlassian.com/endpoint/careers/listings", 120000);
+    if (!Array.isArray(rows)) throw new Error("listings answer is not a list");
+    const us = rows.filter(atlassianInUS);
+    const s = parseAtlassian(us.filter((r) => inScopeTitle(r.title ?? "")), seenAt);
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size, listed: rows.length, note: `${rows.length} postings listed, ${us.length} in the US, ${s.length} AI/ML titles` } };
+  } catch (e) {
+    return fail(base, e);
+  }
+}
+
+export const JIBE_PAGE = 100;
+// Jibe serves the full list page by page; a company with more than this many US postings is read to the cap and says so.
+export const JIBE_PAGE_CAP = 30;
+
+// iCIMS Jibe career sites: https://<host>/api/jobs?limit=100&page=N&country=United%20States.
+// Newest first, descriptions included in the list. Pages are read one after another.
+export async function fetchJibe(j: Watchlist["jibe"][number], seenAt: string, pageCap = JIBE_PAGE_CAP): Promise<Fetched> {
+  const base = { name: j.company, channel: "official_jibe" as Channel, url: `https://${j.host}/careers-home/jobs` };
+  try {
+    const kept: JibeJob[] = [];
+    let listed = 0;
+    let pages = 0;
+    let total = 0;
+    for (let page = 1; page <= pageCap; page++) {
+      const body = await getJson<{ jobs?: JibeJob[]; totalCount?: number }>(`https://${j.host}/api/jobs?limit=${JIBE_PAGE}&page=${page}&country=${encodeURIComponent("United States")}&sortBy=posted_date&descending=true`, 120000);
+      if (!Array.isArray(body.jobs)) throw new Error("no jobs list in answer");
+      pages++;
+      total = body.totalCount ?? total;
+      listed += body.jobs.length;
+      kept.push(...body.jobs.filter((x) => x.data?.country_code === "US" || x.data?.country_code === undefined).filter((x) => inScopeTitle(x.data?.title ?? "")));
+      if (body.jobs.length < JIBE_PAGE || listed >= total) break;
+    }
+    const capHit = listed < total;
+    const s = parseJibe({ jobs: kept }, j.host, j.company, seenAt);
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size: j.size, pages, listed, capHit, note: `${pages} pages, ${listed} of ${total} US postings listed, ${s.length} AI/ML titles${capHit ? "; recall bounded here" : ""}` } };
+  } catch (e) {
+    return fail(base, e);
+  }
+}
+
+export const IBM_PAGE = 100;
+export const IBM_PAGE_CAP = 20;
+
+// IBM careers search API (www-api.ibm.com/search/api/v2, the endpoint ibm.com/careers/search calls; no login).
+// US postings newest first, read in full page by page.
+export async function fetchIbm(seenAt: string, size: "medium_large" | "unknown" = "medium_large", pageCap = IBM_PAGE_CAP): Promise<Fetched> {
+  const base = { name: "IBM", channel: "official_ibm" as Channel, url: "https://www.ibm.com/careers/search" };
+  try {
+    const kept: IbmHit[] = [];
+    let listed = 0;
+    let pages = 0;
+    let total = 0;
+    for (let page = 0; page < pageCap; page++) {
+      const body = await postJson<{ hits?: { total?: { value?: number }; hits?: IbmHit[] } }>("https://www-api.ibm.com/search/api/v2", {
+        appId: "careers",
+        scopes: ["careers2"],
+        query: { bool: { must: [{ term: { field_keyword_05: "United States" } }] } },
+        size: IBM_PAGE,
+        from: page * IBM_PAGE,
+        sort: [{ dcdate: "desc" }],
+        lang: "zz",
+        _source: ["title", "url", "description", "dcdate", "field_keyword_05", "field_keyword_08", "field_keyword_17", "field_keyword_19"],
+      }, 120000);
+      const hits = body.hits?.hits;
+      if (!Array.isArray(hits)) throw new Error("no hits list in answer");
+      pages++;
+      total = body.hits?.total?.value ?? total;
+      listed += hits.length;
+      kept.push(...hits.filter((h) => inScopeTitle(h._source?.title ?? "")));
+      if (hits.length < IBM_PAGE || listed >= total) break;
+    }
+    const capHit = listed < total;
+    const s = parseIbm(kept, seenAt);
+    return { sightings: s, outcome: { ...base, ok: true, count: s.length, size, pages, listed, capHit, note: `${pages} pages, ${listed} of ${total} US postings listed, ${s.length} AI/ML titles${capHit ? "; recall bounded here" : ""}` } };
   } catch (e) {
     return fail(base, e);
   }

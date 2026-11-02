@@ -46,7 +46,7 @@ export const SOURCE_REGISTRY: readonly SourceRow[] = [
     id: "official_icims",
     name: "官方 iCIMS",
     status: "deferred",
-    reason: "iCIMS 没有 JSON 接口，只有每家各异的 HTML 搜索页；库里已有 iCIMS 雇主 50 家、岗位 96 条（其中符合 16 条，都是经提醒邮件进库的），多为需许可的国防承包商和中小企业；要抓得逐家写 HTML 解析，成本高，对中大型公司的新增预计很少",
+    reason: "iCIMS 本身没有 JSON 接口，只有每家各异的 HTML 搜索页（用 iCIMS Jibe 招聘站的公司如 AMD 已由 official_jibe 覆盖，Atlassian 的 iCIMS 链接由其公开列表覆盖）；Peraton 是 Webflow 站、/api/jobs 404，RealPage、SRI 没有可达的 Jibe 站；库里已有 iCIMS 雇主 50 家、岗位 96 条（其中符合 16 条，都是经提醒邮件进库的），多为需许可的国防承包商和中小企业；要抓得逐家写 HTML 解析，成本高，对中大型公司的新增预计很少",
     note: "只在 URL 身份里识别；邮件/列表里的 iCIMS 链接仍进库",
   },
   {
@@ -61,6 +61,24 @@ export const SOURCE_REGISTRY: readonly SourceRow[] = [
     name: "官方 Amazon 招聘站",
     status: "live",
     note: "amazon.jobs/en/search.json（招聘站自己的公开搜索，无需登录），关键词有界搜索、仅美国，最新优先；带发布日期。Amazon 没有 ATS board，此前只经列表/邮件覆盖。首次实测 1234 条美国结果、422 条 AI/ML 标题，116 条符合",
+  },
+  {
+    id: "official_jibe",
+    name: "官方 iCIMS Jibe 招聘站（careers.<公司>.com/api/jobs）",
+    status: "live",
+    note: "招聘站自己调用的公开 JSON（无需登录），按公司域名配置，分页读完美国全部岗位，带 posted_date。首次实测 AMD 662 条美国岗位；是通用抓取器，别的 Jibe 站只需在监控名单 jibe 段加一行",
+  },
+  {
+    id: "official_atlassian",
+    name: "官方 Atlassian 招聘站",
+    status: "live",
+    note: "atlassian.com/endpoint/careers/listings（招聘页自己加载的公开 JSON），一次读完整个列表、保留美国岗位，链接指向 iCIMS 校招/社招入口；只给更新时间（不算发布日期）。首次实测 371 条、180 条美国",
+  },
+  {
+    id: "official_ibm",
+    name: "官方 IBM 招聘站",
+    status: "live",
+    note: "www-api.ibm.com/search/api/v2（careers 搜索页自己调用的公开接口，无需登录），分页读完美国全部岗位，带 dcdate。首次实测美国 435 条",
   },
   {
     id: "official_career_pages",

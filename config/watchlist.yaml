@@ -1256,9 +1256,9 @@ skipped:
 pending:
   - { company: 'Tata Consultancy Services', ats: 'TCS iBegin (own site)', careers: 'https://www.tcs.com/careers', band: large, h1b: 27309, reason: 'TCS iBegin is a login-gated own site with no public job API (tcs.com/careers answers 403 to non-browser clients)' }
   - { company: 'American Honda', ats: 'Phenom People (own site)', careers: 'https://careers.honda.com', band: mid, h1b: 148, reason: 'Phenom People site (careers.honda.com); no JSON endpoint we are approved to read, no fetcher' }
-  - { company: 'Peraton', ats: 'iCIMS', careers: 'https://careers-peraton.icims.com/jobs', band: mid, h1b: 24 }
-  - { company: 'RealPage', ats: 'iCIMS', careers: 'https://careers-realpagepms.icims.com/jobs', band: mid, h1b: 90 }
-  - { company: 'SRI International', ats: 'iCIMS', careers: 'https://careers-sri.icims.com/jobs', band: mid, h1b: 69 }
+  - { company: 'Peraton', ats: 'iCIMS', careers: 'https://careers-peraton.icims.com/jobs', band: mid, h1b: 24, reason: 'iCIMS portal (HTML only); careers.peraton.com is a Webflow site, /api/jobs answers 404, so it is not a Jibe site; no public JSON' }
+  - { company: 'RealPage', ats: 'iCIMS', careers: 'https://careers-realpagepms.icims.com/jobs', band: mid, h1b: 90, reason: 'iCIMS portal (HTML only); no Jibe /api/jobs host found (guessed career hosts do not resolve from here); no public JSON' }
+  - { company: 'SRI International', ats: 'iCIMS', careers: 'https://careers-sri.icims.com/jobs', band: mid, h1b: 69, reason: 'iCIMS portal (HTML only); no Jibe /api/jobs host found (guessed career hosts do not resolve from here); no public JSON' }
   - { company: 'Nutanix', ats: 'Jobvite', careers: 'https://jobs.jobvite.com/nutanix', band: large, h1b: 781 }
   - { company: 'WebMD', ats: 'Jobvite', careers: 'https://jobs.jobvite.com/webmd', band: mid, h1b: 58 }
   - { company: 'Hyper', ats: 'Paylocity', careers: 'https://recruiting.paylocity.com/Recruiting', band: mid, h1b: 83 }
@@ -1266,10 +1266,8 @@ pending:
   - { company: 'Deloitte', ats: 'Deloitte Careers (own site)', careers: 'https://apply.deloitte.com', band: large, h1b: 20535 }
   - { company: 'Microsoft', ats: 'Microsoft Careers (own site)', careers: 'https://jobs.careers.microsoft.com', band: large, h1b: 30021 }
   - { company: 'Meta', ats: 'Meta Careers (own site)', careers: 'https://www.metacareers.com/jobs', band: large, h1b: 21188 }
-  - { company: 'IBM', ats: 'IBM Careers (own site)', careers: 'https://www.ibm.com/careers', band: large, h1b: 376 }
   - { company: 'Apple', ats: 'Apple Jobs (own site)', careers: 'https://jobs.apple.com', band: large, h1b: 19139 }
   - { company: 'Tesla', ats: 'Tesla Careers (own site)', careers: 'https://www.tesla.com/careers', band: large, h1b: 9255 }
-  - { company: 'Atlassian', ats: 'Atlassian Careers (own site)', careers: 'https://www.atlassian.com/company/careers', band: large, h1b: 1610 }
   - { company: 'L.E.K. Consulting', ats: 'unknown', careers: 'https://www.google.com/search?q=L.E.K.%20Consulting%20careers', band: small, h1b: 0, reason: 'Tal.net vacancy board (lek.tal.net); no fetcher' }
   - { company: 'Stamp', ats: 'unknown', careers: 'https://www.google.com/search?q=Stamp%20careers', band: small, h1b: 0, reason: 'YC startup; no ATS board found on Greenhouse/Lever/Ashby; small company, outreach lead only' }
   - { company: 'Omnicom', ats: 'own site (agency brands hire separately)', careers: 'https://www.omnicomgroup.com/careers/', band: large, h1b: 0, reason: 'no AI/ML board: its SmartRecruiters company page lists 1 US posting (an administrative role); the agency brands hire on separate sites' }
@@ -1311,7 +1309,6 @@ pending:
   - { company: 'ASSA ABLOY', ats: 'unknown', careers: 'https://www.google.com/search?q=ASSA%20ABLOY%20careers', band: mid, h1b: 47 }
   - { company: 'Axtria', ats: 'unknown', careers: 'https://www.google.com/search?q=Axtria%20careers', band: large, h1b: 484 }
   - { company: 'Acuity', ats: 'unknown', careers: 'https://www.google.com/search?q=Acuity%20careers', band: mid, h1b: 141 }
-  - { company: 'AMD', ats: 'Workday (site not confirmed live)', careers: 'https://amd.wd1.myworkdayjobs.com/AMD', band: large, h1b: 1984, reason: 'Workday site name unconfirmed: guessed tenant/site paths return HTTP 422 on the CXS API; needs the real site name from the careers page' }
   - { company: 'NRG Energy', ats: 'unknown', careers: 'https://www.google.com/search?q=NRG%20Energy%20careers', band: mid, h1b: 95 }
   - { company: 'Ringcentral', ats: 'unknown', careers: 'https://www.google.com/search?q=Ringcentral%20careers', band: large, h1b: 344 }
   - { company: 'L3Harris Technologies', ats: 'unknown', careers: 'https://www.google.com/search?q=L3Harris%20Technologies%20careers', band: mid, h1b: 50 }
@@ -1406,3 +1403,14 @@ aggregators:
 # amazon: amazon.jobs/en/search.json has no ATS board; queries are AND-matched, so "university graduate" style phrases return nothing.
 amazon:
   queries: ['machine learning', 'applied scientist', 'research scientist', 'data scientist', 'deep learning', 'artificial intelligence', 'ML engineer', 'university', 'Annapurna Labs']
+
+# Own career sites with a public, unauthenticated JSON list (read-only, no login). Each was fetched live 2026-11-02.
+# atlassian: atlassian.com/endpoint/careers/listings, the whole list in one answer; US rows kept, iCIMS links.
+atlassian:
+  size: medium_large
+# jibe: iCIMS Jibe career sites, https://<host>/api/jobs?page=N&limit=100&country=United States (full US walk). Add a company by its career host.
+jibe:
+  - { host: 'careers.amd.com', company: 'AMD', size: medium_large, band: large, h1b: 1984 }
+# ibm: the search API behind ibm.com/careers/search (www-api.ibm.com/search/api/v2), full US walk.
+ibm:
+  size: medium_large

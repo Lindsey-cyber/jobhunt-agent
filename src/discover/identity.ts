@@ -64,6 +64,12 @@ export function jobKey(raw: string): JobKey {
     const i = parts.indexOf("jobs");
     if (i >= 0 && /^\d+$/.test(parts[i + 1] ?? "")) return key(`amazon:${parts[i + 1]}`);
   }
+  // iCIMS portals (careers-x.icims.com/jobs/<id>/<slug>/job): requisition ids are scoped to the portal host.
+  if (host.endsWith(".icims.com") && parts[0] === "jobs" && /^\d+$/.test(parts[1] ?? "")) return key(`icims:${host}:${parts[1]}`);
+  // iCIMS Jibe career sites (careers.amd.com/careers-home/jobs/<id>): the id is scoped to the host.
+  if (parts[0] === "careers-home" && parts[1] === "jobs" && /^\d+$/.test(parts[2] ?? "")) return key(`jibe:${host}:${parts[2]}`);
+  // IBM's career site: one global numeric jobId, with or without a locale segment.
+  if (host === "careers.ibm.com" && /^\d+$/.test(q("jobId") ?? "")) return key(`ibm:${q("jobId")}`);
   if (host.endsWith("linkedin.com")) {
     const i = parts.indexOf("view");
     const m = /(\d{6,})$/.exec(parts[i + 1] ?? "") ?? /^(\d{6,})$/.exec(q("currentJobId") ?? "");

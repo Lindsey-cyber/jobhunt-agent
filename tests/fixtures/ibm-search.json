@@ -1,0 +1,58 @@
+{
+ "hits": {
+  "total": {
+   "value": 114,
+   "relation": "eq"
+  },
+  "hits": [
+   {
+    "_source": {
+     "url": "https://careers.ibm.com/careers/JobDetail?jobId=138979",
+     "dcdate": "2026-10-30",
+     "title": "Project Manager Intern - Poughkeepsie, NY - 2027",
+     "description": "At IBM, work is more than a job - it's a calling: To build. To design. To code. To consult. To think along with clients and sell. To make markets. To invent. To collaborate. Not just to do something better, but to attempt things you've never thought...",
+     "field_keyword_05": "United States",
+     "field_keyword_08": "Project Management",
+     "field_keyword_17": "Hybrid",
+     "field_keyword_19": "POUGHKEEPSIE, US"
+    }
+   },
+   {
+    "_source": {
+     "url": "https://careers.ibm.com/careers/JobDetail?jobId=139671",
+     "dcdate": "2026-10-30",
+     "title": "2027 Intern - Corporate Development, Global M&A",
+     "description": "IBM Corporate Development leads the company's M&A activities, including acquisitions, divestitures, and minority investments, in support of IBM's global strategy. The team oversees the full transaction lifecycle, from M&A strategy and target...",
+     "field_keyword_05": "United States",
+     "field_keyword_08": "Enterprise Operations",
+     "field_keyword_17": "Hybrid",
+     "field_keyword_19": "New York, US"
+    }
+   },
+   {
+    "_source": {
+     "url": "https://careers.ibm.com/careers/JobDetail?jobId=137214",
+     "dcdate": "2026-10-30",
+     "title": "AI Software Engineer Intern 2027",
+     "description": "At IBM Software, we transform client challenges into solutions. Building the world's leading AI-powered, cloud-native products that shape the future of business and society. Our legacy of innovation creates endless opportunities for IBMers to learn,...",
+     "field_keyword_05": "United States",
+     "field_keyword_08": "Software Engineering",
+     "field_keyword_17": "Hybrid",
+     "field_keyword_19": "Multiple Cities"
+    }
+   },
+   {
+    "_source": {
+     "url": "https://careers.ibm.com/careers/JobDetail?jobId=139797",
+     "dcdate": "2026-10-30",
+     "title": "Supply Chain Software Engineer Intern",
+     "description": "The IBM Electronic Design Automation (EDA) team is looking for curious, driven students with interests in software engineering, AI, and semiconductor design. Our team develops advanced software and Agentic AI solutions that help design and verify IBM's...",
+     "field_keyword_05": "United States",
+     "field_keyword_08": "Infrastructure & Technology",
+     "field_keyword_17": "Hybrid",
+     "field_keyword_19": "San Jose, US"
+    }
+   }
+  ]
+ }
+}

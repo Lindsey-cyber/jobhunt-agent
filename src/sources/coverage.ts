@@ -20,6 +20,9 @@ export interface SampleList {
 export const SAMPLE_LISTS: SampleList[] = [
   { name: "jobright-ai/2026-Data-Analysis-New-Grad", url: "https://github.com/jobright-ai/2026-Data-Analysis-New-Grad", raw: "https://raw.githubusercontent.com/jobright-ai/2026-Data-Analysis-New-Grad/master/README.md" },
   { name: "jobright-ai/2026-Software-Engineer-New-Grad", url: "https://github.com/jobright-ai/2026-Software-Engineer-New-Grad", raw: "https://raw.githubusercontent.com/jobright-ai/2026-Software-Engineer-New-Grad/master/README.md" },
+  // jobright-ai's umbrella list for engineering new grads (same table layout as the two above): carries the ML/AI/data-engineering
+  // titles the two narrower jobright lists do not. Checked 2026-11-02: master/README.md, ~7500 rows, updated daily.
+  { name: "jobright-ai/2026-Engineering-New-Grad", url: "https://github.com/jobright-ai/2026-Engineering-New-Grad", raw: "https://raw.githubusercontent.com/jobright-ai/2026-Engineering-New-Grad/master/README.md" },
   { name: "vanshb03/New-Grad-2027", url: "https://github.com/vanshb03/New-Grad-2027", raw: "https://raw.githubusercontent.com/vanshb03/New-Grad-2027/dev/README.md" },
 ];
 

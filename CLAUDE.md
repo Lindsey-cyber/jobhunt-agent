@@ -15,6 +15,10 @@ Applies to jobs for one candidate, and submits only what it can prove is correct
 - A change under src/ is done when `npm run check` passes and one CLI run per the `verify-apply` skill shows it working.
 - When you correct the same mistake twice, encode it as a test, type or structure check, not another line here.
 
+## ML harness (branch `mlh`)
+
+`src/mlh/` is a separate, verifiable harness for reproducing and debugging ML experiments: `npm run mlh -- run <repo> --objective "…"`, `npm run mlh -- bench`. Design, gap analysis and measured results: `docs/mlh/ARCHITECTURE.md`. Its `core/` is pure and only `io/proc.ts` starts processes (`tests/mlh-structure.test.ts`); benchmark ground truth (`bench/ml/tasks/*/task.json`) is never read by the harness.
+
 ## Skills
 
 - `apply-to-job` applies to one posting and resolves holds.

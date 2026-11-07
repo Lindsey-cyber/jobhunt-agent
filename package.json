@@ -4,6 +4,7 @@
   "description": "An agent that applies to jobs only when it can prove each application is correct.",
   "scripts": {
     "jh": "tsx src/cli.ts",
+    "mlh": "tsx src/mlh/cli.ts",
     "typecheck": "tsc",
     "test": "vitest run",
     "check": "tsc && vitest run",
